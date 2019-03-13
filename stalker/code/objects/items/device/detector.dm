@@ -27,7 +27,6 @@
 	icon_state_active = "echo_on"
 	icon_state_null = "echo_null"
 	level_s = 1
-	//level_s = 2
 
 /obj/item/detector/bear
 	name = "bear"
@@ -37,8 +36,7 @@
 	icon_state_inactive = "bear_off"
 	icon_state_active = "bear_on"
 	icon_state_null = "bear_null"
-	//level_s = 2
-	level_s = 3 //Пока нет велеса, медведь будет обнаруживать все артефакты
+	level_s = 3
 
 /obj/item/detector/veles
 	name = "veles"

@@ -496,9 +496,7 @@
 	//long_attack = 1
 
 /mob/living/simple_animal/hostile/mutant/controller/Life()
-	. = ..()
-	if(!.)
-		return 0
+	..()
 	for(var/mob/living/carbon/human/H in view(15, src))
 		var/monol_ = 0
 		for(var/faction_ in faction)
@@ -508,7 +506,7 @@
 		if(monol_)
 			continue
 
-		/*var/damage_ = 0
+		var/damage_ = 0
 		switch(get_dist(src, H))
 			if(0 to 2)
 				damage_ = 35
@@ -521,8 +519,8 @@
 			if(8 to INFINITY)
 				damage_ = 25 / get_dist(src, H)
 		H.apply_damage(damage_, PSY, null, blocked = getarmor("head", "psy", 0))
-		if(H.psyloss >= 200)
-			H.zombiefied = MENTAL_ZOMBIE*/
+		//if(H.psyloss >= 200)
+			//H.zombiefied = MENTAL_ZOMBIE
 
 /mob/living/simple_animal/hostile/mutant/controller/OpenFire(atom/A)
 	if(!istype(A, /mob/living/carbon/human))
@@ -560,7 +558,7 @@
 				last_attack_time = world.time
 				H << sound('stalker/sound/mobs/mutants/attack/controller_whoosh.ogg', wait = 0, channel = 47, volume = 50)
 				visible_message("<span class='danger'><b>[src]</b> stares right into [A] eyes!</span>")
-				//H.apply_damage(200, PSY, null, blocked = getarmor("head", "psy", 0))
+				H.apply_damage(200, PSY, null, blocked = getarmor("head", "psy", 0))
 				//if(H.psyloss >= 200)
 				//	H.zombiefied = MENTAL_ZOMBIE
 

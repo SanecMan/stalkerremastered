@@ -72,8 +72,4 @@
 #define MENTAL_MONOLITH						1
 #define MENTAL_ZOMBIE						2
 
-/proc/sanitize_russian(text)
-	return text
-
-/proc/russian_html2text(text)
-	return text
+#define GLOBAL_LIGHT_TURF_1         (1<<0)     //Sets any light emitted by this turf to GLOBAL_LIGHTING, isn't affected by other GLOBAL_LIGHTING lights

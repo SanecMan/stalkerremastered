@@ -70,7 +70,7 @@ var/list/dncTurfs = list()					//#050505 - ночь
 /proc/DncUpdateAsync()
 	dncColor = DNClist[currentDncStage]
 	if(!dncTurfs.len)
-		for(var/area/stalker/blowout/outdoor/A in sortedAreas)
+		for(var/area/stalker/blowout/outdoor/A in GLOB.sortedAreas)
 			//var/area/awaymission/snowdin/E = A
 			for(var/turf/T in A.contents)
 				dncTurfs.Add(T)

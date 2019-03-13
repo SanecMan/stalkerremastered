@@ -107,6 +107,11 @@
 /datum/client_colour/glass_colour/gray
 	colour = "#cccccc"
 
+/datum/client_colour/blowout
+	colour = list(rgb(255,0,0), rgb(125,125,0), rgb(125,0,125), rgb(0,0,0))
+
+/datum/client_colour/blowout2
+	colour = list(rgb(255,0,0), rgb(77,150,0), rgb(77,0,150), rgb(0,0,0))
 
 /datum/client_colour/monochrome
 	colour = list(rgb(77,77,77), rgb(150,150,150), rgb(28,28,28), rgb(0,0,0))

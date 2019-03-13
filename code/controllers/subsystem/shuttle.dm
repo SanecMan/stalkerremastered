@@ -63,7 +63,7 @@ SUBSYSTEM_DEF(shuttle)
 		supply_packs[P.type] = P
 
 	initial_load()
-
+	/*
 	if(!arrivals)
 		WARNING("No /obj/docking_port/mobile/arrivals placed on the map!")
 	if(!emergency)
@@ -72,11 +72,12 @@ SUBSYSTEM_DEF(shuttle)
 		WARNING("No /obj/docking_port/mobile/emergency/backup placed on the map!")
 	if(!supply)
 		WARNING("No /obj/docking_port/mobile/supply placed on the map!")
+	*/ //Disable SPAM
 	return ..()
 
 /datum/controller/subsystem/shuttle/proc/initial_load()
-	if(!istype(manipulator))
-		CRASH("No shuttle manipulator found.")
+	//if(!istype(manipulator))
+		//CRASH("No shuttle manipulator found.")
 
 	for(var/s in stationary)
 		var/obj/docking_port/stationary/S = s
@@ -203,7 +204,7 @@ SUBSYSTEM_DEF(shuttle)
 			to_chat(user, "The emergency shuttle has been disabled by CentCom.")
 			return
 
-	call_reason = trim(html_encode(call_reason))
+	call_reason = ph2up(trim(html_encode(call_reason)))
 
 	if(length(call_reason) < CALL_SHUTTLE_REASON_LENGTH && seclevel2num(get_security_level()) > SEC_LEVEL_GREEN)
 		to_chat(user, "You must provide a reason.")

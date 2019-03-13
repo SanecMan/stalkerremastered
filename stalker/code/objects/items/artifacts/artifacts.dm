@@ -143,7 +143,7 @@
 /obj/item/artifact/droplet
 	name = "droplet"
 	desc = "Формируетс&#255; аномалией Жарка при высоких температурах. Внешне выгл&#255;дит как почерневшее каплевидное образование с гл&#255;нцевой поверхностью, покрытое трещинами"
-	eng_desc = "Formed in the Burner anomaly at high temperatures. From the exterior looks like a tear-like shade compound with a glossy surface, covered in cracks."
+	eng_desc = "Formed in the fireer anomaly at high temperatures. From the exterior looks like a tear-like shade compound with a glossy surface, covered in cracks."
 	icon_state = "droplet"
 	art_armor = list(rad = 10)
 	radiation = -1
@@ -159,7 +159,7 @@
 /obj/item/artifact/fireball
 	name = "fireball"
 	desc = "Кристаллизируетс&#255; в аномалии «Жарка». Хорошо боретс&#255; с радиоактивностью, хот&#255; ускоренный энергообмен изнашивает мышцы двигательного аппарата. Долго бежать не получитс&#255;. Артефакт излучает тепло."
-	eng_desc = "Crystallizes in the anomaly Burner. Fights well with radioactivity, though the heightened rate of energy exchange wears out the muscles of the moving apparatus. Won't be able to run for long. Artifact emits heat."
+	eng_desc = "Crystallizes in the anomaly fireer. Fights well with radioactivity, though the heightened rate of energy exchange wears out the muscles of the moving apparatus. Won't be able to run for long. Artifact emits heat."
 	icon_state = "fireball"
 	art_armor = list(rad = 15)
 	radiation = -2
@@ -168,7 +168,7 @@
 /obj/item/artifact/crystal
 	name = "crystal"
 	desc = "Получаетс&#255; при попадании т&#255;желого металла в аномалию «Жарка». Этот артефакт замечательно выводит радиацию. Такой артефакт высоко ценитс&#255; сталкерами, и мало где его можно добыть."
-	eng_desc = "Is created when heavy metals fall into the Burner anomaly. This artifact eliminates radiation wonderfully. It is highly valued by stalkers and hard to find."
+	eng_desc = "Is created when heavy metals fall into the fireer anomaly. This artifact eliminates radiation wonderfully. It is highly valued by stalkers and hard to find."
 	icon_state = "crystal"
 	art_armor = list()
 	radiation = -5
@@ -307,8 +307,8 @@
 		return 1
 	return 0
 
-/obj/item/storage/belt/stalker/artifact_belt/remove_from_storage(obj/item/W, atom/new_location, burn = 0)
-	if(..(W, new_location, burn) && istype(W, /obj/item/artifact))
+/obj/item/storage/belt/stalker/artifact_belt/remove_from_storage(obj/item/W, atom/new_location, fire = 0)
+	if(..(W, new_location, fire) && istype(W, /obj/item/artifact))
 		var/obj/item/artifact/artifact = W
 		var/mob/living/carbon/mob = loc
 		for(var/i=1,i<=artifact.art_armor.len,i++)

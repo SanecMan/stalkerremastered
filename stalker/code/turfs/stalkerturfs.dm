@@ -16,7 +16,7 @@
 	dug = 1
 
 /obj/structure/grille/stalker
-	desc = "Хороший, крепкий железный забор."
+	desc = "Крепкий железный забор."
 	name = "fence"
 	icon = 'stalker/icons/structure.dmi'
 	icon_state = "fence1"
@@ -56,7 +56,7 @@
 	return
 
 /obj/structure/grille/stalker/wood
-	desc = "Хороший, старый дерев&#255;нный забор."
+	desc = "Старый дерев&#255;нный забор."
 	icon_state = "zabor_horizontal1"
 	density = 1
 	opacity = 0
@@ -87,6 +87,11 @@ obj/structure/grille/stalker/beton/CanPass(atom/movable/mover, turf/target, heig
 /turf/open/stalker
 	name = "stalker turf"
 	icon = 'stalker/icons/grass.dmi'
+	//light_range = 3
+
+/turf/open/stalker/Initialize()
+	. = ..()
+	flags_1 |= GLOBAL_LIGHT_TURF_1
 
 /turf/open/stalker/floor
 	name = "Grass"
@@ -95,9 +100,11 @@ obj/structure/grille/stalker/beton/CanPass(atom/movable/mover, turf/target, heig
 	layer = TURF_LAYER
 	plane = GAME_PLANE
 	overlay_priority = 0
+	footstep = FOOTSTEP_TILE
 
 /turf/open/stalker/floor/digable
-
+	footstep = FOOTSTEP_GRASS
+	barefootstep = FOOTSTEP_GRASS
 
 /turf/open/stalker/floor/digable/grass
 	icon = 'stalker/icons/zemlya.dmi'
@@ -160,6 +167,8 @@ var/global/list/AsphaltEdgeCache
 	icon_state = "tropa"
 	layer = 2
 	overlay_priority = 2
+	footstep = FOOTSTEP_SAND
+	barefootstep = FOOTSTEP_SAND
 
 var/global/list/TropaEdgeCache
 
@@ -226,6 +235,8 @@ var/global/list/WhiteRoadCache
 	icon_state = "gryaz1"
 	layer = 2.01
 	overlay_priority = 4
+	footstep = FOOTSTEP_GRASS
+	barefootstep = FOOTSTEP_GRASS
 
 var/global/list/GryazEdgeCache
 
@@ -294,6 +305,11 @@ var/global/list/GryazEdgeCache
 	layer = TURF_LAYER
 	overlay_priority = 5
 	var/busy = 0
+	slowdown = 2
+	footstep = FOOTSTEP_WATER
+	barefootstep = FOOTSTEP_WATER
+	clawfootstep = FOOTSTEP_WATER
+	heavyfootstep = FOOTSTEP_WATER
 
 /turf/open/stalker/floor/water/attack_hand(mob/living/user)
 	if(!user || !istype(user))
@@ -431,6 +447,9 @@ var/global/list/WaterEdgeCache
 /turf/open/stalker/floor/wood
 	icon = 'stalker/icons/floor.dmi'
 	name = "floor"
+	footstep = FOOTSTEP_WOOD
+	barefootstep = FOOTSTEP_WOOD
+	clawfootstep = FOOTSTEP_WOOD_CLAW
 
 /turf/open/stalker/floor/wood/brown
 	icon_state = "wooden_floor"
@@ -459,6 +478,8 @@ var/global/list/WaterEdgeCache
 	name = "dirt"
 	icon = 'stalker/icons/pol_agroprom.dmi'
 	icon_state = "gryaz1"
+	footstep = FOOTSTEP_GRASS
+	barefootstep = FOOTSTEP_GRASS
 
 /turf/open/stalker/floor/agroprom/gryaz/New()
 	icon_state = "gryaz[rand(1, 11)]"

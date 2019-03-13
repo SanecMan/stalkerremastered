@@ -42,6 +42,15 @@
 	if(stat != DEAD)
 		handle_hygiene()
 
+	if(stat != DEAD)
+		handle_special_effects() //psyloss
+
+	if(stat != DEAD)
+		handle_suit_durability()
+
+	if(stat != DEAD)
+		handle_artifacts()
+
 	//Update our name based on whether our face is obscured/disfigured
 	name = get_visible_name()
 
@@ -50,6 +59,80 @@
 	if(stat != DEAD)
 		return 1
 
+/mob/living/carbon/human/proc/handle_artifacts()
+	//src.global_armor = list(melee = 0, bullet = 0, laser = 0,energy = 0, bomb = 0, bio = 0, rad = 0, psy = 0)
+
+	if(src.belt && istype(src.belt, /obj/item/storage/belt/stalker/artifact_belt))
+		for(var/obj/item/artifact/A in src.belt.contents)
+			A.Think(src)
+			//for(var/armor_ in A.art_armor)
+			//	global_armor[armor_] = A.art_armor[armor_]
+
+	if(src.wear_suit && istype(src.wear_suit, /obj/item/clothing/suit))
+		var/obj/item/clothing/suit/S = src.wear_suit
+		if(S.internal_slot)
+			for(var/obj/item/artifact/A in S.internal_slot.contents)
+				A.Think(src)
+				//for(var/armor_ in A.art_armor)
+				//	global_armor[armor_] += A.art_armor[armor_]
+
+/mob/living/carbon/human/proc/handle_suit_durability()
+	if(health > 0)
+		return
+	if(!src.wear_suit)
+		return
+
+	var/obj/item/clothing/suit/S = src.wear_suit
+	/*
+	if(S.internal_slot && istype(S.internal_slot, /obj/item/weapon/storage/internal_slot/container))
+		for(var/obj/item/weapon/artifact/A in S.internal_slot.contents)
+			A.Think(src)
+	*/
+	if(S.durability == -1)
+		return
+
+	if(((S.durability/initial(S.durability))*100 - 50) > 0)
+		S.durability = ((S.durability/initial(S.durability))*100 - 50) / 100 * initial(S.durability)
+
+	if(S.durability <= 0)
+		visible_message("<span class='danger'>[S] развалилс&#255; пр&#255;мо на [src]</span>", "<span class='warning'>[S] развалилс&#255; пр&#255;мо на вас!</span>")
+		qdel(S)
+
+	update_icons()
+
+/mob/living/carbon/human/proc/handle_special_effects()
+	var/k = (psyloss/200)
+
+	switch(psyloss)
+		if(200)
+			if(slurring < 100)
+				apply_effect(rand(20, 35), EFFECT_SLUR, 0)
+			//if(zombiefied == MENTAL_STABLE)
+			//	zombiefied = MENTAL_ZOMBIE
+			return
+		if(150 to 199)
+			if(slurring < 100)
+				apply_effect(rand(20, 35), EFFECT_SLUR, 0)
+			if(prob(25))
+				shake_camera(src, 5 * k, 1)
+			return
+
+		if(100 to 150)
+			if(slurring < 50)
+				apply_effect(rand(20, 35), EFFECT_SLUR, 0)
+			if(prob(10))
+				shake_camera(src, 3 * k, 1)
+			return
+
+		if(25 to 100)
+			if(slurring < 25)
+				apply_effect(rand(0, 10), EFFECT_SLUR, 0)
+			if(prob(5))
+				shake_camera(src, 1 * k, 1)
+			return
+
+		if(0 to 25)
+			return
 
 /mob/living/carbon/human/calculate_affecting_pressure(pressure)
 	if (wear_suit && head && istype(wear_suit, /obj/item/clothing) && istype(head, /obj/item/clothing))

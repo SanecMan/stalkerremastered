@@ -56,7 +56,7 @@ GLOBAL_LIST_EMPTY(spawned_artifacts)
 		//var/obj/item/artifact/lootspawn_art = lootspawn
 		var/turf/T = get_turf(src)
 		var/obj/item/artifact/O = new lootspawn(T)
-		invisibility = 100
+		O.invisibility = 100
 
 		switch(z)
 			if(4)
@@ -74,11 +74,11 @@ GLOBAL_LIST_EMPTY(spawned_artifacts)
 					SpawnArtifact()
 					return
 			if(1)
-				if(O.level_s > 4)
+				if(O.level_s > 3)
 					SpawnArtifact()
 					return
 
-		//RandomMove(O)
+		RandomMove(O)
 		GLOB.spawned_artifacts += O
 
 /obj/anomaly/proc/RandomMove(spawned)
@@ -92,8 +92,8 @@ GLOBAL_LIST_EMPTY(spawned_artifacts)
 	var/new_y = T.y + rand(-1, 1)
 	O.Move(locate(new_x, new_y, T.z))
 
-	if(istype(get_turf(O), /turf/open/stalker))
-		RandomMove(spawned)
+	//if(istype(get_turf(O), /turf/open/stalker))
+	//	RandomMove(spawned)
 
 /obj/anomaly/Crossed(atom/A)
 	..()
@@ -137,7 +137,7 @@ GLOBAL_LIST_EMPTY(spawned_artifacts)
 		return
 
 	if(lasttime + (cooldown * 10) > world.time)
-		addtimer(src, "Think", (lasttime + (cooldown * 10) - world.time))
+		addtimer(CALLBACK(src, .proc/Think), (lasttime + (cooldown * 10) - world.time))
 		return
 
 	incooldown = 1
@@ -231,6 +231,7 @@ GLOBAL_LIST_EMPTY(spawned_artifacts)
 			if(istype(L, /mob/living/simple_animal/hostile))
 				L.apply_damage(40, BURN, null, 0)
 			else
+				L.apply_damage(20, BURN, null, 0)
 				L.fire_act()
 	return
 
@@ -270,7 +271,7 @@ GLOBAL_LIST_EMPTY(spawned_artifacts)
 				/obj/item/artifact/pustishka = 0.5
 				)
 
-/obj/anomaly/electro/New()
+/obj/anomaly/electro/Initialize()
 	..()
 	SSobj.processing.Add(src)
 	src.set_light(idle_luminosity)
@@ -297,7 +298,7 @@ GLOBAL_LIST_EMPTY(spawned_artifacts)
 				/obj/item/artifact/soul = 1
 				)
 
-/obj/anomaly/karusel/New()
+/obj/anomaly/karusel/Initialize()
 	..()
 	SSobj.processing.Add(src)
 
@@ -352,7 +353,7 @@ GLOBAL_LIST_EMPTY(spawned_artifacts)
 				/obj/item/artifact/maminibusi = 0.5
 				)
 
-/obj/anomaly/jarka/New()
+/obj/anomaly/jarka/Initialize()
 	..()
 	SSobj.processing.Add(src)
 	src.set_light(idle_luminosity)
@@ -440,7 +441,7 @@ GLOBAL_LIST_EMPTY(spawned_artifacts)
 				/obj/item/artifact/firefly = 1.5
 				)
 
-/obj/anomaly/holodec/New()
+/obj/anomaly/holodec/Initialize()
 	..()
 	SSobj.processing.Add(src)
 
@@ -512,7 +513,7 @@ GLOBAL_LIST_EMPTY(spawned_artifacts)
 	playsound(src.loc, src.sound, 50, 1, channel = 0)
 	return
 
-/obj/anomaly/holodec/splash/New()
+/obj/anomaly/holodec/splash/Initialize()
 	//..()
 	spawn_time = world.time
 	SSobj.processing.Add(src)
@@ -579,7 +580,7 @@ GLOBAL_LIST_EMPTY(spawned_artifacts)
 
 	qdel(I)
 
-/obj/anomaly/puh/New()
+/obj/anomaly/puh/Initialize()
 	..()
 	inactive_icon_state = pick("puh","puh2")
 	icon_state = inactive_icon_state
@@ -624,7 +625,7 @@ GLOBAL_LIST_EMPTY(spawned_artifacts)
 	sound = 'stalker/sound/pda/geiger_6.ogg'
 	icon_state = "rad_high"
 
-/obj/rad/New()
+/obj/rad/Initialize()
 	..()
 	SSobj.processing += (src)
 

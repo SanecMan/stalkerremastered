@@ -28,6 +28,7 @@
 
 	var/needs_update = LIGHTING_NO_UPDATE    // Whether we are queued for an update.
 
+	var/lightFlag = NONE //tags such as GLOBAL_LIGHTING - No other use so far
 
 /datum/light_source/New(var/atom/owner, var/atom/top)
 	source_atom = owner // Set our new owner.
@@ -44,6 +45,10 @@
 	light_color = source_atom.light_color
 
 	parse_light_color()
+
+	//Check if we are the light for an outside turf, set flag
+	if(source_atom.flags_1 & GLOBAL_LIGHT_TURF_1)
+		lightFlag |= GLOBAL_LIGHTING
 
 	update()
 
@@ -83,6 +88,10 @@
 
 		if (top_atom != source_atom)
 			LAZYADD(top_atom.light_sources, src) // Add ourselves to the light sources of our new top atom.
+
+		//Check if we are the light for an outside turf, set flag
+		if(source_atom.flags_1 & GLOBAL_LIGHT_TURF_1)
+			lightFlag |= GLOBAL_LIGHTING
 
 	EFFECT_UPDATE(LIGHTING_CHECK_UPDATE)
 
@@ -230,14 +239,23 @@
 	var/datum/lighting_corner/C
 	var/turf/T
 	if (source_turf)
-		var/oldlum = source_turf.luminosity
-		source_turf.luminosity = CEILING(light_range, 1)
-		for(T in view(CEILING(light_range, 1), source_turf))
+		if(checkAdjacent() & isturf(source_atom))
+			T = source_atom
+			turfs += T
 			for (thing in T.get_corners(source_turf))
 				C = thing
 				corners[C] = 0
-			turfs += T
-		source_turf.luminosity = oldlum
+		else
+			var/oldlum = source_turf.luminosity
+			source_turf.luminosity = CEILING(light_range, 1)
+			for(T in view(CEILING(light_range, 1), source_turf))
+				if( (lightFlag & GLOBAL_LIGHTING) && (T.flags_1 & GLOBAL_LIGHT_TURF_1 ) && (T != source_atom))
+					continue
+				for (thing in T.get_corners(source_turf))
+					C = thing
+					corners[C] = 0
+				turfs += T
+			source_turf.luminosity = oldlum
 
 	LAZYINITLIST(affecting_turfs)
 	var/list/L = turfs - affecting_turfs // New turfs, add us to the affecting lights of them.
@@ -291,6 +309,19 @@
 
 	UNSETEMPTY(effect_str)
 	UNSETEMPTY(affecting_turfs)
+
+/datum/light_source/proc/checkAdjacent()
+	if(lightFlag & GLOBAL_LIGHTING)
+		for(var/turf/T in GLOB.alldirs)
+			if(!(T.flags_1 & GLOBAL_LIGHT_TURF_1))
+				return 0
+	else
+		return 0
+	return 1
+
+
+
+
 
 #undef EFFECT_UPDATE
 #undef LUM_FALLOFF

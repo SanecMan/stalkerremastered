@@ -49,7 +49,7 @@
 
 //Runs byond's sanitization proc along-side sanitize_simple
 /proc/sanitize(t,list/repl_chars = null)
-	return html_encode(sanitize_simple(t,repl_chars))
+	return rhtml_encode(sanitize_simple(t,repl_chars))
 
 //Runs sanitize and strip_html_simple
 //I believe strip_html_simple() is required to run first to prevent '<' from displaying as '&lt;' after sanitize() calls byond's html_encode()
@@ -59,7 +59,7 @@
 //Runs byond's sanitization proc along-side strip_html_simple
 //I believe strip_html_simple() is required to run first to prevent '<' from displaying as '&lt;' that html_encode() would cause
 /proc/adminscrub(t,limit=MAX_MESSAGE_LEN)
-	return copytext((html_encode(strip_html_simple(t))),1,limit)
+	return copytext((rhtml_encode(strip_html_simple(t))),1,limit)
 
 
 //Returns null if there is any bad text in the string
@@ -71,8 +71,8 @@
 		switch(text2ascii(text,i))
 			if(62,60,92,47)
 				return			//rejects the text if it contains these bad characters: <, >, \ or /
-			if(127 to 255)
-				return			//rejects weird letters like �
+//			if(127 to 255)
+//				return			//rejects weird letters like �
 			if(0 to 31)
 				return			//more weird stuff
 			if(32)
@@ -87,17 +87,17 @@
 /proc/stripped_input(mob/user, message = "", title = "", default = "", max_length=MAX_MESSAGE_LEN, no_trim=FALSE)
 	var/name = input(user, message, title, default) as text|null
 	if(no_trim)
-		return copytext(html_encode(name), 1, max_length)
+		return copytext(rhtml_encode(name), 1, max_length)
 	else
-		return trim(html_encode(name), max_length) //trim is "outside" because html_encode can expand single symbols into multiple symbols (such as turning < into &lt;)
+		return trim(rhtml_encode(name), max_length) //trim is "outside" because html_encode can expand single symbols into multiple symbols (such as turning < into &lt;)
 
 // Used to get a properly sanitized multiline input, of max_length
 /proc/stripped_multiline_input(mob/user, message = "", title = "", default = "", max_length=MAX_MESSAGE_LEN, no_trim=FALSE)
 	var/name = input(user, message, title, default) as message|null
 	if(no_trim)
-		return copytext(html_encode(name), 1, max_length)
+		return copytext(rhtml_encode(name), 1, max_length)
 	else
-		return trim(html_encode(name), max_length)
+		return trim(rhtml_encode(name), max_length)
 
 //Filters out undesirable characters from names
 /proc/reject_bad_name(t_in, allow_numbers=0, max_length=MAX_NAME_LEN)
@@ -270,7 +270,7 @@
 
 //Returns a string with the first element of the string capitalized.
 /proc/capitalize(t as text)
-	return uppertext(copytext(t, 1, 2)) + copytext(t, 2)
+	return ruscapitalize(uppertext(copytext(t, 1, 2)) + copytext(t, 2))
 
 //Centers text by adding spaces to either side of the string.
 /proc/dd_centertext(message, length)
@@ -658,7 +658,7 @@ GLOBAL_LIST_INIT(binary, list("0","1"))
 	var/list/oldjson = list()
 	var/list/oldentries = list()
 	if(fexists(log))
-		oldjson = json_decode(file2text(log))
+		oldjson = r_json_decode(file2text(log))
 		oldentries = oldjson["data"]
 	if(!isemptylist(oldentries))
 		for(var/string in accepted)
@@ -676,7 +676,7 @@ GLOBAL_LIST_INIT(binary, list("0","1"))
 
 	var/list/tosend = list()
 	tosend["data"] = finalized
-	WRITE_FILE(log, json_encode(tosend))
+	WRITE_FILE(log, r_json_encode(tosend))
 
 //Used for applying byonds text macros to strings that are loaded at runtime
 /proc/apply_text_macros(string)

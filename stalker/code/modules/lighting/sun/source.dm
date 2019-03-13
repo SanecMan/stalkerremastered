@@ -54,7 +54,7 @@
 #define EFFECT_UPDATE                   \
 	if (!needs_update)                  \
 	{                                   \
-		sunlighting_update_lights += src;  \
+		GLOB.sunlighting_update_lights += src;  \
 		needs_update            = TRUE; \
 	}
 

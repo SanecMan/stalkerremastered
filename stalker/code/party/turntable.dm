@@ -350,7 +350,7 @@
 		if(!C || !(C.mob))
 			continue
 
-		if(!playing || !(get_area(C.mob) in A.related))
+		if(!playing || (get_area(C.mob) != A))
 			continue
 
 		C.mob.music.status = SOUND_STREAM
@@ -382,9 +382,8 @@
 
 	//MusicSwitch()
 	var/area/A = get_area(src)
-	for(var/area/RA in A.related)
-		for(var/obj/machinery/party/lasermachine/L in RA)
-			L.turnon(L.dir)
+	for(var/obj/machinery/party/lasermachine/L in A)
+		L.turnon(L.dir)
 
 /obj/machinery/party/turntable/proc/turn_off()
 	if(!playing)
@@ -396,15 +395,14 @@
 	for(var/client/C in melomans)
 		//C.jukeboxplaying = 0
 		if(C.mob)
-			C.mob << sound(null, channel = TURNTABLE_CHANNEL, wait = 0)
+			C.mob << sound(null, channel = CHANNEL_JUKEBOX, wait = 0)
 		melomans.Remove(C)
 
 	playing = 0
 
 	var/area/A = get_area(src)
-	for(var/area/RA in A.related)
-		for(var/obj/machinery/party/lasermachine/L in RA)
-			L.turnoff()
+	for(var/obj/machinery/party/lasermachine/L in A)
+		L.turnoff()
 
 /obj/machinery/party/turntable/proc/set_volume(var/new_volume)
 	volume = max(0, min(100, new_volume))
@@ -425,7 +423,7 @@
 		if(!C || !C.mob)
 			continue
 
-		if(!(get_area(C.mob) in A.related))
+		if(get_area(C.mob) != A)
 			continue
 
 		//if(!C.mob.client.jukeboxplaying)
@@ -444,18 +442,18 @@
 			continue
 
 		if(!(C.mob))
-			C << sound(null, channel = TURNTABLE_CHANNEL, wait = 0)
+			C << sound(null, channel = CHANNEL_JUKEBOX, wait = 0)
 			melomans.Remove(C)
 			continue
 
-		if(!playing || !(get_area(C.mob) in A.related))
+		if(!playing || (get_area(C.mob) != A))
 			if(C.mob.music)
 				C.mob.music.status = SOUND_STREAM | SOUND_UPDATE
 				C.mob.music.volume = 0
 				C.mob << C.mob.music
 				C.mob.music.status = SOUND_STREAM
 			else
-				C.mob << sound(null, channel = TURNTABLE_CHANNEL, wait = 0)
+				C.mob << sound(null, channel = CHANNEL_JUKEBOX, wait = 0)
 			//C.jukeboxplaying = 0
 			melomans.Remove(C)
 			continue
@@ -464,11 +462,11 @@
 			create_sound(C.mob)
 			continue
 
-		//if(!C.mob.music.transition && C.mob.music.file != track.path)
-		//	C.mob.music.file = track.path
-		//	//C.mob.music.status = SOUND_STREAM
-		//else
-		C.mob.music.status = SOUND_STREAM | SOUND_UPDATE
+		if(!C.mob.music.transition && C.mob.music.file != track.path)
+			C.mob.music.file = track.path
+		//	C.mob.music.status = SOUND_STREAM
+		else
+			C.mob.music.status = SOUND_STREAM | SOUND_UPDATE
 
 		C.mob.music.volume = volume
 		C.mob << C.mob.music
@@ -478,14 +476,14 @@
 	if(!M.music || M.music.file != track.path)
 		var/sound/S = sound(track.path)
 		S.repeat = 0
-		S.channel = TURNTABLE_CHANNEL
+		S.channel = CHANNEL_JUKEBOX
 		S.falloff = 2
 		S.wait = 0
 		S.volume = 0
 		S.status = SOUND_STREAM //SOUND_STREAM
 		S.environment = get_area(src).environment
 		M.music = S
-		M << S
+		SEND_SOUND(M, S)
 	else
 		M.music.status = SOUND_STREAM | SOUND_UPDATE
 		M.music.volume = volume

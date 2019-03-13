@@ -3,19 +3,19 @@
 	set name = "Say"
 	set category = "IC"
 	if(GLOB.say_disabled)	//This is here to try to identify lag problems
-		to_chat(usr, "<span class='danger'>Speech is currently admin-disabled.</span>")
+		to_chat(usr, "<span class='danger'>Разговоры отключены, приятного дня.</span>")
 		return
 	if(message)
-		say(message)
+		say(ruscapitalize(message))
 
 
 /mob/verb/whisper_verb(message as text)
 	set name = "Whisper"
 	set category = "IC"
 	if(GLOB.say_disabled)	//This is here to try to identify lag problems
-		to_chat(usr, "<span class='danger'>Speech is currently admin-disabled.</span>")
+		to_chat(usr, "<span class='danger'>Шепот отключен, приятного дня.</span>")
 		return
-	whisper(message)
+	whisper(ruscapitalize(message))
 
 /mob/proc/whisper(message, datum/language/language=null)
 	say(message, language) //only living mobs actually whisper, everything else just talks
@@ -25,11 +25,12 @@
 	set category = "IC"
 
 	if(GLOB.say_disabled)	//This is here to try to identify lag problems
-		to_chat(usr, "<span class='danger'>Speech is currently admin-disabled.</span>")
+		to_chat(usr, "<span class='danger'>Эмоуты отключены, приятного дня.</span>")
 		return
 
 	message = trim(copytext(sanitize(message), 1, MAX_MESSAGE_LEN))
-
+	var/ckeyname = "[usr.ckey]/[usr.name]"
+	//webhook_send_me(ckeyname, message)
 	usr.emote("me",1,message,TRUE)
 
 /mob/proc/say_dead(var/message)
@@ -37,7 +38,7 @@
 	var/alt_name = ""
 
 	if(GLOB.say_disabled)	//This is here to try to identify lag problems
-		to_chat(usr, "<span class='danger'>Speech is currently admin-disabled.</span>")
+		to_chat(usr, "<span class='danger'>Дедчат отключен, приятного дня.</span>")
 		return
 
 	var/jb = is_banned_from(ckey, "OOC")
@@ -45,14 +46,14 @@
 		return
 
 	if(jb)
-		to_chat(src, "<span class='danger'>You have been banned from deadchat.</span>")
+		to_chat(src, "<span class='danger'>Вам запретили общаться в дедчате.</span>")
 		return
 
 
 
 	if (src.client)
 		if(src.client.prefs.muted & MUTE_DEADCHAT)
-			to_chat(src, "<span class='danger'>You cannot talk in deadchat (muted).</span>")
+			to_chat(src, "<span class='danger'>Вы не можете говорить в дедчате (мут).</span>")
 			return
 
 		if(src.client.handle_spam_prevention(message,MUTE_DEADCHAT))
@@ -67,15 +68,16 @@
 		else
 			name = real_name
 		if(name != real_name)
-			alt_name = " (died as [real_name])"
+			alt_name = " (умер как [real_name])"
 
 	var/K
 
 	if(key)
 		K = src.key
 
+	message = ruscapitalize(message)
 	var/spanned = src.say_quote(message, get_spans())
-	var/rendered = "<span class='game deadsay'><span class='prefix'>DEAD:</span> <span class='name'>[name]</span>[alt_name] <span class='message'>[emoji_parse(spanned)]</span></span>"
+	var/rendered = "<span class='game deadsay'><span class='prefix'>ПРИЗРАК:</span> <span class='name'>[name]</span>[alt_name] <span class='message'>[emoji_parse(spanned)]</span></span>"
 	log_talk(message, LOG_SAY, tag="DEAD")
 	deadchat_broadcast(rendered, follow_target = src, speaker_key = K)
 

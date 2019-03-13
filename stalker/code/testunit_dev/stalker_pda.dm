@@ -373,14 +373,12 @@ var/global/global_lentahtml = ""
 					<table border=0 height=\"314\" width=\"455\">\
 						<tr>\
 							<td valign=\"top\" align=\"left\">"
-					//if(user.client && (user.client.prefs.chat_toggles & CHAT_LANGUAGE))
-					//	mainhtml +="\
-					//	<div align=\"right\"><a style=\"color:#c10000;\" align=\"center\" href='byond://?src=\ref[src];choice=load_cache'>\[LOAD CACHE\]</a><a style=\"color:#c10000;\" align=\"center\" href='byond://?src=\ref[src];choice=exit'>\[EXIT\]</a><a href='byond://?src=\ref[src];choice=title'>\[-\]</a> <a href='byond://?src=\ref[src];choice=close'>\[X\]</a></div>\
-					//	<div align = \"center\" > | <a href='byond://?src=\ref[src];choice=rotate'>Rotate photo</a> | <a href='byond://?src=\ref[src];choice=make_avatar'>Change profile photo</a> | </div>"
-					//else
-					//	mainhtml +="\
-					//	<div align=\"right\"><a style=\"color:#c10000;\" align=\"center\" href='byond://?src=\ref[src];choice=exit'>\[ВЫХОД\]</a><a href='byond://?src=\ref[src];choice=title'>\[-\]</a> <a href='byond://?src=\ref[src];choice=close'>\[X\]</a></div>\
-					//	<div align = \"center\" > | <a href='byond://?src=\ref[src];choice=rotate'>Повернуть фото профил&#x44F;</a> | <a href='byond://?src=\ref[src];choice=make_avatar'>Сменить фото профил&#x44F;</a> | </div>"
+					if(user.client && (user.client.prefs.chat_toggles & CHAT_LANGUAGE))
+						mainhtml +="\
+						<div align=\"right\"><a style=\"color:#c10000;\" align=\"center\" href='byond://?src=\ref[src];choice=load_cache'>\[LOAD CACHE\]</a><a style=\"color:#c10000;\" align=\"center\" href='byond://?src=\ref[src];choice=exit'>\[EXIT\]</a><a href='byond://?src=\ref[src];choice=title'>\[-\]</a> <a href='byond://?src=\ref[src];choice=close'>\[X\]</a></div>"
+					else
+						mainhtml +="\
+						<div align=\"right\"><a style=\"color:#c10000;\" align=\"center\" href='byond://?src=\ref[src];choice=exit'>\[ВЫХОД\]</a><a href='byond://?src=\ref[src];choice=title'>\[-\]</a> <a href='byond://?src=\ref[src];choice=close'>\[X\]</a></div>"
 
 					mainhtml +="\
 							</td>\
@@ -1209,9 +1207,9 @@ var/global/global_lentahtml = ""
 		faction_owner += " - leader"
 
 	if(isfactionchat)
-		C << russian_html2text("<p style=\"margin-top: 0px; margin-bottom: 0px;\">\icon[KPK]<b style=\"margin-top: 0px; margin-bottom: 0px;\"><font style=\"margin-top: 0px; margin-bottom: 0px;\" color=\"[factioncolor]\">[name_owner]\[[faction_owner]\](faction chat):</font></b><br><font color=\"#006699\"> \"[msg]\"</font></p>")
+		C << up2ph("<p style=\"margin-top: 0px; margin-bottom: 0px;\">\icon[KPK]<b style=\"margin-top: 0px; margin-bottom: 0px;\"><font style=\"margin-top: 0px; margin-bottom: 0px;\" color=\"[factioncolor]\">[name_owner]\[[faction_owner]\](faction chat):</font></b><br><font color=\"#006699\"> \"[msg]\"</font></p>")
 	else
-		C << russian_html2text("<p style=\"margin-top: 0px; margin-bottom: 0px;\">\icon[KPK]<b style=\"margin-top: 0px; margin-bottom: 0px;\"><font style=\"margin-top: 0px; margin-bottom: 0px;\" color=\"[factioncolor]\">[name_owner]\[[faction_owner]\]:</font></b><br><font color=\"#006699\"> \"[msg]\"</font></p>")
+		C << up2ph("<p style=\"margin-top: 0px; margin-bottom: 0px;\">\icon[KPK]<b style=\"margin-top: 0px; margin-bottom: 0px;\"><font style=\"margin-top: 0px; margin-bottom: 0px;\" color=\"[factioncolor]\">[name_owner]\[[faction_owner]\]:</font></b><br><font color=\"#006699\"> \"[msg]\"</font></p>")
 
 	if(KPK_owner)
 		if((KPK != KPK_owner || selfsound) && KPK.switches & FEED_SOUND)
@@ -1242,9 +1240,9 @@ var/global/global_lentahtml = ""
 
 		if(istype(M, /mob/dead/observer))
 			if(KPK_owner && KPK_owner.loc)
-				M << russian_html2text("<a href=?src=\ref[M];follow=\ref[KPK_owner.loc]>(F)</a> [msg]")
+				M << up2ph("<a href=?src=\ref[M];follow=\ref[KPK_owner.loc]>(F)</a> [msg]")
 			else
-				M << russian_html2text("<a href=?src=\ref[M];follow=\ref[KPK_owner]>(F)</a> [msg]")
+				M << up2ph("<a href=?src=\ref[M];follow=\ref[KPK_owner]>(F)</a> [msg]")
 		else
 			M << "[msg]"
 

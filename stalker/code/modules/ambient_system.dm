@@ -50,7 +50,7 @@
 
 		if(A.ambient_environment)
 
-			if(A.ambient_environment_night && (SSsunlight.current_step == STEP_EVENING || SSsunlight.current_step == STEP_NIGHT))
+			if(A.ambient_environment_night && (SSnightcycle.currentTime == 243000 || SSnightcycle.currentTime == 810000))
 				ambient_environment = sound(file = safepick(A.ambient_environment_night))
 			else
 				ambient_environment = sound(file = safepick(A.ambient_environment))
@@ -68,9 +68,9 @@
 
 		if(A.ambient_background)
 
-			if(A.ambient_background[SSsunlight.current_step])
-				ambient_background = sound(file = A.ambient_background[SSsunlight.current_step])
-				ambient_background.real_cooldown = A.ambient_background_cooldown[SSsunlight.current_step]
+			if(A.ambient_background[SSnightcycle.currentTime])
+				ambient_background = sound(file = A.ambient_background[SSnightcycle.currentTime])
+				ambient_background.real_cooldown = A.ambient_background_cooldown[SSnightcycle.currentTime]
 
 			if(ambient_background)
 				////////////////////////
@@ -91,7 +91,7 @@
 		ambient_psy.last_time = world.time
 		ambient_psy.real_cooldown = 110
 		////////////////////////
-		//ambient_psy.Set_Sound(AMBIENT_PSY_CHANNEL, 60*(psyloss/200), 0, -1)
+		ambient_psy.Set_Sound(AMBIENT_PSY_CHANNEL, 60*(psyloss/200), 0, -1)
 		src << ambient_psy
 
 

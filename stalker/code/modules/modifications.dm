@@ -79,7 +79,7 @@ var/id_ = 0
 	var/cost = 5000
 	var/desc = "Это модификаци&#x44F;."
 	var/eng_desc = "This is modification"
-	var/list/add_armor = list(melee = 0, bullet = 0, laser = 0,energy = 0, bomb = 0, bio = 0, rad = 0, psy = 0)
+	var/list/add_armor = list(melee = 0, bullet = 0, laser = 0,energy = 0, bomb = 0, bio = 0, rad = 0, fire = 0, psy = 0)
 	var/id = null
 	var/tier = 1
 	var/modificated_type = null
@@ -131,7 +131,7 @@ var/id_ = 0
 	cost = 18000
 	desc = "Кевларовое покрытие защищает от пулевого проникновени&#x44F;." //&#x44F;
 	eng_desc = "Kevlar helmet coverage protects from bullets."
-	add_armor = list(melee = 0, bullet = 10, laser = 0,energy = 0, bomb = 0, bio = 0, rad = 0, psy = 0)
+	add_armor = list(melee = 0, bullet = 10, laser = 0,energy = 0, bomb = 0, bio = 0, rad = 0, fire = 0, psy = 0)
 	tier = 1
 
 /////////////////////////////////////MATERIAL - II TIER/////////////////////////////////////////////////////
@@ -140,7 +140,7 @@ var/id_ = 0
 	cost = 18000
 	desc = "Керамическа&#x44F; брон&#x44F; отлично защищает от взрывов и пулевого проникновени&#x44F;." //&#x44F;
 	eng_desc = "Ceramic armor provides great protection from bullets and explosions."
-	add_armor = list(melee = 0, bullet = 15, laser = 0,energy = 0, bomb = 10, bio = 0, rad = 0, psy = 0)
+	add_armor = list(melee = 0, bullet = 15, laser = 0,energy = 0, bomb = 10, bio = 0, rad = 0, fire = 0, psy = 0)
 	tier = 2
 
 /////////////////////////////////////PADDING - I TIER///////////////////////////////////////////////////////
@@ -149,7 +149,7 @@ var/id_ = 0
 	cost = 15000
 	desc = "Нашлемный модуль защиты от псионного воздействи&#x44F;." //&#x44F;
 	eng_desc = "Psionic protection module protects head and brain from psionic waves."
-	add_armor = list(melee = 0, bullet = 0, laser = 0,energy = 0, bomb = 0, bio = 0, rad = 0, psy = 15)
+	add_armor = list(melee = 0, bullet = 0, laser = 0,energy = 0, bomb = 0, bio = 0, rad = 0, fire = 0, psy = 15)
 	tier = 1
 
 /datum/data/modification/clothing/head/padding/filter
@@ -157,7 +157,7 @@ var/id_ = 0
 	cost = 15000
 	desc = "Установка фильтра защитит носителя от радиационного излучения." //&#x44F;
 	eng_desc = "Filter installation protects user from radiation."
-	add_armor = list(melee = 0, bullet = 0, laser = 0,energy = 0, bomb = 0, bio = 0, rad = 15, psy = 0)
+	add_armor = list(melee = 0, bullet = 0, laser = 0,energy = 0, bomb = 0, bio = 0, rad = 15, fire = 0, psy = 0)
 	tier = 1
 
 /////////////////////////////////////PADDING - II TIER///////////////////////////////////////////////////////
@@ -166,7 +166,7 @@ var/id_ = 0
 	cost = 30000
 	desc = "Улучшенный нашлемный модуль защиты от псионного воздействи&#x44F;." //&#x44F;
 	eng_desc = "Advanced psionic protection module protects head from psionic waves."
-	add_armor = list(melee = 0, bullet = 0, laser = 0,energy = 0, bomb = 0, bio = 0, rad = 0, psy = 25)
+	add_armor = list(melee = 0, bullet = 0, laser = 0,energy = 0, bomb = 0, bio = 0, rad = 0, fire = 0, psy = 25)
 	tier = 2
 
 /datum/data/modification/clothing/head/padding/filter_advanced
@@ -174,7 +174,7 @@ var/id_ = 0
 	cost = 25000
 	desc = "Установка улучшенного фильтра защитит не только от радиационного излучения, но и от кислотной атмосферы и высокой температуры." //&#x44F;
 	eng_desc = "Installation of advanced filter, protects user not only from radiation, but acidic atmosphere and high temperature."
-	add_armor = list(melee = 0, bullet = 0, laser = 5,energy = 0, bomb = 0, bio = 5, rad = 20, psy = 0)
+	add_armor = list(melee = 0, bullet = 0, laser = 5,energy = 0, bomb = 0, bio = 5, rad = 20, fire = 0, psy = 0)
 	tier = 2
 
 /////////////////////////////////////NIGHTVISION////////////////////////////////////////////////////////
@@ -190,7 +190,7 @@ var/id_ = 0
 	cost = 12000
 	desc = "Установка прибора ночного видень&#x44F; первого поколени&#x44F;."
 	eng_desc = "Installation of a I gerantion nightvision device."
-	add_armor = list(melee = 0, bullet = 0, laser = 0,energy = 0, bomb = 0, bio = 0, rad = 0, psy = 0)
+	add_armor = list(melee = 0, bullet = 0, laser = 0,energy = 0, bomb = 0, bio = 0, rad = 0, fire = 0, psy = 0)
 	id = "visor_head"
 	tier = 1
 
@@ -205,7 +205,7 @@ var/id_ = 0
 	cost = 25000
 	desc = "Установка прибора ночного видень&#x44F; второго поколени&#x44F;."
 	eng_desc = "Installation of a II generation nightvision device."
-	add_armor = list(melee = 0, bullet = 0, laser = 0,energy = 0, bomb = 0, bio = 0, rad = 0, psy = 0)
+	add_armor = list(melee = 0, bullet = 0, laser = 0,energy = 0, bomb = 0, bio = 0, rad = 0, fire = 0, psy = 0)
 	id = "visor_head"
 	tier = 2
 
@@ -236,7 +236,7 @@ var/id_ = 0
 	cost = 12000
 	desc = "Установка прибора ночного видень&#x44F; первого поколени&#x44F;."
 	eng_desc = "Installation of a I gerantion nightvision device."
-	add_armor = list(melee = 0, bullet = 0, laser = 0,energy = 0, bomb = 0, bio = 0, rad = 0, psy = 0)
+	add_armor = list(melee = 0, bullet = 0, laser = 0,energy = 0, bomb = 0, bio = 0, rad = 0, fire = 0, psy = 0)
 	id = "visor_mask"
 	tier = 1
 	modificated_type = /obj/item/clothing/mask/gas/stalker
@@ -252,7 +252,7 @@ var/id_ = 0
 	cost = 25000
 	desc = "Установка прибора ночного видень&#x44F; второго поколени&#x44F;."
 	eng_desc = "Installation of a II gerantion nightvision device."
-	add_armor = list(melee = 0, bullet = 0, laser = 0,energy = 0, bomb = 0, bio = 0, rad = 0, psy = 0)
+	add_armor = list(melee = 0, bullet = 0, laser = 0,energy = 0, bomb = 0, bio = 0, rad = 0, fire = 0, psy = 0)
 	id = "visor_mask"
 	tier = 2
 	modificated_type = /obj/item/clothing/mask/gas/stalker
@@ -304,7 +304,7 @@ var/id_ = 0
 	cost = 10000
 	desc = "Резинова&#x44F; подкладка ослабит воздействие электрического тока на тело." //&#x44F;
 	eng_desc = "Through the use of a specialized spray to coat the inner lining of your clothing, You can increase your clothing's protection against electrical anomalies."
-	add_armor = list(melee = 0, bullet = 0, laser = 0,energy = 10, bomb = 0, bio = 0, rad = 0, psy = 0)
+	add_armor = list(melee = 0, bullet = 0, laser = 0,energy = 10, bomb = 0, bio = 0, rad = 0, fire = 0, psy = 0)
 	tier = 1
 
 /datum/data/modification/clothing/suit/lining/thinsulate
@@ -312,7 +312,7 @@ var/id_ = 0
 	cost = 12000
 	desc = "Подкладка из особого материала \"thinsulate\" обеспечит хорошую теплоизол&#x44F;цию." //&#x44F;
 	eng_desc = "Through the use of specialized, fire resistant cloth, you can in increase your clothing's protection against flash fires, and fire based anomalies."
-	add_armor = list(melee = 0, bullet = 0, laser = 0,energy = 0, bomb = 0, bio = 10, rad = 0, psy = 0)
+	add_armor = list(melee = 0, bullet = 0, laser = 0,energy = 0, bomb = 0, bio = 10, rad = 0, fire = 0, psy = 0)
 	tier = 1
 /////////////////////////////////////LINING - II TIER///////////////////////////////////////////////////////
 /datum/data/modification/clothing/suit/lining/nitrile
@@ -320,7 +320,7 @@ var/id_ = 0
 	cost = 20000
 	desc = "Легкое соединение нитрила существенно ослабит воздействие электрического тока на тело." //&#x44F;
 	eng_desc = "Light nitrile compound improves electricity insulation."
-	add_armor = list(melee = 0, bullet = 0, laser = 0,energy = 20, bomb = 0, bio = 0, rad = 0, psy = 0)
+	add_armor = list(melee = 0, bullet = 0, laser = 0,energy = 20, bomb = 0, bio = 0, rad = 0, fire = 0, psy = 0)
 	tier = 2
 
 /datum/data/modification/clothing/suit/lining/fiberglass
@@ -328,7 +328,7 @@ var/id_ = 0
 	cost = 24000
 	desc = "Подкладка из стекловолокна колетс&#x44F;, но обеспечивает существенную теплоизол&#x44F;цию и не обгорает." //&#x44F;
 	eng_desc = "With this thin layer of fiberglass lining, the user gains significant resistance to fire and flames, granting optimal protection again fire anomalies."
-	add_armor = list(melee = 0, bullet = 0, laser = 0,energy = 0, bomb = 0, bio = 20, rad = 0, psy = 0)
+	add_armor = list(melee = 0, bullet = 0, laser = 0,energy = 0, bomb = 0, bio = 20, rad = 0, fire = 0, psy = 0)
 	tier = 2
 /////////////////////////////////////MATERIAL - I TIER//////////////////////////////////////////////////////
 /datum/data/modification/clothing/suit/material/kevlar
@@ -336,7 +336,7 @@ var/id_ = 0
 	cost = 15000
 	desc = "Дополнительный слой кевлара улучшит защиту костюма от пуль." //&#x44F;
 	eng_desc = "A light Kevlar layer increases your suit's resistance against projectile based weaponry."
-	add_armor = list(melee = 5, bullet = 10, laser = 0,energy = 0, bomb = 5, bio = 0, rad = 0, psy = 0)
+	add_armor = list(melee = 5, bullet = 10, laser = 0,energy = 0, bomb = 5, bio = 0, rad = 0, fire = 0, psy = 0)
 	tier = 1
 
 /datum/data/modification/clothing/suit/material/lead
@@ -344,7 +344,7 @@ var/id_ = 0
 	cost = 13500
 	desc = "Установка свинцовой пластины толщиной 4-мм улучшит радиационную защиту."
 	eng_desc = "A small, half inch thick lead plate that fits snugly underneath your suit, just big enough to shield most of your vital organs from radiation."
-	add_armor = list(melee = 0, bullet = 0, laser = 0,energy = 0, bomb = 5, bio = 0, rad = 15, psy = 0)
+	add_armor = list(melee = 0, bullet = 0, laser = 0,energy = 0, bomb = 5, bio = 0, rad = 15, fire = 0, psy = 0)
 	tier = 1
 
 /datum/data/modification/clothing/suit/material/alloy
@@ -352,7 +352,7 @@ var/id_ = 0
 	cost = 14000
 	desc = "Слой комбинированной брони, созданной специально дл&#x44F; защиты жизни от воздействи&#x44F; всех опасных факторов Зоны (за исключением радиации)." //&#x44F;
 	eng_desc = "With the addition of a layer of a highly resistant mesh alloy, your suit will provide light, but general protection from most of the zones anomalies."
-	add_armor = list(melee = 0, bullet = 0, laser = 5,energy = 10, bomb = 0, bio = 10, rad = 0, psy = 0)
+	add_armor = list(melee = 0, bullet = 0, laser = 5,energy = 10, bomb = 0, bio = 10, rad = 0, fire = 0, psy = 0)
 	tier = 1
 
 /////////////////////////////////////MATERIAL - II TIER/////////////////////////////////////////////////////
@@ -361,7 +361,7 @@ var/id_ = 0
 	cost = 30000
 	desc = "Дополнительный слой композитной брони значительно улучшит пулестойкость, защиту костюма от взрывов и удара." //&#x44F;
 	eng_desc = "With these Military grade composite armor plates, the user games significant protection against bladed, projectile, and explosion based weaponry."
-	add_armor = list(melee = 10, bullet = 15, laser = 0,energy = 0, bomb = 10, bio = 0, rad = 0, psy = 0)
+	add_armor = list(melee = 10, bullet = 15, laser = 0,energy = 0, bomb = 10, bio = 0, rad = 0, fire = 0, psy = 0)
 	tier = 2
 
 /datum/data/modification/clothing/suit/material/wolfram
@@ -369,7 +369,7 @@ var/id_ = 0
 	cost = 27000
 	desc = "Установка вольфрамовой пластины толщиной 2-мм значительно улучшит радиационную защиту."
 	eng_desc = "Mounting wolframe plate with width of 2-mm significantly improves radiation protection."
-	add_armor = list(melee = 0, bullet = 0, laser = 0,energy = 0, bomb = 0, bio = 0, rad = 30, psy = 0)
+	add_armor = list(melee = 0, bullet = 0, laser = 0,energy = 0, bomb = 0, bio = 0, rad = 30, fire = 0, psy = 0)
 	tier = 2
 
 /datum/data/modification/clothing/suit/material/alloy_advanced
@@ -377,7 +377,7 @@ var/id_ = 0
 	cost = 28000
 	desc = "Улучшенна&#x44F; верси&#x44F; комбинированного слава ещё лучше защищает от вс&#x44F;кого воздействи&#x44F; Зоны (за исключением радиации)." //&#x44F;
 	eng_desc = "With the addition of a layer of a highly Advanced mesh alloy, your suit will provide decent protection from most of the zones anomalies."
-	add_armor = list(melee = 0, bullet = 0, laser = 10,energy = 15, bomb = 0, bio = 15, rad = 0, psy = 0)
+	add_armor = list(melee = 0, bullet = 0, laser = 10,energy = 15, bomb = 0, bio = 15, rad = 0, fire = 0, psy = 0)
 	tier = 2
 
 /////////////////////////////////////PADDING - I TIER///////////////////////////////////////////////////////
@@ -386,7 +386,7 @@ var/id_ = 0
 	cost = 16000
 	desc = "Сталеволокновое покрытие защищает тело от режущего, пил&#x44F;щего и колющего воздействи&#x44F;." //&#x44F;
 	eng_desc = "A specialised steel fiber padding that will increase the user's prection against bladed weaponry, punctures, and animal attacks."
-	add_armor = list(melee = 10, bullet = 0, laser = 0,energy = 0, bomb = 0, bio = 0, rad = 0, psy = 0)
+	add_armor = list(melee = 10, bullet = 0, laser = 0,energy = 0, bomb = 0, bio = 0, rad = 0, fire = 0, psy = 0)
 	tier = 1
 
 /datum/data/modification/clothing/suit/padding/neylon
@@ -394,7 +394,7 @@ var/id_ = 0
 	cost = 14000
 	desc = "Нейлоновое покрытие обеспечивает защиту от высоких температур и кислотного окружени&#x44F;." //&#x44F;
 	eng_desc = "A specialized nylon padding will provide very light heat resistance, and high acidic and chemical resistance. Increasing the users fire and acid protection."
-	add_armor = list(melee = 0, bullet = 0, laser = 5,energy = 0, bomb = 0, bio = 10, rad = 0, psy = 0)
+	add_armor = list(melee = 0, bullet = 0, laser = 5,energy = 0, bomb = 0, bio = 10, rad = 0, fire = 0, psy = 0)
 	tier = 1
 /////////////////////////////////////PADDING - II TIER//////////////////////////////////////////////////////
 /datum/data/modification/clothing/suit/padding/twaron
@@ -402,7 +402,7 @@ var/id_ = 0
 	cost = 28000
 	desc = "Твёрдое, но гибкое покрытие, состо&#x44F;щее главным образом из тварона, обеспечивает серьезную защиту от любого урона в ближнем бою." //&#x44F;
 	eng_desc = "A specialized Twaron padding, will provide general protection against most of the zones mutants."
-	add_armor = list(melee = 15, bullet = 0, laser = 0,energy = 0, bomb = 0, bio = 0, rad = 0, psy = 0)
+	add_armor = list(melee = 15, bullet = 0, laser = 0,energy = 0, bomb = 0, bio = 0, rad = 0, fire = 0, psy = 0)
 	tier = 2
 
 /datum/data/modification/clothing/suit/padding/teflon
@@ -410,7 +410,7 @@ var/id_ = 0
 	cost = 24000
 	desc = "Покрытие из тефлона обеспечивает прекрасную защиту от любых кислотных факторов." //&#x44F;
 	eng_desc = "Teflon padding provides perfect protection from any acidic effects."
-	add_armor = list(melee = 0, bullet = 0, laser = 25,energy = 0, bomb = 0, bio = 0, rad = 0, psy = 0)
+	add_armor = list(melee = 0, bullet = 0, laser = 25,energy = 0, bomb = 0, bio = 0, rad = 0, fire = 0, psy = 0)
 	tier = 2
 
 /////////////////////////////////////NIGHTVISION///////////////////////////////////////////////////////
@@ -426,7 +426,7 @@ var/id_ = 0
 	cost = 20000
 	desc = "Установка прибора ночного видень&#x44F; первого поколени&#x44F;."
 	eng_desc = "With the installation of a first generation night vision device, the user will be able to see in complete darkness without the need of producing visible light."
-	add_armor = list(melee = 0, bullet = 0, laser = 0,energy = 0, bomb = 0, bio = 0, rad = 0, psy = 0)
+	add_armor = list(melee = 0, bullet = 0, laser = 0,energy = 0, bomb = 0, bio = 0, rad = 0, fire = 0, psy = 0)
 	id = "visor_suit"
 	tier = 1
 	modificated_type = /obj/item/clothing/suit/hooded/sealed
@@ -442,7 +442,7 @@ var/id_ = 0
 	cost = 35000
 	desc = "Установка прибора ночного видень&#x44F; второго поколени&#x44F;."
 	eng_desc = "With the installation of a second generation night vision device, the user will be able to see in complete darkness without the need of producing visible light."
-	add_armor = list(melee = 0, bullet = 0, laser = 0,energy = 0, bomb = 0, bio = 0, rad = 0, psy = 0)
+	add_armor = list(melee = 0, bullet = 0, laser = 0,energy = 0, bomb = 0, bio = 0, rad = 0, fire = 0, psy = 0)
 	id = "visor_suit"
 	tier = 2
 	modificated_type = /obj/item/clothing/suit/hooded/sealed
@@ -587,7 +587,7 @@ var/id_ = 0
 	if(istype(I, /obj/item/clothing/head))
 		var/obj/item/clothing/head/H = I
 		if(H.durability)
-			if(!user.put_in_hand(I))
+			if(!user.is_holding(I))
 				return 0
 			I.loc = src
 			modificated = I
@@ -597,7 +597,7 @@ var/id_ = 0
 	if(istype(I, /obj/item/clothing/mask))
 		var/obj/item/clothing/mask/M = I
 		if(M.durability)
-			if(!user.put_in_hand(I))
+			if(!user.is_holding(I))
 				return 0
 			I.loc = src
 			modificated = I
@@ -607,9 +607,11 @@ var/id_ = 0
 	if(istype(I, /obj/item/clothing/suit))
 		var/obj/item/clothing/suit/S = I
 		if(S.durability)
-			if(!user.put_in_hand(I))
+			if(!user.is_holding(I))
 				return 0
-			I.loc = src
+			if(!user.transferItemToLoc(I, src))
+				to_chat(user, "<span class='warning'>\The [I] is stuck to your hand, you cannot put it in the [src.name]!</span>")
+				return
 			modificated = I
 			return 1
 		return 0
@@ -617,7 +619,7 @@ var/id_ = 0
 	if(istype(I, /obj/item/gun/ballistic))
 		var/obj/item/gun/ballistic/P = I
 		if(P.durability)
-			if(!user.put_in_hand(I))
+			if(!user.is_holding(I))
 				return 0
 			I.loc = src
 			modificated = I

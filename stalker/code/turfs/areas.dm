@@ -2,21 +2,19 @@
 	icon = 'stalker/icons/areas.dmi'
 	name = "Strange Location"
 	icon_state = "away"
-	has_gravity = 1
-	var/environment = 0
+	has_gravity = STANDARD_GRAVITY
+	dynamic_lighting = DYNAMIC_LIGHTING_FORCED
 
 /area/stalker/blowout
-	requires_power = 1
+	dynamic_lighting = DYNAMIC_LIGHTING_FORCED
 
 /area/stalker/blowout/outdoor
 	name = "Outdoor"
 	icon = 'stalker/icons/areas_outdoor_blowout.dmi'
 	icon_state = "outdoor"
-	requires_power = 1
-	luminosity = 1
-	//open_space = TRUE
-	dynamic_lighting = DYNAMIC_LIGHTING_ENABLED
-	ambientsounds = list('stalker/sound/ambience/rnd_outdoor/rnd_bird_1.ogg','stalker/sound/ambience/rnd_outdoor/rnd_bird_2.ogg',
+	open_space = TRUE
+	dynamic_lighting = DYNAMIC_LIGHTING_FORCED
+	ambient_music = list('stalker/sound/ambience/rnd_outdoor/rnd_bird_1.ogg','stalker/sound/ambience/rnd_outdoor/rnd_bird_2.ogg',
 					'stalker/sound/ambience/rnd_outdoor/rnd_bird_3.ogg','stalker/sound/ambience/rnd_outdoor/rnd_bird_4.ogg',
 					'stalker/sound/ambience/rnd_outdoor/rnd_bird_5.ogg','stalker/sound/ambience/rnd_outdoor/rnd_bird_6.ogg',
 					'stalker/sound/ambience/rnd_outdoor/rnd_bird_7.ogg','stalker/sound/ambience/rnd_outdoor/rnd_bird_8.ogg',
@@ -37,7 +35,7 @@
 					'stalker/sound/ambience/rnd_outdoor/ambient_wind_3.ogg','stalker/sound/ambience/rnd_outdoor/ambient_wind_4.ogg',
 					'stalker/sound/ambience/rnd_outdoor/rnd_insect_8.ogg',
 					)
-	/*ambient_environment_night = list('stalker/sound/ambience/rnd_outdoor_night/rnd_moan.ogg','stalker/sound/ambience/rnd_outdoor_night/rnd_moan2.ogg',
+	ambient_environment_night = list('stalker/sound/ambience/rnd_outdoor_night/rnd_moan.ogg','stalker/sound/ambience/rnd_outdoor_night/rnd_moan2.ogg',
 					'stalker/sound/ambience/rnd_outdoor_night/rnd_moan3.ogg','stalker/sound/ambience/rnd_outdoor_night/rnd_moan4.ogg',
 					'stalker/sound/ambience/rnd_outdoor_night/rnd_moan5.ogg','stalker/sound/ambience/rnd_outdoor_night/rnd_moan6.ogg',
 					'stalker/sound/ambience/rnd_outdoor_night/ambient_night_1.ogg','stalker/sound/ambience/rnd_outdoor_night/ambient_night_2.ogg',
@@ -51,16 +49,16 @@
 	ambient_environment_cooldown = 420
 	ambient_background = list(null, null,'stalker/sound/ambience/rnd_outdoor_night/zat_bkg_tuman.ogg', 'stalker/sound/ambience/rnd_outdoor_night/ambient_night_11.ogg', null) // 'stalker/sound/ambience/rnd_outdoor/rnd_insect_5.ogg' - evening
 	ambient_background_cooldown = list(null, null, 220, 420, null) //280 - evening
-	environment = 15*/
+	environment = 15
 
 /area/stalker/sidor
 	name = "Sidorovich Basement"
 	icon = 'stalker/icons/areas_buildings.dmi'
 	icon_state = "sidor"
 	requires_power = 1
-	/*ambient_music = list()
+	ambient_music = list()
 	ambient_background = list('stalker/sound/ambience/sidor_music2.ogg', 'stalker/sound/ambience/sidor_music2.ogg', 'stalker/sound/ambience/sidor_music2.ogg', 'stalker/sound/ambience/sidor_music2.ogg')//list('stalker/sound/ambience/sidor_music.ogg','stalker/sound/ambience/sidor_music2.ogg')
-	ambient_background_cooldown = list(700, 700, 700, 700)*/
+	ambient_background_cooldown = list(700, 700, 700, 700)
 	environment = 5
 	safezone = 1
 
@@ -182,7 +180,7 @@
 /area/stalker/buildings/backwater/ironforest
 	name = "Backwater - Iron Forest \[NB\]"
 	icon_state = "ironforest"
-	/*ambient_background = list('stalker/sound/ambience/ugrnd/howled_4.ogg', 'stalker/sound/ambience/ugrnd/howled_4.ogg', 'stalker/sound/ambience/ugrnd/howled_4.ogg', 'stalker/sound/ambience/ugrnd/howled_4.ogg')
+	ambient_background = list('stalker/sound/ambience/ugrnd/howled_4.ogg', 'stalker/sound/ambience/ugrnd/howled_4.ogg', 'stalker/sound/ambience/ugrnd/howled_4.ogg', 'stalker/sound/ambience/ugrnd/howled_4.ogg')
 	ambient_background_cooldown = list(270, 270, 270, 270)
 	ambient_environment = list('stalker/sound/ambience/ugrnd/rnd_ugrnd_amb_1.ogg','stalker/sound/ambience/ugrnd/rnd_ugrnd_amb_2.ogg',
 				'stalker/sound/ambience/ugrnd/rnd_ugrnd_amb_3.ogg','stalker/sound/ambience/ugrnd/rnd_ugrnd_amb_4.ogg',
@@ -222,7 +220,7 @@
 				'stalker/sound/ambience/ugrnd/ugrnd_whispers_1.ogg','stalker/sound/ambience/ugrnd/ugrnd_whispers_2.ogg',
 				'stalker/sound/ambience/ugrnd/ugrnd_whispers_3.ogg','stalker/sound/ambience/ugrnd/ugrnd_whispers_4.ogg',
 				)
-	ambient_environment_cooldown = 800*/
+	ambient_environment_cooldown = 800
 	environment = 8
 
 /area/stalker/blowout/buildings/backwater/ironforest
@@ -239,7 +237,7 @@
 	name = "Backwater - Krug Antenna Complex \[NB\]"
 	icon_state = "krug"
 	environment = 5
-	/*ambient_background = list('stalker/sound/ambience/ugrnd/howled_4.ogg', 'stalker/sound/ambience/ugrnd/howled_4.ogg', 'stalker/sound/ambience/ugrnd/howled_4.ogg', 'stalker/sound/ambience/ugrnd/howled_4.ogg')
+	ambient_background = list('stalker/sound/ambience/ugrnd/howled_4.ogg', 'stalker/sound/ambience/ugrnd/howled_4.ogg', 'stalker/sound/ambience/ugrnd/howled_4.ogg', 'stalker/sound/ambience/ugrnd/howled_4.ogg')
 	ambient_background_cooldown = list(270, 270, 270, 270)
 	ambient_environment = list('stalker/sound/ambience/ugrnd/rnd_ugrnd_amb_1.ogg','stalker/sound/ambience/ugrnd/rnd_ugrnd_amb_2.ogg',
 				'stalker/sound/ambience/ugrnd/rnd_ugrnd_amb_3.ogg','stalker/sound/ambience/ugrnd/rnd_ugrnd_amb_4.ogg',
@@ -279,7 +277,7 @@
 				'stalker/sound/ambience/ugrnd/ugrnd_whispers_1.ogg','stalker/sound/ambience/ugrnd/ugrnd_whispers_2.ogg',
 				'stalker/sound/ambience/ugrnd/ugrnd_whispers_3.ogg','stalker/sound/ambience/ugrnd/ugrnd_whispers_4.ogg',
 				)
-	ambient_environment_cooldown = 800*/
+	ambient_environment_cooldown = 800
 	environment = 8
 
 /area/stalker/blowout/buildings/backwater/krug
@@ -368,7 +366,7 @@
 /area/stalker/buildings/backwater/plateau
 	name = "Backwater - Southern Plateau \[NB\]"
 	icon_state = "plateau"
-	/*ambient_background = list('stalker/sound/ambience/ugrnd/howled_4.ogg', 'stalker/sound/ambience/ugrnd/howled_4.ogg', 'stalker/sound/ambience/ugrnd/howled_4.ogg', 'stalker/sound/ambience/ugrnd/howled_4.ogg')
+	ambient_background = list('stalker/sound/ambience/ugrnd/howled_4.ogg', 'stalker/sound/ambience/ugrnd/howled_4.ogg', 'stalker/sound/ambience/ugrnd/howled_4.ogg', 'stalker/sound/ambience/ugrnd/howled_4.ogg')
 	ambient_background_cooldown = list(270, 270, 270, 270)
 	ambient_environment = list('stalker/sound/ambience/ugrnd/rnd_ugrnd_amb_1.ogg','stalker/sound/ambience/ugrnd/rnd_ugrnd_amb_2.ogg',
 				'stalker/sound/ambience/ugrnd/rnd_ugrnd_amb_3.ogg','stalker/sound/ambience/ugrnd/rnd_ugrnd_amb_4.ogg',
@@ -408,7 +406,7 @@
 				'stalker/sound/ambience/ugrnd/ugrnd_whispers_1.ogg','stalker/sound/ambience/ugrnd/ugrnd_whispers_2.ogg',
 				'stalker/sound/ambience/ugrnd/ugrnd_whispers_3.ogg','stalker/sound/ambience/ugrnd/ugrnd_whispers_4.ogg',
 				)
-	ambient_environment_cooldown = 800*/
+	ambient_environment_cooldown = 800
 	environment = 8
 
 /area/stalker/blowout/buildings/backwater/plateau
@@ -442,7 +440,7 @@
 	name = "Tunnel"
 	icon_state = "tunnel_s"
 	environment = 13
-	/*ambient_environment = list('stalker/sound/ambience/ugrnd/rnd_ugrnd_amb_1.ogg','stalker/sound/ambience/ugrnd/rnd_ugrnd_amb_2.ogg',
+	ambient_environment = list('stalker/sound/ambience/ugrnd/rnd_ugrnd_amb_1.ogg','stalker/sound/ambience/ugrnd/rnd_ugrnd_amb_2.ogg',
 				'stalker/sound/ambience/ugrnd/rnd_ugrnd_amb_3.ogg','stalker/sound/ambience/ugrnd/rnd_ugrnd_amb_4.ogg',
 				'stalker/sound/ambience/ugrnd/rnd_ugrnd_amb_5.ogg','stalker/sound/ambience/ugrnd/rnd_ugrnd_amb_6.ogg',
 				'stalker/sound/ambience/ugrnd/ugrnd_ambient_1.ogg','stalker/sound/ambience/ugrnd/ugrnd_ambient_2.ogg',
@@ -480,7 +478,7 @@
 				'stalker/sound/ambience/ugrnd/ugrnd_whispers_1.ogg','stalker/sound/ambience/ugrnd/ugrnd_whispers_2.ogg',
 				'stalker/sound/ambience/ugrnd/ugrnd_whispers_3.ogg','stalker/sound/ambience/ugrnd/ugrnd_whispers_4.ogg',
 				)
-	ambient_environment_cooldown = 800*/
+	ambient_environment_cooldown = 800
 
 /area/stalker/blowout/kordon/tunnel
 	name = "Tunnel"
@@ -544,7 +542,7 @@
 	name = "Caves"
 	icon_state = "caves"
 	requires_power = 1
-	/*ambient_music = null
+	ambient_music = null
 	ambient_background = list('stalker/sound/ambience/ugrnd/howled_4.ogg', 'stalker/sound/ambience/ugrnd/howled_4.ogg', 'stalker/sound/ambience/ugrnd/howled_4.ogg', 'stalker/sound/ambience/ugrnd/howled_4.ogg')
 	ambient_background_cooldown = list(270, 270, 270, 270)
 	ambient_environment = list('stalker/sound/ambience/ugrnd/rnd_ugrnd_amb_1.ogg','stalker/sound/ambience/ugrnd/rnd_ugrnd_amb_2.ogg',
@@ -585,7 +583,7 @@
 				'stalker/sound/ambience/ugrnd/ugrnd_whispers_1.ogg','stalker/sound/ambience/ugrnd/ugrnd_whispers_2.ogg',
 				'stalker/sound/ambience/ugrnd/ugrnd_whispers_3.ogg','stalker/sound/ambience/ugrnd/ugrnd_whispers_4.ogg',
 				)
-	ambient_environment_cooldown = 800*/
+	ambient_environment_cooldown = 800
 	environment = 8
 
 

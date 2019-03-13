@@ -3,8 +3,9 @@
 	cooldown = 1000
 	var/sticky_mob = 0
 	var/monolith_controled = 0
-
+/*
 /obj/effect/spawner/lootdrop/stalker/mobspawner/SpawnLoot(enable_cooldown = 1)
+
 	sleep(rand(10, 100))
 	if(!loot || !loot.len)
 		return
@@ -44,7 +45,7 @@
 	sleep(rand(cooldown, cooldown + 3000))
 	SpawnLoot()
 	return
-
+*/
 /obj/effect/spawner/lootdrop/stalker/mobspawner/CanSpawn()
 	var/count = 0
 	if(!isnull(spawned_loot))

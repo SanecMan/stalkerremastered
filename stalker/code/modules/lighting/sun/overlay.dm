@@ -1,4 +1,4 @@
-/var/list/all_sunlighting_overlays = list() // Global list of lighting overlays.
+GLOBAL_LIST_EMPTY(all_sunlighting_overlays) // Global list of lighting overlays.
 
 /atom/movable/sunlighting_overlay
 	name          = ""
@@ -6,7 +6,7 @@
 	anchored      = TRUE
 
 	icon             = LIGHTING_ICON
-	color            = SUNLIGHTING_BASE_MATRIX
+	color            = LIGHTING_BASE_MATRIX
 	plane            = SUNLIGHTING_PLANE
 	mouse_opacity    = 0
 	layer            = LIGHTING_LAYER
@@ -24,14 +24,14 @@
 /atom/movable/sunlighting_overlay/New(var/atom/loc, var/no_update = FALSE)
 	. = ..()
 	verbs.Cut()
-	global.all_sunlighting_overlays += src
+	GLOB.all_sunlighting_overlays += src
 
 	var/turf/T         = loc // If this runtimes atleast we'll know what's creating overlays in things that aren't turfs.
 	T.sun_lighting_overlay = src
 	T.luminosity       = 0
 
-	for(var/turf/space/S in RANGE_TURFS(1, src)) //RANGE_TURFS is in code\__HELPERS\game.dm
-		S.update_starlight()
+	//for(var/turf/space/S in RANGE_TURFS(1, src)) //RANGE_TURFS is in code\__HELPERS\game.dm
+	//	S.update_starlight()
 	for(var/turf/simulated/floor/O in RANGE_TURFS(1, src))
 		O.update_sunlight()
 	for(var/turf/stalker/floor/O in RANGE_TURFS(1, src))
@@ -47,8 +47,8 @@
 
 /atom/movable/sunlighting_overlay/Destroy(var/force)
 	if (force)
-		global.all_sunlighting_overlays        -= src
-		global.sunlighting_update_overlays     -= src
+		GLOB.all_sunlighting_overlays        -= src
+		GLOB.sunlighting_update_overlays     -= src
 
 		var/turf/T   = loc
 		if (istype(T))

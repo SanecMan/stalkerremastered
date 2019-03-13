@@ -1,8 +1,21 @@
 /mob/living/carbon/proc/update_top_overlay()
-	if(overlays_standing[BODY_BEHIND_LAYER])
+	if(src.loc && istype(src.loc, /turf/open/stalker/floor/water))
+		remove_overlay(BODY_FRONT_LAYER)
+		var/icon/I
+		if(lying != 0)
+			I = turn(icon('stalker/icons/water.dmi', "human_overlay_turned"), - lying)
+		else
+			I = icon('stalker/icons/water.dmi', "human_overlay")
+
+		overlays_standing[BODY_FRONT_LAYER] = mutable_appearance(I, "", -BODY_FRONT_LAYER)
+		apply_overlay(BODY_FRONT_LAYER)
+	else
+		remove_overlay(BODY_FRONT_LAYER)
+/*
+	if(overlays_standing[BODY_FRONT_LAYER])
 
 		overlays -= overlays_standing[BODY_BEHIND_LAYER]
-		overlays_standing[BODY_BEHIND_LAYER] = null
+		overlays_standing[BODY_FRONT_LAYER] = null
 
 	if(src.loc && istype(src.loc, /turf/open/stalker/floor/water))
 
@@ -20,10 +33,11 @@
 
 		standing = image(mask, "")
 		standing.blend_mode = BLEND_OVERLAY
-		overlays_standing[BODY_BEHIND_LAYER] = standing
+		overlays_standing[BODY_FRONT_LAYER] = standing
 		overlays += standing
 
 	return
+*/ //fuck - Valtos
 
 /obj/structure/flora/stalker
 	name = "bulrush"
@@ -57,6 +71,12 @@
 	///obj/structure/stalker/okno/redbrick/double2)
 	)
 	smooth = SMOOTH_TRUE
+
+/turf/closed/wall/stalker/Initialize()
+	..()
+	if(locate(/obj/structure/stalker/okno) in contents)
+		opacity = 0
+		windowed = 1
 
 /turf/closed/wall/stalker/beton
 	name = "wall"

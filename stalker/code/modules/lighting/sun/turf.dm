@@ -1,8 +1,9 @@
 /turf/proc/is_openspace()
-	if(istype(src,/turf/simulated/wall) || has_opaque_atom)
+	if(istype(src,/turf/closed) || has_opaque_atom)
 		return 0
 	var/area/A = get_area(src)
-	return A.open_space
+
+	return	A.open_space 				//fuck byond (try to use one space)
 
 /turf/proc/has_junction_closedspace()
 	for(var/turf/T in RANGE_TURFS(1,src))
@@ -48,8 +49,8 @@
 
 /turf/proc/sun_update_light()
 	set waitfor = FALSE
-	if (qdeleted(src))
-		return
+	//if (qdeleted(src))
+	//	return
 
 	if (sunlight_source) // Update the light or create it if it does not exist.
 		sunlight_source.force_update()
@@ -77,7 +78,7 @@
 		if (suncorners[i]) // Already have a corner on this direction.
 			continue
 
-		suncorners[i] = new/datum/sunlighting_corner(src, LIGHTING_CORNER_DIAGONAL[i])
+		suncorners[i] = new/datum/sunlighting_corner(src, GLOB.LIGHTING_CORNER_DIAGONAL[i])
 
 /turf/proc/sun_reconsider_lights()
 	for (var/datum/sunlight_source/L in sun_affecting_lights)

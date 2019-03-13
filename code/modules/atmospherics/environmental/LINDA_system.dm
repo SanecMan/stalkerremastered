@@ -2,6 +2,7 @@
 /atom/var/CanAtmosPassVertical = ATMOS_PASS_YES
 
 /atom/proc/CanAtmosPass(turf/T)
+	return 1
 /*
 	switch (CanAtmosPass)
 		if (ATMOS_PASS_PROC)

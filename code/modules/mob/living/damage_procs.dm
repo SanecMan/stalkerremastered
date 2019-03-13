@@ -8,7 +8,7 @@
 	Returns
 	standard 0 if fail
 */
-/mob/living/proc/apply_damage(damage = 0,damagetype = BRUTE, def_zone = null, blocked = FALSE)
+/mob/living/proc/apply_damage(damage = 0, damagetype = BRUTE, def_zone = null, blocked = FALSE)
 	var/hit_percent = (100-blocked)/100
 	if(!damage || (hit_percent <= 0))
 		return 0
@@ -25,6 +25,8 @@
 			adjustCloneLoss(damage * hit_percent)
 		if(STAMINA)
 			adjustStaminaLoss(damage * hit_percent)
+		if(PSY)
+			adjustPsyLoss(damage * hit_percent)
 		if(BRAIN)
 			adjustBrainLoss(damage * hit_percent)
 	return 1
@@ -43,6 +45,8 @@
 			return adjustCloneLoss(damage)
 		if(STAMINA)
 			return adjustStaminaLoss(damage)
+		if(PSY)
+			return adjustPsyLoss(damage)
 		if(BRAIN)
 			return adjustBrainLoss(damage)
 
@@ -60,11 +64,13 @@
 			return getCloneLoss()
 		if(STAMINA)
 			return getStaminaLoss()
+		if(PSY)
+			return getPsyLoss()
 		if(BRAIN)
 			return getBrainLoss()
 
 
-/mob/living/proc/apply_damages(brute = 0, burn = 0, tox = 0, oxy = 0, clone = 0, def_zone = null, blocked = FALSE, stamina = 0, brain = 0)
+/mob/living/proc/apply_damages(brute = 0, burn = 0, tox = 0, oxy = 0, clone = 0, def_zone = null, blocked = FALSE, stamina = 0, brain = 0, psy = 0)
 	if(blocked >= 100)
 		return 0
 	if(brute)
@@ -79,6 +85,8 @@
 		apply_damage(clone, CLONE, def_zone, blocked)
 	if(stamina)
 		apply_damage(stamina, STAMINA, def_zone, blocked)
+	if(psy)
+		apply_damage(psy, PSY, def_zone, blocked)
 	if(brain)
 		apply_damage(brain, BRAIN, def_zone, blocked)
 	return 1
@@ -247,6 +255,15 @@
 
 /mob/living/proc/setStaminaLoss(amount, updating_stamina = TRUE, forced = FALSE)
 	return
+
+/mob/living/proc/getPsyLoss()
+	return psyloss
+
+/mob/living/proc/adjustPsyLoss(amount)
+	if(status_flags & GODMODE)
+		return FALSE
+	psyloss = CLAMP((psyloss + (amount * CONFIG_GET(number/damage_multiplier))), 0, maxHealth * 2)
+	return amount
 
 // heal ONE external organ, organ gets randomly selected from damaged ones.
 /mob/living/proc/heal_bodypart_damage(brute = 0, burn = 0, stamina = 0, updating_health = TRUE, required_status)

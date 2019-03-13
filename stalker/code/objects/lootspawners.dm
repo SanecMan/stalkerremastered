@@ -67,7 +67,7 @@
 	lootcount = 1
 	loot = list(/obj/item/gun/ballistic/automatic/pistol/pm = 85,
 				/obj/item/trash/can = 15)
-
+/*
 /obj/effect/spawner/lootdrop/stalker/New()
 	SpawnLoot()
 
@@ -96,7 +96,7 @@
 	////////////////////////////////////////////
 	SpawnLoot()
 	return
-
+*/
 /obj/effect/spawner/lootdrop/stalker/proc/CanSpawn()
 	var/count = 0
 

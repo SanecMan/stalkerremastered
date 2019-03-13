@@ -9,7 +9,7 @@
 	// A list will be created in initialization that figures out the baseturf's baseturf etc.
 	// In the case of a list it is sorted from bottom layer to top.
 	// This shouldn't be modified directly, use the helper procs.
-	var/list/baseturfs = /turf/baseturf_bottom
+	var/list/baseturfs = /turf/open/stalker
 
 	var/temperature = T20C
 	var/to_be_destroyed = 0 //Used for fire, if a melting temperature was reached, it will be destroyed
@@ -33,6 +33,8 @@
 
 	var/tiled_dirt = FALSE // use smooth tiled dirt decal
 	var/overlay_priority = 0
+
+	var/windowed = 0
 
 /turf/vv_edit_var(var_name, new_value)
 	var/static/list/banned_edits = list("x", "y", "z")

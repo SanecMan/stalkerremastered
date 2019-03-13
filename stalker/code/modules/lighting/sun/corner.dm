@@ -48,7 +48,7 @@
 			T.suncorners = list(null, null, null, null)
 
 		masters[T]   = diagonal
-		i            = LIGHTING_CORNER_DIAGONAL.Find(turn(diagonal, 180))
+		i            = GLOB.LIGHTING_CORNER_DIAGONAL.Find(turn(diagonal, 180))
 		T.suncorners[i] = src
 
 	// Now the horizontal one.
@@ -58,7 +58,7 @@
 			T.suncorners = list(null, null, null, null)
 
 		masters[T]   = ((T.x > x) ? EAST : WEST) | ((T.y > y) ? NORTH : SOUTH) // Get the dir based on coordinates.
-		i            = LIGHTING_CORNER_DIAGONAL.Find(turn(masters[T], 180))
+		i            = GLOB.LIGHTING_CORNER_DIAGONAL.Find(turn(masters[T], 180))
 		T.suncorners[i] = src
 
 	// And finally the vertical one.
@@ -68,7 +68,7 @@
 			T.suncorners = list(null, null, null, null)
 
 		masters[T]   = ((T.x > x) ? EAST : WEST) | ((T.y > y) ? NORTH : SOUTH) // Get the dir based on coordinates.
-		i            = LIGHTING_CORNER_DIAGONAL.Find(turn(masters[T], 180))
+		i            = GLOB.LIGHTING_CORNER_DIAGONAL.Find(turn(masters[T], 180))
 		T.suncorners[i] = src
 
 	update_active()
@@ -101,7 +101,7 @@
 
 	if (!needs_update)
 		needs_update = TRUE
-		sunlighting_update_corners += src
+		GLOB.sunlighting_update_corners += src
 
 /datum/sunlighting_corner/proc/update_overlays()
 #if LIGHTING_SOFT_THRESHOLD != 0
@@ -116,7 +116,7 @@
 		if (T.sun_lighting_overlay)
 			if (!T.sun_lighting_overlay.needs_update)
 				T.sun_lighting_overlay.needs_update = TRUE
-				sunlighting_update_overlays += T.sun_lighting_overlay
+				GLOB.sunlighting_update_overlays += T.sun_lighting_overlay
 
 
 /datum/sunlighting_corner/dummy/New()

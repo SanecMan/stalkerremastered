@@ -47,9 +47,6 @@
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 /datum/looping_sound/campfire
-	start_sound = 'stalker/sound/objects/campfire.ogg'
-	start_length = 10
-	mid_sounds = list('stalker/sound/objects/campfire.ogg'=10)
-	mid_length = 10
-	end_sound = 'stalker/sound/objects/campfire.ogg'
+	mid_sounds = list('stalker/sound/objects/campfire_new.wav'=1)
+	mid_length = 12
 	volume = 50

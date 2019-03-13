@@ -38,6 +38,12 @@
 	//Updates the number of stored chemicals for powers
 	handle_changeling()
 
+	//stalker ambients
+	handle_sounds()
+
+	//stalker color matrix
+	seek_screen_colour()
+
 	if(stat != DEAD)
 		return 1
 

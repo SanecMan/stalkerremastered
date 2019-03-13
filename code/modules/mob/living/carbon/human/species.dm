@@ -1460,6 +1460,8 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 				H.adjustStaminaLoss(damage * hit_percent * H.physiology.stamina_mod)
 		if(BRAIN)
 			H.adjustBrainLoss(damage * hit_percent * H.physiology.brain_mod)
+		if(PSY)
+			H.adjustPsyLoss(damage * hit_percent * H.physiology.psy_mod)
 	return 1
 
 /datum/species/proc/on_hit(obj/item/projectile/P, mob/living/carbon/human/H)

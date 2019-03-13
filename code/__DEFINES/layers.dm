@@ -7,6 +7,7 @@
 #define PLANE_SPACE_PARALLAX -90
 
 #define FLOOR_PLANE -2
+#define SUNLIGHTING_PLANE -1
 #define GAME_PLANE -1
 #define BLACKNESS_PLANE 0 //To keep from conflicts with SEE_BLACKNESS internals
 
