@@ -640,7 +640,7 @@ var/global/global_lentahtml = ""
 			var/t = message_input(H, "password", 10)
 
 			if(!t)
-				H << "<span class='warning'>You entered no password.</span>"
+				to_chat(H, "<span class='warning'>You entered no password.</span>")
 				return
 
 			var/datum/data/record/sk = find_record("sid", H.sid, GLOB.data_core.stalkers)
@@ -661,7 +661,7 @@ var/global/global_lentahtml = ""
 
 				//owner_photo_front.picture.picture_image = icon(image, dir = SOUTH)
 
-				H << "<B>KPK password</B>: <span class='danger'>\"[pass]\"</span>"
+				to_chat(H, "<B>KPK password</B>: <span class='danger'>\"[pass]\"</span>")
 				H.mind.store_memory("<b>KPK password</b>: \"[pass]\"")
 				GLOB.KPKs += src
 				GLOB.KPK_mobs += H
@@ -678,7 +678,7 @@ var/global/global_lentahtml = ""
 				set_owner_info(profile)
 			else //Если человек зарегистрирован в сети сталкеров
 				if(sk && sk.fields["pass"] != t)
-					H << "<span class='warning'>Wrong password.</span>"
+					to_chat(H, "<span class='warning'>Wrong password.</span>")
 					return
 
 				password = t
@@ -747,9 +747,9 @@ var/global/global_lentahtml = ""
 			if(t == password)
 				//hacked = 1
 				hacked = 0
-				H << "<span class='warning'>You are not the PDA owner.</span>"
+				to_chat(H, "<span class='warning'>You are not the PDA owner.</span>")
 			else
-				H << "<span class='warning'>Wrong password.</span>"
+				to_chat(H, "<span class='warning'>Wrong password.</span>")
 
 		if("rotate")
 			switch(rotation)
@@ -770,9 +770,9 @@ var/global/global_lentahtml = ""
 			var/t = message_input(H, "message", 250)
 			if(!t)
 				if(H.client.prefs.chat_toggles & CHAT_LANGUAGE)
-					H << "<span class='warning'>Enter the message!</span>"
+					to_chat(H, "<span class='warning'>Enter the message!</span>")
 				else
-					H << "<span class='warning'>Введите сообщение!</span>"
+					to_chat(H, "<span class='warning'>Введите сообщение!</span>")
 			else
 				if ( !(last_lenta && world.time < last_lenta + LENTA_MESSAGE_COOLDOWN) )
 					last_lenta = world.time
@@ -781,17 +781,17 @@ var/global/global_lentahtml = ""
 
 				else
 					if(H.client.prefs.chat_toggles & CHAT_LANGUAGE)
-						H << "<span class='warning'>You can't send messages in next [round((LENTA_MESSAGE_COOLDOWN + last_lenta - world.time)/10)] sec.</span>"
+						to_chat(H, "<span class='warning'>You can't send messages in next [round((LENTA_MESSAGE_COOLDOWN + last_lenta - world.time)/10)] sec.</span>")
 					else
-						H << "<span class='warning'>Вы сможете отправить следующее сообщение через: [round((LENTA_MESSAGE_COOLDOWN + last_lenta - world.time)/10)] сек.</span>"
+						to_chat(H, "<span class='warning'>Вы сможете отправить следующее сообщение через: [round((LENTA_MESSAGE_COOLDOWN + last_lenta - world.time)/10)] сек.</span>")
 
 		if("lenta_faction_add")
 			var/t = message_input(H, "message", 500)
 			if(!t)
 				if(H.client.prefs.chat_toggles & CHAT_LANGUAGE)
-					H << "<span class='warning'>Enter the message!</span>"
+					to_chat(H, "<span class='warning'>Enter the message!</span>")
 				else
-					H << "<span class='warning'>Введите сообщение!</span>"
+					to_chat(H, "<span class='warning'>Введите сообщение!</span>")
 			else
 				if ( !(last_faction_lenta && world.time < last_faction_lenta + LENTA_FACTION_MESSAGE_COOLDOWN) )
 					last_faction_lenta = world.time
@@ -799,52 +799,52 @@ var/global/global_lentahtml = ""
 
 				else
 					if(H.client.prefs.chat_toggles & CHAT_LANGUAGE)
-						H << "<span class='warning'>You can't send messages in next [round((LENTA_FACTION_MESSAGE_COOLDOWN + last_faction_lenta - world.time)/10)] sec.</span>"
+						to_chat(H, "<span class='warning'>You can't send messages in next [round((LENTA_FACTION_MESSAGE_COOLDOWN + last_faction_lenta - world.time)/10)] sec.</span>")
 					else
-						H << "<span class='warning'>Вы сможете отправить следующее сообщение через: [round((LENTA_FACTION_MESSAGE_COOLDOWN + last_faction_lenta - world.time)/10)] сек.</span>"
+						to_chat(H, "<span class='warning'>Вы сможете отправить следующее сообщение через: [round((LENTA_FACTION_MESSAGE_COOLDOWN + last_faction_lenta - world.time)/10)] сек.</span>")
 
 		if("lenta_sound")
 			if(switches & FEED_SOUND)
 				switches &= ~FEED_SOUND
 				if(H.client.prefs.chat_toggles & CHAT_LANGUAGE)
-					H << "<span class='notice'>Feed sound turned off.</span>"
+					to_chat(H, "<span class='notice'>Feed sound turned off.</span>")
 				else
-					H << "<span class='notice'>Звук оповещени&#255; о сообщени&#255;х в ленте выключен.</span>"
+					to_chat(H, "<span class='notice'>Звук оповещени&#255; о сообщени&#255;х в ленте выключен.</span>")
 			else
 				switches |= FEED_SOUND
 				if(H.client.prefs.chat_toggles & CHAT_LANGUAGE)
-					H << "<span class='notice'>Feed sound turned on.</span>"
+					to_chat(H, "<span class='notice'>Feed sound turned on.</span>")
 				else
-					H << "<span class='notice'>Звук оповещени&#255; о сообщени&#255;х в ленте активирован.</span>"
+					to_chat(H, "<span class='notice'>Звук оповещени&#255; о сообщени&#255;х в ленте активирован.</span>")
 
 
 		if("lenta_images")
 			if(switches & FEED_IMAGES)
 				switches &= ~FEED_IMAGES
 				if(H.client.prefs.chat_toggles & CHAT_LANGUAGE)
-					H << "<span class='notice'>Stalker avatars in the feed now will not be downloaded.</span>"
+					to_chat(H, "<span class='notice'>Stalker avatars in the feed now will not be downloaded.</span>")
 				else
-					H << "<span class='notice'>Аватары сталкеров в ленте теперь не будут скачиватьс&#255;.</span>"
+					to_chat(H, "<span class='notice'>Аватары сталкеров в ленте теперь не будут скачиватьс&#255;.</span>")
 			else
 				switches |= FEED_IMAGES
 				if(H.client.prefs.chat_toggles & CHAT_LANGUAGE)
-					H << "<span class='notice'>Stalker avatars in the feed now will be downloaded.</span>"
+					to_chat(H, "<span class='notice'>Stalker avatars in the feed now will be downloaded.</span>")
 				else
-					H << "<span class='notice'>Аватары сталкеров в ленте теперь будут скачиватьс&#255;.</span>"
+					to_chat(H, "<span class='notice'>Аватары сталкеров в ленте теперь будут скачиватьс&#255;.</span>")
 
 		if("rating_images")
 			if(switches & RATING_IMAGES)
 				switches &= ~RATING_IMAGES
 				if(H.client.prefs.chat_toggles & CHAT_LANGUAGE)
-					H << "<span class='notice'>Stalker avatars in the rating now will not be downloaded.</span>"
+					to_chat(H, "<span class='notice'>Stalker avatars in the rating now will not be downloaded.</span>")
 				else
-					H << "<span class='notice'>Аватары сталкеров в рейтинге теперь не будут скачиватьс&#255;.</span>"
+					to_chat(H, "<span class='notice'>Аватары сталкеров в рейтинге теперь не будут скачиватьс&#255;.</span>")
 			else
 				switches |= RATING_IMAGES
 				if(H.client.prefs.chat_toggles & CHAT_LANGUAGE)
-					H << "<span class='notice'>Stalker avatars in the rating now will be downloaded.</span>"
+					to_chat(H, "<span class='notice'>Stalker avatars in the rating now will be downloaded.</span>")
 				else
-					H << "<span class='notice'>Аватары сталкеров в рейтинге теперь будут скачиватьс&#255;.</span>"
+					to_chat(H, "<span class='notice'>Аватары сталкеров в рейтинге теперь будут скачиватьс&#255;.</span>")
 
 		if("refresh_rating")
 			ratinghtml = ""
@@ -1207,9 +1207,9 @@ var/global/global_lentahtml = ""
 		faction_owner += " - leader"
 
 	if(isfactionchat)
-		C << up2ph("<p style=\"margin-top: 0px; margin-bottom: 0px;\">\icon[KPK]<b style=\"margin-top: 0px; margin-bottom: 0px;\"><font style=\"margin-top: 0px; margin-bottom: 0px;\" color=\"[factioncolor]\">[name_owner]\[[faction_owner]\](faction chat):</font></b><br><font color=\"#006699\"> \"[msg]\"</font></p>")
+		to_chat(C, up2ph("<p style=\"margin-top: 0px; margin-bottom: 0px;\">\icon[KPK]<b style=\"margin-top: 0px; margin-bottom: 0px;\"><font style=\"margin-top: 0px; margin-bottom: 0px;\" color=\"[factioncolor]\">[name_owner]\[[faction_owner]\](faction chat):</font></b><br><font color=\"#006699\"> \"[msg]\"</font></p>"))
 	else
-		C << up2ph("<p style=\"margin-top: 0px; margin-bottom: 0px;\">\icon[KPK]<b style=\"margin-top: 0px; margin-bottom: 0px;\"><font style=\"margin-top: 0px; margin-bottom: 0px;\" color=\"[factioncolor]\">[name_owner]\[[faction_owner]\]:</font></b><br><font color=\"#006699\"> \"[msg]\"</font></p>")
+		to_chat(C, up2ph("<p style=\"margin-top: 0px; margin-bottom: 0px;\">\icon[KPK]<b style=\"margin-top: 0px; margin-bottom: 0px;\"><font style=\"margin-top: 0px; margin-bottom: 0px;\" color=\"[factioncolor]\">[name_owner]\[[faction_owner]\]:</font></b><br><font color=\"#006699\"> \"[msg]\"</font></p>"))
 
 	if(KPK_owner)
 		if((KPK != KPK_owner || selfsound) && KPK.switches & FEED_SOUND)
@@ -1240,11 +1240,11 @@ var/global/global_lentahtml = ""
 
 		if(istype(M, /mob/dead/observer))
 			if(KPK_owner && KPK_owner.loc)
-				M << up2ph("<a href=?src=\ref[M];follow=\ref[KPK_owner.loc]>(F)</a> [msg]")
+				to_chat(M, up2ph("<a href=?src=\ref[M];follow=\ref[KPK_owner.loc]>(F)</a> [msg]"))
 			else
-				M << up2ph("<a href=?src=\ref[M];follow=\ref[KPK_owner]>(F)</a> [msg]")
+				to_chat(M, up2ph("<a href=?src=\ref[M];follow=\ref[KPK_owner]>(F)</a> [msg]"))
 		else
-			M << "[msg]"
+			to_chat(M, "[msg]")
 
 
 /obj/item/stalker_pda/proc/refresh_rating(var/mob/living/carbon/human/H)
@@ -1361,7 +1361,7 @@ var/global/global_lentahtml = ""
 		avatar.l_hand		= H.l_hand.type*/
 
 	if(avatar.uniform == null || avatar.shoes == null)
-		H << "<span class='warning'>Вам нужно надеть свитер и ботинки перед тем, как делать фотографию!</span>"
+		to_chat(H, "<span class='warning'>Вам нужно надеть свитер и ботинки перед тем, как делать фотографию!</span>")
 	else
 		var/image = get_avatar(H, avatar)
 
