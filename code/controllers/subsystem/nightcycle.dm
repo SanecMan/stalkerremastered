@@ -63,27 +63,33 @@ SUBSYSTEM_DEF(nightcycle)
 		. = TRUE
 
 /datum/controller/subsystem/nightcycle/proc/collectTurfs()
-	CT = get_area_turfs(/area/stalker/blowout/outdoor, 1, subtypes = TRUE)
+	CT = get_area_turfs(/area/stalker/blowout/outdoor, 2, subtypes = TRUE)
 	preparing = FALSE
 
 /datum/controller/subsystem/nightcycle/proc/updateLight(newTime)
 	switch (newTime)
 		if ("SUNRISE")
+			to_chat(world, "<b>6:00</b> - рассвет")
 			sunColour = "#ffd1b3"
 			//sunPower = 0.3
 		if ("MORNING")
+			to_chat(world, "<b>6:45</b> - наступает утро")
 			sunColour = "#fff2e6"
 			//sunPower = 0.5
 		if ("DAYTIME")
+			to_chat(world, "<b>11:45</b> - наступает день")
 			sunColour = "#FFFFFF"
 			//sunPower = 0.75
 		if ("AFTERNOON")
+			to_chat(world, "<b>15:45</b> - вечереет")
 			sunColour = "#fff2e6"
 			//sunPower = 0.5
 		if ("SUNSET")
+			to_chat(world, "<b>21:45</b> - закат")
 			sunColour = "#ffcccc"
 			//sunPower = 0.3
 		if("NIGHTTIME")
+			to_chat(world, "<b>11:30</b> - наступает ночь")
 			sunColour = "#00111a"
 			//sunPower = 0.15
 	for(var/turf/open/stalker/T in CT)

@@ -77,14 +77,55 @@
 	var/distro = 0			 //зазор между дробью для дробовиков
 	var/durability = 100     //durability of a gun
 	var/jam = 0              //is weapon jammed or not
-	var/list/obj/item/weapon/attachment/addons = list()
-	var/obj/item/weapon/attachment/gl = null
+	var/list/obj/item/attachment/addons = list()
+	var/obj/item/attachment/gl = null
 
 	var/list/l_sounds_shots = list('stalker/sound/weapons/fading/rnd_shooting_1.ogg','stalker/sound/weapons/fading/rnd_shooting_2.ogg',
 								'stalker/sound/weapons/fading/rnd_shooting_4.ogg','stalker/sound/weapons/fading/rnd_shooting_5.ogg',
 								'stalker/sound/weapons/fading/rnd_shooting_6.ogg','stalker/sound/weapons/fading/rnd_shooting_7.ogg',
 								'stalker/sound/weapons/fading/rnd_shooting_9.ogg','stalker/sound/weapons/fading/rnd_shooting_10.ogg',
 								'stalker/sound/weapons/fading/rnd_shooting_11.ogg')
+
+/obj/item/gun/proc/durability_check(mob/user)   //Gun durability
+	if(durability && !jam)
+		var/percentage = (durability/(initial(durability)))*100
+		switch(percentage)
+			if(0 to 20)
+				if(prob(60))
+					shake_camera(user, 4, 2)
+					explosion(src.loc,-2,-2,2,flame_range = 0)
+					qdel(src)
+					src = null
+					to_chat(user, "<span class='userdanger'>Оружие взорвалось прямо у вас в руках!</span>")
+					return
+				else
+					if(prob(40))
+						jam = 1
+
+			if(20 to 45)
+				if(prob(10))
+					user.dropItemToGround(src)
+					shake_camera(user, 4, 2)
+					to_chat(user, "<span class='userdanger'Кажется самое время починить этот хлам или выбросить, пока он не выстрелил тебе в лицо.</span>")
+					jam = 1
+				else
+					if(prob(20))
+						jam = 1
+
+			if(45 to 60)
+				if(prob(5))
+					jam = 1
+
+			if(60 to 75)
+				if(prob(2.5))
+					jam = 1
+
+		durability -= 0.075
+	else
+		if(jam)
+			return
+		else
+			durability -= 0.05
 
 /obj/item/gun/Initialize()
 	. = ..()
@@ -125,10 +166,12 @@
 
 /obj/item/gun/examine(mob/user)
 	..()
-	if(pin)
-		to_chat(user, "It has \a [pin] installed.")
-	else
-		to_chat(user, "It doesn't have a <b>firing pin</b> installed, and won't fire.")
+	//if(pin)
+	//	to_chat(user, "It has \a [pin] installed.")
+	//else
+	//	to_chat(user, "It doesn't have a <b>firing pin</b> installed, and won't fire.")
+
+	var/percentage = null
 
 	if(gun_light)
 		to_chat(user, "It has \a [gun_light] [can_flashlight ? "" : "permanently "]mounted on it.")
@@ -143,6 +186,13 @@
 			to_chat(user, "<span class='info'>[bayonet] looks like it can be <b>unscrewed</b> from [src].</span>")
 	else if(can_bayonet)
 		to_chat(user, "It has a <b>bayonet</b> lug on it.")
+
+	if(durability)
+		percentage = (durability / (initial(durability)))*100
+		if(percentage >= 50)
+			to_chat(user, "<span class='notice'>Прочность: [percentage]%</span>")
+		else
+			to_chat(user, "<span class='warning'>Прочность: [percentage]%</span>")
 
 /obj/item/gun/equipped(mob/living/user, slot)
 	. = ..()
@@ -245,6 +295,13 @@
 
 /obj/item/gun/can_trigger_gun(mob/living/user)
 	. = ..()
+	var/area/B = get_area(user.loc)
+	if(B.safezone)
+		if(user.client && (user.client.prefs.chat_toggles & CHAT_LANGUAGE))
+			user << "<span class='warning'>You can't shoot in the safezone!</span>"
+		else
+			user << "<span class='warning'>Вы не можете стрелять в этой зоне!</span>"
+		return 0
 	if(!handle_pins(user))
 		return FALSE
 
@@ -280,17 +337,28 @@
 		else //Smart spread
 			sprd = round((((rand_spr/burst_size) * iteration) - (0.5 + (rand_spr * 0.25))) * (randomized_gun_spread + randomized_bonus_spread))
 
+		durability_check(user)
 		if(!chambered.fire_casing(target, user, params, ,suppressed, zone_override, sprd))
 			shoot_with_empty_chamber(user)
 			firing_burst = FALSE
 			return FALSE
 		else
-			if(get_dist(user, target) <= 1) //Making sure whether the target is in vicinity for the pointblank shot
-				shoot_live_shot(user, 1, target, message)
+			if(!jam)
+				if(get_dist(user, target) <= 1) //Making sure whether the target is in vicinity for the pointblank shot
+					shoot_live_shot(user, 1, target, message)
+				else
+					shoot_live_shot(user, 0, target, message)
+				if (iteration >= burst_size)
+					firing_burst = FALSE
 			else
-				shoot_live_shot(user, 0, target, message)
-			if (iteration >= burst_size)
-				firing_burst = FALSE
+				if(!chambered.fire_casing(target, user, params, distro, suppressed, zone_override, sprd, damagelose))
+					shoot_with_empty_chamber(user)
+					playsound(user, fire_sound, 50, 1)
+					to_chat(user, "<span class='warning'>Оружие заклинило. Его необходимо перезарядить.</span>")
+					firing_burst = 0
+					return
+				else
+					to_chat(user, "<span class='warning'>Оружие заклинило. Его необходимо перезарядить.</span>")
 	else
 		shoot_with_empty_chamber(user)
 		firing_burst = FALSE
@@ -304,6 +372,12 @@
 
 	if(semicd)
 		return
+
+	if(weapon_weight)
+		if(user.get_inactive_held_item())
+			recoil = 4 //one-handed kick
+		else
+			recoil = initial(recoil)
 
 	var/sprd = 0
 	var/randomized_gun_spread = 0
@@ -325,14 +399,25 @@
 					to_chat(user, "<span class='notice'> [src] is lethally chambered! You don't want to risk harming anyone...</span>")
 					return
 			sprd = round((rand() - 0.5) * DUALWIELD_PENALTY_EXTRA_MULTIPLIER * (randomized_gun_spread + randomized_bonus_spread))
+			durability_check(user)
 			if(!chambered.fire_casing(target, user, params, , suppressed, zone_override, sprd))
 				shoot_with_empty_chamber(user)
 				return
 			else
-				if(get_dist(user, target) <= 1) //Making sure whether the target is in vicinity for the pointblank shot
-					shoot_live_shot(user, 1, target, message)
+				if(!jam)
+					if(get_dist(user, target) <= 1) //Making sure whether the target is in vicinity for the pointblank shot
+						shoot_live_shot(user, 1, target, message)
+					else
+						shoot_live_shot(user, 0, target, message)
 				else
-					shoot_live_shot(user, 0, target, message)
+					if(!chambered.fire_casing(target, user, params, distro, suppressed, zone_override, sprd, damagelose))
+						shoot_with_empty_chamber(user)
+						playsound(user, fire_sound, 50, 1)
+						to_chat(user, "<span class='warning'>Оружие заклинило. Его необходимо перезарядить.</span>")
+						firing_burst = 0
+						return
+					else
+						to_chat(user, "<span class='warning'>Оружие заклинило. Его необходимо перезарядить.</span>")
 		else
 			shoot_with_empty_chamber(user)
 			return
@@ -610,8 +695,14 @@
 //Proc, so that gun accessories/scopes/etc. can easily add zooming.
 /obj/item/gun/proc/build_zooming()
 	if(azoom)
+		if(!zoomable)
+			zoom_amt = initial(zoom_amt)
+			zoom(usr, FALSE)
+			azoom = null
 		return
 
 	if(zoomable)
+		for(var/obj/item/attachment/scope/S in addons)
+			zoom_amt += S.zoom_add
 		azoom = new()
 		azoom.gun = src

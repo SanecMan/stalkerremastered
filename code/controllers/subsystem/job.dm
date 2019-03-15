@@ -395,9 +395,9 @@ SUBSYSTEM_DEF(job)
 	if(!joined_late)
 		var/obj/S = null
 		for(var/obj/effect/landmark/start/sloc in GLOB.start_landmarks_list)
-			if(sloc.name != rank)
-				S = sloc //so we can revert to spawning them on top of eachother if something goes wrong
-				continue
+			//if(sloc.name != rank)
+			//	S = sloc //so we can revert to spawning them on top of eachother if something goes wrong
+			//	continue
 			if(locate(/mob/living) in sloc.loc)
 				continue
 			S = sloc
@@ -425,19 +425,18 @@ SUBSYSTEM_DEF(job)
 				M = H
 
 		SSpersistence.antag_rep_change[M.client.ckey] += job.GetAntagRep()
-
-	to_chat(M, "<b>You are the [rank].</b>")
 	if(job)
-		to_chat(M, "<b>As the [rank] you answer directly to [job.supervisors]. Special circumstances may change this.</b>")
-		job.radio_help_message(M)
+		to_chat(M, "<b>Вы [job.title], ваше звание [job.real_rank]</b>")
+		to_chat(M, "<b>Как [job.title] вы слушаетесь лидера [job.faction_s].</b>")
+		//job.radio_help_message(M)
 		if(job.req_admin_notify)
-			to_chat(M, "<b>You are playing a job that is important for Game Progression. If you have to disconnect, please notify the admins via adminhelp.</b>")
-		if(CONFIG_GET(number/minimal_access_threshold))
-			to_chat(M, "<FONT color='blue'><B>As this station was initially staffed with a [CONFIG_GET(flag/jobs_have_minimal_access) ? "full crew, only your job's necessities" : "skeleton crew, additional access may"] have been added to your ID card.</B></font>")
-	if(ishuman(H))
-		var/mob/living/carbon/human/wageslave = H
-		to_chat(M, "<b>Your account ID is [wageslave.account_id].</b>")
-		H.add_memory("Your account ID is [wageslave.account_id].")
+			to_chat(M, "<b>Вы играете за роль, которая требует постоянного взаимодействия с игрой. Если вы собираетесь уходить, то проинформируйте админсостав об этом.</b>")
+	//	if(CONFIG_GET(number/minimal_access_threshold))
+	//		to_chat(M, "<FONT color='blue'><B>As this station was initially staffed with a [CONFIG_GET(flag/jobs_have_minimal_access) ? "full crew, only your job's necessities" : "skeleton crew, additional access may"] have been added to your ID card.</B></font>")
+	//if(ishuman(H))
+	//	var/mob/living/carbon/human/wageslave = H
+	//	to_chat(M, "<b>Your account ID is [wageslave.account_id].</b>")
+	//	H.add_memory("Your account ID is [wageslave.account_id].")
 	if(job && H)
 		job.after_spawn(H, M, joined_late) // note: this happens before the mob has a key! M will always have a client, H might not.
 

@@ -151,84 +151,33 @@ window "mapwindow"
 window "infowindow"
 	elem "infowindow"
 		type = MAIN
-		pos = 0,0
+		pos = 789,105
 		size = 640x480
 		anchor1 = none
 		anchor2 = none
+		background-color = none
 		saved-params = "pos;size;is-minimized;is-maximized"
 		is-pane = true
 	elem "info"
 		type = CHILD
-		pos = 0,30
-		size = 640x445
+		pos = 0,0
+		size = 640x480
 		anchor1 = 0,0
 		anchor2 = 100,100
+		background-color = none
 		saved-params = "splitter"
 		left = "statwindow"
 		right = "outputwindow"
 		is-vert = false
-	elem "changelog"
-		type = BUTTON
-		pos = 16,5
-		size = 104x20
-		anchor1 = 3,0
-		anchor2 = 19,0
-		saved-params = "is-checked"
-		text = "Changelog"
-		command = "changelog"
-	elem "rules"
-		type = BUTTON
-		pos = 120,5
-		size = 100x20
-		anchor1 = 19,0
-		anchor2 = 34,0
-		saved-params = "is-checked"
-		text = "Rules"
-		command = "rules"
-	elem "wiki"
-		type = BUTTON
-		pos = 220,5
-		size = 100x20
-		anchor1 = 34,0
-		anchor2 = 50,0
-		saved-params = "is-checked"
-		text = "Wiki"
-		command = "wiki"
-	elem "forum"
-		type = BUTTON
-		pos = 320,5
-		size = 100x20
-		anchor1 = 50,0
-		anchor2 = 66,0
-		saved-params = "is-checked"
-		text = "Forum"
-		command = "forum"
-	elem "github"
-		type = BUTTON
-		pos = 420,5
-		size = 100x20
-		anchor1 = 66,0
-		anchor2 = 81,0
-		saved-params = "is-checked"
-		text = "Github"
-		command = "github"
-	elem "report-issue"
-		type = BUTTON
-		pos = 520,5
-		size = 100x20
-		anchor1 = 81,0
-		anchor2 = 97,0
-		saved-params = "is-checked"
-		text = "Report Issue"
-		command = "report-issue"
 
 window "outputwindow"
 	elem "outputwindow"
 		type = MAIN
-		pos = 0,0
+		pos = 838,181
 		size = 640x480
 		anchor1 = none
 		anchor2 = none
+		background-color = none
 		saved-params = "pos;size;is-minimized;is-maximized"
 		is-pane = true
 	elem "browseroutput"
@@ -254,28 +203,30 @@ window "outputwindow"
 window "preferences_window"
 	elem "preferences_window"
 		type = MAIN
-		pos = 372,0
-		size = 1120x1000
+		pos = 281,0
+		size = 575x750
 		anchor1 = none
 		anchor2 = none
-		background-color = none
 		is-visible = false
 		saved-params = "pos;size;is-minimized;is-maximized"
 		statusbar = false
+		can-close = false
+		can-minimize = false
+		can-resize = false
 	elem "preferences_browser"
 		type = BROWSER
-		pos = -8,-8
-		size = 896x1008
+		pos = 0,0
+		size = 575x630
 		anchor1 = 0,0
 		anchor2 = 90,100
-		background-color = none
 		saved-params = ""
 	elem "character_preview_map"
 		type = MAP
-		pos = 887,0
-		size = 313x1000
+		pos = 0,580
+		size = 575x170
 		anchor1 = 90,0
 		anchor2 = 100,100
+		background-color = #222222
 		right-click = true
 		saved-params = "zoom;letterbox;zoom-mode"
 

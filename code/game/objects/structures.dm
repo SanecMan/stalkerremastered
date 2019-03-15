@@ -1,7 +1,7 @@
 /obj/structure
 	icon = 'icons/obj/structures.dmi'
 	pressure_resistance = 8
-	max_integrity = 300
+	max_integrity = 300000
 	interaction_flags_atom = INTERACT_ATOM_ATTACK_HAND | INTERACT_ATOM_UI_INTERACT
 	var/climb_time = 20
 	var/climb_stun = 20
@@ -11,7 +11,7 @@
 
 /obj/structure/Initialize()
 	if (!armor)
-		armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 50)
+		armor = list("melee" = 100, "bullet" = 100, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 100, "acid" = 100)
 	. = ..()
 	if(smooth)
 		queue_smooth(src)

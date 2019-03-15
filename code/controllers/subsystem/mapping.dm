@@ -210,7 +210,7 @@ SUBSYSTEM_DEF(mapping)
 		if (!pm.load(1, 1, start_z + parsed_maps[P], no_changeturf = TRUE))
 			errorList |= pm.original_path
 	if(!silent)
-		INIT_ANNOUNCE("Loaded [name] in [(REALTIMEOFDAY - start_time)/10]s!")
+		INIT_ANNOUNCE("Зона загружена за [(REALTIMEOFDAY - start_time)/10] секунд.")
 	return parsed_maps
 
 /datum/controller/subsystem/mapping/proc/loadWorld()
@@ -222,7 +222,7 @@ SUBSYSTEM_DEF(mapping)
 
 	// load the station
 	station_start = world.maxz + 1
-	INIT_ANNOUNCE("Loading [config.map_name]...")
+	INIT_ANNOUNCE("Загружаем зону...")
 	LoadGroup(FailedZs, "Station", config.map_path, config.map_file, config.traits, ZTRAITS_STATION)
 
 	if(SSdbcore.Connect())
@@ -312,8 +312,8 @@ GLOBAL_LIST_EMPTY(the_station_areas)
 	var/datum/map_config/VM = global.config.maplist[pickedmap]
 	message_admins("Randomly rotating map to [VM.map_name]")
 	. = changemap(VM)
-	if (. && VM.map_name != config.map_name)
-		to_chat(world, "<span class='boldannounce'>Map rotation has chosen [VM.map_name] for next round!</span>")
+	//if (. && VM.map_name != config.map_name)
+		//to_chat(world, "<span class='boldannounce'>Map rotation has chosen [VM.map_name] for next round!</span>")
 
 /datum/controller/subsystem/mapping/proc/changemap(var/datum/map_config/VM)
 	if(!VM.MakeNextMap())

@@ -113,6 +113,15 @@
 /datum/client_colour/blowout2
 	colour = list(rgb(255,0,0), rgb(77,150,0), rgb(77,0,150), rgb(0,0,0))
 
+/datum/client_colour/psy
+	colour = list(rgb(77,77,77), rgb(150,150,150), rgb(28,28,28), rgb(0,0,0))
+
+/datum/client_colour/nvg
+	colour = list(rgb(25,225,0), rgb(0,255,0), rgb(0,255,25), rgb(0,0,0))
+
+/datum/client_colour/nvg2
+	colour = list(rgb(77,77,77), rgb(77,77,77), rgb(77,77,77), rgb(0,0,0))
+
 /datum/client_colour/monochrome
 	colour = list(rgb(77,77,77), rgb(150,150,150), rgb(28,28,28), rgb(0,0,0))
 	priority = INFINITY //we can't see colors anyway!

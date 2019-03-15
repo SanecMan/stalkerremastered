@@ -48,7 +48,7 @@
 		if(details && findtext(details, "\[s\]") && (!usr || !usr.client.holder))
 			continue
 		. += "<a href=\"[CONFIG_GET(string/githuburl)]/pull/[tm.number]\">#[tm.number][details]</a><br>"
-
+/*
 /client/verb/showrevinfo()
 	set category = "OOC"
 	set name = "Show Server Revision"
@@ -122,3 +122,4 @@
 				var/percentage = round(probabilities[ctag] / sum * 100, 0.1)
 				msg += "[ctag] [percentage]%"
 	to_chat(src, msg.Join("<br>"))
+*/

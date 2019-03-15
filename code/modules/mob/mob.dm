@@ -73,7 +73,7 @@
 	to_chat(usr, t)
 
 /mob/proc/get_photo_description(obj/item/camera/camera)
-	return "a ... thing?"
+	return "... штука?"
 
 /mob/proc/show_message(msg, type, alt_msg, alt_type)//Message, type of message (1 or 2), alternative message, alt message type (1 or 2)
 
@@ -101,7 +101,7 @@
 	// voice muffling
 	if(stat == UNCONSCIOUS)
 		if(type & 2) //audio
-			to_chat(src, "<I>... You can almost hear something ...</I>")
+			to_chat(src, "<I>... вы что-то слышите ...</I>")
 	else
 		to_chat(src, msg)
 
@@ -228,7 +228,7 @@
 			qdel(W)
 		else
 			if(!disable_warning)
-				to_chat(src, "<span class='warning'>You are unable to equip that!</span>")
+				to_chat(src, "<span class='warning'>Вы не можете это надеть!</span>")
 		return FALSE
 	equip_to_slot(W, slot, redraw_mob) //This proc should not ever fail.
 	return TRUE
@@ -306,7 +306,7 @@
 
 //mob verbs are faster than object verbs. See https://secure.byond.com/forum/?post=1326139&page=2#comment8198716 for why this isn't atom/verb/examine()
 /mob/verb/examinate(atom/A as mob|obj|turf in view()) //It used to be oview(12), but I can't really say why
-	set name = "Examine"
+	set name = "Осмотреть"
 	set category = "IC"
 
 	if(isturf(A) && !(sight & SEE_TURFS) && !(A in view(client ? client.view : world.view, src)))
@@ -314,7 +314,7 @@
 		return
 
 	if(is_blind(src))
-		to_chat(src, "<span class='notice'>Something is there but you can't see it.</span>")
+		to_chat(src, "<span class='notice'>Тут что-то есть, но вы не видите что.</span>")
 		return
 
 	face_atom(A)
@@ -325,7 +325,7 @@
 //visible_message will handle invisibility properly
 //overridden here and in /mob/dead/observer for different point span classes and sanity checks
 /mob/verb/pointed(atom/A as mob|obj|turf in view())
-	set name = "Point To"
+	set name = "Показать на..."
 	set category = "Object"
 
 	if(!src || !isturf(src.loc) || !(A in view(src.loc)))
@@ -374,7 +374,7 @@
 			hud_used.rest_icon.update_icon(src)
 
 /mob/verb/mode()
-	set name = "Activate Held Object"
+	set name = "Активировать предмет"
 	set category = "Object"
 	set src = usr
 
@@ -390,16 +390,16 @@
 		update_inv_hands()
 
 /mob/verb/memory()
-	set name = "Notes"
+	set name = "Заметки"
 	set category = "IC"
 	set desc = "View your character's notes memory."
 	if(mind)
 		mind.show_memory(src)
 	else
-		to_chat(src, "You don't have a mind datum for some reason, so you can't look at your notes, if you had any.")
+		to_chat(src, "Вам некуда запоминать.")
 
 /mob/verb/add_memory(msg as message)
-	set name = "Add Note"
+	set name = "Добавить заметку"
 	set category = "IC"
 
 	msg = copytext(msg, 1, MAX_MESSAGE_LEN)
@@ -408,21 +408,21 @@
 	if(mind)
 		mind.store_memory(msg)
 	else
-		to_chat(src, "You don't have a mind datum for some reason, so you can't add a note to it.")
+		to_chat(src, "Вам некуда запоминать.")
 
 /mob/verb/abandon_mob()
-	set name = "Respawn"
+	set name = "Перерождение"
 	set category = "OOC"
 
 	if (CONFIG_GET(flag/norespawn))
 		return
 	if ((stat != DEAD || !( SSticker )))
-		to_chat(usr, "<span class='boldnotice'>You must be dead to use this!</span>")
+		to_chat(usr, "<span class='boldnotice'>Вам нужно умереть для этого!</span>")
 		return
 
 	log_game("[key_name(usr)] used abandon mob.")
 
-	to_chat(usr, "<span class='boldnotice'>Please roleplay correctly!</span>")
+	to_chat(usr, "<span class='boldnotice'>Уважайте других игроков!</span>")
 
 	if(!client)
 		log_game("[key_name(usr)] AM failed due to disconnect.")
@@ -526,20 +526,20 @@
 
 	if(statpanel("Status"))
 		if (client)
-			stat(null, "Ping: [round(client.lastping, 1)]ms (Average: [round(client.avgping, 1)]ms)")
-		stat(null, "Map: [SSmapping.config?.map_name || "Loading..."]")
-		var/datum/map_config/cached = SSmapping.next_map_config
-		if(cached)
-			stat(null, "Next Map: [cached.map_name]")
-		stat(null, "Round ID: [GLOB.round_id ? GLOB.round_id : "NULL"]")
-		stat(null, "Server Time: [time2text(world.timeofday, "YYYY-MM-DD hh:mm:ss")]")
-		stat(null, "Round Time: [worldtime2text()]")
-		stat(null, "Station Time: [station_time_timestamp()]")
-		stat(null, "Time Dilation: [round(SStime_track.time_dilation_current,1)]% AVG:([round(SStime_track.time_dilation_avg_fast,1)]%, [round(SStime_track.time_dilation_avg,1)]%, [round(SStime_track.time_dilation_avg_slow,1)]%)")
-		if(SSshuttle.emergency)
-			var/ETA = SSshuttle.emergency.getModeStr()
-			if(ETA)
-				stat(null, "[ETA] [SSshuttle.emergency.getTimerStr()]")
+			stat(null, pa2pb("Задержка: [round(client.lastping, 1)]мс (средняя: [round(client.avgping, 1)]мс)"))
+		//stat(null, "Map: [SSmapping.config?.map_name || "Loading..."]")
+		//var/datum/map_config/cached = SSmapping.next_map_config
+		//if(cached)
+		//	stat(null, "Next Map: [cached.map_name]")
+		//stat(null, "Round ID: [GLOB.round_id ? GLOB.round_id : "NULL"]")
+		//stat(null, "Server Time: [time2text(world.timeofday, "YYYY-MM-DD hh:mm:ss")]")
+		//stat(null, "Round Time: [worldtime2text()]")
+		stat(null, pa2pb("Текущее время: [station_time_timestamp()]"))
+		//stat(null, "Time Dilation: [round(SStime_track.time_dilation_current,1)]% AVG:([round(SStime_track.time_dilation_avg_fast,1)]%, [round(SStime_track.time_dilation_avg,1)]%, [round(SStime_track.time_dilation_avg_slow,1)]%)")
+		//if(SSshuttle.emergency)
+		//	var/ETA = SSshuttle.emergency.getModeStr()
+		//	if(ETA)
+		//		stat(null, "[ETA] [SSshuttle.emergency.getTimerStr()]")
 
 	if(client && client.holder)
 		if(statpanel("MC"))

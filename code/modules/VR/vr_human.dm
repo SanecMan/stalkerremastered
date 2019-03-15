@@ -29,7 +29,7 @@
 
 /mob/living/carbon/human/virtual_reality/ghost()
 	set category = "OOC"
-	set name = "Ghost"
+	set name = "онйхмсрэ рекн"
 	set desc = "Relinquish your life and enter the land of the dead."
 	revert_to_reality(FALSE)
 

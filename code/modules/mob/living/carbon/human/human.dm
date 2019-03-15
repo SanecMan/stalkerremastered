@@ -60,8 +60,8 @@
 	..()
 
 	if(statpanel("Status"))
-		stat(null, "Intent: [a_intent]")
-		stat(null, "Move Mode: [m_intent]")
+		//stat(null, "Intent: [a_intent]")
+		//stat(null, "Move Mode: [m_intent]")
 		if (internal)
 			if (!internal.air_contents)
 				qdel(internal)

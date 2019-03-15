@@ -160,9 +160,11 @@
 /datum/controller/subsystem/Initialize(start_timeofday)
 	initialized = TRUE
 	var/time = (REALTIMEOFDAY - start_timeofday) / 10
-	var/msg = "Initialized [name] subsystem within [time] second[time == 1 ? "" : "s"]!"
-	to_chat(world, "<span class='boldannounce'>[msg]</span>")
-	log_world(msg)
+	var/msg = "Загружено [name] за [time] секунд!"
+	var/msgc = "Init: [name] for [time] sec."
+	//to_chat(world, "<span class='boldannounce'>[msg]</span>")
+	message_admins("[msg]")
+	log_world(msgc)
 	return time
 
 //hook for printing stats to the "MC" statuspanel for admins to see performance and related stats etc.

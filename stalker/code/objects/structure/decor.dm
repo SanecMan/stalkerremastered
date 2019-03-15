@@ -585,12 +585,13 @@
 	var/cache_chance = 0	//percent
 	var/cache_quality = -1	//from 0 to 3, -1 for random
 	var/cache_size = 0		//from 0 to 3
-	var/obj/item/storage/stalker/cache/internal_cache = null
-
-
+	var/datum/component/storage/concrete/pockets/stalker/internal_cache
 
 /obj/structure/stalker/cacheable/New()
 	..()
+
+	if(ispath(internal_cache))
+		LoadComponent(internal_cache)
 
 	if(!cache_chance)
 		cache_chance = rand(6,8)
@@ -627,31 +628,31 @@
 
 	switch(cache_size)
 		if(0)
-			internal_cache = new /obj/item/storage/stalker/cache/small(src)
+			internal_cache = new /datum/component/storage/concrete/pockets/stalker/small(src)
 		if(1)
-			internal_cache = new /obj/item/storage/stalker/cache/medium(src)
+			internal_cache = new /datum/component/storage/concrete/pockets/stalker/medium(src)
 		if(2)
-			internal_cache = new /obj/item/storage/stalker/cache/big(src)
+			internal_cache = new /datum/component/storage/concrete/pockets/stalker/big(src)
 		if(3)
-			internal_cache = new /obj/item/storage/stalker/cache/large(src)
+			internal_cache = new /datum/component/storage/concrete/pockets/stalker/large(src)
 
 	internal_cache.CreateContents(src)
 
 /obj/structure/stalker/cacheable/attack_hand(mob/user)
 	..()
 
-	user.visible_message("<span class='notice'>[user] starts inspecting [src]...</span>", "<span class='notice'>You start inspecting [src]...</span>")
+	user.visible_message("<span class='notice'>[user] начинает осматривать [src]...</span>", "<span class='notice'>Вы начинаете осматривать [src]...</span>")
 	if(!do_after(user, 30, 1, src))
 		return
 
 	if(!internal_cache)
-		user.visible_message("<span class='notice'>[user] finds nothing in [src].</span>", "<span class='notice'>You find nothing in [src].</span>")
+		user.visible_message("<span class='notice'>[user] ничего не находит в [src].</span>", "<span class='notice'>Вы ничего не нашли в [src].</span>")
 		return
 
-	user.visible_message("<span class='notice'>[user] discovered a hidden cache in [src].</span>", "<span class='notice'>You discovered a hidden cache in [src].</span>")
+	user.visible_message("<span class='notice'>[user] находит что-то в [src].</span>", "<span class='notice'>Вы что-то нашли в [src].</span>")
 
-	playsound(loc, "rustle", 50, 1, -5)
-	internal_cache.attack_hand(user)
+	//playsound(loc, "rustle", 50, 1, -5)
+	internal_cache.show_to(user)
 
 	if(internal_cache.waspicked || !istype(usr, /mob/living/carbon/human))
 		return
@@ -667,7 +668,7 @@
 	if(!KPK.owner || KPK.owner != H)
 		return
 
-	show_lenta_message(null, KPK, null, "PDA", "OS", "You discovered a stash in the [src]!", selfsound = 1)
+	show_lenta_message(null, KPK, null, "PDA", "OS", "Вы что-то нашли в [src]!", selfsound = 1)
 
 	var/datum/data/record/sk = find_record("sid", H.sid, GLOB.data_core.stalkers)
 
@@ -680,24 +681,33 @@
 		return
 
 	sk.fields["money"] += internal_cache.cached_cash
-	show_lenta_message(null, KPK, null, "PDA", "OS", "You found a bitRU key that gave you access to [internal_cache.cached_cash] RU on your account!", selfsound = 1)
+	show_lenta_message(null, KPK, null, "PDA", "OS", "Вы обнаружили ключ на [internal_cache.cached_cash] рублей, ключ активирован!", selfsound = 1)
 	internal_cache.cached_cash = 0
 
-/obj/item/storage/stalker/cache
-	name = "cache"
-	icon = 'stalker/icons/quest.dmi'
-	icon_state = "blue_box_r"
-	invisibility = 101
+/datum/component/storage/concrete/pockets/stalker
 	var/waspicked = 0
 	var/cached_cash = 0
+	max_items = 5
+	display_numerical_stacking = TRUE
+	attack_hand_interact = TRUE
 
-/obj/item/storage/stalker/cache/ComponentInitialize()
-	. = ..()
-	GET_COMPONENT(STR, /datum/component/storage)
-	STR.display_numerical_stacking = TRUE
+/datum/component/storage/concrete/pockets/stalker/can_be_inserted()
+	return FALSE
 
-/obj/item/storage/stalker/cache/proc/CreateContents(var/obj/structure/stalker/cacheable/C)
-/*
+/datum/component/storage/concrete/pockets/stalker/can_be_inserted()
+	return
+
+/datum/component/storage/concrete/pockets/stalker/mousedrop_onto()
+	return FALSE
+
+/datum/component/storage/concrete/pockets/stalker/on_alt_click()
+	return
+
+/datum/component/storage/concrete/pockets/stalker/show_to_ghost()
+	return
+
+/datum/component/storage/concrete/pockets/stalker/proc/CreateContents(var/obj/structure/stalker/cacheable/C)
+
 	var/list/lootspawn = list()
 
 	var/max_cost = 0
@@ -718,8 +728,8 @@
 	var/combined_w_class = 0
 	var/combined_cost = 0
 
-	for(var/i = 0, i <= max_items, i++)
-		if(combined_w_class > C.max_combined_w_class)
+	for(var/i = 0, i <= src.max_items, i++)
+		if(combined_w_class > src.max_combined_w_class)
 			break
 
 		if(combined_cost > max_cost)
@@ -737,7 +747,7 @@
 
 		var/obj/item/I = new A(src)
 
-		if(I.w_class > C.max_w_class)
+		if(I.w_class > src.max_w_class)
 			continue
 
 		combined_cost += SE.cost
@@ -746,43 +756,27 @@
 		//	continue
 
 		combined_w_class +=  I.w_class
-		C.handle_item_insertion(I, prevent_warning = 1)
+		src.handle_item_insertion(I, prevent_warning = 1)
 
 	if(max_cost - combined_cost > 0)
 		cached_cash = round((max_cost - combined_cost)/2)
-*/ //NEED REWORK
-/obj/item/storage/stalker/cache/small
 
-/obj/item/storage/stalker/cache/small/ComponentInitialize()
-	. = ..()
-	GET_COMPONENT(STR, /datum/component/storage)
-	STR.max_w_class = 2
-	STR.max_combined_w_class = 3
-	STR.display_numerical_stacking = TRUE
+/datum/component/storage/concrete/pockets/stalker/small
+	max_items = 3
+	max_w_class = 2
+	max_combined_w_class = 3
 
-/obj/item/storage/stalker/cache/medium
+/datum/component/storage/concrete/pockets/stalker/medium
+	max_items = 6
+	max_w_class = 3
+	max_combined_w_class = 6
 
-/obj/item/storage/stalker/cache/medium/ComponentInitialize()
-	. = ..()
-	GET_COMPONENT(STR, /datum/component/storage)
-	STR.max_w_class = 3
-	STR.max_combined_w_class = 6
-	STR.display_numerical_stacking = TRUE
+/datum/component/storage/concrete/pockets/stalker/big
+	max_items = 8
+	max_w_class = 4
+	max_combined_w_class = 8
 
-/obj/item/storage/stalker/cache/big
-
-/obj/item/storage/stalker/cache/big/ComponentInitialize()
-	. = ..()
-	GET_COMPONENT(STR, /datum/component/storage)
-	STR.max_w_class = 4
-	STR.max_combined_w_class = 8
-	STR.display_numerical_stacking = TRUE
-
-/obj/item/storage/stalker/cache/large
-
-/obj/item/storage/stalker/cache/large/ComponentInitialize()
-	. = ..()
-	GET_COMPONENT(STR, /datum/component/storage)
-	STR.max_w_class = 4
-	STR.max_combined_w_class = 12
-	STR.display_numerical_stacking = TRUE
+/datum/component/storage/concrete/pockets/stalker/large
+	max_items = 10
+	max_w_class = 5
+	max_combined_w_class = 12

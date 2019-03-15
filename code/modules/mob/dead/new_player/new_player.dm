@@ -31,48 +31,49 @@
 	return
 
 /mob/dead/new_player/proc/new_player_panel()
-	var/output = "<center><p><a href='byond://?src=[REF(src)];show_preferences=1'>Setup Character</a></p>"
+	//var/output = "<center><p><a href='byond://?src=[REF(src)];show_preferences=1'>Setup Character</a></p>"
 
-	if(SSticker.current_state <= GAME_STATE_PREGAME)
-		switch(ready)
-			if(PLAYER_NOT_READY)
-				output += "<p>\[ [LINKIFY_READY("Ready", PLAYER_READY_TO_PLAY)] | <b>Not Ready</b> | [LINKIFY_READY("Observe", PLAYER_READY_TO_OBSERVE)] \]</p>"
-			if(PLAYER_READY_TO_PLAY)
-				output += "<p>\[ <b>Ready</b> | [LINKIFY_READY("Not Ready", PLAYER_NOT_READY)] | [LINKIFY_READY("Observe", PLAYER_READY_TO_OBSERVE)] \]</p>"
-			if(PLAYER_READY_TO_OBSERVE)
-				output += "<p>\[ [LINKIFY_READY("Ready", PLAYER_READY_TO_PLAY)] | [LINKIFY_READY("Not Ready", PLAYER_NOT_READY)] | <b> Observe </b> \]</p>"
-	else
-		output += "<p><a href='byond://?src=[REF(src)];manifest=1'>View the Crew Manifest</a></p>"
-		output += "<p><a href='byond://?src=[REF(src)];late_join=1'>Join Game!</a></p>"
-		output += "<p>[LINKIFY_READY("Observe", PLAYER_READY_TO_OBSERVE)]</p>"
+//	if(SSticker.current_state <= GAME_STATE_PREGAME)
+//		switch(ready)
+//			if(PLAYER_NOT_READY)
+//				output += "<p>\[ [LINKIFY_READY("Ready", PLAYER_READY_TO_PLAY)] | <b>Not Ready</b> | [LINKIFY_READY("Observe", PLAYER_READY_TO_OBSERVE)] \]</p>"
+//			if(PLAYER_READY_TO_PLAY)
+//				output += "<p>\[ <b>Ready</b> | [LINKIFY_READY("Not Ready", PLAYER_NOT_READY)] | [LINKIFY_READY("Observe", PLAYER_READY_TO_OBSERVE)] \]</p>"
+//			if(PLAYER_READY_TO_OBSERVE)
+//				output += "<p>\[ [LINKIFY_READY("Ready", PLAYER_READY_TO_PLAY)] | [LINKIFY_READY("Not Ready", PLAYER_NOT_READY)] | <b> Observe </b> \]</p>"
+//	else
+//		output += "<p><a href='byond://?src=[REF(src)];manifest=1'>View the Crew Manifest</a></p>"
+//		output += "<p><a href='byond://?src=[REF(src)];late_join=1'>Join Game!</a></p>"
+//	output += "<p>[LINKIFY_READY("Observe", PLAYER_READY_TO_OBSERVE)]</p>"
 
-	if(!IsGuestKey(src.key))
-		if (SSdbcore.Connect())
-			var/isadmin = 0
-			if(src.client && src.client.holder)
-				isadmin = 1
-			var/datum/DBQuery/query_get_new_polls = SSdbcore.NewQuery("SELECT id FROM [format_table_name("poll_question")] WHERE [(isadmin ? "" : "adminonly = false AND")] Now() BETWEEN starttime AND endtime AND id NOT IN (SELECT pollid FROM [format_table_name("poll_vote")] WHERE ckey = \"[sanitizeSQL(ckey)]\") AND id NOT IN (SELECT pollid FROM [format_table_name("poll_textreply")] WHERE ckey = \"[sanitizeSQL(ckey)]\")")
-			var/rs = REF(src)
-			if(query_get_new_polls.Execute())
-				var/newpoll = 0
-				if(query_get_new_polls.NextRow())
-					newpoll = 1
+//	if(!IsGuestKey(src.key))
+//		if (SSdbcore.Connect())
+//			var/isadmin = 0
+//			if(src.client && src.client.holder)
+//				isadmin = 1
+//			var/datum/DBQuery/query_get_new_polls = SSdbcore.NewQuery("SELECT id FROM [format_table_name("poll_question")] WHERE [(isadmin ? "" : "adminonly = false AND")] Now() BETWEEN starttime AND endtime AND id NOT IN (SELECT pollid FROM [format_table_name("poll_vote")] WHERE ckey = \"[sanitizeSQL(ckey)]\") AND id NOT IN (SELECT pollid FROM [format_table_name("poll_textreply")] WHERE ckey = \"[sanitizeSQL(ckey)]\")")
+//			var/rs = REF(src)
+//			if(query_get_new_polls.Execute())
+//				var/newpoll = 0
+//				if(query_get_new_polls.NextRow())
+//					newpoll = 1
+//
+//				if(newpoll)
+//					output += "<p><b><a href='byond://?src=[rs];showpoll=1'>Show Player Polls</A> (NEW!)</b></p>"
+//				else
+//					output += "<p><a href='byond://?src=[rs];showpoll=1'>Show Player Polls</A></p>"
+//			qdel(query_get_new_polls)
+//			if(QDELETED(src))
+//				return
 
-				if(newpoll)
-					output += "<p><b><a href='byond://?src=[rs];showpoll=1'>Show Player Polls</A> (NEW!)</b></p>"
-				else
-					output += "<p><a href='byond://?src=[rs];showpoll=1'>Show Player Polls</A></p>"
-			qdel(query_get_new_polls)
-			if(QDELETED(src))
-				return
-
-	output += "</center>"
+	//output += "</center>"
+	//client.prefs.ShowChoices(src)
 
 	//src << browse(output,"window=playersetup;size=210x240;can_close=0")
-	var/datum/browser/popup = new(src, "playersetup", "<div align='center'>New Player Options</div>", 250, 265)
-	popup.set_window_options("can_close=0")
-	popup.set_content(output)
-	popup.open(FALSE)
+	//var/datum/browser/popup = new(src, "playersetup", "<div align='center'>Вам сюда нельзя.</div>", 250, 265)
+	//popup.set_window_options("can_close=0")
+	//popup.set_content(output)
+	//popup.open(FALSE)
 
 /mob/dead/new_player/Topic(href, href_list[])
 	if(src != usr)
@@ -247,11 +248,11 @@
 		ready = PLAYER_NOT_READY
 		return FALSE
 
-	var/this_is_like_playing_right = alert(src,"Are you sure you wish to observe? You will not be able to play this round!","Player Setup","Yes","No")
+	var/this_is_like_playing_right = alert(src,"Вы действительно хотите стать призраком?","Spooky Stalker","Да","Нет")
 
-	if(QDELETED(src) || !src.client || this_is_like_playing_right != "Yes")
+	if(QDELETED(src) || !src.client || this_is_like_playing_right != "Да")
 		ready = PLAYER_NOT_READY
-		src << browse(null, "window=playersetup") //closes the player setup window
+		src << browse(null, "window=preferences_window") //closes the player setup window
 		new_player_panel()
 		return FALSE
 
@@ -261,7 +262,7 @@
 	observer.started_as_observer = TRUE
 	close_spawn_windows()
 	var/obj/effect/landmark/observer_start/O = locate(/obj/effect/landmark/observer_start) in GLOB.landmarks_list
-	to_chat(src, "<span class='notice'>Now teleporting.</span>")
+	to_chat(src, "<span class='notice'>Перемещаемся в зону...</span>")
 	if (O)
 		observer.forceMove(O.loc)
 	else
@@ -348,6 +349,11 @@
 	SSjob.AssignRole(src, rank, 1)
 
 	var/mob/living/character = create_character(TRUE)	//creates the human and transfers vars and mind
+	switch(SSjob.GetJob(rank).faction_s)
+		if("Monolith")
+			character.faction = list("monolith_forces")
+		else
+			character.faction = list("stalker_forces")
 	var/equip = SSjob.EquipRank(character, rank, TRUE)
 	if(isliving(equip))	//Borgs get borged in the equip, so we need to make sure we handle the new mob.
 		character = equip
@@ -412,8 +418,8 @@
 
 
 /mob/dead/new_player/proc/LateChoices()
-	var/dat = "<div class='notice'>Round Duration: [DisplayTimeText(world.time - SSticker.round_start_time)]</div>"
-
+	var/dat = "<div class='notice'>Длительность раунда: [DisplayTimeText(world.time - SSticker.round_start_time)]</div>"
+	/*
 	if(SSshuttle.emergency)
 		switch(SSshuttle.emergency.mode)
 			if(SHUTTLE_ESCAPE)
@@ -421,52 +427,55 @@
 			if(SHUTTLE_CALL)
 				if(!SSshuttle.canRecall())
 					dat += "<div class='notice red'>The station is currently undergoing evacuation procedures.</div><br>"
+	*/
+	//var/available_job_count = 0
+	//for(var/datum/job/job in SSjob.occupations)
+	//	if(job && IsJobUnavailable(job.title, TRUE) == JOB_AVAILABLE)
+	//		available_job_count++;
 
-	var/available_job_count = 0
-	for(var/datum/job/job in SSjob.occupations)
-		if(job && IsJobUnavailable(job.title, TRUE) == JOB_AVAILABLE)
-			available_job_count++;
+	//for(var/datum/job/prioritized_job in SSjob.prioritized_jobs)
+	//	if(prioritized_job.current_positions >= prioritized_job.total_positions)
+	//		SSjob.prioritized_jobs -= prioritized_job
 
-	for(var/datum/job/prioritized_job in SSjob.prioritized_jobs)
-		if(prioritized_job.current_positions >= prioritized_job.total_positions)
-			SSjob.prioritized_jobs -= prioritized_job
+	//if(length(SSjob.prioritized_jobs))
+	//	dat += "<div class='notice red'>The station has flagged these jobs as high priority:<br>"
+	//	var/amt = length(SSjob.prioritized_jobs)
+	//	var/amt_count
+	//	for(var/datum/job/a in SSjob.prioritized_jobs)
+	//		amt_count++
+	//		if(amt_count != amt) // checks for the last job added.
+	//			dat += " [a.title], "
+	//		else
+	//			dat += " [a.title]. </div>"
 
-	if(length(SSjob.prioritized_jobs))
-		dat += "<div class='notice red'>The station has flagged these jobs as high priority:<br>"
-		var/amt = length(SSjob.prioritized_jobs)
-		var/amt_count
-		for(var/datum/job/a in SSjob.prioritized_jobs)
-			amt_count++
-			if(amt_count != amt) // checks for the last job added.
-				dat += " [a.title], "
-			else
-				dat += " [a.title]. </div>"
-
-	dat += "<div class='clearBoth'>Choose from the following open positions:</div><br>"
+	dat += "<div class='clearBoth'>Доступные роли:</div><br>"
 	dat += "<div class='jobs'><div class='jobsColumn'>"
 	var/job_count = 0
-	for(var/datum/job/job in SSjob.occupations)
-		if(job && IsJobUnavailable(job.title, TRUE) == JOB_AVAILABLE)
-			job_count++;
-			if (job_count > round(available_job_count / 2))
-				dat += "</div><div class='jobsColumn'>"
-			var/position_class = "otherPosition"
-			if (job.title in GLOB.command_positions)
-				position_class = "commandPosition"
-			dat += "<a class='[position_class]' href='byond://?src=[REF(src)];SelectedJob=[job.title]'>[job.title] ([job.current_positions])</a><br>"
+	//for(var/datum/job/job in SSjob.occupations)
+	//	if(job && IsJobUnavailable(job.title, TRUE) == JOB_AVAILABLE)
+	//		job_count++;
+	//		if (job_count > round(available_job_count / 2))
+	//			dat += "</div><div class='jobsColumn'>"
+	//		var/position_class = "otherPosition"
+	//		if (job.title in GLOB.command_positions)
+	//			position_class = "commandPosition"
+	//		dat += "<a class='[position_class]' href='byond://?src=[REF(src)];SelectedJob=[job.title]'>[job.title] ([job.current_positions])</a><br>"
 	if(!job_count) //if there's nowhere to go, overflow opens up.
 		for(var/datum/job/job in SSjob.occupations)
-			if(job.title != SSjob.overflow_role)
+			if(!job.activated)
 				continue
-			dat += "<a class='otherPosition' href='byond://?src=[REF(src)];SelectedJob=[job.title]'>[job.title] ([job.current_positions])</a><br>"
-			break
+			if(job.whitelist_only)
+				if(check_whitelist(usr.client.ckey, job.title))
+					dat += "<a class='otherPosition' href='byond://?src=\ref[src];SelectedJob=[job.title]'>[job.title] ([job.current_positions])</a><br>"
+			else if(job.title != "NOPE")
+				dat += "<a class='otherPosition' href='byond://?src=\ref[src];SelectedJob=[job.title]'>[job.title] ([job.current_positions])</a><br>"
 	dat += "</div></div>"
 
 	// Removing the old window method but leaving it here for reference
 	//src << browse(dat, "window=latechoices;size=300x640;can_close=1")
 
 	// Added the new browser window method
-	var/datum/browser/popup = new(src, "latechoices", "Choose Profession", 440, 500)
+	var/datum/browser/popup = new(src, "latechoices", "Выберите роль", 440, 500)
 	popup.add_stylesheet("playeroptions", 'html/browser/playeroptions.css')
 	popup.set_content(dat)
 	popup.open(FALSE) // FALSE is passed to open so that it doesn't use the onclose() proc
@@ -526,4 +535,5 @@
 	src << browse(null, "window=playersetup") //closes the player setup window
 	src << browse(null, "window=preferences") //closes job selection
 	src << browse(null, "window=mob_occupation")
+	src << browse(null, "window=preferences_window")
 	src << browse(null, "window=latechoices") //closes late job selection

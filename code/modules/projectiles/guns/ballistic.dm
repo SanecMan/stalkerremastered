@@ -55,6 +55,61 @@
 	var/recent_rack = 0
 	var/tac_reloads = FALSE //Snowflake mechanic no more.
 
+/obj/item/gun/ballistic/verb/deattach()
+	set src in usr.contents
+	set category = "Object"
+	set name = "Снять Аддон"
+
+	if(usr.stat || usr.restrained() || !Adjacent(usr))
+		return
+
+	if(usr.get_active_held_item() == null || usr.get_inactive_held_item() == null) // всё заебок
+		switch(addons.len)
+			if(2 to INFINITY)
+				var/selection = input("Выберите то, что хотите снять.", "Gun", null, null) as null|anything in addons
+				deattach_attachment(selection)
+
+			if(1)
+				//лол
+				for (var/obj/item/attachment/A in addons)
+					deattach_attachment(A)
+			if(0)
+				//кек
+				to_chat(usr, "<span class='notice'>Здесь ничего не установлено.</span>")
+				return
+	else
+		to_chat(usr, "<span class='notice'>Освободите руку.</span>")
+	update_icon()
+	return
+
+/obj/item/gun/ballistic/proc/deattach_attachment(var/obj/item/attachment/A)
+	if(istype(A, /obj/item/attachment/suppressor))
+		var/obj/item/attachment/suppressor/S = A
+		if(usr.get_held_items_for_side("l") != src && usr.get_held_items_for_side("r") != src)
+			..()
+			return
+		to_chat(usr, "<span class='notice'>Вы сняли [A] с [src].</span>")
+		playsound (src.loc, 'stalker/sound/weapons/detach_addon.ogg', 50, 1, 0)
+		usr.put_in_hands(S)
+		fire_sound = S.oldsound
+		suppressed = 0
+		addons.Remove(S)
+		return
+
+	if(istype(A, /obj/item/attachment/scope))
+		var/obj/item/attachment/scope/S =A
+		if(usr.get_held_items_for_side("l") != src && usr.get_held_items_for_side("r") != src)
+			..()
+			return
+		to_chat(usr, "<span class='notice'>Вы сняли [A] с [src].</span>")
+		playsound (src.loc, 'stalker/sound/weapons/detach_addon.ogg', 50, 1, 0)
+		azoom.Remove(usr)
+		usr.put_in_hands(S)
+		zoomable = 0
+		addons.Remove(S)
+		build_zooming()
+		return
+
 /obj/item/gun/ballistic/Initialize()
 	. = ..()
 	if (!spawnwithmagazine)
@@ -237,6 +292,55 @@ var/global/list/obj/item/ammo_casing/ACs = list()
 			to_chat(user, "<span class='notice'>You screw \the [S] onto \the [src].</span>")
 			install_suppressor(A)
 			return
+
+	if(istype(A, /obj/item/attachment/suppressor))
+		var/obj/item/attachment/suppressor/S = A
+		for(var/atype in S.types)
+			if(ispath(type, atype))
+				if(!suppressed)
+					if(!user.is_holding(A))
+						return
+					to_chat(user, "<span class='notice'>Вы прикрутили [S] на [src].</span>")
+					playsound (src.loc, 'stalker/sound/weapons/attach_addon.ogg', 50, 1, 0)
+					suppressed = A
+					S.oldsound = fire_sound
+					S.initial_w_class = w_class
+					fire_sound = 'stalker/sound/weapons/silencer.ogg'
+					//w_class = 3 //so pistols do not fit in pockets when suppressed
+					A.loc = src
+					update_icon()
+					addons += S
+					return
+				else
+					to_chat(user, "<span class='warning'>На [src] уже установлен глушитель!</span>")
+					return
+		to_chat(user, "<span class='warning'>Вы не знаете как установить [S] на [src]!</span>")
+		return
+
+	if(istype(A, /obj/item/attachment/scope))
+		var/obj/item/attachment/scope/S = A
+		if(type in S.types)
+			if(!zoomable)
+				if(!user.is_holding(A))
+					return
+				to_chat(user, "<span class='notice'>Вы прикрутили [S] на [src].</span>")
+				playsound (src.loc, 'stalker/sound/weapons/attach_addon.ogg', 50, 1, 0)
+				zoomable = 1
+				A.loc = src
+				update_icon()
+				addons += S
+				build_zooming()
+				azoom = new()
+				azoom.gun = src
+				azoom.Grant(user)
+				return
+			else
+				to_chat(user, "<span class='warning'>На [src] уже установлен прицел!</span>")
+				return
+		else
+			to_chat(user, "<span class='warning'>Вы не знаете как установить [S] на [src]!</span>")
+			return
+
 	return FALSE
 
 /obj/item/gun/ballistic/process_fire(atom/target, mob/living/user, message = TRUE, params = null, zone_override = "", bonus_spread = 0)
@@ -314,6 +418,9 @@ var/global/list/obj/item/ammo_casing/ACs = list()
 			update_icon()
 		else
 			to_chat(user, "<span class='warning'>[src] is empty!</span>")
+		if(jam)
+			jam = 0
+			user << "<span class='notice'>Оружие снова в норме.</span>"
 		return
 	if(bolt_type == BOLT_TYPE_LOCKING && bolt_locked)
 		drop_bolt(user)

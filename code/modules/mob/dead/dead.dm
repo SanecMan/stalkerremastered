@@ -47,18 +47,18 @@ INITIALIZE_IMMEDIATE(/mob/dead)
 
 	if(!statpanel("Status"))
 		return
-	stat(null, "Game Mode: [SSticker.hide_mode ? "Secret" : "[GLOB.master_mode]"]")
+	//stat(null, "Game Mode: [SSticker.hide_mode ? "Secret" : "[GLOB.master_mode]"]")
 
 	if(SSticker.HasRoundStarted())
 		return
 
 	var/time_remaining = SSticker.GetTimeLeft()
 	if(time_remaining > 0)
-		stat(null, "Time To Start: [round(time_remaining/10)]s")
+		stat(null, pa2pb("Время до запуска: [round(time_remaining/10)]с"))
 	else if(time_remaining == -10)
-		stat(null, "Time To Start: DELAYED")
+		stat(null, pa2pb("Время до запуска: ОТЛОЖЕНО"))
 	else
-		stat(null, "Time To Start: SOON")
+		stat(null, pa2pb("Время до запуска: СКОРО"))
 
 	stat(null, "Players: [SSticker.totalPlayers]")
 	if(client.holder)

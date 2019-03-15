@@ -12,18 +12,18 @@
 	if(durability)
 		var/percentage = (durability / (initial(durability)))*100
 		if(percentage >= 50)
-			user << "<span class='notice'>Durability - [percentage]%</span>"
+			to_chat(user, "<span class='notice'>Прочность: [percentage]%</span>")
 		else
-			user << "<span class='warning'>Durability - [percentage]%</span>"
+			to_chat(user, "<span class='warning'>Прочность: [percentage]%</span>")
 
 /obj/item/clothing/mask/examine(mob/user)
 	..()
 	if(durability)
 		var/percentage = (durability / (initial(durability)))*100
 		if(percentage >= 50)
-			user << "<span class='notice'>Durability - [percentage]%</span>"
+			to_chat(user, "<span class='notice'>Прочность: [percentage]%</span>")
 		else
-			user << "<span class='warning'>Durability - [percentage]%</span>"
+			to_chat(user, "<span class='warning'>Прочность: [percentage]%</span>")
 
 
 /obj/item/clothing/suit/examine(mob/user)
@@ -31,9 +31,9 @@
 	if(durability)
 		var/percentage = (durability / (initial(durability)))*100
 		if(percentage >= 50)
-			user << "<span class='notice'>Durability - [percentage]%</span>"
+			to_chat(user, "<span class='notice'>Прочность: [percentage]%</span>")
 		else
-			user << "<span class='warning'>Durability - [percentage]%</span>"
+			to_chat(user, "<span class='warning'>Прочность: [percentage]%</span>")
 
 /obj/item/clothing/update_icon()
 	..()

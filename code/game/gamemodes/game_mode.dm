@@ -51,7 +51,7 @@
 	var/setup_error		//What stopepd setting up the mode.
 
 /datum/game_mode/proc/announce() //Shows the gamemode's name and a fast description.
-	to_chat(world, "<b>The gamemode is: <span class='[announce_span]'>[name]</span>!</b>")
+	//to_chat(world, "<b>The gamemode is: <span class='[announce_span]'>[name]</span>!</b>")
 	to_chat(world, "<b>[announce_text]</b>")
 
 
@@ -263,7 +263,8 @@
 	return 0
 
 /datum/game_mode/proc/send_intercept()
-	var/intercepttext = "<b><i>Central Command Status Summary</i></b><hr>"
+	return
+/*	var/intercepttext = "<b><i>Central Command Status Summary</i></b><hr>"
 	intercepttext += "<b>Central Command has intercepted and partially decoded a Syndicate transmission with vital information regarding their movements. The following report outlines the most \
 	likely threats to appear in your sector.</b>"
 	var/list/report_weights = config.mode_false_report_weight.Copy()
@@ -293,7 +294,7 @@
 	print_command_report(intercepttext, "Central Command Status Summary", announce=FALSE)
 	priority_announce("A summary has been copied and printed to all communications consoles.", "Enemy communication intercepted. Security level elevated.", 'sound/ai/intercept.ogg')
 	if(GLOB.security_level < SEC_LEVEL_BLUE)
-		set_security_level(SEC_LEVEL_BLUE)
+		set_security_level(SEC_LEVEL_BLUE) */
 
 
 // This is a frequency selection system. You may imagine it like a raffle where each player can have some number of tickets. The more tickets you have the more likely you are to

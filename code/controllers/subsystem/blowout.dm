@@ -7,6 +7,7 @@
 		var/mob/living/carbon/C = A
 		CheckControl(C)
 		if(SSblowout.isblowout && C.inshelter)
+			C.seek_screen_colour()
 			if(C.client && (C.client.prefs.chat_toggles & CHAT_LANGUAGE))
 				to_chat(C, "<big><span class='warning'>You leave the shelter.</span></big>")
 			else
@@ -18,6 +19,7 @@
 		var/mob/living/carbon/C = A
 		CheckControl(C)
 		if(SSblowout.isblowout && !C.inshelter)
+			C.seek_screen_colour()
 			if(C.client && (C.client.prefs.chat_toggles & CHAT_LANGUAGE))
 				to_chat(C, "<big><span class='notice'>You enter the shelter.</span></big>")
 			else
@@ -119,9 +121,10 @@ SUBSYSTEM_DEF(blowout)
 
 	for(var/mob/living/carbon/C in GLOB.player_list)
 		if(!C.inshelter)
-			C << "<big><span class='warning'>Seek for shelter quick! You screen will be red until you enter a shelter.</span></big>"
+			C.seek_screen_colour()
+			to_chat(C, "<big><span class='warning'>Seek for shelter quick! You screen will be red until you enter a shelter.</span></big>")
 		else
-			C << "<big><span class='notice'>You are in the shelter now. Wait till blowout is over.</span></big>"
+			to_chat(C, "<big><span class='notice'>You are in the shelter now. Wait till blowout is over.</span></big>")
 
 /datum/controller/subsystem/blowout/proc/PreStopBlowout()
 	blowoutphase = 2

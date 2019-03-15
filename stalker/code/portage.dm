@@ -213,3 +213,10 @@
 /turf/open/floor/plasteel/stairs/right/stalker
 	icon = 'stalker/icons/floor.dmi'
 	icon_state = "ladder_right"
+
+/obj/sidor_exit
+	var/roomtype = "sidor"
+	var/mob/living/occupant = null
+	invisibility = INVISIBILITY_LIGHTING
+	icon = 'stalker/icons/areas.dmi'
+	icon_state = "transfer_zone"

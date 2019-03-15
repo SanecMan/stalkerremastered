@@ -554,39 +554,30 @@ It's fairly easy to fix if dealing with single letters but not so much with comp
 
 /mob/living/carbon/human/seek_screen_colour() //fuck?
 
-	var/colour
-
 	if(SSblowout.isblowout && istype(get_area(src), /area/stalker/blowout))
 		if(prob(75))
-			remove_client_colour(/datum/client_colour/blowout2)
 			add_client_colour(/datum/client_colour/blowout)
 		else
-			remove_client_colour(/datum/client_colour/blowout)
 			add_client_colour(/datum/client_colour/blowout2)
 	else
 		remove_client_colour(/datum/client_colour/blowout)
+		remove_client_colour(/datum/client_colour/blowout2)
 
 	if(psyloss)
-		var/newcolor = min((psyloss/100)*77, 77)
-		var/newcolor2 = 1 - (2 * newcolor)
-		colour = list(rgb(newcolor2,newcolor,newcolor), rgb(newcolor,newcolor2,newcolor), rgb(newcolor,newcolor,newcolor2), rgb(0,0,0))
-		add_client_colour(colour)
+		add_client_colour(/datum/client_colour/psy)
 	else
-		remove_client_colour(colour)
+		remove_client_colour(/datum/client_colour/psy)
 
 	if(head)
 		if(istype(head, /obj/item/clothing/head))
 			var/obj/item/clothing/head/H = head
 			if(H.nvg && H.nvg.active)
-
-				colour = H.nvg.colour_matrix
-				add_client_colour(colour)
+				add_client_colour(H.nvg.colour_matrix)
 	else
-		remove_client_colour(colour)
+		update_client_colour()
 
 	if(wear_mask)
 		if(wear_mask.nvg && wear_mask.nvg.active)
-			colour = wear_mask.nvg.colour_matrix
-			add_client_colour(colour)
+			add_client_colour(wear_mask.nvg.colour_matrix)
 	else
-		remove_client_colour(colour)
+		update_client_colour()

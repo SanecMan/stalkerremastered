@@ -87,6 +87,7 @@ obj/structure/grille/stalker/beton/CanPass(atom/movable/mover, turf/target, heig
 /turf/open/stalker
 	name = "stalker turf"
 	icon = 'stalker/icons/grass.dmi'
+	planetary_atmos = TRUE
 	//light_range = 3
 
 /turf/open/stalker/Initialize()
@@ -98,7 +99,7 @@ obj/structure/grille/stalker/beton/CanPass(atom/movable/mover, turf/target, heig
 	icon = 'stalker/icons/grass.dmi'
 	icon_state = "grass1"
 	layer = TURF_LAYER
-	plane = GAME_PLANE
+	plane = FLOOR_PLANE
 	overlay_priority = 0
 	footstep = FOOTSTEP_TILE
 
@@ -135,7 +136,7 @@ obj/structure/grille/stalker/beton/CanPass(atom/movable/mover, turf/target, heig
 	name = "road"
 	icon = 'stalker/icons/Prishtina/asphalt.dmi'
 	icon_state = "road1"
-	layer = 2
+	layer = FLOOR_PLANE
 	overlay_priority = 1
 
 var/global/list/AsphaltEdgeCache
@@ -234,6 +235,7 @@ var/global/list/WhiteRoadCache
 	icon = 'stalker/icons/zemlya.dmi'
 	icon_state = "gryaz1"
 	layer = 2.01
+	plane = -3
 	overlay_priority = 4
 	footstep = FOOTSTEP_GRASS
 	barefootstep = FOOTSTEP_GRASS
@@ -301,8 +303,11 @@ var/global/list/GryazEdgeCache
 /turf/open/stalker/floor/water
 	name = "water"
 	icon = 'stalker/icons/water.dmi'
+	smooth = SMOOTH_MORE|SMOOTH_BORDER
+	var/smooth_icon = 'stalker/icons/smoothwater.dmi'
 	icon_state = "water"
 	layer = TURF_LAYER
+	plane = -2
 	overlay_priority = 5
 	var/busy = 0
 	slowdown = 2
@@ -310,6 +315,15 @@ var/global/list/GryazEdgeCache
 	barefootstep = FOOTSTEP_WATER
 	clawfootstep = FOOTSTEP_WATER
 	heavyfootstep = FOOTSTEP_WATER
+	tiled_dirt = FALSE
+
+/turf/open/stalker/floor/water/Initialize()
+	if(smooth)
+		var/matrix/M = new
+		M.Translate(-7, -7)
+		transform = M
+		icon = smooth_icon
+	. = ..()
 
 /turf/open/stalker/floor/water/attack_hand(mob/living/user)
 	if(!user || !istype(user))
@@ -407,6 +421,7 @@ var/global/list/GryazEdgeCache
 	if(istype(A, /mob/living/carbon))
 		var/mob/living/carbon/L = A
 		L.update_top_overlay()
+		L.plane = -2
 		if(istype(A, /mob/living/carbon/human))
 			var/mob/living/carbon/human/H = A
 			/*if(H.shoes)
@@ -420,8 +435,9 @@ var/global/list/GryazEdgeCache
 	if(istype(A, /mob/living/carbon))
 		var/mob/living/carbon/L = A
 		L.update_top_overlay()
+		L.plane = -1
 		flick("water_splash_movement", src)
-
+/*
 var/global/list/WaterEdgeCache
 
 /turf/open/stalker/floor/water/New()
@@ -443,7 +459,7 @@ var/global/list/WaterEdgeCache
 				if(T)
 					T.overlays += WaterEdgeCache[2**i]
 	return
-
+*/
 /turf/open/stalker/floor/wood
 	icon = 'stalker/icons/floor.dmi'
 	name = "floor"

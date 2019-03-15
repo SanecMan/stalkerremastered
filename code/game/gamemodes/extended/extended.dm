@@ -6,7 +6,7 @@
 	required_players = 0
 
 	announce_span = "notice"
-	announce_text = "Just have fun and enjoy the game!"
+	announce_text = "Мир запущен, приятной игры."
 
 /datum/game_mode/extended/pre_setup()
 	return 1
@@ -26,4 +26,5 @@
 		G.on_report()
 
 /datum/game_mode/extended/announced/send_intercept(report = 0)
-	priority_announce("Thanks to the tireless efforts of our security and intelligence divisions, there are currently no credible threats to [station_name()]. All station construction projects have been authorized. Have a secure shift!", "Security Report", 'sound/ai/commandreport.ogg')
+	//priority_announce("Thanks to the tireless efforts of our security and intelligence divisions, there are currently no credible threats to [station_name()]. All station construction projects have been authorized. Have a secure shift!", "Security Report", 'sound/ai/commandreport.ogg')
+	to_chat(world, "<B><font color='green'>Исходя из действующего пси излучения выход из Скадовска будет открыт только через [round(SKADOVSK_LOCKDOWN_TIMER/1200)] минуты.</font></B>")

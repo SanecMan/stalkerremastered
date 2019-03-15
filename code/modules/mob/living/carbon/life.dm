@@ -42,7 +42,7 @@
 	handle_sounds()
 
 	//stalker color matrix
-	seek_screen_colour()
+	//seek_screen_colour()
 
 	if(stat != DEAD)
 		return 1

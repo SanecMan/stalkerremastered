@@ -31,5 +31,5 @@
 	if(!SSticker.round_start_time || world.time >= SSticker.round_start_time + SKADOVSK_LOCKDOWN_TIMER)
 		return ..()
 	else
-		say("Door will be locked for next [round((SSticker.round_start_time + SKADOVSK_LOCKDOWN_TIMER - world.time)/600) + 1] min. due to psionic emission.")
+		say("Шлюз откроется только через [round((SSticker.round_start_time + SKADOVSK_LOCKDOWN_TIMER - world.time)/600) + 1] мин. из-за действующего снаружи пси-излучения.")
 		return 0
