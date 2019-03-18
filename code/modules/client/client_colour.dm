@@ -118,9 +118,11 @@
 
 /datum/client_colour/nvg
 	colour = list(rgb(25,225,0), rgb(0,255,0), rgb(0,255,25), rgb(0,0,0))
+	priority = INFINITY
 
 /datum/client_colour/nvg2
 	colour = list(rgb(77,77,77), rgb(77,77,77), rgb(77,77,77), rgb(0,0,0))
+	priority = INFINITY
 
 /datum/client_colour/monochrome
 	colour = list(rgb(77,77,77), rgb(150,150,150), rgb(28,28,28), rgb(0,0,0))

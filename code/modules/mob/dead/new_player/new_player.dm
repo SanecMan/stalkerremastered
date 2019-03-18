@@ -251,8 +251,8 @@
 	var/this_is_like_playing_right = alert(src,"Вы действительно хотите стать призраком?","Spooky Stalker","Да","Нет")
 
 	if(QDELETED(src) || !src.client || this_is_like_playing_right != "Да")
-		ready = PLAYER_NOT_READY
-		src << browse(null, "window=preferences_window") //closes the player setup window
+		//ready = PLAYER_NOT_READY
+		//src << browse(null, "window=preferences_window") //closes the player setup window
 		new_player_panel()
 		return FALSE
 

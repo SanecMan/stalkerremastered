@@ -573,11 +573,19 @@ It's fairly easy to fix if dealing with single letters but not so much with comp
 			var/obj/item/clothing/head/H = head
 			if(H.nvg && H.nvg.active)
 				add_client_colour(H.nvg.colour_matrix)
+			else
+				remove_client_colour(H.nvg.colour_matrix)
+		else
+			remove_client_colour(NIGHTVISION_MATRIX_I)
+			remove_client_colour(NIGHTVISION_MATRIX_II)
 	else
-		update_client_colour()
+		remove_client_colour(NIGHTVISION_MATRIX_I)
+		remove_client_colour(NIGHTVISION_MATRIX_II)
 
 	if(wear_mask)
 		if(wear_mask.nvg && wear_mask.nvg.active)
 			add_client_colour(wear_mask.nvg.colour_matrix)
+		else
+			remove_client_colour(wear_mask.nvg.colour_matrix)
 	else
-		update_client_colour()
+		remove_client_colour(wear_mask.nvg.colour_matrix)
