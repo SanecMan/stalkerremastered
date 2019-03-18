@@ -117,3 +117,5 @@
 	//List of active diseases
 	var/list/diseases = list() // list of all diseases in a mob
 	var/list/disease_resistances = list()
+
+	var/global_armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "psy" = 0)

@@ -1,7 +1,7 @@
 
 /mob/living/proc/run_armor_check(def_zone = null, attack_flag = "melee", absorb_text = null, soften_text = null, armour_penetration, penetrated_text)
 	var/armor = getarmor(def_zone, attack_flag)
-
+	armor += src.global_armor[attack_flag]
 	//the if "armor" check is because this is used for everything on /living, including humans
 	if(armor && armour_penetration)
 		armor = max(0, armor - armour_penetration)

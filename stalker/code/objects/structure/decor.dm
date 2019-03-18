@@ -589,6 +589,9 @@
 
 /obj/structure/stalker/cacheable/New()
 	..()
+	RefreshContents()
+
+/obj/structure/stalker/cacheable/proc/RefreshContents()
 
 	if(ispath(internal_cache))
 		LoadComponent(internal_cache)

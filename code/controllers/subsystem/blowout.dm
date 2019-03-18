@@ -115,16 +115,16 @@ SUBSYSTEM_DEF(blowout)
 	blowoutphase = 1
 	starttime = world.time
 
-	add_lenta_message(null, "0", "Sidorovich", "Loners", "ATTENTION, STALKERS! Blowout is starting! Find a shelter quick!")
+	add_lenta_message(null, "0", "Sidorovich", "Loners", "ВНИМАНИЕ, СТАЛКЕРЫ! Приближается выброс! Ищите ближайшее укрытие!")
 	world << sound('stalker/sound/blowout/blowout_begin_02.ogg', wait = 0, channel = 201, volume = 50)
 	world << sound('stalker/sound/blowout/blowout_siren.ogg', wait = 0, channel = 202, volume = 60)
 
 	for(var/mob/living/carbon/C in GLOB.player_list)
 		if(!C.inshelter)
 			C.seek_screen_colour()
-			to_chat(C, "<big><span class='warning'>Seek for shelter quick! You screen will be red until you enter a shelter.</span></big>")
+			to_chat(C, "<big><span class='warning'>Вам нужно срочно искать укрытие, скоро начнётся выброс!</span></big>")
 		else
-			to_chat(C, "<big><span class='notice'>You are in the shelter now. Wait till blowout is over.</span></big>")
+			to_chat(C, "<big><span class='notice'>Вы в укрытии, осталось только переждать выброс.</span></big>")
 
 /datum/controller/subsystem/blowout/proc/PreStopBlowout()
 	blowoutphase = 2
@@ -184,7 +184,7 @@ SUBSYSTEM_DEF(blowout)
 
 		C.internal_cache = null
 		C.cache_chance = rand(7, 12)
-		C.New()
+		C.RefreshContents()
 		CHECK_TICK
 
 /datum/controller/subsystem/blowout/proc/AfterBlowout()
@@ -215,14 +215,14 @@ SUBSYSTEM_DEF(blowout)
 		KPK.lentahtml = ""
 
 	blowout_count++
-	add_lenta_message(null, "0", "Sidorovich", "Loners", "Blowout is over! Leave the shelter.")
+	add_lenta_message(null, "0", "Sidorovich", "Loners", "Выброс закончился! Можете покинуть укрытия.")
 
 	for(var/datum/data/record/sk in GLOB.data_core.stalkers)
 		if(sk.fields["reputation"] <= VERYBAD)
 			var/name_ = sk.fields["name"]
 			var/rep_ = sk.fields["reputation"]
-			add_lenta_message(null, "0", "Sidorovich", "Loners", "[name_]'s - for at least [GetCostBasedOnReputation(rep_)] RU.")
-	add_lenta_message(null, "0", "Sidorovich", "Loners", "Find, kill and sell PDAs of these stalker with bad reputation!")
+			add_lenta_message(null, "0", "Sidorovich", "Loners", "За КПК [name_] получите [GetCostBasedOnReputation(rep_)] рублей.")
+	add_lenta_message(null, "0", "Sidorovich", "Loners", "Ищите, убивайте и продавайте КПК этих сталкеров с плохой репутацией!")
 
 
 /datum/controller/subsystem/blowout/proc/ProcessBlowout()

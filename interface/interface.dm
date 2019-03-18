@@ -93,7 +93,7 @@ Admin:
 
 	if(holder)
 		to_chat(src, adminhotkeys)
-
+/*
 /client/verb/changelog()
 	set name = "Changelog"
 	set category = "OOC"
@@ -104,7 +104,7 @@ Admin:
 		prefs.lastchangelog = GLOB.changelog_hash
 		prefs.save_preferences()
 		winset(src, "infowindow.changelog", "font-style=;")
-
+*/
 
 /mob/proc/hotkey_help()
 	var/hotkey_mode = {"<font color='purple'>

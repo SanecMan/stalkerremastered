@@ -16,7 +16,7 @@
 	icon = 'stalker/icons/door_sidor.dmi'
 	icon_state = "closed"
 	id = null
-	//auto_close = 50 // Time in seconds to automatically close when opened, 0 if it doesn't.
+	auto_close = 50
 
 /obj/machinery/door/poddoor/sidor/skadovsk
 	icon = 'stalker/icons/door_sidor2.dmi'
@@ -25,7 +25,7 @@
 /obj/machinery/door/poddoor/sidor/skadovsk/special
 	icon = 'stalker/icons/door_sidor2.dmi'
 	icon_state = "closed"
-	//auto_close = 50
+	autoclose = 50
 
 /obj/machinery/door/poddoor/sidor/skadovsk/special/open(ignorepower = 0)
 	if(!SSticker.round_start_time || world.time >= SSticker.round_start_time + SKADOVSK_LOCKDOWN_TIMER)

@@ -30,7 +30,7 @@
 			if(C.body_parts_covered & def_zone.body_part)
 				protection += C.armor.getRating(d_type)
 	protection += physiology.armor.getRating(d_type)
-	return protection
+	return protection + global_armor[d_type]
 
 /mob/living/carbon/human/on_hit(obj/item/projectile/P)
 	if(dna && dna.species)

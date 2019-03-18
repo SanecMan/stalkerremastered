@@ -695,14 +695,11 @@
 //Proc, so that gun accessories/scopes/etc. can easily add zooming.
 /obj/item/gun/proc/build_zooming()
 	if(azoom)
-		if(!zoomable)
-			zoom_amt = initial(zoom_amt)
-			zoom(usr, FALSE)
-			azoom = null
 		return
 
 	if(zoomable)
 		for(var/obj/item/attachment/scope/S in addons)
 			zoom_amt += S.zoom_add
+			zoom_out_amt += (5 + S.zoom_add)
 		azoom = new()
 		azoom.gun = src

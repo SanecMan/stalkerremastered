@@ -60,21 +60,23 @@
 		return 1
 
 /mob/living/carbon/human/proc/handle_artifacts()
-	//src.global_armor = list(melee = 0, bullet = 0, laser = 0,energy = 0, bomb = 0, bio = 0, rad = 0, psy = 0)
+	src.global_armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "psy" = 0)
 
 	if(src.belt && istype(src.belt, /obj/item/storage/belt/stalker/artifact_belt))
 		for(var/obj/item/artifact/A in src.belt.contents)
 			A.Think(src)
-			//for(var/armor_ in A.art_armor)
-			//	global_armor[armor_] = A.art_armor[armor_]
+			for(var/armor_ in A.art_armor)
+				global_armor[armor_] = A.art_armor[armor_]
 
 	if(src.wear_suit && istype(src.wear_suit, /obj/item/clothing/suit))
 		var/obj/item/clothing/suit/S = src.wear_suit
-		if(S.internal_slot)
-			for(var/obj/item/artifact/A in S.internal_slot.contents)
+		if(S.pocket_storage_component_path)
+			var/list/acont = list()
+			SEND_SIGNAL(S, COMSIG_TRY_STORAGE_RETURN_INVENTORY, acont, FALSE)
+			for(var/obj/item/artifact/A in acont)
 				A.Think(src)
-				//for(var/armor_ in A.art_armor)
-				//	global_armor[armor_] += A.art_armor[armor_]
+				for(var/armor_ in A.art_armor)
+					global_armor[armor_] += A.art_armor[armor_]
 
 /mob/living/carbon/human/proc/handle_suit_durability()
 	if(health > 0)
@@ -83,11 +85,13 @@
 		return
 
 	var/obj/item/clothing/suit/S = src.wear_suit
-	/*
-	if(S.internal_slot && istype(S.internal_slot, /obj/item/weapon/storage/internal_slot/container))
-		for(var/obj/item/weapon/artifact/A in S.internal_slot.contents)
+
+	if(S.pocket_storage_component_path && istype(S.pocket_storage_component_path, /datum/component/storage/concrete/pockets/internal_slot))
+		var/list/acont = list()
+		SEND_SIGNAL(S, COMSIG_TRY_STORAGE_RETURN_INVENTORY, acont, FALSE)
+		for(var/obj/item/artifact/A in acont)
 			A.Think(src)
-	*/
+
 	if(S.durability == -1)
 		return
 

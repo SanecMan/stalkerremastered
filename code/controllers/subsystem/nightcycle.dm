@@ -24,7 +24,8 @@ SUBSYSTEM_DEF(nightcycle)
 	//var/currentColumn
 	var/working = 3
 	var/preparing = TRUE
-	var/list/CT
+	var/list/OT
+	var/list/BT
 	//var/doColumns //number of columns to do at a time
 
 /datum/controller/subsystem/nightcycle/fire(resumed = FALSE)
@@ -63,7 +64,8 @@ SUBSYSTEM_DEF(nightcycle)
 		. = TRUE
 
 /datum/controller/subsystem/nightcycle/proc/collectTurfs()
-	CT = get_area_turfs(/area/stalker/blowout/outdoor, 2, subtypes = TRUE)
+	OT = get_area_turfs(/area/stalker/blowout/outdoor, 2, subtypes = TRUE)
+	BT = get_area_turfs(/area/stalker/blowout/buildings, 2, subtypes = TRUE)
 	preparing = FALSE
 
 /datum/controller/subsystem/nightcycle/proc/updateLight(newTime)
@@ -89,11 +91,13 @@ SUBSYSTEM_DEF(nightcycle)
 			sunColour = "#ffcccc"
 			//sunPower = 0.3
 		if("NIGHTTIME")
-			to_chat(world, "<b>11:30</b> - наступает ночь")
+			to_chat(world, "<b>22:30</b> - наступает ночь")
 			sunColour = "#00111a"
 			//sunPower = 0.15
-	for(var/turf/open/stalker/T in CT)
+	for(var/turf/open/stalker/T in OT)
 		T.set_light(sunRange, sunPower, sunColour)
+	for(var/turf/open/stalker/T in BT)
+		T.set_light(sunPower - 0.4, sunRange - 2, sunColour)
 	return
 
 

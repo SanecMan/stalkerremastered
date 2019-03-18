@@ -401,7 +401,7 @@
 	src << output("[span]:[content]", "variables[REF(D)].browser:replace_span")
 
 
-#define VV_HTML_ENCODE(thing) ( sanitize ? rhtml_encode(thing) : thing )
+#define VV_HTML_ENCODE(thing) ( sanitize ? html_encode(thing) : thing )
 /proc/debug_variable(name, value, level, datum/DA = null, sanitize = TRUE)
 	var/header
 	if(DA)

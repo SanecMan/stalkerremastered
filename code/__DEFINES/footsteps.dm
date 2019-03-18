@@ -118,6 +118,11 @@ GLOBAL_LIST_INIT(barefootstep, list(
 		'sound/effects/footstep/lava1.ogg',
 		'sound/effects/footstep/lava2.ogg',
 		'sound/effects/footstep/lava3.ogg'), 100, 0),
+	FOOTSTEP_TILE = list(list(
+		'sound/effects/footstep/tile1.wav',
+		'sound/effects/footstep/tile2.wav',
+		'sound/effects/footstep/tile3.wav',
+		'sound/effects/footstep/tile4.wav'), 100, 1),
 ))
 
 //claw footsteps lists
@@ -160,6 +165,11 @@ GLOBAL_LIST_INIT(clawfootstep, list(
 		'sound/effects/footstep/lava1.ogg',
 		'sound/effects/footstep/lava2.ogg',
 		'sound/effects/footstep/lava3.ogg'), 100, 0),
+	FOOTSTEP_TILE = list(list(
+		'sound/effects/footstep/tile1.wav',
+		'sound/effects/footstep/tile2.wav',
+		'sound/effects/footstep/tile3.wav',
+		'sound/effects/footstep/tile4.wav'), 100, 1),
 ))
 
 //heavy footsteps list
@@ -176,5 +186,10 @@ GLOBAL_LIST_INIT(heavyfootstep, list(
 		'sound/effects/footstep/lava1.ogg',
 		'sound/effects/footstep/lava2.ogg',
 		'sound/effects/footstep/lava3.ogg'), 100, 0),
+	FOOTSTEP_TILE = list(list(
+		'sound/effects/footstep/tile1.wav',
+		'sound/effects/footstep/tile2.wav',
+		'sound/effects/footstep/tile3.wav',
+		'sound/effects/footstep/tile4.wav'), 100, 1),
 ))
 

@@ -138,7 +138,7 @@
 		add_overlay("[icon_state]_suppressor")
 	if(!chambered && empty_indicator)
 		add_overlay("[icon_state]_empty")
-	if (magazine)
+	/*if (magazine)
 		if (special_mags)
 			add_overlay("[icon_state]_mag_[initial(magazine.icon_state)]")
 			if (!magazine.ammo_count())
@@ -158,7 +158,7 @@
 				if(1.0)
 					capacity_number = 100
 			if (capacity_number)
-				add_overlay("[icon_state]_mag_[capacity_number]")
+				add_overlay("[icon_state]_mag_[capacity_number]")*/
 
 var/global/list/obj/item/ammo_casing/ACs = list()
 
@@ -300,6 +300,9 @@ var/global/list/obj/item/ammo_casing/ACs = list()
 				if(!suppressed)
 					if(!user.is_holding(A))
 						return
+					if(!user.transferItemToLoc(A, src))
+						to_chat(user, "<span class='warning'>\The [S] is stuck to your hand, you cannot put it in the [src.name]!</span>")
+						return
 					to_chat(user, "<span class='notice'>Вы прикрутили [S] на [src].</span>")
 					playsound (src.loc, 'stalker/sound/weapons/attach_addon.ogg', 50, 1, 0)
 					suppressed = A
@@ -322,6 +325,9 @@ var/global/list/obj/item/ammo_casing/ACs = list()
 		if(type in S.types)
 			if(!zoomable)
 				if(!user.is_holding(A))
+					return
+				if(!user.transferItemToLoc(A, src))
+					to_chat(user, "<span class='warning'>\The [S] is stuck to your hand, you cannot put it in the [src.name]!</span>")
 					return
 				to_chat(user, "<span class='notice'>Вы прикрутили [S] на [src].</span>")
 				playsound (src.loc, 'stalker/sound/weapons/attach_addon.ogg', 50, 1, 0)
@@ -401,6 +407,9 @@ var/global/list/obj/item/ammo_casing/ACs = list()
 	return ..()
 
 /obj/item/gun/ballistic/attack_self(mob/living/user)
+	if(jam)
+		jam = 0
+		user << "<span class='notice'>Оружие снова в норме.</span>"
 	if(!internal_magazine && magazine)
 		if(!magazine.ammo_count())
 			eject_magazine(user)
@@ -418,9 +427,6 @@ var/global/list/obj/item/ammo_casing/ACs = list()
 			update_icon()
 		else
 			to_chat(user, "<span class='warning'>[src] is empty!</span>")
-		if(jam)
-			jam = 0
-			user << "<span class='notice'>Оружие снова в норме.</span>"
 		return
 	if(bolt_type == BOLT_TYPE_LOCKING && bolt_locked)
 		drop_bolt(user)

@@ -3,7 +3,7 @@
 	name = "Strange Location"
 	icon_state = "away"
 	has_gravity = STANDARD_GRAVITY
-	dynamic_lighting = DYNAMIC_LIGHTING_FORCED
+	//dynamic_lighting = DYNAMIC_LIGHTING_FORCED
 
 /area/stalker/blowout
 	dynamic_lighting = DYNAMIC_LIGHTING_FORCED

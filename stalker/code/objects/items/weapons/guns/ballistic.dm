@@ -233,7 +233,7 @@
 
 /obj/item/gun/ballistic/update_icon()
 	..()
-	overlays.Cut()
+	//overlays.Cut()
 
 	if(colored)
 		overlays += colored_overlay

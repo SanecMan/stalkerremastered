@@ -14,7 +14,7 @@
 	eng_desc = "Steel helmet made of old rusty steel. You look nazi wearing it. Protects your head but won't hold lots of bullets"
 	icon_state = "steelhelmet"
 	item_state = "steelhelmet"
-	armor = list(melee = 25, bullet = 40, laser = 0,energy = 0, bomb = 0, bio = 0, rad = 0, psy = 5)
+	armor = list("melee" = 25, "bullet" = 40, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0, "psy" = 5)
 	flags_inv = HIDEHAIR
 	flags_cover = 0
 	resistance_flags = UNACIDABLE
@@ -46,7 +46,7 @@
 	item_state = "hardhat0_tactical"
 	item_color = "tactical"
 	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|HIDEFACE|HIDEHAIR
-	armor = list(melee = 50, bullet = 60, laser = 0,energy = 30, bomb = 0, bio = 30, rad = 20, psy = 10)
+	armor = list("melee" = 50, "bullet" = 60, "laser" = 0, "energy" = 30, "bomb" = 0, "bio" = 30, "rad" = 20, "fire" = 20, "acid" = 0, "psy" = 10)
 	flags_cover = HEADCOVERSEYES | HEADCOVERSMOUTH
 	resistance_flags = UNACIDABLE
 	durability = 300
@@ -65,7 +65,7 @@
 	item_state = "hardhat0_lighttactical"
 	item_color = "lighttactical"
 	flags_inv = HIDEEARS|HIDEEYES|HIDEHAIR
-	armor = list(melee = 35, bullet = 50, laser = 0,energy = 0, bomb = 0, bio = 0, rad = 0, psy = 5)
+	armor = list("melee" = 35, "bullet" = 50, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0, "psy" = 5)
 	brightness_on = 2 //luminosity when on
 	flags_cover = HEADCOVERSEYES
 	resistance_flags = UNACIDABLE
@@ -83,7 +83,7 @@
 	icon_state = "assaultmerc"
 	item_state = "assaultmerc"
 	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|HIDEFACE|HIDEHAIR
-	armor = list(melee = 50, bullet = 75, laser = 25,energy = 50, bomb = 0, bio = 0, rad = 0, psy = 5)
+	armor = list("melee" = 50, "bullet" = 75, "laser" = 25, "energy" = 50, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 0, "psy" = 5)
 	flags_cover = HEADCOVERSEYES | HEADCOVERSMOUTH
 	resistance_flags = UNACIDABLE
 	durability = 250
@@ -110,7 +110,7 @@
 	eng_desc = "An aluminum/titanium helmet with a cloth exterior that comes with pockets for additional steel armor pieces and an armor face mask. Sphere M12 is normally used as part of a combination that includes PSZ series Spetsnaz body armor. Quite popular in the Zone thanks to its respirator and built-in first generation night vision device, as well as providing the maximum head protection possible. Comes with electronics slots."
 	icon_state = "sphera"
 	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|HIDEFACE|HIDEHAIR
-	armor = list(melee = 60, bullet = 65, laser = 0,energy = 35, bomb = 0, bio = 30, rad = 30, psy = 20)
+	armor = list("melee" = 60, "bullet" = 65, "laser" = 0, "energy" = 35, "bomb" = 0, "bio" = 30, "rad" = 30, "fire" = 35, "acid" = 0, "psy" = 20)
 	flags_cover = HEADCOVERSEYES | HEADCOVERSMOUTH
 	resistance_flags = UNACIDABLE
 	durability = 400
@@ -127,7 +127,7 @@
 	eng_desc = "An aluminum/titanium helmet with a cloth exterior that comes with pockets for additional steel armor pieces and an armor face mask. Sphere M12 is normally used as part of a combination that includes PSZ series Spetsnaz body armor. Quite popular in the Zone thanks to its respirator and built-in first generation night vision device, as well as providing the maximum head protection possible. Comes with electronics slots."
 	icon_state = "helmet_skat"
 	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|HIDEFACE|HIDEHAIR
-	armor = list(melee = 75, bullet = 75, laser = 60,burn = 70, bomb = 70, bio = 50, rad = 40, electro = 70, psy = 10)
+	armor = list("melee" = 75, "bullet" = 75, "laser" = 60, "energy" = 70, "bomb" = 70, "bio" = 50, "rad" = 40, "fire" = 70, "acid" = 0, "psy" = 10)
 	flags_cover = HEADCOVERSEYES | HEADCOVERSMOUTH
 	resistance_flags = UNACIDABLE
 	durability = 400
@@ -142,7 +142,7 @@
 	desc = "Отделанный шпротами алюминиево-картонный шлем с карманами дл&#255; мелочи и бронеусами. Обычно поставл&#255;етс&#255; в комплекте с водкой. Недостаточно попул&#255;рен в Зоне благодар&#255; конспирации Петровича."
 	icon_state = "helmet_skot"
 	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|HIDEFACE|HIDEHAIR
-	armor = list(melee = 75, bullet = 75, laser = 60,burn = 70, bomb = 70, bio = 50, rad = 40, electro = 70, psy = 50)
+	armor = list("melee" = 75, "bullet" = 75, "laser" = 60, "energy" = 70, "bomb" = 70, "bio" = 50, "rad" = 40, "fire" = 70, "acid" = 0, "psy" = 50)
 	flags_cover = HEADCOVERSEYES | HEADCOVERSMOUTH
 	resistance_flags = UNACIDABLE
 	durability = 400
@@ -152,7 +152,7 @@
 	name = "military beret"
 	desc = "Оффицерский берет с миниатюрной версией украинского флага."
 	icon_state = "beret_ua"
-	armor = list(melee = 0, bullet = 0, laser = 0, energy = 0, bomb = 0, bio = 0, rad = 0)
+	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0, "psy" = 0)
 	strip_delay = 80
 /*
 /obj/item/clothing/mask/gas/New()
@@ -174,7 +174,7 @@
 	permeability_coefficient = 0.01
 	flags_cover = MASKCOVERSEYES | MASKCOVERSMOUTH
 	flags_inv = HIDEHAIR
-	armor = list(melee = 5, bullet = 0, laser = 30,burn = 30, bomb = 0, bio = 20, rad = 60, electro = 30, psy = 0)
+	armor = list("melee" = 5, "bullet" = 0, "laser" = 30, "energy" = 30, "bomb" = 0, "bio" = 0, "rad" = 60, "fire" = 30, "acid" = 0, "psy" = 0)
 	resistance_flags = UNACIDABLE|FIRE_PROOF
 	durability = 400
 	//МОДИФИКАЦИИ//
@@ -190,7 +190,7 @@
 	permeability_coefficient = 0.01
 	flags_cover = MASKCOVERSEYES | MASKCOVERSMOUTH
 	flags_inv = HIDEHAIR
-	armor = list(melee = 5, bullet = 0, laser = 30,burn = 30, bomb = 0, bio = 20, rad = 60, electro = 30, psy = 0)
+	armor = list("melee" = 5, "bullet" = 0, "laser" = 30, "energy" = 30, "bomb" = 0, "bio" = 20, "rad" = 60, "fire" = 30, "acid" = 0, "psy" = 0)
 	resistance_flags = UNACIDABLE|FIRE_PROOF
 	durability = 400
 	//МОДИФИКАЦИИ//
