@@ -3,8 +3,8 @@ Assistant
 */
 /datum/job/assistant
 	title = "Assistant"
-	flag = ASSISTANT
-	department_flag = CIVILIAN
+//	flag = ASSISTANT
+//	department_flag = CIVILIAN
 	faction = "Station"
 	total_positions = 5
 	spawn_positions = 5
@@ -32,6 +32,13 @@ Assistant
 /datum/outfit/job/assistant/pre_equip(mob/living/carbon/human/H)
 	..()
 	if (CONFIG_GET(flag/grey_assistants))
-		uniform = /obj/item/clothing/under/color/grey
+		uniform = pick(/obj/item/clothing/under/color/switer,/obj/item/clothing/under/color/switer/dark)
+		suit = pick(/obj/item/clothing/suit/hooded/kozhanka,/obj/item/clothing/suit/hooded/kozhanka/white)
+		ears = null
+		belt = /obj/item/kitchen/knife/tourist
+		id = /obj/item/pda/stalker
+		shoes = /obj/item/clothing/shoes/jackboots
+		backpack_contents = list(/obj/item/stack/spacecash/c500)
+		l_pocket = pick(/obj/item/reagent_containers/food/snacks/stalker/kolbasa,/obj/item/reagent_containers/food/snacks/stalker/baton)
 	else
-		uniform = /obj/item/clothing/under/color/random
+		uniform = /obj/item/clothing/under/color/switer

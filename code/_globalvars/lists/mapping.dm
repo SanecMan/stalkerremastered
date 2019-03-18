@@ -48,3 +48,10 @@ GLOBAL_LIST_EMPTY(sortedAreas)
 GLOBAL_LIST_EMPTY(areas_by_type)
 
 GLOBAL_LIST_EMPTY(all_abstract_markers)
+
+GLOBAL_LIST_EMPTY(latejoin)
+GLOBAL_LIST_EMPTY(banditlatejoin)
+GLOBAL_LIST_EMPTY(armylatejoin)
+GLOBAL_LIST_EMPTY(sidorlatejoin)
+GLOBAL_LIST_EMPTY(jobnamelatejoin)
+GLOBAL_LIST_EMPTY(jobnamelatejoincount)

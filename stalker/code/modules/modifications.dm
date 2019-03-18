@@ -706,25 +706,25 @@ var/id_ = 0
 
 	var/mob/living/carbon/human/H = user
 
-	interact(H)
+	ui_interact(H)
 
-/obj/structure/stalker/modification_table/interact(mob/living/carbon/human/H)
+/obj/structure/stalker/modification_table/ui_interact(mob/living/carbon/human/H)
 	if(!istype(H.wear_id, /obj/item/stalker_pda))
-		say("Put on your KPK.")
+		say("Не могу соединиться с вашим КПК.")
 		return
 
 	var/obj/item/stalker_pda/KPK = H.wear_id
 
 	if(!KPK.profile || !KPK.owner)
-		say("Activate your KPK profile.")
+		say("Активируйте Ваш КПК.")
 		return
 
 	if(KPK.owner != H)
-		say("No access.")
+		say("Нет доступа.")
 		return
 
 	if(!modificated)
-		say("Insert gear for modification.")
+		say("Вставьте предмет для улучшения.")
 		return
 
 	H.set_machine(src)
@@ -732,8 +732,8 @@ var/id_ = 0
 
 	var/dat
 	dat +="<div class='statusDisplay'>"
-	dat += "Balance: [balance] р.<br>"
-	dat += "<br><br>INSTRUCTION: Insert your gear in the modification table."
+	dat += "Баланс: [balance] р.<br>"
+	dat += "<br><br>Инструкция: Вставьте предмет для улучшения."
 	dat += "<br><A href='?src=\ref[src];eject=1'>Eject</A>"
 	dat += "</div>"
 	dat += "<div class='lenta_scroll'>"

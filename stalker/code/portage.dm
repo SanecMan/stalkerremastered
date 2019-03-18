@@ -214,9 +214,41 @@
 	icon = 'stalker/icons/floor.dmi'
 	icon_state = "ladder_right"
 
+
+var/list/sidorRooms = list()
+
+/obj/sidor_enter
+	var/roomtype = "sidor"
+	invisibility = INVISIBILITY_LIGHTING
+	icon = 'stalker/icons/areas.dmi'
+	icon_state = "transfer_zone"
+
+/obj/sidor_enter/Crossed(atom/movable/A)
+	if(istype(A, /mob/living/carbon/human))
+		SendToEmptyRoom(A)
+	A.previous_teleport_dest = src.loc
+
+/obj/sidor_enter/proc/SendToEmptyRoom(atom/movable/A)
+	var/obj/sidor_exit/Room = GetEmptyRoom(roomtype)
+	if(Room)
+		A.loc = Room.loc
+		Room.occupant = A
+		sleep(5)
+
+/obj/sidor_enter/proc/GetEmptyRoom(roomtype)
+	for(var/obj/sidor_exit/R in sidorRooms)
+		if(R.roomtype != roomtype)
+			continue
+		if(!R.occupant || R.occupant.stat == DEAD)
+			return R
+	return null
+
 /obj/sidor_exit
 	var/roomtype = "sidor"
 	var/mob/living/occupant = null
 	invisibility = INVISIBILITY_LIGHTING
 	icon = 'stalker/icons/areas.dmi'
 	icon_state = "transfer_zone"
+
+/obj/sidor_exit/New()
+	sidorRooms.Add(src)

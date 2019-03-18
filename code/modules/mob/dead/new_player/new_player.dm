@@ -331,16 +331,31 @@
 		alert(src, "An administrator has disabled late join spawning.")
 		return FALSE
 
-	var/arrivals_docked = TRUE
-	if(SSshuttle.arrivals)
-		close_spawn_windows()	//In case we get held up
-		if(SSshuttle.arrivals.damaged && CONFIG_GET(flag/arrivals_shuttle_require_safe_latejoin))
-			src << alert("The arrivals shuttle is currently malfunctioning! You cannot join.")
-			return FALSE
+	for(var/datum/job/job in SSjob.occupations)
+		if(job.title == rank)
+			if(!job.activated)
+				return
+			if(job.whitelist_only)
+				if(!check_whitelist(usr.client.ckey, job.title))
+					return
+			else
+				if(job.limit_per_player)
+					if(job.limit_per_player > GLOB.jobnamelatejoincount[usr.client.ckey + rank])
+						GLOB.jobnamelatejoincount[usr.client.ckey + rank]++
+					else
+						usr << "Лимит возрождений для вашей роли [rank] исчерпан."
+						return
 
-		if(CONFIG_GET(flag/arrivals_shuttle_require_undocked))
-			SSshuttle.arrivals.RequireUndocked(src)
-		arrivals_docked = SSshuttle.arrivals.mode != SHUTTLE_CALL
+	//var/arrivals_docked = TRUE
+	//if(SSshuttle.arrivals)
+	//	close_spawn_windows()	//In case we get held up
+	//	if(SSshuttle.arrivals.damaged && CONFIG_GET(flag/arrivals_shuttle_require_safe_latejoin))
+	//		src << alert("The arrivals shuttle is currently malfunctioning! You cannot join.")
+	//		return FALSE
+
+	//	if(CONFIG_GET(flag/arrivals_shuttle_require_undocked))
+	//		SSshuttle.arrivals.RequireUndocked(src)
+	//	arrivals_docked = SSshuttle.arrivals.mode != SHUTTLE_CALL
 
 	//Remove the player from the join queue if he was in one and reset the timer
 	SSticker.queued_players -= src
@@ -361,11 +376,11 @@
 	var/datum/job/job = SSjob.GetJob(rank)
 
 	if(job && !job.override_latejoin_spawn(character))
-		SSjob.SendToLateJoin(character)
-		if(!arrivals_docked)
-			var/obj/screen/splash/Spl = new(character.client, TRUE)
-			Spl.Fade(TRUE)
-			character.playsound_local(get_turf(character), 'sound/voice/ApproachingTG.ogg', 25)
+		SSjob.SendToLateJoin(character, FALSE, rank)
+		//if(!arrivals_docked)
+		//	var/obj/screen/splash/Spl = new(character.client, TRUE)
+		//	Spl.Fade(TRUE)
+		//	character.playsound_local(get_turf(character), 'sound/voice/ApproachingTG.ogg', 25)
 
 		character.update_parallax_teleport()
 
@@ -376,12 +391,12 @@
 		humanc = character	//Let's retypecast the var to be human,
 
 	if(humanc)	//These procs all expect humans
-		GLOB.data_core.manifest_inject(humanc)
-		if(SSshuttle.arrivals)
-			SSshuttle.arrivals.QueueAnnounce(humanc, rank)
-		else
-			AnnounceArrival(humanc, rank)
-		AddEmploymentContract(humanc)
+		//GLOB.data_core.manifest_inject(humanc)
+		//if(SSshuttle.arrivals)
+		//	SSshuttle.arrivals.QueueAnnounce(humanc, rank)
+		//else
+		//	AnnounceArrival(humanc, rank)
+		//AddEmploymentContract(humanc)
 		if(GLOB.highlander)
 			to_chat(humanc, "<span class='userdanger'><i>THERE CAN BE ONLY ONE!!!</i></span>")
 			humanc.make_scottish()

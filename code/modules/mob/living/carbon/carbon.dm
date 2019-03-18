@@ -150,6 +150,15 @@
 /mob/living/carbon/throw_item(atom/target)
 	. = ..()
 	throw_mode_off()
+
+	var/area/B = get_area(src.loc)
+	if(B.safezone)
+		if(src.client && (src.client.prefs.chat_toggles & CHAT_LANGUAGE))
+			to_chat(src, "<span class='warning'>You can't throw things in the safezone!</span>")
+		else
+			to_chat(src, "<span class='warning'>Вы не можете кидаться в этой зоне!</span>")
+		return
+
 	if(!target || !isturf(loc))
 		return
 	if(istype(target, /obj/screen))
@@ -603,6 +612,12 @@
 
 	if(see_override)
 		see_invisible = see_override
+
+	if(see_override_nva)
+		lighting_alpha = 125
+		see_in_dark = see_override_nva
+		if (see_override_nva == 2)
+			lighting_alpha = 255
 	. = ..()
 
 

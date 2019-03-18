@@ -1302,17 +1302,36 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 		H.visible_message("<span class='warning'>[M] attempted to touch [H]!</span>")
 		return 0
 	SEND_SIGNAL(M, COMSIG_MOB_ATTACK_HAND, M, H, attacker_style)
+	var/area/B = get_area(H.loc)
 	switch(M.a_intent)
 		if("help")
 			help(M, H, attacker_style)
 
 		if("grab")
+			if(B.safezone)
+				if(M.client && (M.client.prefs.chat_toggles & CHAT_LANGUAGE))
+					to_chat(M, "<span class='warning'>You can't fight in the safezone!</span>")
+				else
+					to_chat(M, "<span class='warning'>¬ы не можете трогать людей в этой зоне!</span>")
+				return 0
 			grab(M, H, attacker_style)
 
 		if("harm")
+			if(B.safezone)
+				if(M.client && (M.client.prefs.chat_toggles & CHAT_LANGUAGE))
+					to_chat(M, "<span class='warning'>You can't fight in the safezone!</span>")
+				else
+					to_chat(M, "<span class='warning'>¬ы не можете трогать людей в этой зоне!</span>")
+				return 0
 			harm(M, H, attacker_style)
 
 		if("disarm")
+			if(B.safezone)
+				if(M.client && (M.client.prefs.chat_toggles & CHAT_LANGUAGE))
+					to_chat(M, "<span class='warning'>You can't fight in the safezone!</span>")
+				else
+					to_chat(M, "<span class='warning'>¬ы не можете трогать людей в этой зоне!</span>")
+				return 0
 			disarm(M, H, attacker_style)
 
 /datum/species/proc/spec_attacked_by(obj/item/I, mob/living/user, obj/item/bodypart/affecting, intent, mob/living/carbon/human/H)

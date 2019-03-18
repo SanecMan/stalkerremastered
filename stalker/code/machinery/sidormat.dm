@@ -274,7 +274,7 @@ GLOBAL_LIST_INIT(global_sidormat_list, list(
 		new /datum/data/stalker_equipment("100 RU",				"100 RU",							/obj/item/stack/spacecash/c100,						100,	ROOKIE,	sale_price = 100),
 		new /datum/data/stalker_equipment("500 RU",				"500 RU",							/obj/item/stack/spacecash/c500,						500,	ROOKIE,	sale_price = 500),
 		new /datum/data/stalker_equipment("1000 RU",			"1000 RU",							/obj/item/stack/spacecash/c1000,					1000,	ROOKIE,	sale_price = 1000),
-		new /datum/data/stalker_equipment("5000 RU",			"5000 RU",							/obj/item/stack/spacecash/c10,						5000,	ROOKIE,	sale_price = 5000)
+		new /datum/data/stalker_equipment("5000 RU",			"5000 RU",							/obj/item/stack/spacecash/c5000,					5000,	ROOKIE,	sale_price = 5000)
 		)
 	))
 
@@ -383,10 +383,10 @@ GLOBAL_LIST_INIT(global_sidormat_list, list(
 
 	var/mob/living/carbon/human/H = user
 
-	interact(H)
+	ui_interact(H)
 
 
-/obj/machinery/stalker/sidormat/interact(mob/living/carbon/human/H)
+/obj/machinery/stalker/sidormat/ui_interact(mob/living/carbon/human/H)
 
 	if(!istype(H.wear_id, /obj/item/stalker_pda))
 		say("Put on your KPK.")
@@ -562,6 +562,8 @@ GLOBAL_LIST_INIT(global_sidormat_list, list(
 		balance = sk.fields["money"]
 
 		say("[I] was sold for [GetCost(I)].")
+
+		qdel(I)
 
 		CHECK_TICK
 

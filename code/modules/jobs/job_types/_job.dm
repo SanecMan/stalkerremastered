@@ -176,30 +176,19 @@
 	belt = /obj/item/pda
 	back = /obj/item/storage/backpack
 	shoes = /obj/item/clothing/shoes/sneakers/black
-	box = /obj/item/storage/box/survival
+	//box = /obj/item/storage/box/survival
 
-	var/backpack = /obj/item/storage/backpack
-	var/satchel  = /obj/item/storage/backpack/satchel
+	var/backpack = /obj/item/storage/backpack/stalker/civilian
+	var/satchel  = /obj/item/storage/backpack/satchel/stalker/civilian
 	var/duffelbag = /obj/item/storage/backpack/duffelbag
 
 	var/pda_slot = SLOT_BELT
 
 /datum/outfit/job/pre_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
-	switch(H.backbag)
-		if(GBACKPACK)
-			back = /obj/item/storage/backpack //Grey backpack
-		if(GSATCHEL)
-			back = /obj/item/storage/backpack/satchel //Grey satchel
-		if(GDUFFELBAG)
-			back = /obj/item/storage/backpack/duffelbag //Grey Duffel bag
-		if(LSATCHEL)
-			back = /obj/item/storage/backpack/satchel/leather //Leather Satchel
-		if(DSATCHEL)
-			back = satchel //Department satchel
-		if(DDUFFELBAG)
-			back = duffelbag //Department duffel bag
-		else
-			back = backpack //Department backpack
+	if(H.backbag == 1) //Backpack
+		back =  backpack
+	else //Satchel
+		back = satchel
 
 /datum/outfit/job/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	if(visualsOnly)
@@ -209,20 +198,20 @@
 	if(!J)
 		J = SSjob.GetJob(H.job)
 
-	var/obj/item/card/id/C = H.wear_id
-	if(istype(C))
-		C.access = J.get_access()
-		shuffle_inplace(C.access) // Shuffle access list to make NTNet passkeys less predictable
-		C.registered_name = H.real_name
-		C.assignment = J.title
-		C.update_label()
-		for(var/A in SSeconomy.bank_accounts)
-			var/datum/bank_account/B = A
-			if(B.account_id == H.account_id)
-				C.registered_account = B
-				B.bank_cards += C
-				break
-		H.sec_hud_set_ID()
+//	var/obj/item/card/id/C = H.wear_id
+//	if(istype(C))
+//		C.access = J.get_access()
+//		shuffle_inplace(C.access) // Shuffle access list to make NTNet passkeys less predictable
+//		C.registered_name = H.real_name
+//		C.assignment = J.title
+//		C.update_label()
+//		for(var/A in SSeconomy.bank_accounts)
+//			var/datum/bank_account/B = A
+//			if(B.account_id == H.account_id)
+//				C.registered_account = B
+//				B.bank_cards += C
+//				break
+//		H.sec_hud_set_ID()
 
 	var/obj/item/pda/PDA = H.get_item_by_slot(pda_slot)
 	if(istype(PDA))

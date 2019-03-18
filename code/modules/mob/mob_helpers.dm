@@ -587,5 +587,3 @@ It's fairly easy to fix if dealing with single letters but not so much with comp
 			add_client_colour(wear_mask.nvg.colour_matrix)
 		else
 			remove_client_colour(wear_mask.nvg.colour_matrix)
-	else
-		remove_client_colour(wear_mask.nvg.colour_matrix)

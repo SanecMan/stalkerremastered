@@ -24,6 +24,17 @@
 	icon_state = "table"
 	smooth = SMOOTH_FALSE
 
+/obj/structure/table/stalker/Crossed(atom/movable/AM)
+	if(isliving(AM))
+		// No climbing on the bar please
+		var/mob/living/M = AM
+		//var/throwtarget = get_edge_target_turf(src, 4)
+		M.Paralyze(40)
+		//M.throw_at(throwtarget, 5, 1,src)
+		to_chat(M, "<span class='notice'>Вам страшно!</span>")
+	else
+		. = ..()
+
 /obj/structure/stalker/okno
 	name = "Window"
 	desc = "Старое дерев&#255;нное окно."

@@ -297,12 +297,12 @@
 		switch(fitting)
 			if("tube")
 				brightness = 8
-				if(prob(2))
-					break_light_tube(1)
+				//if(prob(2))
+				//	break_light_tube(1)
 			if("bulb")
 				brightness = 4
-				if(prob(5))
-					break_light_tube(1)
+				//if(prob(5))
+				//	break_light_tube(1)
 		spawn(1)
 			update(0)
 
@@ -528,10 +528,10 @@
 				electrocute_mob(user, get_area(src), src, 0.3, TRUE)
 
 /obj/machinery/light/take_damage(damage_amount, damage_type = BRUTE, damage_flag = 0, sound_effect = 1)
-	. = ..()
-	if(. && !QDELETED(src))
-		if(prob(damage_amount * 5))
-			break_light_tube()
+	//. = ..()
+	//if(. && !QDELETED(src))
+		//if(prob(damage_amount * 5))
+			//break_light_tube()
 
 
 

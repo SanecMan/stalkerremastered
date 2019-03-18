@@ -137,6 +137,10 @@
 			M.pass_flags |= PASSMOB
 			pass_flags |= PASSMOB
 
+			if(get_area(oldloc).safezone == get_area(oldMloc).safezone)
+				M.Move(oldloc)
+				Move(oldMloc)
+
 			var/move_failed = FALSE
 			if(!M.Move(oldloc) || !Move(oldMloc))
 				M.forceMove(oldMloc)
@@ -214,6 +218,9 @@
 				return
 	if(pulling == AM)
 		stop_pulling()
+	if(!get_area(get_step(AM, t)).safezone && get_area(AM).safezone)
+		now_pushing = 0
+		return
 	var/current_dir
 	if(isliving(AM))
 		current_dir = AM.dir
@@ -554,6 +561,13 @@
 	return
 
 /mob/living/Move(atom/newloc, direct)
+	if((stat != DEAD) && get_area(newloc).safezone && !("stalker_forces" in faction))
+		if(src.client && (src.client.prefs.chat_toggles & CHAT_LANGUAGE))
+			src << "<span class='warning'>You can't be here!</span>"
+		else
+			src << "<span class='warning'>Вам сюда нельзя!</span>"
+		return 0
+
 	if (buckled && buckled.loc != newloc) //not updating position
 		if (!buckled.anchored)
 			return buckled.Move(newloc, direct)
@@ -570,6 +584,10 @@
 		if(isliving(pulledby))
 			var/mob/living/L = pulledby
 			L.set_pull_offsets(src, pulledby.grab_state)
+
+	if(pulling && !get_area(src).safezone && get_area(pulling).safezone)
+		stop_pulling()
+		return
 
 	if(active_storage && !(CanReach(active_storage.parent,view_only = TRUE)))
 		active_storage.close(src)
@@ -746,6 +764,15 @@
 // The src mob is trying to strip an item from someone
 // Override if a certain type of mob should be behave differently when stripping items (can't, for example)
 /mob/living/stripPanelUnequip(obj/item/what, mob/who, where)
+	var/area/B = get_area(src.loc)
+	var/area/C = get_area(who.loc)
+	if(B.safezone || C.safezone)
+		if(src.client && (src.client.prefs.chat_toggles & CHAT_LANGUAGE))
+			src << "<span class='warning'>You can't unequip people in the safezone!</span>"
+		else
+			src << "<span class='warning'>Вы не можете раздевать людей в этой зоне!</span>"
+		return
+
 	if(!what.canStrip(who))
 		to_chat(src, "<span class='warning'>You can't remove \the [what.name], it appears to be stuck!</span>")
 		return

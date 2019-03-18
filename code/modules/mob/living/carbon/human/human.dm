@@ -246,6 +246,10 @@
 			return
 
 	if(href_list["pockets"] && usr.canUseTopic(src, BE_CLOSE, NO_DEXTERY)) //TODO: Make it match (or intergrate it into) strippanel so you get 'item cannot fit here' warnings if mob_can_equip fails
+		if(get_area(src.loc).safezone || get_area(usr.loc).safezone)
+			to_chat(usr, "<span class='warning'>¬ы не можете раздевать людей в этой зоне!</span>")
+			return
+
 		var/pocket_side = href_list["pockets"]
 		var/pocket_id = (pocket_side == "right" ? SLOT_R_STORE : SLOT_L_STORE)
 		var/obj/item/pocket_item = (pocket_id == SLOT_R_STORE ? r_store : l_store)

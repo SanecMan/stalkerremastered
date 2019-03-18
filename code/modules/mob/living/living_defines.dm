@@ -88,6 +88,7 @@
 	var/obj/effect/proc_holder/ranged_ability //Any ranged ability the mob has, as a click override
 
 	var/see_override = 0 //0 for no override, sets see_invisible = see_override in silicon & carbon life process via update_sight()
+	var/see_override_nva = 0
 
 	var/list/status_effects //a list of all status effects the mob has
 	var/druggy = 0

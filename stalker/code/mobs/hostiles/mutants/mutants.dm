@@ -7,6 +7,9 @@
 	var/deletable = 1 //Self-deletable dead bodies
 	speak_chance = 1.5
 	var/rating_add = 10
+	loot = list()
+	robust_searching = 1
+	mob_biotypes = list(MOB_ORGANIC, MOB_BEAST)
 
 /*
 /mob/living/simple_animal/hostile/mutant/death(gibbed)
@@ -48,7 +51,7 @@
 				H.dropItemToGround(H.wear_id)
 			L.gib()
 			visible_message("<span class='danger'>[src] разрывает [L] на кусочки!</span>")
-			src << "<span class='userdanger'>Вы пожираете [L] и востанавливаете себе здоровье!</span>"
+			to_chat(src, "<span class='userdanger'>Вы пожираете [L] и востанавливаете себе здоровье!</span>")
 			src.revive()
 
 /mob/living/simple_animal/hostile/mutant/mrspooky
@@ -86,7 +89,7 @@
 	layer = MOB_LAYER - 0.1
 	deathmessage = "Mr.Spooky is too spooky for himself!"
 	del_on_death = 1
-	loot = list(/obj/effect/decal/remains/human)
+	butcher_results = list(/obj/effect/decal/remains/human)
 
 /mob/living/simple_animal/hostile/mutant/dog
 	name = "dog mutant"
@@ -125,8 +128,8 @@
 	maxbodytemp = 1500
 	environment_smash = 0
 	layer = MOB_LAYER - 0.1
-	loot = list(/obj/item/stalker/loot/dog_tail, /obj/nothing, /obj/nothing)
-	random_loot = 1
+	butcher_results = list(/obj/item/stalker/loot/dog_tail, /obj/nothing, /obj/nothing)
+	//random_butcher_results = 1
 	attack_type = "bite"
 	move_to_delay = 1.2 //Real speed of a mob
 	rating_add = 15
@@ -175,8 +178,8 @@
 	robust_searching = 1
 	deathmessage = "The snork seizes up and falls limp!"
 	layer = MOB_LAYER - 0.1
-	loot = list(/obj/item/stalker/loot/snork_leg, /obj/nothing, /obj/nothing)
-	random_loot = 1
+	butcher_results = list(/obj/item/stalker/loot/snork_leg, /obj/nothing, /obj/nothing)
+	//random_butcher_results = 1
 	atmos_requirements = list("min_oxy" = 0, "max_oxy" = 0, "min_tox" = 0, "max_tox" = 0, "min_co2" = 0, "max_co2" = 0, "min_n2" = 0, "max_n2" = 0)
 	ranged = 1
 	ranged_cooldown = 1 //By default, start the Goliath with his cooldown off so that people can run away quickly on first sight
@@ -265,8 +268,8 @@
 	robust_searching = 1
 	deathmessage = "The flesh makes a death scream!"
 	layer = MOB_LAYER - 0.1
-	loot = list(/obj/item/stalker/loot/flesh_eye, /obj/nothing)
-	random_loot = 1
+	butcher_results = list(/obj/item/stalker/loot/flesh_eye, /obj/nothing)
+	//random_butcher_results = 1
 	atmos_requirements = list("min_oxy" = 0, "max_oxy" = 0, "min_tox" = 0, "max_tox" = 0, "min_co2" = 0, "max_co2" = 0, "min_n2" = 0, "max_n2" = 0)
 	attack_type = "smash"
 	move_to_delay = 3
@@ -308,8 +311,8 @@
 	robust_searching = 1
 	deathmessage = "The boar makes a death scream!"
 	layer = MOB_LAYER - 0.1
-	loot = list(/obj/item/stalker/loot/boar_leg, /obj/nothing, /obj/nothing)
-	random_loot = 1
+	butcher_results = list(/obj/item/stalker/loot/boar_leg, /obj/nothing, /obj/nothing)
+	//random_butcher_results = 1
 	atmos_requirements = list("min_oxy" = 0, "max_oxy" = 0, "min_tox" = 0, "max_tox" = 0, "min_co2" = 0, "max_co2" = 0, "min_n2" = 0, "max_n2" = 0)
 	attack_type = "smash"
 	move_to_delay = 3
@@ -356,8 +359,8 @@
 	robust_searching = 1
 	deathmessage = "The bloodsucker makes a death scream!"
 	layer = MOB_LAYER - 0.1
-	loot = list(/obj/item/stalker/loot/bloodsucker, /obj/item/stalker/loot/bloodsucker, /obj/nothing)
-	random_loot = 1
+	butcher_results = list(/obj/item/stalker/loot/bloodsucker, /obj/item/stalker/loot/bloodsucker, /obj/nothing)
+	//random_butcher_results = 1
 	atmos_requirements = list("min_oxy" = 0, "max_oxy" = 0, "min_tox" = 0, "max_tox" = 0, "min_co2" = 0, "max_co2" = 0, "min_n2" = 0, "max_n2" = 0)
 	attack_type = "claw"
 	move_to_delay = 1.8
@@ -437,8 +440,8 @@
 	robust_searching = 1
 	deathmessage = "The pseudog makes a sinister howl!"
 	layer = MOB_LAYER - 0.1
-	loot = list(/obj/item/stalker/loot/pseudo_tail, /obj/nothing, /obj/nothing)
-	random_loot = 1
+	butcher_results = list(/obj/item/stalker/loot/pseudo_tail, /obj/nothing, /obj/nothing)
+	//random_butcher_results = 1
 	atmos_requirements = list("min_oxy" = 0, "max_oxy" = 0, "min_tox" = 0, "max_tox" = 0, "min_co2" = 0, "max_co2" = 0, "min_n2" = 0, "max_n2" = 0)
 	attack_type = "bite"
 	move_to_delay = 1.4
@@ -478,8 +481,8 @@
 	robust_searching = 1
 	deathmessage = "Controller screams!"
 	layer = MOB_LAYER - 0.1
-	loot = list(/obj/item/stalker/loot/controller_brain)
-	random_loot = 1
+	butcher_results = list(/obj/item/stalker/loot/controller_brain)
+	//random_butcher_results = 1
 	atmos_requirements = list("min_oxy" = 0, "max_oxy" = 0, "min_tox" = 0, "max_tox" = 0, "min_co2" = 0, "max_co2" = 0, "min_n2" = 0, "max_n2" = 0)
 	attack_type = "claw"
 	move_to_delay = 10

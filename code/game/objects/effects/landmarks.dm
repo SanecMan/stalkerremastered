@@ -280,7 +280,10 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark/start/new_player)
 
 /obj/effect/landmark/latejoin/Initialize(mapload)
 	..()
-	SSjob.latejoin_trackers += loc
+	if (name == "JoinLateMonolith" || name == "JoinLateMonolith Hegumen")
+		SSjob.latejoin_monolith += loc
+	else
+		SSjob.latejoin_trackers += loc
 	return INITIALIZE_HINT_QDEL
 
 //space carps, magicarps, lone ops, slaughter demons, possibly revenants spawn here

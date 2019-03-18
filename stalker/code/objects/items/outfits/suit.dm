@@ -110,21 +110,19 @@
 	nvg.active = !nvg.active
 	update_nightvision()
 	user.seek_screen_colour()
+	user.update_sight()
 
 /obj/item/clothing/proc/update_nightvision()
 	if(nvg)
+		var/mob/living/carbon/human/user = usr
 		if(!nvg.active)
 			playsound(usr, 'stalker/sound/nv_off.ogg', 50, 1, -1)
 			to_chat(usr, "You deactivate the optical matrix on the [src].")
-			usr.see_in_dark = 2
-			usr.lighting_alpha = 255
-			usr.update_sight()
+			user.see_override_nva = 0
 		else
 			playsound(usr, 'stalker/sound/nv_start.ogg', 50, 1, -1)
 			to_chat(usr, "You activate the optical matrix on the [src].")
-			usr.see_in_dark = 8
-			usr.lighting_alpha = 125
-			usr.update_sight()
+			user.see_override_nva = 8
 	for(var/X in actions)
 		var/datum/action/A = X
 		A.UpdateButtonIcon()

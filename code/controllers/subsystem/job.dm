@@ -11,6 +11,7 @@ SUBSYSTEM_DEF(job)
 
 	var/list/prioritized_jobs = list()
 	var/list/latejoin_trackers = list()	//Don't read this list, use GetLateJoinTurfs() instead
+	var/list/latejoin_monolith = list()
 
 	var/overflow_role = "Assistant"
 
@@ -553,13 +554,16 @@ SUBSYSTEM_DEF(job)
 			return
 	M.forceMove(get_turf(A))
 
-/datum/controller/subsystem/job/proc/SendToLateJoin(mob/M, buckle = TRUE)
+/datum/controller/subsystem/job/proc/SendToLateJoin(mob/M, buckle = TRUE, rank = null)
 	if(M.mind && M.mind.assigned_role && length(GLOB.jobspawn_overrides[M.mind.assigned_role])) //We're doing something special today.
 		SendToAtom(M,pick(GLOB.jobspawn_overrides[M.mind.assigned_role]),FALSE)
 		return
 
 	if(latejoin_trackers.len)
-		SendToAtom(M, pick(latejoin_trackers), buckle)
+		if (rank == "Monolith" || rank == "Monolith Hegumen")
+			SendToAtom(M, safepick(latejoin_monolith), buckle)
+		else
+			SendToAtom(M, pick(latejoin_trackers), buckle)
 	else
 		//bad mojo
 		var/area/shuttle/arrival/A = GLOB.areas_by_type[/area/shuttle/arrival]

@@ -39,6 +39,8 @@
 
 	var/zfalling = FALSE
 
+	var/previous_teleport_dest = null
+
 /atom/movable/proc/can_zFall(turf/source, levels = 1, turf/target, direction)
 	if(!direction)
 		direction = DOWN

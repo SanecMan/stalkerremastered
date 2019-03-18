@@ -298,7 +298,17 @@ GLOBAL_VAR_INIT(rpg_loot_items, FALSE)
 
 
 	//If the item is in a storage item, take it out
-	SEND_SIGNAL(loc, COMSIG_TRY_STORAGE_TAKE, src, user.loc, TRUE)
+	if (!istype(src, /obj/item/gun/ballistic))
+		SEND_SIGNAL(loc, COMSIG_TRY_STORAGE_TAKE, src, user.loc, TRUE)
+	else if (istype(src.loc, /obj/item/storage))
+		var/obj/item/storage/S = src.loc
+		var/obj/item/gun/G = src
+		playsound(src.loc, "rustle", 50, 1, -5)
+		user.visible_message("<span class='danger'>[user] начинает вытаскивать [G] из [S]!</span>", "<span class='notice'>¬ы начинаете вытаскивать [G] из [S]...</span>")
+		if(do_after(user, (G.weapon_weight * 15 + 5)*S.takeout_speed, 1, G))
+			playsound(src, G.draw_sound, 30, 1)
+			SEND_SIGNAL(loc, COMSIG_TRY_STORAGE_TAKE, src, user.loc, TRUE)
+			user.visible_message("<span class='danger'>[user] вытащил [G] из [S]!</span>", "<span class='notice'>¬ы вытащили [G] из [S].</span>")
 
 	if(throwing)
 		throwing.finalize(FALSE)

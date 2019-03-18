@@ -114,6 +114,8 @@
 	if(mob.pulledby)
 		if((mob.pulledby == mob.pulling) && (mob.pulledby.grab_state == GRAB_PASSIVE))			//Don't autoresist passive grabs if we're grabbing them too.
 			return
+		//if(get_area(mob.pulling).safezone && !get_area(mob.area).safezone)
+		//	return //NEED REWORK
 		if(mob.incapacitated(ignore_restraints = 1))
 			move_delay = world.time + 10
 			return TRUE
