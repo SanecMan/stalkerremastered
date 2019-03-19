@@ -4,6 +4,7 @@
 	icon = 'icons/mob/human.dmi'
 	icon_state = "human_basic"
 	appearance_flags = KEEP_TOGETHER|TILE_BOUND|PIXEL_SCALE
+	var/zombified = 0
 
 /mob/living/carbon/human/Initialize()
 	verbs += /mob/living/proc/mob_sleep

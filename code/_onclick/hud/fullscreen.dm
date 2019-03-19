@@ -184,3 +184,9 @@
 	layer = LIGHTING_LAYER
 	blend_mode = BLEND_ADD
 	show_when_dead = TRUE
+
+/obj/screen/fullscreen/whitenoise
+	icon_state = "whitenoise"
+	layer = UI_DAMAGE_LAYER
+	plane = FULLSCREEN_PLANE
+	alpha = 0

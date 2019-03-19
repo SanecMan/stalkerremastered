@@ -11,13 +11,13 @@
 	robust_searching = 1
 	mob_biotypes = list(MOB_ORGANIC, MOB_BEAST)
 
-/*
+
 /mob/living/simple_animal/hostile/mutant/death(gibbed)
 	..()
 	if(deletable)
 		spawn(300)
 			qdel(src)
-*/
+
 /*
 /mob/living/simple_animal/hostile/mutant/Move(atom/NewLoc, direct)
 	if(get_area(NewLoc).safezone)

@@ -745,6 +745,24 @@
 	else
 		clear_fullscreen("brute")
 
+	//rad stalker damage
+	if(radiation)
+		switch(radiation)
+			if(5 to 15)
+				hud_used.whitenoise.alpha = 10
+			if(15 to 30)
+				hud_used.whitenoise.alpha = 20
+			if(30 to 45)
+				hud_used.whitenoise.alpha = 40
+			if(45 to 70)
+				hud_used.whitenoise.alpha = 60
+			if(70 to 85)
+				hud_used.whitenoise.alpha = 80
+			if(85 to INFINITY)
+				hud_used.whitenoise.alpha = 100
+	else
+		hud_used.whitenoise.alpha = 0
+
 /mob/living/carbon/update_health_hud(shown_health_amount)
 	if(!client || !hud_used)
 		return

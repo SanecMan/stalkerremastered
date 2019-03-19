@@ -37,6 +37,12 @@ obj/item/reagent_containers/pill/stalker/afterattack(obj/target, mob/user , prox
 	item_state = "aptechkay"
 	list_reagents = list("medicadone" = 50)
 
+/datum/reagent/medicine/medicadone
+	name = "Medicadone"
+	id = "medicadone"
+	description = "Fuck."
+	color = "#FF00FF"
+
 /datum/reagent/medicine/medicadone/on_mob_life(mob/living/M)
 	M.adjustCloneLoss(-6)
 	M.adjustOxyLoss(-10)

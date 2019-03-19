@@ -17,7 +17,7 @@
 			B.objectives += objective
 		M.add_antag_datum(B)
 
-	var/begin_message = "<span class='deadsay'><b>[L]</b> has been brainwashed with the following objectives: "
+	var/begin_message = "<span class='deadsay'><b>[L]</b> успешно промыл себе мозги, его цели: "
 	var/obj_message = english_list(directives)
 	var/end_message = "</b>.</span>"
 	var/rendered = begin_message + obj_message + end_message
@@ -32,12 +32,12 @@
 	show_name_in_check_antagonists = TRUE
 
 /datum/antagonist/brainwashed/greet()
-	to_chat(owner, "<span class='warning'>Your mind reels as it begins focusing on a single purpose...</span>")
-	to_chat(owner, "<big><span class='warning'><b>Follow the Directives, at any cost!</b></span></big>")
+	to_chat(owner, "<span class='warning'>Ваш разум начинает сосредотачиваться на новых целях...</span>")
+	to_chat(owner, "<big><span class='warning'><b>Я... выполню всё... что говорят мне голоса... в моей голове... любой ценой!</b></span></big>")
 	var/i = 1
 	for(var/X in objectives)
 		var/datum/objective/O = X
-		to_chat(owner, "<b>[i].</b> [O.explanation_text]")
+		to_chat(owner, "<big><b>[i].</b> [O.explanation_text]</big>")
 		i++
 
 /datum/antagonist/brainwashed/farewell()
