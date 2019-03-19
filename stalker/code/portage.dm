@@ -252,3 +252,8 @@ var/list/sidorRooms = list()
 
 /obj/sidor_exit/New()
 	sidorRooms.Add(src)
+
+/obj/sidor_exit/Crossed(atom/movable/A)
+	if(istype(A, /mob/living/carbon/human))
+		A.loc = A.previous_teleport_dest
+		occupant = null

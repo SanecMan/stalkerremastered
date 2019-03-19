@@ -563,9 +563,9 @@
 /mob/living/Move(atom/newloc, direct)
 	if((stat != DEAD) && get_area(newloc).safezone && !("stalker_forces" in faction))
 		if(src.client && (src.client.prefs.chat_toggles & CHAT_LANGUAGE))
-			src << "<span class='warning'>You can't be here!</span>"
+			to_chat(src, "<span class='warning'>You can't be here!</span>")
 		else
-			src << "<span class='warning'>Вам сюда нельзя!</span>"
+			to_chat(src, "<span class='warning'>Вам сюда нельзя!</span>")
 		return 0
 
 	if (buckled && buckled.loc != newloc) //not updating position
