@@ -559,13 +559,13 @@ It's fairly easy to fix if dealing with single letters but not so much with comp
 			add_client_colour(/datum/client_colour/blowout)
 		else
 			add_client_colour(/datum/client_colour/blowout2)
-	else
+	else if (color)
 		remove_client_colour(/datum/client_colour/blowout)
 		remove_client_colour(/datum/client_colour/blowout2)
 
 	if(psyloss)
 		add_client_colour(/datum/client_colour/psy)
-	else
+	else if (color)
 		remove_client_colour(/datum/client_colour/psy)
 
 	if(head)
@@ -578,12 +578,12 @@ It's fairly easy to fix if dealing with single letters but not so much with comp
 		else
 			remove_client_colour(NIGHTVISION_MATRIX_I)
 			remove_client_colour(NIGHTVISION_MATRIX_II)
-	else
+	else if (color)
 		remove_client_colour(NIGHTVISION_MATRIX_I)
 		remove_client_colour(NIGHTVISION_MATRIX_II)
 
 	if(wear_mask)
 		if(wear_mask.nvg && wear_mask.nvg.active)
 			add_client_colour(wear_mask.nvg.colour_matrix)
-		else
+		else if (color)
 			remove_client_colour(wear_mask.nvg.colour_matrix)

@@ -11,13 +11,13 @@
 	robust_searching = 1
 	mob_biotypes = list(MOB_ORGANIC, MOB_BEAST)
 
-
+/*
 /mob/living/simple_animal/hostile/mutant/death(gibbed)
 	..()
 	if(deletable)
 		spawn(300)
 			qdel(src)
-
+*/
 /*
 /mob/living/simple_animal/hostile/mutant/Move(atom/NewLoc, direct)
 	if(get_area(NewLoc).safezone)
@@ -53,43 +53,6 @@
 			visible_message("<span class='danger'>[src] разрывает [L] на кусочки!</span>")
 			to_chat(src, "<span class='userdanger'>¬ы пожираете [L] и востанавливаете себе здоровье!</span>")
 			src.revive()
-
-/mob/living/simple_animal/hostile/mutant/mrspooky
-	name = "Mr.Spooky"
-	desc = "’од&#255;ча&#255; груда костей, 3spooky5u"
-	icon = 'icons/mob/human.dmi'
-	icon_state = "skeleton_s"
-	icon_living = "skeleton_s"
-	icon_dead = "skeleton_dead"
-	turns_per_move = 5
-	speak_emote = list("spooks")
-	emote_see = list("spooks")
-	a_intent = "harm"
-	maxHealth = 100
-	fearborder = 30
-	health = 40
-	speed = 1
-	harm_intent_damage = 5
-	melee_damage_lower = 15
-	melee_damage_upper = 15
-	minbodytemp = 0
-	maxbodytemp = 1500
-	healable = 0 //they're skeletons how would bruise packs help them??
-	attacktext = "spooks"
-	attack_sound = 'sound/hallucinations/wail.ogg'
-	atmos_requirements = list("min_oxy" = 0, "max_oxy" = 0, "min_tox" = 0, "max_tox" = 0, "min_co2" = 0, "max_co2" = 0, "min_n2" = 0, "max_n2" = 0)
-	unsuitable_atmos_damage = 10
-	environment_smash = 1
-	robust_searching = 1
-	search_objects = 1
-	gold_core_spawnable = 1
-	faction = list("skeleton")
-	see_invisible = SEE_INVISIBLE_MINIMUM
-	see_in_dark = 8
-	layer = MOB_LAYER - 0.1
-	deathmessage = "Mr.Spooky is too spooky for himself!"
-	del_on_death = 1
-	butcher_results = list(/obj/effect/decal/remains/human)
 
 /mob/living/simple_animal/hostile/mutant/dog
 	name = "dog mutant"
@@ -128,7 +91,7 @@
 	maxbodytemp = 1500
 	environment_smash = 0
 	layer = MOB_LAYER - 0.1
-	butcher_results = list(/obj/item/stalker/loot/dog_tail, /obj/nothing, /obj/nothing)
+	butcher_results = list(/obj/item/stalker/loot/dog_tail = 1, /obj/item/reagent_containers/food/snacks/meat/slab = 3, /obj/nothing = 1)
 	//random_butcher_results = 1
 	attack_type = "bite"
 	move_to_delay = 1.2 //Real speed of a mob
@@ -178,7 +141,7 @@
 	robust_searching = 1
 	deathmessage = "The snork seizes up and falls limp!"
 	layer = MOB_LAYER - 0.1
-	butcher_results = list(/obj/item/stalker/loot/snork_leg, /obj/nothing, /obj/nothing)
+	butcher_results = list(/obj/item/stalker/loot/snork_leg = 1, /obj/item/reagent_containers/food/snacks/meat/slab = 3, /obj/nothing = 1)
 	//random_butcher_results = 1
 	atmos_requirements = list("min_oxy" = 0, "max_oxy" = 0, "min_tox" = 0, "max_tox" = 0, "min_co2" = 0, "max_co2" = 0, "min_n2" = 0, "max_n2" = 0)
 	ranged = 1
@@ -225,7 +188,7 @@
 			if(!blocked)
 				L.visible_message("<span class ='danger'>[src] pounces on [L]!</span>", "<span class ='userdanger'>[src] pounces on you!</span>")
 				//L.Weaken(1)
-				//sleep(2)//Runtime prevention (infinite bump() calls on hulks)
+				sleep(2) //Runtime prevention (infinite bump() calls on hulks)
 				step_towards(src,L)
 		else if(A.density && !A.CanPass(src))
 			visible_message("<span class ='danger'>[src] smashes into [A]!</span>", "<span class ='alertalien'>[src] smashes into [A]!</span>")
@@ -268,7 +231,7 @@
 	robust_searching = 1
 	deathmessage = "The flesh makes a death scream!"
 	layer = MOB_LAYER - 0.1
-	butcher_results = list(/obj/item/stalker/loot/flesh_eye, /obj/nothing)
+	butcher_results = list(/obj/item/stalker/loot/flesh_eye = 1, /obj/item/reagent_containers/food/snacks/meat/slab = 3, /obj/nothing = 1)
 	//random_butcher_results = 1
 	atmos_requirements = list("min_oxy" = 0, "max_oxy" = 0, "min_tox" = 0, "max_tox" = 0, "min_co2" = 0, "max_co2" = 0, "min_n2" = 0, "max_n2" = 0)
 	attack_type = "smash"
@@ -311,7 +274,7 @@
 	robust_searching = 1
 	deathmessage = "The boar makes a death scream!"
 	layer = MOB_LAYER - 0.1
-	butcher_results = list(/obj/item/stalker/loot/boar_leg, /obj/nothing, /obj/nothing)
+	butcher_results = list(/obj/item/stalker/loot/boar_leg = 1, /obj/item/reagent_containers/food/snacks/meat/slab = 3, /obj/nothing = 1)
 	//random_butcher_results = 1
 	atmos_requirements = list("min_oxy" = 0, "max_oxy" = 0, "min_tox" = 0, "max_tox" = 0, "min_co2" = 0, "max_co2" = 0, "min_n2" = 0, "max_n2" = 0)
 	attack_type = "smash"
@@ -359,7 +322,7 @@
 	robust_searching = 1
 	deathmessage = "The bloodsucker makes a death scream!"
 	layer = MOB_LAYER - 0.1
-	butcher_results = list(/obj/item/stalker/loot/bloodsucker, /obj/item/stalker/loot/bloodsucker, /obj/nothing)
+	butcher_results = list(/obj/item/stalker/loot/bloodsucker = 1, /obj/item/stalker/loot/bloodsucker = 1, /obj/nothing = 1)
 	//random_butcher_results = 1
 	atmos_requirements = list("min_oxy" = 0, "max_oxy" = 0, "min_tox" = 0, "max_tox" = 0, "min_co2" = 0, "max_co2" = 0, "min_n2" = 0, "max_n2" = 0)
 	attack_type = "claw"
@@ -440,7 +403,7 @@
 	robust_searching = 1
 	deathmessage = "The pseudog makes a sinister howl!"
 	layer = MOB_LAYER - 0.1
-	butcher_results = list(/obj/item/stalker/loot/pseudo_tail, /obj/nothing, /obj/nothing)
+	butcher_results = list(/obj/item/stalker/loot/pseudo_tail = 1, /obj/item/reagent_containers/food/snacks/meat/slab = 3, /obj/nothing = 1)
 	//random_butcher_results = 1
 	atmos_requirements = list("min_oxy" = 0, "max_oxy" = 0, "min_tox" = 0, "max_tox" = 0, "min_co2" = 0, "max_co2" = 0, "min_n2" = 0, "max_n2" = 0)
 	attack_type = "bite"
@@ -481,7 +444,7 @@
 	robust_searching = 1
 	deathmessage = "Controller screams!"
 	layer = MOB_LAYER - 0.1
-	butcher_results = list(/obj/item/stalker/loot/controller_brain)
+	butcher_results = list(/obj/item/stalker/loot/controller_brain = 1)
 	//random_butcher_results = 1
 	atmos_requirements = list("min_oxy" = 0, "max_oxy" = 0, "min_tox" = 0, "max_tox" = 0, "min_co2" = 0, "max_co2" = 0, "min_n2" = 0, "max_n2" = 0)
 	attack_type = "claw"
