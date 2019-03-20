@@ -280,10 +280,37 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark/start/new_player)
 
 /obj/effect/landmark/latejoin/Initialize(mapload)
 	..()
-	if (name == "JoinLateMonolith" || name == "JoinLateMonolith Hegumen")
-		SSjob.latejoin_monolith += loc
-	else
-		SSjob.latejoin_trackers += loc
+	switch(name)
+		if ("JoinLateBandit")
+			SSjob.latejoin_bandit += loc
+		if ("JoinLateBandit Barman")
+			SSjob.latejoin_bandit_barman += loc
+		if ("JoinLatePahan")
+			SSjob.latejoin_bandit_pahan += loc
+		if ("JoinLateArmy" || "JoinLateEliteAgro" || "JoinLatePetrovich")
+			SSjob.latejoin_army += loc
+		if ("JoinLateBarman")
+			SSjob.latejoin_barman += loc
+		if ("JoinLateBarman2")
+			SSjob.latejoin_barman2 += loc
+		if ("JoinLateDuty")
+			SSjob.latejoin_duty += loc
+		if ("JoinLateDuty Lieutenant")
+			SSjob.latejoin_duty_lt += loc
+		if ("JoinLateFreedom" || "JoinLateFreedom Lieutenant")
+			SSjob.latejoin_freedom += loc
+		if ("JoinLateMercenary")
+			SSjob.latejoin_mercenary += loc
+		if ("JoinLateMercenary Sql")
+			SSjob.latejoin_mercenary_sql += loc
+		if ("JoinLateTrader")
+			SSjob.latejoin_trader += loc
+		if ("JoinLateOld Stalker")
+			SSjob.latejoin_stalker += loc
+		if ("JoinLateMonolith" || "JoinLateMonolith Hegumen")
+			SSjob.latejoin_monolith += loc
+		else
+			SSjob.latejoin_trackers += loc
 	return INITIALIZE_HINT_QDEL
 
 //space carps, magicarps, lone ops, slaughter demons, possibly revenants spawn here
@@ -306,7 +333,7 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark/start/new_player)
 	GLOB.xeno_spawn += loc
 	return INITIALIZE_HINT_QDEL
 
-//objects with the stationloving component (nuke disk) respawn here. 
+//objects with the stationloving component (nuke disk) respawn here.
 //also blobs that have their spawn forcemoved (running out of time when picking their spawn spot), santa and respawning devils
 /obj/effect/landmark/blobstart
 	name = "blobstart"

@@ -11,6 +11,20 @@ SUBSYSTEM_DEF(job)
 
 	var/list/prioritized_jobs = list()
 	var/list/latejoin_trackers = list()	//Don't read this list, use GetLateJoinTurfs() instead
+
+	var/list/latejoin_bandit = list()
+	var/list/latejoin_bandit_barman = list()
+	var/list/latejoin_bandit_pahan = list()
+	var/list/latejoin_army = list()
+	var/list/latejoin_barman = list()
+	var/list/latejoin_barman2 = list()
+	var/list/latejoin_duty = list()
+	var/list/latejoin_duty_lt = list()
+	var/list/latejoin_freedom = list()
+	var/list/latejoin_mercenary = list()
+	var/list/latejoin_mercenary_sql = list()
+	var/list/latejoin_trader = list()
+	var/list/latejoin_stalker = list()
 	var/list/latejoin_monolith = list()
 
 	var/overflow_role = "Assistant"
@@ -560,10 +574,35 @@ SUBSYSTEM_DEF(job)
 		return
 
 	if(latejoin_trackers.len)
-		if (rank == "Monolith" || rank == "Monolith Hegumen")
-			SendToAtom(M, safepick(latejoin_monolith), buckle)
-		else
-			SendToAtom(M, pick(latejoin_trackers), buckle)
+		switch (rank)
+			if ("Monolith" || "Monolith Hegumen")
+				SendToAtom(M, safepick(latejoin_monolith), buckle)
+			if ("Army" || "EliteAgro" || "Petrovich")
+				SendToAtom(M, safepick(latejoin_army), buckle)
+			if ("Bandit")
+				SendToAtom(M, safepick(latejoin_bandit), buckle)
+			if ("Bandit Barman")
+				SendToAtom(M, safepick(latejoin_bandit_barman), buckle)
+			if ("Pahan")
+				SendToAtom(M, safepick(latejoin_bandit_pahan), buckle)
+			if ("Barman2")
+				SendToAtom(M, safepick(latejoin_barman2), buckle)
+			if ("Duty")
+				SendToAtom(M, safepick(latejoin_duty), buckle)
+			if ("Duty Lieutenant")
+				SendToAtom(M, safepick(latejoin_duty_lt), buckle)
+			if ("Freedom" || "Freedom Lieutenant")
+				SendToAtom(M, safepick(latejoin_freedom), buckle)
+			if ("Mercenary")
+				SendToAtom(M, safepick(latejoin_mercenary), buckle)
+			if ("Mercenary Sql")
+				SendToAtom(M, safepick(latejoin_mercenary_sql), buckle)
+			if ("Trader")
+				SendToAtom(M, safepick(latejoin_trader), buckle)
+			if ("Old Stalker")
+				SendToAtom(M, safepick(latejoin_stalker), buckle)
+			else
+				SendToAtom(M, pick(latejoin_trackers), buckle)
 	else
 		//bad mojo
 		var/area/shuttle/arrival/A = GLOB.areas_by_type[/area/shuttle/arrival]

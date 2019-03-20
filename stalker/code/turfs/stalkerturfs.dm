@@ -88,7 +88,10 @@ obj/structure/grille/stalker/beton/CanPass(atom/movable/mover, turf/target, heig
 	name = "stalker turf"
 	icon = 'stalker/icons/grass.dmi'
 	planetary_atmos = TRUE
+	footstep = FOOTSTEP_TILE
+	barefootstep = FOOTSTEP_TILE
 	//light_range = 3
+	plane = -3
 
 /turf/open/stalker/Initialize()
 	. = ..()
@@ -99,7 +102,6 @@ obj/structure/grille/stalker/beton/CanPass(atom/movable/mover, turf/target, heig
 	icon = 'stalker/icons/grass.dmi'
 	icon_state = "grass1"
 	layer = TURF_LAYER
-	plane = FLOOR_PLANE
 	overlay_priority = 0
 	footstep = FOOTSTEP_TILE
 
@@ -136,7 +138,6 @@ obj/structure/grille/stalker/beton/CanPass(atom/movable/mover, turf/target, heig
 	name = "road"
 	icon = 'stalker/icons/Prishtina/asphalt.dmi'
 	icon_state = "road1"
-	layer = FLOOR_PLANE
 	overlay_priority = 1
 
 var/global/list/AsphaltEdgeCache
@@ -235,7 +236,6 @@ var/global/list/WhiteRoadCache
 	icon = 'stalker/icons/zemlya.dmi'
 	icon_state = "gryaz1"
 	layer = 2.01
-	plane = -3
 	overlay_priority = 4
 	footstep = FOOTSTEP_GRASS
 	barefootstep = FOOTSTEP_GRASS

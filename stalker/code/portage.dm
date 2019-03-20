@@ -169,7 +169,7 @@
 	name = "JoinLateTrader"
 
 /obj/effect/landmark/latejoin/barman
-	name = "JoinLateTrader"
+	name = "JoinLateBarman"
 
 /obj/effect/landmark/latejoin/oldstalker
 	name = "JoinLateOld Stalker"
