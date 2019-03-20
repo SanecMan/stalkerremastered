@@ -1,7 +1,7 @@
 /obj/machinery/button/door/keypad
 	name = "door keypad"
 	desc = "A door remote control keypad."
-	icon = 'icons/stalker/buttons.dmi'
+	icon = 'stalker/icons/buttons.dmi'
 	icon_state = "doorctrl"
 	normaldoorcontrol = 0
 	specialfunctions = OPEN // Bitflag, see assembly file
@@ -58,15 +58,15 @@
 	return
 
 /obj/machinery/button/door/keypad/attack_hand(mob/user)
-	if(!initialized)
-		setup_device()
+	//if(!initialized)
+	//	setup_device()
 	src.add_fingerprint(user)
 
 	if((stat & (NOPOWER|BROKEN)))
 		return
 
-	if(device && device.cooldown)
-		return
+	//if(device && device.cooldown)
+	//	return
 
 	if(!allowed(user))
 		user << "<span class='danger'>Access Denied</span>"

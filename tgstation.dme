@@ -2854,6 +2854,7 @@
 #include "stalker\code\objects\structure\decor\vehicles.dm"
 #include "stalker\code\party\diskwriter.dm"
 #include "stalker\code\party\turntable.dm"
+#include "stalker\code\testunit_dev\keypad.dm"
 #include "stalker\code\testunit_dev\stalker_pda.dm"
 #include "stalker\code\turfs\areas.dm"
 #include "stalker\code\turfs\ship_hull.dm"

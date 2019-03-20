@@ -605,3 +605,49 @@
 /area/stalker/byadt/buildings/mercenary
 	name = "Mercenary"
 	icon_state = "mercenary"
+
+
+//bar
+
+/area/stalker/blowout/buildings/bar
+	name = "Bar"
+	icon_state = "buildings_s"
+
+/area/stalker/blowout/outdoor/bar
+	icon = 'stalker/icons/areas_outdoor_blowout.dmi'
+	icon_state = "outdoor"
+
+/area/stalker/buildings/bar/city
+	name = "Buildings"
+	icon_state = "buildings"
+
+/area/stalker/buildings/bar/rentgen
+	name = "Bar 100RENTGEN"
+	icon = 'stalker/icons/areas.dmi'
+	icon_state = "realbar"
+	safezone = 1
+
+//bar
+
+
+//kordon + svalka
+
+/area/stalker/blowout/buildings/kordon
+	name = "Bar"
+	icon_state = "buildings_s"
+
+/area/stalker/blowout/outdoor/kordon
+	icon = 'stalker/icons/areas_outdoor_blowout.dmi'
+	icon_state = "outdoor"
+
+/area/stalker/buildings/kordon/domik
+	name = "Buildings"
+	icon_state = "buildings"
+
+/area/stalker/buildings/kordon/banditbar
+	name = "Bandit Bar"
+	icon = 'stalker/icons/areas.dmi'
+	icon_state = "bandit_bar"
+	safezone = 1
+
+//kordon + svalka
