@@ -534,6 +534,7 @@ GLOBAL_LIST_EMPTY(asset_datums)
 
 /datum/asset/spritesheet/goonchat/register()
 	InsertAll("emoji", 'icons/emoji.dmi')
+	InsertAll("flags", 'stalker/icons/_flags.dmi')
 
 	// pre-loading all lanugage icons also helps to avoid meta
 	InsertAll("language", 'icons/misc/language.dmi')

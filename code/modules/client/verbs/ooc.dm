@@ -68,7 +68,17 @@
 				else
 					to_chat(C, "<font color='[GLOB.normal_ooc_colour]'><span class='ooc'><span class='prefix'>OOC:</span> <EM>[holder.fakekey ? holder.fakekey : key]:</EM> <span class='message linkify'>[msg]</span></span></font>")
 			else if(!(key in C.prefs.ignoring))
-				to_chat(C, "<font color='[GLOB.normal_ooc_colour]'><span class='ooc'><span class='prefix'>OOC:</span> <EM>[keyname]:</EM> <span class='message linkify'>[msg]</span></span></font>")
+				to_chat(C, "<font color='[GLOB.normal_ooc_colour]'><span class='ooc'><span class='prefix'>[get_country_flag(country)] OOC:</span> <EM>[keyname]:</EM> <span class='message linkify'>[msg]</span></span></font>")
+
+/proc/get_country_flag(country)
+	if (!country)
+		return "N/A"
+	var/datum/asset/spritesheet/sheet = get_asset_datum(/datum/asset/spritesheet/goonchat)
+	if ("RU" || "UK" || "JP" || "US" || "UA")
+		return sheet.icon_tag("flags-[country]")
+	else
+		return sheet.icon_tag("US")
+
 
 /proc/toggle_ooc(toggle = null)
 	if(toggle != null) //if we're specifically en/disabling ooc
