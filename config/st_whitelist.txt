@@ -1,0 +1,3 @@
+valtosss = Trader
+valtosss = Monolith
+valtosss = Monolith Hegumen

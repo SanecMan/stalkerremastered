@@ -4,7 +4,7 @@
 	if(gender_override)
 		gender = gender_override
 	else
-		gender = pick(MALE,FEMALE)
+		gender = MALE //NO TRAPS (maybe)
 	underwear = random_underwear(gender)
 	undershirt = random_undershirt(gender)
 	socks = random_socks()

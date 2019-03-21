@@ -45,13 +45,13 @@
 	return 0
 
 
-/obj/item/artifact/New()
+/obj/item/artifact/Initialize()
+	..()
 	isotope_base = pick(/isotope/u238,
 						/isotope/pu238,
 						/isotope/po210)
 	capacity = rand(1000, 10000)
 	charge = capacity
-	//invisibility = 100
 
 /obj/item/artifact/pickup(mob/user)
 	..()

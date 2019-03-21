@@ -2798,6 +2798,7 @@
 #include "interface\skin.dmf"
 #include "stalker\code\portage.dm"
 #include "stalker\code\quest_items.dm"
+#include "stalker\code\whitelist.dm"
 #include "stalker\code\anomalies\anomaly.dm"
 #include "stalker\code\factions\army.dm"
 #include "stalker\code\factions\bandit.dm"
