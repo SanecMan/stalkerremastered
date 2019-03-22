@@ -7,8 +7,8 @@
 	area = /area/space
 	view = "15x15"
 	hub = "Exadv1.spacestation13"
-	name = "/tg/ Station 13"
-	fps = 20
+	name = "S.T.A.L.K.E.R.: Remastered"
+	fps = 30
 #ifdef FIND_REF_NO_CHECK_TICK
 	loop_checks = FALSE
 #endif

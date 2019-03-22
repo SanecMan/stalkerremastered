@@ -276,6 +276,7 @@
 	name = "toggle internals"
 	icon_state = "internal0"
 	screen_loc = ui_internal
+	invisibility = 101
 
 /obj/screen/internals/Click()
 	if(!iscarbon(usr))
@@ -582,6 +583,7 @@
 	plane = FULLSCREEN_PLANE
 
 /obj/screen/healths
+	icon = 'stalker/icons/screen_health.dmi'
 	name = "health"
 	icon_state = "health0"
 	screen_loc = ui_health
@@ -654,11 +656,13 @@
 	name = "mood"
 	icon_state = "mood5"
 	screen_loc = ui_mood
+	invisibility = 101
 
 /obj/screen/sanity
 	name = "sanity"
 	icon_state = "sanity3"
 	screen_loc = ui_mood
+	invisibility = 101
 
 /obj/screen/splash
 	icon = 'icons/blank_title.png'

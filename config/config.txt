@@ -20,7 +20,7 @@ $include antag_rep.txt
 # SERVERSQLNAME tgstation
 
 ## Station name: The name of the station as it is referred to in-game. If commented out, the game will generate a random name instead.
-STATIONNAME S.T.A.L.K.E.R.
+STATIONNAME S.T.A.L.K.E.R.: Remastered
 
 ## Put on byond hub: Uncomment this to put your server on the byond hub.
 #HUB
@@ -177,7 +177,7 @@ VOTE_PERIOD 600
 # DEFAULT_NO_VOTE
 
 ## disable abandon mob
-NORESPAWN
+#NORESPAWN
 
 ## disables calling del(src) on newmobs if they logout before spawnin in
 # DONT_DEL_NEWMOB
@@ -288,7 +288,7 @@ TICK_LIMIT_MC_INIT 500
 TICKLAG 0.5
 
 ##Can also be set as per-second value, the following value is identical to the above.
-#FPS 20
+FPS 30
 
 ## Comment this out to disable automuting
 #AUTOMUTE_ON

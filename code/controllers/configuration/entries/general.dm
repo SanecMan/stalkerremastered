@@ -151,6 +151,9 @@
 
 /datum/config_entry/flag/norespawn
 
+/datum/config_entry/number/respawn_timer
+	config_entry_value = 2400
+
 /datum/config_entry/flag/guest_jobban
 
 /datum/config_entry/flag/usewhitelist

@@ -199,11 +199,11 @@ GLOBAL_VAR(restart_counter)
 		if (usr)
 			log_admin("[key_name(usr)] Has requested an immediate world restart via client side debugging tools")
 			message_admins("[key_name_admin(usr)] Has requested an immediate world restart via client side debugging tools")
-		to_chat(world, "<span class='boldannounce'>Rebooting World immediately due to host request</span>")
+		to_chat(world, "<span class='boldannounce'>ÑÏÎÊÓÕÀ, ÑÅÉ×ÀÑ ÏÎ×ÈÍÞÑÜ! ÒßßßÊ~...</span>")
 	else
-		to_chat(world, "<span class='boldannounce'>Rebooting world...</span>")
+		to_chat(world, "<span class='boldannounce'>×åñòíî...</span>")
 		Master.Shutdown()	//run SS shutdowns
-	
+
 	TgsReboot()
 
 	if(TEST_RUN_PARAMETER in params)
@@ -236,51 +236,15 @@ GLOBAL_VAR(restart_counter)
 	..()
 
 /world/proc/update_status()
-
-	var/list/features = list()
-
-	if(GLOB.master_mode)
-		features += GLOB.master_mode
-
-	if (!GLOB.enter_allowed)
-		features += "closed"
-
 	var/s = ""
-	var/hostedby
-	if(config)
-		var/server_name = CONFIG_GET(string/servername)
-		if (server_name)
-			s += "<b>[server_name]</b> &#8212; "
-		features += "[CONFIG_GET(flag/norespawn) ? "no " : ""]respawn"
-		if(CONFIG_GET(flag/allow_vote_mode))
-			features += "vote"
-		if(CONFIG_GET(flag/allow_ai))
-			features += "AI allowed"
-		hostedby = CONFIG_GET(string/hostedby)
 
-	s += "<b>[station_name()]</b>";
-	s += " ("
-	s += "<a href=\"http://\">" //Change this to wherever you want the hub to link to.
-	s += "Default"  //Replace this with something else. Or ever better, delete it and uncomment the game version.
-	s += "</a>"
-	s += ")"
-
-	var/n = 0
-	for (var/mob/M in GLOB.player_list)
-		if (M.client)
-			n++
-
-	if (n > 1)
-		features += "~[n] players"
-	else if (n > 0)
-		features += "~[n] player"
-
-	if (!host && hostedby)
-		features += "hosted by <b>[hostedby]</b>"
-
-	if (features)
-		s += ": [jointext(features, ", ")]"
-
+	s += "<center><a href=\"https://discord.gg/5aXdgXv\"><big><b>S.T.A.L.K.E.R.: Remastered</b></big><br>" //[config.server_name]
+	s += "<img src=\"https://frosty.space/styles/stalbanhub.png\"></a></center>"
+	s += "Map: <b>Zona (255x1000)</b><br>"
+	if(GLOB.master_mode)
+		s += "Mode: <b>[GLOB.master_mode]</b><br>"
+	else
+		s += "<br><b>STARTING</b>"
 	status = s
 
 /world/proc/update_hub_visibility(new_visibility)

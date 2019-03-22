@@ -410,7 +410,7 @@
 	else
 		to_chat(src, "Вам некуда запоминать.")
 
-/mob/verb/abandon_mob()
+/mob/living/verb/abandon_mob()
 	set name = "Перерождение"
 	set category = "OOC"
 
@@ -418,6 +418,13 @@
 		return
 	if ((stat != DEAD || !( SSticker )))
 		to_chat(usr, "<span class='boldnotice'>Вам нужно умереть для этого!</span>")
+		return
+
+	if (timeofdeath + CONFIG_GET(number/respawn_timer) > world.time)
+		if(usr.client.prefs.chat_toggles & CHAT_LANGUAGE)
+			to_chat(usr, "<span class='boldnotice'>You will be able join the game in around [max(1, round((timeofdeath + CONFIG_GET(number/respawn_timer) - world.time)/600))] min.</span>")
+		else
+			to_chat(usr, "<span class='boldnotice'>Возможность переродиться будет доступна через [max(1, round((timeofdeath + CONFIG_GET(number/respawn_timer) - world.time)/600))] минуты.</span>")
 		return
 
 	log_game("[key_name(usr)] used abandon mob.")

@@ -4,6 +4,9 @@ GLOBAL_LIST_INIT(admin_verbs_default, world.AVerbsDefault())
 GLOBAL_PROTECT(admin_verbs_default)
 /world/proc/AVerbsDefault()
 	return list(
+	/client/proc/GetRank,
+	/client/proc/GetMoney,
+	/client/proc/GetFaction,
 	/client/proc/deadmin,				/*destroys our own admin datum so we can play as a regular player*/
 	/client/proc/cmd_admin_say,			/*admin-only ooc chat*/
 	/client/proc/hide_verbs,			/*hides all our adminverbs*/
@@ -103,7 +106,7 @@ GLOBAL_LIST_INIT(admin_verbs_fun, list(
 	/client/proc/admin_away
 	))
 GLOBAL_PROTECT(admin_verbs_fun)
-GLOBAL_LIST_INIT(admin_verbs_spawn, list(/datum/admins/proc/spawn_atom, /datum/admins/proc/podspawn_atom, /datum/admins/proc/spawn_cargo, /datum/admins/proc/spawn_objasmob, /client/proc/respawn_character))
+GLOBAL_LIST_INIT(admin_verbs_spawn, list(/client/proc/SetRank, /client/proc/SetMoney, /client/proc/SetFaction, /client/proc/SetRealCooldownBlowout, /datum/admins/proc/spawn_atom, /datum/admins/proc/podspawn_atom, /datum/admins/proc/spawn_cargo, /datum/admins/proc/spawn_objasmob, /client/proc/respawn_character))
 GLOBAL_PROTECT(admin_verbs_spawn)
 GLOBAL_LIST_INIT(admin_verbs_server, world.AVerbsServer())
 GLOBAL_PROTECT(admin_verbs_server)
@@ -128,6 +131,10 @@ GLOBAL_LIST_INIT(admin_verbs_debug, world.AVerbsDebug())
 GLOBAL_PROTECT(admin_verbs_debug)
 /world/proc/AVerbsDebug()
 	return list(
+	/client/proc/SetTimeOfDay,
+	/client/proc/SetAverageCooldownBlowout,
+	/client/proc/SetRespawnRate,
+	/client/proc/StopBlowout,
 	/client/proc/restart_controller,
 	/client/proc/cmd_admin_list_open_jobs,
 	/client/proc/Debug2,
@@ -711,3 +718,248 @@ GLOBAL_PROTECT(admin_verbs_hideable)
 
 	log_admin("[key_name(usr)] has [AI_Interact ? "activated" : "deactivated"] Admin AI Interact")
 	message_admins("[key_name_admin(usr)] has [AI_Interact ? "activated" : "deactivated"] their AI interaction")
+
+////////////////////////////////////STALKERSHITFUCK////////////////////////////////////////////////////
+
+/client/proc/GetRank()
+	set name = "Get Rank"
+	set category = "Stalker"
+
+	var/mob/living/carbon/human/selected = input("Please, select a stalker!", "S.T.A.L.K.E.R.", null) as null|anything in sortRealNames(GLOB.KPK_mobs)
+
+	if(!selected)
+		return
+
+	var/datum/data/record/sk = find_record("sid", selected.sid, GLOB.data_core.stalkers)
+
+	if(!sk)
+		to_chat(usr, "<span class='warning'>Stalker profile not found.</span>")
+		return
+
+	var/sk_name = sk.fields["name"]
+	var/sk_rating = sk.fields["rating"]
+
+	to_chat(usr, "<span class='interface'>[sk_name] rating is [sk_rating]. He is [get_eng_rank_name(sk_rating)]</span>")
+
+/client/proc/SetRank()
+	set name = "Set Rank"
+	set category = "Stalker"
+
+	var/mob/living/carbon/human/selected = input("Please, select a stalker!", "S.T.A.L.K.E.R.", null) as null|anything in sortRealNames(GLOB.KPK_mobs)
+
+	if(!selected)
+		return
+
+	var/datum/data/record/sk = find_record("sid", selected.sid, GLOB.data_core.stalkers)
+
+	if(!sk)
+		to_chat(usr, "<span class='warning'>Stalker profile not found.</span>")
+		return
+
+	var/newrank = input(usr, "≈сли € узнаю, что ты это крутил себе, то € тебе откручу что-то другое. „исло от 0 до бесконечности.", "Rating System") as num|null
+
+	if(!newrank)
+		return
+
+	var/oldrank = sk.fields["rating"]
+	var/sk_name = sk.fields["name"]
+
+	sk.fields["rating"] = newrank
+
+	to_chat(usr, "<span class='interface'>Rating successfully updated from [oldrank] to [newrank].</span>")
+	log_admin("[key_name(usr)] changed [sk_name] rank from [oldrank] to [newrank].")
+	message_admins("[key_name_admin(usr)] changed [sk_name] rank from [oldrank] to [newrank].")
+
+/client/proc/SetMoney()
+	set name = "Set Money"
+	set category = "Stalker"
+
+	var/mob/living/carbon/human/selected = input("Please, select a stalker!", "S.T.A.L.K.E.R.", null) as null|anything in sortRealNames(GLOB.KPK_mobs)
+
+	if(!selected)
+		return
+
+	var/datum/data/record/sk = find_record("sid", selected.sid, GLOB.data_core.stalkers)
+
+	if(!sk)
+		to_chat(usr, "<span class='warning'>Stalker profile not found.</span>")
+		return
+
+	var/sk_name = sk.fields["name"]
+	var/sk_money = sk.fields["money"]
+
+	to_chat(src, "<span class='interface'>[sk_name] holds [sk_money] RU in his account.</span>")
+	var/newbalance = input(usr, "Input new balance.", "S.T.A.L.K.E.R.") as num|null
+
+	if(!newbalance)
+		return
+
+	sk.fields["money"] = newbalance
+	to_chat(usr, "<span class='interface'>Balance successfully updated from [sk_money] to [newbalance].</span>")
+
+	log_admin("[key_name(usr)] updated [sk_name] money balance from [sk_money] to [newbalance].")
+	message_admins("[key_name_admin(usr)] updated [sk_name] money balance from [sk_money] to [newbalance].")
+
+
+
+/client/proc/GetMoney()
+	set name = "Get Money"
+	set category = "Stalker"
+
+	var/mob/living/carbon/human/selected = input("Please, select a stalker!", "S.T.A.L.K.E.R.", null) as null|anything in sortRealNames(GLOB.KPK_mobs)
+
+	if(!selected)
+		return
+
+	var/datum/data/record/sk = find_record("sid", selected.sid, GLOB.data_core.stalkers)
+
+	if(!sk)
+		to_chat(usr, "<span class='warning'>Stalker profile not found.</span>")
+		return
+
+	var/sk_name = sk.fields["name"]
+	var/sk_money = sk.fields["money"]
+
+	to_chat(src, "<span class='interface'>[sk_name] holds [sk_money] RU in his account.</span>")
+	log_admin("[key_name(usr)] checked [sk_name] account balance.")
+	message_admins("[key_name_admin(usr)] checked [sk_name] account balance.")
+
+/client/proc/GetFaction()
+	set name = "Get Faction"
+	set category = "Stalker"
+
+	var/mob/living/carbon/human/selected = input("Please, select a stalker!", "S.T.A.L.K.E.R.", null) as null|anything in sortRealNames(GLOB.KPK_mobs)
+
+	if(!selected)
+		return
+
+	var/datum/data/record/sk = find_record("sid", selected.sid, GLOB.data_core.stalkers)
+
+	if(!sk)
+		to_chat(usr, "<span class='warning'>Stalker profile not found.</span>")
+		return
+
+	var/sk_name = sk.fields["name"]
+	var/sk_faction_s = sk.fields["faction_s"]
+
+	to_chat(src, "<span class='interface'>[sk_name] is a part of [sk_faction_s].</span>")
+
+/client/proc/SetFaction()
+	set name = "Set Faction"
+	set category = "Stalker"
+
+	var/mob/living/carbon/human/selected = input("Please, select a stalker!", "S.T.A.L.K.E.R.", null) as null|anything in sortRealNames(GLOB.KPK_mobs)
+
+	if(!selected)
+		return
+
+	var/datum/data/record/sk = find_record("sid", selected.sid, GLOB.data_core.stalkers)
+
+	if(!sk)
+		to_chat(usr, "<span class='warning'>Stalker profile not found.</span>")
+		return
+
+	var/newfaction = input(usr, "Insert new faction with a BIG first letter.", "S.T.A.L.K.E.R.") as text|null
+
+	if(!newfaction)
+		return
+
+	var/sk_name = sk.fields["name"]
+	var/sk_faction_s = sk.fields["faction_s"]
+
+	to_chat(usr, "<span class='interface'>[sk_name] was a part of [sk_faction_s].</span>")
+	sk.fields["faction_s"] = newfaction
+
+	to_chat(usr, "<span class='interface'>[sk_name] joined [sk_faction_s].</span>")
+
+	log_admin("[key_name(usr)] changed [sk_name] faction from [sk_faction_s] to [newfaction].")
+	message_admins("[key_name_admin(usr)] changed [sk_name] faction from [sk_faction_s] to [newfaction].")
+
+/client/proc/SetTimeOfDay()
+	set name = "Set Time of Day"
+	set category = "Stalker"
+
+	var/daytime = input(usr, "Choose time of day to set)", "S.T.A.L.K.E.R.") as null|anything in list("Morning", "Day", "Evening", "Night")
+
+	if(!daytime)
+		return
+
+	switch(daytime)
+		if("Morning")
+			daytime = "MORNING"
+		if("Day")
+			daytime = "DAYTIME"
+		if("Evening")
+			daytime = "AFTERNOON"
+		if("Night")
+			daytime = "NIGHTTIME"
+
+	SSnightcycle.updateLight(daytime)
+	to_chat(usr, "<span class='interface'>Time of day successfully updated.</span>")
+	log_admin("[key_name(usr)] changed time of day to [daytime].")
+	message_admins("[key_name_admin(usr)] changed time of day to [daytime].")
+
+/client/proc/SetAverageCooldownBlowout()
+	set name = "Set Blowout Cooldown"
+	set category = "Stalker"
+
+	var/average_cooldown = input(usr, "Input blowout average cooldown.", " S.T.A.L.K.E.R.") as num|null
+
+	if(!average_cooldown)
+		return
+
+	log_admin("[key_name(usr)] changed blowout average cooldown from [SSblowout.average_cooldown] to [average_cooldown].")
+	message_admins("[key_name(usr)] changed blowout average cooldown from [SSblowout.average_cooldown] to [average_cooldown].")
+
+	SSblowout.average_cooldown = average_cooldown
+	to_chat(src, "<span class='interface'>Blowout average cooldown successfully changed.</span>")
+
+/client/proc/SetRealCooldownBlowout()
+	set name = "Start Blowout"
+	set category = "Stalker"
+
+	var/cooldownreal = input(usr, "Input the blowout timer", "S.T.A.L.K.E.R.") as num|null
+
+	if(!cooldownreal)
+		return
+
+	SSblowout.lasttime = world.time
+	SSblowout.cooldownreal = cooldownreal
+	to_chat(src, "<span class='interface'>Blowout will start in [round((SSblowout.lasttime + cooldownreal - world.time)/10/60) + 1] min.</span>")
+
+	log_admin("[key_name(usr)] forced blowout to start in [round((SSblowout.lasttime + cooldownreal - world.time)/10/60) + 1].")
+	message_admins("[key_name_admin(usr)] forced blowout to start in [round((SSblowout.lasttime + cooldownreal - world.time)/10/60) + 1].")
+
+/client/proc/StopBlowout()
+	set name = "Stop Blowout"
+	set category = "Stalker"
+
+	if(!SSblowout.isblowout)
+		to_chat(src, "<span class='warning'>There is no blowout going on.</span>")
+		return
+
+	if(alert("Are you sure you want to stop the blowout?", "S.T.A.L.K.E.R.", "Yes", "No") == "No")
+		return
+
+	SSblowout.cleaned = 1
+	SSblowout.starttime = world.time - BLOWOUT_DURATION_STAGE_III + 1
+
+	log_admin("[key_name(usr)] stoped the blowout.")
+	message_admins("[key_name_admin(usr)] stoped the blowout.")
+
+
+/client/proc/SetRespawnRate()
+	set name = "Set Respawn Rate"
+	set category = "Stalker"
+
+	var/newrespawnrate = input(usr, "Input new respawn rate in minutes", "S.T.A.L.K.E.R.") as num|null
+
+	if(!newrespawnrate)
+		return
+
+	to_chat(world, "<font color='red'><b>Respawn rate has been changed by admins from [round(CONFIG_GET(number/respawn_timer)/600)] min to [newrespawnrate] min!</b></font color>")
+
+	log_admin("[key_name(usr)] changed respawn rate from [round(CONFIG_GET(number/respawn_timer)/600)] to [newrespawnrate].")
+	message_admins("[key_name_admin(usr)] changed respawn rate from [round(CONFIG_GET(number/respawn_timer)/600)] to [newrespawnrate].")
+
+	CONFIG_SET(number/respawn_timer, round(newrespawnrate * 600))

@@ -225,6 +225,7 @@ var/list/sidorRooms = list()
 	invisibility = INVISIBILITY_LIGHTING
 	icon = 'stalker/icons/areas.dmi'
 	icon_state = "transfer_zone"
+	anchored = TRUE
 
 /obj/sidor_enter/Crossed(atom/movable/A)
 	if(istype(A, /mob/living/carbon/human))
@@ -252,6 +253,7 @@ var/list/sidorRooms = list()
 	invisibility = INVISIBILITY_LIGHTING
 	icon = 'stalker/icons/areas.dmi'
 	icon_state = "transfer_zone"
+	anchored = TRUE
 
 /obj/sidor_exit/New()
 	sidorRooms.Add(src)

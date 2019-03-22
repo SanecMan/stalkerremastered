@@ -358,6 +358,8 @@
 /proc/sortNames(list/L, order=1)
 	return sortTim(L, order >= 0 ? /proc/cmp_name_asc : /proc/cmp_name_dsc)
 
+/proc/sortRealNames(list/L, order=1)
+	return sortTim(L, order >= 0 ? /proc/cmp_real_name_asc : /proc/cmp_real_name_dsc)
 
 //Converts a bitfield to a list of numbers (or words if a wordlist is provided)
 /proc/bitfield2list(bitfield = 0, list/wordlist)

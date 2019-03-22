@@ -145,8 +145,8 @@
 #define SANITY_INSANE 0
 
 //Hygiene levels for humans
-#define HYGIENE_LEVEL_CLEAN 250
-#define HYGIENE_LEVEL_NORMAL 200
+#define HYGIENE_LEVEL_CLEAN 250000
+#define HYGIENE_LEVEL_NORMAL 200000
 #define HYGIENE_LEVEL_DIRTY 75
 
 //Nutrition levels for humans
