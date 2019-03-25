@@ -395,7 +395,7 @@ SUBSYSTEM_DEF(ticker)
 			m = pick(memetips)
 
 	if(m)
-		to_chat(world, "<font color='purple'><b>Заметки опытного: </b>[rhtml_encode(m)]</font>")
+		to_chat(world, "<i>[rhtml_encode(m)]</i>")
 
 /datum/controller/subsystem/ticker/proc/check_queue()
 	var/hpc = CONFIG_GET(number/hard_popcap)
