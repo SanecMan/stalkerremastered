@@ -2827,7 +2827,6 @@
 #include "stalker\code\objects\items\food\drinks.dm"
 #include "stalker\code\objects\items\food\food.dm"
 #include "stalker\code\objects\items\food\reagents.dm"
-#include "stalker\code\objects\items\medicine\firstaid.dm"
 #include "stalker\code\objects\items\medicine\radiation.dm"
 #include "stalker\code\objects\items\misc\addons.dm"
 #include "stalker\code\objects\items\misc\aptechka.dm"

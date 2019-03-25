@@ -480,6 +480,7 @@
 	can_suppress = 1
 	zoomable = 1
 	zoom_amt = 9
+	zoom_out_amt = 12
 	burst_size = 3
 	fire_delay = 1.8
 	pin = /obj/item/firing_pin
@@ -530,6 +531,7 @@
 	can_suppress = 1
 	zoomable = 1
 	zoom_amt = 10
+	zoom_out_amt = 13
 	burst_size = 3
 	fire_delay = 1.25
 	pin = /obj/item/firing_pin
@@ -584,6 +586,7 @@
 	fire_delay = 1.4
 	zoomable = 1
 	zoom_amt = 12
+	zoom_out_amt = 15
 	pin = /obj/item/firing_pin
 	durability = 250
 	w_class = 4
@@ -667,6 +670,7 @@
 	can_unsuppress = 0
 	zoomable = 1
 	zoom_amt = 7
+	zoom_out_amt = 10
 	burst_size = 3
 	fire_delay = 1.2
 	durability = 150

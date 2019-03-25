@@ -554,14 +554,14 @@ It's fairly easy to fix if dealing with single letters but not so much with comp
 
 /mob/living/carbon/human/seek_screen_colour() //fuck?
 
-	if(SSblowout.isblowout && istype(get_area(src), /area/stalker/blowout))
-		if(prob(75))
-			add_client_colour(/datum/client_colour/blowout)
-		else
-			add_client_colour(/datum/client_colour/blowout2)
-	else if (color)
-		remove_client_colour(/datum/client_colour/blowout)
-		remove_client_colour(/datum/client_colour/blowout2)
+	//if(SSblowout.isblowout && istype(get_area(src), /area/stalker/blowout))
+	//	if(prob(75))
+	//		add_client_colour(/datum/client_colour/blowout)
+	//	else
+	//		add_client_colour(/datum/client_colour/blowout2)
+	//else if (color)
+	//	remove_client_colour(/datum/client_colour/blowout)
+	//	remove_client_colour(/datum/client_colour/blowout2)
 
 	if(psyloss)
 		add_client_colour(/datum/client_colour/psy)

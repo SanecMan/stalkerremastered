@@ -7,7 +7,6 @@
 		var/mob/living/carbon/C = A
 		CheckControl(C)
 		if(SSblowout.isblowout && C.inshelter)
-			C.seek_screen_colour()
 			if(C.client && (C.client.prefs.chat_toggles & CHAT_LANGUAGE))
 				to_chat(C, "<big><span class='warning'>You leave the shelter.</span></big>")
 			else
@@ -19,7 +18,6 @@
 		var/mob/living/carbon/C = A
 		CheckControl(C)
 		if(SSblowout.isblowout && !C.inshelter)
-			C.seek_screen_colour()
 			if(C.client && (C.client.prefs.chat_toggles & CHAT_LANGUAGE))
 				to_chat(C, "<big><span class='notice'>You enter the shelter.</span></big>")
 			else
@@ -114,6 +112,8 @@ SUBSYSTEM_DEF(blowout)
 	isblowout = 1
 	blowoutphase = 1
 	starttime = world.time
+	
+	SSnightcycle.updateLight("BLOWOUT")
 
 	add_lenta_message(null, "0", "Sidorovich", "Loners", "ВНИМАНИЕ, СТАЛКЕРЫ! Приближается выброс! Ищите ближайшее укрытие!")
 	world << sound('stalker/sound/blowout/blowout_begin_02.ogg', wait = 0, channel = 201, volume = 50)
@@ -121,7 +121,6 @@ SUBSYSTEM_DEF(blowout)
 
 	for(var/mob/living/carbon/C in GLOB.player_list)
 		if(!C.inshelter)
-			C.seek_screen_colour()
 			to_chat(C, "<big><span class='warning'>Вам нужно срочно искать укрытие, скоро начнётся выброс!</span></big>")
 		else
 			to_chat(C, "<big><span class='notice'>Вы в укрытии, осталось только переждать выброс.</span></big>")

@@ -94,12 +94,17 @@ SUBSYSTEM_DEF(nightcycle)
 			to_chat(world, "<b>22:30</b> - наступает ночь")
 			sunColour = "#00111a"
 			//sunPower = 0.15
+		if("BLOWOUT")
+			sunColour = "#ff3333"
+
+	if (SSblowout.isblowout)
+		sunColour = "#ff3333"
+
 	for(var/turf/open/stalker/T in OT)
 		T.set_light(sunRange, sunPower, sunColour)
 	for(var/turf/open/stalker/T in BT)
 		T.set_light(sunPower - 0.4, sunRange - 2, sunColour)
 	return
-
 
 #undef CYCLE_SUNRISE
 #undef CYCLE_MORNING
