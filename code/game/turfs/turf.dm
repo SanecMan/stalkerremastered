@@ -198,6 +198,18 @@
 	return FALSE
 
 /turf/CanPass(atom/movable/mover, turf/target)
+	if(windowed)
+		//if(height==0)
+		//	return 1
+
+		if(istype(mover) && mover.pass_flags == PASSTABLE)
+			return TRUE
+
+		//if(locate(/obj/structure/stalker/okno) in get_turf(mover))
+		//	return 1
+
+		return FALSE
+
 	if(!target)
 		return FALSE
 

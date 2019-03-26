@@ -31,7 +31,6 @@ SUBSYSTEM_DEF(nightcycle)
 /datum/controller/subsystem/nightcycle/fire(resumed = FALSE)
 	if (preparing)
 		collectTurfs()
-		preparing = 0
 	//if (working)
 	//	doWork()
 	//	return

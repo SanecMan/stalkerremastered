@@ -103,24 +103,19 @@ var/global/global_lentahtml = ""
 	return
 
 /obj/item/stalker_pda/MouseDrop(atom/over_object)
-	if(iscarbon(usr) || isdrone(usr)) //all the check for item manipulation are in other places, you can safely open any storages as anything and its not buggy, i checked
-		var/mob/M = usr
+	. = ..()
+	var/mob/living/M = usr
+	if(!istype(M) || M.incapacitated() || !Adjacent(M))
+		return
 
-		if(!M.restrained() && !M.stat)
-			if(loc != usr || (loc && loc.loc == usr))
-				return
+	if(over_object == M)
+		M.put_in_hands(src)
 
-			if(over_object)
-				switch(over_object.name)
-					if("r_hand")
-						if(!M.doUnEquip(src))
-							return
-						M.put_in_r_hand(src)
-					if("l_hand")
-						if(!M.doUnEquip(src))
-							return
-						M.put_in_l_hand(src)
-				add_fingerprint(usr)
+	else if(istype(over_object, /obj/screen/inventory/hand))
+		var/obj/screen/inventory/hand/H = over_object
+		M.putItemFromInventoryInHandIfPossible(src, H.held_index)
+
+	add_fingerprint(M)
 
 /obj/item/stalker_pda/attack_hand(mob/living/user)
 	if(src.loc == user)

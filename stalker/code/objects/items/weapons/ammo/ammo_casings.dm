@@ -94,5 +94,4 @@
 /obj/item/ammo_casing/c762x51
     desc = "A 7.62x51 bullet casing."
     caliber = "7.62x51mm"
-    icon_state = "303-casing"
     projectile_type = /obj/item/projectile/bullet/bullet762x51

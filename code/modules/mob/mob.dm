@@ -410,12 +410,41 @@
 	else
 		to_chat(src, "Вам некуда запоминать.")
 
+/mob/dead/observer/verb/abandon_mob()
+	set name = "Перерождение"
+	set category = "OOC"
+
+	log_game("[key_name(usr)] used abandon mob.")
+
+	to_chat(usr, "<span class='boldnotice'>Уважайте других игроков!</span>")
+
+	if(!client)
+		log_game("[key_name(usr)] AM failed due to disconnect.")
+		return
+	client.screen.Cut()
+	client.screen += client.void
+	if(!client)
+		log_game("[key_name(usr)] AM failed due to disconnect.")
+		return
+
+	var/mob/dead/new_player/M = new /mob/dead/new_player()
+	if(!client)
+		log_game("[key_name(usr)] AM failed due to disconnect.")
+		qdel(M)
+		return
+
+	M.key = key
+//	M.Login()	//wat
+	return
+
+
 /mob/living/verb/abandon_mob()
 	set name = "Перерождение"
 	set category = "OOC"
 
 	if (CONFIG_GET(flag/norespawn))
 		return
+
 	if ((stat != DEAD || !( SSticker )))
 		to_chat(usr, "<span class='boldnotice'>Вам нужно умереть для этого!</span>")
 		return

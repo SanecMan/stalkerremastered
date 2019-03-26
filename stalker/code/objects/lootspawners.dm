@@ -60,7 +60,7 @@
 	var/radius = 10 //Радиус разброса лута
 	var/cooldown = 10000 //Кол-во минут * 1000 кд шитспавна
 	var/list/spawned_loot = new()
-	loot = list(/obj/item/stack/medical/gauze/bint = 75,
+	loot = list(/obj/item/reagent_containers/pill/stalker/aptechka/bint = 75,
 				/obj/item/trash/can = 25)
 
 /obj/effect/spawner/lootdrop/stalker/weapon

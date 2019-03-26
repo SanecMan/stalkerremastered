@@ -126,4 +126,4 @@ Assistant
 /datum/outfit/bandit/pre_equip(mob/living/carbon/human/H)
 	..()
 	uniform = UNIFORMPICK
-	l_pocket = pick(/obj/item/reagent_containers/food/snacks/stalker/kolbasa,/obj/item/stack/medical/gauze/bint,/obj/item/reagent_containers/food/snacks/stalker/baton)
+	l_pocket = pick(/obj/item/reagent_containers/food/snacks/stalker/kolbasa,/obj/item/reagent_containers/pill/stalker/aptechka/bint,/obj/item/reagent_containers/food/snacks/stalker/baton)

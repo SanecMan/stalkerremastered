@@ -96,9 +96,9 @@ SUBSYSTEM_DEF(blowout)
 			BlowoutGib()
 			if(MC_TICK_CHECK)
 				return
-			//BlowoutClean()
-			//if(MC_TICK_CHECK)
-			//	return
+			BlowoutClean()
+			if(MC_TICK_CHECK)
+				return
 			if(!(locate(/mob/living) in GLOB.dead_mob_list)) //!ACs.len &&
 				cleaned = 1
 			return
@@ -112,7 +112,7 @@ SUBSYSTEM_DEF(blowout)
 	isblowout = 1
 	blowoutphase = 1
 	starttime = world.time
-	
+
 	SSnightcycle.updateLight("BLOWOUT")
 
 	add_lenta_message(null, "0", "Sidorovich", "Loners", "ВНИМАНИЕ, СТАЛКЕРЫ! Приближается выброс! Ищите ближайшее укрытие!")
@@ -193,6 +193,8 @@ SUBSYSTEM_DEF(blowout)
 	lasttime = world.time
 	starttime = 0
 	cleaned = 0
+
+	SSnightcycle.updateLight("DAYTIME")
 
 	world << sound(null, wait = 0, channel = 19, volume = 70)
 	world << sound(null, wait = 0, channel = 20, volume = 70)

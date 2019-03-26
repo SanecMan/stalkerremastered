@@ -614,17 +614,17 @@ GLOBAL_LIST_EMPTY(spawned_artifacts)
 	pass_flags = PASSTABLE | PASSGRILLE
 
 /obj/rad/rad_low
-	damage_amount = 25
+	damage_amount = 15
 	sound = 'stalker/sound/pda/geiger_1.ogg'
 	icon_state = "rad_low"
 
 /obj/rad/rad_medium
-	damage_amount = 50
+	damage_amount = 25
 	sound = 'stalker/sound/pda/geiger_4.ogg'
 	icon_state = "rad_medium"
 
 /obj/rad/rad_high
-	damage_amount = 75
+	damage_amount = 40
 	sound = 'stalker/sound/pda/geiger_6.ogg'
 	icon_state = "rad_high"
 

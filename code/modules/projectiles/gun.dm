@@ -298,9 +298,9 @@
 	var/area/B = get_area(user.loc)
 	if(B.safezone)
 		if(user.client && (user.client.prefs.chat_toggles & CHAT_LANGUAGE))
-			user << "<span class='warning'>You can't shoot in the safezone!</span>"
+			to_chat(user, "<span class='warning'>You can't shoot in the safezone!</span>")
 		else
-			user << "<span class='warning'>Вы не можете стрелять в этой зоне!</span>"
+			to_chat(user, "<span class='warning'>Вы не можете стрелять в этой зоне!</span>")
 		return 0
 	if(!handle_pins(user))
 		return FALSE
@@ -370,8 +370,8 @@
 /obj/item/gun/proc/process_fire(atom/target, mob/living/user, message = TRUE, params = null, zone_override = "", bonus_spread = 0)
 	add_fingerprint(user)
 
-	if(semicd)
-		return
+	//if(semicd) //nothing will be wrong, I think...
+	//	return
 
 	if(weapon_weight)
 		if(user.get_inactive_held_item())

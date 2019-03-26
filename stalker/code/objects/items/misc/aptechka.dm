@@ -75,10 +75,10 @@ obj/item/reagent_containers/pill/stalker/afterattack(obj/target, mob/user , prox
 	..()
 	return
 
-/obj/item/stack/medical/gauze/bint
+/obj/item/reagent_containers/pill/stalker/aptechka/bint
+	name = "bint"
 	desc = "Перев&#255;зочный материал. Помогает остановить кровотечение."
 	eng_desc = "Bandage. Can stop your bleeding."
 	icon = 'stalker/icons/items.dmi'
 	icon_state = "bint"
-	amount = 2
-	max_amount = 5
+	list_reagents = list("medicadone" = 1)

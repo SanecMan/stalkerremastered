@@ -54,7 +54,7 @@
 					/obj/item/reagent_containers/food/snacks/stalker/kolbasa = 60,
 					/obj/item/reagent_containers/food/snacks/stalker/baton = 75,
 					/obj/item/reagent_containers/food/drinks/bottle/vodka/kazaki = 35,
-					/obj/item/stack/medical/gauze/bint = 80,
+					/obj/item/reagent_containers/pill/stalker/aptechka/bint = 80,
 					/obj/item/reagent_containers/hypospray/medipen/stalker/antirad = 10,
 					/obj/item/clothing/suit/hooded/kozhanka/banditka = 1,
 					/obj/item/ammo_box/stalker/b9x18 = 55,
