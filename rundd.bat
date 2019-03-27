@@ -1,0 +1,1 @@
+"C:\Program Files (x86)\BYOND\bin\DreamDaemon.exe" tgstation.dmb 2294 -trusted

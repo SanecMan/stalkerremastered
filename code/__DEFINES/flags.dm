@@ -74,17 +74,17 @@ GLOBAL_LIST_INIT(bitflags, list(1, 2, 4, 8, 16, 32, 64, 128, 256, 512, 1024, 204
 
 /obj/item/proc/clothing_resistance_flag_examine_message(mob/user)
 	if(resistance_flags & INDESTRUCTIBLE)
-		to_chat(user, "[src] seems extremely robust! It'll probably withstand anything that could happen to it!")
+		to_chat(user, "[src] выглядит неубиваемой вещицей!")
 		return
-	if(resistance_flags & LAVA_PROOF)
-		to_chat(user, "[src] is made of an extremely heat-resistant material, it'd probably be able to withstand lava!")
-	if(resistance_flags & (ACID_PROOF | UNACIDABLE))
-		to_chat(user, "[src] looks pretty robust! It'd probably be able to withstand acid!")
-	if(resistance_flags & FREEZE_PROOF)
-		to_chat(user, "[src] is made of cold-resistant materials.")
-	if(resistance_flags & FIRE_PROOF)
-		to_chat(user, "[src] is made of fire-retardant materials.")
-		return TRUE
+	//if(resistance_flags & LAVA_PROOF)
+	//	to_chat(user, "[src] is made of an extremely heat-resistant material, it'd probably be able to withstand lava!")
+	//if(resistance_flags & (ACID_PROOF | UNACIDABLE))
+	//	to_chat(user, "[src] looks pretty robust! It'd probably be able to withstand acid!")
+	//if(resistance_flags & FREEZE_PROOF)
+	//	to_chat(user, "[src] is made of cold-resistant materials.")
+	//if(resistance_flags & FIRE_PROOF)
+	//	to_chat(user, "[src] is made of fire-retardant materials.")
+	//	return TRUE
 
 /obj/item/clothing/clothing_resistance_flag_examine_message(mob/user)
 	. = ..()

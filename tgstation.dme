@@ -2797,6 +2797,7 @@
 #include "interface\stylesheet.dm"
 #include "interface\skin.dmf"
 #include "stalker\code\portage.dm"
+#include "stalker\code\pronouns_ru.dm"
 #include "stalker\code\quest_items.dm"
 #include "stalker\code\whitelist.dm"
 #include "stalker\code\anomalies\anomaly.dm"

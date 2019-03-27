@@ -454,12 +454,12 @@ GLOBAL_LIST_INIT(global_sidormat_list, list(
 		for(var/L in GLOB.global_sidormat_list)
 			if(L == "Unbuyable" && !(switches & SELL_UNBUYABLE))
 				continue
-			dat += "<tr><td><center><b>[L]</b></center></td><td></td><td></td></tr>"
+			dat += "<tr><td></td><td><center><b>[L]</b></center></td><td></td><td></td></tr>"
 			for(var/datum/data/stalker_equipment/prize in GLOB.global_sidormat_list[L])
 				if((sk.fields["faction_s"] == prize.faction && ((sk.fields["faction_s"] in special_factions) || (switches & SHOW_FACTION_EQUIPMENT))) || prize.faction == "Everyone")
 					//if(rating >= prize.rating)
 					if(get_assortment_level(H) >= prize.assortment_level)
-						dat += "<tr><td>[prize.name_ru]</td><td>[prize.cost]</td><td><A href='?src=\ref[src];purchase=\ref[prize]'>Купить</A></td></tr>"
+						dat += "<tr><td><img src='data:image/jpeg;base64,[GetIconForProduct(prize)]'/></td><td>[prize.name_ru]</td><td>[prize.cost]</td><td><A href='?src=\ref[src];purchase=\ref[prize]'>Купить</A></td></tr>"
 		dat += "</table>"
 		dat += "</div>"
 
@@ -622,3 +622,12 @@ GLOBAL_LIST_INIT(global_sidormat_list, list(
 
 /obj/machinery/stalker/sidormat/ex_act(severity, target)
 	return
+
+/obj/machinery/stalker/sidormat/proc/GetIconForProduct(datum/data/stalker_equipment/P)
+	if(GLOB.sidor_cache[P.equipment_path])
+		return GLOB.sidor_cache[P.equipment_path]
+
+	var/product = new P.equipment_path()
+	GLOB.sidor_cache[P.equipment_path] = icon2base64(getFlatIcon(product, no_anim = TRUE))
+	qdel(product)
+	return GLOB.sidor_cache[P.equipment_path]

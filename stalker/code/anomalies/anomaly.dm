@@ -78,7 +78,7 @@ GLOBAL_LIST_EMPTY(spawned_artifacts)
 						SpawnArtifact()
 						return
 				if(0 to 255)
-					if(O.level_s > 3)
+					if(O.level_s > 2)
 						SpawnArtifact()
 						return
 		RandomMove(O)
@@ -235,7 +235,7 @@ GLOBAL_LIST_EMPTY(spawned_artifacts)
 				L.apply_damage(40, BURN, null, 0)
 			else
 				L.apply_damage(20, BURN, null, 0)
-				L.fire_act()
+				//L.fire_act()
 	return
 
 /obj/anomaly/tramplin/DealDamage(var/mob/living/L)
@@ -607,6 +607,7 @@ GLOBAL_LIST_EMPTY(spawned_artifacts)
 	var/attachedSpawner = null
 	var/active_icon_state = null
 	var/inactive_icon_state = null
+	var/rt = 0
 	invisibility = 101
 	icon = 'stalker/icons/anomalies.dmi'
 	resistance_flags = UNACIDABLE
@@ -667,6 +668,10 @@ GLOBAL_LIST_EMPTY(spawned_artifacts)
 	if(lasttime + cooldown > world.time)
 		return
 
+	if(rt >= 3)
+		src.trapped = null
+		return
+
 	for(var/atom/A in src.trapped)
 
 		if(!istype(A, /mob/living/carbon/human))
@@ -683,5 +688,7 @@ GLOBAL_LIST_EMPTY(spawned_artifacts)
 
 		if(istype(H.wear_id,/obj/item/stalker_pda))
 			H << sound(src.sound, repeat = 0, wait = 0, volume = 50, channel = 3)
+
+		rt++
 
 	src.lasttime = world.time
