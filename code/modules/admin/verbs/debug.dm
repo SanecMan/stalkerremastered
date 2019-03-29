@@ -1102,4 +1102,5 @@ GLOBAL_PROTECT(AdminProcCallSpamPrevention)
 	set desc = "Force config reload to world default"
 	if(!check_rights(R_DEBUG))
 		return
+	message_admins("<span class='adminnotice'>[key_name_admin(src)] перезагрузил вайтлист.</span>")
 	load_st_whitelist()
