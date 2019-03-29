@@ -114,8 +114,9 @@
 	var/teleport_x = 0	// teleportation coordinates (if one is null, then no teleport!)
 	var/teleport_y = 0
 	var/teleport_z = 0
-	icon = 'icons/effects/mapping_helpers.dmi'
-	icon_state = "blocker"
+	name = "perehod"
+	icon = 'stalker/icons/perehod.dmi'
+	icon_state = "down"
 
 /obj/effect/step_trigger/teleporter/Trigger(atom/movable/A)
 	if(teleport_x && teleport_y && teleport_z)
