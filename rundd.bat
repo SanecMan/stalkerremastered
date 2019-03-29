@@ -1,1 +1,1 @@
-"C:\Program Files (x86)\BYOND\bin\DreamDaemon.exe" tgstation.dmb 2294 -trusted
+"C:\Program Files (x86)\BYOND\bin\DreamDaemon.exe" stalker.dmb 2294 -trusted

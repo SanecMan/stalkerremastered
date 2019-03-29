@@ -204,7 +204,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 			//if(!(AGENDER in pref_species.species_traits))
 
 			if (check_st_whitelist(user.ckey, "Trap"))
-				dat += "<b>Gender:</b> <a href='?_src_=prefs;preference=gender'>[gender == MALE ? "Male" : "Female"]</a><BR>"
+				dat += "<div class='aflex'><b>Пол:</b> <a href='?_src_=prefs;preference=gender'>[gender == MALE ? "Male" : "Female"]</a></div>"
 
 			dat += "<div class='aflex'><b>Возраст:</b> <a href='?_src_=prefs;preference=age;task=input'>[age]</a></div>"
 			dat += "<div class='aflex'><b>Быть антагом:</b> <a href='?_src_=prefs;preference=antagf'>[antagf ? "Да" : "Нет"]</a></div>"
