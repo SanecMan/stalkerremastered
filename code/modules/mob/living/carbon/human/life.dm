@@ -113,8 +113,8 @@
 		return
 	var/obj/screen/plane_master/floor/OT = locate(/obj/screen/plane_master/floor) in client.screen
 	var/obj/screen/plane_master/game_world/GW = locate(/obj/screen/plane_master/game_world) in client.screen
-	GW.filters += filter(type="wave", x=rand(3) - 3, y=rand(3) - 3, size=1)
-	OT.filters += filter(type="wave", x=rand(3) - 3, y=rand(3) - 3, size=1)
+	GW.filters += filter(type="wave", x=1, y=1, size=1)
+	OT.filters += filter(type="wave", x=1, y=1, size=1)
 
 /mob/living/carbon/human/proc/handle_artifacts()
 	src.global_armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "psy" = 0)
