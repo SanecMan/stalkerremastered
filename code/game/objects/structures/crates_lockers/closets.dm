@@ -34,6 +34,7 @@
 	var/delivery_icon = "deliverycloset" //which icon to use when packagewrapped. null to be unwrappable.
 	var/anchorable = TRUE
 	var/icon_welded = "welded"
+	anchored = TRUE //now safezone is SAFE zone
 
 
 /obj/structure/closet/Initialize(mapload)

@@ -52,17 +52,17 @@ But you can call procs that are of type /mob/living/carbon/human/proc/ for that 
 	var/procname = input("Proc path, eg: /proc/fake_blood","Path:", null) as text|null
 	if(!procname)
 		return
-	
+
 	//strip away everything but the proc name
 	var/list/proclist = splittext(procname, "/")
 	if (!length(proclist))
 		return
 	procname = proclist[proclist.len]
-	
+
 	var/proctype = "proc"
 	if ("verb" in proclist)
 		proctype = "verb"
-	
+
 	if(targetselected && !hascall(target, procname))
 		to_chat(usr, "<font color='red'>Error: callproc(): type [target.type] has no [proctype] named [procname].</font>")
 		return
@@ -1095,3 +1095,13 @@ GLOBAL_PROTECT(AdminProcCallSpamPrevention)
 		return
 	if(alert(usr, "Are you absolutely sure you want to reload the configuration from the default path on the disk, wiping any in-round modificatoins?", "Really reset?", "No", "Yes") == "Yes")
 		config.admin_reload()
+
+/client/proc/reload_whitelist()
+	set category = "Stalker"
+	set name = "Reload Whitelist"
+	set desc = "Force config reload to world default"
+	if(!check_rights(R_DEBUG))
+		return
+	message_admins("<span class='adminnotice'>[key_name(src)] перезагрузил вайтлист.</span>")
+	log_admin("[key_name(src)] перезагрузил вайтлист.")
+	load_st_whitelist()

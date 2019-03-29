@@ -155,7 +155,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	//dat += "<a href='?_src_=prefs;preference=tab;tab=2' [current_tab == 2 ? "class='linkOn'" : ""]>ООС</a>"
 
 	if(SSticker.current_state == GAME_STATE_PLAYING)
-		dat += "<a href='byond://?src=[REF(user)];ready=[PLAYER_READY_TO_OBSERVE]'>Смотреть</a>"
+		dat += "<a href='byond://?src=[REF(user)];ready=[PLAYER_READY_TO_OBSERVE]'>Наблюдать</a>"
 		dat += "<a href='byond://?src=[REF(user)];late_join=1'>Присоединиться</a>"
 
 	if(!path)
@@ -202,7 +202,10 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 			dat += "<a href='?_src_=prefs;preference=name;task=input'>[real_name]</a></div><div class='rflex'><a href='?_src_=prefs;preference=name;task=random'>(R)</A></div>"
 
 			//if(!(AGENDER in pref_species.species_traits))
-			//	dat += "<b>Gender:</b> <a href='?_src_=prefs;preference=gender'>[gender == MALE ? "Male" : "Female"]</a><BR>"
+
+			if (check_st_whitelist(user.ckey, "Trap"))
+				dat += "<div class='aflex'><b>Пол:</b> <a href='?_src_=prefs;preference=gender'>[gender == MALE ? "Male" : "Female"]</a></div>"
+
 			dat += "<div class='aflex'><b>Возраст:</b> <a href='?_src_=prefs;preference=age;task=input'>[age]</a></div>"
 			dat += "<div class='aflex'><b>Быть антагом:</b> <a href='?_src_=prefs;preference=antagf'>[antagf ? "Да" : "Нет"]</a></div>"
 

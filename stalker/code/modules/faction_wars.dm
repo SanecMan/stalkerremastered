@@ -219,7 +219,7 @@ GLOBAL_LIST_EMPTY(cps)
 	SP = SP_
 	path_ending = SP_.path_ending
 
-/obj/machinery/stalker/sidormat/special/interact(mob/living/carbon/human/H)
+/obj/machinery/stalker/sidormat/special/ui_interact(mob/living/carbon/human/H)
 	if(!SP)
 		return
 

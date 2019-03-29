@@ -5,6 +5,7 @@
 	icon_state = "human_basic"
 	appearance_flags = KEEP_TOGETHER|TILE_BOUND|PIXEL_SCALE
 	var/zombified = 0
+	var/last_vote = null
 
 /mob/living/carbon/human/Initialize()
 	verbs += /mob/living/proc/mob_sleep
@@ -489,6 +490,94 @@
 											to_chat(usr, "<span class='notice'>Successfully added comment.</span>")
 											return
 							to_chat(usr, "<span class='warning'>Unable to locate a data core entry for this person.</span>")
+
+	if(href_list["KPK"])
+		if(istype(usr, /mob/living/carbon/human))
+			var/mob/living/carbon/human/H = usr
+			if(istype(H.wear_id, /obj/item/stalker_pda))
+				if(istype(src.wear_id, /obj/item/stalker_pda))
+					var/obj/item/stalker_pda/KPK_src = src.wear_id
+					var/obj/item/stalker_pda/KPK = H.wear_id
+					if(KPK.hacked == 1 || H.sid == KPK.sid)
+						var/datum/data/record/R = find_record("sid", src.sid, GLOB.data_core.stalkers)
+						var/datum/data/record/R_H = find_record("sid", H.sid, GLOB.data_core.stalkers)
+
+
+						if(KPK_src.owner && KPK.owner && R && R_H)
+							if(href_list["money_transfer"])
+								var/sum = input(H, "Input money amount for transfer.", "KPK", null) as num
+								if(isnum(sum) && sum > 0)
+									if(R_H.fields["money"] - sum >= 0)
+										R.fields["money"] += sum
+										R_H.fields["money"] -= sum
+										var/n_src	= R.fields["name"]
+										var/n		= R_H.fields["name"]
+
+										to_chat(src, "<p>\icon[KPK_src]<b><font color=\"#006699\">PDA</font>\[OS\]</b><br><font color=\"#006699\">[n] transfered [sum] RU to your account.</font></p>")
+										if(KPK_src.switches & FEED_SOUND)
+											src << sound('stalker/sound/pda/sms.ogg', volume = 30)
+
+										to_chat(H, "<p>\icon[KPK]<b><font color=\"#006699\">KPK</font>\[OS\]</b><br><font color=\"#006699\">You transfered [sum] RU to [n_src] account.</font></p>")
+										if(KPK.switches & FEED_SOUND)
+											H << sound('stalker/sound/pda/sms.ogg', volume = 30)
+
+									else
+										to_chat(usr, "<span class='warning'>You don't have enough RU to commit money transfer.</span>")
+								else
+									to_chat(usr, "<span class='warning'>Input real amount of RU for money transfer.</span>")
+
+						var/lefttime
+						var/ending
+
+						if(href_list["subtraction_rep"])
+							if(R)
+								if(src.stat == "dead")
+									to_chat(H, "<span class='warning'>[src] is dead.</span>")
+								else
+									if(!(last_vote && world.time < last_vote + 3000))
+										last_vote = world.time
+										R.fields["reputation"] = R.fields["reputation"] - 20
+										to_chat(usr, "<span class='notice'>Reputation updated.</span>")
+									else
+										lefttime = round((3000 + last_vote - world.time)/10)
+										ending = ""
+										switch (lefttime % 10)
+											if(1)
+												ending = "у"
+											if(2)
+												ending = "ы"
+											if(3)
+												ending = "ы"
+											if(4)
+												ending = "ы"
+										to_chat(H, "<span class='warning'>Вы сможете изменить репутацию через [round((3000 + last_vote - world.time)/10)] секунд[ending].</span>")
+
+
+						if(href_list["addition_rep"])
+							if(R)
+								if(src.stat == "dead")
+									to_chat(H, "<span class='warning'>[src] мёртв.</span>")
+								else
+									if(!(last_vote && world.time < last_vote + 3000))
+										last_vote = world.time
+										R.fields["reputation"] += 20
+										to_chat(usr, "<span class='notice'>Reputation updated.</span>")
+									else
+										lefttime = round((3000 + last_vote - world.time)/10)
+										ending = ""
+										switch (lefttime % 10)
+											if(1)
+												ending = "у"
+											if(2)
+												ending = "ы"
+											if(3)
+												ending = "ы"
+											if(4)
+												ending = "ы"
+										to_chat(H, "<span class='warning'>Вы сможете изменить репутацию через [round((3000 + last_vote - world.time)/10)] секунд[ending].</span>")
+
+					else
+						to_chat(H, "<span class='warning'>В ДОСТУПЕ К СИСТЕМЕ S.T.A.L.K.E.R. ОТКАЗАНО!</span>")
 
 	..() //end of this massive fucking chain. TODO: make the hud chain not spooky.
 

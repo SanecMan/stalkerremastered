@@ -1,7 +1,7 @@
 /obj/machinery/door/airlock/stalker
 	icon = 'stalker/icons/door_sidor.dmi'
 	overlays_file = 'stalker/icons/door_sidor.dmi'
-	autoclose = 0
+	autoclose = 50
 
 /obj/machinery/door/airlock/stalker/New()
 	..()
@@ -21,6 +21,7 @@
 /obj/machinery/door/poddoor/sidor/skadovsk
 	icon = 'stalker/icons/door_sidor2.dmi'
 	icon_state = "closed"
+	auto_close = 50
 
 /obj/machinery/door/poddoor/sidor/skadovsk/special
 	icon = 'stalker/icons/door_sidor2.dmi'
@@ -31,5 +32,5 @@
 	if(!SSticker.round_start_time || world.time >= SSticker.round_start_time + SKADOVSK_LOCKDOWN_TIMER)
 		return ..()
 	else
-		say("Шлюз откроется только через [round((SSticker.round_start_time + SKADOVSK_LOCKDOWN_TIMER - world.time)/600) + 1] мин. из-за действующего снаружи пси-излучения.")
+		say("Шлюз откроется только через [round((SSticker.round_start_time + SKADOVSK_LOCKDOWN_TIMER - world.time)/300) + 1] мин. из-за действующего снаружи пси-излучения.")
 		return 0

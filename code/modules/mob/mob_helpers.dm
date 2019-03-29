@@ -287,8 +287,6 @@ It's fairly easy to fix if dealing with single letters but not so much with comp
 			animate(pixel_x=rand(min,max), pixel_y=rand(min,max), time=1)
 	animate(pixel_x=oldx, pixel_y=oldy, time=1)
 
-
-
 /proc/findname(msg)
 	if(!istext(msg))
 		msg = "[msg]"
@@ -553,16 +551,6 @@ It's fairly easy to fix if dealing with single letters but not so much with comp
 /mob/living/carbon/proc/seek_screen_colour()
 
 /mob/living/carbon/human/seek_screen_colour() //fuck?
-
-	//if(SSblowout.isblowout && istype(get_area(src), /area/stalker/blowout))
-	//	if(prob(75))
-	//		add_client_colour(/datum/client_colour/blowout)
-	//	else
-	//		add_client_colour(/datum/client_colour/blowout2)
-	//else if (color)
-	//	remove_client_colour(/datum/client_colour/blowout)
-	//	remove_client_colour(/datum/client_colour/blowout2)
-
 	if(psyloss)
 		add_client_colour(/datum/client_colour/psy)
 	else if (color)
@@ -571,19 +559,17 @@ It's fairly easy to fix if dealing with single letters but not so much with comp
 	if(head)
 		if(istype(head, /obj/item/clothing/head))
 			var/obj/item/clothing/head/H = head
-			if(H.nvg && H.nvg.active)
-				add_client_colour(H.nvg.colour_matrix)
-			else
-				remove_client_colour(H.nvg.colour_matrix)
-		else
-			remove_client_colour(NIGHTVISION_MATRIX_I)
-			remove_client_colour(NIGHTVISION_MATRIX_II)
-	else if (color)
-		remove_client_colour(NIGHTVISION_MATRIX_I)
-		remove_client_colour(NIGHTVISION_MATRIX_II)
+			if(H.nvg)
+				if (H.nvg.active)
+					add_client_colour(H.nvg.colour_matrix)
+				else
+					client_colours = list()
+					update_client_colour()
 
 	if(wear_mask)
-		if(wear_mask.nvg && wear_mask.nvg.active)
-			add_client_colour(wear_mask.nvg.colour_matrix)
-		else if (color)
-			remove_client_colour(wear_mask.nvg.colour_matrix)
+		if(wear_mask.nvg)
+			if (wear_mask.nvg.active)
+				add_client_colour(wear_mask.nvg.colour_matrix)
+			else
+				client_colours = list()
+				update_client_colour()

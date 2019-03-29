@@ -6,6 +6,21 @@
 
 /obj/item/clothing/examine(mob/user)
 	..()
+	var/msg = ""
+	var/list/arm = src.armor.getList()
+
+	var/melee = arm["melee"]
+	var/bullet = arm["bullet"]
+	var/bomb = arm["bomb"]
+	var/fire = arm["fire"]
+	var/rad = arm["rad"]
+	var/psy = arm["psy"]
+
+	msg += "<span class='info'><b>Защита:</b>\n"
+	msg += "Ближний: [melee] | Пули: [bullet] | Взрыв: [bomb]\n"
+	msg += "Огонь: [fire] | Радиация: [rad] | Пси: [psy]\n"
+	msg += "</span>"
+	to_chat(user, msg)
 
 /obj/item/clothing/head/examine(mob/user)
 	..()
@@ -24,7 +39,6 @@
 			to_chat(user, "<span class='notice'>Прочность: [percentage]%</span>")
 		else
 			to_chat(user, "<span class='warning'>Прочность: [percentage]%</span>")
-
 
 /obj/item/clothing/suit/examine(mob/user)
 	..()
@@ -103,10 +117,20 @@
 	colour_matrix = NIGHTVISION_MATRIX_II
 
 /obj/item/clothing/proc/toggle_nightvision()
+	var/mob/living/carbon/human/user = usr
+
+	if (user.wear_mask != src && user.head != src)
+		to_chat(usr, "Вы крутите переключатель ПНВ [src] в надежде разглядеть что-то во тьме, но у вас ничего не выходит. Может стоить надеть его?")
+		playsound(usr, 'stalker/sound/nv_start.ogg', 50, 1, -1)
+		if (prob(5))
+			to_chat(usr, "<b>Тем самым приводя устройство в состояние бесполезной тряпки!</b>")
+			playsound(usr, 'stalker/sound/nv_off.ogg', 50, 1, -1)
+			qdel(src)
+		return
+
 	if(!nvg)
 		return
 
-	var/mob/living/carbon/human/user = usr
 	nvg.active = !nvg.active
 	update_nightvision()
 	user.seek_screen_colour()
@@ -117,11 +141,11 @@
 		var/mob/living/carbon/human/user = usr
 		if(!nvg.active)
 			playsound(usr, 'stalker/sound/nv_off.ogg', 50, 1, -1)
-			to_chat(usr, "You deactivate the optical matrix on the [src].")
+			to_chat(usr, "Вы деактивировали оптическую матрицу [src].")
 			user.see_override_nva = 0
 		else
 			playsound(usr, 'stalker/sound/nv_start.ogg', 50, 1, -1)
-			to_chat(usr, "You activate the optical matrix on the [src].")
+			to_chat(usr, "Вы активировали оптическую матрицу [src].")
 			user.see_override_nva = 8
 	for(var/X in actions)
 		var/datum/action/A = X
@@ -345,8 +369,8 @@
 	name = "SSP-99 helmet"
 	armor = list("melee" = 15, "bullet" = 15, "laser" = 90, "energy" = 90, "bomb" = 40, "bio" = 90, "rad" = 95, "fire" = 90, "psy" = 20)
 	heat_protection = HEAD
-	//flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|HIDEFACE|HIDEHAIR
-	flags_inv = HIDEHAIR|HIDEFACE|HIDEEARS
+	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|HIDEHAIR|HIDEFACIALHAIR
+	flags_cover = HEADCOVERSEYES | HEADCOVERSMOUTH
 	max_heat_protection_temperature = FIRE_IMMUNITY_MAX_TEMP_PROTECT
 	icon_state = "ecolog_helmet"
 
@@ -376,8 +400,8 @@ obj/item/clothing/head/hooded/stalker/ecolog/New()
 	name = "SSP-99M helmet"
 	armor = list("melee" = 40, "bullet" = 30, "laser" = 90, "energy" = 90, "bomb" = 60, "bio" = 90, "rad" = 90, "fire" = 90, "psy" = 25)
 	heat_protection = HEAD
-	//flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|HIDEFACE|HIDEHAIR
-	flags_inv = HIDEHAIR|HIDEFACE|HIDEEARS
+	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|HIDEHAIR|HIDEFACIALHAIR
+	flags_cover = HEADCOVERSEYES | HEADCOVERSMOUTH
 	max_heat_protection_temperature = FIRE_IMMUNITY_MAX_TEMP_PROTECT
 	icon_state = "ecologg_helmet"
 	resistance_flags = FIRE_PROOF
@@ -408,8 +432,8 @@ obj/item/clothing/head/hooded/stalker/ecolog/New()
 	name = "SEVA helmet"
 	armor = list("melee" = 60, "bullet" = 50, "laser" = 80, "energy" = 80, "bomb" = 50, "bio" = 70, "rad" = 80, "fire" = 80, "psy" = 15)
 	heat_protection = HEAD
-	//flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|HIDEFACE|HIDEHAIR
-	flags_inv = HIDEHAIR|HIDEFACE|HIDEEARS
+	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|HIDEHAIR|HIDEFACIALHAIR
+	flags_cover = HEADCOVERSEYES | HEADCOVERSMOUTH
 	max_heat_protection_temperature = FIRE_IMMUNITY_MAX_TEMP_PROTECT
 	icon_state = "seva_helmet"
 	resistance_flags = FIRE_PROOF
@@ -448,8 +472,8 @@ obj/item/clothing/head/hooded/stalker/ecolog/New()
 	name = "PSZ-9MD helmet"
 	armor = list("melee" = 50, "bullet" = 50, "laser" = 80, "energy" = 65, "bomb" = 50, "bio" = 50, "rad" = 70, "fire" = 65, "psy" = 20)
 	heat_protection = HEAD
-	//flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|HIDEFACE|HIDEHAIR
-	flags_inv = HIDEHAIR|HIDEFACE|HIDEEARS
+	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|HIDEHAIR|HIDEFACIALHAIR
+	flags_cover = HEADCOVERSEYES | HEADCOVERSMOUTH
 	max_heat_protection_temperature = FIRE_IMMUNITY_MAX_TEMP_PROTECT
 	icon_state = "psz9md_helmet"
 	resistance_flags = FIRE_PROOF
@@ -477,8 +501,8 @@ obj/item/clothing/head/hooded/stalker/ecolog/New()
 	name = "Exoskeleton helmet"
 	armor = list("melee" = 80, "bullet" = 80, "laser" = 50, "energy" = 30, "bomb" = 80, "bio" = 50, "rad" = 30, "fire" = 30, "psy" = 15)
 	heat_protection = HEAD
-	//flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|HIDEFACE|HIDEHAIR
-	flags_inv = HIDEHAIR|HIDEFACE|HIDEEARS
+	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|HIDEHAIR|HIDEFACIALHAIR
+	flags_cover = HEADCOVERSEYES | HEADCOVERSMOUTH
 	max_heat_protection_temperature = FIRE_IMMUNITY_MAX_TEMP_PROTECT
 	icon_state = "exoskelet_helmet"
 
@@ -570,8 +594,8 @@ obj/item/clothing/head/hooded/stalker/ecolog/New()
 	name = "monolith scientific suit helmet"
 	armor = list("melee" = 50, "bullet" = 50, "laser" = 45, "energy" = 45, "bomb" = 45, "bio" = 65, "rad" = 75, "fire" = 60, "psy" = 0)
 	heat_protection = HEAD
-	//flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|HIDEFACE|HIDEHAIR
-	flags_inv = HIDEHAIR|HIDEFACE|HIDEEARS
+	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|HIDEHAIR|HIDEFACIALHAIR
+	flags_cover = HEADCOVERSEYES | HEADCOVERSMOUTH
 	max_heat_protection_temperature = FIRE_IMMUNITY_MAX_TEMP_PROTECT
 	icon_state = "monolith_scientific_helmet"
 	resistance_flags = FIRE_PROOF

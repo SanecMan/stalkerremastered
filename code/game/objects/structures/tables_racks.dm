@@ -553,13 +553,15 @@
 	if(building)
 		return
 	building = TRUE
-	to_chat(user, "<span class='notice'>You start constructing a rack...</span>")
+	to_chat(user, "<span class='notice'>Вы начинаете <font color='red'>искать свои glaza</font>...</span>")
 	if(do_after(user, 50, target = user, progress=TRUE))
-		if(!user.temporarilyRemoveItemFromInventory(src))
-			return
-		var/obj/structure/rack/R = new /obj/structure/rack(user.loc)
-		user.visible_message("<span class='notice'>[user] assembles \a [R].\
-			</span>", "<span class='notice'>You assemble \a [R].</span>")
-		R.add_fingerprint(user)
-		qdel(src)
+		user.visible_message("<span class='notice'>[user] успешно находит свои glaza.\
+			</span>", "<span class='notice'><font color='red' size='32'>Вы успешно нашли свои glaza.</font></span>")
+		spawn(50)
+			user.gib()
+		//if(!user.temporarilyRemoveItemFromInventory(src))
+		//	return
+		//var/obj/structure/rack/R = new /obj/structure/rack(user.loc)
+		//R.add_fingerprint(user)
+		//qdel(src)
 	building = FALSE

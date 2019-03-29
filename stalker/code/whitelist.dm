@@ -10,13 +10,13 @@ GLOBAL_PROTECT(st_whitelist)
 	while(swl_regex.Find(swl_text))
 		GLOB.st_whitelist[swl_regex.group[1]] += list(swl_regex.group[2])
 
-/proc/check_st_whitelist(ckey, job_title)
+/proc/check_st_whitelist(ckey, access_to)
 	if(!GLOB.st_whitelist)
 		return FALSE
 	//if(ckey == "valtosss")
 	//	return TRUE
 	for (var/WL in GLOB.st_whitelist[ckey])
-		if (WL == job_title)
+		if (WL == access_to)
 			return TRUE
 	return FALSE
 

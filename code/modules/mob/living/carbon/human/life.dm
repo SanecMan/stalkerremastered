@@ -51,6 +51,9 @@
 	if(stat != DEAD)
 		handle_artifacts()
 
+	if(stat != DEAD)
+		handle_tension()
+
 	//Update our name based on whether our face is obscured/disfigured
 	name = get_visible_name()
 
@@ -58,6 +61,60 @@
 
 	if(stat != DEAD)
 		return 1
+
+/mob/living/carbon/human/proc/handle_tension(type = "default")
+	if (setup_tension)
+		var/sound/S = sound("stalker/sound/battletension.ogg") //yeah?
+		if (prob(50))
+			S = sound("stalker/sound/battletension2.ogg") //yeah
+		S.repeat = 1
+		S.channel = CHANNEL_BATTLE
+		S.falloff = 1
+		S.wait = 0
+		S.volume = 0
+		S.status = SOUND_STREAM | SOUND_UPDATE
+		S.environment = 0
+		src.bm = S
+		SEND_SOUND(src, S)
+		setup_tension = FALSE
+		src.bm.status = SOUND_STREAM
+
+	switch(tension)
+		if(-INFINITY to -1)
+			src.bm.volume = 0
+			src << src.bm
+			src.bm.status = 16
+		if(0 to 30)
+			src.bm.volume = tension
+			src << src.bm
+			src.bm.status = 16
+			tension -= 1
+		if(31 to 79)
+			src.bm.volume = tension
+			src << src.bm
+			src.bm.status = 16
+			var/i
+			for (i = 0, i < 10, i++)
+				battle_screen_on()
+				sleep(1)
+				set_blurriness(0)
+				sleep(1)
+		if(80 to INFINITY)
+			tension = 80
+			src.bm.volume = 80
+			src << src.bm
+			src.bm.status = 16
+
+	if (tension > 0)
+		tension -= 2
+
+/mob/living/carbon/human/proc/battle_screen_on()
+	if(!client)
+		return
+	var/obj/screen/plane_master/floor/OT = locate(/obj/screen/plane_master/floor) in client.screen
+	var/obj/screen/plane_master/game_world/GW = locate(/obj/screen/plane_master/game_world) in client.screen
+	GW.filters += filter(type="wave", x=1, y=1, size=1)
+	OT.filters += filter(type="wave", x=1, y=1, size=1)
 
 /mob/living/carbon/human/proc/handle_artifacts()
 	src.global_armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "psy" = 0)
