@@ -35,6 +35,7 @@
 /mob/living/carbon/human/on_hit(obj/item/projectile/P)
 	if(dna && dna.species)
 		dna.species.on_hit(P, src)
+	tension += 15
 
 
 /mob/living/carbon/human/bullet_act(obj/item/projectile/P, def_zone)
@@ -185,6 +186,8 @@
 
 	SSblackbox.record_feedback("nested tally", "item_used_for_combat", 1, list("[I.force]", "[I.type]"))
 	SSblackbox.record_feedback("tally", "zone_targeted", 1, target_area)
+
+	tension += 15
 
 	// the attacked_by code varies among species
 	return dna.species.spec_attacked_by(I, user, affecting, a_intent, src)

@@ -188,7 +188,7 @@
 
 	interact(H)
 
-/obj/machinery/party/turntable/interact(var/mob/living/carbon/human/H)
+/obj/machinery/party/turntable/ui_interact(var/mob/living/carbon/human/H)
 
 	if(!istype(H.wear_id, /obj/item/stalker_pda))
 		say("Put on your KPK.")

@@ -140,7 +140,7 @@ var/global/global_lentahtml = ""
 	H.set_machine(src)
 
 	//user.set_machine(src)
-	mainhtml ="<!DOCTYPE html><META http-equiv=Content-Type content='text/html; charset=utf-8'><html> \
+	mainhtml ="<html> \
 	\
 	<style>\
 	a:link {color: #607D8B;}\

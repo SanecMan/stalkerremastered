@@ -57,3 +57,7 @@
 	var/lastpuke = 0
 	var/last_fire_update
 	var/account_id
+
+	var/tension = 0 //amount of battle tension
+	var/setup_tension = TRUE
+	var/sound/bm

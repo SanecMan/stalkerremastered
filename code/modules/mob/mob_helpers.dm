@@ -287,8 +287,6 @@ It's fairly easy to fix if dealing with single letters but not so much with comp
 			animate(pixel_x=rand(min,max), pixel_y=rand(min,max), time=1)
 	animate(pixel_x=oldx, pixel_y=oldy, time=1)
 
-
-
 /proc/findname(msg)
 	if(!istext(msg))
 		msg = "[msg]"
