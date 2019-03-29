@@ -2801,6 +2801,7 @@
 #include "stalker\code\quest_items.dm"
 #include "stalker\code\whitelist.dm"
 #include "stalker\code\anomalies\anomaly.dm"
+#include "stalker\code\donate\lazyitems.dm"
 #include "stalker\code\donate\lazyroom.dm"
 #include "stalker\code\factions\army.dm"
 #include "stalker\code\factions\bandit.dm"
