@@ -4,6 +4,29 @@
 	var/sticky_mob = 0
 	var/monolith_controled = 0
 
+/obj/effect/spawner/lootdrop/stalker/mobspawner/Initialize(mapload)
+	if(loot && loot.len)
+		var/turf/T = get_turf(src)
+		var/loot_spawned = 0
+		while((lootcount-loot_spawned) && loot.len)
+			var/lootspawn = pickweight(loot)
+			if(!lootdoubles)
+				loot.Remove(lootspawn)
+
+			if(lootspawn)
+				var/atom/movable/spawned_loot = new lootspawn(T)
+				if (!fan_out_items)
+					if (pixel_x != 0)
+						spawned_loot.pixel_x = pixel_x
+					if (pixel_y != 0)
+						spawned_loot.pixel_y = pixel_y
+				else
+					if (loot_spawned)
+						spawned_loot.pixel_x = spawned_loot.pixel_y = ((!(loot_spawned%2)*loot_spawned/2)*-1)+((loot_spawned%2)*(loot_spawned+1)/2*1)
+			loot_spawned++
+	return INITIALIZE_HINT_NORMAL
+
+
 /obj/effect/spawner/lootdrop/stalker/mobspawner/proc/SpawnLoot(enable_cooldown = 1)
 
 	sleep(rand(10, 100))
