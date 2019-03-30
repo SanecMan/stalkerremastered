@@ -69,7 +69,7 @@
 	var/obj/item/disk/music/disk
 	var/playing = 1
 	var/datum/data/turntable_soundtrack/track = null
-	var/volume = 35
+	var/volume = 37
 	var/list/mob/melomans = list()
 	var/list/turntable_soundtracks = list(
 

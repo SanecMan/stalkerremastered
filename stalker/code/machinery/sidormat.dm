@@ -143,7 +143,7 @@ GLOBAL_LIST_INIT(global_sidormat_list, list(
 		new /datum/data/stalker_equipment("Tactical helmet",			"Тактический шлем",				/obj/item/clothing/head/tacticalhelmet,							45000,	EXPERIENCED),
 		new /datum/data/stalker_equipment("Assault helmet",	    		"Штурмовой шлем",				/obj/item/clothing/head/assaultmerc,							50000,	EXPERIENCED,	faction = "Mercenaries"),
 		new /datum/data/stalker_equipment("Sphera-M12",			 		"Сфера-М12",					/obj/item/clothing/head/spheram,								60000,	EXPERIENCED),
-		new /datum/data/stalker_equipment("SKAT-9M (helmet)",			"СКАТ-9М (шлем)",				/obj/item/clothing/head/skathelmet,								10000,	VETERAN)
+		new /datum/data/stalker_equipment("SKAT-9M (helmet)",			"СКАТ-9М (шлем)",				/obj/item/clothing/head/skathelmet,								100000,	VETERAN)
 		),
 
 	"Medicine" = list(
