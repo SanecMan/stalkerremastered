@@ -69,7 +69,7 @@
 	var/obj/item/disk/music/disk
 	var/playing = 1
 	var/datum/data/turntable_soundtrack/track = null
-	var/volume = 30
+	var/volume = 35
 	var/list/mob/melomans = list()
 	var/list/turntable_soundtracks = list(
 
@@ -148,10 +148,10 @@
 		new /datum/data/turntable_soundtrack ("Zemfira",			"Hochesh?",							'stalker/sound/turntable/zemfira_hochesh.ogg',						1920),
 		new /datum/data/turntable_soundtrack ("Zhuki",				"Batareyka",						'stalker/sound/turntable/zhuki_batareyka.ogg',						2240),
 		new /datum/data/turntable_soundtrack ("Zemlyane",			"Zemlya V Illuminatore",			'stalker/sound/turntable/zemlyane_zemlya_v_illuminatore.ogg',		2330),
-		new /datum/data/turntable_soundtrack ("Blonde Redhead",		"For The Damaged Soda",				'stalker/sound/turntable/blonde.ogg',								1488),
-		new /datum/data/turntable_soundtrack ("Yakui The Maid",		"Chloramine",						'stalker/sound/turntable/ytm_chloramine.ogg',						1337),
-		new /datum/data/turntable_soundtrack ("Yakui The Maid",		"Calamity",							'stalker/sound/turntable/ytm_calamity.ogg',							1481),
-		new /datum/data/turntable_soundtrack ("Yakui The Maid x Ozoi The Maid",		"Unreleased",		'stalker/sound/turntable/ytmxotm_unr.ogg',							1444)
+		new /datum/data/turntable_soundtrack ("Blonde Redhead",		"For The Damaged Soda",				'stalker/sound/turntable/blonde.ogg',								2488),
+		new /datum/data/turntable_soundtrack ("Yakui The Maid",		"Chloramine",						'stalker/sound/turntable/ytm_chloramine.ogg',						2337),
+		new /datum/data/turntable_soundtrack ("Yakui The Maid",		"Calamity",							'stalker/sound/turntable/ytm_calamity.ogg',							2481),
+		new /datum/data/turntable_soundtrack ("Yakui The Maid x Ozoi The Maid",		"Unreleased",		'stalker/sound/turntable/ytmxotm_unr.ogg',							2444)
 	)
 	anchored = 1
 	density = 1
