@@ -62,24 +62,22 @@
 	icon_state = "radio1"
 	//var/timer_id = 0
 	var/transition = 0
-	var/play_song_cost = 1000
-	var/skip_song_cost = 500
+	var/play_song_cost = 500
+	var/skip_song_cost = 250
 	var/start_time = 0
 	var/collected_money = 0
 	var/obj/item/disk/music/disk
 	var/playing = 1
 	var/datum/data/turntable_soundtrack/track = null
-	var/volume = 40
+	var/volume = 30
 	var/list/mob/melomans = list()
 	var/list/turntable_soundtracks = list(
 
-		new /datum/data/turntable_soundtrack ("4 pozicii bruno",	"Ya Ehala Domoy",					'stalker/sound/turntable/chetire_pozigii_bruno_ya_ehala_domoy.ogg',	2740),
 		new /datum/data/turntable_soundtrack ("5nizza",				"Ya Soldat",						'stalker/sound/turntable/5nizza_ya_soldat.ogg',						2110),
 		new /datum/data/turntable_soundtrack ("7B",					"Molodie Vetra",					'stalker/sound/turntable/semb_molodie_vetra.ogg',					2610),
 		new /datum/data/turntable_soundtrack ("Addaraya",			"Gurza Dreaming",					'stalker/sound/turntable/gurza_dreaming.ogg',						2420),
 		new /datum/data/turntable_soundtrack ("Afganistan",			"Pil Glotayu",						'stalker/sound/turntable/afganistan_pil_glotayu.ogg',				3290),
 		new /datum/data/turntable_soundtrack ("Agata Kristi",		"Kak Na Voine",						'stalker/sound/turntable/agata_kristi_na_voine.ogg',				2470),
-		new /datum/data/turntable_soundtrack ("Aksenov V",			"Murka",							'stalker/sound/turntable/murka.ogg',								3220),
 		new /datum/data/turntable_soundtrack ("Alai Oli",			"Krilya",							'stalker/sound/turntable/alai_oli_krilya.ogg',						2150),
 		new /datum/data/turntable_soundtrack ("Ariya",				"Bespechniy Angel",					'stalker/sound/turntable/ariya_bespechniy_angel.ogg',				2380),
 		new /datum/data/turntable_soundtrack ("Ariya",				"Potyeraniy Ray",					'stalker/sound/turntable/ariya_poteryaniy_ray.ogg',					3530),
@@ -149,7 +147,11 @@
 		new /datum/data/turntable_soundtrack ("XS-project",			"Kolotushki",						'stalker/sound/turntable/xsproject_kolotushki.ogg',					1610),
 		new /datum/data/turntable_soundtrack ("Zemfira",			"Hochesh?",							'stalker/sound/turntable/zemfira_hochesh.ogg',						1920),
 		new /datum/data/turntable_soundtrack ("Zhuki",				"Batareyka",						'stalker/sound/turntable/zhuki_batareyka.ogg',						2240),
-		new /datum/data/turntable_soundtrack ("Zemlyane",			"Zemlya V Illuminatore",			'stalker/sound/turntable/zemlyane_zemlya_v_illuminatore.ogg',		2330)
+		new /datum/data/turntable_soundtrack ("Zemlyane",			"Zemlya V Illuminatore",			'stalker/sound/turntable/zemlyane_zemlya_v_illuminatore.ogg',		2330),
+		new /datum/data/turntable_soundtrack ("Blonde Redhead",		"For The Damaged Soda",				'stalker/sound/turntable/blonde.ogg',								1488),
+		new /datum/data/turntable_soundtrack ("Yakui The Maid",		"Chloramine",						'stalker/sound/turntable/ytm_chloramine.ogg',						1337),
+		new /datum/data/turntable_soundtrack ("Yakui The Maid",		"Calamity",							'stalker/sound/turntable/ytm_calamity.ogg',							1481),
+		new /datum/data/turntable_soundtrack ("Yakui The Maid x Ozoi The Maid",		"Unreleased",		'stalker/sound/turntable/ytmxotm_unr.ogg',							1444)
 	)
 	anchored = 1
 	density = 1
