@@ -493,18 +493,21 @@ obj/item/clothing/head/hooded/stalker/ecolog/New()
 	cold_protection = CHEST|GROIN|LEGS|FEET|ARMS|HANDS
 	min_cold_protection_temperature = FIRE_IMMUNITY_MAX_TEMP_PROTECT
 	flags_inv = HIDEJUMPSUIT
-	armor = list("melee" = 80, "bullet" = 80, "laser" = 50, "energy" = 30, "bomb" = 80, "bio" = 50, "rad" = 30, "fire" = 30, "psy" = 0)
+	armor = list("melee" = 95, "bullet" = 80, "laser" = 50, "energy" = 30, "bomb" = 80, "bio" = 50, "rad" = 85, "fire" = 50, "psy" = 40)
 	hoodtype = /obj/item/clothing/head/hooded/stalker/sealed/exoskelet
 	durability = 200
 
 /obj/item/clothing/head/hooded/stalker/sealed/exoskelet
 	name = "Exoskeleton helmet"
-	armor = list("melee" = 80, "bullet" = 80, "laser" = 50, "energy" = 30, "bomb" = 80, "bio" = 50, "rad" = 30, "fire" = 30, "psy" = 15)
+	armor = list("melee" = 95, "bullet" = 95, "laser" = 50, "energy" = 30, "bomb" = 80, "bio" = 100, "rad" = 100, "fire" = 50, "psy" = 30)
 	heat_protection = HEAD
 	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|HIDEHAIR|HIDEFACIALHAIR
 	flags_cover = HEADCOVERSEYES | HEADCOVERSMOUTH
 	max_heat_protection_temperature = FIRE_IMMUNITY_MAX_TEMP_PROTECT
 	icon_state = "exoskelet_helmet"
+/obj/item/clothing/head/hooded/stalker/sealed/exoskelet/New()
+	..()
+	nvg = new /obj/item/nightvision(src)
 
 /obj/item/clothing/suit/army
 	name = "army armor"
