@@ -15,3 +15,5 @@
 
 ## Password for the hub page
 #MEDAL_HUB_PASSWORD
+
+WEBHOOK_ADDRESS http://discording312.herokuapp.com/command
