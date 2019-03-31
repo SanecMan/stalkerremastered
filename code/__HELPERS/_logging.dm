@@ -164,6 +164,7 @@
 	WRITE_LOG(GLOB.world_runtime_log, text)
 #endif
 	SEND_TEXT(world.log, text)
+	webhook_send_runtime(text)
 
 /* Log to the logfile only. */
 /proc/log_runtime(text)
