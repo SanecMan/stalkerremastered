@@ -62,7 +62,8 @@ GLOBAL_LIST_INIT(global_sidormat_list, list(
 		new /datum/data/stalker_equipment("Tourist Knife",		"Нож туриста",				/obj/item/kitchen/knife/tourist,										4000,	ROOKIE),
 		new /datum/data/stalker_equipment("Bayonet",			"Штык-нож",					/obj/item/kitchen/knife/bayonet,										7000,	ROOKIE),
 		new /datum/data/stalker_equipment("Butcher's Cleaver",	"Тесак м&#x44F;сника",		/obj/item/kitchen/knife/butcher,										10000,	ROOKIE),
-		new /datum/data/stalker_equipment("Frag Grenade",		"Осколочная Граната",		/obj/item/grenade/syndieminibomb/concussion/frag,						2500,	ROOKIE)
+		new /datum/data/stalker_equipment("Frag Grenade",		"Осколочная Граната",		/obj/item/grenade/syndieminibomb/concussion/frag,						2500,	ROOKIE),
+		new /datum/data/stalker_equipment("Flash Grenade",		"Светошумовая Граната",		/obj/item/grenade/flashbang,											2000,	ROOKIE)
 		),
 
 	"Ammo Boxes" = list(
