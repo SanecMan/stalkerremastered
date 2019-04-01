@@ -193,7 +193,8 @@ GLOBAL_LIST_INIT(global_sidormat_list, list(
 		new /datum/data/stalker_equipment("500RUB",								"500Rub",												/obj/item/stack/spacecash/c500,						500,	ROOKIE, sale_price =500),
 		new /datum/data/stalker_equipment("1000RUB",							"1000Rub",												/obj/item/stack/spacecash/c1000,					1000,	ROOKIE, sale_price =1000),
 		new /datum/data/stalker_equipment("5000RUB",							"5000Rub",												/obj/item/stack/spacecash/c5000,					5000,	ROOKIE, sale_price =5000),
-		new /datum/data/stalker_equipment("Bolts",								"Болты",												/obj/item/stalker/bolts,							300,	ROOKIE)
+		new /datum/data/stalker_equipment("Bolts",								"Болты",												/obj/item/stalker/bolts,							300,	ROOKIE),
+		new /datum/data/stalker_equipment("HandCuffs",							"Наручники",											/obj/item/restraints/handcuffs,						500,	ROOKIE, faction = "Army")
 		),
 
 	"Clothing" = list(
