@@ -41,7 +41,8 @@
 	belt = /obj/item/gun/ballistic/automatic/pistol/cora
 	id = /obj/item/stalker_pda
 	shoes = /obj/item/clothing/shoes/sneakers/brown
-	back = null
+	back = /obj/item/storage/backpack/stalker/civilian
+	backpack_contents = list (/obj/item/stack/spacecash/c5000 = 50)
 
 /datum/outfit/stalker/trader  // For select_equipment
 	name = "Sidorovich"
@@ -51,7 +52,8 @@
 	belt = /obj/item/gun/ballistic/automatic/pistol/cora
 	id = /obj/item/stalker_pda
 	shoes = /obj/item/clothing/shoes/sneakers/brown
-	back = null
+	back = /obj/item/storage/backpack/stalker/civilian
+	backpack_contents = list (/obj/item/stack/spacecash/c5000 = 50)
 
 //donat-equip for atelerd
 /datum/job/stalker/atelerd
