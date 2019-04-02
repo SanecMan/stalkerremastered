@@ -2840,6 +2840,7 @@
 #include "stalker\code\objects\items\outfits\head.dm"
 #include "stalker\code\objects\items\outfits\suit.dm"
 #include "stalker\code\objects\items\outfits\under.dm"
+#include "stalker\code\objects\items\weapons\grenades.dm"
 #include "stalker\code\objects\items\weapons\loot.dm"
 #include "stalker\code\objects\items\weapons\melee.dm"
 #include "stalker\code\objects\items\weapons\ammo\ammo_casings.dm"

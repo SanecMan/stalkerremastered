@@ -44,6 +44,16 @@
 	if(!BB)
 		BB = new projectile_type(src, src)
 
+/obj/item/ammo_casing/pickup(mob/user)
+	..()
+	if (icon_state == "s-casing-live")
+		icon_state = "s-casing-hand"
+
+/obj/item/ammo_casing/dropped(mob/user)
+	..()
+	if (icon_state == "s-casing-hand")
+		icon_state = "s-casing-live"
+
 /obj/item/ammo_casing/attackby(obj/item/I, mob/user, params)
 	if(istype(I, /obj/item/ammo_box))
 		var/obj/item/ammo_box/box = I

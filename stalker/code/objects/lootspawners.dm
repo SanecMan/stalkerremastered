@@ -26,6 +26,8 @@
 				/obj/item/clothing/suit/hooded/kozhanka/banditka/coat = 2,
 				/obj/item/clothing/suit/hooded/kozhanka/banditka/coat/brown = 2,
 				/obj/item/clothing/mask/gas/stalker = 4,
+				/obj/item/reagent_containers/food/snacks/stalker/tomaty = 18,
+				/obj/item/reagent_containers/food/snacks/stalker/stew = 18,
 				/obj/item/detector/blink = 4,
 				/obj/nothing = 10
 				)
