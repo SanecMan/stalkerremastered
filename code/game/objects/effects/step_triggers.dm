@@ -121,8 +121,8 @@
 /obj/effect/step_trigger/teleporter/Trigger(atom/movable/A)
 	if(teleport_x && teleport_y && teleport_z)
 
-		var/turf/T = locate(teleport_x, teleport_y, teleport_z)
-		A.forceMove(T)
+		//var/turf/T = locate
+		A.loc = locate(teleport_x, teleport_y, teleport_z)
 
 /* Random teleporter, teleports atoms to locations ranging from teleport_x - teleport_x_offset, etc */
 

@@ -210,7 +210,7 @@
 "eb" = (/obj/machinery/light/small{dir = 8; icon_state = "bulb"},/turf/open/stalker/floor/agroprom/beton,/area/stalker/buildings/backwater/ranger)
 "ec" = (/obj/machinery/light/small{dir = 1; icon_state = "bulb"},/turf/open/stalker/floor/lattice,/area/stalker/buildings/backwater/ranger)
 "ed" = (/obj/structure/closet/crate/stalker/blue/stash/low,/turf/open/stalker/floor/gryaz/gryaz3,/area/stalker/buildings/backwater/claw)
-"ee" = (/obj/effect/spawner/lootdrop/stalker/mobspawner/snork_spawner,/turf/open/stalker/floor/gryaz/gryaz3,/area/stalker/buildings/backwater/claw)
+"ee" = (/obj/effect/landmark/mobspawner/snork_spawner,/turf/open/stalker/floor/gryaz/gryaz3,/area/stalker/buildings/backwater/claw)
 "ef" = (/obj/effect/step_trigger/teleporter{dir = 8; icon_state = "down"; teleport_x = 167; teleport_y = 158; teleport_z = 1},/turf/open/floor/plasteel/stairs/right/stalker{icon_state = "ladder_right"; dir = 4},/area/stalker/buildings/backwater/ranger)
 "eg" = (/obj/effect/step_trigger/teleporter{teleport_x = 189; teleport_y = 198; teleport_z = 1},/turf/open/stalker/floor/lattice,/area/stalker/buildings/backwater/ranger)
 "eh" = (/turf/open/floor/plating,/area/stalker/buildings/backwater/ranger)
@@ -279,7 +279,7 @@
 "fs" = (/obj/structure/stalker/okno/window3{icon_state = "okno3"; dir = 8},/turf/closed/wall/stalker/beton,/area/stalker/buildings/backwater/krug)
 "ft" = (/obj/structure/table,/turf/open/stalker/floor/plasteel/plitka,/area/stalker/buildings/backwater/krug)
 "fu" = (/obj/structure/table,/obj/machinery/button/door{id = "krug-end"},/turf/open/stalker/floor/plasteel/plitka,/area/stalker/buildings/backwater/krug)
-"fv" = (/obj/effect/spawner/lootdrop/stalker/mobspawner/dog_spawner,/turf/open/stalker/floor/gryaz/gryaz3,/area/stalker/buildings/backwater/krug)
+"fv" = (/obj/effect/landmark/mobspawner/dog_spawner,/turf/open/stalker/floor/gryaz/gryaz3,/area/stalker/buildings/backwater/krug)
 "fw" = (/obj/structure/stalker/cacheable/polka,/turf/open/stalker/floor/plasteel/plitochka,/area/stalker/buildings/backwater/krug)
 "fx" = (/obj/structure/table/stalker,/turf/open/stalker/floor/plasteel/plitochka,/area/stalker/buildings/backwater/krug)
 "fy" = (/obj/structure/table/stalker,/turf/open/stalker/floor/gryaz/gryaz3,/area/stalker/buildings/backwater/krug)
@@ -321,7 +321,7 @@
 "gi" = (/obj/structure/table/stalker/wood,/turf/open/stalker/floor/gryaz,/area/stalker/buildings/backwater/krug)
 "gj" = (/obj/structure/table/stalker/wood,/obj/structure/stalker/cacheable/televizor/broken,/turf/open/stalker/floor/gryaz,/area/stalker/buildings/backwater/krug)
 "gk" = (/obj/structure/stalker/cacheable/bochka/red,/turf/open/stalker/floor/gryaz,/area/stalker/buildings/backwater/krug)
-"gl" = (/obj/effect/spawner/lootdrop/stalker/mobspawner/snork_spawner,/turf/open/stalker/floor/lattice,/area/stalker/buildings/backwater/krug)
+"gl" = (/obj/effect/landmark/mobspawner/snork_spawner,/turf/open/stalker/floor/lattice,/area/stalker/buildings/backwater/krug)
 "gm" = (/obj/structure/stalker/lift{pixel_y = 32},/turf/open/stalker/floor/plasteel/plitochka,/area/stalker/buildings/backwater/krug)
 "gn" = (/obj/structure/sign/departments/science{pixel_y = 32},/turf/open/stalker/floor/gryaz,/area/stalker/buildings/backwater/krug)
 "go" = (/obj/structure/stalker/lift{pixel_y = 32},/turf/open/stalker/floor/gryaz,/area/stalker/buildings/backwater/krug)
@@ -374,7 +374,7 @@
 "hj" = (/obj/effect/step_trigger/teleporter{dir = 1; icon_state = "up"; teleport_x = 14; teleport_y = 171; teleport_z = 2},/turf/open/floor/plasteel/stairs/stalker,/area/stalker/blowout/buildings/backwater/krug)
 "hk" = (/obj/effect/step_trigger/teleporter{dir = 1; icon_state = "up"; teleport_x = 15; teleport_y = 171; teleport_z = 2},/turf/open/floor/plasteel/stairs/stalker{icon_state = "ladder_right"},/area/stalker/blowout/buildings/backwater/krug)
 "hl" = (/obj/structure/stalker/list,/turf/open/stalker/floor/water,/area/stalker/buildings/backwater/krug)
-"hm" = (/obj/effect/spawner/lootdrop/stalker/mobspawner/bloodsucker_spawner,/turf/open/stalker/floor/gryaz,/area/stalker/buildings/backwater/krug)
+"hm" = (/obj/effect/landmark/mobspawner/bloodsucker_spawner,/turf/open/stalker/floor/gryaz,/area/stalker/buildings/backwater/krug)
 "hn" = (/obj/structure/closet/crate/stalker/blue/stash/medium,/turf/open/stalker/floor/gryaz,/area/stalker/buildings/backwater/krug)
 "ho" = (/turf/open/stalker/floor/lattice,/area/stalker/blowout/buildings/backwater/krug)
 "hp" = (/obj/structure/stalker/cacheable/yashik,/turf/open/stalker/floor/gryaz,/area/stalker/buildings/backwater/krug)
@@ -382,9 +382,9 @@
 "hr" = (/obj/structure/grille/stalker,/obj/structure/barricade/stalker/wood,/turf/open/stalker/floor/lattice,/area/stalker/buildings/backwater/krug)
 "hs" = (/turf/closed/wall/stalker/bricks,/area/stalker/buildings/backwater/krug)
 "ht" = (/obj/structure/stalker/cacheable/shina3,/turf/open/stalker/floor/wood/oldgor,/area/stalker/buildings/backwater/krug)
-"hu" = (/obj/effect/spawner/lootdrop/stalker/mobspawner/controller_spawner,/obj/structure/bed/stalker/matras,/turf/open/stalker/floor/wood/oldgor,/area/stalker/buildings/backwater/krug)
+"hu" = (/obj/effect/landmark/mobspawner/controller_spawner,/obj/structure/bed/stalker/matras,/turf/open/stalker/floor/wood/oldgor,/area/stalker/buildings/backwater/krug)
 "hv" = (/turf/open/stalker/floor/wood/oldgor,/area/stalker/buildings/backwater/krug)
-"hw" = (/obj/effect/spawner/lootdrop/stalker/mobspawner/controller_spawner,/turf/open/stalker/floor/wood/oldgor,/area/stalker/buildings/backwater/krug)
+"hw" = (/obj/effect/landmark/mobspawner/controller_spawner,/turf/open/stalker/floor/wood/oldgor,/area/stalker/buildings/backwater/krug)
 "hx" = (/obj/structure/stalker/brokenbed,/turf/open/stalker/floor/wood/oldgor,/area/stalker/buildings/backwater/krug)
 "hy" = (/obj/structure/stalker/blocks/vanish/block2/r,/turf/open/stalker/floor/agroprom/beton,/area/stalker/buildings/backwater/ranger)
 "hz" = (/turf/open/stalker/floor/wood/oldvert,/area/stalker/buildings/backwater/krug)
@@ -434,7 +434,7 @@
 "ir" = (/obj/structure/stalker/cacheable/bochka/red,/obj/machinery/light/small/broken{icon_state = "bulb-broken"; dir = 4},/turf/open/stalker/floor/gryaz,/area/stalker/buildings/backwater/krug)
 "is" = (/obj/structure/chair/office/light,/obj/machinery/light/small/broken{icon_state = "bulb-broken"; dir = 4},/turf/open/stalker/floor/plasteel/plitka,/area/stalker/buildings/backwater/krug)
 "it" = (/obj/structure/stalker/cacheable/bochka/red,/turf/open/stalker/floor/wood/oldvert,/area/stalker/buildings/backwater/krug)
-"iu" = (/obj/effect/spawner/lootdrop/stalker/mobspawner/bloodsucker_spawner,/turf/open/stalker/floor/water,/area/stalker/buildings/backwater/krug)
+"iu" = (/obj/effect/landmark/mobspawner/bloodsucker_spawner,/turf/open/stalker/floor/water,/area/stalker/buildings/backwater/krug)
 "iv" = (/obj/structure/closet/crate/stalker/blue,/obj/machinery/light/small{dir = 4; icon_state = "bulb"},/turf/open/stalker/floor/agroprom/beton,/area/stalker/buildings/backwater/ranger)
 "iw" = (/obj/machinery/light/small/broken{icon_state = "bulb-broken"; dir = 8},/turf/open/stalker/floor/plasteel/plitka,/area/stalker/buildings/backwater/krug)
 "ix" = (/obj/machinery/light/small/broken{icon_state = "bulb-broken"; dir = 4},/turf/open/stalker/floor/gryaz,/area/stalker/buildings/backwater/krug)
@@ -445,7 +445,7 @@
 "iC" = (/obj/structure/stalker/trubas{icon_state = "trubas"; dir = 9},/turf/open/stalker/floor/water,/area/stalker/buildings/backwater/krug)
 "iD" = (/obj/structure/stalker/trubas,/turf/open/stalker/floor/water,/area/stalker/buildings/backwater/krug)
 "iE" = (/obj/structure/barricade/stalker/wood,/turf/open/stalker/floor/agroprom/gryaz,/area/stalker/buildings/backwater/krug)
-"iF" = (/obj/effect/spawner/lootdrop/stalker/mobspawner/bloodsucker_spawner,/turf/open/stalker/floor/plasteel/plitka,/area/stalker/buildings/backwater/krug)
+"iF" = (/obj/effect/landmark/mobspawner/bloodsucker_spawner,/turf/open/stalker/floor/plasteel/plitka,/area/stalker/buildings/backwater/krug)
 "iG" = (/obj/structure/table/stalker,/turf/open/stalker/floor/wood/oldvert,/area/stalker/buildings/backwater/krug)
 "iH" = (/obj/structure/chair/office/light,/turf/open/stalker/floor/wood/oldvert,/area/stalker/buildings/backwater/krug)
 "iI" = (/obj/machinery/door/poddoor/sidor{icon_state = "closed0"; id = "monolith_secret_enterance"},/turf/open/stalker/floor/lattice,/area/stalker/buildings/backwater/krug)
@@ -456,7 +456,7 @@
 "iN" = (/obj/structure/closet/crate/stalker/blue/stash/medium,/turf/open/stalker/floor/water,/area/stalker/buildings/backwater/krug)
 "iO" = (/obj/structure/table/stalker,/obj/item/flashlight/lamp,/turf/open/stalker/floor/gryaz,/area/stalker/buildings/backwater/krug)
 "iP" = (/turf/open/floor/plasteel/stairs{icon_state = "stairs"; dir = 4},/area/stalker/buildings/backwater/krug)
-"iQ" = (/obj/structure/chair/wood/normal,/obj/effect/spawner/lootdrop/stalker/mobspawner/bloodsucker_spawner,/turf/open/stalker/floor/gryaz,/area/stalker/buildings/backwater/krug)
+"iQ" = (/obj/structure/chair/wood/normal,/obj/effect/landmark/mobspawner/bloodsucker_spawner,/turf/open/stalker/floor/gryaz,/area/stalker/buildings/backwater/krug)
 "iR" = (/obj/structure/table/stalker,/obj/machinery/light/small/broken{icon_state = "bulb-broken"; dir = 4},/turf/open/stalker/floor/gryaz,/area/stalker/buildings/backwater/krug)
 "iS" = (/obj/structure/closet/crate/stalker/blue/stash/low,/turf/open/stalker/floor/gryaz,/area/stalker/buildings/backwater/krug)
 "iT" = (/obj/machinery/light/small/broken{icon_state = "bulb-broken"; dir = 1},/turf/open/stalker/floor/gryaz,/area/stalker/buildings/backwater/krug)
@@ -518,7 +518,7 @@
 "jX" = (/obj/structure/table/stalker,/obj/item/gun/ballistic/shotgun/ithaca,/turf/open/stalker/floor/plasteel/plitka,/area/stalker/buildings/backwater/krug)
 "jY" = (/obj/structure/table/stalker,/obj/item/gun/ballistic/shotgun/boltaction/enfield,/turf/open/stalker/floor/plasteel/plitka,/area/stalker/buildings/backwater/krug)
 "jZ" = (/obj/structure/table/stalker,/obj/item/clothing/suit/berill,/turf/open/stalker/floor/plasteel/plitka,/area/stalker/buildings/backwater/krug)
-"ka" = (/obj/effect/spawner/lootdrop/stalker/mobspawner/controller_spawner,/turf/open/stalker/floor/water,/area/stalker/buildings/backwater/krug)
+"ka" = (/obj/effect/landmark/mobspawner/controller_spawner,/turf/open/stalker/floor/water,/area/stalker/buildings/backwater/krug)
 "kb" = (/obj/structure/barricade/stalker/wood{icon_state = "zabitiy_proxod"; dir = 4},/turf/open/stalker/floor/water,/area/stalker/buildings/backwater/krug)
 "kc" = (/obj/structure/barricade/stalker/wood{icon_state = "zabitiy_proxod"; dir = 4},/turf/open/stalker/floor/lattice,/area/stalker/buildings/backwater/krug)
 "kd" = (/obj/effect/step_trigger/teleporter{icon_state = "up"; teleport_x = 16; teleport_y = 104; teleport_z = 2},/turf/open/floor/plasteel/stairs/stalker{tag = "icon-ladder (EAST)"; icon_state = "ladder_left"; dir = 1},/area/stalker/blowout/buildings/backwater/krug)
@@ -529,7 +529,7 @@
 "ki" = (/turf/open/stalker/floor/agroprom/gryaz,/area/stalker/buildings/backwater/ironforest)
 "kj" = (/obj/machinery/light/small/broken{icon_state = "bulb-broken"; dir = 1},/turf/open/stalker/floor/agroprom/gryaz,/area/stalker/buildings/backwater/ironforest)
 "kk" = (/turf/open/stalker/floor/agroprom/beton,/area/stalker/buildings/backwater/ironforest)
-"kl" = (/obj/effect/spawner/lootdrop/stalker/mobspawner/bloodsucker_spawner,/turf/open/stalker/floor/agroprom/gryaz,/area/stalker/buildings/backwater/ironforest)
+"kl" = (/obj/effect/landmark/mobspawner/bloodsucker_spawner,/turf/open/stalker/floor/agroprom/gryaz,/area/stalker/buildings/backwater/ironforest)
 "km" = (/obj/machinery/light/small/broken{icon_state = "bulb-broken"; dir = 8},/turf/open/stalker/floor/agroprom/gryaz,/area/stalker/buildings/backwater/ironforest)
 "kn" = (/obj/machinery/light/small/broken{icon_state = "bulb-broken"; dir = 4},/turf/open/stalker/floor/agroprom/beton,/area/stalker/buildings/backwater/ironforest)
 "ko" = (/obj/structure/stalker/cacheable/bochka/red,/turf/open/stalker/floor/agroprom/gryaz,/area/stalker/buildings/backwater/ironforest)
@@ -552,9 +552,10 @@
 "kF" = (/obj/structure/stalker/cacheable/shitok/shitok2{pixel_y = 24},/turf/open/stalker/floor/agroprom/gryaz,/area/stalker/buildings/backwater/ironforest)
 "kG" = (/turf/closed/mineral,/area/stalker/buildings/backwater/ironforest)
 "kH" = (/obj/machinery/light/small{dir = 8; icon_state = "bulb"},/turf/open/stalker/floor/lattice,/area/stalker/buildings/backwater/krug)
+"kI" = (/obj/effect/step_trigger/teleporter{dir = 1; icon_state = "up"; teleport_x = 44; teleport_y = 426; teleport_z = 2},/turf/open/stalker/floor/gryaz,/area/stalker/kordon/tunnel)
 "kJ" = (/obj/effect/turf_decal/stripes/full{icon = 'stalker/icons/warning_stripes.dmi'; icon_state = "S-corner"},/turf/open/stalker/floor/agroprom/gryaz,/area/stalker/buildings/backwater/ironforest)
 "kK" = (/obj/machinery/light{dir = 8; icon_state = "tube"; tag = "icon-tube1 (WEST)"},/turf/open/stalker/floor/agroprom/beton,/area/stalker/buildings/backwater/ironforest)
-"kL" = (/obj/effect/spawner/lootdrop/stalker/mobspawner/controller_spawner,/turf/open/stalker/floor/agroprom/beton,/area/stalker/buildings/backwater/ironforest)
+"kL" = (/obj/effect/landmark/mobspawner/controller_spawner,/turf/open/stalker/floor/agroprom/beton,/area/stalker/buildings/backwater/ironforest)
 "kM" = (/obj/structure/table/stalker,/turf/open/stalker/floor/agroprom/beton,/area/stalker/buildings/backwater/ironforest)
 "kN" = (/obj/structure/table/stalker,/obj/structure/stalker/cacheable/televizor,/turf/open/stalker/floor/agroprom/beton,/area/stalker/buildings/backwater/ironforest)
 "kO" = (/obj/machinery/light/small/broken{icon_state = "bulb-broken"; dir = 1},/turf/open/stalker/floor/agroprom/beton,/area/stalker/buildings/backwater/ironforest)
@@ -575,10 +576,10 @@
 "ld" = (/obj/effect/step_trigger/teleporter{dir = 1; icon_state = "up"; teleport_x = 12; teleport_y = 84; teleport_z = 1},/turf/open/floor/plasteel/stairs{icon_state = "stairs"; dir = 1},/area/stalker/buildings/backwater/ironforest)
 "le" = (/obj/effect/step_trigger/teleporter{dir = 1; icon_state = "up"; teleport_x = 13; teleport_y = 84; teleport_z = 1},/turf/open/floor/plasteel/stairs{icon_state = "stairs"; dir = 1},/area/stalker/buildings/backwater/ironforest)
 "lf" = (/obj/machinery/light/small{dir = 4; icon_state = "bulb"},/turf/open/stalker/floor/agroprom/gryaz,/area/stalker/buildings/backwater/ironforest)
-"lg" = (/obj/effect/spawner/lootdrop/stalker/mobspawner/snork_spawner,/turf/open/stalker/floor/agroprom/beton,/area/stalker/buildings/backwater/ironforest)
+"lg" = (/obj/effect/landmark/mobspawner/snork_spawner,/turf/open/stalker/floor/agroprom/beton,/area/stalker/buildings/backwater/ironforest)
 "lh" = (/obj/effect/step_trigger/teleporter{dir = 8; icon_state = "up"; teleport_x = 20; teleport_y = 124; teleport_z = 2},/turf/open/floor/plasteel/stairs/stalker{tag = "icon-ladder (EAST)"; icon_state = "ladder_right"; dir = 8},/area/stalker/blowout/buildings/backwater/krug)
 "li" = (/obj/machinery/light/small/broken{icon_state = "bulb-broken"; dir = 8},/turf/open/stalker/floor/agroprom/beton,/area/stalker/buildings/backwater/ironforest)
-"lj" = (/obj/effect/spawner/lootdrop/stalker/mobspawner/snork_spawner,/turf/open/stalker/floor/agroprom/gryaz,/area/stalker/buildings/backwater/ironforest)
+"lj" = (/obj/effect/landmark/mobspawner/snork_spawner,/turf/open/stalker/floor/agroprom/gryaz,/area/stalker/buildings/backwater/ironforest)
 "lk" = (/obj/structure/stalker/matras,/turf/open/stalker/floor/agroprom/beton,/area/stalker/buildings/backwater/ironforest)
 "ll" = (/obj/effect/turf_decal/stripes/full{icon = 'stalker/icons/warning_stripes.dmi'; icon_state = "W-corner"},/turf/open/stalker/floor/agroprom/gryaz,/area/stalker/buildings/backwater/ironforest)
 "lm" = (/obj/structure/table/stalker/wood,/obj/item/gun/ballistic/automatic/gp37,/turf/open/stalker/floor/plasteel/plitka,/area/stalker/buildings/backwater/waste)
@@ -596,7 +597,7 @@
 "ly" = (/obj/machinery/door/poddoor,/turf/open/stalker/floor/agroprom/beton,/area/stalker/buildings/backwater/ironforest)
 "lz" = (/obj/machinery/door/poddoor/preopen,/turf/open/stalker/floor/agroprom/beton,/area/stalker/buildings/backwater/ironforest)
 "lA" = (/obj/anomaly/jarka,/turf/open/stalker/floor/agroprom/beton,/area/stalker/buildings/backwater/ironforest)
-"lB" = (/obj/effect/spawner/lootdrop/stalker/mobspawner/bloodsucker_spawner,/turf/open/stalker/floor/agroprom/beton,/area/stalker/buildings/backwater/ironforest)
+"lB" = (/obj/effect/landmark/mobspawner/bloodsucker_spawner,/turf/open/stalker/floor/agroprom/beton,/area/stalker/buildings/backwater/ironforest)
 "lC" = (/obj/structure/stalker/cacheable/bochka,/obj/structure/stalker/cacheable/truba,/turf/open/stalker/floor/agroprom/gryaz,/area/stalker/buildings/backwater/ironforest)
 "lD" = (/obj/structure/stalker/cacheable/bochka,/obj/machinery/light/small/broken{icon_state = "bulb-broken"; dir = 1},/turf/open/stalker/floor/agroprom/gryaz,/area/stalker/buildings/backwater/ironforest)
 "lE" = (/obj/structure/stalker/cacheable/yashik,/obj/machinery/light/small/broken{icon_state = "bulb-broken"; dir = 1},/turf/open/stalker/floor/agroprom/gryaz,/area/stalker/buildings/backwater/ironforest)
@@ -657,7 +658,7 @@
 "mH" = (/obj/structure/stalker/doski/doski2,/turf/open/stalker/floor/agroprom/beton,/area/stalker/buildings/backwater/ironforest)
 "mI" = (/obj/structure/table/stalker,/obj/machinery/light{dir = 8; icon_state = "tube"; tag = "icon-tube1 (WEST)"},/turf/open/stalker/floor/agroprom/beton,/area/stalker/buildings/backwater/ironforest)
 "mJ" = (/obj/structure/closet/crate/stalker/blue/stash/medium,/turf/open/stalker/floor/agroprom/beton,/area/stalker/buildings/backwater/ironforest)
-"mK" = (/obj/effect/spawner/lootdrop/stalker/mobspawner/snork_spawner,/obj/structure/stalker/doski,/turf/open/stalker/floor/agroprom/gryaz,/area/stalker/buildings/backwater/ironforest)
+"mK" = (/obj/effect/landmark/mobspawner/snork_spawner,/obj/structure/stalker/doski,/turf/open/stalker/floor/agroprom/gryaz,/area/stalker/buildings/backwater/ironforest)
 "mL" = (/obj/structure/stalker/blocks/vanish/block2,/turf/open/stalker/floor/agroprom/beton,/area/stalker/buildings/backwater/ironforest)
 "mM" = (/obj/structure/stalker/doski/doski3,/turf/open/stalker/floor/agroprom/beton,/area/stalker/buildings/backwater/ironforest)
 "mN" = (/obj/machinery/door/poddoor/shutters/preopen,/turf/open/stalker/floor/agroprom/gryaz,/area/stalker/buildings/backwater/ironforest)
@@ -677,6 +678,8 @@
 "nb" = (/obj/structure/closet/stalker/shkaf,/obj/item/attachment/scope/rifle,/turf/open/stalker/floor/wood/brown,/area/stalker/buildings/backwater/substation)
 "nc" = (/obj/structure/closet/stalker/shkaf,/obj/item/artifact/fireball,/turf/open/stalker/floor/wood/brown,/area/stalker/buildings/backwater/substation)
 "nd" = (/obj/structure/closet/crate/stalker/blue,/obj/vehicle/ridden/atv,/obj/item/key,/turf/open/stalker/floor/agroprom/beton,/area/stalker/buildings/backwater/substation)
+"ne" = (/obj/effect/step_trigger/teleporter{dir = 1; icon_state = "up"; teleport_x = 44; teleport_y = 426; teleport_z = 2},/turf/open/stalker/floor/gryaz,/area/stalker/kordon/tunnel)
+"nf" = (/obj/effect/step_trigger/teleporter{icon_state = "up"; teleport_x = 43; teleport_y = 413; teleport_z = 2},/turf/open/stalker/floor/gryaz,/area/stalker/kordon/tunnel)
 "ng" = (/obj/structure/table/stalker,/obj/item/clothing/suit/psz9d,/turf/open/stalker/floor/wood/oldvert,/area/stalker/buildings/backwater/krug)
 "nh" = (/obj/structure/closet/crate/stalker/blue/stash/medium,/obj/item/clothing/suit/skat,/turf/open/stalker/floor/lattice,/area/stalker/buildings/backwater/krug)
 "ni" = (/obj/structure/table/reinforced,/obj/machinery/stalker/sidormat,/turf/open/stalker/floor/plasteel/plitka,/area/stalker/buildings/backwater/ranger)
@@ -698,6 +701,7 @@
 "ny" = (/obj/structure/chair/wood/normal{icon_state = "wooden_chair"; dir = 1},/turf/open/stalker/floor/wood/oldgor,/area/stalker)
 "nz" = (/obj/structure/stalker/doski/doski4,/turf/open/stalker/floor/gryaz,/area/stalker)
 "nA" = (/obj/structure/stalker/cacheable/komod,/turf/open/stalker/floor/wood/oldgor,/area/stalker)
+"nB" = (/obj/effect/step_trigger/teleporter{icon_state = "up"; teleport_x = 43; teleport_y = 413; teleport_z = 2},/turf/open/stalker/floor/gryaz,/area/stalker/kordon/tunnel)
 "nC" = (/obj/structure/stalker/doski,/turf/open/stalker/floor/wood/oldgor,/area/stalker)
 "nD" = (/obj/machinery/campfire/barrel,/turf/open/stalker/floor/gryaz,/area/stalker)
 "nE" = (/obj/effect/turf_decal/stripes/full{icon = 'stalker/icons/warning_stripes.dmi'; icon_state = "W-corner"},/obj/effect/turf_decal/stripes/full{icon = 'stalker/icons/warning_stripes.dmi'; icon_state = "E-corner"},/turf/open/stalker/floor/agroprom/beton,/area/stalker/buildings/backwater/ironforest)
@@ -715,8 +719,6 @@
 "nQ" = (/obj/structure/stalker/cacheable/shina3,/turf/open/stalker/floor/gryaz,/area/stalker/kordon/tunnel)
 "nR" = (/obj/effect/step_trigger/teleporter{dir = 8; icon_state = "up"; teleport_x = 168; teleport_y = 232; teleport_z = 1},/turf/open/floor/plasteel/stairs/right/stalker{icon_state = "ladder_right"; dir = 8},/area/stalker/buildings/backwater/ranger)
 "nS" = (/turf/open/floor/plasteel/stairs/right/stalker{icon_state = "ladder_right"; dir = 8},/area/stalker/buildings/backwater/ranger)
-"nT" = (/obj/effect/step_trigger/teleporter{dir = 1; icon_state = "up"; teleport_x = 44; teleport_y = 425; teleport_z = 2},/turf/open/stalker/floor/gryaz,/area/stalker/kordon/tunnel)
-"nV" = (/obj/effect/step_trigger/teleporter{icon_state = "up"; teleport_x = 43; teleport_y = 414; teleport_z = 2},/turf/open/stalker/floor/gryaz,/area/stalker/kordon/tunnel)
 
 (1,1,1) = {"
 aaaaaaaaaaababaaaaaaaaaaababaaaaaaaaaaababaaaaaaaaaaababaaaaaaaaaaababaaaaaaaaaaababaaaaaaaaaaababaaaaaaaaaaababacacacacacacacacacacadaeaeaeaeaeaeaeaeadafafafafafafafafafadadadadadadagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagadahahahahahahahahahahahahahaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiadadadadadadadadaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiadajakakakakakakakakakakakakakakak
@@ -801,7 +803,7 @@ adadadadadadadadadadadadadadadadadadadadadadadadadfgfgfggegefgfgfgadadfrgefJfrad
 adadadadadadadadadadadadadadadadadadadadadadadadadadadfggegefgadadadadfrfJfJfradfrfJfJfradfrfJfJfJfJfJfJfJfradfgfgfJfgfgfgfJfgfgadadadadadadadadadadadadadadadaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiadbfddgJddddddddbKbKddddddddddddgKivbfadaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiai
 adadadadadadadadadadadadadadadadadadadadadadadadadadadfgfjgefgadadadadfrfJfJfradfrfJfJfradfrfrfJfJfJfJfJfrfradfggMgMgMgMgMgMgMfgadadadadadadadadadadadadadadadaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiadbfddddgIddddbfddddbfddddddgJgIbfbfbfadaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiai
 adadadadadadadadadadadadadadadadadadadadadadadadadfgfgfgfjfjfgfgfgadadfrfJfJfrfrfrgegefradadfrfrfBfBfCfrfradadfggMgMgMfggMgMgMfgadadadadadadadadadadadadadadadaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiadadadadbfgHgHgHgNgObfddddbfddddddgIgPbfadadadadaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiai
-adadadadadadadadadadadadadadadadadadadadadadadadadfgfJfgfjfjfgfJfgadadfrfJfJfJgegegegefradaiaifrfrfrfrfraiadfgfggMfgfJfJfJfggMfgfgadadadadadadnTnTnTnTadadadadaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiadbfbfbfbfbfbfbfbfbfbfddddbfbfbfbfbfbfbfbfbfbfadaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiai
+adadadadadadadadadadadadadadadadadadadadadadadadadfgfJfgfjfjfgfJfgadadfrfJfJfJgegegegefradaiaifrfrfrfrfraiadfgfggMfgfJfJfJfggMfgfgadadadadadadnenenekIadadadadaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiadbfbfbfbfbfbfbfbfbfbfddddbfbfbfbfbfbfbfbfbfbfadaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiai
 adadadadadadadadadadadadadadadadadadadadadadadadadfggegefjfjgegefgadadfrfJfJgegegegegefradaiaiaiaiaiaiaiaiadfgfJgMgMgMfJgMgMgMfJfgadadadadadadnJnJnJnJadadadadaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiadadadadadadadadadadadbfbKbKbKbKbKbKbKbKbKbKbKbKbKbKbKbKbKbKbKbKbfadadadadadadadadadadadaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiai
 adadadadadadadadadadadadadadadadadadadadadadadadadfgfgfgfgfgfgfgfgadadfrfrfJfJfJgegefrfradaiaiaiaiaiaiaiaiadfgfggMfJfJfgfJfJgMfgfgadadadadadadnJnJnJnJadadadadaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaieradadadadbfbfbfbfbfbfbfbfbfbfbfbKbKdQbKbKbKbKbKdQbKbKdQbKbKbKbKbKdQbKbKbfbfbfbfbfbfbfbfbfbfbfadaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiai
 adadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadfrfrgQgRgSfrfradadaiaiaiaiaiaiaiaiadadfggMgMgMfJgMgMgMfgadadadadadadnKnJnJnJnJadadadadaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiadadadadadbfgOgOgTgOgUdedcjTdcbfbKdubfbfbfbfbfbfbfddddbfbfbfbfbfbfbfdsbKdegHddddddbfhcilddddbfadaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiai
@@ -821,7 +823,7 @@ fgfgfgigfgfgfgfgfgfgfgfgadhJhJfggMgMgefggEihgAfgfgiifgfgijikfgfgfgfgfAfAadfrfJfJ
 fginiogeipjZipfgadadadadadadadfggMgMgMfgikhmhzfgfjgegefgiqgegegeirfgadadadfrfJfJfJfradaiaiaiaiaifAfAfIfIfIfAfrfrfrfJfrfrfrfrfrfrfrfJfradnLnJnJnLadadadadadadadaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiadbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbKbKecbKbKbKbKbKecbKbKecbKbKbKbKbKecbKbKbfbfbfbfbfbfbfbfbfbfbfadaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiai
 fggpgegegefjisfgadfgfgfgfgfgfgfggMgMgMfggegehzfgfjgegefggzgzfggeitfgadadadfrfJfJfJfradadadadadadadfAfIfIfIfIfAfAfrfJfradadadadadfrfJfradnJnJnLnPadadadadadadadaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiadadadadadadadadadadadadadadadadbfbKbKbKbKbKbKbKbKbKbKbKeUbKbKbKbKbKbKbKbKbfadadadadadadadadadadadaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiai
 fggagegkgkgefMfgadfgiugMgMgMgMgMgMgMgMfgkthzhzfgiwfjixfgfgfgfghziyfgadadadfrfJfJfJfrfrfrfrfrfrfrfrfrfIfIfIfAfAadfrfJfradfrfrfrfrfrfJfradnJnJnJnJadadadadadadadaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiadbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfadaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiai
-fgfgfgfgfgizfgfgadfggMgMgMgMgMgMgMgMiufggAhzhziAfjfjfjiBhzhzhzhziyfgadadadfrfrfJfJgMiCiDiDiDiDiDiDfrfrfriEfrfrfrfrfJfradfrfJfJfJfJfJfradnVnVnVnVadadadadadadadaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiadadadadadadadadadadadadadadadadadadadadadadadadaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiai
+fgfgfgfgfgizfgfgadfggMgMgMgMgMgMgMgMiufggAhzhziAfjfjfjiBhzhzhzhziyfgadadadfrfrfJfJgMiCiDiDiDiDiDiDfrfrfriEfrfrfrfrfJfradfrfJfJfJfJfJfradnBnBnBnfadadadadadadadaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiadadadadadadadadadadadadadadadadadadadadadadadadaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiai
 fggMgMgMgMgMfjfgadfgiFgeiufgfgfgfgfgfgfgiGiHhzfgfjfjfjfgfgfgfghziyfgadadadadfrfJfJfJfJgMgMgMgMgMgMgMgMgMgMfIfIiIfJfJfradfrfJfrfrfrfrfradadadadadadadadadadadadaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiai
 fgfgfgfgfgiJfgfgadfgfgiKfgfgiLfgiMiNgMfgiGngiGfggefjfjfggzgzfghziOfgadadadadfrfJfJfJfJfJfJfJgMgMgMfrfrfrfrfrfrfrfrfrfradfrfJfradadadadadadadadadadadadadadadadaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiai
 fgfjfjiPiPgehpfgadfgfjgegMfgfgfgiugMgMfgfgfgfgfggefjfjfgiQhzhzhziRfgadadadadfrfJfJfJfrfrfrfrfrfrfrfradadadadadadadadadadfrfJfradadadadadadadadadadadadadadadadaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiai

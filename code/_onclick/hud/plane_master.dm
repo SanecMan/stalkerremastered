@@ -38,6 +38,12 @@
 /obj/screen/plane_master/proc/clear_filters()
 	filters = list()
 
+/obj/screen/plane_master/battle
+	name = "battle plane master"
+	plane = -3
+	appearance_flags = PLANE_MASTER
+	blend_mode = BLEND_OVERLAY
+
 /obj/screen/plane_master/floor
 	name = "floor plane master"
 	plane = FLOOR_PLANE

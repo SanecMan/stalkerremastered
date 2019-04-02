@@ -237,6 +237,9 @@
 		return FALSE
 	if(throwing || !(mobility_flags & MOBILITY_PULL))
 		return FALSE
+	if(get_area(src).safezone)
+		to_chat (src, "<span class='warning'>¬ы не можете трогать людей в этой зоне!</span>")
+		return FALSE
 
 	AM.add_fingerprint(src)
 
@@ -768,9 +771,9 @@
 	var/area/C = get_area(who.loc)
 	if(B.safezone || C.safezone)
 		if(src.client && (src.client.prefs.chat_toggles & CHAT_LANGUAGE))
-			src << "<span class='warning'>You can't unequip people in the safezone!</span>"
+			to_chat (src, "<span class='warning'>You can't unequip people in the safezone!</span>")
 		else
-			src << "<span class='warning'>¬ы не можете раздевать людей в этой зоне!</span>"
+			to_chat (src, "<span class='warning'>¬ы не можете раздевать людей в этой зоне!</span>")
 		return
 
 	if(!what.canStrip(who))

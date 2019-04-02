@@ -51,8 +51,7 @@
 	if(stat != DEAD)
 		handle_artifacts()
 
-	if(stat != DEAD)
-		handle_tension()
+	handle_tension()
 
 	//Update our name based on whether our face is obscured/disfigured
 	name = get_visible_name()
@@ -65,8 +64,8 @@
 /mob/living/carbon/human/proc/handle_tension(type = "default")
 	if (setup_tension)
 		var/sound/S = sound("stalker/sound/battletension.ogg") //yeah?
-		if (prob(50))
-			S = sound("stalker/sound/battletension2.ogg") //yeah
+		//if (prob(50))
+		//	S = sound("stalker/sound/battletension2.ogg") //yeah
 		S.repeat = 1
 		S.channel = CHANNEL_BATTLE
 		S.falloff = 1
@@ -81,10 +80,12 @@
 
 	switch(tension)
 		if(-INFINITY to -1)
+			clear_fullscreen("just_noise")
 			src.bm.volume = 0
 			src << src.bm
 			src.bm.status = 16
 		if(0 to 30)
+			overlay_fullscreen("just_noise", /obj/screen/fullscreen/just_noise)
 			src.bm.volume = tension
 			src << src.bm
 			src.bm.status = 16
@@ -93,12 +94,13 @@
 			src.bm.volume = tension
 			src << src.bm
 			src.bm.status = 16
-			var/i
-			for (i = 0, i < 10, i++)
-				battle_screen_on()
-				sleep(1)
-				set_blurriness(0)
-				sleep(1)
+			if (!has_trait(TRAIT_UNINTELLIGIBLE_SPEECH))
+				var/i
+				for (i = 0, i < tension, i++)
+					battle_screen_on()
+					sleep(1)
+					battle_screen_off()
+					sleep(1)
 		if(80 to INFINITY)
 			tension = 80
 			src.bm.volume = 80
@@ -112,9 +114,17 @@
 	if(!client)
 		return
 	var/obj/screen/plane_master/floor/OT = locate(/obj/screen/plane_master/floor) in client.screen
-	var/obj/screen/plane_master/game_world/GW = locate(/obj/screen/plane_master/game_world) in client.screen
+	var/obj/screen/plane_master/battle/GW = locate(/obj/screen/plane_master/battle) in client.screen
 	GW.filters += filter(type="wave", x=1, y=1, size=1)
 	OT.filters += filter(type="wave", x=1, y=1, size=1)
+
+/mob/living/carbon/human/proc/battle_screen_off()
+	if(!client)
+		return
+	var/obj/screen/plane_master/floor/OT = locate(/obj/screen/plane_master/floor) in client.screen
+	var/obj/screen/plane_master/battle/GW = locate(/obj/screen/plane_master/battle) in client.screen
+	GW.clear_filters()
+	OT.clear_filters()
 
 /mob/living/carbon/human/proc/handle_artifacts()
 	src.global_armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "psy" = 0)
@@ -169,6 +179,23 @@
 			if(slurring < 100)
 				apply_effect(rand(20, 35), EFFECT_SLUR, 0)
 			if (!zombified)
+				if(!client)
+					return
+				var/obj/screen/plane_master/floor/OT = locate(/obj/screen/plane_master/floor) in client.screen
+				var/obj/screen/plane_master/battle/GW = locate(/obj/screen/plane_master/battle) in client.screen
+				GW.filters += filter(type="wave", x=48, y=25, size=1)
+				OT.filters += filter(type="wave", x=48, y=15, size=1)
+				add_trait(TRAIT_DUMB, TRAUMA_TRAIT)
+				add_trait(TRAIT_UNINTELLIGIBLE_SPEECH, TRAUMA_TRAIT)
+				add_trait(TRAIT_SOOTHED_THROAT, TRAUMA_TRAIT)
+				var/datum/brain_trauma/mild/concussion/T = new()
+				gain_trauma(T, TRAUMA_RESILIENCE_ABSOLUTE)
+				var/datum/brain_trauma/mild/hallucinations/B = new()
+				gain_trauma(B, TRAUMA_RESILIENCE_ABSOLUTE)
+				var/datum/brain_trauma/mild/muscle_spasms/D = new()
+				gain_trauma(D, TRAUMA_RESILIENCE_ABSOLUTE)
+				var/datum/brain_trauma/mild/muscle_weakness/U = new()
+				gain_trauma(U, TRAUMA_RESILIENCE_ABSOLUTE)
 				zombified = 1
 				if (prob(5))
 					brainwash(src, list("Благодарим Тебя за то, что раскрыл слугам Твоим козни врагов наших. \

@@ -317,6 +317,7 @@
 		if(!affecting)
 			affecting = get_bodypart(BODY_ZONE_CHEST)
 		var/armor = run_armor_check(affecting, "melee", armour_penetration = M.armour_penetration)
+		tension += 15
 		apply_damage(damage, M.melee_damage_type, affecting, armor)
 
 

@@ -21,6 +21,8 @@
 	distro = 25
 	can_scope = 1
 	weapon_weight = WEAPON_MEDIUM
+	semi_auto = TRUE
+	bolt_type = BOLT_TYPE_NO_BOLT
 	fire_sound = 'stalker/sound/weapons/bm16_shot.ogg'
 	load_sound = 'stalker/sound/weapons/load/obrez_load.ogg'
 	eject_sound = 'stalker/sound/weapons/unload/obrez_open.ogg'

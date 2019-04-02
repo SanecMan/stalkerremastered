@@ -189,10 +189,12 @@
 	cold_protection = HEAD
 	min_cold_protection_temperature = FIRE_SUIT_MIN_TEMP_PROTECT
 	durability = -1
+	flags_inv = HIDEEARS|HIDEHAIR
 
 /obj/item/clothing/head/hooded/stalker/kozhanka
 	icon_state = "winterhood_kozhanka"
 	armor = list("melee" = 10, "bullet" = 0, "laser" = 10, "energy" = 10, "bomb" = 10, "bio" = 10, "rad" = 30, "fire" = 10, "psy" = 0)
+	flags_inv = HIDEEARS|HIDEHAIR
 
 /obj/item/clothing/suit/hooded/kozhanka/white
 	icon_state = "kozhanka_wh"
@@ -202,6 +204,7 @@
 /obj/item/clothing/head/hooded/stalker/kozhanka_wh
 	armor = list("melee" = 10, "bullet" = 0, "laser" = 10, "energy" = 10, "bomb" = 10, "bio" = 10, "rad" = 30, "fire" = 10, "psy" = 0)
 	icon_state = "winterhood_kozhanka_wh"
+	flags_inv = HIDEEARS|HIDEHAIR
 
 /obj/item/clothing/suit/hooded/kozhanka/banditka
 	name = "bandit jacket"
@@ -216,6 +219,7 @@
 /obj/item/clothing/head/hooded/stalker/banditka
 	armor = list("melee" = 15, "bullet" = 0, "laser" = 15, "energy" = 5, "bomb" = 0, "bio" = 5, "rad" = 20, "fire" = 5, "psy" = 0)
 	icon_state = "winterhood_banditka"
+	flags_inv = HIDEEARS|HIDEHAIR
 
 /obj/item/clothing/suit/hooded/kozhanka/banditka/unique
 	name = "chain-mail jacket"
@@ -256,6 +260,7 @@
 	heat_protection = HEAD
 	max_heat_protection_temperature = SPACE_SUIT_MIN_TEMP_PROTECT
 	icon_state = "winterhood_kombez"
+	flags_inv = HIDEEARS|HIDEHAIR
 
 /obj/item/clothing/suit/jacket/sidor
 	name = "old vest"
@@ -281,6 +286,7 @@
 /obj/item/clothing/head/hooded/stalker/bandit
 	armor = list("melee" = 15, "bullet" = 0, "laser" = 15, "energy" = 30, "bomb" = 10, "bio" = 10, "rad" = 30, "fire" = 30, "psy" = 0)
 	icon_state = "winterhood_banditcoat"
+	flags_inv = HIDEEARS|HIDEHAIR
 
 /obj/item/clothing/suit/hooded/kozhanka/banditka/coat/brown
 	icon_state = "banditcoatbrown"
@@ -291,6 +297,7 @@
 /obj/item/clothing/head/hooded/stalker/banditbrown
 	armor = list("melee" = 20, "bullet" = 0, "laser" = 15, "energy" = 30, "bomb" = 0, "bio" = 10, "rad" = 30, "fire" = 30, "psy" = 0)
 	icon_state = "winterhood_banditcoatbrown"
+	flags_inv = HIDEEARS|HIDEHAIR
 
 /obj/item/clothing/suit/hooded/sealed
 	name = "test"

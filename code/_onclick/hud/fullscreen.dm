@@ -185,6 +185,13 @@
 	blend_mode = BLEND_ADD
 	show_when_dead = TRUE
 
+
+/obj/screen/fullscreen/just_noise
+	icon = 'icons/mob/screen_gen.dmi'
+	screen_loc = "WEST,SOUTH to EAST,NORTH"
+	icon_state = "noise"
+	alpha = 25
+
 /obj/screen/fullscreen/whitenoise
 	icon_state = "whitenoise"
 	layer = UI_DAMAGE_LAYER

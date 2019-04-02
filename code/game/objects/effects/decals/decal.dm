@@ -34,7 +34,7 @@
 /obj/effect/turf_decal
 	icon = 'icons/turf/decals.dmi'
 	icon_state = "warningline"
-	layer = ABOVE_OPEN_TURF_LAYER
+	layer = LATTICE_LAYER
 
 /obj/effect/turf_decal/Initialize()
 	..()

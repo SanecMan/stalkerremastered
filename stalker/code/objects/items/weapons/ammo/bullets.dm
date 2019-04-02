@@ -113,3 +113,10 @@
 	armour_penetration = 0
 	range = 80
 	spread = 2
+
+/obj/item/projectile/bullet/fragment
+	name = "fragment"
+	damage = 25
+	armour_penetration = 25
+	range = 6
+	spread = 15

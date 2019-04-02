@@ -75,7 +75,7 @@
 	if (!country)
 		return "N/A"
 	var/datum/asset/spritesheet/sheet = get_asset_datum(/datum/asset/spritesheet/goonchat)
-	if ("RU" || "UK" || "JP" || "US" || "UA")
+	if ("RU" || "UK" || "JP" || "US" || "UA" || "KZ" || "BY")
 		return sheet.icon_tag("flags-[country]")
 	else
 		return sheet.icon_tag("US")
