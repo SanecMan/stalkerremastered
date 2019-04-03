@@ -142,7 +142,7 @@ obj/structure/grille/stalker/beton/CanPass(atom/movable/mover, turf/target, heig
 
 var/global/list/AsphaltEdgeCache
 
-/turf/open/stalker/floor/asphalt/Initialize()
+/turf/open/stalker/floor/asphalt/New()
 	icon_state = "road[rand(1, 3)]"
 	if(!AsphaltEdgeCache || !AsphaltEdgeCache.len)
 		AsphaltEdgeCache = list()
@@ -174,7 +174,7 @@ var/global/list/AsphaltEdgeCache
 
 var/global/list/TropaEdgeCache
 
-/turf/open/stalker/floor/tropa/Initialize()
+/turf/open/stalker/floor/tropa/New()
 	if(!TropaEdgeCache || !TropaEdgeCache.len)
 		TropaEdgeCache = list()
 		TropaEdgeCache.len = 10
@@ -203,7 +203,7 @@ var/global/list/TropaEdgeCache
 
 var/global/list/WhiteRoadCache
 
-/turf/open/stalker/floor/road/Initialize()
+/turf/open/stalker/floor/road/New()
 	switch(rand(1, 100))
 		if(1 to 65)
 			icon_state = "road2"
@@ -242,7 +242,7 @@ var/global/list/WhiteRoadCache
 
 var/global/list/GryazEdgeCache
 
-/turf/open/stalker/floor/gryaz/Initialize()
+/turf/open/stalker/floor/gryaz/New()
 	icon_state = "gryaz[rand(1, 3)]"
 	if(!GryazEdgeCache || !GryazEdgeCache.len)
 		GryazEdgeCache = list()

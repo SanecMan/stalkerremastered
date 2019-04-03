@@ -212,6 +212,9 @@ GLOBAL_LIST_EMPTY(spawned_artifacts)
 /obj/anomaly/proc/DealDamage(var/mob/living/L)
 	if(!(L in src.trapped))
 		return
+	if(istype(L, /mob/living/simple_animal))
+		qdel(L)
+		return
 
 	lasttime = world.time
 
@@ -240,6 +243,9 @@ GLOBAL_LIST_EMPTY(spawned_artifacts)
 
 /obj/anomaly/tramplin/DealDamage(var/mob/living/L)
 	if(!(L in src.trapped))
+		return
+	if(istype(L, /mob/living/simple_animal))
+		qdel(L)
 		return
 
 	L.apply_damage(src.damage_amount, BRUTE, null, 0)
