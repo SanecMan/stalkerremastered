@@ -20,4 +20,4 @@ GLOBAL_PROTECT(st_whitelist)
 			return TRUE
 	return FALSE
 
-#undef WHITELISTFILE
+#undef ST_WHITELISTFILE
