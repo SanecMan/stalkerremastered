@@ -39,6 +39,7 @@
 SUBSYSTEM_DEF(blowout)
 	name = "Blowouts"
 	priority = 1
+	runlevels = RUNLEVEL_GAME
 	var/isblowout = 0
 	var/blowout_count = 0
 	var/blowoutphase = 0
