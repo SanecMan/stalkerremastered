@@ -113,8 +113,10 @@
 /mob/living/carbon/human/proc/battle_screen_on()
 	if(!client)
 		return
+	var/obj/screen/plane_master/battle/BT = locate(/obj/screen/plane_master/battle) in client.screen
+	var/obj/screen/plane_master/game_world/GW = locate(/obj/screen/plane_master/game_world) in client.screen
 	var/obj/screen/plane_master/floor/OT = locate(/obj/screen/plane_master/floor) in client.screen
-	var/obj/screen/plane_master/battle/GW = locate(/obj/screen/plane_master/battle) in client.screen
+	BT.filters += filter(type="wave", x=1, y=1, size=1)
 	GW.filters += filter(type="wave", x=1, y=1, size=1)
 	OT.filters += filter(type="wave", x=1, y=1, size=1)
 
@@ -122,8 +124,10 @@
 	if(!client)
 		return
 	var/obj/screen/plane_master/floor/OT = locate(/obj/screen/plane_master/floor) in client.screen
-	var/obj/screen/plane_master/battle/GW = locate(/obj/screen/plane_master/battle) in client.screen
+	var/obj/screen/plane_master/battle/BT = locate(/obj/screen/plane_master/battle) in client.screen
+	var/obj/screen/plane_master/game_world/GW = locate(/obj/screen/plane_master/game_world) in client.screen
 	GW.clear_filters()
+	BT.clear_filters()
 	OT.clear_filters()
 
 /mob/living/carbon/human/proc/handle_artifacts()
@@ -182,9 +186,11 @@
 				if(!client)
 					return
 				var/obj/screen/plane_master/floor/OT = locate(/obj/screen/plane_master/floor) in client.screen
-				var/obj/screen/plane_master/battle/GW = locate(/obj/screen/plane_master/battle) in client.screen
+				var/obj/screen/plane_master/battle/BT = locate(/obj/screen/plane_master/battle) in client.screen
+				var/obj/screen/plane_master/game_world/GW = locate(/obj/screen/plane_master/game_world) in client.screen
 				GW.filters += filter(type="wave", x=48, y=25, size=1)
 				OT.filters += filter(type="wave", x=48, y=15, size=1)
+				BT.filters += filter(type="wave", x=20, y=15, size=1)
 				add_trait(TRAIT_DUMB, TRAUMA_TRAIT)
 				add_trait(TRAIT_UNINTELLIGIBLE_SPEECH, TRAUMA_TRAIT)
 				add_trait(TRAIT_SOOTHED_THROAT, TRAUMA_TRAIT)

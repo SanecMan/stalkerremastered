@@ -212,6 +212,9 @@ GLOBAL_LIST_EMPTY(spawned_artifacts)
 /obj/anomaly/proc/DealDamage(var/mob/living/L)
 	if(!(L in src.trapped))
 		return
+	if(istype(L, /mob/living/simple_animal))
+		qdel(L)
+		return
 
 	lasttime = world.time
 
@@ -240,6 +243,9 @@ GLOBAL_LIST_EMPTY(spawned_artifacts)
 
 /obj/anomaly/tramplin/DealDamage(var/mob/living/L)
 	if(!(L in src.trapped))
+		return
+	if(istype(L, /mob/living/simple_animal))
+		qdel(L)
 		return
 
 	L.apply_damage(src.damage_amount, BRUTE, null, 0)
@@ -650,19 +656,19 @@ GLOBAL_LIST_EMPTY(spawned_artifacts)
 		if(istype(H.wear_id,/obj/item/stalker_pda))
 			H << sound(src.sound, repeat = 0, wait = 0, volume = 50, channel = 3)
 
-		//if(src.trapped.len >= 1)
-		//	SSobj.processing |= src
+		if(src.trapped.len >= 1)
+			SSobj.processing -= src
 
 /obj/rad/Uncrossed(atom/A)
 	..()
 	if (istype(A,/mob/living/carbon/human))
 		var/mob/living/carbon/human/H = A
 		src.trapped -= H
-		//SSobj.processing.Remove(src)
+		SSobj.processing -= (src)
 
 /obj/rad/process()
 	if(src.trapped.len < 1)
-		//SSobj.processing.Remove(src)
+		SSobj.processing -= (src)
 		return
 
 	if(lasttime + cooldown > world.time)
