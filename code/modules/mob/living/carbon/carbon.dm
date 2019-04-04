@@ -748,18 +748,10 @@
 	//rad stalker damage
 	if(radiation)
 		switch(radiation)
-			if(5 to 15)
-				hud_used.whitenoise.alpha = 10
-			if(15 to 30)
-				hud_used.whitenoise.alpha = 20
-			if(30 to 45)
-				hud_used.whitenoise.alpha = 40
-			if(45 to 70)
-				hud_used.whitenoise.alpha = 60
-			if(70 to 85)
-				hud_used.whitenoise.alpha = 80
+			if(5 to 84)
+				hud_used.whitenoise.alpha = radiation
 			if(85 to INFINITY)
-				hud_used.whitenoise.alpha = 100
+				hud_used.whitenoise.alpha = 85
 	else
 		hud_used.whitenoise.alpha = 0
 
@@ -772,21 +764,79 @@
 			if(!shown_health_amount)
 				shown_health_amount = health
 			if(shown_health_amount >= maxHealth)
-				hud_used.healths.icon_state = "health0"
+				hud_used.healths.icon_state = "health_line0"
+			else if(shown_health_amount > maxHealth*0.9)
+				hud_used.healths.icon_state = "health_line1"
 			else if(shown_health_amount > maxHealth*0.8)
-				hud_used.healths.icon_state = "health1"
+				hud_used.healths.icon_state = "health_line2"
+			else if(shown_health_amount > maxHealth*0.7)
+				hud_used.healths.icon_state = "health_line3"
 			else if(shown_health_amount > maxHealth*0.6)
-				hud_used.healths.icon_state = "health2"
+				hud_used.healths.icon_state = "health_line4"
+			else if(shown_health_amount > maxHealth*0.5)
+				hud_used.healths.icon_state = "health_line5"
 			else if(shown_health_amount > maxHealth*0.4)
-				hud_used.healths.icon_state = "health3"
+				hud_used.healths.icon_state = "health_line6"
+			else if(shown_health_amount > maxHealth*0.3)
+				hud_used.healths.icon_state = "health_line7"
 			else if(shown_health_amount > maxHealth*0.2)
-				hud_used.healths.icon_state = "health4"
+				hud_used.healths.icon_state = "health_line8"
+			else if(shown_health_amount > maxHealth*0.1)
+				hud_used.healths.icon_state = "health_line9"
 			else if(shown_health_amount > 0)
-				hud_used.healths.icon_state = "health5"
+				hud_used.healths.icon_state = "health_line9"
 			else
-				hud_used.healths.icon_state = "health6"
+				hud_used.healths.icon_state = "health_line9"
 		else
-			hud_used.healths.icon_state = "health7"
+			hud_used.healths.icon_state = "health"
+
+		switch(radiation)
+			if(-INFINITY to 4)
+				hud_used.rads.icon_state = "rad_line"
+			if(5 to 9)
+				hud_used.rads.icon_state = "rad_line9"
+			if(10 to 19)
+				hud_used.rads.icon_state = "rad_line8"
+			if(20 to 29)
+				hud_used.rads.icon_state = "rad_line7"
+			if(30 to 39)
+				hud_used.rads.icon_state = "rad_line6"
+			if(40 to 49)
+				hud_used.rads.icon_state = "rad_line5"
+			if(50 to 59)
+				hud_used.rads.icon_state = "rad_line4"
+			if(60 to 69)
+				hud_used.rads.icon_state = "rad_line3"
+			if(70 to 79)
+				hud_used.rads.icon_state = "rad_line2"
+			if(80 to 89)
+				hud_used.rads.icon_state = "rad_line1"
+			if(90 to INFINITY)
+				hud_used.rads.icon_state = "rad_line0"
+
+		switch(getStaminaLoss())
+			if(-INFINITY to 4)
+				hud_used.stamina.icon_state = "stamina_line0"
+			if(5 to 9)
+				hud_used.stamina.icon_state = "stamina_line0"
+			if(10 to 19)
+				hud_used.stamina.icon_state = "stamina_line1"
+			if(20 to 29)
+				hud_used.stamina.icon_state = "stamina_line2"
+			if(30 to 39)
+				hud_used.stamina.icon_state = "stamina_line3"
+			if(40 to 49)
+				hud_used.stamina.icon_state = "stamina_line4"
+			if(50 to 59)
+				hud_used.stamina.icon_state = "stamina_line5"
+			if(60 to 69)
+				hud_used.stamina.icon_state = "stamina_line6"
+			if(70 to 79)
+				hud_used.stamina.icon_state = "stamina_line7"
+			if(80 to 89)
+				hud_used.stamina.icon_state = "stamina_line8"
+			if(90 to INFINITY)
+				hud_used.stamina.icon_state = "stamina_line9"
 
 /mob/living/carbon/proc/update_internals_hud_icon(internal_state = 0)
 	if(hud_used && hud_used.internals)

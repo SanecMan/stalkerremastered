@@ -91,13 +91,13 @@
 	using.icon = ui_style
 	static_inventory += using
 
-	using = new/obj/screen/language_menu
-	using.icon = ui_style
-	static_inventory += using
+	//using = new/obj/screen/language_menu
+	//using.icon = ui_style
+	//static_inventory += using
 
-	using = new /obj/screen/area_creator
-	using.icon = ui_style
-	static_inventory += using
+	//using = new /obj/screen/area_creator
+	//using.icon = ui_style
+	//static_inventory += using
 
 	action_intent = new /obj/screen/act_intent/segmented
 	action_intent.icon_state = mymob.a_intent
@@ -134,15 +134,15 @@
 
 	using = new /obj/screen/swap_hand()
 	using.icon = ui_style
-	using.icon_state = "swap_1"
+	using.icon_state = "swap"
 	using.screen_loc = ui_swaphand_position(owner,1)
 	static_inventory += using
 
-	using = new /obj/screen/swap_hand()
-	using.icon = ui_style
-	using.icon_state = "swap_2"
-	using.screen_loc = ui_swaphand_position(owner,2)
-	static_inventory += using
+	//using = new /obj/screen/swap_hand()
+	//using.icon = ui_style
+	//using.icon_state = "swap_2"
+	//using.screen_loc = ui_swaphand_position(owner,2)
+	//static_inventory += using
 
 	inv_box = new /obj/screen/inventory()
 	inv_box.name = "id"
@@ -205,15 +205,15 @@
 	using.screen_loc = ui_above_intent
 	hotkeybuttons += using
 
-	using = new /obj/screen/human/toggle()
-	using.icon = ui_style
-	using.screen_loc = ui_inventory
-	static_inventory += using
+	//using = new /obj/screen/human/toggle()
+	//using.icon = ui_style
+	//using.screen_loc = ui_inventory
+	//static_inventory += using
 
-	using = new /obj/screen/human/equip()
-	using.icon = ui_style
-	using.screen_loc = ui_equip_position(mymob)
-	static_inventory += using
+	//using = new /obj/screen/human/equip()
+	//using.icon = ui_style
+	//using.screen_loc = ui_equip_position(mymob)
+	//static_inventory += using
 
 	inv_box = new /obj/screen/inventory()
 	inv_box.name = "gloves"
@@ -280,17 +280,37 @@
 	healths = new /obj/screen/healths()
 	infodisplay += healths
 
+	rads = new /obj/screen/rads()
+	infodisplay += rads
+
+	stamina = new /obj/screen/stamina()
+	infodisplay += stamina
+
 	healthdoll = new /obj/screen/healthdoll()
 	infodisplay += healthdoll
 
 	whitenoise = new /obj/screen/fullscreen/whitenoise()
 	infodisplay += whitenoise
 
+	using = new /obj/screen/left_panel()
+	using.icon = 'icons/mob/screen_left.dmi'
+	using.screen_loc = ui_left_panel
+	static_inventory += using
+
+	using = new /obj/screen/right_panel()
+	using.icon = 'icons/mob/screen_right.dmi'
+	using.screen_loc = ui_right_panel
+	static_inventory += using
+
+	using = new /obj/screen/stats_panel()
+	using.icon = 'stalker/icons/stats_bg.dmi'
+	using.screen_loc = ui_health
+	static_inventory += using
 
 	pull_icon = new /obj/screen/pull()
 	pull_icon.icon = ui_style
 	pull_icon.update_icon(mymob)
-	pull_icon.screen_loc = ui_above_intent
+	pull_icon.screen_loc = ui_pull_intent
 	static_inventory += pull_icon
 
 	lingchemdisplay = new /obj/screen/ling/chems()

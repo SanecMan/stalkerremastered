@@ -583,10 +583,22 @@
 	plane = FULLSCREEN_PLANE
 
 /obj/screen/healths
-	icon = 'stalker/icons/screen_health.dmi'
+	icon = 'stalker/icons/stats_new.dmi'
 	name = "health"
-	icon_state = "health0"
+	icon_state = "health_line0"
 	screen_loc = ui_health
+
+/obj/screen/rads
+	icon = 'stalker/icons/stats_new.dmi'
+	name = "rad"
+	icon_state = "rad_line0"
+	screen_loc = ui_health_rad
+
+/obj/screen/stamina
+	icon = 'stalker/icons/stats_new.dmi'
+	name = "stamina"
+	icon_state = "stamina_line0"
+	screen_loc = ui_health_stamina
 
 /obj/screen/healths/alien
 	icon = 'icons/mob/screen_alien.dmi'
@@ -719,3 +731,19 @@
 /obj/screen/component_button/Click(params)
 	if(parent)
 		parent.component_click(src, params)
+
+/obj/screen/stats_panel
+	icon = 'stalker/icons/stats_bg.dmi'
+	icon_state = "stats"
+
+/obj/screen/left_panel
+	icon = 'icons/mob/screen_left.dmi'
+	icon_state = "left"
+	layer = HUD_LAYER
+	plane = HUD_PLANE
+
+/obj/screen/right_panel
+	icon = 'icons/mob/screen_right.dmi'
+	icon_state = "right"
+	layer = HUD_LAYER
+	plane = HUD_PLANE

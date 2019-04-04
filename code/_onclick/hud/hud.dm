@@ -22,7 +22,7 @@ GLOBAL_LIST_INIT(available_ui_styles, list(
 
 	var/hud_shown = TRUE			//Used for the HUD toggle (F12)
 	var/hud_version = HUD_STYLE_STANDARD	//Current displayed version of the HUD
-	var/inventory_shown = FALSE		//Equipped item inventory
+	var/inventory_shown = TRUE		//Equipped item inventory
 	var/hotkey_ui_hidden = FALSE	//This is to hide the buttons that can be used via hotkeys. (hotkeybuttons list of buttons)
 
 	var/obj/screen/ling/chems/lingchemdisplay
@@ -55,6 +55,8 @@ GLOBAL_LIST_INIT(available_ui_styles, list(
 	var/action_buttons_hidden = FALSE
 
 	var/obj/screen/healths
+	var/obj/screen/rads
+	var/obj/screen/stamina
 	var/obj/screen/healthdoll
 	var/obj/screen/internals
 
@@ -101,6 +103,8 @@ GLOBAL_LIST_INIT(available_ui_styles, list(
 	QDEL_LIST(infodisplay)
 
 	healths = null
+	rads = null
+	stamina = null
 	healthdoll = null
 	internals = null
 	lingchemdisplay = null
@@ -250,15 +254,15 @@ GLOBAL_LIST_INIT(available_ui_styles, list(
 	hide_actions_toggle.InitialiseIcon(src)
 
 //Triggered when F12 is pressed (Unless someone changed something in the DMF)
-/mob/verb/button_pressed_F12()
-	set name = "F12"
-	set hidden = TRUE
+///mob/verb/button_pressed_F12()
+	//set name = "F12"
+	//set hidden = TRUE
 
-	if(hud_used && client)
-		hud_used.show_hud() //Shows the next hud preset
-		to_chat(usr, "<span class ='info'>Switched HUD mode. Press F12 to toggle.</span>")
-	else
-		to_chat(usr, "<span class ='warning'>This mob type does not use a HUD.</span>")
+	//if(hud_used && client)
+	//	hud_used.show_hud() //Shows the next hud preset
+	//	to_chat(usr, "<span class ='info'>Switched HUD mode. Press F12 to toggle.</span>")
+	//else
+	//	to_chat(usr, "<span class ='warning'>This mob type does not use a HUD.</span>")
 
 
 //(re)builds the hand ui slots, throwing away old ones
@@ -287,8 +291,8 @@ GLOBAL_LIST_INIT(available_ui_styles, list(
 	for(var/obj/screen/swap_hand/SH in static_inventory)
 		SH.screen_loc = ui_swaphand_position(mymob,!(i % 2) ? 2: 1)
 		i++
-	for(var/obj/screen/human/equip/E in static_inventory)
-		E.screen_loc = ui_equip_position(mymob)
+	//for(var/obj/screen/human/equip/E in static_inventory)
+	//	E.screen_loc = ui_equip_position(mymob)
 
 	if(ismob(mymob) && mymob.hud_used == src)
 		show_hud(hud_version)

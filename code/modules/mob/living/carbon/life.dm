@@ -375,9 +375,14 @@
 			if(HM && HM.timed)
 				dna.remove_mutation(HM.type)
 
-	radiation -= min(radiation, RAD_LOSS_PER_TICK)
-	if(radiation > RAD_MOB_SAFE)
-		adjustFireLoss(log(radiation-RAD_MOB_SAFE)*RAD_TOX_COEFFICIENT)
+	if(radiation)
+		radiation -= 1
+		switch(radiation)
+			if(5 to INFINITY)
+				adjustFireLoss(radiation*0.02)
+				updatehealth()
+
+		radiation = CLAMP(radiation, 0, 100)
 
 /mob/living/carbon/handle_stomach()
 	set waitfor = 0
