@@ -307,6 +307,7 @@ GLOBAL_VAR_INIT(normal_ooc_colour, OOC_COLOR)
 	set name = "Your Last Round"
 	set category = "OOC"
 	set desc = "View the last round end report you've seen"
+	set hidden = TRUE
 
 	SSticker.show_roundend_report(src, TRUE)
 
@@ -335,7 +336,6 @@ GLOBAL_VAR_INIT(normal_ooc_colour, OOC_COLOR)
 	// +4 pixels are for the width of the splitter's handle
 	var/pct = 100 * (desired_width + 4) / split_width
 	winset(src, "mainwindow.split", "splitter=[pct]")
-
 	// Apply an ever-lowering offset until we finish or fail
 	var/delta
 	for(var/safety in 1 to 10)
