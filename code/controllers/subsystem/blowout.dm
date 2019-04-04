@@ -11,6 +11,7 @@
 				to_chat(C, "<big><span class='warning'>You leave the shelter.</span></big>")
 			else
 				to_chat(C, "<big><span class='warning'>Вы покидаете укрытие.</span></big>")
+			C.overlay_fullscreen("blowjob", /obj/screen/fullscreen/color_vision/blowjob)
 		C.inshelter = 0
 
 /area/stalker/Entered(var/atom/movable/A)
@@ -22,6 +23,7 @@
 				to_chat(C, "<big><span class='notice'>You enter the shelter.</span></big>")
 			else
 				to_chat(C, "<big><span class='notice'>Вы заходите в укрытие.</span></big>")
+			C.clear_fullscreen("blowjob")
 		C.inshelter = 1
 
 /area/proc/CheckControl(var/mob/living/carbon/C)
@@ -114,7 +116,7 @@ SUBSYSTEM_DEF(blowout)
 	blowoutphase = 1
 	starttime = world.time
 
-	SSnightcycle.updateLight("BLOWOUT")
+	//SSnightcycle.updateLight("BLOWOUT")
 
 	add_lenta_message(null, "0", "Sidorovich", "Loners", "ВНИМАНИЕ, СТАЛКЕРЫ! Приближается выброс! Ищите ближайшее укрытие!")
 	world << sound('stalker/sound/blowout/blowout_begin_02.ogg', wait = 0, channel = 201, volume = 50)
@@ -123,8 +125,10 @@ SUBSYSTEM_DEF(blowout)
 	for(var/mob/living/carbon/C in GLOB.player_list)
 		if(!C.inshelter)
 			to_chat(C, "<big><span class='warning'>Вам нужно срочно искать укрытие, скоро начнётся выброс!</span></big>")
+			C.overlay_fullscreen("blowjob", /obj/screen/fullscreen/color_vision/blowjob)
 		else
 			to_chat(C, "<big><span class='notice'>Вы в укрытии, осталось только переждать выброс.</span></big>")
+			C.clear_fullscreen("blowjob")
 
 /datum/controller/subsystem/blowout/proc/PreStopBlowout()
 	blowoutphase = 2
@@ -146,6 +150,7 @@ SUBSYSTEM_DEF(blowout)
 
 /datum/controller/subsystem/blowout/proc/BlowoutDealDamage()
 	for(var/mob/living/carbon/human/H)
+		H.clear_fullscreen("blowjob")
 		if(!H.inshelter)
 			H.apply_damage(200, PSY)
 		CHECK_TICK

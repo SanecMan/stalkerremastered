@@ -158,6 +158,9 @@
 /obj/screen/fullscreen/color_vision/blue
 	color = "#0000ff"
 
+/obj/screen/fullscreen/color_vision/blowjob
+	color = "#ff1111"
+
 /obj/screen/fullscreen/lighting_backdrop
 	icon = 'icons/mob/screen_gen.dmi'
 	icon_state = "flash"
