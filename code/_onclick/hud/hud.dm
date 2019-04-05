@@ -163,7 +163,10 @@ GLOBAL_LIST_INIT(available_ui_styles, list(
 			screenmob.client.screen += hide_actions_toggle
 
 			if(action_intent)
-				action_intent.screen_loc = initial(action_intent.screen_loc) //Restore intent selection to the original position
+				if (mymob.client.prefs.widescreen)
+					action_intent.screen_loc = ui_acti_wide	//move this to the alternative position, where zone_select usually is.
+				else
+					action_intent.screen_loc = ui_acti
 
 		if(HUD_STYLE_REDUCED)	//Reduced HUD
 			hud_shown = FALSE	//Governs behavior of other procs
@@ -183,7 +186,10 @@ GLOBAL_LIST_INIT(available_ui_styles, list(
 					screenmob.client.screen += hand
 			if(action_intent)
 				screenmob.client.screen += action_intent		//we want the intent switcher visible
-				action_intent.screen_loc = ui_acti_alt	//move this to the alternative position, where zone_select usually is.
+				if (mymob.client.prefs.widescreen)
+					action_intent.screen_loc = ui_acti_alt_wide	//move this to the alternative position, where zone_select usually is.
+				else
+					action_intent.screen_loc = ui_acti_alt
 
 		if(HUD_STYLE_NOHUD)	//No HUD
 			hud_shown = FALSE	//Governs behavior of other procs
@@ -280,7 +286,10 @@ GLOBAL_LIST_INIT(available_ui_styles, list(
 		hand_box.name = mymob.get_held_index_name(i)
 		hand_box.icon = ui_style
 		hand_box.icon_state = "hand_[mymob.held_index_to_dir(i)]"
-		hand_box.screen_loc = ui_hand_position(i)
+		if (mymob.client && (mymob.client.prefs.widescreen))
+			hand_box.screen_loc = ui_hand_position_wide(i)
+		else
+			hand_box.screen_loc = ui_hand_position(i)
 		hand_box.held_index = i
 		hand_slots["[i]"] = hand_box
 		hand_box.hud = src

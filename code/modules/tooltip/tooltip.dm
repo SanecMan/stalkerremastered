@@ -59,24 +59,25 @@ Notes:
 
 	showing = 1
 
-	if (title && content)
-		title = "<h1>[title]</h1>"
-		content = "<p>[content]</p>"
-	else if (title && !content)
-		title = "<p>[title]</p>"
-	else if (!title && content)
-		content = "<p>[content]</p>"
+	if (!owner.prefs.widescreen)
+		if (title && content)
+			title = "<h1>[title]</h1>"
+			content = "<p>[content]</p>"
+		else if (title && !content)
+			title = "<p>[title]</p>"
+		else if (!title && content)
+			content = "<p>[content]</p>"
 
-	// Strip macros from item names
-	title = replacetext(title, "\proper", "")
-	title = replacetext(title, "\improper", "")
+		// Strip macros from item names
+		title = replacetext(title, "\proper", "")
+		title = replacetext(title, "\improper", "")
 
-	//Make our dumb param object
-	params = {"{ "cursor": "[params]", "screenLoc": "[thing.screen_loc]" }"}
+		//Make our dumb param object
+		params = {"{ "cursor": "[params]", "screenLoc": "[thing.screen_loc]" }"}
 
-	//Send stuff to the tooltip
-	var/view_size = getviewsize(owner.view)
-	owner << output(list2params(list(params, view_size[1] , view_size[2], "[title][content]", theme, special)), "[control]:tooltip.update")
+		//Send stuff to the tooltip
+		var/view_size = getviewsize(owner.view)
+		owner << output(list2params(list(params, view_size[1] , view_size[2], "[title][content]", theme, special)), "[control]:tooltip.update")
 
 	//If a hide() was hit while we were showing, run hide() again to avoid stuck tooltips
 	showing = 0

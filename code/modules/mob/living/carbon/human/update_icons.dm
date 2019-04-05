@@ -106,7 +106,10 @@ There are several things that need to be remembered:
 
 	if(istype(w_uniform, /obj/item/clothing/under))
 		var/obj/item/clothing/under/U = w_uniform
-		U.screen_loc = ui_iclothing
+		if (src.client && (src.client.prefs.widescreen))
+			U.screen_loc = ui_iclothing_wide
+		else
+			U.screen_loc = ui_iclothing
 		if(client && hud_used && hud_used.hud_shown)
 			if(hud_used.inventory_shown)
 				client.screen += w_uniform
@@ -154,7 +157,10 @@ There are several things that need to be remembered:
 	var/mutable_appearance/id_overlay = overlays_standing[ID_LAYER]
 
 	if(wear_id)
-		wear_id.screen_loc = ui_id
+		if (src.client && (src.client.prefs.widescreen))
+			wear_id.screen_loc = ui_id_wide
+		else
+			wear_id.screen_loc = ui_id
 		if(client && hud_used && hud_used.hud_shown)
 			client.screen += wear_id
 		update_observer_view(wear_id)
@@ -188,7 +194,10 @@ There are several things that need to be remembered:
 
 	var/mutable_appearance/gloves_overlay = overlays_standing[GLOVES_LAYER]
 	if(gloves)
-		gloves.screen_loc = ui_gloves
+		if (src.client && (src.client.prefs.widescreen))
+			gloves.screen_loc = ui_gloves_wide
+		else
+			gloves.screen_loc = ui_gloves
 		if(client && hud_used && hud_used.hud_shown)
 			if(hud_used.inventory_shown)
 				client.screen += gloves
@@ -216,7 +225,10 @@ There are several things that need to be remembered:
 		inv.update_icon()
 
 	if(glasses)
-		glasses.screen_loc = ui_glasses		//...draw the item in the inventory screen
+		if (src.client && (src.client.prefs.widescreen))
+			glasses.screen_loc = ui_glasses_wide		//...draw the item in the inventory screen
+		else
+			glasses.screen_loc = ui_glasses
 		if(client && hud_used && hud_used.hud_shown)
 			if(hud_used.inventory_shown)			//if the inventory is open ...
 				client.screen += glasses				//Either way, add the item to the HUD
@@ -244,7 +256,10 @@ There are several things that need to be remembered:
 		inv.update_icon()
 
 	if(ears)
-		ears.screen_loc = ui_ears	//move the item to the appropriate screen loc
+		if (src.client && (src.client.prefs.widescreen))
+			ears.screen_loc = ui_ears_wide	//move the item to the appropriate screen loc
+		else
+			ears.screen_loc = ui_ears
 		if(client && hud_used && hud_used.hud_shown)
 			if(hud_used.inventory_shown)			//if the inventory is open
 				client.screen += ears					//add it to the client's screen
@@ -270,7 +285,10 @@ There are several things that need to be remembered:
 		inv.update_icon()
 
 	if(shoes)
-		shoes.screen_loc = ui_shoes					//move the item to the appropriate screen loc
+		if (src.client && (src.client.prefs.widescreen))
+			shoes.screen_loc = ui_shoes_wide					//move the item to the appropriate screen loc
+		else
+			shoes.screen_loc = ui_shoes
 		if(client && hud_used && hud_used.hud_shown)
 			if(hud_used.inventory_shown)			//if the inventory is open
 				client.screen += shoes					//add it to client's screen
@@ -293,7 +311,10 @@ There are several things that need to be remembered:
 		inv.update_icon()
 
 	if(s_store)
-		s_store.screen_loc = ui_sstore1
+		if (src.client && (src.client.prefs.widescreen))
+			s_store.screen_loc = ui_sstore1_wide
+		else
+			s_store.screen_loc = ui_sstore1
 		if(client && hud_used && hud_used.hud_shown)
 			client.screen += s_store
 		update_observer_view(s_store)
@@ -329,7 +350,10 @@ There are several things that need to be remembered:
 		inv.update_icon()
 
 	if(belt)
-		belt.screen_loc = ui_belt
+		if (src.client && (src.client.prefs.widescreen))
+			belt.screen_loc = ui_belt_wide
+		else
+			belt.screen_loc = ui_belt
 		if(client && hud_used && hud_used.hud_shown)
 			client.screen += belt
 		update_observer_view(belt)
@@ -357,7 +381,10 @@ There are several things that need to be remembered:
 		inv.update_icon()
 
 	if(istype(wear_suit, /obj/item/clothing/suit))
-		wear_suit.screen_loc = ui_oclothing
+		if (src.client && (src.client.prefs.widescreen))
+			wear_suit.screen_loc = ui_oclothing_wide
+		else
+			wear_suit.screen_loc = ui_oclothing
 		if(client && hud_used && hud_used.hud_shown)
 			if(hud_used.inventory_shown)
 				client.screen += wear_suit
@@ -386,13 +413,19 @@ There are several things that need to be remembered:
 		inv.update_icon()
 
 		if(l_store)
-			l_store.screen_loc = ui_storage1
+			if (src.client && (src.client.prefs.widescreen))
+				l_store.screen_loc = ui_storage1_wide
+			else
+				l_store.screen_loc = ui_storage1
 			if(hud_used.hud_shown)
 				client.screen += l_store
 			update_observer_view(l_store)
 
 		if(r_store)
-			r_store.screen_loc = ui_storage2
+			if (src.client && (src.client.prefs.widescreen))
+				r_store.screen_loc = ui_storage2_wide
+			else
+				r_store.screen_loc = ui_storage2
 			if(hud_used.hud_shown)
 				client.screen += r_store
 			update_observer_view(r_store)
@@ -450,7 +483,10 @@ There are several things that need to be remembered:
 
 //update whether our head item appears on our hud.
 /mob/living/carbon/human/update_hud_head(obj/item/I)
-	I.screen_loc = ui_head
+	if (src.client && (src.client.prefs.widescreen))
+		I.screen_loc = ui_head_wide
+	else
+		I.screen_loc = ui_head
 	if(client && hud_used && hud_used.hud_shown)
 		if(hud_used.inventory_shown)
 			client.screen += I
@@ -458,7 +494,10 @@ There are several things that need to be remembered:
 
 //update whether our mask item appears on our hud.
 /mob/living/carbon/human/update_hud_wear_mask(obj/item/I)
-	I.screen_loc = ui_mask
+	if (src.client && (src.client.prefs.widescreen))
+		I.screen_loc = ui_mask_wide
+	else
+		I.screen_loc = ui_mask
 	if(client && hud_used && hud_used.hud_shown)
 		if(hud_used.inventory_shown)
 			client.screen += I
@@ -466,7 +505,10 @@ There are several things that need to be remembered:
 
 //update whether our neck item appears on our hud.
 /mob/living/carbon/human/update_hud_neck(obj/item/I)
-	I.screen_loc = ui_neck
+	if (src.client && (src.client.prefs.widescreen))
+		I.screen_loc = ui_neck_wide
+	else
+		I.screen_loc = ui_neck
 	if(client && hud_used && hud_used.hud_shown)
 		if(hud_used.inventory_shown)
 			client.screen += I
@@ -474,7 +516,10 @@ There are several things that need to be remembered:
 
 //update whether our back item appears on our hud.
 /mob/living/carbon/human/update_hud_back(obj/item/I)
-	I.screen_loc = ui_back
+	if (src.client && (src.client.prefs.widescreen))
+		I.screen_loc = ui_back_wide
+	else
+		I.screen_loc = ui_back
 	if(client && hud_used && hud_used.hud_shown)
 		client.screen += I
 	update_observer_view(I)

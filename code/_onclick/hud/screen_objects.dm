@@ -66,6 +66,13 @@
 	icon_state = "craft"
 	screen_loc = ui_crafting
 
+/obj/screen/craft/New()
+	..()
+	if (usr.client.prefs.widescreen)
+		screen_loc = ui_crafting_wide
+	else
+		screen_loc = ui_crafting
+
 /obj/screen/craft/Click()
 	var/mob/living/M = usr
 	if(isobserver(usr))
@@ -241,6 +248,15 @@
 	name = "intent"
 	icon_state = "help"
 	screen_loc = ui_acti
+
+/obj/screen/act_intent/segmented
+
+/obj/screen/act_intent/segmented/New()
+	..()
+	if (usr.client.prefs.widescreen)
+		screen_loc = ui_acti_wide
+	else
+		screen_loc = ui_acti
 
 /obj/screen/act_intent/Click(location, control, params)
 	usr.a_intent_change(INTENT_HOTKEY_RIGHT)
@@ -600,6 +616,27 @@
 	icon_state = "stamina_line0"
 	screen_loc = ui_health_stamina
 
+/obj/screen/healths/New()
+	..()
+	if (usr.client.prefs.widescreen)
+		screen_loc = ui_health_wide
+	else
+		screen_loc = ui_health
+
+/obj/screen/rads/New()
+	..()
+	if (usr.client.prefs.widescreen)
+		screen_loc = ui_health_rad_wide
+	else
+		screen_loc = ui_health_rad
+
+/obj/screen/stamina/New()
+	..()
+	if (usr.client.prefs.widescreen)
+		screen_loc = ui_health_stamina_wide
+	else
+		screen_loc = ui_health_stamina
+
 /obj/screen/healths/alien
 	icon = 'icons/mob/screen_alien.dmi'
 	screen_loc = ui_alien_health
@@ -658,6 +695,13 @@
 /obj/screen/healthdoll
 	name = "health doll"
 	screen_loc = ui_healthdoll
+
+/obj/screen/healthdoll/New()
+	..()
+	if (usr.client.prefs.widescreen)
+		screen_loc = ui_healthdoll_wide
+	else
+		screen_loc = ui_healthdoll
 
 /obj/screen/healthdoll/Click()
 	if (ishuman(usr))

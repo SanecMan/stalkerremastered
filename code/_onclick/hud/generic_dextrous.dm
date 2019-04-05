@@ -32,6 +32,10 @@
 		if(mymob.possible_a_intents.len == 4)
 			// All possible intents - full intent selector
 			action_intent = new /obj/screen/act_intent/segmented
+			if (mymob.client.prefs.widescreen)
+				action_intent.screen_loc = ui_acti_wide
+			else
+				action_intent.screen_loc = ui_acti
 		else
 			action_intent = new /obj/screen/act_intent
 			action_intent.icon = ui_style
