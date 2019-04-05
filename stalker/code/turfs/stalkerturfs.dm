@@ -23,7 +23,7 @@
 	density = 1
 	anchored = 1
 	flags_1 = CONDUCT_1
-	layer = 2.9
+	layer = 4
 	max_integrity = 10000000
 
 /obj/structure/grille/stalker/ex_act(severity, target)
@@ -116,10 +116,18 @@ obj/structure/grille/stalker/beton/CanPass(atom/movable/mover, turf/target, heig
 /turf/open/stalker/floor/digable/grass/dump
 	icon = 'stalker/icons/zemlya.dmi'
 	icon_state = "dump_grass1"
-/*
-/turf/open/stalker/floor/digable/grass/dump/New()
-	icon_state = "dump_grass[rand(1, 3)]"
-*/
+
+/turf/open/stalker/floor/digable/grass/Initialize()
+	..()
+	if (prob(30))
+		new /obj/structure/flora/ausbushes/fullgrass(get_turf(src))
+		if (prob(30))
+			new /obj/structure/flora/ausbushes/fullgrass(get_turf(src))
+	if (prob(15))
+		new /obj/structure/flora/ausbushes/grassybush(get_turf(src))
+	if (prob(15))
+		new /obj/structure/flora/ausbushes/sunnybush(get_turf(src))
+
 /turf/open/stalker/floor/digable/gryaz_rocky
 	icon_state = "gryaz_rocky1"
 

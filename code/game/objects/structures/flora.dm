@@ -190,10 +190,17 @@
 	desc = "Some kind of plant."
 	icon = 'icons/obj/flora/ausflora.dmi'
 	icon_state = "firstbush_1"
+	alpha = 225
 
 /obj/structure/flora/ausbushes/Initialize()
 	if(icon_state == "firstbush_1")
 		icon_state = "firstbush_[rand(1, 4)]"
+	if(prob(50))
+		color = "#ffffaa"
+	else if (prob(50))
+		color = "#dddd99"
+	pixel_x = rand(-12,12)
+	pixel_y = rand(-12,12)
 	. = ..()
 
 /obj/structure/flora/ausbushes/reedbush
