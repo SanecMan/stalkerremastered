@@ -38,6 +38,7 @@
 	. = ..()
 	update_config_movespeed()
 	update_movespeed(TRUE)
+	add_client_colour(/datum/client_colour/correction)
 
 /mob/GenerateTag()
 	tag = "mob_[next_mob_id++]"
