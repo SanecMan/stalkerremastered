@@ -190,6 +190,7 @@
 	min_cold_protection_temperature = FIRE_SUIT_MIN_TEMP_PROTECT
 	durability = -1
 	flags_inv = HIDEEARS|HIDEHAIR
+	dynamic_hair_suffix = ""
 
 /obj/item/clothing/head/hooded/stalker/kozhanka
 	icon_state = "winterhood_kozhanka"
