@@ -128,6 +128,10 @@
 	colour = list(rgb(255,15,15), rgb(5,225,5), rgb(5,5,225), rgb(0,0,0))
 	priority = INFINITY
 
+/datum/client_colour/retardation
+	colour = list(rgb(125,55,125), rgb(55,155,55), rgb(55,55,255), rgb(0,0,0))
+	priority = INFINITY
+
 /datum/client_colour/monochrome
 	colour = list(rgb(77,77,77), rgb(150,150,150), rgb(28,28,28), rgb(0,0,0))
 	priority = INFINITY //we can't see colors anyway!

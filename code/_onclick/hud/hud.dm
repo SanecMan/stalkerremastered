@@ -6,8 +6,10 @@
 
 // The default UI style is the first one in the list
 GLOBAL_LIST_INIT(available_ui_styles, list(
-	"Midnight" = 'icons/mob/screen_midnight.dmi',
+	"Stalker One" = 'icons/mob/screen_stalkir.dmi',
+	"Stalker Two" = 'icons/mob/screen_stalker.dmi',
 	"Retro" = 'icons/mob/screen_retro.dmi',
+	"Midnight" = 'icons/mob/screen_midnight.dmi',
 	"Plasmafire" = 'icons/mob/screen_plasmafire.dmi',
 	"Slimecore" = 'icons/mob/screen_slimecore.dmi',
 	"Operative" = 'icons/mob/screen_operative.dmi',
