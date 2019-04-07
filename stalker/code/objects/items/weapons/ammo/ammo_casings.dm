@@ -95,3 +95,8 @@
     desc = "A 7.62x51 bullet casing."
     caliber = "7.62x51mm"
     projectile_type = /obj/item/projectile/bullet/bullet762x51
+
+/obj/item/ammo_casing/gauss
+    desc = "A gauss bullet casing."
+    caliber = "gauss"
+    projectile_type = /obj/item/projectile/bullet/gauss

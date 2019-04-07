@@ -711,3 +711,34 @@
 	draw_sound = 'stalker/sound/weapons/draw/groza_draw.ogg'
 	load_sound = 'stalker/sound/weapons/load/groza_load.ogg'
 	eject_sound = 'stalker/sound/weapons/unload/groza_open.ogg'
+
+///////////////////////////// Прочие винтовки //////////////////////////////////////////
+
+/obj/item/gun/ballistic/automatic/gauss  // Гаусс-винтовка
+	name = "gauss rifle"
+	desc = "Сверхточное высокотехнологичное оружие, известное как «изделие № 62», было разработано конструкторами секретных лабораторий внутри Зоны. Принцип его действия основан на разгоне пули системой электромагнитов; пуля при этом способна развивать сверхскорости, что обеспечивает колоссальную пробивную способность при почти полном отсутствии отдачи. Для обеспечения достаточной энергоёмкости аккумуляторов в последних используются частицы определённых артефактов."
+	icon_state = "gauss"
+	item_state = "gauss"
+	fire_sound = 'stalker/sound/weapons/gauss_shot.ogg'
+	mag_type = /obj/item/ammo_box/magazine/stalker/gauss
+	suppressed = 1
+	can_suppress = 0
+	can_unsuppress = 0
+	zoomable = 1
+	zoom_amt = 7
+	zoom_out_amt = 10
+	burst_size = 1
+	fire_delay = 3
+	durability = 150
+	slot_flags = ITEM_SLOT_BACK
+	force = 15
+	pin = /obj/item/firing_pin
+	w_class = 4
+	spread = 1
+	recoil = 1
+	damagelose = 0.90
+	can_scope = 1
+	weapon_weight = WEAPON_MEDIUM
+	draw_sound = 'stalker/sound/weapons/draw/generic_draw.ogg'
+	load_sound = 'stalker/sound/weapons/load/gauss_load.ogg'
+	eject_sound = 'stalker/sound/weapons/unload/abakan_open.ogg'

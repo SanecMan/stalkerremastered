@@ -66,8 +66,7 @@
 
 /obj/effect/decal/cleanable/blood/gibs/proc/start_rotting(rename=TRUE)
 	if(rename)
-		name = "rotting [initial(name)]"
-		desc += " They smell terrible."
+		qdel(src) //remove fuck you
 	AddComponent(/datum/component/rot/gibs)
 
 /obj/effect/decal/cleanable/blood/gibs/ex_act(severity, target)
