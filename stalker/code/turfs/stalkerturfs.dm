@@ -236,7 +236,7 @@ var/global/list/WhiteRoadCache
 
 	spawn(1)
 		for(var/i = 0, i <= 3, i++)
-			if(!get_step(src, 2**i) || (!istype(get_step(src, 2**i), src.type) && !get_step(src, 2**i).layer))
+			if(!get_step(src, 2**i) || (!istype(get_step(src, 2**i), src.type) && (src.layer > get_step(src, 2**i).layer)))
 				src.overlays += WhiteRoadCache[2**i]
 
 	return

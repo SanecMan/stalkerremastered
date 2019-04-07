@@ -99,16 +99,14 @@
 /sound/ambient/proc/Transition(var/mob/M, var/new_volume = 0)
 	transition = 1
 	status = SOUND_STREAM | SOUND_UPDATE
-	animate(src, volume = new_volume, time = 2.5, loop = 1)
-/*
+	//animate(src, volume = new_volume, time = 2.5, loop = 1)
 	while(volume > 0)
 		volume = max(volume - 2, 0)
 		M << src
 		/////////
 		sleep(2.5)
 		/////////
-*/
-	//status = SOUND_PAUSED
+*	//status = SOUND_PAUSED
 	status = SOUND_STREAM
 	transition = 0
 
