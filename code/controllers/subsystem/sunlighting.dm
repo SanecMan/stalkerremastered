@@ -52,7 +52,7 @@ SUBSYSTEM_DEF(sunlight)
 
 	set_time_of_day(STEP_DAY)
 
-	create_all_sunlighting_overlays()
+	create_all_sunlighting_objects()
 
 	check_cycle()
 	update_color()
@@ -87,7 +87,7 @@ SUBSYSTEM_DEF(sunlight)
 	resuming_stage = STAGE_OVERLAYS
 
 	while (GLOB.sunlighting_update_overlays.len)
-		var/atom/movable/sunlighting_overlay/O = GLOB.sunlighting_update_overlays[GLOB.sunlighting_update_overlays.len]
+		var/atom/movable/sunlighting_object/O = GLOB.sunlighting_update_overlays[GLOB.sunlighting_update_overlays.len]
 		GLOB.sunlighting_update_overlays.len--
 
 		if (QDELETED(O))
@@ -141,7 +141,8 @@ proc/set_time_of_day(var/step)
 /datum/controller/subsystem/sunlight/proc/update_color()
 	var/blend_amount = (world.time - step_started) / current_step_datum.duration
 	current_color = BlendRGB(current_step_datum.color, next_step_datum.color, blend_amount)
-	for(var/obj/screen/plane_master/lighting/P in sunlighting_planes)
+	//to_chat(world, num2text(sunlighting_planes.len))
+	for(var/obj/screen/plane_master/sunlighting/P in sunlighting_planes)
 		P.color = current_color
 
 /datum/controller/subsystem/sunlight/fire()
@@ -183,7 +184,7 @@ proc/set_time_of_day(var/step)
 	resuming_stage = STAGE_OVERLAYS
 
 	while (GLOB.sunlighting_update_overlays.len)
-		var/atom/movable/sunlighting_overlay/O = GLOB.sunlighting_update_overlays[GLOB.sunlighting_update_overlays.len]
+		var/atom/movable/sunlighting_object/O = GLOB.sunlighting_update_overlays[GLOB.sunlighting_update_overlays.len]
 		GLOB.sunlighting_update_overlays.len--
 
 		if (QDELETED(O))

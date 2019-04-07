@@ -51,7 +51,7 @@
 // Yes this doesn't align correctly on anything other than 4 width tabs.
 // If you want it to go switch everybody to elastic tab stops.
 // Actually that'd be great if you could!
-#define EFFECT_UPDATE                   \
+#define EFFECT_UPDATE_SUN               \
 	if (!needs_update)                  \
 	{                                   \
 		GLOB.sunlighting_update_lights += src;  \
@@ -60,19 +60,19 @@
 
 // This proc will cause the light source to update the top atom, and add itself to the update queue.
 /datum/sunlight_source/proc/update(var/atom/new_top_atom)
-	EFFECT_UPDATE
+	EFFECT_UPDATE_SUN
 
 // Will force an update without checking if it's actually needed.
 /datum/sunlight_source/proc/force_update()
 	force_update = 1
 
-	EFFECT_UPDATE
+	EFFECT_UPDATE_SUN
 
 // Will cause the light source to recalculate turfs that were removed or added to visibility only.
 /datum/sunlight_source/proc/vis_update()
 	vis_update = 1
 
-	EFFECT_UPDATE
+	EFFECT_UPDATE_SUN
 
 // Will check if we actually need to update, and update any variables that may need to be updated.
 /datum/sunlight_source/proc/check()
@@ -204,7 +204,7 @@
 		REMOVE_CORNER(C)
 		effect_str -= C
 
-#undef effect_update
+#undef EFFECT_UPDATE_SUN
 #undef LUM_FALLOFF
 #undef REMOVE_CORNER
 #undef APPLY_CORNER

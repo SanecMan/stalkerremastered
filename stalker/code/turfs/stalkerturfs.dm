@@ -23,7 +23,7 @@
 	density = 1
 	anchored = 1
 	flags_1 = CONDUCT_1
-	layer = 4
+	layer = PROJECTILE_HIT_THRESHHOLD_LAYER
 	max_integrity = 10000000
 
 /obj/structure/grille/stalker/ex_act(severity, target)
@@ -72,7 +72,6 @@
 	icon = 'stalker/icons/green_zabor.dmi'
 	desc = "Зелённый забор. Лучше, чем серый."
 	icon_state = "1"
-	layer = 6.1
 
 obj/structure/grille/stalker/beton/CanPass(atom/movable/mover, turf/target, height=0)
 	if(height==0) return 1
@@ -91,7 +90,6 @@ obj/structure/grille/stalker/beton/CanPass(atom/movable/mover, turf/target, heig
 	footstep = FOOTSTEP_TILE
 	barefootstep = FOOTSTEP_TILE
 	//light_range = 3
-	plane = -3
 
 /turf/open/stalker/Initialize()
 	. = ..()
@@ -102,7 +100,7 @@ obj/structure/grille/stalker/beton/CanPass(atom/movable/mover, turf/target, heig
 	icon = 'stalker/icons/grass.dmi'
 	icon_state = "grass1"
 	layer = TURF_LAYER
-	overlay_priority = 0
+	//overlay_priority = 0
 	footstep = FOOTSTEP_TILE
 
 /turf/open/stalker/floor/digable
@@ -116,18 +114,10 @@ obj/structure/grille/stalker/beton/CanPass(atom/movable/mover, turf/target, heig
 /turf/open/stalker/floor/digable/grass/dump
 	icon = 'stalker/icons/zemlya.dmi'
 	icon_state = "dump_grass1"
-
-/turf/open/stalker/floor/digable/grass/Initialize()
-	..()
-	if (prob(30))
-		new /obj/structure/flora/ausbushes/fullgrass(get_turf(src))
-		if (prob(30))
-			new /obj/structure/flora/ausbushes/fullgrass(get_turf(src))
-	if (prob(15))
-		new /obj/structure/flora/ausbushes/grassybush(get_turf(src))
-	if (prob(15))
-		new /obj/structure/flora/ausbushes/sunnybush(get_turf(src))
-
+/*
+/turf/open/stalker/floor/digable/grass/dump/New()
+	icon_state = "dump_grass[rand(1, 3)]"
+*/
 /turf/open/stalker/floor/digable/gryaz_rocky
 	icon_state = "gryaz_rocky1"
 
@@ -146,7 +136,8 @@ obj/structure/grille/stalker/beton/CanPass(atom/movable/mover, turf/target, heig
 	name = "road"
 	icon = 'stalker/icons/Prishtina/asphalt.dmi'
 	icon_state = "road1"
-	overlay_priority = 1
+	layer = MID_TURF_LAYER
+	//overlay_priority = 1
 
 var/global/list/AsphaltEdgeCache
 
@@ -155,17 +146,17 @@ var/global/list/AsphaltEdgeCache
 	if(!AsphaltEdgeCache || !AsphaltEdgeCache.len)
 		AsphaltEdgeCache = list()
 		AsphaltEdgeCache.len = 10
-		AsphaltEdgeCache[NORTH] = image('stalker/icons/Prishtina/asphalt.dmi', "roadn", layer = 2)
-		AsphaltEdgeCache[SOUTH] = image('stalker/icons/Prishtina/asphalt.dmi', "roads", layer = 2)
-		AsphaltEdgeCache[EAST] = image('stalker/icons/Prishtina/asphalt.dmi', "roade", layer = 2)
-		AsphaltEdgeCache[WEST] = image('stalker/icons/Prishtina/asphalt.dmi', "roadw", layer = 2)
+		AsphaltEdgeCache[NORTH] = image('stalker/icons/Prishtina/asphalt.dmi', "roadn", layer = HIGH_TURF_LAYER)
+		AsphaltEdgeCache[SOUTH] = image('stalker/icons/Prishtina/asphalt.dmi', "roads", layer = HIGH_TURF_LAYER)
+		AsphaltEdgeCache[EAST] = image('stalker/icons/Prishtina/asphalt.dmi', "roade", layer = HIGH_TURF_LAYER)
+		AsphaltEdgeCache[WEST] = image('stalker/icons/Prishtina/asphalt.dmi', "roadw", layer = HIGH_TURF_LAYER)
 
 	spawn(1)
 		var/turf/T
 		for(var/i = 0, i <= 3, i++)
 			if(!get_step(src, 2**i))
 				continue
-			if(overlay_priority > get_step(src, 2**i).overlay_priority)
+			if(layer > get_step(src, 2**i).layer)
 				T = get_step(src, 2**i)
 				if(T)
 					T.overlays += AsphaltEdgeCache[2**i]
@@ -175,8 +166,8 @@ var/global/list/AsphaltEdgeCache
 	name = "road"
 	icon = 'stalker/icons/tropa.dmi'
 	icon_state = "tropa"
-	layer = 2
-	overlay_priority = 2
+	layer = ABOVE_MID_TURF_LAYER
+	//overlay_priority = 2
 	footstep = FOOTSTEP_SAND
 	barefootstep = FOOTSTEP_SAND
 
@@ -186,17 +177,17 @@ var/global/list/TropaEdgeCache
 	if(!TropaEdgeCache || !TropaEdgeCache.len)
 		TropaEdgeCache = list()
 		TropaEdgeCache.len = 10
-		TropaEdgeCache[NORTH] = image('stalker/icons/tropa.dmi', "tropa_side_n", layer = 2)
-		TropaEdgeCache[SOUTH] = image('stalker/icons/tropa.dmi', "tropa_side_s", layer = 2)
-		TropaEdgeCache[EAST] = image('stalker/icons/tropa.dmi', "tropa_side_e", layer = 2)
-		TropaEdgeCache[WEST] = image('stalker/icons/tropa.dmi', "tropa_side_w", layer = 2)
+		TropaEdgeCache[NORTH] = image('stalker/icons/tropa.dmi', "tropa_side_n", layer = HIGH_TURF_LAYER)
+		TropaEdgeCache[SOUTH] = image('stalker/icons/tropa.dmi', "tropa_side_s", layer = HIGH_TURF_LAYER)
+		TropaEdgeCache[EAST] = image('stalker/icons/tropa.dmi', "tropa_side_e", layer = HIGH_TURF_LAYER)
+		TropaEdgeCache[WEST] = image('stalker/icons/tropa.dmi', "tropa_side_w", layer = HIGH_TURF_LAYER)
 
 	spawn(1)
 		var/turf/T
 		for(var/i = 0, i <= 3, i++)
 			if(!get_step(src, 2**i))
 				continue
-			if(overlay_priority > get_step(src, 2**i).overlay_priority)
+			if(layer > get_step(src, 2**i).layer)
 				T = get_step(src, 2**i)
 				if(T)
 					T.overlays += TropaEdgeCache[2**i]
@@ -206,8 +197,8 @@ var/global/list/TropaEdgeCache
 	name = "road"
 	icon = 'stalker/icons/building_road.dmi'
 	icon_state = "road2"
-	layer = 2
-	overlay_priority = 3
+	layer = MID_TURF_LAYER
+	//overlay_priority = 3
 
 var/global/list/WhiteRoadCache
 
@@ -227,14 +218,14 @@ var/global/list/WhiteRoadCache
 	if(!WhiteRoadCache || !WhiteRoadCache.len)
 		WhiteRoadCache = list()
 		WhiteRoadCache.len = 10
-		WhiteRoadCache[NORTH] = image('stalker/icons/warning_stripes.dmi', "road_b5", layer = 2)
-		WhiteRoadCache[SOUTH] = image('stalker/icons/warning_stripes.dmi', "road_b6", layer = 2)
-		WhiteRoadCache[EAST] = image('stalker/icons/warning_stripes.dmi', "road_b8", layer = 2)
-		WhiteRoadCache[WEST] = image('stalker/icons/warning_stripes.dmi', "road_b7", layer = 2)
+		WhiteRoadCache[NORTH] = image('stalker/icons/warning_stripes.dmi', "road_b5", layer = HIGH_TURF_LAYER)
+		WhiteRoadCache[SOUTH] = image('stalker/icons/warning_stripes.dmi', "road_b6", layer = HIGH_TURF_LAYER)
+		WhiteRoadCache[EAST] = image('stalker/icons/warning_stripes.dmi', "road_b8", layer = HIGH_TURF_LAYER)
+		WhiteRoadCache[WEST] = image('stalker/icons/warning_stripes.dmi', "road_b7", layer = HIGH_TURF_LAYER)
 
 	spawn(1)
 		for(var/i = 0, i <= 3, i++)
-			if(!get_step(src, 2**i) || (!istype(get_step(src, 2**i), src.type) && !get_step(src, 2**i).overlay_priority))
+			if(!get_step(src, 2**i) || (!istype(get_step(src, 2**i), src.type) && !get_step(src, 2**i).layer))
 				src.overlays += WhiteRoadCache[2**i]
 
 	return
@@ -243,8 +234,8 @@ var/global/list/WhiteRoadCache
 	name = "dirt"
 	icon = 'stalker/icons/zemlya.dmi'
 	icon_state = "gryaz1"
-	layer = 2
-	overlay_priority = 4
+	layer = ABOVE_ABOVE_MID_TURF_LAYER
+	//overlay_priority = 4
 	footstep = FOOTSTEP_GRASS
 	barefootstep = FOOTSTEP_GRASS
 
@@ -255,17 +246,17 @@ var/global/list/GryazEdgeCache
 	if(!GryazEdgeCache || !GryazEdgeCache.len)
 		GryazEdgeCache = list()
 		GryazEdgeCache.len = 10
-		GryazEdgeCache[NORTH] = image('stalker/icons/zemlya.dmi', "gryaz_side_n", layer = 2)
-		GryazEdgeCache[SOUTH] = image('stalker/icons/zemlya.dmi', "gryaz_side_s", layer = 2)
-		GryazEdgeCache[EAST] = image('stalker/icons/zemlya.dmi', "gryaz_side_e", layer = 2)
-		GryazEdgeCache[WEST] = image('stalker/icons/zemlya.dmi', "gryaz_side_w", layer = 2)
+		GryazEdgeCache[NORTH] = image('stalker/icons/zemlya.dmi', "gryaz_side_n", layer = HIGH_TURF_LAYER)
+		GryazEdgeCache[SOUTH] = image('stalker/icons/zemlya.dmi', "gryaz_side_s", layer = HIGH_TURF_LAYER)
+		GryazEdgeCache[EAST] = image('stalker/icons/zemlya.dmi', "gryaz_side_e", layer = HIGH_TURF_LAYER)
+		GryazEdgeCache[WEST] = image('stalker/icons/zemlya.dmi', "gryaz_side_w", layer = HIGH_TURF_LAYER)
 
 	spawn(1)
 		var/turf/T
 		for(var/i = 0, i <= 3, i++)
 			if(!get_step(src, 2**i))
 				continue
-			if(overlay_priority > get_step(src, 2**i).overlay_priority)
+			if(layer > get_step(src, 2**i).layer)
 				T = get_step(src, 2**i)
 				if(T)
 					T.overlays += GryazEdgeCache[2**i]
@@ -281,7 +272,7 @@ var/global/list/GryazEdgeCache
 	name = "rails"
 	icon = 'stalker/icons/rails.dmi'
 	icon_state = "sp"
-	layer = 2
+	layer = MID_TURF_LAYER
 	anchored = 1
 	density = 0
 	opacity = 0
@@ -314,9 +305,7 @@ var/global/list/GryazEdgeCache
 	smooth = SMOOTH_MORE|SMOOTH_BORDER
 	var/smooth_icon = 'stalker/icons/smoothwater.dmi'
 	icon_state = "water"
-	layer = TURF_LAYER
-	plane = -2
-	overlay_priority = 5
+	layer = HIGH_TURF_LAYER
 	var/busy = 0
 	slowdown = 2
 	footstep = FOOTSTEP_WATER
@@ -429,7 +418,6 @@ var/global/list/GryazEdgeCache
 	if(istype(A, /mob/living/carbon))
 		var/mob/living/carbon/L = A
 		L.update_top_overlay()
-		L.plane = -2
 		if(istype(A, /mob/living/carbon/human))
 			var/mob/living/carbon/human/H = A
 			/*if(H.shoes)
@@ -443,7 +431,6 @@ var/global/list/GryazEdgeCache
 	if(istype(A, /mob/living/carbon))
 		var/mob/living/carbon/L = A
 		L.update_top_overlay()
-		L.plane = -1
 		flick("water_splash_movement", src)
 /*
 var/global/list/WaterEdgeCache
@@ -512,7 +499,7 @@ var/global/list/WaterEdgeCache
 	name = "lattice"
 	icon = 'stalker/icons/floor.dmi'
 	icon_state = "lattice_new"
-	overlay_priority = 100
+	overlay_priority = HIGH_TURF_LAYER
 /*
 /turf/open/stalker/floor/lattice/New()
 	icon_state = "lattice[rand(1, 4)]"

@@ -2,13 +2,13 @@
 	if(istype(src,/turf/closed) || has_opaque_atom)
 		return 0
 	var/area/A = get_area(src)
-
-	return	A.open_space 				//fuck byond (try to use one space)
+	return A.open_space 				//fuck byond (try to use one space)
 
 /turf/proc/has_junction_closedspace()
 	for(var/turf/T in RANGE_TURFS(1,src))
 		if(!T.is_openspace())
 			return 1
+/*
 /turf/simulated/floor/proc/update_sunlight()
 	if(is_openspace())
 		for(var/turf/T in RANGE_TURFS(1,src))
@@ -18,10 +18,11 @@
 	if(sunlight_source)
 		sunlight_source.destroy()
 		sunlight_source = null
+*/
 
-/turf/stalker/floor/proc/update_sunlight()
+/turf/open/proc/update_sunlight()
 	if(is_openspace())
-		for(var/turf/T in RANGE_TURFS(1,src))
+		for(var/turf/T in RANGE_TURFS(1, src))
 			if(!T.is_openspace())
 				sun_update_light()
 				return
@@ -32,21 +33,16 @@
 /turf
 
 	var/tmp/datum/sunlight_source/sunlight_source
-	var/tmp/atom/movable/sunlighting_overlay/sun_lighting_overlay
+	var/tmp/atom/movable/sunlighting_object/sunlighting_object
 	var/tmp/list/datum/sunlighting_corner/suncorners
 	var/tmp/list/datum/sunlight_source/sun_affecting_lights
 
 	var/sun_lighting_corners_initialised
-
-/turf/simulated/floor/New()
+/*
+/turf/open/New()
 	. = ..()
 	update_sunlight()
-
-/turf/stalker/floor/New()
-	. = ..()
-	update_sunlight()
-
-
+*/
 /turf/proc/sun_update_light()
 	set waitfor = FALSE
 	//if (qdeleted(src))
@@ -85,21 +81,21 @@
 		L.vis_update()
 
 /turf/proc/sun_lighting_clear_overlay()
-	if (sun_lighting_overlay)
-		qdel(sun_lighting_overlay, TRUE)
+	if (sunlighting_object)
+		qdel(sunlighting_object, TRUE)
 
 	for (var/datum/sunlighting_corner/C in suncorners)
 		C.update_active()
 
 // Builds a lighting overlay for us, but only if our area is dynamic.
 /turf/proc/sun_lighting_build_overlay()
-	if (sun_lighting_overlay)
+	if (sunlighting_object)
 		return
 
 	if (!sun_lighting_corners_initialised)
 		sun_generate_missing_corners()
 
-	new/atom/movable/sunlighting_overlay(src)
+	new/atom/movable/sunlighting_object(src)
 
 	for (var/datum/sunlighting_corner/C in suncorners)
 		if (!C.active) // We would activate the corner, calculate the lighting for it.

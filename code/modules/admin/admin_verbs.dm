@@ -887,15 +887,16 @@ GLOBAL_PROTECT(admin_verbs_hideable)
 
 	switch(daytime)
 		if("Morning")
-			daytime = "MORNING"
+			daytime = 1//"MORNING"
 		if("Day")
-			daytime = "DAYTIME"
+			daytime = 2//"DAYTIME"
 		if("Evening")
-			daytime = "AFTERNOON"
+			daytime = 3//"AFTERNOON"
 		if("Night")
-			daytime = "NIGHTTIME"
+			daytime = 4//"NIGHTTIME"
 
-	SSnightcycle.updateLight(daytime)
+	//SSnightcycle.updateLight(daytime)
+	set_time_of_day(daytime)
 	to_chat(usr, "<span class='interface'>Time of day successfully updated.</span>")
 	log_admin("[key_name(usr)] changed time of day to [daytime].")
 	message_admins("[key_name_admin(usr)] changed time of day to [daytime].")
