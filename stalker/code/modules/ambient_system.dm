@@ -106,7 +106,7 @@
 		/////////
 		sleep(2.5)
 		/////////
-*	//status = SOUND_PAUSED
+	//status = SOUND_PAUSED
 	status = SOUND_STREAM
 	transition = 0
 
