@@ -345,9 +345,9 @@ GLOBAL_LIST_EMPTY(spawned_artifacts)
 	name = "anomaly"
 	cooldown = 2
 	sound = 'stalker/sound/anomalies/zharka1.ogg'
-	luminosity = 2
-	idle_luminosity = 3
-	activated_luminosity = 5
+	luminosity = 1
+	idle_luminosity = 1
+	activated_luminosity = 2
 	anomaly_color = "#FFAA33"
 	damage_type = DMG_TYPE_IGNITION
 	icon = 'stalker/icons/anomalies.dmi'
@@ -431,9 +431,9 @@ GLOBAL_LIST_EMPTY(spawned_artifacts)
 /obj/anomaly/holodec
 	name = "anomaly"
 	cooldown = 2
-	luminosity = 3
-	idle_luminosity = 3
-	activated_luminosity = 5
+	luminosity = 2
+	idle_luminosity = 2
+	activated_luminosity = 3
 	anomaly_color = "#70cc33"
 	sound = 'stalker/sound/anomalies/buzz_hit.ogg'
 	damage_type = DMG_TYPE_LASTER
@@ -449,6 +449,7 @@ GLOBAL_LIST_EMPTY(spawned_artifacts)
 				/obj/item/artifact/mica = 3,
 				/obj/item/artifact/firefly = 1.5
 				)
+	var/obj/anomaly/holodec/splash/son = null
 
 /obj/anomaly/holodec/Initialize()
 	..()
@@ -488,25 +489,26 @@ GLOBAL_LIST_EMPTY(spawned_artifacts)
 	qdel(I)
 
 /obj/anomaly/holodec/process()
-	var/new_dir = rand(1, 10)
-
-	if(!istype(get_step(src, new_dir), /turf/open/stalker/floor))
+	if(son)
+		if(son.stage == DEATH_STAGE)
+			son = null
+		else
+			return
+	var/obj/item/I = locate(/obj/item) in view(1, src)
+	if(I && !istype(I, /obj/item/artifact) && !(I.resistance_flags & (UNACIDABLE)) && !(locate(/obj/anomaly/holodec) in get_step(src, get_dir(src, I))))
+		son = new /obj/anomaly/holodec/splash(get_step(src, get_dir(src, I)))
+		src.do_attack_animation(son, 0)
 		return
-
-	if(locate(/obj/anomaly/holodec) in get_step(src, new_dir))
-		return
-
-	if(locate(/obj/structure) in get_step(src, new_dir))
-		return
-
-	var/obj/anomaly/holodec/splash/son = new /obj/anomaly/holodec/splash(get_step(src, new_dir))
-	src.do_attack_animation(son, 0)
+	var/mob/living/L = locate(/mob/living) in view(1, src)
+	if(L && !locate(/obj/anomaly/holodec) in get_step(src, get_dir(src, L)))
+		son = new /obj/anomaly/holodec/splash(get_step(src, get_dir(src, L)))
+		src.do_attack_animation(son, 0)
 
 /obj/anomaly/holodec/splash
 	cooldown = 2
-	luminosity = 2
-	idle_luminosity = 2
-	activated_luminosity = 4
+	luminosity = 0
+	idle_luminosity = 0
+	activated_luminosity = 1
 	damage_amount = 33
 	inactive_icon_state = null
 	active_icon_state = null
@@ -516,37 +518,30 @@ GLOBAL_LIST_EMPTY(spawned_artifacts)
 	active_invisibility = 0
 	inactive_invisibility = 0
 	loot = list()
-	var/spawn_time = 0
+	var/stage = DEATH_STAGE
 
 /obj/anomaly/holodec/splash/ApplyEffects()
 	playsound(src.loc, src.sound, 50, 1, channel = 0)
 	return
 
 /obj/anomaly/holodec/splash/Initialize()
-	//..()
-	spawn_time = world.time
+	stage = BIRTH_STAGE
 	SSobj.processing.Add(src)
 	flick("holodec_splash_creation", src)
 	invisibility = inactive_invisibility
-	damage_amount = 0
-	sleep(8)
-	damage_amount = initial(damage_amount)
-	//if(src && get_turf(src))
-		//for(var/mob/living/L in get_turf(src).contents)
-			//Crossed(L)
-/*
-/obj/anomaly/holodec/splash/Destroy()
-	//..()
-	SSobj.processing.Remove(src)
-*/
-/obj/anomaly/holodec/splash/process()
-	if(spawn_time + 15 <= world.time)
-		flick("holodec_splash_destruction", src)
-		damage_amount = 0
+	if(src && get_turf(src))
+		var/turf/T = get_turf(src)
+		for(var/obj/item/I in T.contents)
+			Crossed(I)
+		for(var/mob/living/L in T.contents)
+			Crossed(L)
 
-	if(spawn_time + 25 <= world.time)
+/obj/anomaly/holodec/splash/process()
+	if(stage == BIRTH_STAGE)
+		stage = DEATH_STAGE
 		invisibility = 101
 		src.trapped = list()
+		qdel(src)
 
 /obj/anomaly/puh
 	name = "anomaly"
