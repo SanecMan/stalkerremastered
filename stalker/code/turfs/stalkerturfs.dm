@@ -111,6 +111,17 @@ obj/structure/grille/stalker/beton/CanPass(atom/movable/mover, turf/target, heig
 	icon = 'stalker/icons/zemlya.dmi'
 	icon_state = "grass1"
 
+/turf/open/stalker/floor/digable/grass/Initialize()
+	..()
+	if (prob(30))
+		new /obj/structure/flora/ausbushes/fullgrass(get_turf(src))
+		if (prob(30))
+			new /obj/structure/flora/ausbushes/fullgrass(get_turf(src))
+	if (prob(15))
+		new /obj/structure/flora/ausbushes/grassybush(get_turf(src))
+	if (prob(15))
+		new /obj/structure/flora/ausbushes/sunnybush(get_turf(src))
+
 /turf/open/stalker/floor/digable/grass/dump
 	icon = 'stalker/icons/zemlya.dmi'
 	icon_state = "dump_grass1"
