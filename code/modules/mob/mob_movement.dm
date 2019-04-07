@@ -25,6 +25,16 @@
 #define MOVEMENT_DELAY_BUFFER 0.75
 #define MOVEMENT_DELAY_BUFFER_DELTA 1.25
 
+/mob/Move()
+	if(pulledby)
+		glide_size = 16/(pulledby.movement_delay()/10*world.fps)
+	else
+		if(client)
+			glide_size = 16/(movement_delay()/10*world.fps)
+		else
+			glide_size = 0
+	..()
+
 /client/Move(n, direct)
 	if(world.time < move_delay) //do not move anything ahead of this check please
 		return FALSE
@@ -83,7 +93,7 @@
 	//	move_delay = world.time
 	var/MD = mob.movement_delay()
 	move_delay = MD + world.time
-	mob.glide_size = 16/(MD/10*world.fps)
+	//mob.glide_size = 16/(MD/10*world.fps)
 
 	if(L.confused)
 		var/newdir = 0

@@ -200,7 +200,7 @@ SUBSYSTEM_DEF(blowout)
 	starttime = 0
 	cleaned = 0
 
-	SSnightcycle.updateLight("DAYTIME")
+	//SSnightcycle.updateLight("DAYTIME")
 
 	world << sound(null, wait = 0, channel = 19, volume = 70)
 	world << sound(null, wait = 0, channel = 20, volume = 70)

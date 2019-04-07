@@ -1,4 +1,4 @@
-/var/list/datum/sunlighting_corner/all_sunlighting_corners = list()
+///var/list/datum/sunlighting_corner/all_sunlighting_corners = list()
 /var/datum/sunlighting_corner/dummy/sundummy_lighting_corner = new
 /var/datum/sunlighting_corner/dummy_full/sundummy_lighting_corner_full = new
 
@@ -24,7 +24,7 @@
 /datum/sunlighting_corner/New(var/turf/new_turf, var/diagonal)
 	. = ..()
 
-	all_sunlighting_corners += src
+	//all_sunlighting_corners += src
 
 	masters[new_turf] = turn(diagonal, 180)
 	z = new_turf.z
@@ -76,7 +76,7 @@
 /datum/sunlighting_corner/proc/update_active()
 	active = FALSE
 	for (var/turf/T in masters)
-		if (T.sun_lighting_overlay)
+		if (T.sunlighting_object)
 			active = TRUE
 
 /datum/sunlighting_corner/proc/find_best()
@@ -113,10 +113,10 @@
 
 	for (var/TT in masters)
 		var/turf/T = TT
-		if (T.sun_lighting_overlay)
-			if (!T.sun_lighting_overlay.needs_update)
-				T.sun_lighting_overlay.needs_update = TRUE
-				GLOB.sunlighting_update_overlays += T.sun_lighting_overlay
+		if (T.sunlighting_object)
+			if (!T.sunlighting_object.needs_update)
+				T.sunlighting_object.needs_update = TRUE
+				GLOB.sunlighting_update_overlays += T.sunlighting_object
 
 
 /datum/sunlighting_corner/dummy/New()

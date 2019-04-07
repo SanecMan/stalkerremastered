@@ -1,11 +1,12 @@
-GLOBAL_LIST_EMPTY(all_sunlighting_overlays) // Global list of lighting overlays.
+GLOBAL_LIST_EMPTY(all_sunlighting_objects) // Global list of lighting overlays.
 
-/atom/movable/sunlighting_overlay
+/atom/movable/sunlighting_object
 	name          = ""
 
 	anchored      = TRUE
 
 	icon             = LIGHTING_ICON
+	//icon_state       = "transparent"
 	color            = LIGHTING_BASE_MATRIX
 	plane            = SUNLIGHTING_PLANE
 	mouse_opacity    = 0
@@ -21,20 +22,18 @@ GLOBAL_LIST_EMPTY(all_sunlighting_overlays) // Global list of lighting overlays.
 #endif
 
 
-/atom/movable/sunlighting_overlay/New(var/atom/loc, var/no_update = FALSE)
+/atom/movable/sunlighting_object/New(var/atom/loc, var/no_update = FALSE)
 	. = ..()
 	verbs.Cut()
-	GLOB.all_sunlighting_overlays += src
+	GLOB.all_sunlighting_objects += src
 
 	var/turf/T         = loc // If this runtimes atleast we'll know what's creating overlays in things that aren't turfs.
-	T.sun_lighting_overlay = src
+	T.sunlighting_object = src
 	T.luminosity       = 0
 
 	//for(var/turf/space/S in RANGE_TURFS(1, src)) //RANGE_TURFS is in code\__HELPERS\game.dm
 	//	S.update_starlight()
-	for(var/turf/simulated/floor/O in RANGE_TURFS(1, src))
-		O.update_sunlight()
-	for(var/turf/stalker/floor/O in RANGE_TURFS(1, src))
+	for(var/turf/open/O in RANGE_TURFS(1, src))
 		O.update_sunlight()
 	if (no_update)
 		return
@@ -45,14 +44,14 @@ GLOBAL_LIST_EMPTY(all_sunlighting_overlays) // Global list of lighting overlays.
 	animate_color()
 #endif
 
-/atom/movable/sunlighting_overlay/Destroy(var/force)
+/atom/movable/sunlighting_object/Destroy(var/force)
 	if (force)
-		GLOB.all_sunlighting_overlays        -= src
+		GLOB.all_sunlighting_objects        -= src
 		GLOB.sunlighting_update_overlays     -= src
 
 		var/turf/T   = loc
 		if (istype(T))
-			T.sun_lighting_overlay = null
+			T.sunlighting_object = null
 			T.luminosity = 1
 
 		..()
@@ -61,7 +60,7 @@ GLOBAL_LIST_EMPTY(all_sunlighting_overlays) // Global list of lighting overlays.
 	else
 		return QDEL_HINT_LETMELIVE
 
-/atom/movable/sunlighting_overlay/proc/update_overlay()
+/atom/movable/sunlighting_object/proc/update_overlay()
 	var/turf/T = loc
 	if (!istype(T)) // Erm...
 		if (loc)
@@ -88,61 +87,63 @@ GLOBAL_LIST_EMPTY(all_sunlighting_overlays) // Global list of lighting overlays.
 	var/datum/sunlighting_corner/cb
 	var/datum/sunlighting_corner/ca
 
-	if(!T.is_openspace())
-		cr  = T.suncorners[3] || sundummy_lighting_corner
-		cg  = T.suncorners[2] || sundummy_lighting_corner
-		cb  = T.suncorners[4] || sundummy_lighting_corner
-		ca  = T.suncorners[1] || sundummy_lighting_corner
-	else
+	if(T.is_openspace())
 		cr  = sundummy_lighting_corner_full
 		cg  = sundummy_lighting_corner_full
 		cb  = sundummy_lighting_corner_full
 		ca  = sundummy_lighting_corner_full
+	else
+		cr  = T.suncorners[3] || sundummy_lighting_corner
+		cg  = T.suncorners[2] || sundummy_lighting_corner
+		cb  = T.suncorners[4] || sundummy_lighting_corner
+		ca  = T.suncorners[1] || sundummy_lighting_corner
+
 
 	var/max = max(cr.cache_mx, cg.cache_mx, cb.cache_mx, ca.cache_mx)
 #ifdef LIGHTING_ANIMATION
 	target_color = list(
-		cr.cache, cr.cache, cr.cache, max(cr.cache, cr.cache, cr.cache),
-		cg.cache, cg.cache, cg.cache, max(cg.cache, cg.cache, cg.cache),
-		cb.cache, cb.cache, cb.cache, max(cb.cache, cb.cache, cb.cache),
-		ca.cache, ca.cache, ca.cache, max(ca.cache, ca.cache, ca.cache),
+		cr.cache, cr.cache, cr.cache, cr.cache,
+		cg.cache, cg.cache, cg.cache, cg.cache,
+		cb.cache, cb.cache, cb.cache, cb.cache,
+		ca.cache, ca.cache, ca.cache, ca.cache,
 		0, 0, 0, 0
 	)
 #else
 	color = list(
-		cr.cache, cr.cache, cr.cache, max(cr.cache, cr.cache, cr.cache),
-		cg.cache, cg.cache, cg.cache, max(cg.cache, cg.cache, cg.cache),
-		cb.cache, cb.cache, cb.cache, max(cb.cache, cb.cache, cb.cache),
-		ca.cache, ca.cache, ca.cache, max(ca.cache, ca.cache, ca.cache),
+		cr.cache, cr.cache, cr.cache, cr.cache,
+		cg.cache, cg.cache, cg.cache, cg.cache,
+		cb.cache, cb.cache, cb.cache, cb.cache,
+		ca.cache, ca.cache, ca.cache, ca.cache,
 		0, 0, 0, 0
 	)
 #endif
+
 	if(max || T.is_openspace())
 		luminosity = 1
 	else
 		luminosity = 0
 
-/atom/movable/sunlighting_overlay/ex_act(severity)
+/atom/movable/sunlighting_object/ex_act(severity)
 	return 0
 
-/atom/movable/sunlighting_overlay/singularity_act()
+/atom/movable/sunlighting_object/singularity_act()
 	return
 
-/atom/movable/sunlighting_overlay/singularity_pull()
+/atom/movable/sunlighting_object/singularity_pull()
 	return
 
-/atom/movable/sunlighting_overlay/blob_act()
+/atom/movable/sunlighting_object/blob_act()
 	return
 /*
 // Nope nope nope!
-/atom/movable/sunlighting_overlay/onShuttleMove(turf/T1, rotation)
+/atom/movable/sunlighting_object/onShuttleMove(turf/T1, rotation)
 	return FALSE
 */
 // Override here to prevent things accidentally moving around overlays.
-/atom/movable/sunlighting_overlay/forceMove(atom/destination, var/no_tp=FALSE, var/harderforce = FALSE)
+/atom/movable/sunlighting_object/forceMove(atom/destination, var/no_tp=FALSE, var/harderforce = FALSE)
 	if(harderforce)
 		. = ..()
 #if defined(LIGHTING_ANIMATION)
-/atom/movable/sunlighting_overlay/proc/animate_color()
+/atom/movable/sunlighting_object/proc/animate_color()
 	animate(src, color = target_color, time = LIGHTING_ANIMATE_TIME, flags = ANIMATION_RELATIVE)
 #endif

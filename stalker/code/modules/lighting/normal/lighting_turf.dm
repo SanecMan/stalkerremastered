@@ -48,7 +48,7 @@
 
 // Used to get a scaled lumcount.
 /turf/proc/get_lumcount(var/minlum = 0, var/maxlum = 1)
-	if (!lighting_overlay && !sun_lighting_overlay)
+	if (!lighting_overlay && !sunlighting_object)
 		return 1
 
 	var/totallums = 0
@@ -131,7 +131,7 @@
 	var/old_lighting_overlay = lighting_overlay
 	var/old_corners = corners
 	var/old_sun_affecting_lights = sun_affecting_lights
-	var/old_sun_lighting_overlay = sun_lighting_overlay
+	var/old_sunlighting_object = sunlighting_object
 	var/old_sun_corners = suncorners
 
 	. = ..() //At this point the turf has changed
@@ -141,7 +141,7 @@
 	affecting_lights = old_affecting_lights
 	corners = old_corners
 	sun_affecting_lights = old_sun_affecting_lights
-	sun_lighting_overlay = old_sun_lighting_overlay
+	sunlighting_object = old_sunlighting_object
 	suncorners = old_sun_corners
 	if (old_opacity != opacity || dynamic_lighting != old_dynamic_lighting)
 		reconsider_lights()

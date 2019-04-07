@@ -50,7 +50,7 @@
 
 		if(A.ambient_environment)
 
-			if(A.ambient_environment_night && (SSnightcycle.currentTime == 243000 || SSnightcycle.currentTime == 810000))
+			if(A.ambient_environment_night && (SSsunlight.current_step == 243000 || SSsunlight.current_step == 810000))
 				ambient_environment = sound(file = safepick(A.ambient_environment_night))
 			else
 				ambient_environment = sound(file = safepick(A.ambient_environment))
@@ -68,9 +68,9 @@
 
 		if(A.ambient_background)
 
-			if(A.ambient_background[SSnightcycle.currentTime])
-				ambient_background = sound(file = A.ambient_background[SSnightcycle.currentTime])
-				ambient_background.real_cooldown = A.ambient_background_cooldown[SSnightcycle.currentTime]
+			if(A.ambient_background[SSsunlight.current_step])
+				ambient_background = sound(file = A.ambient_background[SSsunlight.current_step])
+				ambient_background.real_cooldown = A.ambient_background_cooldown[SSsunlight.current_step]
 
 			if(ambient_background)
 				////////////////////////
