@@ -23,7 +23,7 @@
 	density = 1
 	anchored = 1
 	flags_1 = CONDUCT_1
-	layer = PROJECTILE_HIT_THRESHHOLD_LAYER
+	layer = WALL_OBJ_LAYER
 	max_integrity = 10000000
 
 /obj/structure/grille/stalker/ex_act(severity, target)
