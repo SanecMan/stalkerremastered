@@ -58,6 +58,7 @@
 	icon_state = ""
 	layer = FLY_LAYER
 	bullet_bounce_sound = null
+	plane = BLACKNESS_PLANE
 
 /turf/closed/indestructible/splashscreen/New()
 	SStitle.splash_turf = src
