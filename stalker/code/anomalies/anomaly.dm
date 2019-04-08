@@ -345,9 +345,9 @@ GLOBAL_LIST_EMPTY(spawned_artifacts)
 	name = "anomaly"
 	cooldown = 2
 	sound = 'stalker/sound/anomalies/zharka1.ogg'
-	luminosity = 1
-	idle_luminosity = 1
-	activated_luminosity = 2
+	luminosity = 3
+	idle_luminosity = 3
+	activated_luminosity = 4
 	anomaly_color = "#FFAA33"
 	damage_type = DMG_TYPE_IGNITION
 	icon = 'stalker/icons/anomalies.dmi'
@@ -431,9 +431,9 @@ GLOBAL_LIST_EMPTY(spawned_artifacts)
 /obj/anomaly/holodec
 	name = "anomaly"
 	cooldown = 2
-	luminosity = 2
-	idle_luminosity = 2
-	activated_luminosity = 3
+	luminosity = 3
+	idle_luminosity = 3
+	activated_luminosity = 4
 	anomaly_color = "#70cc33"
 	sound = 'stalker/sound/anomalies/buzz_hit.ogg'
 	damage_type = DMG_TYPE_LASTER
