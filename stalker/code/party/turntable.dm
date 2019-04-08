@@ -41,8 +41,6 @@
 		target.hear_music = null
 
 */
-/mob/var/sound/music
-///client/var/jukeboxplaying = 0
 
 /datum/data/turntable_soundtrack
 	var/f_name
@@ -355,14 +353,14 @@
 		if(!playing || (get_area(C.mob) != A))
 			continue
 
-		C.mob.music.status = SOUND_STREAM
-		C.mob.music.file = null
-		C.mob << C.mob.music
+		C.music_juke.status = SOUND_STREAM
+		C.music_juke.file = null
+		C.mob << C.music_juke
 		sleep(0)
-		C.mob.music.status = SOUND_STREAM
-		C.mob.music.file = 'stalker/sound/objects/radio_noise.ogg'
-		C.mob.music.volume = volume
-		C.mob << C.mob.music
+		C.music_juke.status = SOUND_STREAM
+		C.music_juke.file = 'stalker/sound/objects/radio_noise.ogg'
+		C.music_juke.volume = volume
+		C.mob << C.music_juke
 	sleep(40)
 	transition = 0
 	//timer_id = addtimer(src, "skip_song", TS.length - 10)
@@ -449,34 +447,34 @@
 			continue
 
 		if(!playing || (get_area(C.mob) != A))
-			if(C.mob.music)
-				C.mob.music.status = SOUND_STREAM | SOUND_UPDATE
-				C.mob.music.volume = 0
-				C.mob << C.mob.music
-				C.mob.music.status = SOUND_STREAM
+			if(C.music_juke)
+				C.music_juke.status = SOUND_STREAM | SOUND_UPDATE
+				C.music_juke.volume = 0
+				C.mob << C.music_juke
+				C.music_juke.status = SOUND_STREAM
 			else
 				C.mob << sound(null, channel = CHANNEL_JUKEBOX, wait = 0)
 			//C.jukeboxplaying = 0
 			melomans.Remove(C)
 			continue
 
-		if(!C.mob.music)
-			create_sound(C.mob)
+		if(!C.music_juke)
+			create_sound(C)
 			continue
 
-		if(!C.mob.music.transition && C.mob.music.file != track.path)
-			C.mob.music.file = track.path
+		if(!C.music_juke.transition && C.music_juke.file != track.path)
+			C.music_juke.file = track.path
 		//	C.mob.music.status = SOUND_STREAM
 		else
-			C.mob.music.status = SOUND_STREAM | SOUND_UPDATE
+			C.music_juke.status = SOUND_STREAM | SOUND_UPDATE
 
-		C.mob.music.volume = volume
-		C.mob << C.mob.music
-		C.mob.music.status = SOUND_STREAM
+		C.music_juke.volume = volume
+		C.mob << C.music_juke
+		C.music_juke.status = SOUND_STREAM
 
-/obj/machinery/party/turntable/proc/create_sound(mob/M)
-	if(!M.music || M.music.file != track.path)
-		var/sound/S = sound(track.path)
+/obj/machinery/party/turntable/proc/create_sound(client/C)
+	if(!C.music_juke || C.music_juke.file != track.path)
+		var/sound/S = new/sound/ambient(track.path)
 		S.repeat = 0
 		S.channel = CHANNEL_JUKEBOX
 		S.falloff = 2
@@ -484,13 +482,14 @@
 		S.volume = 0
 		S.status = SOUND_STREAM //SOUND_STREAM
 		S.environment = get_area(src).environment
-		M.music = S
-		SEND_SOUND(M, S)
+		C.music_juke = S
+		C.mob << S
+		//SEND_SOUND(C.mob, S)
 	else
-		M.music.status = SOUND_STREAM | SOUND_UPDATE
-		M.music.volume = volume
-		M << M.music
-		M.music.status = SOUND_STREAM
+		C.music_juke.status = SOUND_STREAM | SOUND_UPDATE
+		C.music_juke.volume = volume
+		C.mob << C.music_juke
+		C.music_juke.status = SOUND_STREAM
 
 /obj/machinery/party/mixer
 	name = "mixer"

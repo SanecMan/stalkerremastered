@@ -918,9 +918,20 @@
 
 /mob/proc/sync_lighting_plane_alpha()
 	if(hud_used)
+		/*
 		var/obj/screen/plane_master/lighting/L = hud_used.plane_masters["[LIGHTING_PLANE]"]
+		var/obj/screen/plane_master/sunlighting/SL = hud_used.plane_masters["[SUNLIGHTING_PLANE]"]
 		if (L)
 			L.alpha = lighting_alpha
+		if (SL)
+			SL.alpha = lighting_alpha
+		*/
+		var/obj/screen/plane_master/game_world/G = hud_used.plane_masters["[GAME_PLANE]"]
+		if(G)
+			if(lighting_alpha)
+				G.invisibility = 0
+			else
+				G.invisibility = 101
 
 /mob/proc/update_mouse_pointer()
 	if (!client)

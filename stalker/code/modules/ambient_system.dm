@@ -1,11 +1,12 @@
-/mob
-	var/sound/ambient_music			= null		//Музыка
-	var/sound/ambient_environment	= null		//Случайные короткие звуки длительностью не более 12 секунд
-	var/sound/ambient_background	= null		//Залупленный звук
-	var/sound/ambient_psy			= null		//Пси-звук
-	var/sound/ambient_campfire		= null		//Звук от костра - campfire.dm
+/client
+	var/sound/ambient/music			= null		//Музыка
+	var/sound/ambient/music_juke	= null		//Музыка из джукбокса
+	var/sound/ambient/environment	= null		//Случайные короткие звуки длительностью не более 12 секунд
+	var/sound/ambient/background	= null		//Залупленный звук
+	var/sound/ambient/psy			= null		//Пси-звук
+	var/sound/ambient/campfire		= null		//Звук от костра - campfire.dm
 
-/sound
+/sound/ambient
 	var/last_time = 0
 	var/real_cooldown = 0
 	var/transition = 0
@@ -19,65 +20,65 @@
 
 	var/area/A = get_area(src)
 
-	if(ambient_music && !ambient_music.transition && (!A.ambient_music || (music && music.volume > 0)))
-		ambient_music.Transition(src)
-		ambient_music = null
+	if	(client.music && !client.music.transition && (!A.ambient_music || (client.music_juke && client.music_juke.volume > 0)))
+		client.music.Transition(src)
+		client.music = null
 
-	if(ambient_background && !ambient_background.transition && !(ambient_background.file in A.ambient_background))//[SSsunlight.current_step]))
+	if(client.background && !client.background.transition && !(client.background.file in A.ambient_background))//[SSsunlight.current_step]))
 
-		ambient_background.Transition(src)
-		ambient_background = null
+		client.background.Transition(src)
+		client.background = null
 
-	if(ambient_psy && ambient_psy.volume > 10)
+	if(client.psy && client.psy.volume > 10)
 		return 1
 
-	if(!ambient_music || (!ambient_music.transition && (world.time >= ambient_music.last_time + ambient_music.real_cooldown)))
+	if(!client.music || (!client.music.transition && (world.time >= client.music.last_time + client.music.real_cooldown)))
 
-		if(A.ambient_music && (!music || (music && music.volume <= 0)))
+		if(A.ambient_music && (!client.music_juke || (client.music_juke && client.music_juke.volume <= 0)))
 
-			if(ambient_music)
-				ambient_music.Transition(src)
+			if(client.music)
+				client.music.Transition(src)
 
-			ambient_music = sound(file = safepick(A.ambient_music))
+			client.music = new/sound/ambient(file = safepick(A.ambient_music))
 			////////////////////////
-			ambient_music.real_cooldown = rand(A.ambient_music_cooldown * 0.8, A.ambient_music_cooldown * 1.4)
-			ambient_music.last_time = world.time
+			client.music.real_cooldown = rand(A.ambient_music_cooldown * 0.8, A.ambient_music_cooldown * 1.4)
+			client.music.last_time = world.time
 			////////////////////////
-			ambient_music.Set_Sound(AMBIENT_MUSIC_CHANNEL, 10, 0, -1)
-			src << ambient_music
+			client.music.Set_Sound(AMBIENT_MUSIC_CHANNEL, 10, 0, -1)
+			src << client.music
 
-	if(!ambient_environment || world.time >= ambient_environment.last_time + ambient_environment.real_cooldown)
+	if(!client.environment || (world.time >= client.environment.last_time + client.environment.real_cooldown))
 
 		if(A.ambient_environment)
 
 			if(A.ambient_environment_night && (SSsunlight.current_step == 243000 || SSsunlight.current_step == 810000))
-				ambient_environment = sound(file = safepick(A.ambient_environment_night))
+				client.environment = new/sound/ambient(file = safepick(A.ambient_environment_night))
 			else
-				ambient_environment = sound(file = safepick(A.ambient_environment))
+				client.environment = new/sound/ambient(file = safepick(A.ambient_environment))
 
-			if(ambient_environment)
+			if(client.environment)
 
 				////////////////////////
-				ambient_environment.last_time = world.time
-				ambient_environment.real_cooldown = rand(A.ambient_environment_cooldown * 0.3, A.ambient_environment_cooldown * 1.5)
+				client.environment.last_time = world.time
+				client.environment.real_cooldown = rand(A.ambient_environment_cooldown * 0.3, A.ambient_environment_cooldown * 1.5)
 				////////////////////////
-				ambient_environment.Set_Sound(AMBIENT_ENVIRONMENT_CHANNEL, rand(25, 60), rand(-100, 100), A.environment)
-				src << ambient_environment
+				client.environment.Set_Sound(AMBIENT_ENVIRONMENT_CHANNEL, rand(25, 60), rand(-100, 100), A.environment)
+				src << client.environment
 
-	if(!ambient_background || (!ambient_background.transition && world.time >= ambient_background.last_time + ambient_background.real_cooldown))
+	if(!client.background || (!client.background.transition && (world.time >= client.background.last_time + client.background.real_cooldown)))
 
 		if(A.ambient_background)
 
 			if(A.ambient_background[SSsunlight.current_step])
-				ambient_background = sound(file = A.ambient_background[SSsunlight.current_step])
-				ambient_background.real_cooldown = A.ambient_background_cooldown[SSsunlight.current_step]
+				client.background = new/sound/ambient(file = A.ambient_background[SSsunlight.current_step])
+				client.background.real_cooldown = A.ambient_background_cooldown[SSsunlight.current_step]
 
-			if(ambient_background)
+			if(client.background)
 				////////////////////////
-				ambient_background.last_time = world.time
+				client.background.last_time = world.time
 				////////////////////////
-				ambient_background.Set_Sound(AMBIENT_BACKGROUND_CHANNEL, 35, 0, A.environment)
-				src << ambient_background
+				client.background.Set_Sound(AMBIENT_BACKGROUND_CHANNEL, 35, 0, A.environment)
+				src << client.background
 
 	return 1
 
@@ -85,27 +86,27 @@
 	if(!..())
 		return
 
-	if(src.psyloss >= 25 && (!ambient_psy || (world.time >= ambient_psy.last_time + ambient_psy.real_cooldown)))
-		ambient_psy = sound(file = 'stalker/sound/ambience/psy_amb.ogg')
+	if(src.psyloss >= 25 && (!client.psy || (world.time >= client.psy.last_time + client.psy.real_cooldown)))
+		client.psy = new/sound/ambient(file = 'stalker/sound/ambience/psy_amb.ogg')
 		////////////////////////
-		ambient_psy.last_time = world.time
-		ambient_psy.real_cooldown = 110
+		client.psy.last_time = world.time
+		client.psy.real_cooldown = 110
 		////////////////////////
-		ambient_psy.Set_Sound(AMBIENT_PSY_CHANNEL, 60*(psyloss/200), 0, -1)
-		src << ambient_psy
+		client.psy.Set_Sound(AMBIENT_PSY_CHANNEL, 60*(psyloss/200), 0, -1)
+		src << client.psy
 
 
-/sound/proc/Transition(var/mob/M)
+/sound/ambient/proc/Transition(var/mob/M, var/new_volume = 0)
 	transition = 1
 	status = SOUND_STREAM | SOUND_UPDATE
-
+	//animate(src, volume = new_volume, time = 2.5, loop = 1)
 	while(volume > 0)
 		volume = max(volume - 2, 0)
 		M << src
 		/////////
 		sleep(2.5)
 		/////////
-
+	//status = SOUND_PAUSED
 	status = SOUND_STREAM
 	transition = 0
 

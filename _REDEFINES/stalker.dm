@@ -68,4 +68,15 @@
 #define MENTAL_MONOLITH						1
 #define MENTAL_ZOMBIE						2
 
+//////////////ANOMALIES
+
+
+//HOLODEC
+#define BIRTH_STAGE							0
+#define MIDAGE_STAGE						1
+#define DEATH_STAGE							2
+
+
+//////////////wtf is this
+
 #define GLOBAL_LIGHT_TURF_1         (1<<0)     //Sets any light emitted by this turf to GLOBAL_LIGHTING, isn't affected by other GLOBAL_LIGHTING lights
