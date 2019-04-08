@@ -1,31 +1,30 @@
 /obj/structure/barricade/stalker
 	icon = 'stalker/icons/decor.dmi'
 	var/debriss_type
-	var/loot
-	var/lootenable = 0
-	var/doubleloot = 0
+	var/loot = list()
+	var/lootcount = 0
 
 /obj/structure/barricade/stalker/take_damage(damage, leave_debris=1, message)
 	obj_integrity -= damage
-	if(obj_integrity <= 0)
-		if(message)
-			visible_message(message)
-		else
-			visible_message("<span class='warning'>\The [src] is smashed apart!</span>")
-		if(leave_debris && debriss_type)
-			new debriss_type(get_turf(src))
-			if(lootenable)
-				if(loot)
-					var/lootspawn = pickweight(loot)
-					if(doubleloot)
-						new lootspawn(get_turf(src))
-						lootspawn = pickweight(loot)
-						new lootspawn(get_turf(src))
-						qdel(src)
-					else
-						new lootspawn(get_turf(src))
-						qdel(src)
-		qdel(src)
+	if(obj_integrity > 0)
+		return
+
+	//if(message)
+	//	visible_message(message)
+	//else
+
+	visible_message("<span class='warning'>\The [src] is smashed apart!</span>")
+
+	if(leave_debris && debriss_type)
+		new debriss_type(get_turf(src))
+
+	if(loot)
+		for(var/i = 0, i < lootcount, i++)
+			var/lootspawn = pickweight(loot)
+			new lootspawn(get_turf(src))
+			lootspawn = pickweight(loot)
+
+	qdel(src)
 
 /obj/structure/barricade/stalker/wood
 	name = "wooden barricade"
@@ -44,8 +43,7 @@
 	proj_pass_rate = 0
 	obj_integrity = 30
 	max_integrity = 30
-	lootenable = 1
-	doubleloot = 1
+	lootcount = 2
 	loot = list(/obj/item/reagent_containers/pill/stalker/aptechka/civilian = 30,
 					/obj/item/artifact/meduza = 1,
 					/obj/item/reagent_containers/food/snacks/stalker/konserva = 55,
@@ -61,6 +59,10 @@
 					/obj/item/ammo_box/stalker/b12x70 = 40,
 					/obj/item/radio = 20,
 					/obj/item/gun/ballistic/automatic/pistol/pm = 3)
+
+/obj/structure/barricade/stalker/box/Initialize()
+	..()
+	lootcount = rand(1, 2)
 
 /obj/structure/stalker/blocks
 	name = "blocks"
