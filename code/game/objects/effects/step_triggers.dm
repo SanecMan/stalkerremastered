@@ -117,6 +117,7 @@
 	name = "perehod"
 	icon = 'stalker/icons/perehod.dmi'
 	icon_state = "down"
+	affect_ghosts = 1
 
 /obj/effect/step_trigger/teleporter/Trigger(atom/movable/A)
 	if(teleport_x && teleport_y && teleport_z)

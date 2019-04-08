@@ -319,6 +319,9 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 			x--
 
 	Moved(oldloc, direct)
+	var/obj/effect/step_trigger/teleporter/T = locate(/obj/effect/step_trigger/teleporter) in NewLoc
+	if(T)
+		T.Crossed(src)
 
 /mob/dead/observer/verb/reenter_corpse()
 	set category = "Ghost"
