@@ -55,7 +55,7 @@
 
 /obj/item/storage/box/attack_self(mob/user)
 	..()
-
+/*
 	if(!foldable)
 		return
 	if(contents.len)
@@ -68,7 +68,7 @@
 	var/obj/item/I = new foldable
 	qdel(src)
 	user.put_in_hands(I)
-
+*/
 /obj/item/storage/box/attackby(obj/item/W, mob/user, params)
 	if(istype(W, /obj/item/stack/packageWrap))
 		return 0
