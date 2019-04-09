@@ -67,6 +67,7 @@
 	var/obj/item/disk/music/disk
 	var/playing = 1
 	var/datum/data/turntable_soundtrack/track = null
+	var/datum/data/turntable_soundtrack/next_track = null
 	var/volume = 37
 	var/list/mob/melomans = list()
 	var/list/turntable_soundtracks = list(
@@ -275,10 +276,14 @@
 			say("Jukebox is turned off.")
 			return
 
+		if(transition)
+			return
+
 		if(alert("Do you want to play [TS.name] for [play_song_cost] RU?", "Turntable", "Yes", "No") == "No")
 			return
 
-		if(transition)
+		if(next_track)
+			say("Next song is already picked: [next_track.f_name] - [next_track.name]")
 			return
 
 		if (!TS)
@@ -291,7 +296,10 @@
 			return
 
 		//deltimer(timer_id)
-		skip_song(TS)
+		//skip_song(TS)
+
+		next_track = TS
+		say("Playing next: [next_track.f_name] - [next_track.name]")
 
 		KPK.profile.fields["money"] -= play_song_cost
 		collected_money += play_song_cost
@@ -312,7 +320,7 @@
 			return
 
 		//deltimer(timer_id)
-		skip_song()
+		skip_song(next_track)
 
 		KPK.profile.fields["money"] -= skip_song_cost
 		collected_money += skip_song_cost
@@ -343,7 +351,8 @@
 	if(playing)
 		update_sound()
 
-/obj/machinery/party/turntable/proc/skip_song(var/datum/data/turntable_soundtrack/TS = pick(turntable_soundtracks))
+/obj/machinery/party/turntable/proc/skip_song(var/datum/data/turntable_soundtrack/TS = pick(turntable_soundtracks - track))
+	next_track = null
 	var/area/A = get_area(src)
 	transition = 1
 	for(var/client/C in melomans)
