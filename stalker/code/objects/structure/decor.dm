@@ -2,7 +2,7 @@
 	icon = 'stalker/icons/decor.dmi'
 	density = 0
 	anchored = 1
-	layer = 3.1
+	layer = OBJ_LAYER
 
 /obj/structure/sign/vendor
 	name = "vendor sign"
@@ -169,7 +169,7 @@
 	desc = "Сломанные доски. Использовать где-либо их уже не получитс&#255;."
 	eng_desc = "Broken planks."
 	icon_state = "doski_oblomki"
-	layer = 2.8
+	layer = 2.9
 	pass_flags = LETPASSTHROW
 
 /obj/structure/stalker/doski/doski2
@@ -227,7 +227,7 @@
 	eng_desc = "Old big wooden crate."
 	opacity = 1
 	density = 1
-	layer = 9
+	layer = MASSIVE_OBJ_LAYER
 	cache_size = 3
 
 /obj/structure/stalker/propane
@@ -244,7 +244,7 @@
 	icon_state = "stolb"
 	desc = "Столб с вис&#255;щими остатками проводов."
 	eng_desc = "Old pillar."
-	layer = 9
+	layer = MASSIVE_OBJ_LAYER
 	density = 0
 
 /obj/structure/stalker/propane/dual
@@ -295,7 +295,7 @@
 	icon_state = "porog1"
 	desc = "Старый порог, о который можно легко зацепитьс&#255; ногой."
 	eng_desc = "Old step."
-	layer = 2.9
+	layer = BELOW_OBJ_LAYER
 	density = 0
 	cache_size = 0
 
@@ -533,7 +533,7 @@
 	name = "tile"
 	icon = 'stalker/icons/floor.dmi'
 	icon_state = "bar_plate1"
-	layer = 2.3
+	layer = DISPOSAL_PIPE_LAYER
 
 /obj/structure/stalker/bar_plitka/New()
 	..()
