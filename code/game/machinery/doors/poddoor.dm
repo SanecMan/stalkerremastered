@@ -3,7 +3,7 @@
 	desc = "A heavy duty blast door that opens mechanically."
 	icon = 'icons/obj/doors/blastdoor.dmi'
 	icon_state = "closed"
-	var/id = 1
+	var/id = null
 	layer = BLASTDOOR_LAYER
 	closingLayer = CLOSED_BLASTDOOR_LAYER
 	sub_door = TRUE
