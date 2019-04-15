@@ -138,6 +138,7 @@ GLOBAL_LIST_INIT(global_sidormat_list, list(
 
 	"Masks and Helmets" = list(
 		////////////////////////////	Маски, Шлемы	/////////////////////////////////////
+		new /datum/data/stalker_equipment("Joy Mask",					"Странная Маска",				/obj/item/clothing/mask/joy,									3000,	ROOKIE),
 		new /datum/data/stalker_equipment("Gasmask",					"Противогаз",					/obj/item/clothing/mask/gas/stalker,							7500,	ROOKIE),
 		new /datum/data/stalker_equipment("Merc gasmask",				"Противогаз наемников",			/obj/item/clothing/mask/gas/stalker/mercenary,					9500,	ROOKIE),
 		new /datum/data/stalker_equipment("Steel helmet",				"Стальная каска",				/obj/item/clothing/head/steel,									10000,	ROOKIE),
@@ -151,10 +152,16 @@ GLOBAL_LIST_INIT(global_sidormat_list, list(
 	"Medicine" = list(
 		///////////////////////////////	Медикаменты	/////////////////////////////////////////
 		new /datum/data/stalker_equipment("Medkit",						"Аптечка",							/obj/item/reagent_containers/pill/stalker/aptechka/civilian,		1500,	ROOKIE),
-		new /datum/data/stalker_equipment("Army medkit",				"Армейска&#x44F; аптечка",			/obj/item/reagent_containers/pill/stalker/aptechka/army,			3500,	EXPERIENCED),
-		new /datum/data/stalker_equipment("Scientific medkit",			"Научна&#x44F; аптечка",			/obj/item/reagent_containers/pill/stalker/aptechka/scientific,		6000,	VETERAN),
+		new /datum/data/stalker_equipment("Army medkit",				"Армейская; аптечка",				/obj/item/reagent_containers/pill/stalker/aptechka/army,			3500,	EXPERIENCED),
+		new /datum/data/stalker_equipment("Scientific medkit",			"Научная; аптечка",					/obj/item/reagent_containers/pill/stalker/aptechka/scientific,		6000,	VETERAN),
 		new /datum/data/stalker_equipment("Bandage",					"Бинт",								/obj/item/reagent_containers/pill/stalker/aptechka/bint,			750,	ROOKIE),
-		new /datum/data/stalker_equipment("Anti-rad",					"Анти-рад препараты",				/obj/item/reagent_containers/hypospray/medipen/stalker/antirad,		3500,	ROOKIE)
+		new /datum/data/stalker_equipment("Anti-rad",					"Анти-рад препараты",				/obj/item/reagent_containers/hypospray/medipen/stalker/antirad,		3500,	ROOKIE),
+		new /datum/data/stalker_equipment("LSD Pills",					"Таблетки ЛСД",						/obj/item/storage/pill_bottle/lsd,									10000,	EXPERIENCED),
+		new /datum/data/stalker_equipment("Happines Pills",				"Таблетки Счастья",					/obj/item/storage/pill_bottle/happiness,							5000,	EXPERIENCED),
+		new /datum/data/stalker_equipment("Epinephrine Pills",			"Эпинефрин в таблетках",			/obj/item/storage/pill_bottle/epinephrine,							5000,	ROOKIE),
+		new /datum/data/stalker_equipment("Cyanide Bottle",				"Бутыль Цианида",					/obj/item/reagent_containers/glass/bottle/cyanide,					20000,	ROOKIE),
+		new /datum/data/stalker_equipment("Toxin Bottle",				"Бутыль с токсичной жидкостью",		/obj/item/reagent_containers/glass/bottle/toxin,					15000,	ROOKIE),
+		new /datum/data/stalker_equipment("Mutagen Bottle",				"Бутыль с Мутагеном",				/obj/item/reagent_containers/glass/bottle/mutagen,					200000,	ROOKIE)
 		),
 
 	"Food" = list(
