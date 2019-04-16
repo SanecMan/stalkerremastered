@@ -38,7 +38,8 @@
 		to_chat(user, "Its debug output is printing \"[broken_message]\".")
 
 /obj/machinery/atmospherics/miner/proc/check_operation()
-	if(!active)
+	return FALSE
+/*	if(!active)
 		return FALSE
 	var/turf/T = get_turf(src)
 	if(!isopenturf(T))
@@ -66,7 +67,7 @@
 	if(broken)
 		set_broken(FALSE)
 		broken_message = ""
-	return TRUE
+	return TRUE*/
 
 /obj/machinery/atmospherics/miner/proc/set_active(setting)
 	if(active != setting)
@@ -118,7 +119,7 @@
 		add_overlay(on_overlay)
 
 /obj/machinery/atmospherics/miner/process()
-	update_power()
+	//update_power()
 	check_operation()
 	if(active && !broken)
 		if(isnull(spawn_id))

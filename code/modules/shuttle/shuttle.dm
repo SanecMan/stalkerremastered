@@ -196,8 +196,8 @@
 		if(!roundstart_template)
 			CRASH("Invalid path ([roundstart_template]) passed to docking port.")
 
-	if(roundstart_template)
-		SSshuttle.manipulator.action_load(roundstart_template, src)
+	//if(roundstart_template)
+	//	SSshuttle.manipulator.action_load(roundstart_template, src)
 
 //returns first-found touching shuttleport
 /obj/docking_port/stationary/get_docked()

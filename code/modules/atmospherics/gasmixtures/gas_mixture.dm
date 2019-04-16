@@ -242,17 +242,17 @@ GLOBAL_LIST_INIT(gaslist_cache, init_gaslist_cache())
 
 
 /datum/gas_mixture/copy_from(datum/gas_mixture/sample)
-	var/list/cached_gases = gases //accessing datum vars is slower than proc vars
-	var/list/sample_gases = sample.gases
+//	var/list/cached_gases = gases //accessing datum vars is slower than proc vars
+//	var/list/sample_gases = sample.gases
 
-	temperature = sample.temperature
-	for(var/id in sample_gases)
-		ASSERT_GAS(id,src)
-		cached_gases[id][MOLES] = sample_gases[id][MOLES]
+//	temperature = sample.temperature
+//	for(var/id in sample_gases)
+//		ASSERT_GAS(id,src)
+//		cached_gases[id][MOLES] = sample_gases[id][MOLES]
 
 	//remove all gases not in the sample
-	cached_gases &= sample_gases
-
+//	cached_gases &= sample_gases
+//
 	return 1
 
 /datum/gas_mixture/copy_from_turf(turf/model)
