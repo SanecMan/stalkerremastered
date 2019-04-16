@@ -197,8 +197,8 @@ var/id_ = 0
 
 /datum/data/modification/clothing/head/nightvision/basic/AffectEquipment(var/obj/item/clothing/head/Gear)
 	if(!Gear.nvg)
-		Gear.nvg = new /obj/item/nightvision(Gear)
-		Gear.AttachNvg()
+		//Gear.nvg = new /obj/item/nightvision(Gear)
+		Gear.AttachNVG()
 	Gear.nvg.colour_matrix = NIGHTVISION_MATRIX_I
 	return ..(Gear)
 
@@ -213,8 +213,8 @@ var/id_ = 0
 
 /datum/data/modification/clothing/head/nightvision/advanced/AffectEquipment(var/obj/item/clothing/head/Gear)
 	if(!Gear.nvg)
-		Gear.nvg = new /obj/item/nightvision(Gear)
-		Gear.AttachNvg()
+		//Gear.nvg = new /obj/item/nightvision(Gear)
+		Gear.AttachNVG()
 	Gear.nvg.colour_matrix = NIGHTVISION_MATRIX_II
 	return ..(Gear)
 
@@ -246,8 +246,8 @@ var/id_ = 0
 
 /datum/data/modification/clothing/mask/nightvision/basic/AffectEquipment(var/obj/item/clothing/mask/Gear)
 	if(!Gear.nvg)
-		Gear.nvg = new /obj/item/nightvision(Gear)
-		Gear.AttachNvg()
+		//Gear.nvg = new /obj/item/nightvision(Gear)
+		Gear.AttachNVG()
 	Gear.nvg.colour_matrix = NIGHTVISION_MATRIX_I
 	return ..(Gear)
 
@@ -263,8 +263,8 @@ var/id_ = 0
 
 /datum/data/modification/clothing/mask/nightvision/advanced/AffectEquipment(var/obj/item/clothing/mask/Gear)
 	if(!Gear.nvg)
-		Gear.nvg = new /obj/item/nightvision(Gear)
-		Gear.AttachNvg()
+		//Gear.nvg = new /obj/item/nightvision(Gear)
+		Gear.AttachNVG()
 	Gear.nvg.colour_matrix = NIGHTVISION_MATRIX_II
 	return ..(Gear)
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -440,8 +440,8 @@ var/id_ = 0
 
 /datum/data/modification/clothing/suit/nightvision/basic/AffectEquipment(var/obj/item/clothing/suit/hooded/Gear)
 	if(!Gear.hood.nvg)
-		Gear.hood.nvg = new /obj/item/nightvision(Gear.hood)
-		Gear.AttachNvg()
+		//Gear.hood.nvg = new /obj/item/nightvision(Gear.hood)
+		Gear.hood.AttachNVG()
 	Gear.hood.nvg.colour_matrix = NIGHTVISION_MATRIX_I
 	return ..(Gear)
 
@@ -457,8 +457,8 @@ var/id_ = 0
 
 /datum/data/modification/clothing/suit/nightvision/advanced/AffectEquipment(var/obj/item/clothing/suit/hooded/Gear)
 	if(!Gear.hood.nvg)
-		Gear.hood.nvg = new /obj/item/nightvision(Gear.hood)
-		Gear.AttachNvg()
+		//Gear.hood.nvg = new /obj/item/nightvision(Gear.hood)
+		Gear.hood.AttachNVG()
 	Gear.hood.nvg.colour_matrix = NIGHTVISION_MATRIX_II
 	return ..(Gear)
 

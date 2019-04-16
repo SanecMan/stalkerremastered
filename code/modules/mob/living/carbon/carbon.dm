@@ -614,7 +614,7 @@
 		see_invisible = see_override
 
 	if(see_override_nva)
-		lighting_alpha = 125
+		lighting_alpha = 0
 		see_in_dark = see_override_nva
 		if (see_override_nva == 2)
 			lighting_alpha = 255

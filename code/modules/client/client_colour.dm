@@ -20,7 +20,8 @@
 /mob
 	var/list/client_colours = list()
 
-
+/client/proc/colour_transition(var/list/colour_to = null, var/time = 10) //Call this with no parameters to reset to default.
+	animate(src, color=colour_to, time=time, easing=SINE_EASING)
 
 /*
 	Adds an instance of colour_type to the mob's client_colours list
@@ -65,10 +66,8 @@
 		return
 	var/datum/client_colour/CC = client_colours[1]
 	if(CC)
-		client.color = CC.colour
-
-
-
+		//client.color = CC.colour
+		client.colour_transition(CC.colour)
 
 /datum/client_colour/glass_colour
 	priority = 0
@@ -109,29 +108,32 @@
 
 /datum/client_colour/blowout
 	colour = list(rgb(255,0,0), rgb(125,125,0), rgb(125,0,125), rgb(0,0,0))
+	priority = 2
 
 /datum/client_colour/blowout2
 	colour = list(rgb(255,0,0), rgb(77,150,0), rgb(77,0,150), rgb(0,0,0))
+	priority = 3
 
 /datum/client_colour/psy
 	colour = list(rgb(77,77,77), rgb(150,150,150), rgb(28,28,28), rgb(0,0,0))
+	priority = 4
 
 /datum/client_colour/nvg
 	colour = list(rgb(25,225,0), rgb(0,255,0), rgb(0,255,25), rgb(0,0,0))
-	priority = INFINITY
+	priority = 8
 
 /datum/client_colour/nvg2
 	colour = list(rgb(77,77,77), rgb(77,77,77), rgb(77,77,77), rgb(0,0,0))
-	priority = INFINITY
+	priority = 8
 
 /datum/client_colour/correction
 	colour = list(rgb(255,15,15), rgb(5,225,5), rgb(5,5,225), rgb(0,0,0))
-	priority = INFINITY
+	priority = 5
 
 /datum/client_colour/retardation
 	colour = list(rgb(125,55,125), rgb(55,155,55), rgb(55,55,255), rgb(0,0,0))
-	priority = INFINITY
+	priority = 6
 
 /datum/client_colour/monochrome
 	colour = list(rgb(77,77,77), rgb(150,150,150), rgb(28,28,28), rgb(0,0,0))
-	priority = INFINITY //we can't see colors anyway!
+	priority = 7 //we can't see colors anyway!

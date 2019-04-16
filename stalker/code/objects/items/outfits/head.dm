@@ -115,10 +115,11 @@
 	resistance_flags = UNACIDABLE
 	durability = 400
 	//ÃŒƒ»‘» ¿÷»»//
-	modifications = list("padding_head" = 0, "material_head" = 0, "visor_head" = 0)
+	modifications = list("padding_head" = 0, "material_head" = 0, "visor_head" = 1)
 
 /obj/item/clothing/head/spheram/New()
-	nvg = new /obj/item/nightvision(src)
+	//nvg = new /obj/item/nightvision(src)
+	AttachNVG()
 	..()
 
 /obj/item/clothing/head/skathelmet
@@ -134,7 +135,8 @@
 	modifications = list("padding_head" = 0, "material_head" = 0, "visor_head" = 1)
 
 /obj/item/clothing/head/skathelmet/New()
-	nvg = new /obj/item/nightvision(src)
+	//nvg = new /obj/item/nightvision(src)
+	AttachNVG()
 	..()
 
 /obj/item/clothing/head/petrovichhelmet

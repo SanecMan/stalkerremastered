@@ -94,8 +94,8 @@
 
 /obj/item/clothing
 	var/obj/item/nightvision/nvg
-	var/datum/action/item_action/nightvision/nva
-
+	//var/datum/action/item_action/nightvision/nva
+/*
 /obj/item/clothing/New()
 	. = ..()
 	if(nvg)
@@ -104,17 +104,22 @@
 /obj/item/clothing/proc/AttachNvg()
 	if(nvg)
 		nva = new(src)
+*/
+
+/obj/item/clothing/proc/AttachNVG(var/type = /obj/item/nightvision)
+	nvg = new type(src)
+	src.actions_types += new/datum/action/item_action/nightvision(src)
 
 /obj/item/nightvision
 	var/active = 0
-	var/list/colour_matrix = NIGHTVISION_MATRIX_I
+	var/colour_matrix = /datum/client_colour/nvg	//NIGHTVISION_MATRIX_I
 	actions_types = list(/datum/action/item_action/nightvision)
 
 /datum/action/item_action/nightvision
 	name = "Toggle Night Vision"
 
 /obj/item/nightvision/advanced
-	colour_matrix = NIGHTVISION_MATRIX_II
+	colour_matrix = /datum/client_colour/nvg2		//NIGHTVISION_MATRIX_II
 
 /obj/item/clothing/proc/toggle_nightvision()
 	var/mob/living/carbon/human/user = usr
@@ -122,10 +127,10 @@
 	if (user.wear_mask != src && user.head != src)
 		to_chat(usr, "Вы крутите переключатель ПНВ [src] в надежде разглядеть что-то во тьме, но у вас ничего не выходит. Может стоить надеть его?")
 		playsound(usr, 'stalker/sound/nv_start.ogg', 50, 1, -1)
-		if (prob(5))
-			to_chat(usr, "<b>Тем самым приводя устройство в состояние бесполезной тряпки!</b>")
-			playsound(usr, 'stalker/sound/nv_off.ogg', 50, 1, -1)
-			qdel(src)
+		//if (prob(5))
+		//	to_chat(usr, "<b>Тем самым приводя устройство в состояние бесполезной тряпки!</b>")
+		//	playsound(usr, 'stalker/sound/nv_off.ogg', 50, 1, -1)
+		//	qdel(src)
 		return
 
 	if(!nvg)
@@ -133,7 +138,7 @@
 
 	nvg.active = !nvg.active
 	update_nightvision()
-	user.seek_screen_colour()
+	//user.seek_screen_colour()
 	user.update_sight()
 
 /obj/item/clothing/proc/update_nightvision()
@@ -142,11 +147,13 @@
 		if(!nvg.active)
 			playsound(usr, 'stalker/sound/nv_off.ogg', 50, 1, -1)
 			to_chat(usr, "Вы деактивировали оптическую матрицу [src].")
+			user.remove_client_colour(nvg.colour_matrix)
 			user.see_override_nva = 0
 		else
 			playsound(usr, 'stalker/sound/nv_start.ogg', 50, 1, -1)
 			to_chat(usr, "Вы активировали оптическую матрицу [src].")
-			user.see_override_nva = 8
+			user.add_client_colour(nvg.colour_matrix)
+			user.see_override_nva = 4
 	for(var/X in actions)
 		var/datum/action/A = X
 		A.UpdateButtonIcon()
@@ -158,7 +165,7 @@
 			toggle_nightvision()
 
 /obj/item/clothing/ui_action_click(mob/user, actiontype)
-	if(istype(actiontype, nva))
+	if(istype(actiontype, /datum/action/item_action/nightvision))
 		toggle_nightvision()
 	else
 		..()
@@ -382,9 +389,10 @@
 	max_heat_protection_temperature = FIRE_IMMUNITY_MAX_TEMP_PROTECT
 	icon_state = "ecolog_helmet"
 
-obj/item/clothing/head/hooded/stalker/ecolog/New()
+/obj/item/clothing/head/hooded/stalker/sealed/ecolog/Initialize()
+	AttachNVG()
+	//nvg = new /obj/item/nightvision(src)
 	..()
-	nvg = new /obj/item/nightvision(src)
 
 /obj/item/clothing/suit/hooded/sealed/ecologm
 	name = "SSP-99M"
@@ -414,9 +422,10 @@ obj/item/clothing/head/hooded/stalker/ecolog/New()
 	icon_state = "ecologg_helmet"
 	resistance_flags = FIRE_PROOF
 
-/obj/item/clothing/head/hooded/stalker/sealed/ecologm/New()
+/obj/item/clothing/head/hooded/stalker/sealed/ecologm/Initialize()
+	AttachNVG()
+	//nvg = new /obj/item/nightvision(src)
 	..()
-	nvg = new /obj/item/nightvision(src)
 
 /obj/item/clothing/suit/hooded/sealed/seva
 	name = "SEVA"
@@ -446,9 +455,10 @@ obj/item/clothing/head/hooded/stalker/ecolog/New()
 	icon_state = "seva_helmet"
 	resistance_flags = FIRE_PROOF
 
-/obj/item/clothing/head/hooded/stalker/sealed/seva/New()
+/obj/item/clothing/head/hooded/stalker/sealed/seva/Initialize()
+	AttachNVG()
+	//nvg = new /obj/item/nightvision(src)
 	..()
-	nvg = new /obj/item/nightvision(src)
 
 /obj/item/clothing/suit/hooded/sealed/seva/orange
 	icon_state = "sevao"
@@ -486,9 +496,10 @@ obj/item/clothing/head/hooded/stalker/ecolog/New()
 	icon_state = "psz9md_helmet"
 	resistance_flags = FIRE_PROOF
 
-/obj/item/clothing/head/hooded/stalker/sealed/psz9md/New()
+/obj/item/clothing/head/hooded/stalker/sealed/psz9md/Initialize()
+	AttachNVG()
+	//nvg = new /obj/item/nightvision(src)
 	..()
-	nvg = new /obj/item/nightvision(src)
 
 /obj/item/clothing/suit/hooded/sealed/exoskelet
 	name = "exoskelet"
@@ -515,7 +526,8 @@ obj/item/clothing/head/hooded/stalker/ecolog/New()
 	icon_state = "exoskelet_helmet"
 /obj/item/clothing/head/hooded/stalker/sealed/exoskelet/New()
 	..()
-	nvg = new /obj/item/nightvision(src)
+	AttachNVG()
+	//nvg = new /obj/item/nightvision(src)
 
 /obj/item/clothing/suit/army
 	name = "army armor"
