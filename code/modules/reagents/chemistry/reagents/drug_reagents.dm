@@ -57,6 +57,7 @@
 	M.AdjustUnconscious(-5, FALSE)
 	M.AdjustParalyzed(-5, FALSE)
 	M.AdjustImmobilized(-5, FALSE)
+	M.adjustPsyLoss(-4)
 	..()
 	. = 1
 

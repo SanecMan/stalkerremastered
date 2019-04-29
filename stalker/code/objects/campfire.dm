@@ -96,7 +96,7 @@ obj/machinery/campfire/barrel
 			H.adjustBruteLoss(-0.5)
 			H.adjustFireLoss(-0.5)
 			H.adjustToxLoss(-0.5)
-			//H.adjustPsyLoss(-2)
+			H.adjustPsyLoss(-2)
 
 obj/machinery/campfire/process()
 	if(!active)
