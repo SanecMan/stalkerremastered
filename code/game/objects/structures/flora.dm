@@ -2,6 +2,7 @@
 	resistance_flags = FLAMMABLE
 	max_integrity = 150
 	anchored = TRUE
+	layer = LOW_OBJ_LAYER
 
 //trees
 /obj/structure/flora/tree
