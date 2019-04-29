@@ -7,6 +7,8 @@
 	. = ..()
 	create_reagents(1000)
 	update_body_parts() //to update the carbon's new bodyparts appearance
+	add_client_colour(/datum/client_colour/psy)
+	psy_colour = find_client_colour(/datum/client_colour/psy)
 	GLOB.carbon_list += src
 
 /mob/living/carbon/Destroy()
@@ -19,6 +21,8 @@
 	QDEL_LIST(implants)
 	remove_from_all_data_huds()
 	QDEL_NULL(dna)
+	remove_client_colour(/datum/client_colour/psy)
+	psy_colour = null
 	GLOB.carbon_list -= src
 
 /mob/living/carbon/initialize_footstep()

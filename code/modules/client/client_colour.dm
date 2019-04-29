@@ -20,6 +20,9 @@
 /mob
 	var/list/client_colours = list()
 
+/mob/living/carbon
+	var/datum/client_colour/psy_colour = null
+
 /client/proc/colour_transition(var/list/colour_to = null, var/time = 10) //Call this with no parameters to reset to default.
 	animate(src, color=colour_to, time=time, easing=SINE_EASING)
 
@@ -61,13 +64,23 @@
 /mob/proc/update_client_colour()
 	if(!client)
 		return
-	client.color = ""
 	if(!client_colours.len)
 		return
 	var/datum/client_colour/CC = client_colours[1]
 	if(CC)
-		//client.color = CC.colour
 		client.colour_transition(CC.colour)
+	else
+		client.colour_transition()
+
+/mob/proc/find_client_colour(colour_type)
+	if(!ispath(colour_type, /datum/client_colour))
+		return null
+
+	for(var/cc in client_colours)
+		var/datum/client_colour/CC = cc
+		if(CC.type == colour_type)
+			return CC
+			break
 
 /datum/client_colour/glass_colour
 	priority = 0
@@ -115,25 +128,30 @@
 	priority = 3
 
 /datum/client_colour/psy
-	colour = list(rgb(77,77,77), rgb(150,150,150), rgb(28,28,28), rgb(0,0,0))
+	//colour = list(rgb(77,77,77), rgb(150,150,150), rgb(28,28,28), rgb(0,0,0))
+	colour = list(\
+	1, 0, 0,\
+	1, 0, 0,\
+	1, 0, 0\
+	)
 	priority = 4
 
 /datum/client_colour/nvg
 	colour = list(rgb(25,225,0), rgb(0,255,0), rgb(0,255,25), rgb(0,0,0))
-	priority = 8
+	priority = 5
 
 /datum/client_colour/nvg2
 	colour = list(rgb(77,77,77), rgb(77,77,77), rgb(77,77,77), rgb(0,0,0))
-	priority = 8
+	priority = 5
 
 /datum/client_colour/correction
 	colour = list(rgb(255,15,15), rgb(5,225,5), rgb(5,5,225), rgb(0,0,0))
-	priority = 5
+	priority = 1
 
 /datum/client_colour/retardation
 	colour = list(rgb(125,55,125), rgb(55,155,55), rgb(55,55,255), rgb(0,0,0))
-	priority = 6
+	priority = 2
 
 /datum/client_colour/monochrome
 	colour = list(rgb(77,77,77), rgb(150,150,150), rgb(28,28,28), rgb(0,0,0))
-	priority = 7 //we can't see colors anyway!
+	priority = 6 //we can't see colors anyway!

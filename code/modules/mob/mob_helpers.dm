@@ -549,10 +549,16 @@ It's fairly easy to fix if dealing with single letters but not so much with comp
 		return mind.has_trait(trait, sources)
 
 /mob/living/carbon/proc/seek_screen_colour()
-	return
+	set_psy_colour()
+
+/mob/living/carbon/proc/set_psy_colour()
+	var/multiplyer = (psyloss/200)
+	psy_colour.colour = PSY_MATRIX_MULTIPLICATION(multiplyer)
+	update_client_colour()
 
 /mob/living/carbon/human/seek_screen_colour() //fuck?
-	return ..()
+	..()
+
 /*
 	if(psyloss)
 		add_client_colour(/datum/client_colour/psy)

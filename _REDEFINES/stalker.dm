@@ -80,3 +80,22 @@
 //////////////wtf is this
 
 #define GLOBAL_LIGHT_TURF_1         (1<<0)     //Sets any light emitted by this turf to GLOBAL_LIGHTING, isn't affected by other GLOBAL_LIGHTING lights
+
+//////////////COLOURS
+#define DEFAULT_COLOUR					list(\
+										1, 0, 0,\
+										0, 1, 0,\
+										0, 0, 1\
+										)
+
+#define PSY_COLOUR						list(\
+										1, 0, 0,\
+										1, 0, 0,\
+										1, 0, 0\
+										)
+
+#define PSY_MATRIX_MULTIPLICATION(A)	list(\
+										1-(A*0.66), A*0.33, A*0.33,\
+										A*0.33, 1-(A*0.66), A*0.33,\
+										A*0.33, A*0.33, 1-(A*0.66)\
+										)
