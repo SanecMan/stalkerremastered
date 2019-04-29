@@ -97,10 +97,10 @@
 /mob/proc/update_eye_blur()
 	if(!client)
 		return
-	var/obj/screen/plane_master/floor/OT = locate(/obj/screen/plane_master/floor) in client.screen
-	var/obj/screen/plane_master/game_world/GW = locate(/obj/screen/plane_master/game_world) in client.screen
-	GW.backdrop(src)
-	OT.backdrop(src)
+	//var/obj/screen/plane_master/floor/OT = locate(/obj/screen/plane_master/floor) in client.screen
+	//var/obj/screen/plane_master/game_world/GW = locate(/obj/screen/plane_master/game_world) in client.screen
+	//GW.backdrop(src)
+	//OT.backdrop(src)
 
 /////////////////////////////////// DRUGGY ////////////////////////////////////
 
