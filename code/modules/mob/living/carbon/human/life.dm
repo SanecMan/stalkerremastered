@@ -185,12 +185,12 @@
 			if (!zombified)
 				if(!client)
 					return
-				var/obj/screen/plane_master/floor/OT = locate(/obj/screen/plane_master/floor) in client.screen
-				var/obj/screen/plane_master/battle/BT = locate(/obj/screen/plane_master/battle) in client.screen
-				var/obj/screen/plane_master/game_world/GW = locate(/obj/screen/plane_master/game_world) in client.screen
-				GW.filters += filter(type="wave", x=48, y=25, size=1)
-				OT.filters += filter(type="wave", x=48, y=15, size=1)
-				BT.filters += filter(type="wave", x=20, y=15, size=1)
+				//var/obj/screen/plane_master/floor/OT = locate(/obj/screen/plane_master/floor) in client.screen
+				//var/obj/screen/plane_master/battle/BT = locate(/obj/screen/plane_master/battle) in client.screen
+				//var/obj/screen/plane_master/game_world/GW = locate(/obj/screen/plane_master/game_world) in client.screen
+				//GW.filters += filter(type="wave", x=48, y=25, size=1)
+				//OT.filters += filter(type="wave", x=48, y=15, size=1)
+				//BT.filters += filter(type="wave", x=20, y=15, size=1)
 				add_trait(TRAIT_DUMB, TRAUMA_TRAIT)
 				add_trait(TRAIT_UNINTELLIGIBLE_SPEECH, TRAUMA_TRAIT)
 				add_trait(TRAIT_SOOTHED_THROAT, TRAUMA_TRAIT)
