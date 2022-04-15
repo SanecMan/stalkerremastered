@@ -107,7 +107,7 @@ GLOBAL_LIST_INIT(rus_unicode_fix,null)
 	t = replacetext(t, PHC, UPC)
 	t = replacetext(t, PBC, UPC)
 	var/output = ""
-	var/L = lentext(t)
+	var/L = length(t)
 	for(var/i = 1 to L)
 		output += "&#[text2ascii(t,i)];"
 	return output
@@ -216,4 +216,4 @@ proc/rhtml_decode(var/t)
 #undef UPC
 #undef PHC
 #undef PHCH
-#undef PBC
+#undef PBC#undef PBC

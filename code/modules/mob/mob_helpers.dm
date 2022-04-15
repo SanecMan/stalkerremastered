@@ -83,8 +83,8 @@
 
 /proc/slur(n)
 	var/phrase = rhtml_decode(n)
-	var/leng = lentext(phrase)
-	var/counter=lentext(phrase)
+	var/leng = length(phrase)
+	var/counter=length(phrase)
 	var/newphrase=""
 	var/newletter=""
 	while(counter>=1)
@@ -129,8 +129,8 @@
 
 /proc/cultslur(n) // Inflicted on victims of a stun talisman
 	var/phrase = rhtml_decode(n)
-	var/leng = lentext(phrase)
-	var/counter=lentext(phrase)
+	var/leng = length(phrase)
+	var/counter=length(phrase)
 	var/newphrase=""
 	var/newletter=""
 	while(counter>=1)
