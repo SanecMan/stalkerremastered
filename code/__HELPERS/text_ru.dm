@@ -216,4 +216,4 @@ proc/rhtml_decode(var/t)
 #undef UPC
 #undef PHC
 #undef PHCH
-#undef PBC#undef PBC
+#undef PBC
