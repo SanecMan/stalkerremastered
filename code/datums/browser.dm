@@ -85,7 +85,7 @@
 </html>"}
 
 /datum/browser/proc/get_content()
-	return {"<meta charset='UTF-8'>
+	return {"
 	[get_header()]
 	[content]
 	[get_footer()]
