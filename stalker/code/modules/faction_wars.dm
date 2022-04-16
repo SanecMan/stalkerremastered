@@ -2,7 +2,7 @@ GLOBAL_LIST_EMPTY(cps)
 
 /obj/machinery/stalker/sidorpoint
 	name = "SIDORPOINT - null"
-	desc = "пїЅпїЅпїЅпїЅСЏ&#255; пїЅпїЅпїЅпїЅпїЅ."
+	desc = "Контрольна&#255; точка."
 	eng_desc = "Control point."
 	icon = 'stalker/icons/device_new.dmi'
 	icon_state = "radio_free"
@@ -14,7 +14,7 @@ GLOBAL_LIST_EMPTY(cps)
 	var/control_percent		= 0
 
 	var/unlocked_weapons	= null
-//	var/respawn_income		= 0 //пїЅпїЅпїЅпїЅпїЅпїЅ 30 пїЅпїЅпїЅпїЅпїЅ
+//	var/respawn_income		= 0 //каждые 30 минут
 //	var/last_respawn_income	= 0
 
 	var/path_ending = null
@@ -45,17 +45,17 @@ GLOBAL_LIST_EMPTY(cps)
 /obj/machinery/stalker/sidorpoint/proc/update_desc()
 	if(controlled_by)
 
-		desc = "пїЅпїЅпїЅпїЅпїЅСЏпїЅпїЅпїЅ&#255; пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ [get_rus_faction(controlled_by)] пїЅпїЅ [control_percent]%"
+		desc = "Точка находитс&#255; под контролем группировки [get_rus_faction(controlled_by)] на [control_percent]%"
 		eng_desc = "Point is under [controlled_by] control by [control_percent]%"
 
 	else if(control_percent)
 
-		desc = "пїЅпїЅпїЅпїЅпїЅСЏпїЅпїЅпїЅ&#255; пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ [get_rus_faction(capturing_faction)] пїЅпїЅ [control_percent]%"
+		desc = "Точка находитс&#255; под контролем группировки [get_rus_faction(capturing_faction)] на [control_percent]%"
 		eng_desc = "Point is under [capturing_faction] control by [control_percent]%"
 
 	else
 
-		desc = "пїЅпїЅпїЅпїЅпїЅ пїЅСЏпїЅ пїЅпїЅ&#255; пїЅпїЅпїЅпїЅпїЅпїЅпїЅ"
+		desc = "Точка свободна дл&#255; захвата"
 		eng_desc = "This point can be captured."
 
 /obj/machinery/stalker/sidorpoint/proc/update_icon_percent()

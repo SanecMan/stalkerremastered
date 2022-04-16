@@ -2,7 +2,7 @@
 	stat_attack = 2
 	stat_exclusive = 0
 	fearless = 0
-	var/gib_targets = 1 //пїЅпїЅпїЅпїЅпїЅпїЅ
+	var/gib_targets = 1 //Гибать
 	icon = 'stalker/icons/stalker.dmi'
 	var/deletable = 1 //Self-deletable dead bodies
 	speak_chance = 1.5
@@ -24,7 +24,7 @@
 		if(src.client && (src.client.prefs.chat_toggles & CHAT_LANGUAGE))
 			src << "<span class='warning'>You can't be here!</span>"
 		else
-			src << "<span class='warning'>пїЅпїЅ пїЅпїЅ пїЅпїЅпїЅСЏпїЅпїЅпїЅпїЅпїЅпїЅc&#255; пїЅ пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ!</span>"
+			src << "<span class='warning'>Вы не можете находитьc&#255; в этой зоне!</span>"
 		return 0
 	return ..()
 */
@@ -50,13 +50,13 @@
 				H.dropItemToGround(H.back)
 				H.dropItemToGround(H.wear_id)
 			L.gib()
-			visible_message("<span class='danger'>[src] пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ [L] пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ!</span>")
-			to_chat(src, "<span class='userdanger'>пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ [L] пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ!</span>")
+			visible_message("<span class='danger'>[src] разрывает [L] на кусочки!</span>")
+			to_chat(src, "<span class='userdanger'>Вы пожираете [L] и востанавливаете себе здоровье!</span>")
 			src.revive()
 
 /mob/living/simple_animal/hostile/mutant/dog
 	name = "dog mutant"
-	desc = "пїЅпїЅпїЅпїЅСЏпїЅ&#СЏпїЅпїЅпїЅСЏ; пїЅпїЅпїЅпїЅ&#255; пїЅпїЅпїЅпїЅпїЅпїЅ."
+	desc = "Мутировавша&#255; слепа&#255; дика&#255; собака."
 	eng_desc = "This dog became blind because of the radiation, allowing him to develop a more precise sense of smell. Its skin is of a maroon color, and the lack of food shows the bones of its ribcage.His tail is edible and so taking it would be a good idea to make a soup or sell it."
 	turns_per_move = 15
 	speed = 1
@@ -109,7 +109,7 @@
 
 /mob/living/simple_animal/hostile/mutant/snork
 	name = "snork"
-	desc = "пїЅпїЅпїЅпїЅпїЅ-пїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ."
+	desc = "Когда-то оно было человеком."
 	eng_desc = "The Snork is wearing remains of military clothes and a broken gas mask with a hanging breathing tube.His lips have been shredded, probably by himself, and his skin has a greenish hue. He moves on all fours and his physique allows him to jump up to 10 meters.His nails are sharp and as sharp as claws. The glasses of his gas mask do not allow us to say whether he is blind or not."
 	turns_per_move = 15
 	speed = 3
@@ -200,7 +200,7 @@
 
 /mob/living/simple_animal/hostile/mutant/flesh
 	name = "flesh"
-	desc = "пїЅпїЅпїЅпїЅСЏпїЅ&#СЏпїЅпїЅпїЅпїЅ&#255;."
+	desc = "Мутировавша&#255; свинь&#255;."
 	eng_desc = "This abomination is a horribly mutated pig affected by radiation.His three eyes have lost all the vigor of life and his eyes are empty.Despite his large, heavy legs, he seems to be able to move at a decent speed, and is apparently able to catch up with a running human."
 	turns_per_move = 15
 	speed = 5
@@ -242,7 +242,7 @@
 
 /mob/living/simple_animal/hostile/mutant/kaban
 	name = "boar"
-	desc = "пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ."
+	desc = "Коренное население."
 	eng_desc = "While less touched by mutation physically, as compared to other mutants, the Boars of the Zone remains ugly and loathsome.The smell coming from his mouth smells of carrion and grass.His posture shows that he is able to go at full speed towards an enemy, so staying away would be the best option to kill him. His meat is sold at a good price to Skadovsk merchants."
 	turns_per_move = 15
 	speed = 5
@@ -283,8 +283,8 @@
 	vision_range = 7
 	aggro_vision_range = 7
 
-	/*пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ
-	пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ
+	/*Код крашера с колониал маринов
+	Раскидывает мобов с дороги в стороны
 	for(var/o=0, o<10, o++)
 		target = get_turf(get_step(target,cur_dir))
 	L.throw_at(target, 200, 100)
@@ -292,7 +292,7 @@
 
 /mob/living/simple_animal/hostile/mutant/bloodsucker
 	name = "bloodsucker"
-	desc = "пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ."
+	desc = "Твой худший ночной кошмар."
 	eng_desc = "A rather disgusting-looking type of mutant with the same physical properties as a human besides the absence of genital organs,thus making the difference between male or female more difficult to do.Tentacles covered with blood seem to have replaced the lower part of the jaw, and sharp claws have replaced the end of the fingers.The guttural breathing of the mutant freezes your blood."
 	turns_per_move = 15
 	speed = 3
@@ -370,7 +370,7 @@
 
 /mob/living/simple_animal/hostile/mutant/pseudog
 	name = "psy-dog"
-	desc = "пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ."
+	desc = "Лохматый пёс."
 	eng_desc = "Shaggy dog."
 	turns_per_move = 15
 	speed = 3
@@ -413,7 +413,7 @@
 
 /mob/living/simple_animal/hostile/mutant/controller
 	name = "Controller"
-	desc = "пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ."
+	desc = "Полуголый старый мужчина с деформированной головой."
 	eng_desc = "A rare type of mutant with the appearance of a deformed human with ridiculous physical properties.He has barely any clothes besides torn rags displayed randomly on the chest.Looking at him sends chills down your spine."
 	turns_per_move = 15
 	speed = 3

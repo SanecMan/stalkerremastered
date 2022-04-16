@@ -4,12 +4,12 @@
 
 /obj/structure/closet/crate/stalker/blue
 	name = "crate"
-	desc = "пїЅпїЅпїЅпїЅпїЅпїЅСЏпїЅпїЅпїЅпїЅ &#255;пїЅпїЅпїЅ."
+	desc = "Обычный железный &#255;щик."
 	icon_state = "blue"
 
 /obj/structure/closet/crate/stalker/blue/stash
 	name = "stash"
-	desc = "пїЅ пїЅпїЅСЏ255;пїЅпїЅпїЅпїЅпїЅ пїЅСЏпїЅпїЅ&#255;пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ. пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ."
+	desc = "В таких &#255;щиках обычно пр&#255;чут хабар. Замок сгнил."
 	var/lootcount = 1		//how many items will be spawned
 	var/lootdoubles = 1		//if the same item can be spawned twice
 	var/list/loot = list()
@@ -71,7 +71,7 @@
 		if(istype(H.wear_id, /obj/item/stalker_pda))
 			var/obj/item/stalker_pda/KPK = H.wear_id
 			if(KPK.owner)
-				show_lenta_message(null, KPK, null, "пїЅпїЅпїЅ", "пїЅпїЅпїЅпїЅпїЅпїЅпїЅ", "пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ!", selfsound = 1)
+				show_lenta_message(null, KPK, null, "КПК", "Система", "Вы обнаружили тайник!", selfsound = 1)
 
 
 		var/datum/data/record/sk = find_record("sid", H.sid, GLOB.data_core.stalkers)
@@ -86,5 +86,5 @@
 
 /obj/structure/closet/stalker/shkaf
 	name = "closet"
-	desc = "пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ."
+	desc = "Обычный железный шкафчик."
 	icon_state = "shkaf"

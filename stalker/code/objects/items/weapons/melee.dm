@@ -1,6 +1,6 @@
 /obj/item/kitchen/knife/tourist
 	name = "tourist knife"
-	desc = "пїЅпїЅпїЅпїЅпїЅпїЅпїЅ, пїЅпїЅ пїЅСЏпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ&#255; пїЅпїЅпїЅпїЅпїЅпїЅпїЅ."
+	desc = "Дешевый, но достаточно хороший дл&#255; туриста."
 	eng_desc = "Cheap knife but good enough for a tourist."
 	icon = 'stalker/icons/weapons.dmi'
 	icon_state = "knife"
@@ -15,7 +15,7 @@
 
 /obj/item/kitchen/knife/bayonet
 	name = "bayonet"
-	desc = "пїЅпїЅпїЅпїЅпїЅпїЅпїЅ, пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ-пїЅпїЅпїЅ."
+	desc = "Опасный, но плохой в разделке туш мутантов штык-нож."
 	eng_desc = "Dangerous, but bad at butchering mutants bayonet."
 	icon = 'stalker/icons/weapons.dmi'
 	icon_state = "bayonet"
