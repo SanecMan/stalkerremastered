@@ -332,7 +332,7 @@
 
 /obj/item/storage/fancy/cigarettes/cigpack/maxim
 	name = "\improper Maxim packet"
-	desc = "Сигареты Марки Maxim."
+	desc = "РЎРёРіР°СЂРµС‚С‹ РњР°СЂРєРё Maxim."
 	icon_state = "robust"
 
 /*

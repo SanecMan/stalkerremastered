@@ -1,4 +1,4 @@
-// range: 1 ςΰιλ = 4
+// range: 1 Ρ‚Π°ΠΉΠ» = 4
 /obj/item/projectile/bullet/bullet9x18
 	damage = 18
 	range = 40

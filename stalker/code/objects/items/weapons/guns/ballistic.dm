@@ -1,11 +1,11 @@
 
-///////////////////////////// Пистолеты //////////////////////////////////////////
+///////////////////////////// РџРёСЃС‚РѕР»РµС‚С‹ //////////////////////////////////////////
 /obj/item/gun/ballistic/automatic/pistol
 	modifications = list("barrel_pistol" = 0, "frame_pistol" = 0, "grip_pistol" = 0)
 
-/obj/item/gun/ballistic/automatic/pistol/pm   // Макаров
+/obj/item/gun/ballistic/automatic/pistol/pm   // РњР°РєР°СЂРѕРІ
 	name = "PMm"
-	desc = "Пистолет Макарова Модернизированный. Наиболее распространённый в зоне пистолет - наследие советской эпохи. Достаточно надёжный и дешёвый, отличаетс&#255; невысокой ёмкостью магазина при недостаточной мощности и неудовлетворительности кучности патрона. Основное оружие сталкера-новичка-неудачника. Отличное средство дл&#255; распугивани&#255; ворон."
+	desc = "РџРёСЃС‚РѕР»РµС‚ РњР°РєР°СЂРѕРІР° РњРѕРґРµСЂРЅРёР·РёСЂРѕРІР°РЅРЅС‹Р№. РќР°РёР±РѕР»РµРµ СЂР°СЃРїСЂРѕСЃС‚СЂР°РЅС‘РЅРЅС‹Р№ РІ Р·РѕРЅРµ РїРёСЃС‚РѕР»РµС‚ - РЅР°СЃР»РµРґРёРµ СЃРѕРІРµС‚СЃРєРѕР№ СЌРїРѕС…Рё. Р”РѕСЃС‚Р°С‚РѕС‡РЅРѕ РЅР°РґС‘Р¶РЅС‹Р№ Рё РґРµС€С‘РІС‹Р№, РѕС‚Р»РёС‡Р°РµС‚СЃ&#255; РЅРµРІС‹СЃРѕРєРѕР№ С‘РјРєРѕСЃС‚СЊСЋ РјР°РіР°Р·РёРЅР° РїСЂРё РЅРµРґРѕСЃС‚Р°С‚РѕС‡РЅРѕР№ РјРѕС‰РЅРѕСЃС‚Рё Рё РЅРµСѓРґРѕРІР»РµС‚РІРѕСЂРёС‚РµР»СЊРЅРѕСЃС‚Рё РєСѓС‡РЅРѕСЃС‚Рё РїР°С‚СЂРѕРЅР°. РћСЃРЅРѕРІРЅРѕРµ РѕСЂСѓР¶РёРµ СЃС‚Р°Р»РєРµСЂР°-РЅРѕРІРёС‡РєР°-РЅРµСѓРґР°С‡РЅРёРєР°. РћС‚Р»РёС‡РЅРѕРµ СЃСЂРµРґСЃС‚РІРѕ РґР»&#255; СЂР°СЃРїСѓРіРёРІР°РЅРё&#255; РІРѕСЂРѕРЅ."
 	eng_desc = "This Soviet legacy is the most common pistol in the Zone and is one of the best compact self-defense handguns available. It is small, highly reliable, easy to use and maintain in working order. It also suffers from several drawbacks, including its short range, low firing accuracy and poor stopping power, while also losing out to modern pistols in its class in terms of weight and magazine size."
 	icon_state = "pm"
 	w_class = 2
@@ -22,9 +22,9 @@
 	load_sound = 'stalker/sound/weapons/load/pm_load.ogg'
 	eject_sound = 'stalker/sound/weapons/unload/pm_open.ogg'
 
-/obj/item/gun/ballistic/automatic/pistol/tt   // ТТ
+/obj/item/gun/ballistic/automatic/pistol/tt   // РўРў
 	name = "TT-33"
-	desc = "Старый пистолет, произведенный под столь же старый советский патрон. Весьма попул&#255;рен из-за того, что сотни таких экземпл&#255;ров остались в складах, где их спуст&#255; почти полвека достали и выпустили в продажу бедным новичкам. Мало на что годен, но лучше чем ничего."
+	desc = "РЎС‚Р°СЂС‹Р№ РїРёСЃС‚РѕР»РµС‚, РїСЂРѕРёР·РІРµРґРµРЅРЅС‹Р№ РїРѕРґ СЃС‚РѕР»СЊ Р¶Рµ СЃС‚Р°СЂС‹Р№ СЃРѕРІРµС‚СЃРєРёР№ РїР°С‚СЂРѕРЅ. Р’РµСЃСЊРјР° РїРѕРїСѓР»&#255;СЂРµРЅ РёР·-Р·Р° С‚РѕРіРѕ, С‡С‚Рѕ СЃРѕС‚РЅРё С‚Р°РєРёС… СЌРєР·РµРјРїР»&#255;СЂРѕРІ РѕСЃС‚Р°Р»РёСЃСЊ РІ СЃРєР»Р°РґР°С…, РіРґРµ РёС… СЃРїСѓСЃС‚&#255; РїРѕС‡С‚Рё РїРѕР»РІРµРєР° РґРѕСЃС‚Р°Р»Рё Рё РІС‹РїСѓСЃС‚РёР»Рё РІ РїСЂРѕРґР°Р¶Сѓ Р±РµРґРЅС‹Рј РЅРѕРІРёС‡РєР°Рј. РњР°Р»Рѕ РЅР° С‡С‚Рѕ РіРѕРґРµРЅ, РЅРѕ Р»СѓС‡С€Рµ С‡РµРј РЅРёС‡РµРіРѕ."
 	eng_desc = "An old soviet pistol made for similiarly old soviet ammo. Extremely widespread because of large numbers of those pistols left in USSR army stashes around Pripyat. Isn't very powerful, but bullets penetrate armor well enough."
 	icon_state = "tt"
 	w_class = 2
@@ -44,7 +44,7 @@
 
 /obj/item/gun/ballistic/automatic/pistol/sip  // Sig-Sauer
 	name = "SIG-Sauer P220"
-	desc = "Модель, разработанна&#255; ещё в 1975 году, но до сих пор попул&#255;рна&#255; во всём мире. Магазин недостаточно ёмкий, зато механизм надёжен как швейцарские часы; вторым плюсом &#255;вл&#255;етс&#255; использование мощного кольтовского патрона .45 калибра."
+	desc = "РњРѕРґРµР»СЊ, СЂР°Р·СЂР°Р±РѕС‚Р°РЅРЅР°&#255; РµС‰С‘ РІ 1975 РіРѕРґСѓ, РЅРѕ РґРѕ СЃРёС… РїРѕСЂ РїРѕРїСѓР»&#255;СЂРЅР°&#255; РІРѕ РІСЃС‘Рј РјРёСЂРµ. РњР°РіР°Р·РёРЅ РЅРµРґРѕСЃС‚Р°С‚РѕС‡РЅРѕ С‘РјРєРёР№, Р·Р°С‚Рѕ РјРµС…Р°РЅРёР·Рј РЅР°РґС‘Р¶РµРЅ РєР°Рє С€РІРµР№С†Р°СЂСЃРєРёРµ С‡Р°СЃС‹; РІС‚РѕСЂС‹Рј РїР»СЋСЃРѕРј &#255;РІР»&#255;РµС‚СЃ&#255; РёСЃРїРѕР»СЊР·РѕРІР°РЅРёРµ РјРѕС‰РЅРѕРіРѕ РєРѕР»СЊС‚РѕРІСЃРєРѕРіРѕ РїР°С‚СЂРѕРЅР° .45 РєР°Р»РёР±СЂР°."
 	eng_desc = "The only remaining mass produced model of a globally renowned pistol, this weapon has earned a reputation for its excellent ergonomics and accuracy, and while its magazine is relatively small, it benefits from powerful ammo and a mechanism that functions like a Swiss watch. Some believe the P220 to be the best mass produced .45 ACP caliber handgun there and it has certainly got a following among experienced stalkers and mercenaries."
 	icon_state = "sip"
 	w_class = 2
@@ -63,7 +63,7 @@
 
 /obj/item/gun/ballistic/automatic/pistol/cora  // Colt1911A
 	name = "Colt M1911"
-	desc = "Классический автоматический «кольт», с честью прошедший все вооружённые конфликты XX века и уверенно вошедший в новое столетие. Невысока&#255; ёмкость магазина в определённой степени компенсируетс&#255; использованием мощного патрона."
+	desc = "РљР»Р°СЃСЃРёС‡РµСЃРєРёР№ Р°РІС‚РѕРјР°С‚РёС‡РµСЃРєРёР№ В«РєРѕР»СЊС‚В», СЃ С‡РµСЃС‚СЊСЋ РїСЂРѕС€РµРґС€РёР№ РІСЃРµ РІРѕРѕСЂСѓР¶С‘РЅРЅС‹Рµ РєРѕРЅС„Р»РёРєС‚С‹ XX РІРµРєР° Рё СѓРІРµСЂРµРЅРЅРѕ РІРѕС€РµРґС€РёР№ РІ РЅРѕРІРѕРµ СЃС‚РѕР»РµС‚РёРµ. РќРµРІС‹СЃРѕРєР°&#255; С‘РјРєРѕСЃС‚СЊ РјР°РіР°Р·РёРЅР° РІ РѕРїСЂРµРґРµР»С‘РЅРЅРѕР№ СЃС‚РµРїРµРЅРё РєРѕРјРїРµРЅСЃРёСЂСѓРµС‚СЃ&#255; РёСЃРїРѕР»СЊР·РѕРІР°РЅРёРµРј РјРѕС‰РЅРѕРіРѕ РїР°С‚СЂРѕРЅР°."
 	eng_desc = "An improved version of a classic automatic pistol, which passed all the major armed conflicts of the 20th century with flying colors and entered the new millennium with confidence. Produced by dozens if not hundreds of arms manufacturers around the world in both standard and modified configurations. The weapon's only drawback, its mediocre magazine capacity, is largely compensated by the hard-hitting ammo it uses."
 	icon_state = "cora"
 	w_class = 3
@@ -82,7 +82,7 @@
 
 /obj/item/gun/ballistic/automatic/pistol/marta  // Beretta92FS
 	name = "Beretta 92FS"
-	desc = "Состоит на вооружении вооружённых сил и полиции США, многих военизированных и правохранительных формирований во всём мире. Столь же попул&#255;рна и у представителей преступного мира благодар&#255; мощному патрону и большой ёмкости магазина."
+	desc = "РЎРѕСЃС‚РѕРёС‚ РЅР° РІРѕРѕСЂСѓР¶РµРЅРёРё РІРѕРѕСЂСѓР¶С‘РЅРЅС‹С… СЃРёР» Рё РїРѕР»РёС†РёРё РЎРЁРђ, РјРЅРѕРіРёС… РІРѕРµРЅРёР·РёСЂРѕРІР°РЅРЅС‹С… Рё РїСЂР°РІРѕС…СЂР°РЅРёС‚РµР»СЊРЅС‹С… С„РѕСЂРјРёСЂРѕРІР°РЅРёР№ РІРѕ РІСЃС‘Рј РјРёСЂРµ. РЎС‚РѕР»СЊ Р¶Рµ РїРѕРїСѓР»&#255;СЂРЅР° Рё Сѓ РїСЂРµРґСЃС‚Р°РІРёС‚РµР»РµР№ РїСЂРµСЃС‚СѓРїРЅРѕРіРѕ РјРёСЂР° Р±Р»Р°РіРѕРґР°СЂ&#255; РјРѕС‰РЅРѕРјСѓ РїР°С‚СЂРѕРЅСѓ Рё Р±РѕР»СЊС€РѕР№ С‘РјРєРѕСЃС‚Рё РјР°РіР°Р·РёРЅР°."
 	eng_desc = "Beretta M9 pistols enjoy the reputation of a relatively reliable, albeit somewhat cumbersome weapon, around the world. In service with armed forces and police across the ocean, as well as various military and law enforcement organizations worldwide. The pistol is equally popular with members of the underworld, thanks to its powerful round and magazine capacity. Berettas found in the Zone are usually dated, probably from retired stock."
 	icon_state = "marta"
 	item_state = "marta"
@@ -100,9 +100,9 @@
 	load_sound = 'stalker/sound/weapons/load/pm_load.ogg'
 	eject_sound = 'stalker/sound/weapons/unload/pm_open.ogg'
 
-/obj/item/gun/ballistic/automatic/pistol/fort12  // Фора12
+/obj/item/gun/ballistic/automatic/pistol/fort12  // Р¤РѕСЂР°12
 	name = "Fort-12"
-	desc = "Пистолет полицейского назначени&#255; украинского производства, пришедший на смену ПМм. Обладает лучшими по сравнению с последним точностью бо&#255;, эргономикой и более вместительным магазином, однако менее надёжен."
+	desc = "РџРёСЃС‚РѕР»РµС‚ РїРѕР»РёС†РµР№СЃРєРѕРіРѕ РЅР°Р·РЅР°С‡РµРЅРё&#255; СѓРєСЂР°РёРЅСЃРєРѕРіРѕ РїСЂРѕРёР·РІРѕРґСЃС‚РІР°, РїСЂРёС€РµРґС€РёР№ РЅР° СЃРјРµРЅСѓ РџРњРј. РћР±Р»Р°РґР°РµС‚ Р»СѓС‡С€РёРјРё РїРѕ СЃСЂР°РІРЅРµРЅРёСЋ СЃ РїРѕСЃР»РµРґРЅРёРј С‚РѕС‡РЅРѕСЃС‚СЊСЋ Р±Рѕ&#255;, СЌСЂРіРѕРЅРѕРјРёРєРѕР№ Рё Р±РѕР»РµРµ РІРјРµСЃС‚РёС‚РµР»СЊРЅС‹Рј РјР°РіР°Р·РёРЅРѕРј, РѕРґРЅР°РєРѕ РјРµРЅРµРµ РЅР°РґС‘Р¶РµРЅ."
 	eng_desc = "An Ukranian-made pistol predominantly used by law enforcement organizations. Provides higher accuracy, better ergonomics and has a larger magazine than the PM. These pistols make it into the Zone in large numbers thanks to the sale of defective weapons, which suffer from technical miscalculations in early design models. Despite this, the pistol is in demand among stalkers thanks to its good combat characteristics."
 	icon_state = "fort12"
 	fire_sound = 'stalker/sound/weapons/fort_shot.ogg'
@@ -119,14 +119,14 @@
 	load_sound = 'stalker/sound/weapons/load/pm_load.ogg'
 	eject_sound = 'stalker/sound/weapons/unload/pm_open.ogg'
 
-/obj/item/gun/ballistic/automatic/pistol/fort12/unique  // Фора12 - расширенный магазин
-	desc = "Экспериментальный прототип пистолета Фора. Единичный экземпл&#255;р."
+/obj/item/gun/ballistic/automatic/pistol/fort12/unique  // Р¤РѕСЂР°12 - СЂР°СЃС€РёСЂРµРЅРЅС‹Р№ РјР°РіР°Р·РёРЅ
+	desc = "Р­РєСЃРїРµСЂРёРјРµРЅС‚Р°Р»СЊРЅС‹Р№ РїСЂРѕС‚РѕС‚РёРї РїРёСЃС‚РѕР»РµС‚Р° Р¤РѕСЂР°. Р•РґРёРЅРёС‡РЅС‹Р№ СЌРєР·РµРјРїР»&#255;СЂ."
 	unique = 1
 	mag_type = /obj/item/ammo_box/magazine/stalker/m9x18fort_u
 
-/obj/item/gun/ballistic/automatic/pistol/pb1s  //ПБ1С
+/obj/item/gun/ballistic/automatic/pistol/pb1s  //РџР‘1РЎ
 	name = "PB1s"
-	desc = "Пистолет с интегрированным глушителем, некогда использовавшийс&#255; советским спецназом. Морально устарел, но в умелых руках по-прежнему довольно эффективен."
+	desc = "РџРёСЃС‚РѕР»РµС‚ СЃ РёРЅС‚РµРіСЂРёСЂРѕРІР°РЅРЅС‹Рј РіР»СѓС€РёС‚РµР»РµРј, РЅРµРєРѕРіРґР° РёСЃРїРѕР»СЊР·РѕРІР°РІС€РёР№СЃ&#255; СЃРѕРІРµС‚СЃРєРёРј СЃРїРµС†РЅР°Р·РѕРј. РњРѕСЂР°Р»СЊРЅРѕ СѓСЃС‚Р°СЂРµР», РЅРѕ РІ СѓРјРµР»С‹С… СЂСѓРєР°С… РїРѕ-РїСЂРµР¶РЅРµРјСѓ РґРѕРІРѕР»СЊРЅРѕ СЌС„С„РµРєС‚РёРІРµРЅ."
 	eng_desc = "This pistol was developed in the second half of the 20th century on the basis of the PM for use by special forces and scouting units. The front of the pistol's barrel is covered with an integrated silencer, while the bolt mechanism is short, which prevents a back-moving spring from being located inside it, and it is therefore situated in the weapon's handle. Morally obsolete, the weapon is still effective in the right hands."
 	icon_state = "pb1s"
 	w_class = 2
@@ -146,7 +146,7 @@
 
 /obj/item/gun/ballistic/automatic/pistol/usp_match  // USP Match
 	name = "H&K USP Match"
-	desc = "Матчева&#255; модификаци&#255; известного немецкого пистолета, калибра .45. Имеет специальную насадку, котора&#255; уменьшает подброс ствола при стрельбе за счёт своего веса. Увеличенный магазин на 15 патронов. На руко&#255;тке инициалы - L.C."
+	desc = "РњР°С‚С‡РµРІР°&#255; РјРѕРґРёС„РёРєР°С†Рё&#255; РёР·РІРµСЃС‚РЅРѕРіРѕ РЅРµРјРµС†РєРѕРіРѕ РїРёСЃС‚РѕР»РµС‚Р°, РєР°Р»РёР±СЂР° .45. РРјРµРµС‚ СЃРїРµС†РёР°Р»СЊРЅСѓСЋ РЅР°СЃР°РґРєСѓ, РєРѕС‚РѕСЂР°&#255; СѓРјРµРЅСЊС€Р°РµС‚ РїРѕРґР±СЂРѕСЃ СЃС‚РІРѕР»Р° РїСЂРё СЃС‚СЂРµР»СЊР±Рµ Р·Р° СЃС‡С‘С‚ СЃРІРѕРµРіРѕ РІРµСЃР°. РЈРІРµР»РёС‡РµРЅРЅС‹Р№ РјР°РіР°Р·РёРЅ РЅР° 15 РїР°С‚СЂРѕРЅРѕРІ. РќР° СЂСѓРєРѕ&#255;С‚РєРµ РёРЅРёС†РёР°Р»С‹ - L.C."
 	eng_desc = "Impeccable reliability and durability combined with excellent accuracy are the main noteworthy features of this weapon. Its minor drawbacks include its considerable size, relatively high center of gravity and massive bolt, which make it difficult to conceal but do not outweigh the weapon's positive features. The weapon is especially popular with the Zone's veterans."
 	icon_state = "usp-match"
 	w_class = 2
@@ -164,7 +164,7 @@
 
 /obj/item/gun/ballistic/automatic/pistol/desert  // Desert Eagle
 	name = "Desert Eagle .44"
-	desc = "Большой, т&#255;желый, блест&#255;щий и чертовски внушительный - разработанный в 80-е года прошлого века израильским предпри&#255;тием и попул&#255;ризированный многочисленными боевиками конца того же столети&#255;, Пустынный Орел стал своеобразной иконой мощных полуавтоматических пистолетов. Позволить себе такую красоту могут немногие, попасть из нее в кого-то в бою - еще меньшее число людей."
+	desc = "Р‘РѕР»СЊС€РѕР№, С‚&#255;Р¶РµР»С‹Р№, Р±Р»РµСЃС‚&#255;С‰РёР№ Рё С‡РµСЂС‚РѕРІСЃРєРё РІРЅСѓС€РёС‚РµР»СЊРЅС‹Р№ - СЂР°Р·СЂР°Р±РѕС‚Р°РЅРЅС‹Р№ РІ 80-Рµ РіРѕРґР° РїСЂРѕС€Р»РѕРіРѕ РІРµРєР° РёР·СЂР°РёР»СЊСЃРєРёРј РїСЂРµРґРїСЂРё&#255;С‚РёРµРј Рё РїРѕРїСѓР»&#255;СЂРёР·РёСЂРѕРІР°РЅРЅС‹Р№ РјРЅРѕРіРѕС‡РёСЃР»РµРЅРЅС‹РјРё Р±РѕРµРІРёРєР°РјРё РєРѕРЅС†Р° С‚РѕРіРѕ Р¶Рµ СЃС‚РѕР»РµС‚Рё&#255;, РџСѓСЃС‚С‹РЅРЅС‹Р№ РћСЂРµР» СЃС‚Р°Р» СЃРІРѕРµРѕР±СЂР°Р·РЅРѕР№ РёРєРѕРЅРѕР№ РјРѕС‰РЅС‹С… РїРѕР»СѓР°РІС‚РѕРјР°С‚РёС‡РµСЃРєРёС… РїРёСЃС‚РѕР»РµС‚РѕРІ. РџРѕР·РІРѕР»РёС‚СЊ СЃРµР±Рµ С‚Р°РєСѓСЋ РєСЂР°СЃРѕС‚Сѓ РјРѕРіСѓС‚ РЅРµРјРЅРѕРіРёРµ, РїРѕРїР°СЃС‚СЊ РёР· РЅРµРµ РІ РєРѕРіРѕ-С‚Рѕ РІ Р±РѕСЋ - РµС‰Рµ РјРµРЅСЊС€РµРµ С‡РёСЃР»Рѕ Р»СЋРґРµР№."
 	eng_desc = "An extremely powerful gun, featured in many Hollywood movies and popularised by criminals. Truly a killing machine for close-range combat."
 	icon_state = "desert"
 	w_class = 3
@@ -184,7 +184,7 @@
 
 /obj/item/gun/ballistic/revolver/anaconda
 	name = "Colt Anaconda .44"
-	desc = "Я знаю, о чём ты сейчас думаешь. Выстрелил он шесть раз, или только п&#255;ть? Честно говор&#255;, в этой суматохе &#255; и сам сбилс&#255; со счёта. Но начнём с того, что это Магнум 44-го калибра, самый убойный револьвер на свете, и он может подчистую снести тебе башку. Теперь ты задаёшь себе один вопрос: Повезёт ли мне? Ну, повезёт ли, подонок?"
+	desc = "РЇ Р·РЅР°СЋ, Рѕ С‡С‘Рј С‚С‹ СЃРµР№С‡Р°СЃ РґСѓРјР°РµС€СЊ. Р’С‹СЃС‚СЂРµР»РёР» РѕРЅ С€РµСЃС‚СЊ СЂР°Р·, РёР»Рё С‚РѕР»СЊРєРѕ Рї&#255;С‚СЊ? Р§РµСЃС‚РЅРѕ РіРѕРІРѕСЂ&#255;, РІ СЌС‚РѕР№ СЃСѓРјР°С‚РѕС…Рµ &#255; Рё СЃР°Рј СЃР±РёР»СЃ&#255; СЃРѕ СЃС‡С‘С‚Р°. РќРѕ РЅР°С‡РЅС‘Рј СЃ С‚РѕРіРѕ, С‡С‚Рѕ СЌС‚Рѕ РњР°РіРЅСѓРј 44-РіРѕ РєР°Р»РёР±СЂР°, СЃР°РјС‹Р№ СѓР±РѕР№РЅС‹Р№ СЂРµРІРѕР»СЊРІРµСЂ РЅР° СЃРІРµС‚Рµ, Рё РѕРЅ РјРѕР¶РµС‚ РїРѕРґС‡РёСЃС‚СѓСЋ СЃРЅРµСЃС‚Рё С‚РµР±Рµ Р±Р°С€РєСѓ. РўРµРїРµСЂСЊ С‚С‹ Р·Р°РґР°С‘С€СЊ СЃРµР±Рµ РѕРґРёРЅ РІРѕРїСЂРѕСЃ: РџРѕРІРµР·С‘С‚ Р»Рё РјРЅРµ? РќСѓ, РїРѕРІРµР·С‘С‚ Р»Рё, РїРѕРґРѕРЅРѕРє?"
 	eng_desc = "A very popular amongst western cops weapon, reliable, powerful and precise. Did he shoot six times, or only five?"
 	icon_state = "anaconda"
 	w_class = 3
@@ -204,7 +204,7 @@
 	eject_sound = 'stalker/sound/weapons/unload/obrez_open.ogg'
 
 
-///////////////////////////// Автоматы, ПП //////////////////////////////////////////
+///////////////////////////// РђРІС‚РѕРјР°С‚С‹, РџРџ //////////////////////////////////////////
 
 /obj/item/gun/ballistic
 	var/image/mag_overlay 			= null
@@ -253,7 +253,7 @@
 	if(istype(src, /obj/item/gun/ballistic/automatic/pistol))
 		icon_state = "[initial(icon_state)][chambered ? "" : "-e"]"
 	else
-		item_state = "[initial(item_state)][magazine ? "" : "-e"]"	//Пока не разберусь с оверлеями на мобах, будет так
+		item_state = "[initial(item_state)][magazine ? "" : "-e"]"	//РџРѕРєР° РЅРµ СЂР°Р·Р±РµСЂСѓСЃСЊ СЃ РѕРІРµСЂР»РµСЏРјРё РЅР° РјРѕР±Р°С…, Р±СѓРґРµС‚ С‚Р°Рє
 
 	return
 /*
@@ -273,7 +273,7 @@
 
 /obj/item/gun/ballistic/automatic/ak74  // AK-74
 	name = "AK 74"
-	desc = "Автомат образца 1974 года под патрон 5,45x39мм. Представл&#255;ет собой простое и надёжное оружие, хот&#255; дешевизна в производстве несколько сказалась на удобстве использовани&#255; и точности бо&#255;. В Зоне это основное оружие военных сталкеров и многих одиночек."
+	desc = "РђРІС‚РѕРјР°С‚ РѕР±СЂР°Р·С†Р° 1974 РіРѕРґР° РїРѕРґ РїР°С‚СЂРѕРЅ 5,45x39РјРј. РџСЂРµРґСЃС‚Р°РІР»&#255;РµС‚ СЃРѕР±РѕР№ РїСЂРѕСЃС‚РѕРµ Рё РЅР°РґС‘Р¶РЅРѕРµ РѕСЂСѓР¶РёРµ, С…РѕС‚&#255; РґРµС€РµРІРёР·РЅР° РІ РїСЂРѕРёР·РІРѕРґСЃС‚РІРµ РЅРµСЃРєРѕР»СЊРєРѕ СЃРєР°Р·Р°Р»Р°СЃСЊ РЅР° СѓРґРѕР±СЃС‚РІРµ РёСЃРїРѕР»СЊР·РѕРІР°РЅРё&#255; Рё С‚РѕС‡РЅРѕСЃС‚Рё Р±Рѕ&#255;. Р’ Р—РѕРЅРµ СЌС‚Рѕ РѕСЃРЅРѕРІРЅРѕРµ РѕСЂСѓР¶РёРµ РІРѕРµРЅРЅС‹С… СЃС‚Р°Р»РєРµСЂРѕРІ Рё РјРЅРѕРіРёС… РѕРґРёРЅРѕС‡РµРє."
 	eng_desc = "This weapon, designed in 1974, signaled the adoption of small caliber and low impulse rounds by Warsaw Pact countries. A descendant of the most popular assault rifle in the world, the AK-74 has an even bigger muzzle brake, resulting in a reduction of what was already manageable recoil. This facilitates better accuracy and groupings, especially when fired in fast single shots or bursts. As before, the rifle is very simple and reliable."
 	icon_state = "ak74"
 	item_state = "ak74"
@@ -297,9 +297,9 @@
 	weapon_weight = WEAPON_MEDIUM
 	draw_sound = 'stalker/sound/weapons/draw/ak74_draw.ogg'
 
-/obj/item/gun/ballistic/automatic/aksu74  // АКС74У
+/obj/item/gun/ballistic/automatic/aksu74  // РђРљРЎ74РЈ
 	name = "AK 74S"
-	desc = "По своим габаритам и массе АК-74У (укороченный) близок к пистолетам-пулемётам, однако он &#255;вл&#255;етс&#255; представителем автоматов. Достоинства: малые габариты и довольно высока&#255; пробивающа&#255; способность. Главные недостатки - мала&#255; прицельна&#255; дальность и склонность к быстрому перегреву при стрельбе очеред&#255;ми."
+	desc = "РџРѕ СЃРІРѕРёРј РіР°Р±Р°СЂРёС‚Р°Рј Рё РјР°СЃСЃРµ РђРљ-74РЈ (СѓРєРѕСЂРѕС‡РµРЅРЅС‹Р№) Р±Р»РёР·РѕРє Рє РїРёСЃС‚РѕР»РµС‚Р°Рј-РїСѓР»РµРјС‘С‚Р°Рј, РѕРґРЅР°РєРѕ РѕРЅ &#255;РІР»&#255;РµС‚СЃ&#255; РїСЂРµРґСЃС‚Р°РІРёС‚РµР»РµРј Р°РІС‚РѕРјР°С‚РѕРІ. Р”РѕСЃС‚РѕРёРЅСЃС‚РІР°: РјР°Р»С‹Рµ РіР°Р±Р°СЂРёС‚С‹ Рё РґРѕРІРѕР»СЊРЅРѕ РІС‹СЃРѕРєР°&#255; РїСЂРѕР±РёРІР°СЋС‰Р°&#255; СЃРїРѕСЃРѕР±РЅРѕСЃС‚СЊ. Р“Р»Р°РІРЅС‹Рµ РЅРµРґРѕСЃС‚Р°С‚РєРё - РјР°Р»Р°&#255; РїСЂРёС†РµР»СЊРЅР°&#255; РґР°Р»СЊРЅРѕСЃС‚СЊ Рё СЃРєР»РѕРЅРЅРѕСЃС‚СЊ Рє Р±С‹СЃС‚СЂРѕРјСѓ РїРµСЂРµРіСЂРµРІСѓ РїСЂРё СЃС‚СЂРµР»СЊР±Рµ РѕС‡РµСЂРµРґ&#255;РјРё."
 	eng_desc = "Despite being similar to submachineguns in size, weight and tactical purpose, this weapon is classified as an assault rifle due to the fact that its internal mechanism is identical to that of the AK-74. The weapon is notable for its mobility in close quarters and high armor-penetration capacity, while its drawbacks are its short effective range, despite the relatively long bullet range, a tendency to overheat and high ricochet propensity."
 	icon_state = "aksu74"
 	item_state = "aksu74"
@@ -321,7 +321,7 @@
 	draw_sound = 'stalker/sound/weapons/draw/ak74u_draw.ogg'
 
 /*
-/obj/item/gun/ballistic/automatic/aksu74/black  // АКС74У - черный цвет
+/obj/item/gun/ballistic/automatic/aksu74/black  // РђРљРЎ74РЈ - С‡РµСЂРЅС‹Р№ С†РІРµС‚
 	colored = "black"
 	item_state = "aksu74-black"
 	mag_type = /obj/item/ammo_box/magazine/stalker/m545
@@ -329,7 +329,7 @@
 
 /obj/item/gun/ballistic/automatic/mp5  // MP5
 	name = "MP-5"
-	desc = "Одно из самых лучших в классе пистолетов-пулемётов оружие. В течении последних дес&#255;тилетий XX века был прин&#255;т на вооружение спецподразделений армии и полиции во многих странах мира. С началом его постепенной замены более современными модел&#255;ми стал часто по&#255;вл&#255;тьс&#255; на чёрном рынке, откуда массово попал и в Зону."
+	desc = "РћРґРЅРѕ РёР· СЃР°РјС‹С… Р»СѓС‡С€РёС… РІ РєР»Р°СЃСЃРµ РїРёСЃС‚РѕР»РµС‚РѕРІ-РїСѓР»РµРјС‘С‚РѕРІ РѕСЂСѓР¶РёРµ. Р’ С‚РµС‡РµРЅРёРё РїРѕСЃР»РµРґРЅРёС… РґРµСЃ&#255;С‚РёР»РµС‚РёР№ XX РІРµРєР° Р±С‹Р» РїСЂРёРЅ&#255;С‚ РЅР° РІРѕРѕСЂСѓР¶РµРЅРёРµ СЃРїРµС†РїРѕРґСЂР°Р·РґРµР»РµРЅРёР№ Р°СЂРјРёРё Рё РїРѕР»РёС†РёРё РІРѕ РјРЅРѕРіРёС… СЃС‚СЂР°РЅР°С… РјРёСЂР°. РЎ РЅР°С‡Р°Р»РѕРј РµРіРѕ РїРѕСЃС‚РµРїРµРЅРЅРѕР№ Р·Р°РјРµРЅС‹ Р±РѕР»РµРµ СЃРѕРІСЂРµРјРµРЅРЅС‹РјРё РјРѕРґРµР»&#255;РјРё СЃС‚Р°Р» С‡Р°СЃС‚Рѕ РїРѕ&#255;РІР»&#255;С‚СЊСЃ&#255; РЅР° С‡С‘СЂРЅРѕРј СЂС‹РЅРєРµ, РѕС‚РєСѓРґР° РјР°СЃСЃРѕРІРѕ РїРѕРїР°Р» Рё РІ Р—РѕРЅСѓ."
 	eng_desc = "This submachine gun has gained popularity around the world thanks to its reliability, ease of use and accuracy. Over the last few decades the MP5 was in service with special armed forces and police units worldwide. Not surprisingly, having flooded the global black markets, it eventually made its way to the Zone."
 	icon_state = "mp5"
 	item_state = "arg"
@@ -349,9 +349,9 @@
 	load_sound = 'stalker/sound/weapons/load/mp5_load.ogg'
 	eject_sound = 'stalker/sound/weapons/unload/mp5_open.ogg'
 
-/obj/item/gun/ballistic/automatic/kiparis  // Кипарис
+/obj/item/gun/ballistic/automatic/kiparis  // РљРёРїР°СЂРёСЃ
 	name = "Kiparis"
-	desc = "Небольшой, легкий и удобный пистолет-пулемет под маломощный калибр, разработанный по заказу Министерства Обороны СССР в 1972-ом году. Не нашел широкого распространени&#255; в армии из-за сложностей в производстве дл&#255; тех времен, но был прин&#255;т на вооружении службами МВД, ФСО, инкассаторами и некоторыми другими отечественными вооруженными группами."
+	desc = "РќРµР±РѕР»СЊС€РѕР№, Р»РµРіРєРёР№ Рё СѓРґРѕР±РЅС‹Р№ РїРёСЃС‚РѕР»РµС‚-РїСѓР»РµРјРµС‚ РїРѕРґ РјР°Р»РѕРјРѕС‰РЅС‹Р№ РєР°Р»РёР±СЂ, СЂР°Р·СЂР°Р±РѕС‚Р°РЅРЅС‹Р№ РїРѕ Р·Р°РєР°Р·Сѓ РњРёРЅРёСЃС‚РµСЂСЃС‚РІР° РћР±РѕСЂРѕРЅС‹ РЎРЎРЎР  РІ 1972-РѕРј РіРѕРґСѓ. РќРµ РЅР°С€РµР» С€РёСЂРѕРєРѕРіРѕ СЂР°СЃРїСЂРѕСЃС‚СЂР°РЅРµРЅРё&#255; РІ Р°СЂРјРёРё РёР·-Р·Р° СЃР»РѕР¶РЅРѕСЃС‚РµР№ РІ РїСЂРѕРёР·РІРѕРґСЃС‚РІРµ РґР»&#255; С‚РµС… РІСЂРµРјРµРЅ, РЅРѕ Р±С‹Р» РїСЂРёРЅ&#255;С‚ РЅР° РІРѕРѕСЂСѓР¶РµРЅРёРё СЃР»СѓР¶Р±Р°РјРё РњР’Р”, Р¤РЎРћ, РёРЅРєР°СЃСЃР°С‚РѕСЂР°РјРё Рё РЅРµРєРѕС‚РѕСЂС‹РјРё РґСЂСѓРіРёРјРё РѕС‚РµС‡РµСЃС‚РІРµРЅРЅС‹РјРё РІРѕРѕСЂСѓР¶РµРЅРЅС‹РјРё РіСЂСѓРїРїР°РјРё."
 	eng_desc = "A small, light submachine gun firing a low-powered bullet, was designed by USSR Defense Ministry in the year 1972. Wasn't adopted by army, but found use and popularity amongst different modern russian government military forces and police."
 	icon_state = "kiparis"
 	item_state = "arg"
@@ -371,9 +371,9 @@
 	load_sound = 'stalker/sound/weapons/load/mp5_load.ogg'
 	eject_sound = 'stalker/sound/weapons/unload/mp5_open.ogg'
 
-/obj/item/gun/ballistic/automatic/ppsh  // ППШ
+/obj/item/gun/ballistic/automatic/ppsh  // РџРџРЁ
 	name = "PPSh"
-	desc = "Один из самых старых отечественных дизайнов автоматического ручного оружи&#255;, пистолет-пулемет Шпагина, с гордостью прошел сквозь Великую Отечественную... чтобы в огромных количествах осесть на складах и ржаветь там более полувека. Некоторые умельцы, однако, хорошенько поработав над старым оружием, переделывают его под новый калибр и отправл&#255;ют Сидору на продажу. У вас в руках - один из таких экземпл&#255;ров."
+	desc = "РћРґРёРЅ РёР· СЃР°РјС‹С… СЃС‚Р°СЂС‹С… РѕС‚РµС‡РµСЃС‚РІРµРЅРЅС‹С… РґРёР·Р°Р№РЅРѕРІ Р°РІС‚РѕРјР°С‚РёС‡РµСЃРєРѕРіРѕ СЂСѓС‡РЅРѕРіРѕ РѕСЂСѓР¶Рё&#255;, РїРёСЃС‚РѕР»РµС‚-РїСѓР»РµРјРµС‚ РЁРїР°РіРёРЅР°, СЃ РіРѕСЂРґРѕСЃС‚СЊСЋ РїСЂРѕС€РµР» СЃРєРІРѕР·СЊ Р’РµР»РёРєСѓСЋ РћС‚РµС‡РµСЃС‚РІРµРЅРЅСѓСЋ... С‡С‚РѕР±С‹ РІ РѕРіСЂРѕРјРЅС‹С… РєРѕР»РёС‡РµСЃС‚РІР°С… РѕСЃРµСЃС‚СЊ РЅР° СЃРєР»Р°РґР°С… Рё СЂР¶Р°РІРµС‚СЊ С‚Р°Рј Р±РѕР»РµРµ РїРѕР»СѓРІРµРєР°. РќРµРєРѕС‚РѕСЂС‹Рµ СѓРјРµР»СЊС†С‹, РѕРґРЅР°РєРѕ, С…РѕСЂРѕС€РµРЅСЊРєРѕ РїРѕСЂР°Р±РѕС‚Р°РІ РЅР°Рґ СЃС‚Р°СЂС‹Рј РѕСЂСѓР¶РёРµРј, РїРµСЂРµРґРµР»С‹РІР°СЋС‚ РµРіРѕ РїРѕРґ РЅРѕРІС‹Р№ РєР°Р»РёР±СЂ Рё РѕС‚РїСЂР°РІР»&#255;СЋС‚ РЎРёРґРѕСЂСѓ РЅР° РїСЂРѕРґР°Р¶Сѓ. РЈ РІР°СЃ РІ СЂСѓРєР°С… - РѕРґРёРЅ РёР· С‚Р°РєРёС… СЌРєР·РµРјРїР»&#255;СЂРѕРІ."
 	eng_desc = "The PPSh saw extensive combat use during World War II and the Korean War. It was one of the major infantry weapons of the Soviet Armed Forces during World War II. Around six million PPSh-41s were manufactured. In the form of the Chinese Type 50 (licensed copy), it was still being used by the Viet Cong as late as 1970. According to the 2002 edition of the Encyclopedia of Weapons of World War II the PPSh was still in use with irregular militaries."
 	icon_state = "ppsh"
 	item_state = "arg"
@@ -394,9 +394,9 @@
 	load_sound = 'stalker/sound/weapons/load/mp5_load.ogg'
 	eject_sound = 'stalker/sound/weapons/unload/mp5_open.ogg'
 
-/obj/item/gun/ballistic/automatic/berettam38  // Моделло 38
+/obj/item/gun/ballistic/automatic/berettam38  // РњРѕРґРµР»Р»Рѕ 38
 	name = "Beretta M38"
-	desc = "Италь&#255;нский пистолет-пулемёт, впервые представленный в 1938 году и примен&#255;вшийс&#255; Италией во врем&#255; Второй мировой войны. По общему количеству произведённых образцов Beretta MAB 38 проиграла магазинной винтовке Carcano M1891, но по эффективности она считаетс&#255; лучшим стрелковым оружием Италии времён Второй мировой войны."
+	desc = "РС‚Р°Р»СЊ&#255;РЅСЃРєРёР№ РїРёСЃС‚РѕР»РµС‚-РїСѓР»РµРјС‘С‚, РІРїРµСЂРІС‹Рµ РїСЂРµРґСЃС‚Р°РІР»РµРЅРЅС‹Р№ РІ 1938 РіРѕРґСѓ Рё РїСЂРёРјРµРЅ&#255;РІС€РёР№СЃ&#255; РС‚Р°Р»РёРµР№ РІРѕ РІСЂРµРј&#255; Р’С‚РѕСЂРѕР№ РјРёСЂРѕРІРѕР№ РІРѕР№РЅС‹. РџРѕ РѕР±С‰РµРјСѓ РєРѕР»РёС‡РµСЃС‚РІСѓ РїСЂРѕРёР·РІРµРґС‘РЅРЅС‹С… РѕР±СЂР°Р·С†РѕРІ Beretta MAB 38 РїСЂРѕРёРіСЂР°Р»Р° РјР°РіР°Р·РёРЅРЅРѕР№ РІРёРЅС‚РѕРІРєРµ Carcano M1891, РЅРѕ РїРѕ СЌС„С„РµРєС‚РёРІРЅРѕСЃС‚Рё РѕРЅР° СЃС‡РёС‚Р°РµС‚СЃ&#255; Р»СѓС‡С€РёРј СЃС‚СЂРµР»РєРѕРІС‹Рј РѕСЂСѓР¶РёРµРј РС‚Р°Р»РёРё РІСЂРµРјС‘РЅ Р’С‚РѕСЂРѕР№ РјРёСЂРѕРІРѕР№ РІРѕР№РЅС‹."
 	eng_desc = "Modello 38, or Model 38 and its variants were a series of official submachine guns of the Royal Italian Army introduced in 1938 and used during World War II."
 	icon_state = "berettam38"
 	item_state = "berettam38"
@@ -417,9 +417,9 @@
 	load_sound = 'stalker/sound/weapons/load/berettam38_load.ogg'
 	eject_sound = 'stalker/sound/weapons/unload/berettam38_open.ogg'
 
-/obj/item/gun/ballistic/automatic/tpc301  // Эмка
+/obj/item/gun/ballistic/automatic/tpc301  // Р­РјРєР°
 	name = "LR-300"
-	desc = "Нова&#255; ступень в развитии семейства знаменитой М-16. Благодар&#255; исключительно ровному спуску, высокой эргономике и небольшому весу данное оружие отличаетс&#255; высокой точностью бо&#255;, хот&#255; высока&#255; чувствительность к загр&#255;знению делает его малопригодным дл&#255; использовани&#255; в сложных услови&#255;х."
+	desc = "РќРѕРІР°&#255; СЃС‚СѓРїРµРЅСЊ РІ СЂР°Р·РІРёС‚РёРё СЃРµРјРµР№СЃС‚РІР° Р·РЅР°РјРµРЅРёС‚РѕР№ Рњ-16. Р‘Р»Р°РіРѕРґР°СЂ&#255; РёСЃРєР»СЋС‡РёС‚РµР»СЊРЅРѕ СЂРѕРІРЅРѕРјСѓ СЃРїСѓСЃРєСѓ, РІС‹СЃРѕРєРѕР№ СЌСЂРіРѕРЅРѕРјРёРєРµ Рё РЅРµР±РѕР»СЊС€РѕРјСѓ РІРµСЃСѓ РґР°РЅРЅРѕРµ РѕСЂСѓР¶РёРµ РѕС‚Р»РёС‡Р°РµС‚СЃ&#255; РІС‹СЃРѕРєРѕР№ С‚РѕС‡РЅРѕСЃС‚СЊСЋ Р±Рѕ&#255;, С…РѕС‚&#255; РІС‹СЃРѕРєР°&#255; С‡СѓРІСЃС‚РІРёС‚РµР»СЊРЅРѕСЃС‚СЊ Рє Р·Р°РіСЂ&#255;Р·РЅРµРЅРёСЋ РґРµР»Р°РµС‚ РµРіРѕ РјР°Р»РѕРїСЂРёРіРѕРґРЅС‹Рј РґР»&#255; РёСЃРїРѕР»СЊР·РѕРІР°РЅРё&#255; РІ СЃР»РѕР¶РЅС‹С… СѓСЃР»РѕРІРё&#255;С…."
 	eng_desc = "A new step in the development of this famous weapon family. The changes were made to the upper half of the steel construction comprising the barrel, gas tube and bolt assembly, reducing the weapon's weight, improving ergonomics and its gas system. The weapon is highly accurate, although its propensity to catch dirt makes it a poor choice for the Zone's difficult conditions."
 	icon_state = "tpc301"
 	item_state = "tpc301"
@@ -442,9 +442,9 @@
 	load_sound = 'stalker/sound/weapons/load/tpc301_load.ogg'
 	eject_sound = 'stalker/sound/weapons/unload/tpc301_open.ogg'
 
-/obj/item/gun/ballistic/automatic/abakan  // Абакан
+/obj/item/gun/ballistic/automatic/abakan  // РђР±Р°РєР°РЅ
 	name = "AC-96"
-	desc = "Оружие элитных войск советской армии. Был разработан в качестве замены устаревшему АК-74. В «Абакане» подвижны не только внутренние механизмы, но и вс&#255; ствольна&#255; коробка вместе со стволом, что позвол&#255;ет снизить отдачу, тем самым значительно повысив точность бо&#255;."
+	desc = "РћСЂСѓР¶РёРµ СЌР»РёС‚РЅС‹С… РІРѕР№СЃРє СЃРѕРІРµС‚СЃРєРѕР№ Р°СЂРјРёРё. Р‘С‹Р» СЂР°Р·СЂР°Р±РѕС‚Р°РЅ РІ РєР°С‡РµСЃС‚РІРµ Р·Р°РјРµРЅС‹ СѓСЃС‚Р°СЂРµРІС€РµРјСѓ РђРљ-74. Р’ В«РђР±Р°РєР°РЅРµВ» РїРѕРґРІРёР¶РЅС‹ РЅРµ С‚РѕР»СЊРєРѕ РІРЅСѓС‚СЂРµРЅРЅРёРµ РјРµС…Р°РЅРёР·РјС‹, РЅРѕ Рё РІСЃ&#255; СЃС‚РІРѕР»СЊРЅР°&#255; РєРѕСЂРѕР±РєР° РІРјРµСЃС‚Рµ СЃРѕ СЃС‚РІРѕР»РѕРј, С‡С‚Рѕ РїРѕР·РІРѕР»&#255;РµС‚ СЃРЅРёР·РёС‚СЊ РѕС‚РґР°С‡Сѓ, С‚РµРј СЃР°РјС‹Рј Р·РЅР°С‡РёС‚РµР»СЊРЅРѕ РїРѕРІС‹СЃРёРІ С‚РѕС‡РЅРѕСЃС‚СЊ Р±Рѕ&#255;."
 	eng_desc = "A modern assault rifle developed as a replacement for the ageing AK-74. The main difference is its high speed 2-round burst firing mode, which allows two bullets to be fired at exactly the same spot on a target up to 100 meters away. This significantly increases the likelihood of hitting the target in comparison to the 1 round firing mode, which considerably improves kill potential, stopping power and armor piercing capability."
 	icon_state = "abakan"
 	item_state = "abakan"
@@ -467,9 +467,9 @@
 	load_sound = 'stalker/sound/weapons/load/abakan_load.ogg'
 	eject_sound = 'stalker/sound/weapons/unload/abakan_open.ogg'
 
-/obj/item/gun/ballistic/automatic/il86  // ИЛ86
+/obj/item/gun/ballistic/automatic/il86  // РР›86
 	name = "L85"
-	desc = "После того, как эта винтовка была заменена армией Великобритании на немецкую ГП37, она в большом количестве всплыла на чёрном рынке, а затем и в Зоне. Главным достоинством ИЛ86 &#255;вл&#255;ютс&#255; штатный 4-кратный прицел и высока&#255; точность первого выстрела. При стрельбе очеред&#255;ми точность бо&#255; резко падает, а надёжность основных механизмов винтовки недостаточно высока. Эффективна при стрельбе короткими очеред&#255;ми и одиночными."
+	desc = "РџРѕСЃР»Рµ С‚РѕРіРѕ, РєР°Рє СЌС‚Р° РІРёРЅС‚РѕРІРєР° Р±С‹Р»Р° Р·Р°РјРµРЅРµРЅР° Р°СЂРјРёРµР№ Р’РµР»РёРєРѕР±СЂРёС‚Р°РЅРёРё РЅР° РЅРµРјРµС†РєСѓСЋ Р“Рџ37, РѕРЅР° РІ Р±РѕР»СЊС€РѕРј РєРѕР»РёС‡РµСЃС‚РІРµ РІСЃРїР»С‹Р»Р° РЅР° С‡С‘СЂРЅРѕРј СЂС‹РЅРєРµ, Р° Р·Р°С‚РµРј Рё РІ Р—РѕРЅРµ. Р“Р»Р°РІРЅС‹Рј РґРѕСЃС‚РѕРёРЅСЃС‚РІРѕРј РР›86 &#255;РІР»&#255;СЋС‚СЃ&#255; С€С‚Р°С‚РЅС‹Р№ 4-РєСЂР°С‚РЅС‹Р№ РїСЂРёС†РµР» Рё РІС‹СЃРѕРєР°&#255; С‚РѕС‡РЅРѕСЃС‚СЊ РїРµСЂРІРѕРіРѕ РІС‹СЃС‚СЂРµР»Р°. РџСЂРё СЃС‚СЂРµР»СЊР±Рµ РѕС‡РµСЂРµРґ&#255;РјРё С‚РѕС‡РЅРѕСЃС‚СЊ Р±Рѕ&#255; СЂРµР·РєРѕ РїР°РґР°РµС‚, Р° РЅР°РґС‘Р¶РЅРѕСЃС‚СЊ РѕСЃРЅРѕРІРЅС‹С… РјРµС…Р°РЅРёР·РјРѕРІ РІРёРЅС‚РѕРІРєРё РЅРµРґРѕСЃС‚Р°С‚РѕС‡РЅРѕ РІС‹СЃРѕРєР°. Р­С„С„РµРєС‚РёРІРЅР° РїСЂРё СЃС‚СЂРµР»СЊР±Рµ РєРѕСЂРѕС‚РєРёРјРё РѕС‡РµСЂРµРґ&#255;РјРё Рё РѕРґРёРЅРѕС‡РЅС‹РјРё."
 	eng_desc = "This rifle's considerable number of drawbacks caused most of these weapons to be modernized, with the retired stock making its way to the Zone via the black market. The rifle's main advantages are its built-in 4x scope, high single-shot accuracy and reliable upgrade technology. When the weapon is fired in bursts, its accuracy decreases significantly and the rifle's basic internal mechanisms become somewhat unreliable."
 	icon_state = "il86"
 	item_state = "il86"
@@ -497,7 +497,7 @@
 
 /obj/item/gun/ballistic/automatic/sigsg550
 	name = "SIG SG 550"
-	desc = "Представитель относительно нового семейства штурмовых винтовок. Благодар&#255; высокой надёжности, точности в бою и удобству в обращении, &#255;вл&#255;етс&#255; одним из лучших образцов вооружени&#255; этого класса. В Зоне встречаетс&#255; нечасто и стоит немалых денег; обычно её специально заказывают дл&#255; себ&#255; бывалые сталкеры."
+	desc = "РџСЂРµРґСЃС‚Р°РІРёС‚РµР»СЊ РѕС‚РЅРѕСЃРёС‚РµР»СЊРЅРѕ РЅРѕРІРѕРіРѕ СЃРµРјРµР№СЃС‚РІР° С€С‚СѓСЂРјРѕРІС‹С… РІРёРЅС‚РѕРІРѕРє. Р‘Р»Р°РіРѕРґР°СЂ&#255; РІС‹СЃРѕРєРѕР№ РЅР°РґС‘Р¶РЅРѕСЃС‚Рё, С‚РѕС‡РЅРѕСЃС‚Рё РІ Р±РѕСЋ Рё СѓРґРѕР±СЃС‚РІСѓ РІ РѕР±СЂР°С‰РµРЅРёРё, &#255;РІР»&#255;РµС‚СЃ&#255; РѕРґРЅРёРј РёР· Р»СѓС‡С€РёС… РѕР±СЂР°Р·С†РѕРІ РІРѕРѕСЂСѓР¶РµРЅРё&#255; СЌС‚РѕРіРѕ РєР»Р°СЃСЃР°. Р’ Р—РѕРЅРµ РІСЃС‚СЂРµС‡Р°РµС‚СЃ&#255; РЅРµС‡Р°СЃС‚Рѕ Рё СЃС‚РѕРёС‚ РЅРµРјР°Р»С‹С… РґРµРЅРµРі; РѕР±С‹С‡РЅРѕ РµС‘ СЃРїРµС†РёР°Р»СЊРЅРѕ Р·Р°РєР°Р·С‹РІР°СЋС‚ РґР»&#255; СЃРµР±&#255; Р±С‹РІР°Р»С‹Рµ СЃС‚Р°Р»РєРµСЂС‹."
 	eng_desc = "A relatively new assault rifle that has quickly found admirers around the world, despite lacking a \"trendy\" design. Weapons of this series are one of the best in their class, renowned for their reliability, accuracy and ease of use. Despite being relatively difficult to obtain in the Zone, this assault rifle is often ordered by experienced stalkers at considerable expense."
 	icon_state = "sigsg550"
 	item_state = "sigsg550"
@@ -520,7 +520,7 @@
 
 /obj/item/gun/ballistic/automatic/gp37  // GP37
 	name = "GP37"
-	desc = "Штурмова&#255; винтовка нового поколени&#255;, производима&#255; в Германии в малых парти&#255;х дл&#255; отр&#255;дов специального назначени&#255;. Оборудована встроенным прицелом дл&#255; бо&#255; на средних дистанци&#255;х, крайне надежна и эффективна в любых услови&#255;х. Выбор многих мастеров группировок вроде Свободы и Наемников."
+	desc = "РЁС‚СѓСЂРјРѕРІР°&#255; РІРёРЅС‚РѕРІРєР° РЅРѕРІРѕРіРѕ РїРѕРєРѕР»РµРЅРё&#255;, РїСЂРѕРёР·РІРѕРґРёРјР°&#255; РІ Р“РµСЂРјР°РЅРёРё РІ РјР°Р»С‹С… РїР°СЂС‚Рё&#255;С… РґР»&#255; РѕС‚СЂ&#255;РґРѕРІ СЃРїРµС†РёР°Р»СЊРЅРѕРіРѕ РЅР°Р·РЅР°С‡РµРЅРё&#255;. РћР±РѕСЂСѓРґРѕРІР°РЅР° РІСЃС‚СЂРѕРµРЅРЅС‹Рј РїСЂРёС†РµР»РѕРј РґР»&#255; Р±Рѕ&#255; РЅР° СЃСЂРµРґРЅРёС… РґРёСЃС‚Р°РЅС†Рё&#255;С…, РєСЂР°Р№РЅРµ РЅР°РґРµР¶РЅР° Рё СЌС„С„РµРєС‚РёРІРЅР° РІ Р»СЋР±С‹С… СѓСЃР»РѕРІРё&#255;С…. Р’С‹Р±РѕСЂ РјРЅРѕРіРёС… РјР°СЃС‚РµСЂРѕРІ РіСЂСѓРїРїРёСЂРѕРІРѕРє РІСЂРѕРґРµ РЎРІРѕР±РѕРґС‹ Рё РќР°РµРјРЅРёРєРѕРІ."
 	eng_desc = "A new addition to the Western-made assault rifle family, which differs significantly from previous models in the series built on an automatic foundation with a semi-open bolt assembly, this weapon is more like American automatic gas-operated assault rifles with a short-stroke gas piston system. These changes ensure that the rifle is a first-rate example of a modern weapon - lightweight, reliable and ergonomic."
 	icon_state = "gp37"
 	item_state = "gp37"
@@ -548,7 +548,7 @@
 
 /obj/item/gun/ballistic/automatic/fnf2000  // fnf2000
 	name = "FN-F2000"
-	desc = "ФН-Ф2000 — по-своему идеальное оружие. Возможность установки подствольного гранатомета и сложной баллистической вычислительной системы позволит быстро уложить даже псевдогиганта. При использовании автоматического огн&#255; будут очень быстро расходоватьс&#255; боеприпасы. Нар&#255;ду с ГП37 &#255;вл&#255;етс&#255; одним из лучших орудий убийства в Зоне."
+	desc = "Р¤Рќ-Р¤2000 вЂ” РїРѕ-СЃРІРѕРµРјСѓ РёРґРµР°Р»СЊРЅРѕРµ РѕСЂСѓР¶РёРµ. Р’РѕР·РјРѕР¶РЅРѕСЃС‚СЊ СѓСЃС‚Р°РЅРѕРІРєРё РїРѕРґСЃС‚РІРѕР»СЊРЅРѕРіРѕ РіСЂР°РЅР°С‚РѕРјРµС‚Р° Рё СЃР»РѕР¶РЅРѕР№ Р±Р°Р»Р»РёСЃС‚РёС‡РµСЃРєРѕР№ РІС‹С‡РёСЃР»РёС‚РµР»СЊРЅРѕР№ СЃРёСЃС‚РµРјС‹ РїРѕР·РІРѕР»РёС‚ Р±С‹СЃС‚СЂРѕ СѓР»РѕР¶РёС‚СЊ РґР°Р¶Рµ РїСЃРµРІРґРѕРіРёРіР°РЅС‚Р°. РџСЂРё РёСЃРїРѕР»СЊР·РѕРІР°РЅРёРё Р°РІС‚РѕРјР°С‚РёС‡РµСЃРєРѕРіРѕ РѕРіРЅ&#255; Р±СѓРґСѓС‚ РѕС‡РµРЅСЊ Р±С‹СЃС‚СЂРѕ СЂР°СЃС…РѕРґРѕРІР°С‚СЊСЃ&#255; Р±РѕРµРїСЂРёРїР°СЃС‹. РќР°СЂ&#255;РґСѓ СЃ Р“Рџ37 &#255;РІР»&#255;РµС‚СЃ&#255; РѕРґРЅРёРј РёР· Р»СѓС‡С€РёС… РѕСЂСѓРґРёР№ СѓР±РёР№СЃС‚РІР° РІ Р—РѕРЅРµ."
 	eng_desc = "This futuristic-looking weapon with a bullpup layout is actually a mass produced modular system, comprising a rifle grenade complex with a computerized fire control system and a 40-mm grenade launcher. Despite its bulky appearance, the weapon is highly ergonomic, easy to use and benefits from good technical characteristics. This one lacks a built-in computerised scope, yet itself is very precise and powerful."
 	icon_state = "fnf2000"
 	item_state = "fnf2000"
@@ -573,7 +573,7 @@
 
 /obj/item/gun/ballistic/automatic/fnf2000s  // fnf2000
 	name = "FN-F2000-OTBS"
-	desc = "ФН-Ф2000 — по-своему идеальное оружие. Возможность установки подствольного гранатомета и сложной баллистической вычислительной системы позволит быстро уложить даже псевдогиганта. При использовании автоматического огн&#255; будут очень быстро расходоватьс&#255; боеприпасы. Нар&#255;ду с ГП37 &#255;вл&#255;етс&#255; одним из лучших орудий убийства в Зоне. В данную модель баллистическа&#255; система уже встроена и дает все преимущества."
+	desc = "Р¤Рќ-Р¤2000 вЂ” РїРѕ-СЃРІРѕРµРјСѓ РёРґРµР°Р»СЊРЅРѕРµ РѕСЂСѓР¶РёРµ. Р’РѕР·РјРѕР¶РЅРѕСЃС‚СЊ СѓСЃС‚Р°РЅРѕРІРєРё РїРѕРґСЃС‚РІРѕР»СЊРЅРѕРіРѕ РіСЂР°РЅР°С‚РѕРјРµС‚Р° Рё СЃР»РѕР¶РЅРѕР№ Р±Р°Р»Р»РёСЃС‚РёС‡РµСЃРєРѕР№ РІС‹С‡РёСЃР»РёС‚РµР»СЊРЅРѕР№ СЃРёСЃС‚РµРјС‹ РїРѕР·РІРѕР»РёС‚ Р±С‹СЃС‚СЂРѕ СѓР»РѕР¶РёС‚СЊ РґР°Р¶Рµ РїСЃРµРІРґРѕРіРёРіР°РЅС‚Р°. РџСЂРё РёСЃРїРѕР»СЊР·РѕРІР°РЅРёРё Р°РІС‚РѕРјР°С‚РёС‡РµСЃРєРѕРіРѕ РѕРіРЅ&#255; Р±СѓРґСѓС‚ РѕС‡РµРЅСЊ Р±С‹СЃС‚СЂРѕ СЂР°СЃС…РѕРґРѕРІР°С‚СЊСЃ&#255; Р±РѕРµРїСЂРёРїР°СЃС‹. РќР°СЂ&#255;РґСѓ СЃ Р“Рџ37 &#255;РІР»&#255;РµС‚СЃ&#255; РѕРґРЅРёРј РёР· Р»СѓС‡С€РёС… РѕСЂСѓРґРёР№ СѓР±РёР№СЃС‚РІР° РІ Р—РѕРЅРµ. Р’ РґР°РЅРЅСѓСЋ РјРѕРґРµР»СЊ Р±Р°Р»Р»РёСЃС‚РёС‡РµСЃРєР°&#255; СЃРёСЃС‚РµРјР° СѓР¶Рµ РІСЃС‚СЂРѕРµРЅР° Рё РґР°РµС‚ РІСЃРµ РїСЂРµРёРјСѓС‰РµСЃС‚РІР°."
 	eng_desc = "This futuristic-looking weapon with a bullpup layout is actually a mass produced modular system, comprising a rifle grenade complex with a computerized fire control system and a 40-mm grenade launcher. Despite its bulky appearance, the weapon is highly ergonomic, easy to use and benefits from good technical characteristics."
 	icon_state = "fnf2000s"
 	item_state = "fnf2000s"
@@ -602,7 +602,7 @@
 
 /obj/item/gun/ballistic/automatic/l6_saw/pkm
 	name = "PKM"
-	desc = "Этот монстр стрел&#255;ет винтовочными патронами с таким грохотом, что уши сворачиваютс&#255; в трубочку, и столь великим вредом всему живому и неживому, что шут&#255; можно снести очередью маленькое здание. Признак не просто успешности и достатка - но смерти. Смерти, несомой всем врагам пулеметчика."
+	desc = "Р­С‚РѕС‚ РјРѕРЅСЃС‚СЂ СЃС‚СЂРµР»&#255;РµС‚ РІРёРЅС‚РѕРІРѕС‡РЅС‹РјРё РїР°С‚СЂРѕРЅР°РјРё СЃ С‚Р°РєРёРј РіСЂРѕС…РѕС‚РѕРј, С‡С‚Рѕ СѓС€Рё СЃРІРѕСЂР°С‡РёРІР°СЋС‚СЃ&#255; РІ С‚СЂСѓР±РѕС‡РєСѓ, Рё СЃС‚РѕР»СЊ РІРµР»РёРєРёРј РІСЂРµРґРѕРј РІСЃРµРјСѓ Р¶РёРІРѕРјСѓ Рё РЅРµР¶РёРІРѕРјСѓ, С‡С‚Рѕ С€СѓС‚&#255; РјРѕР¶РЅРѕ СЃРЅРµСЃС‚Рё РѕС‡РµСЂРµРґСЊСЋ РјР°Р»РµРЅСЊРєРѕРµ Р·РґР°РЅРёРµ. РџСЂРёР·РЅР°Рє РЅРµ РїСЂРѕСЃС‚Рѕ СѓСЃРїРµС€РЅРѕСЃС‚Рё Рё РґРѕСЃС‚Р°С‚РєР° - РЅРѕ СЃРјРµСЂС‚Рё. РЎРјРµСЂС‚Рё, РЅРµСЃРѕРјРѕР№ РІСЃРµРј РІСЂР°РіР°Рј РїСѓР»РµРјРµС‚С‡РёРєР°."
 	eng_desc = "This belt-fed machine gun is a portable modification with a complex two-stage feeding system. Despite its weight and low precision, this LMG has found admirers in the Zone. Used primarily to fight off outnumbering enemy forces during faction conflicts and clear out mutant lairs"
 	icon_state = "PKMclosed200"
 	item_state = "l6closedmag"
@@ -626,13 +626,13 @@
 
 /obj/item/gun/ballistic/automatic/l6_saw/pkm/shottie
    name = "PTV M-777"
-   desc = "Личное оружие Петровича. Ху&#255;рит как залупа."
+   desc = "Р›РёС‡РЅРѕРµ РѕСЂСѓР¶РёРµ РџРµС‚СЂРѕРІРёС‡Р°. РҐСѓ&#255;СЂРёС‚ РєР°Рє Р·Р°Р»СѓРїР°."
    mag_type = /obj/item/ammo_box/magazine/stalker/pkm/shottie
 
-///////////////////////////// Снайперские винтовки //////////////////////////////////////////
-/obj/item/gun/ballistic/automatic/val  // Вал
+///////////////////////////// РЎРЅР°Р№РїРµСЂСЃРєРёРµ РІРёРЅС‚РѕРІРєРё //////////////////////////////////////////
+/obj/item/gun/ballistic/automatic/val  // Р’Р°Р»
 	name = "AS Val"
-	desc = "Создан на базе бесшумной снайперской винтовки 'Винторез', от которой отличаетс&#255; складным прикладом и укороченным стволом. Изначально предназначалс&#255; дл&#255; применени&#255; спецподразделени&#255;ми в услови&#255;х атаки, требующей бесшумной и беспламенной стрельбы."
+	desc = "РЎРѕР·РґР°РЅ РЅР° Р±Р°Р·Рµ Р±РµСЃС€СѓРјРЅРѕР№ СЃРЅР°Р№РїРµСЂСЃРєРѕР№ РІРёРЅС‚РѕРІРєРё 'Р’РёРЅС‚РѕСЂРµР·', РѕС‚ РєРѕС‚РѕСЂРѕР№ РѕС‚Р»РёС‡Р°РµС‚СЃ&#255; СЃРєР»Р°РґРЅС‹Рј РїСЂРёРєР»Р°РґРѕРј Рё СѓРєРѕСЂРѕС‡РµРЅРЅС‹Рј СЃС‚РІРѕР»РѕРј. РР·РЅР°С‡Р°Р»СЊРЅРѕ РїСЂРµРґРЅР°Р·РЅР°С‡Р°Р»СЃ&#255; РґР»&#255; РїСЂРёРјРµРЅРµРЅРё&#255; СЃРїРµС†РїРѕРґСЂР°Р·РґРµР»РµРЅРё&#255;РјРё РІ СѓСЃР»РѕРІРё&#255;С… Р°С‚Р°РєРё, С‚СЂРµР±СѓСЋС‰РµР№ Р±РµСЃС€СѓРјРЅРѕР№ Рё Р±РµСЃРїР»Р°РјРµРЅРЅРѕР№ СЃС‚СЂРµР»СЊР±С‹."
 	eng_desc = "A modified version of the silent Vintorez sniper rifle, the assault rifle was designed as a special forces weapon. The rifle's primary purpose is effective fire against enemies employing modern personal protection equipment without disclosing the shooter's location. Thanks to its integrated silencer and 9x39mm caliber round with a heavy subsonic bullet, the weapon's noise and muzzle flash have been reduced to a minimum."
 	icon_state = "val"
 	item_state = "val"
@@ -657,9 +657,9 @@
 	load_sound = 'stalker/sound/weapons/load/val_load.ogg'
 	eject_sound = 'stalker/sound/weapons/unload/val_open.ogg'
 
-/obj/item/gun/ballistic/automatic/vintorez  // ВСС Винторез
+/obj/item/gun/ballistic/automatic/vintorez  // Р’РЎРЎ Р’РёРЅС‚РѕСЂРµР·
 	name = "VSS Vintorez"
-	desc = "Винтовка специальна&#255; снайперска&#255; 'Винторез'. Предназначена дл&#255; бесшумной и беспламенной снайперской стрельбы и снабжена интегрированным глушителем. С рассто&#255;ни&#255; 400 метров пробивает большинство бронежилетов. Очень ценимое сталкерами любого уровн&#255; оружие."
+	desc = "Р’РёРЅС‚РѕРІРєР° СЃРїРµС†РёР°Р»СЊРЅР°&#255; СЃРЅР°Р№РїРµСЂСЃРєР°&#255; 'Р’РёРЅС‚РѕСЂРµР·'. РџСЂРµРґРЅР°Р·РЅР°С‡РµРЅР° РґР»&#255; Р±РµСЃС€СѓРјРЅРѕР№ Рё Р±РµСЃРїР»Р°РјРµРЅРЅРѕР№ СЃРЅР°Р№РїРµСЂСЃРєРѕР№ СЃС‚СЂРµР»СЊР±С‹ Рё СЃРЅР°Р±Р¶РµРЅР° РёРЅС‚РµРіСЂРёСЂРѕРІР°РЅРЅС‹Рј РіР»СѓС€РёС‚РµР»РµРј. РЎ СЂР°СЃСЃС‚Рѕ&#255;РЅРё&#255; 400 РјРµС‚СЂРѕРІ РїСЂРѕР±РёРІР°РµС‚ Р±РѕР»СЊС€РёРЅСЃС‚РІРѕ Р±СЂРѕРЅРµР¶РёР»РµС‚РѕРІ. РћС‡РµРЅСЊ С†РµРЅРёРјРѕРµ СЃС‚Р°Р»РєРµСЂР°РјРё Р»СЋР±РѕРіРѕ СѓСЂРѕРІРЅ&#255; РѕСЂСѓР¶РёРµ."
 	eng_desc = "A special military sniper rifle purpose-built for silent, flashless sniping during special operations where early detection of the shooter may be critical. The Vintorez provides high armor-piercing capability and stopping power, as well as being equipped with an integrated sniper and optical scope. Highly rated by many stalkers despite its small magazine."
 	icon_state = "vintorez"
 	item_state = "vintorez"
@@ -687,9 +687,9 @@
 	load_sound = 'stalker/sound/weapons/load/val_load.ogg'
 	eject_sound = 'stalker/sound/weapons/unload/val_open.ogg'
 
-/obj/item/gun/ballistic/automatic/groza  // ОЦ-14 Гроза
+/obj/item/gun/ballistic/automatic/groza  // РћР¦-14 Р“СЂРѕР·Р°
 	name = "Groza OTs-14"
-	desc = "Автоматно-гранатомётный комплекс - очень удачный в услови&#255;х Зоны вариант штурмовой винтовки: компактный, надёжный, и в то же врем&#255; универсальный и мощный. 'Грозу' очень люб&#255;т военные сталкеры."
+	desc = "РђРІС‚РѕРјР°С‚РЅРѕ-РіСЂР°РЅР°С‚РѕРјС‘С‚РЅС‹Р№ РєРѕРјРїР»РµРєСЃ - РѕС‡РµРЅСЊ СѓРґР°С‡РЅС‹Р№ РІ СѓСЃР»РѕРІРё&#255;С… Р—РѕРЅС‹ РІР°СЂРёР°РЅС‚ С€С‚СѓСЂРјРѕРІРѕР№ РІРёРЅС‚РѕРІРєРё: РєРѕРјРїР°РєС‚РЅС‹Р№, РЅР°РґС‘Р¶РЅС‹Р№, Рё РІ С‚Рѕ Р¶Рµ РІСЂРµРј&#255; СѓРЅРёРІРµСЂСЃР°Р»СЊРЅС‹Р№ Рё РјРѕС‰РЅС‹Р№. 'Р“СЂРѕР·Сѓ' РѕС‡РµРЅСЊ Р»СЋР±&#255;С‚ РІРѕРµРЅРЅС‹Рµ СЃС‚Р°Р»РєРµСЂС‹."
 	eng_desc = "This assault rifle combined with a grenade launcher, which is similar to the AKM series, was specifically developed for rapid response units. The main differences are its 9x39mm caliber ammunition, bullpup layout and extensive configuration options. This weapon is highly valued by military stalkers due to its ability to kill enemies wearing body armor behind improvised cover at a distance during urban combat."
 	icon_state = "groza"
 	item_state = "groza"
@@ -712,11 +712,11 @@
 	load_sound = 'stalker/sound/weapons/load/groza_load.ogg'
 	eject_sound = 'stalker/sound/weapons/unload/groza_open.ogg'
 
-///////////////////////////// Прочие винтовки //////////////////////////////////////////
+///////////////////////////// РџСЂРѕС‡РёРµ РІРёРЅС‚РѕРІРєРё //////////////////////////////////////////
 
-/obj/item/gun/ballistic/automatic/gauss  // Гаусс-винтовка
+/obj/item/gun/ballistic/automatic/gauss  // Р“Р°СѓСЃСЃ-РІРёРЅС‚РѕРІРєР°
 	name = "gauss rifle"
-	desc = "Сверхточное высокотехнологичное оружие, известное как «изделие № 62», было разработано конструкторами секретных лабораторий внутри Зоны. Принцип его действия основан на разгоне пули системой электромагнитов; пуля при этом способна развивать сверхскорости, что обеспечивает колоссальную пробивную способность при почти полном отсутствии отдачи. Для обеспечения достаточной энергоёмкости аккумуляторов в последних используются частицы определённых артефактов."
+	desc = "РЎРІРµСЂС…С‚РѕС‡РЅРѕРµ РІС‹СЃРѕРєРѕС‚РµС…РЅРѕР»РѕРіРёС‡РЅРѕРµ РѕСЂСѓР¶РёРµ, РёР·РІРµСЃС‚РЅРѕРµ РєР°Рє В«РёР·РґРµР»РёРµ в„– 62В», Р±С‹Р»Рѕ СЂР°Р·СЂР°Р±РѕС‚Р°РЅРѕ РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂР°РјРё СЃРµРєСЂРµС‚РЅС‹С… Р»Р°Р±РѕСЂР°С‚РѕСЂРёР№ РІРЅСѓС‚СЂРё Р—РѕРЅС‹. РџСЂРёРЅС†РёРї РµРіРѕ РґРµР№СЃС‚РІРёСЏ РѕСЃРЅРѕРІР°РЅ РЅР° СЂР°Р·РіРѕРЅРµ РїСѓР»Рё СЃРёСЃС‚РµРјРѕР№ СЌР»РµРєС‚СЂРѕРјР°РіРЅРёС‚РѕРІ; РїСѓР»СЏ РїСЂРё СЌС‚РѕРј СЃРїРѕСЃРѕР±РЅР° СЂР°Р·РІРёРІР°С‚СЊ СЃРІРµСЂС…СЃРєРѕСЂРѕСЃС‚Рё, С‡С‚Рѕ РѕР±РµСЃРїРµС‡РёРІР°РµС‚ РєРѕР»РѕСЃСЃР°Р»СЊРЅСѓСЋ РїСЂРѕР±РёРІРЅСѓСЋ СЃРїРѕСЃРѕР±РЅРѕСЃС‚СЊ РїСЂРё РїРѕС‡С‚Рё РїРѕР»РЅРѕРј РѕС‚СЃСѓС‚СЃС‚РІРёРё РѕС‚РґР°С‡Рё. Р”Р»СЏ РѕР±РµСЃРїРµС‡РµРЅРёСЏ РґРѕСЃС‚Р°С‚РѕС‡РЅРѕР№ СЌРЅРµСЂРіРѕС‘РјРєРѕСЃС‚Рё Р°РєРєСѓРјСѓР»СЏС‚РѕСЂРѕРІ РІ РїРѕСЃР»РµРґРЅРёС… РёСЃРїРѕР»СЊР·СѓСЋС‚СЃСЏ С‡Р°СЃС‚РёС†С‹ РѕРїСЂРµРґРµР»С‘РЅРЅС‹С… Р°СЂС‚РµС„Р°РєС‚РѕРІ."
 	icon_state = "gauss"
 	item_state = "gauss"
 	fire_sound = 'stalker/sound/weapons/gauss_shot.ogg'

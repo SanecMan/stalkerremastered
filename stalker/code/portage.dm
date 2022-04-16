@@ -139,7 +139,7 @@
 
 /obj/structure/chair/brevno
 	name = "log"
-	desc = "Обычное бревно, на котором можно сидеть."
+	desc = "РћР±С‹С‡РЅРѕРµ Р±СЂРµРІРЅРѕ, РЅР° РєРѕС‚РѕСЂРѕРј РјРѕР¶РЅРѕ СЃРёРґРµС‚СЊ."
 	eng_desc = "A simple log."
 	icon = 'stalker/icons/decor.dmi'
 	icon_state = "log1"

@@ -16,14 +16,14 @@
 	density = 0
 
 /obj/structure/closet/grave/New()
-	spawn(10000) //Кулдаун очистки декалей
+	spawn(10000) //РљСѓР»РґР°СѓРЅ РѕС‡РёСЃС‚РєРё РґРµРєР°Р»РµР№
 	qdel(src)
 	..()
 
 /obj/structure/closet/grave/attackby(obj/item/weapon/W, mob/user, params)
 	if(istype(W, /obj/item/weapon/shovel))
 		new /obj/structure/closet/grave(src)
-		user.visible_message("<span class='notice'>[user] начал закапывать могилу...</span>", "<span class='notice'>Вы начали закапывать могилу...</span>")
+		user.visible_message("<span class='notice'>[user] РЅР°С‡Р°Р» Р·Р°РєР°РїС‹РІР°С‚СЊ РјРѕРіРёР»Сѓ...</span>", "<span class='notice'>Р’С‹ РЅР°С‡Р°Р»Рё Р·Р°РєР°РїС‹РІР°С‚СЊ РјРѕРіРёР»Сѓ...</span>")
 		if(!do_after(user, 50, 1, src))	return
 		for(var/atom/movable/AM in loc)
 			if(istype(AM, /mob/living/carbon/human))
@@ -37,7 +37,7 @@
 					StalkerKarma.SetKarma(user.ckey, newkarma)
 					user.karma = newkarma
 		close()
-		user.visible_message("<span class='notice'>[user] закопал могилу.</span>", "<span class='notice'>Вы закопали могилу.</span>")
+		user.visible_message("<span class='notice'>[user] Р·Р°РєРѕРїР°Р» РјРѕРіРёР»Сѓ.</span>", "<span class='notice'>Р’С‹ Р·Р°РєРѕРїР°Р»Рё РјРѕРіРёР»Сѓ.</span>")
 
 /obj/structure/closet/grave/attack_hand(mob/user)
 	return

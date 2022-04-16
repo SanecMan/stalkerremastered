@@ -73,7 +73,7 @@ Assistant
 	minimal_access = list()	//See /datum/job/assistant/get_access()
 	whitelist_only = 1
 	outfit = /datum/outfit/job/barman2
-	//faction_s = "Одиночки"
+	//faction_s = "РћРґРёРЅРѕС‡РєРё"
 
 /datum/outfit/job/barman2
 	name = "Barman"

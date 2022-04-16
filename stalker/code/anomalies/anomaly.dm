@@ -11,9 +11,9 @@ GLOBAL_LIST_EMPTY(spawned_artifacts)
 
 /obj/anomaly
 	name = "Anomaly"
-	var/damage_amount = 0 				//Сколько дамажит
-	var/damage_type = DMG_TYPE_ENERGY	//Тип дамага
-	var/activated_icon_state = null 	//Спрайт при активации
+	var/damage_amount = 0 				//РЎРєРѕР»СЊРєРѕ РґР°РјР°Р¶РёС‚
+	var/damage_type = DMG_TYPE_ENERGY	//РўРёРї РґР°РјР°РіР°
+	var/activated_icon_state = null 	//РЎРїСЂР°Р№С‚ РїСЂРё Р°РєС‚РёРІР°С†РёРё
 	var/cooldown = 5
 	var/lasttime = 0
 	var/list/mob/living/trapped = new/list()
@@ -592,14 +592,14 @@ GLOBAL_LIST_EMPTY(spawned_artifacts)
 	if(inactive_icon_state == "puh2")
 		active_icon_state = "puh2"
 
-/obj/rad 	//Не наносит урона
+/obj/rad 	//РќРµ РЅР°РЅРѕСЃРёС‚ СѓСЂРѕРЅР°
 	name = "Anomaly"
 	icon = 'stalker/icons/anomalies.dmi'
 	icon_state = "rad_low"
-	var/damage_amount = 0 				//Сколько дамажит
-	var/damage_type = DMG_TYPE_RADIATION	//Тип дамага
-	var/activated_icon_state = null 	//Спрайт при активации
-	var/cooldown = 2.5					//Кулдаун
+	var/damage_amount = 0 				//РЎРєРѕР»СЊРєРѕ РґР°РјР°Р¶РёС‚
+	var/damage_type = DMG_TYPE_RADIATION	//РўРёРї РґР°РјР°РіР°
+	var/activated_icon_state = null 	//РЎРїСЂР°Р№С‚ РїСЂРё Р°РєС‚РёРІР°С†РёРё
+	var/cooldown = 2.5					//РљСѓР»РґР°СѓРЅ
 	var/lasttime = 0
 	var/list/mob/living/carbon/human/trapped = new/list()
 	var/idle_luminosity = 0

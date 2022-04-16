@@ -4,12 +4,12 @@
 
 /obj/structure/closet/crate/stalker/blue
 	name = "crate"
-	desc = "Обычный железный &#255;щик."
+	desc = "РћР±С‹С‡РЅС‹Р№ Р¶РµР»РµР·РЅС‹Р№ &#255;С‰РёРє."
 	icon_state = "blue"
 
 /obj/structure/closet/crate/stalker/blue/stash
 	name = "stash"
-	desc = "В таких &#255;щиках обычно пр&#255;чут хабар. Замок сгнил."
+	desc = "Р’ С‚Р°РєРёС… &#255;С‰РёРєР°С… РѕР±С‹С‡РЅРѕ РїСЂ&#255;С‡СѓС‚ С…Р°Р±Р°СЂ. Р—Р°РјРѕРє СЃРіРЅРёР»."
 	var/lootcount = 1		//how many items will be spawned
 	var/lootdoubles = 1		//if the same item can be spawned twice
 	var/list/loot = list()
@@ -71,7 +71,7 @@
 		if(istype(H.wear_id, /obj/item/stalker_pda))
 			var/obj/item/stalker_pda/KPK = H.wear_id
 			if(KPK.owner)
-				show_lenta_message(null, KPK, null, "КПК", "Система", "Вы обнаружили тайник!", selfsound = 1)
+				show_lenta_message(null, KPK, null, "РљРџРљ", "РЎРёСЃС‚РµРјР°", "Р’С‹ РѕР±РЅР°СЂСѓР¶РёР»Рё С‚Р°Р№РЅРёРє!", selfsound = 1)
 
 
 		var/datum/data/record/sk = find_record("sid", H.sid, GLOB.data_core.stalkers)
@@ -86,5 +86,5 @@
 
 /obj/structure/closet/stalker/shkaf
 	name = "closet"
-	desc = "Обычный железный шкафчик."
+	desc = "РћР±С‹С‡РЅС‹Р№ Р¶РµР»РµР·РЅС‹Р№ С€РєР°С„С‡РёРє."
 	icon_state = "shkaf"

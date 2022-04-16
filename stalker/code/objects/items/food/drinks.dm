@@ -1,6 +1,6 @@
 /obj/item/reagent_containers/food/drinks/bottle/vodka/kazaki
 	name = "Vodka Kazaki"
-	desc = "Водка производства компании GSC. Хорошо пьётс&#255;, слабо выводит радиацию из организма, однако злоупотребл&#255;ть ей не стоит."
+	desc = "Р’РѕРґРєР° РїСЂРѕРёР·РІРѕРґСЃС‚РІР° РєРѕРјРїР°РЅРёРё GSC. РҐРѕСЂРѕС€Рѕ РїСЊС‘С‚СЃ&#255;, СЃР»Р°Р±Рѕ РІС‹РІРѕРґРёС‚ СЂР°РґРёР°С†РёСЋ РёР· РѕСЂРіР°РЅРёР·РјР°, РѕРґРЅР°РєРѕ Р·Р»РѕСѓРїРѕС‚СЂРµР±Р»&#255;С‚СЊ РµР№ РЅРµ СЃС‚РѕРёС‚."
 	eng_desc = "Vodka by ukrainian company GSC. Easy to drink. Can reduce radiation from human's body."
 	icon = 'stalker/icons/food.dmi'
 	icon_state = "gsc_vodka"
@@ -9,7 +9,7 @@
 
 /obj/item/reagent_containers/food/drinks/soda_cans/energetic
 	name = "Energetic Non-Stop"
-	desc = "Отличный энергетический напиток Non Stop. Содержит кофеин, таурин, и мощный витаминный комплекс снимающие усталость и прибавл&#255;ющие силы. Не в состо&#255;нии даже сделать шаг? Тогда это именно то, что нужно."
+	desc = "РћС‚Р»РёС‡РЅС‹Р№ СЌРЅРµСЂРіРµС‚РёС‡РµСЃРєРёР№ РЅР°РїРёС‚РѕРє Non Stop. РЎРѕРґРµСЂР¶РёС‚ РєРѕС„РµРёРЅ, С‚Р°СѓСЂРёРЅ, Рё РјРѕС‰РЅС‹Р№ РІРёС‚Р°РјРёРЅРЅС‹Р№ РєРѕРјРїР»РµРєСЃ СЃРЅРёРјР°СЋС‰РёРµ СѓСЃС‚Р°Р»РѕСЃС‚СЊ Рё РїСЂРёР±Р°РІР»&#255;СЋС‰РёРµ СЃРёР»С‹. РќРµ РІ СЃРѕСЃС‚Рѕ&#255;РЅРёРё РґР°Р¶Рµ СЃРґРµР»Р°С‚СЊ С€Р°Рі? РўРѕРіРґР° СЌС‚Рѕ РёРјРµРЅРЅРѕ С‚Рѕ, С‡С‚Рѕ РЅСѓР¶РЅРѕ."
 	eng_desc = "Great energy drink. Contains caffeine, taurine and lots of vitamines. Can't make a step? Then it's what you need."
 	icon = 'stalker/icons/food.dmi'
 	icon_state = "nonstop"
@@ -18,7 +18,7 @@
 
 /obj/item/reagent_containers/food/drinks/soda_cans/voda
 	name = "Bottle"
-	desc = "Тонизирующа&#255; вода \"Шишкин Лес\""
+	desc = "РўРѕРЅРёР·РёСЂСѓСЋС‰Р°&#255; РІРѕРґР° \"РЁРёС€РєРёРЅ Р›РµСЃ\""
 	eng_desc = "Refreshing water \"Shishkin Les\"."
 	icon = 'stalker/icons/food.dmi'
 	icon_state = "voda"

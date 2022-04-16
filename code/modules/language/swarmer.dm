@@ -18,16 +18,16 @@
 	/* The list with unicode symbols for the accents.
 	syllables = list(
 					"C", "C",
-					"C♯", "D♭",
+					"Cв™Ї", "Dв™­",
 					"D", "D",
-					"D♯", "E♭",
+					"Dв™Ї", "Eв™­",
 					"E", "E",
 					"F", "F",
-					"F♯", "G♭",
+					"Fв™Ї", "Gв™­",
 					"G", "G",
-					"G♯", "A♭",
+					"Gв™Ї", "Aв™­",
 					"A", "A",
-					"A♯", "B♭",
+					"Aв™Ї", "Bв™­",
 					"B", "B")
 	*/
 	syllables = list(

@@ -1,9 +1,9 @@
 /obj/item/gun/ballistic/shotgun
 	modifications = list("barrel_shotgun" = 0, "frame_shotgun" = 0, "grip_shotgun" = 0)
 
-/obj/item/gun/ballistic/shotgun/bm16  // Горизонталка
+/obj/item/gun/ballistic/shotgun/bm16  // Р“РѕСЂРёР·РѕРЅС‚Р°Р»РєР°
 	name = "BM-16"
-	desc = "Охотничье ружьё - горизонталка. Довольно мощное, в самый раз дл&#255; охоты."
+	desc = "РћС…РѕС‚РЅРёС‡СЊРµ СЂСѓР¶СЊС‘ - РіРѕСЂРёР·РѕРЅС‚Р°Р»РєР°. Р”РѕРІРѕР»СЊРЅРѕ РјРѕС‰РЅРѕРµ, РІ СЃР°РјС‹Р№ СЂР°Р· РґР»&#255; РѕС…РѕС‚С‹."
 	eng_desc = "The original Bm16 rifle. Heavy and dangerous two barrel rifle, and its effective in high range too."
 	icon_state = "bm16"
 	item_state = "bm16"
@@ -14,7 +14,7 @@
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/stalker/bm16
 	recoil = 1
 	durability = 150
-	sawn_desc = "Значительно компактней и легче новой двустволки, но эффективен только в ближнем бою. Один из самых распространённых видов оружи&#255; у новичков."
+	sawn_desc = "Р—РЅР°С‡РёС‚РµР»СЊРЅРѕ РєРѕРјРїР°РєС‚РЅРµР№ Рё Р»РµРіС‡Рµ РЅРѕРІРѕР№ РґРІСѓСЃС‚РІРѕР»РєРё, РЅРѕ СЌС„С„РµРєС‚РёРІРµРЅ С‚РѕР»СЊРєРѕ РІ Р±Р»РёР¶РЅРµРј Р±РѕСЋ. РћРґРёРЅ РёР· СЃР°РјС‹С… СЂР°СЃРїСЂРѕСЃС‚СЂР°РЅС‘РЅРЅС‹С… РІРёРґРѕРІ РѕСЂСѓР¶Рё&#255; Сѓ РЅРѕРІРёС‡РєРѕРІ."
 	randomspread = 0
 	spread = 12
 	damagelose = 0.3
@@ -49,9 +49,9 @@
 	else
 		user << "<span class='warning'>[src] is empty!</span>"
 
-/obj/item/gun/ballistic/shotgun/bm16/toz34  //  Вертикалка
+/obj/item/gun/ballistic/shotgun/bm16/toz34  //  Р’РµСЂС‚РёРєР°Р»РєР°
 	name = "TOZ-34"
-	desc = "Внутрикурковое двуствольное охотничье ружье с вертикально расположенными стволами. Широко распространённое и ничем особо не примечательное охотничье ружьё - 'вертикалка'."
+	desc = "Р’РЅСѓС‚СЂРёРєСѓСЂРєРѕРІРѕРµ РґРІСѓСЃС‚РІРѕР»СЊРЅРѕРµ РѕС…РѕС‚РЅРёС‡СЊРµ СЂСѓР¶СЊРµ СЃ РІРµСЂС‚РёРєР°Р»СЊРЅРѕ СЂР°СЃРїРѕР»РѕР¶РµРЅРЅС‹РјРё СЃС‚РІРѕР»Р°РјРё. РЁРёСЂРѕРєРѕ СЂР°СЃРїСЂРѕСЃС‚СЂР°РЅС‘РЅРЅРѕРµ Рё РЅРёС‡РµРј РѕСЃРѕР±Рѕ РЅРµ РїСЂРёРјРµС‡Р°С‚РµР»СЊРЅРѕРµ РѕС…РѕС‚РЅРёС‡СЊРµ СЂСѓР¶СЊС‘ - 'РІРµСЂС‚РёРєР°Р»РєР°'."
 	eng_desc = "This extremely common over-and-under hunting shotgun can offer better protection against mutants than a pistol, thanks to its accuracy and stopping power. Used mostly by rookies on the outskirts of the Zone."
 	icon_state = "toz34"
 	item_state = "toz34"
@@ -70,7 +70,7 @@
 /obj/item/gun/ballistic/shotgun/ithaca  //  Ithaca M37
 	name = "Ithaca M37"
 	desc = " Pump-action shotgun made in large numbers for the civilian, military, and police markets. It utilizes a novel combination ejection/loading port on the bottom of the gun which leaves the sides closed to the elements. Since shotshells load and eject from the bottom, operation of the gun is equally convenient for both right and left hand shooters. This makes the gun popular with left-handed shooters. The model 37 is considered one of the most durable and reliable shotguns ever produced."
-	eng_desc = "Магазинное ружьё (дробовик), разработанное Джоном М. Браунингом в 1913 году и запатентованное в 1915 году. Основными достоинствами ружь&#255; всегда считалась небольша&#255; масса и возможность легкого использовани&#255; как с правой, так и с левой руки — ведь стрел&#255;ные гильзы отбрасываютс&#255; вниз."
+	eng_desc = "РњР°РіР°Р·РёРЅРЅРѕРµ СЂСѓР¶СЊС‘ (РґСЂРѕР±РѕРІРёРє), СЂР°Р·СЂР°Р±РѕС‚Р°РЅРЅРѕРµ Р”Р¶РѕРЅРѕРј Рњ. Р‘СЂР°СѓРЅРёРЅРіРѕРј РІ 1913 РіРѕРґСѓ Рё Р·Р°РїР°С‚РµРЅС‚РѕРІР°РЅРЅРѕРµ РІ 1915 РіРѕРґСѓ. РћСЃРЅРѕРІРЅС‹РјРё РґРѕСЃС‚РѕРёРЅСЃС‚РІР°РјРё СЂСѓР¶СЊ&#255; РІСЃРµРіРґР° СЃС‡РёС‚Р°Р»Р°СЃСЊ РЅРµР±РѕР»СЊС€Р°&#255; РјР°СЃСЃР° Рё РІРѕР·РјРѕР¶РЅРѕСЃС‚СЊ Р»РµРіРєРѕРіРѕ РёСЃРїРѕР»СЊР·РѕРІР°РЅРё&#255; РєР°Рє СЃ РїСЂР°РІРѕР№, С‚Р°Рє Рё СЃ Р»РµРІРѕР№ СЂСѓРєРё вЂ” РІРµРґСЊ СЃС‚СЂРµР»&#255;РЅС‹Рµ РіРёР»СЊР·С‹ РѕС‚Р±СЂР°СЃС‹РІР°СЋС‚СЃ&#255; РІРЅРёР·."
 	icon_state = "ithacam37"
 	item_state = "ithacam37"
 	durability = 100
@@ -92,7 +92,7 @@
 
 /obj/item/gun/ballistic/shotgun/chaser  //  Winchester 1300
 	name = "Chaser-13"
-	desc = "Гладкоствольное помповое ружьё американского производства, созданное дл&#255; применени&#255; в самых неблагопри&#255;тных услови&#255;х и отличающеес&#255; высокой надёжностью. Все детали снабжены антикоррозийным покрытием."
+	desc = "Р“Р»Р°РґРєРѕСЃС‚РІРѕР»СЊРЅРѕРµ РїРѕРјРїРѕРІРѕРµ СЂСѓР¶СЊС‘ Р°РјРµСЂРёРєР°РЅСЃРєРѕРіРѕ РїСЂРѕРёР·РІРѕРґСЃС‚РІР°, СЃРѕР·РґР°РЅРЅРѕРµ РґР»&#255; РїСЂРёРјРµРЅРµРЅРё&#255; РІ СЃР°РјС‹С… РЅРµР±Р»Р°РіРѕРїСЂРё&#255;С‚РЅС‹С… СѓСЃР»РѕРІРё&#255;С… Рё РѕС‚Р»РёС‡Р°СЋС‰РµРµСЃ&#255; РІС‹СЃРѕРєРѕР№ РЅР°РґС‘Р¶РЅРѕСЃС‚СЊСЋ. Р’СЃРµ РґРµС‚Р°Р»Рё СЃРЅР°Р±Р¶РµРЅС‹ Р°РЅС‚РёРєРѕСЂСЂРѕР·РёР№РЅС‹Рј РїРѕРєСЂС‹С‚РёРµРј."
 	eng_desc = "A Western smoothbore shotgun that is extremely popular around the world thanks to its amazing reliability and faster reloading speed. Particularly valued for its functionality by the Zone's hunters. All of its parts are coated with an anticorrosion compound."
 	icon_state = "chaser"
 	item_state = "chaser"
@@ -114,7 +114,7 @@
 
 /obj/item/gun/ballistic/shotgun/bm16/sawnoff
 	name = "sawed-off BM-16"
-	desc = "Значительно компактней и легче новой двустволки, но эффективен только в ближнем бою. Один из самых распространённых видов оружи&#255; у новичков."
+	desc = "Р—РЅР°С‡РёС‚РµР»СЊРЅРѕ РєРѕРјРїР°РєС‚РЅРµР№ Рё Р»РµРіС‡Рµ РЅРѕРІРѕР№ РґРІСѓСЃС‚РІРѕР»РєРё, РЅРѕ СЌС„С„РµРєС‚РёРІРµРЅ С‚РѕР»СЊРєРѕ РІ Р±Р»РёР¶РЅРµРј Р±РѕСЋ. РћРґРёРЅ РёР· СЃР°РјС‹С… СЂР°СЃРїСЂРѕСЃС‚СЂР°РЅС‘РЅРЅС‹С… РІРёРґРѕРІ РѕСЂСѓР¶Рё&#255; Сѓ РЅРѕРІРёС‡РєРѕРІ."
 	eng_desc = "A sawed-off hunting shotgun with two side-by-side barrels, making it lighter and more compact than a full shotgun. One of the most popular weapons among bandits due to its combination of ease of concealment and extreme effectiveness in close combat."
 	sawn_off = TRUE
 	weapon_weight = WEAPON_LIGHT
@@ -134,10 +134,10 @@
 
 /obj/item/gun/ballistic/shotgun/spsa
 	name = "SPAS-12"
-	desc = "Гладкоствольный автоматический дробовик специального назначени&#255; с возможностью переключени&#255; режимов ведени&#255; огн&#255;. Разработанный ещё во второй половине ХХ столети&#255;, продолжает примен&#255;тьс&#255; в качестве универсального боевого оружи&#255; полиции и штурмовых подразделений армии. Отличаетс&#255; высокой надёжностью и тактической гибкостью. Несмотр&#255; на большую массу, сложное устройство и высокую цену, довольно попул&#255;рен в Зоне как эффективное средство борьбы против мутантов."
+	desc = "Р“Р»Р°РґРєРѕСЃС‚РІРѕР»СЊРЅС‹Р№ Р°РІС‚РѕРјР°С‚РёС‡РµСЃРєРёР№ РґСЂРѕР±РѕРІРёРє СЃРїРµС†РёР°Р»СЊРЅРѕРіРѕ РЅР°Р·РЅР°С‡РµРЅРё&#255; СЃ РІРѕР·РјРѕР¶РЅРѕСЃС‚СЊСЋ РїРµСЂРµРєР»СЋС‡РµРЅРё&#255; СЂРµР¶РёРјРѕРІ РІРµРґРµРЅРё&#255; РѕРіРЅ&#255;. Р Р°Р·СЂР°Р±РѕС‚Р°РЅРЅС‹Р№ РµС‰С‘ РІРѕ РІС‚РѕСЂРѕР№ РїРѕР»РѕРІРёРЅРµ РҐРҐ СЃС‚РѕР»РµС‚Рё&#255;, РїСЂРѕРґРѕР»Р¶Р°РµС‚ РїСЂРёРјРµРЅ&#255;С‚СЊСЃ&#255; РІ РєР°С‡РµСЃС‚РІРµ СѓРЅРёРІРµСЂСЃР°Р»СЊРЅРѕРіРѕ Р±РѕРµРІРѕРіРѕ РѕСЂСѓР¶Рё&#255; РїРѕР»РёС†РёРё Рё С€С‚СѓСЂРјРѕРІС‹С… РїРѕРґСЂР°Р·РґРµР»РµРЅРёР№ Р°СЂРјРёРё. РћС‚Р»РёС‡Р°РµС‚СЃ&#255; РІС‹СЃРѕРєРѕР№ РЅР°РґС‘Р¶РЅРѕСЃС‚СЊСЋ Рё С‚Р°РєС‚РёС‡РµСЃРєРѕР№ РіРёР±РєРѕСЃС‚СЊСЋ. РќРµСЃРјРѕС‚СЂ&#255; РЅР° Р±РѕР»СЊС€СѓСЋ РјР°СЃСЃСѓ, СЃР»РѕР¶РЅРѕРµ СѓСЃС‚СЂРѕР№СЃС‚РІРѕ Рё РІС‹СЃРѕРєСѓСЋ С†РµРЅСѓ, РґРѕРІРѕР»СЊРЅРѕ РїРѕРїСѓР»&#255;СЂРµРЅ РІ Р—РѕРЅРµ РєР°Рє СЌС„С„РµРєС‚РёРІРЅРѕРµ СЃСЂРµРґСЃС‚РІРѕ Р±РѕСЂСЊР±С‹ РїСЂРѕС‚РёРІ РјСѓС‚Р°РЅС‚РѕРІ."
 	eng_desc = "This special purpose smoothbore automatic shotgun was designed in the second half of the 20th century and comes with pump-action and self-cocking firing modes. Used as an all-purpose weapon by the police and assault troops. Notable for its reliability and tactical flexibility. Despite its large weight, complex mechanism and considerable cost it is in demand in the Zone due to its effectiveness against mutants."
-	icon_state = "spsa"	//Нужно добавить
-	item_state = "spsa" //Нужно добавить
+	icon_state = "spsa"	//РќСѓР¶РЅРѕ РґРѕР±Р°РІРёС‚СЊ
+	item_state = "spsa" //РќСѓР¶РЅРѕ РґРѕР±Р°РІРёС‚СЊ
 	durability = 150
 	slot_flags = ITEM_SLOT_BACK
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/spsa
@@ -154,7 +154,7 @@
 	rack_sound = 'stalker/sound/weapons/pump/spsa_pump.ogg'
 	draw_sound = 'stalker/sound/weapons/draw/shotgun_draw.ogg'
 
-///////////////////////////// Винтовки //////////////////////////////////////////
+///////////////////////////// Р’РёРЅС‚РѕРІРєРё //////////////////////////////////////////
 
 /obj/item/gun/ballistic/shotgun/boltaction/enfield
 	name = "Lee Enfield"

@@ -401,13 +401,13 @@
 
 /datum/emote/living/custom/proc/check_invalid(mob/user, input)
 	. = TRUE
-	if(copytext(input,1,5) == "говорит")
+	if(copytext(input,1,5) == "РіРѕРІРѕСЂРёС‚")
 		to_chat(user, "<span class='danger'>Invalid emote.</span>")
-	else if(copytext(input,1,9) == "восклицает")
+	else if(copytext(input,1,9) == "РІРѕСЃРєР»РёС†Р°РµС‚")
 		to_chat(user, "<span class='danger'>Invalid emote.</span>")
-	else if(copytext(input,1,6) == "вопит")
+	else if(copytext(input,1,6) == "РІРѕРїРёС‚")
 		to_chat(user, "<span class='danger'>Invalid emote.</span>")
-	else if(copytext(input,1,5) == "спрашивает")
+	else if(copytext(input,1,5) == "СЃРїСЂР°С€РёРІР°РµС‚")
 		to_chat(user, "<span class='danger'>Invalid emote.</span>")
 	else
 		. = FALSE

@@ -10,7 +10,7 @@
 			if(C.client && (C.client.prefs.chat_toggles & CHAT_LANGUAGE))
 				to_chat(C, "<big><span class='warning'>You leave the shelter.</span></big>")
 			else
-				to_chat(C, "<big><span class='warning'>Вы покидаете укрытие.</span></big>")
+				to_chat(C, "<big><span class='warning'>Р’С‹ РїРѕРєРёРґР°РµС‚Рµ СѓРєСЂС‹С‚РёРµ.</span></big>")
 			C.overlay_fullscreen("blowjob", /obj/screen/fullscreen/color_vision/blowjob)
 		C.inshelter = 0
 
@@ -22,7 +22,7 @@
 			if(C.client && (C.client.prefs.chat_toggles & CHAT_LANGUAGE))
 				to_chat(C, "<big><span class='notice'>You enter the shelter.</span></big>")
 			else
-				to_chat(C, "<big><span class='notice'>Вы заходите в укрытие.</span></big>")
+				to_chat(C, "<big><span class='notice'>Р’С‹ Р·Р°С…РѕРґРёС‚Рµ РІ СѓРєСЂС‹С‚РёРµ.</span></big>")
 			C.clear_fullscreen("blowjob")
 		C.inshelter = 1
 
@@ -31,7 +31,7 @@
 		if(C.client && (C.client.prefs.chat_toggles & CHAT_LANGUAGE))
 			to_chat(C, "<big><span class='warning'>You enter the zone controlled by [controlled_by]. [controlled_by] can kill you on sight if you are not allied.</warning></big>")
 		else
-			to_chat(C, "<big><span class='warning'>Вы входите в зону, наход&#255;щуюс&#255; под контролем группировки [get_rus_faction(controlled_by)]. Вы можете быть убиты, если не находитесь в дружеских отношени&#255;х с группировкой.</warning></big>")
+			to_chat(C, "<big><span class='warning'>Р’С‹ РІС…РѕРґРёС‚Рµ РІ Р·РѕРЅСѓ, РЅР°С…РѕРґ&#255;С‰СѓСЋСЃ&#255; РїРѕРґ РєРѕРЅС‚СЂРѕР»РµРј РіСЂСѓРїРїРёСЂРѕРІРєРё [get_rus_faction(controlled_by)]. Р’С‹ РјРѕР¶РµС‚Рµ Р±С‹С‚СЊ СѓР±РёС‚С‹, РµСЃР»Рё РЅРµ РЅР°С…РѕРґРёС‚РµСЃСЊ РІ РґСЂСѓР¶РµСЃРєРёС… РѕС‚РЅРѕС€РµРЅРё&#255;С… СЃ РіСЂСѓРїРїРёСЂРѕРІРєРѕР№.</warning></big>")
 
 	if(controlled_by)
 		C.inprivatezone = 1
@@ -118,16 +118,16 @@ SUBSYSTEM_DEF(blowout)
 
 	//SSnightcycle.updateLight("BLOWOUT")
 
-	add_lenta_message(null, "0", "Sidorovich", "Loners", "ВНИМАНИЕ, СТАЛКЕРЫ! Приближается выброс! Ищите ближайшее укрытие!")
+	add_lenta_message(null, "0", "Sidorovich", "Loners", "Р’РќРРњРђРќРР•, РЎРўРђР›РљР•Р Р«! РџСЂРёР±Р»РёР¶Р°РµС‚СЃСЏ РІС‹Р±СЂРѕСЃ! РС‰РёС‚Рµ Р±Р»РёР¶Р°Р№С€РµРµ СѓРєСЂС‹С‚РёРµ!")
 	world << sound('stalker/sound/blowout/blowout_begin_02.ogg', wait = 0, channel = 201, volume = 50)
 	world << sound('stalker/sound/blowout/blowout_siren.ogg', wait = 0, channel = 202, volume = 60)
 
 	for(var/mob/living/carbon/C in GLOB.player_list)
 		if(!C.inshelter)
-			to_chat(C, "<big><span class='warning'>Вам нужно срочно искать укрытие, скоро начнётся выброс!</span></big>")
+			to_chat(C, "<big><span class='warning'>Р’Р°Рј РЅСѓР¶РЅРѕ СЃСЂРѕС‡РЅРѕ РёСЃРєР°С‚СЊ СѓРєСЂС‹С‚РёРµ, СЃРєРѕСЂРѕ РЅР°С‡РЅС‘С‚СЃСЏ РІС‹Р±СЂРѕСЃ!</span></big>")
 			C.overlay_fullscreen("blowjob", /obj/screen/fullscreen/color_vision/blowjob)
 		else
-			to_chat(C, "<big><span class='notice'>Вы в укрытии, осталось только переждать выброс.</span></big>")
+			to_chat(C, "<big><span class='notice'>Р’С‹ РІ СѓРєСЂС‹С‚РёРё, РѕСЃС‚Р°Р»РѕСЃСЊ С‚РѕР»СЊРєРѕ РїРµСЂРµР¶РґР°С‚СЊ РІС‹Р±СЂРѕСЃ.</span></big>")
 			C.clear_fullscreen("blowjob")
 
 /datum/controller/subsystem/blowout/proc/PreStopBlowout()
@@ -216,20 +216,20 @@ SUBSYSTEM_DEF(blowout)
 	//		data_core.stalkers -= sk
 	/////////////////////////////////////
 
-	//Очистка ленты
+	//РћС‡РёСЃС‚РєР° Р»РµРЅС‚С‹
 	global_lentahtml = ""
 	for(var/obj/item/stalker_pda/KPK in GLOB.KPKs)
 		KPK.lentahtml = ""
 
 	blowout_count++
-	add_lenta_message(null, "0", "Sidorovich", "Loners", "Выброс закончился! Можете покинуть укрытия.")
+	add_lenta_message(null, "0", "Sidorovich", "Loners", "Р’С‹Р±СЂРѕСЃ Р·Р°РєРѕРЅС‡РёР»СЃСЏ! РњРѕР¶РµС‚Рµ РїРѕРєРёРЅСѓС‚СЊ СѓРєСЂС‹С‚РёСЏ.")
 
 	for(var/datum/data/record/sk in GLOB.data_core.stalkers)
 		if(sk.fields["reputation"] <= VERYBAD)
 			var/name_ = sk.fields["name"]
 			var/rep_ = sk.fields["reputation"]
-			add_lenta_message(null, "0", "Sidorovich", "Loners", "За КПК [name_] получите [GetCostBasedOnReputation(rep_)] рублей.")
-	add_lenta_message(null, "0", "Sidorovich", "Loners", "Ищите, убивайте и продавайте КПК этих сталкеров с плохой репутацией!")
+			add_lenta_message(null, "0", "Sidorovich", "Loners", "Р—Р° РљРџРљ [name_] РїРѕР»СѓС‡РёС‚Рµ [GetCostBasedOnReputation(rep_)] СЂСѓР±Р»РµР№.")
+	add_lenta_message(null, "0", "Sidorovich", "Loners", "РС‰РёС‚Рµ, СѓР±РёРІР°Р№С‚Рµ Рё РїСЂРѕРґР°РІР°Р№С‚Рµ РљРџРљ СЌС‚РёС… СЃС‚Р°Р»РєРµСЂРѕРІ СЃ РїР»РѕС…РѕР№ СЂРµРїСѓС‚Р°С†РёРµР№!")
 
 
 /datum/controller/subsystem/blowout/proc/ProcessBlowout()
