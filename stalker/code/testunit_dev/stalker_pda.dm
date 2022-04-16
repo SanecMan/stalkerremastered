@@ -34,7 +34,7 @@ var/global/global_lentahtml = ""
 	var/password = null
 	var/hacked = 0
 	var/rep_color_s = "#ffe100"
-	var/rep_name_s = "����������&#x44F;"
+	var/rep_name_s = "����������я"
 	var/eng_rep_name_s = "Neutral"
 	var/rus_rank_name_s = "�������"
 	var/eng_rank_name_s = "Rookie"
@@ -334,10 +334,10 @@ var/global/global_lentahtml = ""
 				 <b>Reputation:</b> <font color=\"[rep_color_s]\">[eng_rep_name_s]</font>"
 			else
 				mainhtml +="\
-				 <b>��&#x44F;:</b> [owner.real_name]<br><br>\
+				 <b>��я:</b> [owner.real_name]<br><br>\
 				 <b>�����������:</b> [rus_faction_s]<br><br>\
 				 <b>����:</b> [rating]<br><br>\
-				 <b>��������&#x44F;:</b> <font color=\"[rep_color_s]\">[rep_name_s]</font>"
+				 <b>��������я:</b> <font color=\"[rep_color_s]\">[rep_name_s]</font>"
 
 
 			 mainhtml +="\
@@ -397,10 +397,10 @@ var/global/global_lentahtml = ""
 
 					else
 						mainhtml+="\
-					<b>��&#x44F;:</b> [owner.real_name]<br>\
+					<b>��я:</b> [owner.real_name]<br>\
 					<b>�����������:</b> [rus_faction_s]<br>\
 					<b>����:</b> [rus_rank_name_s] ([rating])<br>\
-					<b>��������&#x44F;:</b> <font color=\"[rep_color_s]\">[rep_name_s] ([reputation])</font><br>\
+					<b>��������я:</b> <font color=\"[rep_color_s]\">[rep_name_s] ([reputation])</font><br>\
 					<b>������:</b> [num2text(money, 8)] RU<br>"
 
 					mainhtml +="\
@@ -1464,21 +1464,21 @@ var/global/global_lentahtml = ""
 	return factioncolor
 
 /proc/get_rep_name(var/rep)
-	var/rep_name_s = "����������&#x44F;"
+	var/rep_name_s = "����������я"
 
 	switch(rep)
 		if(AMAZING to INFINITY)
 			rep_name_s = "�������"
 		if(VERYGOOD to AMAZING)
-			rep_name_s = "����� ������&#x44F;"
+			rep_name_s = "����� ������я"
 		if(GOOD to VERYGOOD)
-			rep_name_s = "������&#x44F;"
+			rep_name_s = "������я"
 		if(BAD to GOOD)
-			rep_name_s = "����������&#x44F;"
+			rep_name_s = "����������я"
 		if(VERYBAD to BAD)
-			rep_name_s = "�����&#x44F;"
+			rep_name_s = "�����я"
 		if(DISGUSTING to VERYBAD)
-			rep_name_s = "����� �����&#x44F;"
+			rep_name_s = "����� �����я"
 		if(-INFINITY to DISGUSTING)
 			rep_name_s = "׸��"
 
