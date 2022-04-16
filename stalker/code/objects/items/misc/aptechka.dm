@@ -9,7 +9,7 @@
 
 /obj/item/reagent_containers/pill/stalker/aptechka
 	name = "kit"
-	desc = "Стара&#255; советска&#255; аптечка."
+	desc = "Старая советская аптечка."
 
 /obj/item/reagent_containers/pill/stalker/canconsume(mob/eater, mob/user)
 	if(!iscarbon(eater))
@@ -22,14 +22,14 @@ obj/item/reagent_containers/pill/stalker/afterattack(obj/target, mob/user , prox
 /obj/item/reagent_containers/pill/stalker/aptechka/civilian
 	name = "medkit"
 	icon_state = "aptechkar"
-	desc = "Универсальный медицинский набор. Позвол&#255;ет справл&#255;тьс&#255; с травмами различного вида и степени сложности: ранени&#255;ми, ожогами, отравлени&#255;ми и прочим. Не останавливает кровотечение!"
+	desc = "Универсальный медицинский набор. Позволяет справляться с травмами различного вида и степени сложности: ранениями, ожогами, отравлениями и прочим. Не останавливает кровотечение!"
 	eng_desc = "All-purpose single-use medkit. Allows to handle injuries of different types and degrees of complexity. Doesn't stop bleeding!"
 	item_state = "aptechkar"
 	list_reagents = list("medicadone" = 6)
 
 /obj/item/reagent_containers/pill/stalker/aptechka/army
 	name = "army medkit"
-	desc = "Специализированный медицинский набор дл&#255; борьбы с физическими повреждени&#255;ми и кровотечением. В него вход&#255;т компоненты дл&#255; ускорени&#255; свертывани&#255; крови, обезболивающие, антибиотики и иммунные стимул&#255;торы. Останавливает кровотечение!"
+	desc = "Специализированный медицинский набор для борьбы с физическими повреждениями и кровотечением. В него входят компоненты для ускорения свертывания крови, обезболивающие, антибиотики и иммунные стимуляторы. Останавливает кровотечение!"
 	eng_desc = "Specialized medical kit to provide first-aid in case of in-battle injuries. The kit includes Menadion-based medicine for faster blood coagulation, painkillers, antibiotics, immunity stimulators, so as a kit to remove shrapnel and bullets from your body. Stops the bleeding."
 	icon_state = "aptechkab"
 	item_state = "aptechkab"
@@ -37,7 +37,7 @@ obj/item/reagent_containers/pill/stalker/afterattack(obj/target, mob/user , prox
 
 /obj/item/reagent_containers/pill/stalker/aptechka/scientific
 	name = "scientific medkit"
-	desc = "Медицинский набор, разработанный специально дл&#255; работы в услови&#255;х Зоны. Состав набора подобран как дл&#255; борьбы с ранени&#255;ми, так и дл&#255; вывода радионуклидов из организма. Преп&#255;тствует развитию лучевой болезни, а также снижает дозу накопленной радиации."
+	desc = "Медицинский набор, разработанный специально для работы в условиях Зоны. Состав набора подобран как для борьбы с ранениями, так и для вывода радионуклидов из организма. Препятствует развитию лучевой болезни, а также снижает дозу накопленной радиации."
 	eng_desc = "Medical set, designed especially for work in the Zone. The set includes means of healing wounds as well as means of eliminating radionuclides from the body. Prevents the development of radiowave sickness and lowers the dose of accumulated radiation. Stops the bleeding."
 	icon_state = "aptechkay"
 	item_state = "aptechkay"
@@ -77,7 +77,7 @@ obj/item/reagent_containers/pill/stalker/afterattack(obj/target, mob/user , prox
 
 /obj/item/reagent_containers/pill/stalker/aptechka/bint
 	name = "bint"
-	desc = "Перев&#255;зочный материал. Помогает остановить кровотечение."
+	desc = "Перевязочный материал. Помогает остановить кровотечение."
 	eng_desc = "Bandage. Can stop your bleeding."
 	icon = 'stalker/icons/items.dmi'
 	icon_state = "bint"

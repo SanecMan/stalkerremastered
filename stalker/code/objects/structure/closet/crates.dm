@@ -4,12 +4,12 @@
 
 /obj/structure/closet/crate/stalker/blue
 	name = "crate"
-	desc = "Обычный железный &#255;щик."
+	desc = "Обычный железный ящик."
 	icon_state = "blue"
 
 /obj/structure/closet/crate/stalker/blue/stash
 	name = "stash"
-	desc = "В таких &#255;щиках обычно пр&#255;чут хабар. Замок сгнил."
+	desc = "В таких ящиках обычно прячут хабар. Замок сгнил."
 	var/lootcount = 1		//how many items will be spawned
 	var/lootdoubles = 1		//if the same item can be spawned twice
 	var/list/loot = list()

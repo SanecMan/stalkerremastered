@@ -109,7 +109,7 @@
 	if(!islist(.))
 		. = null
 	else
-		. = r_json_encode(.)
+		. = json_encode(.)
 
 //Deserializes from JSON. Does not parse type.
 /datum/proc/deserialize_json(list/input, list/options)
@@ -124,7 +124,7 @@
 	var/list/jsonlist = D.serialize_list(options)
 	if(islist(jsonlist))
 		jsonlist["DATUM_TYPE"] = D.type
-	return r_json_encode(jsonlist)
+	return json_encode(jsonlist)
 
 /proc/json_deserialize_datum(list/jsonlist, list/options, target_type, strict_target_type = FALSE)
 	if(!islist(jsonlist))

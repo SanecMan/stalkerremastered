@@ -45,7 +45,7 @@
 "aaS" = (/obj/structure/stalker/okno/window1,/turf/closed/wall/stalker/bricks_yellow,/area/stalker/blowout/outdoor/backwater)
 "aaT" = (/obj/anomaly/jarka,/turf/open/stalker/floor/digable/grass,/area/stalker/blowout/outdoor/backwater)
 "aaU" = (/turf/closed/wall/stalker/bricks_yellow,/area/stalker/blowout/outdoor/backwater/sawmill)
-"aaV" = (/obj/structure/stalker/cacheable/krest{desc = "Дерев&#255;нный крест. Здесь закопан Сочный"},/turf/open/stalker/floor/digable/grass,/area/stalker/blowout/outdoor/backwater)
+"aaV" = (/obj/structure/stalker/cacheable/krest{desc = "Деревянный крест. Здесь закопан Сочный"},/turf/open/stalker/floor/digable/grass,/area/stalker/blowout/outdoor/backwater)
 "aaW" = (/obj/structure/stalker/cacheable/krest,/turf/open/stalker/floor/digable/grass,/area/stalker/blowout/outdoor/backwater)
 "aaX" = (/obj/structure/stalker/tree,/turf/open/stalker/floor/digable/grass,/area/stalker/blowout/outdoor/backwater/sawmill)
 "aaY" = (/turf/open/stalker/floor/tropa,/area/stalker/blowout/outdoor/backwater)
