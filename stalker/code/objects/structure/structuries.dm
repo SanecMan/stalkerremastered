@@ -4,7 +4,7 @@
 	pass_flags = LETPASSTHROW
 
 /obj/structure/table/stalker/wood
-	desc = "Обычный дерев&#255;нный слегка пошарпанный стол."
+	desc = "пїЅпїЅпїЅпїЅпїЅСЏпїЅпїЅ&#255;пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ."
 	eng_desc = "Simple table."
 	icon = 'stalker/icons/structure/stol_stalker.dmi'
 	icon_state = "stol"
@@ -12,14 +12,14 @@
 	canSmoothWith = list(/obj/structure/table/stalker/wood)
 
 /obj/structure/table/stalker/wood/bar
-	desc = "Самодельна&#255; барна&#255; стойка"
+	desc = "пїЅпїЅпїЅпїЅСЏ&#25СЏпїЅпїЅ&#255; пїЅпїЅпїЅпїЅпїЅпїЅ"
 	icon = 'stalker/icons/structure/stol_stalker_bar.dmi'
 	icon_state = "bar"
 	smooth = SMOOTH_TRUE
 	canSmoothWith = list(/obj/structure/table/stalker/wood/bar)
 
 /obj/structure/table/stalker/wood/bar100rentgen
-	desc = "Качественна&#255; барна&#255; стойка"
+	desc = "пїЅпїЅпїЅпїЅСЏпїЅ&#СЏпїЅпїЅпїЅпїЅ&#255; пїЅпїЅпїЅпїЅпїЅпїЅ"
 	icon = 'stalker/icons/structure/bartables.dmi'
 	icon_state = "table"
 	smooth = SMOOTH_FALSE
@@ -31,13 +31,13 @@
 		//var/throwtarget = get_edge_target_turf(src, 4)
 		M.Paralyze(400)
 		//M.throw_at(throwtarget, 1, 1,src)
-		to_chat(M, "<span class='notice'>Вам страшно!</span>")
+		to_chat(M, "<span class='notice'>пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ!</span>")
 	else
 		. = ..()
 
 /obj/structure/stalker/okno
 	name = "Window"
-	desc = "Старое дерев&#255;нное окно."
+	desc = "пїЅпїЅпїЅпїЅСЏпїЅпїЅ&#255;пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ."
 	eng_desc = "Old wooden window."
 	icon = 'stalker/icons/decor2.dmi'
 	pass_flags = LETPASSTHROW

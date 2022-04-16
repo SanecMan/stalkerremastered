@@ -5,7 +5,7 @@
 
 /turf/open/floor/plating/asteroid/snow/lite
 	name = "snow"
-	desc = "Выгл&#255;дит холодным."
+	desc = "пїЅпїЅСЏ5;пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ."
 	icon = 'icons/turf/snow.dmi'
 	baseturfs = /turf/open/floor/plating/asteroid/snow
 	icon_state = "snow"
@@ -16,7 +16,7 @@
 	dug = 1
 
 /obj/structure/grille/stalker
-	desc = "Крепкий железный забор."
+	desc = "пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ."
 	name = "fence"
 	icon = 'stalker/icons/structure.dmi'
 	icon_state = "fence1"
@@ -56,21 +56,21 @@
 	return
 
 /obj/structure/grille/stalker/wood
-	desc = "Старый дерев&#255;нный забор."
+	desc = "пїЅпїЅпїЅпїЅСЏпїЅпїЅ&#255;пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ."
 	icon_state = "zabor_horizontal1"
 	density = 1
 	opacity = 0
 
 /obj/structure/grille/stalker/beton
 	icon = 'stalker/icons/beton_zabor.dmi'
-	desc = "Слишком крепкий."
+	desc = "пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ."
 	icon_state = "1"
 	density = 1
 	opacity = 0
 
 /obj/structure/grille/stalker/beton/green
 	icon = 'stalker/icons/green_zabor.dmi'
-	desc = "Зелённый забор. Лучше, чем серый."
+	desc = "пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ. пїЅпїЅпїЅпїЅпїЅ, пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ."
 	icon_state = "1"
 
 obj/structure/grille/stalker/beton/CanPass(atom/movable/mover, turf/target, height=0)
@@ -402,7 +402,7 @@ var/global/list/GryazEdgeCache
 									"<span class='userdanger'>You unwisely attempt to wash [B] while it's still on.</span>")
 				playsound(src, "sparks", 50, 1)
 				return
-	*/ //Какие нахуй батоны на зоне? - valtos
+	*/ //пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅ? - valtos
 	if(istype(O, /obj/item/mop))
 		O.reagents.add_reagent("water", 5)
 		user << "<span class='notice'>You wet [O] in [src].</span>"

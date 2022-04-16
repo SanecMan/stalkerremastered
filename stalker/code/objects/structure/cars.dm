@@ -3,7 +3,7 @@
 
 /obj/structure/stalker/car/gryzovik
 	name = "Gruzovik"
-	desc = "Старый советский груховик со спущенными шинами."
+	desc = "пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ."
 	eng_desc = "Old soviet truck."
 
 /obj/structure/stalker/car/gryzovik/south
@@ -24,7 +24,7 @@
 
 /obj/structure/stalker/car/gryzovik2
 	name = "Gruzovik"
-	desc = "Старый советский груховик со спущенными шинами."
+	desc = "пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ."
 
 /obj/structure/stalker/car/gryzovik2/south
 	icon = 'stalker/icons/cars/gruzovik2_south.dmi'
@@ -40,7 +40,7 @@
 /obj/structure/stalker/car/uaz
 	name = "UAZ"
 	icon = 'stalker/icons/cars/uaz-469_south.dmi'
-	desc = "Ржавый, но все еще работает. Только бензин закончилс&#255;."
+	desc = "пїЅпїЅпїЅпїЅпїЅпїЅ, пїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅСЏ. пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ&#255;."
 	eng_desc = "Old UAZ."
 
 /obj/structure/stalker/car/mi24
@@ -49,7 +49,7 @@
 
 /obj/structure/stalker/car/gryzovik_army
 	name = "Gruzovik"
-	desc = "Старый советский армейские груховик со спущенными шинами."
+	desc = "пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ."
 	eng_desc = "Old soviet truck."
 
 /obj/structure/stalker/car/gryzovik_army/south
