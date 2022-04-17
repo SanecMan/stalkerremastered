@@ -16,6 +16,16 @@
 	tastes = list("meat" = 1)
 	foodtype = MEAT | RAW
 
+/obj/item/reagent_containers/food/snacks/meat/slab/New()
+	spawn(1000)
+	name = "rotten [name]"
+	color = "#89ff9d"
+	tastes += "toxin"
+	spawn(1000)
+	qdel(src)
+	..()
+
+
 /obj/item/reagent_containers/food/snacks/meat/slab/initialize_slice(obj/item/reagent_containers/food/snacks/meat/rawcutlet/slice, reagents_per_slice)
 	..()
 	var/mutable_appearance/filling = mutable_appearance(icon, "rawcutlet_coloration")

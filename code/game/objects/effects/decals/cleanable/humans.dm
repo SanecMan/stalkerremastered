@@ -7,6 +7,11 @@
 	blood_state = BLOOD_STATE_HUMAN
 	bloodiness = BLOOD_AMOUNT_PER_DECAL
 
+/obj/effect/decal/cleanable/blood/New()
+	spawn(300)
+	qdel(src)
+	..()
+
 /obj/effect/decal/cleanable/blood/replace_decal(obj/effect/decal/cleanable/blood/C)
 	C.add_blood_DNA(return_blood_DNA())
 	if (bloodiness)
