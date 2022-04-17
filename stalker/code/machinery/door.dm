@@ -32,5 +32,5 @@
 	if(!SSticker.round_start_time || world.time >= SSticker.round_start_time + SKADOVSK_LOCKDOWN_TIMER)
 		return ..()
 	else
-		say("РЁР»СЋР· РѕС‚РєСЂРѕРµС‚СЃСЏ С‚РѕР»СЊРєРѕ С‡РµСЂРµР· [round((SSticker.round_start_time + SKADOVSK_LOCKDOWN_TIMER - world.time)/300) + 1] РјРёРЅ. РёР·-Р·Р° РґРµР№СЃС‚РІСѓСЋС‰РµРіРѕ СЃРЅР°СЂСѓР¶Рё РїСЃРё-РёР·Р»СѓС‡РµРЅРёСЏ.")
+		say("Шлюз откроется только через [round((SSticker.round_start_time + SKADOVSK_LOCKDOWN_TIMER - world.time)/300) + 1] мин. из-за действующего снаружи пси-излучения.")
 		return 0

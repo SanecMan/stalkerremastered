@@ -72,7 +72,7 @@
 			if(62,60,92,47)
 				return			//rejects the text if it contains these bad characters: <, >, \ or /
 //			if(127 to 255)
-//				return			//rejects weird letters like пїЅ
+//				return			//rejects weird letters like �
 			if(0 to 31)
 				return			//more weird stuff
 			if(32)

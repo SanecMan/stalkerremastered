@@ -108,8 +108,8 @@
 	var/list/options = list()
 	options["Blanc"] = "mime"
 	options["Triste"] = "sadmime"
-	options["EffrayГ©"] = "scaredmime"
-	options["ExcitГ©"] ="sexymime"
+	options["Effrayé"] = "scaredmime"
+	options["Excité"] ="sexymime"
 
 	var/choice = input(user,"To what form do you wish to Morph this mask?","Morph Mask") in options
 

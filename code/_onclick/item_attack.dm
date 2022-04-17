@@ -65,7 +65,7 @@
 		if(user.client && (user.client.prefs.chat_toggles & CHAT_LANGUAGE))
 			to_chat(user, "<span class='warning'>You can't fight in the safezone!</span>")
 		else
-			to_chat(user, "<span class='warning'>Р’С‹ РЅРµ РјРѕР¶РµС‚Рµ РґСЂР°С‚СЊСЃСЏ РІ СЌС‚РѕР№ Р·РѕРЅРµ!</span>")
+			to_chat(user, "<span class='warning'>Вы не можете драться в этой зоне!</span>")
 		return 0
 
 	if(force && user.has_trait(TRAIT_PACIFISM))

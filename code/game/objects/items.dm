@@ -192,7 +192,7 @@ GLOBAL_VAR_INIT(rpg_loot_items, FALSE)
 /obj/item/examine(mob/user) //This might be spammy. Remove?
 	..()
 	var/size = weightclass2text(src.w_class)
-	to_chat(user, "Р Р°Р·РјРµСЂ Сѓ СЌС‚РѕР№ С€С‚СѓРєРё [size]." )
+	to_chat(user, "Размер у этой штуки [size]." )
 
 	if(!user.research_scanner)
 		return
@@ -299,11 +299,11 @@ GLOBAL_VAR_INIT(rpg_loot_items, FALSE)
 		var/obj/item/storage/S = src.loc
 		var/obj/item/gun/G = src
 		playsound(src.loc, "rustle", 50, 1, -5)
-		user.visible_message("<span class='danger'>[user] РЅР°С‡РёРЅР°РµС‚ РІС‹С‚Р°СЃРєРёРІР°С‚СЊ [G] РёР· [S]!</span>", "<span class='notice'>Р’С‹ РЅР°С‡РёРЅР°РµС‚Рµ РІС‹С‚Р°СЃРєРёРІР°С‚СЊ [G] РёР· [S]...</span>")
+		user.visible_message("<span class='danger'>[user] начинает вытаскивать [G] из [S]!</span>", "<span class='notice'>Вы начинаете вытаскивать [G] из [S]...</span>")
 		if(do_after(user, (G.weapon_weight * 15 + 5)*S.takeout_speed, 1, G))
 			playsound(src, G.draw_sound, 30, 1)
 			SEND_SIGNAL(loc, COMSIG_TRY_STORAGE_TAKE, src, user.loc, TRUE)
-			user.visible_message("<span class='danger'>[user] РІС‹С‚Р°С‰РёР» [G] РёР· [S]!</span>", "<span class='notice'>Р’С‹ РІС‹С‚Р°С‰РёР»Рё [G] РёР· [S].</span>")
+			user.visible_message("<span class='danger'>[user] вытащил [G] из [S]!</span>", "<span class='notice'>Вы вытащили [G] из [S].</span>")
 
 	if(throwing)
 		throwing.finalize(FALSE)

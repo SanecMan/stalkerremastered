@@ -113,7 +113,7 @@
 
 
 //for your ever biggening badminnery kevinz000
-//вќ¤ - Cyberboss
+//❤ - Cyberboss
 /proc/load_new_z_level(var/file, var/name)
 	var/datum/map_template/template = new(file, name)
 	template.load_new_z()

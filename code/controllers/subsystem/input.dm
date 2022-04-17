@@ -101,7 +101,7 @@ SUBSYSTEM_DEF(input)
 
 	movement_keys = default_movement_keys.Copy()
 
-// Badmins just wanna have fun в™Є
+// Badmins just wanna have fun ♪
 /datum/controller/subsystem/input/proc/refresh_client_macro_sets()
 	var/list/clients = GLOB.clients
 	for(var/i in 1 to clients.len)

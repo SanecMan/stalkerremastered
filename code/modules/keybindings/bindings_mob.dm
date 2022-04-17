@@ -6,7 +6,7 @@
 	switch(_key)
 		if("Delete", "H")
 			if(!pulling)
-				to_chat(src, "<span class='notice'>Р’С‹ РЅРёС‡РµРіРѕ РЅРµ С‚Р°С‰РёС‚Рµ.</span>")
+				to_chat(src, "<span class='notice'>Вы ничего не тащите.</span>")
 			else
 				stop_pulling()
 			return
@@ -25,7 +25,7 @@
 		if("Q", "Northwest") // Northwest is Home
 			var/obj/item/I = get_active_held_item()
 			if(!I)
-				to_chat(src, "<span class='warning'>Р’Р°Рј РЅРµС‡РµРіРѕ Р±СЂРѕСЃР°С‚СЊ!</span>")
+				to_chat(src, "<span class='warning'>Вам нечего бросать!</span>")
 			else
 				dropItemToGround(I)
 			return

@@ -6,17 +6,17 @@
 /obj/item/stalker/docs
 	icon_state = "docs0"
 	name = "Documents"
-	desc = "РЎС‚Р°СЂС‹Рµ РґРѕРєСѓРјРµРЅС‚С‹."
+	desc = "Старые документы."
 	eng_desc = "Old documents. Trader may pay a big price for this."
 
 /obj/item/stalker/usb
 	icon_state = "USB"
 	name = "USB"
-	desc = "РЎРёРЅ&#255;&#255; С„Р»РµС€РєР° РЅР° 2 Р“Р±."
+	desc = "Син&#255;&#255; флешка на 2 Гб."
 	eng_desc = "Blue USB 2 Gb. Trader may pay a big price for this."
 
 /obj/item/stalker/blue_box
 	icon_state = "blue_box"
 	name = "Box"
-	desc = "Р—Р°РєСЂС‹С‚С‹Р№ СЃРёРЅРёР№ &#255;С‰РёРє. Р’ РЅРµРј РґРѕР»Р¶РЅРѕ Р±С‹С‚СЊ С‡С‚Рѕ-С‚Рѕ С†РµРЅРЅРѕРµ."
+	desc = "Закрытый синий &#255;щик. В нем должно быть что-то ценное."
 	eng_desc = "Closed blue blox. Trader may pay a big price for this."

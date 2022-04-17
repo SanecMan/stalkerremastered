@@ -101,20 +101,20 @@
 			if(lowertext(newletter)=="c")
 				newletter="k"
 			//russian alkashi
-			if(r_lowertext(newletter)=="–æ")	newletter="—É"
-			if(r_lowertext(newletter)=="—ã")	newletter="i"
-			if(r_lowertext(newletter)=="—Ä")	newletter="r"
-			if(r_lowertext(newletter)=="–ª")	newletter="–ª—å"
-			if(r_lowertext(newletter)=="–∑")	newletter="—Å"
-			if(r_lowertext(newletter)=="–≤")	newletter="—Ñ"
-			if(r_lowertext(newletter)=="–±")	newletter="–ø"
-			if(r_lowertext(newletter)=="–≥")	newletter="—Ö"
-			if(r_lowertext(newletter)=="–¥")	newletter="—Ç"
+			if(r_lowertext(newletter)=="Ó")	newletter="Û"
+			if(r_lowertext(newletter)=="˚")	newletter="i"
+			if(r_lowertext(newletter)=="")	newletter="r"
+			if(r_lowertext(newletter)=="Î")	newletter="Î¸"
+			if(r_lowertext(newletter)=="Á")	newletter="Ò"
+			if(r_lowertext(newletter)=="‚")	newletter="Ù"
+			if(r_lowertext(newletter)=="·")	newletter="Ô"
+			if(r_lowertext(newletter)=="„")	newletter="ı"
+			if(r_lowertext(newletter)=="‰")	newletter="Ú"
 		if(rand(1,20)==20)
 			if(newletter==" ")
-				newletter="...–æ-–æ-–æ–π..."
+				newletter="...Ó-Ó-ÓÈ..."
 			if(newletter==".")
-				newletter=" –ò–ö!"
+				newletter=" » !"
 		switch(rand(1,16))
 			if(1,3,5,8)		newletter = "[r_lowertext(newletter)]"
 			if(2,4,6,15)	newletter = "[r_uppertext(newletter)]"
@@ -149,19 +149,19 @@
 			if(lowertext(newletter)=="s")
 				newletter=" SIE "
 			//russian alkashi
-			if(r_lowertext(newletter)=="–æ")	newletter="—É"
-			if(r_lowertext(newletter)=="—ã")	newletter="i"
-			if(r_lowertext(newletter)=="—Ä")	newletter="r"
-			if(r_lowertext(newletter)=="–ª")	newletter="–ª—å"
-			if(r_lowertext(newletter)=="–∑")	newletter="—Å"
-			if(r_lowertext(newletter)=="–≤")	newletter="—Ñ"
-			if(r_lowertext(newletter)=="–±")	newletter="–ø"
-			if(r_lowertext(newletter)=="–≥")	newletter="—Ö"
-			if(r_lowertext(newletter)=="–¥")	newletter="—Ç"
-			if(r_lowertext(newletter)=="—Å")
-				newletter=" –ù–ê–† "
-			if(r_lowertext(newletter)=="—Ç")
-				newletter=" –°–ò "
+			if(r_lowertext(newletter)=="Ó")	newletter="Û"
+			if(r_lowertext(newletter)=="˚")	newletter="i"
+			if(r_lowertext(newletter)=="")	newletter="r"
+			if(r_lowertext(newletter)=="Î")	newletter="Î¸"
+			if(r_lowertext(newletter)=="Á")	newletter="Ò"
+			if(r_lowertext(newletter)=="‚")	newletter="Ù"
+			if(r_lowertext(newletter)=="·")	newletter="Ô"
+			if(r_lowertext(newletter)=="„")	newletter="ı"
+			if(r_lowertext(newletter)=="‰")	newletter="Ú"
+			if(r_lowertext(newletter)=="Ò")
+				newletter=" Õ¿– "
+			if(r_lowertext(newletter)=="Ú")
+				newletter=" —» "
 		if(rand(1,4)==4)
 			if(newletter==" ")
 				newletter=" no hope... "

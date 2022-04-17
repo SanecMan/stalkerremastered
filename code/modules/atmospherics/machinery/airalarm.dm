@@ -121,7 +121,7 @@
 		/datum/gas/pluoxium			= new/datum/tlv/no_checks
 	)
 
-/obj/machinery/airalarm/kitchen_cold_room // Kitchen cold rooms start off at -80В°C or 193.15В°K.
+/obj/machinery/airalarm/kitchen_cold_room // Kitchen cold rooms start off at -80°C or 193.15°K.
 	TLV = list(
 		"pressure"					= new/datum/tlv(ONE_ATMOSPHERE * 0.8, ONE_ATMOSPHERE*  0.9, ONE_ATMOSPHERE * 1.1, ONE_ATMOSPHERE * 1.2), // kPa
 		"temperature"				= new/datum/tlv(T0C-273.15, T0C-100, T0C-60, T0C),

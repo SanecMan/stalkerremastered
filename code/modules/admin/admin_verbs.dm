@@ -757,7 +757,7 @@ GLOBAL_PROTECT(admin_verbs_hideable)
 		to_chat(usr, "<span class='warning'>Stalker profile not found.</span>")
 		return
 
-	var/newrank = input(usr, "Р•СЃР»Рё СЏ СѓР·РЅР°СЋ, С‡С‚Рѕ С‚С‹ СЌС‚Рѕ РєСЂСѓС‚РёР» СЃРµР±Рµ, С‚Рѕ СЏ С‚РµР±Рµ РѕС‚РєСЂСѓС‡Сѓ С‡С‚Рѕ-С‚Рѕ РґСЂСѓРіРѕРµ. Р§РёСЃР»Рѕ РѕС‚ 0 РґРѕ Р±РµСЃРєРѕРЅРµС‡РЅРѕСЃС‚Рё.", "Rating System") as num|null
+	var/newrank = input(usr, "Если я узнаю, что ты это крутил себе, то я тебе откручу что-то другое. Число от 0 до бесконечности.", "Rating System") as num|null
 
 	if(!newrank)
 		return

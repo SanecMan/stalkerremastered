@@ -176,7 +176,7 @@ GLOBAL_REAL(Master, /datum/controller/master) = new
 	if(init_sss)
 		init_subtypes(/datum/controller/subsystem, subsystems)
 
-	to_chat(world, "<span class='boldannounce'>РЎРѕР·РґР°С‘Рј РјРёСЂ...</span>")
+	to_chat(world, "<span class='boldannounce'>Создаём мир...</span>")
 
 	// Sort subsystems by init_order, so they initialize in the correct order.
 	sortTim(subsystems, /proc/cmp_subsystem_init)
@@ -192,7 +192,7 @@ GLOBAL_REAL(Master, /datum/controller/master) = new
 	current_ticklimit = TICK_LIMIT_RUNNING
 	var/time = (REALTIMEOFDAY - start_timeofday) / 10
 
-	var/msg = "РњРёСЂ СЃРѕР·РґР°РЅ Р·Р° [time] СЃРµРєСѓРЅРґ."
+	var/msg = "Мир создан за [time] секунд."
 	var/msgc = "Init completed for [time] sec."
 	to_chat(world, "<span class='boldannounce'>[msg]</span>")
 	log_world(msgc)

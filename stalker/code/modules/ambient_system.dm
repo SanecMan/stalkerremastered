@@ -1,10 +1,10 @@
 /client
-	var/sound/ambient/music			= null		//РњСѓР·С‹РєР°
-	var/sound/ambient/music_juke	= null		//РњСѓР·С‹РєР° РёР· РґР¶СѓРєР±РѕРєСЃР°
-	var/sound/ambient/environment	= null		//РЎР»СѓС‡Р°Р№РЅС‹Рµ РєРѕСЂРѕС‚РєРёРµ Р·РІСѓРєРё РґР»РёС‚РµР»СЊРЅРѕСЃС‚СЊСЋ РЅРµ Р±РѕР»РµРµ 12 СЃРµРєСѓРЅРґ
-	var/sound/ambient/background	= null		//Р—Р°Р»СѓРїР»РµРЅРЅС‹Р№ Р·РІСѓРє
-	var/sound/ambient/psy			= null		//РџСЃРё-Р·РІСѓРє
-	var/sound/ambient/campfire		= null		//Р—РІСѓРє РѕС‚ РєРѕСЃС‚СЂР° - campfire.dm
+	var/sound/ambient/music			= null		//Музыка
+	var/sound/ambient/music_juke	= null		//Музыка из джукбокса
+	var/sound/ambient/environment	= null		//Случайные короткие звуки длительностью не более 12 секунд
+	var/sound/ambient/background	= null		//Залупленный звук
+	var/sound/ambient/psy			= null		//Пси-звук
+	var/sound/ambient/campfire		= null		//Звук от костра - campfire.dm
 
 /sound/ambient
 	var/last_time = 0

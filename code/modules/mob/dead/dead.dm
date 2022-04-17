@@ -54,15 +54,15 @@ INITIALIZE_IMMEDIATE(/mob/dead)
 
 	var/time_remaining = SSticker.GetTimeLeft()
 	if(time_remaining > 0)
-		stat(null, pa2pb("Р’СЂРµРјРµРЅРё РґРѕ Р·Р°РїСѓСЃРєР°: [round(time_remaining/10)]СЃ"))
+		stat(null, pa2pb("Времени до запуска: [round(time_remaining/10)]с"))
 	else if(time_remaining == -10)
-		stat(null, pa2pb("Р’СЂРµРјРµРЅРё РґРѕ Р·Р°РїСѓСЃРєР°: РћРўР›РћР–Р•РќРћ"))
+		stat(null, pa2pb("Времени до запуска: ОТЛОЖЕНО"))
 	else
-		stat(null, pa2pb("Р’СЂРµРјРµРЅРё РґРѕ Р·Р°РїСѓСЃРєР°: РЎРљРћР Рћ"))
+		stat(null, pa2pb("Времени до запуска: СКОРО"))
 
-	stat(null, pa2pb("РРіСЂРѕРєРё: [SSticker.totalPlayers]"))
+	stat(null, pa2pb("Игроки: [SSticker.totalPlayers]"))
 	if(client.holder)
-		stat(null, pa2pb("Р“РѕС‚РѕРІС‹: [SSticker.totalPlayersReady]"))
+		stat(null, pa2pb("Готовы: [SSticker.totalPlayersReady]"))
 
 /mob/dead/proc/server_hop()
 	set category = "OOC"

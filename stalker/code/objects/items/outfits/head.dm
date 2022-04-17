@@ -10,7 +10,7 @@
 */
 /obj/item/clothing/head/steel
 	name = "Steel helmet"
-	desc = "РљР°СЃРєР° РёР· С‚РµРјРЅРѕР№, РјРµСЃС‚Р°РјРё СЂР¶Р°РІРѕР№ СЃС‚Р°Р»Рё, С‚Р°РєРѕР№ РІР°С€Рё РґРµРґС‹ РІСЉРµР±С‹РІР°Р»Рё РїРѕ С‰Р°Рј РЅР°С†РёСЃС‚Р°Рј. РќР° СѓСЂР° РґРµСЂР¶РёС‚ РїСЂРёР»РµС‚РµРІС€СѓСЋ РїРѕ РєР°СЃР°С‚РµР»СЊРЅРѕР№ РїСѓР»СЋ, РЅРѕ РѕС‚ С…РѕСЂРѕС€РµРЅСЊРєРѕРіРѕ РЅРѕР¶РµРІРѕРіРѕ СѓРґР°СЂР° РїРѕРґ РєРѕР·С‹СЂРµРє РЅРµ СЃРїР°СЃРµС‚."
+	desc = "Каска из темной, местами ржавой стали, такой ваши деды въебывали по щам нацистам. На ура держит прилетевшую по касательной пулю, но от хорошенького ножевого удара под козырек не спасет."
 	eng_desc = "Steel helmet made of old rusty steel. You look nazi wearing it. Protects your head but won't hold lots of bullets"
 	icon_state = "steelhelmet"
 	item_state = "steelhelmet"
@@ -40,7 +40,7 @@
 
 /obj/item/clothing/head/tacticalhelmet
 	name = "Tactical helmet"
-	desc = "РћС‚РµС‡РµСЃС‚РІРµРЅРЅС‹Р№ РѕР±СЂР°Р·РµС† С‚Р°РєС‚РёС‡РµСЃРєРѕРіРѕ С€Р»РµРјР°, Р»РёС€С‘РЅРЅС‹Р№ РєР°РєРѕР№-Р»РёР±Рѕ РјР°СЂРєРёСЂРѕРІРєРё. РџСЂРµРґРЅР°Р·РЅР°С‡РµРЅ РґР»&#255; РѕР±РµСЃРїРµС‡РµРЅРё&#255; РєРѕРјР°РЅРґРёСЂР° РїРѕРґСЂР°Р·РґРµР»РµРЅРё&#255; Р±Р°Р·РѕРІС‹Рј РєРѕР»РёС‡РµСЃС‚РІРѕРј С‚Р°РєС‚РёС‡РµСЃРєРѕР№ РёРЅС„РѕСЂРјР°С†РёРё РїСЂРё СѓСЃС‚Р°РЅРѕРІРєРµ СЃРѕРѕС‚РІРµС‚СЃС‚РІСѓСЋС‰РµР№ СЌР»РµРєС‚СЂРѕРЅРЅРѕР№ РЅР°С‡РёРЅРєРё. РћС‚Р»РёС‡Р°РµС‚СЃ&#255; РєСЂРµРїРєРѕР№ РєРѕРЅСЃС‚СЂСѓРєС†РёРµР№, С‚Р°РєР¶Рµ РѕСЃРЅР°С‰С‘РЅ РјРЅРѕРіРѕСЃР»РѕР№РЅРѕР№ РєРµРІР»Р°СЂРѕРІРѕР№ Р·Р°С‰РёС‚РѕР№, СЂРµСЃРїРёСЂР°С‚РѕСЂРѕРј Рё РїСЂРёР±РѕСЂРѕРј РЅРѕС‡РЅРѕРіРѕ РІРёРґРµРЅСЊ&#255; РїРµСЂРІРѕРіРѕ РїРѕРєРѕР»РµРЅРё&#255;."
+	desc = "Отечественный образец тактического шлема, лишённый какой-либо маркировки. Предназначен дл&#255; обеспечени&#255; командира подразделени&#255; базовым количеством тактической информации при установке соответствующей электронной начинки. Отличаетс&#255; крепкой конструкцией, также оснащён многослойной кевларовой защитой, респиратором и прибором ночного видень&#255; первого поколени&#255;."
 	eng_desc = "A Western model of a tactical helmet that lacks ca	mouflage. It is not known how it made its way into the Zone. The helmet is designed to provide a squad leader with strategic superiority over the enemy via its many scanners and satellite communications devices, which have not been installed in this particular helmet. Comes with multi-layered Kevlar protection and armored elements to protect electronic components. Includes a respirator and a nightvision device."
 	icon_state = "hardhat0_tactical"
 	item_state = "hardhat0_tactical"
@@ -50,7 +50,7 @@
 	flags_cover = HEADCOVERSEYES | HEADCOVERSMOUTH
 	resistance_flags = UNACIDABLE
 	durability = 300
-	//РњРћР”РР¤РРљРђР¦РР//
+	//МОДИФИКАЦИИ//
 	modifications = list("padding_head" = 0, "material_head" = 0, "visor_head" = 1)
 
 /obj/item/clothing/head/tacticalhelmet/New()
@@ -59,7 +59,7 @@
 
 /obj/item/clothing/head/hardhat/tactical/light
 	name = "Light tactical helmet"
-	desc = "РћС‚РµС‡РµСЃС‚РІРµРЅРЅС‹Р№ РѕР±СЂР°Р·РµС† С‚Р°РєС‚РёС‡РµСЃРєРѕРіРѕ С€Р»РµРјР°, Р»РёС€С‘РЅРЅС‹Р№ РєР°РєРѕР№-Р»РёР±Рѕ РјР°СЂРєРёСЂРѕРІРєРё. РџСЂРµРґРЅР°Р·РЅР°С‡РµРЅ РґР»&#255; РѕР±РµСЃРїРµС‡РµРЅРё&#255; Р±РѕР№С†РѕРІ СЃРїРµС†РЅР°Р·Р° РЅР°РґРµР¶РЅРѕР№ Р·Р°С‰РёС‚РѕР№ РіРѕР»РѕРІС‹. РћС‚Р»РёС‡Р°РµС‚СЃ&#255; РєСЂРµРїРєРѕР№ РєРѕРЅСЃС‚СЂСѓРєС†РёРµР№, С‚Р°РєР¶Рµ РѕСЃРЅР°С‰С‘РЅ РјРЅРѕРіРѕСЃР»РѕР№РЅРѕР№ РєРµРІР»Р°СЂРѕРІРѕР№ Р·Р°С‰РёС‚РѕР№, РЅРѕ СЂРµСЃРїРёСЂР°С‚РѕСЂ Рё РџРќР’ РѕС‚СЃСѓС‚СЃС‚РІСѓСЋС‚."
+	desc = "Отечественный образец тактического шлема, лишённый какой-либо маркировки. Предназначен дл&#255; обеспечени&#255; бойцов спецназа надежной защитой головы. Отличаетс&#255; крепкой конструкцией, также оснащён многослойной кевларовой защитой, но респиратор и ПНВ отсутствуют."
 	eng_desc = "A Western model of a tactical helmet that lacks camouflage. It is not known how it made its way into the Zone. The helmet is designed to provide a squad leader with strategic superiority over the enemy via its many scanners and satellite communications devices, which have not been installed in this particular helmet. Comes with multi-layered Kevlar protection and armored elements to protect electronic components."
 	icon_state = "hardhat0_lighttactical"
 	item_state = "hardhat0_lighttactical"
@@ -70,7 +70,7 @@
 	flags_cover = HEADCOVERSEYES
 	resistance_flags = UNACIDABLE
 	durability = 200
-	//РњРћР”РР¤РРљРђР¦РР//
+	//МОДИФИКАЦИИ//
 	modifications = list("padding_head" = 0, "material_head" = 0, "visor_head" = 0)
 
 /obj/item/clothing/head/hardhat/tactical/light/New()
@@ -79,7 +79,7 @@
 
 /obj/item/clothing/head/assaultmerc
 	name = "Mercenary helmet"
-	desc = "РќРµРѕР±С‹С‡РЅРѕР№ С„РѕСЂРјС‹ С€Р»РµРј РІ С‚СѓСЃРєР»Рѕ-СЃРµСЂРѕР№ РјР°СЃРєРёСЂРѕРІРѕС‡РЅРѕР№ РєСЂР°СЃРєРµ, СЃСѓРґ&#255; РїРѕ РјР°СЂРєРёСЂРѕРІРєРµ - С€РІРµР№С†Р°СЂСЃРєРѕРіРѕ РїСЂРѕРёР·РІРѕРґСЃС‚РІР°. Р—Р°С‚РµРјРЅРµРЅРЅРѕРµ Р·Р°Р±СЂР°Р»Рѕ РјР°С‚РѕРІРѕ РѕС‚СЂР°Р¶Р°РµС‚ СЃРІРµС‚, Рё Р±РµР· С‚РѕРіРѕ С‚СѓСЃРєР»С‹Р№, РѕСЃР»Р°Р±Р»РµРЅРЅС‹Р№ РѕР±Р»Р°РєР°РјРё Р§РµСЂРЅРѕР±С‹Р»&#255;. Р§РµСЂС‚РѕРІР° Р·Р°РїР°РґРЅР°&#255; РґСЂ&#255;РЅСЊ."
+	desc = "Необычной формы шлем в тускло-серой маскировочной краске, суд&#255; по маркировке - швейцарского производства. Затемненное забрало матово отражает свет, и без того тусклый, ослабленный облаками Чернобыл&#255;. Чертова западна&#255; др&#255;нь."
 	icon_state = "assaultmerc"
 	item_state = "assaultmerc"
 	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|HIDEHAIR
@@ -87,26 +87,26 @@
 	flags_cover = HEADCOVERSEYES | HEADCOVERSMOUTH
 	resistance_flags = UNACIDABLE
 	durability = 250
-	//РњРћР”РР¤РРљРђР¦РР//
+	//МОДИФИКАЦИИ//
 	modifications = list("padding_head" = 0, "material_head" = 0, "visor_head" = 0)
 
 /obj/item/clothing/head/gopcap
-	name = "РЎap"
-	desc = "РњРѕРґРЅР°&#255; Сѓ С‡С‘С‚РєРёС… РїР°С†Р°РЅРѕРІ РєРµРїРєР°."
+	name = "Сap"
+	desc = "Модна&#255; у чётких пацанов кепка."
 	icon_state = "gopcap"
 	item_state = "gopcap"
 	flags_inv = HIDEHAIR
 
 /obj/item/clothing/head/soft/jacknoircap
-	name = "РЎap"
-	desc = "РџРѕС‚СЂРµРїР°РЅРЅР°&#255; РєРµРїРєР° РјР°С€РёРЅРёСЃС‚Р°. Р§СѓС…-С‡СѓС…!"
+	name = "Сap"
+	desc = "Потрепанна&#255; кепка машиниста. Чух-чух!"
 	icon_state = "jacknoirsoft"
 	item_color = "jacknoir"
 	item_state = "greysoft"
 
 /obj/item/clothing/head/spheram
 	name = "Sphera M12"
-	desc = "РћС‚РґРµР»Р°РЅРЅС‹Р№ С‚РєР°РЅСЊСЋ Р°Р»СЋРјРёРЅРёРµРІРѕ-С‚РёС‚Р°РЅРѕРІС‹Р№ С€Р»РµРј СЃ РєР°СЂРјР°РЅР°РјРё РґР»&#255; СЃС‚Р°Р»СЊРЅС‹С… Р±СЂРѕРЅРµСЌР»РµРјРµРЅС‚РѕРІ Рё Р±СЂРѕРЅРµРјР°СЃРєРѕР№. РћР±С‹С‡РЅРѕ РїРѕСЃС‚Р°РІР»&#255;РµС‚СЃ&#255; РІ РєРѕРјРїР»РµРєС‚Рµ СЃ Р±СЂРѕРЅРµР¶РёР»РµС‚Р°РјРё РєР»Р°СЃСЃР° РџРЎ3 РґР»&#255; СЃРїРµС†РЅР°Р·Р°. Р”РѕСЃС‚Р°С‚РѕС‡РЅРѕ РїРѕРїСѓР»&#255;СЂРµРЅ РІ Р—РѕРЅРµ Р±Р»Р°РіРѕРґР°СЂ&#255; СЂРµСЃРїРёСЂР°С‚РѕСЂСѓ Рё РІСЃС‚СЂРѕРµРЅРЅРѕРјСѓ РїСЂРёР±РѕСЂСѓ РЅРѕС‡РЅРѕРіРѕ РІРёРґРµРЅРё&#255;, Р° С‚Р°РєР¶Рµ С…РѕСЂРѕС€РµР№ Р·Р°С‰РёС‚Рµ РіРѕР»РѕРІС‹. РџСЂРµРґСѓСЃРјРѕС‚СЂРµРЅР° РІРѕР·РјРѕР¶РЅРѕСЃС‚СЊ СѓСЃС‚Р°РЅРѕРІРєРё СЌР»РµРєС‚СЂРѕРЅРёРєРё."
+	desc = "Отделанный тканью алюминиево-титановый шлем с карманами дл&#255; стальных бронеэлементов и бронемаской. Обычно поставл&#255;етс&#255; в комплекте с бронежилетами класса ПС3 дл&#255; спецназа. Достаточно попул&#255;рен в Зоне благодар&#255; респиратору и встроенному прибору ночного видени&#255;, а также хорошей защите головы. Предусмотрена возможность установки электроники."
 	eng_desc = "An aluminum/titanium helmet with a cloth exterior that comes with pockets for additional steel armor pieces and an armor face mask. Sphere M12 is normally used as part of a combination that includes PSZ series Spetsnaz body armor. Quite popular in the Zone thanks to its respirator and built-in first generation night vision device, as well as providing the maximum head protection possible. Comes with electronics slots."
 	icon_state = "sphera"
 	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|HIDEHAIR
@@ -114,7 +114,7 @@
 	flags_cover = HEADCOVERSEYES | HEADCOVERSMOUTH
 	resistance_flags = UNACIDABLE
 	durability = 400
-	//РњРћР”РР¤РРљРђР¦РР//
+	//МОДИФИКАЦИИ//
 	modifications = list("padding_head" = 0, "material_head" = 0, "visor_head" = 1)
 
 /obj/item/clothing/head/spheram/New()
@@ -124,7 +124,7 @@
 
 /obj/item/clothing/head/skathelmet
 	name = "SKAT-M9"
-	desc = "РћС‚РґРµР»Р°РЅРЅС‹Р№ С‚РєР°РЅСЊСЋ Р°Р»СЋРјРёРЅРёРµРІРѕ-С‚РёС‚Р°РЅРѕРІС‹Р№ С€Р»РµРј СЃ РєР°СЂРјР°РЅР°РјРё РґР»&#255; СЃС‚Р°Р»СЊРЅС‹С… Р±СЂРѕРЅРµСЌР»РµРјРµРЅС‚РѕРІ Рё Р±СЂРѕРЅРµРјР°СЃРєРѕР№. РћР±С‹С‡РЅРѕ РїРѕСЃС‚Р°РІР»&#255;РµС‚СЃ&#255; РІ РєРѕРјРїР»РµРєС‚Рµ СЃ Р±СЂРѕРЅРµР¶РёР»РµС‚Р°РјРё РєР»Р°СЃСЃР° РџРЎ3 РґР»&#255; СЃРїРµС†РЅР°Р·Р°. Р”РѕСЃС‚Р°С‚РѕС‡РЅРѕ РїРѕРїСѓР»&#255;СЂРµРЅ РІ Р—РѕРЅРµ Р±Р»Р°РіРѕРґР°СЂ&#255; СЂРµСЃРїРёСЂР°С‚РѕСЂСѓ Рё РІСЃС‚СЂРѕРµРЅРЅРѕРјСѓ РїСЂРёР±РѕСЂСѓ РЅРѕС‡РЅРѕРіРѕ РІРёРґРµРЅРё&#255;, Р° С‚Р°РєР¶Рµ С…РѕСЂРѕС€РµР№ Р·Р°С‰РёС‚Рµ РіРѕР»РѕРІС‹."
+	desc = "Отделанный тканью алюминиево-титановый шлем с карманами дл&#255; стальных бронеэлементов и бронемаской. Обычно поставл&#255;етс&#255; в комплекте с бронежилетами класса ПС3 дл&#255; спецназа. Достаточно попул&#255;рен в Зоне благодар&#255; респиратору и встроенному прибору ночного видени&#255;, а также хорошей защите головы."
 	eng_desc = "An aluminum/titanium helmet with a cloth exterior that comes with pockets for additional steel armor pieces and an armor face mask. Sphere M12 is normally used as part of a combination that includes PSZ series Spetsnaz body armor. Quite popular in the Zone thanks to its respirator and built-in first generation night vision device, as well as providing the maximum head protection possible. Comes with electronics slots."
 	icon_state = "helmet_skat"
 	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|HIDEHAIR
@@ -141,7 +141,7 @@
 
 /obj/item/clothing/head/petrovichhelmet
 	name = "SKOT-M777"
-	desc = "РћС‚РґРµР»Р°РЅРЅС‹Р№ С€РїСЂРѕС‚Р°РјРё Р°Р»СЋРјРёРЅРёРµРІРѕ-РєР°СЂС‚РѕРЅРЅС‹Р№ С€Р»РµРј СЃ РєР°СЂРјР°РЅР°РјРё РґР»&#255; РјРµР»РѕС‡Рё Рё Р±СЂРѕРЅРµСѓСЃР°РјРё. РћР±С‹С‡РЅРѕ РїРѕСЃС‚Р°РІР»&#255;РµС‚СЃ&#255; РІ РєРѕРјРїР»РµРєС‚Рµ СЃ РІРѕРґРєРѕР№. РќРµРґРѕСЃС‚Р°С‚РѕС‡РЅРѕ РїРѕРїСѓР»&#255;СЂРµРЅ РІ Р—РѕРЅРµ Р±Р»Р°РіРѕРґР°СЂ&#255; РєРѕРЅСЃРїРёСЂР°С†РёРё РџРµС‚СЂРѕРІРёС‡Р°."
+	desc = "Отделанный шпротами алюминиево-картонный шлем с карманами дл&#255; мелочи и бронеусами. Обычно поставл&#255;етс&#255; в комплекте с водкой. Недостаточно попул&#255;рен в Зоне благодар&#255; конспирации Петровича."
 	icon_state = "helmet_skot"
 	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|HIDEHAIR
 	armor = list("melee" = 75, "bullet" = 75, "laser" = 60, "energy" = 70, "bomb" = 70, "bio" = 50, "rad" = 80, "fire" = 70, "acid" = 0, "psy" = 50)
@@ -152,7 +152,7 @@
 
 /obj/item/clothing/head/beret_ua
 	name = "military beret"
-	desc = "РћС„С„РёС†РµСЂСЃРєРёР№ Р±РµСЂРµС‚ СЃ РјРёРЅРёР°С‚СЋСЂРЅРѕР№ РІРµСЂСЃРёРµР№ СѓРєСЂР°РёРЅСЃРєРѕРіРѕ С„Р»Р°РіР°."
+	desc = "Оффицерский берет с миниатюрной версией украинского флага."
 	icon_state = "beret_ua"
 	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0, "psy" = 0)
 	strip_delay = 80
@@ -168,7 +168,7 @@
 */
 /obj/item/clothing/mask/gas/stalker
 	name = "gas mask"
-	desc = "РЎС‚Р°РЅРґР°СЂС‚РЅС‹Р№ РїСЂРѕС‚РёРІРѕРіР°Р·, РїСЂРµРґРЅР°Р·РЅР°С‡РµРЅРЅС‹Р№ РґР»&#255; С„РёР»СЊС‚СЂР°С†РёРё РёР· РІРѕР·РґСѓС…Р° СЂР°РґРёРѕР°РєС‚РёРІРЅРѕР№ РїС‹Р»Рё Рё РѕС‚СЂР°РІР»&#255;СЋС‰РёС… РІРµС‰РµСЃС‚РІ. РЁРёСЂРѕРєРѕ РёСЃРїРѕР»СЊР·СѓРµС‚СЃ&#255; РєР°Рє РЅРѕРІРёС‡РєР°РјРё, С‚Р°Рє Рё РІРµС‚РµСЂР°РЅР°РјРё РІСЃРµС… РіСЂСѓРїРїРёСЂРѕРІРѕРє РІРІРёРґСѓ СЃРІРѕРµР№ С„СѓРЅРєС†РёРѕРЅР°Р»СЊРЅРѕР№ РЅРµР·Р°РјРµРЅРёРјРѕСЃС‚Рё. РќРµ РѕСЃРЅР°С‰С‘РЅ Р·Р°С‰РёС‚РѕР№ РѕС‚ РїСѓР»СЊ, РѕСЃРєРѕР»РєРѕРІ Рё РјРµС…Р°РЅРёС‡РµСЃРєРёС… РІРѕР·РґРµР№СЃС‚РІРёР№."
+	desc = "Стандартный противогаз, предназначенный дл&#255; фильтрации из воздуха радиоактивной пыли и отравл&#255;ющих веществ. Широко используетс&#255; как новичками, так и ветеранами всех группировок ввиду своей функциональной незаменимости. Не оснащён защитой от пуль, осколков и механических воздействий."
 	eng_desc = "A regular plastic and rubber gas mask, used for filtering air for radioactive particles and poisonous substances. Widely used by rookies and veterans of all factions due to its universal functionality. Does not provide any physical protection."
 	icon_state = "gasmasknew"
 	item_state = "gasmasknew"
@@ -179,12 +179,12 @@
 	armor = list("melee" = 5, "bullet" = 0, "laser" = 30, "energy" = 30, "bomb" = 0, "bio" = 0, "rad" = 100, "fire" = 30, "acid" = 0, "psy" = 0)
 	resistance_flags = UNACIDABLE|FIRE_PROOF
 	durability = 400
-	//РњРћР”РР¤РРљРђР¦РР//
+	//МОДИФИКАЦИИ//
 	modifications = list("padding_head" = 0, "material_head" = 0, "visor_head" = 0)
 
 /obj/item/clothing/mask/gas/stalker/mercenary
 	name = "gas mask"
-	desc = "РЎС‚Р°РЅРґР°СЂС‚РЅС‹Р№ РїСЂРѕС‚РёРІРѕРіР°Р·, РїСЂРµРґРЅР°Р·РЅР°С‡РµРЅРЅС‹Р№ РґР»&#255; С„РёР»СЊС‚СЂР°С†РёРё РёР· РІРѕР·РґСѓС…Р° СЂР°РґРёРѕР°РєС‚РёРІРЅРѕР№ РїС‹Р»Рё Рё РѕС‚СЂР°РІР»&#255;СЋС‰РёС… РІРµС‰РµСЃС‚РІ. РЁРёСЂРѕРєРѕ РёСЃРїРѕР»СЊР·СѓРµС‚СЃ&#255; С‡Р»РµРЅР°РјРё РіСЂСѓРїРїРёСЂРѕРІРєРё 'РќР°РµРјРЅРёРєРё'. РќРµ РѕСЃРЅР°С‰С‘РЅ Р·Р°С‰РёС‚РѕР№ РѕС‚ РїСѓР»СЊ, РѕСЃРєРѕР»РєРѕРІ Рё РјРµС…Р°РЅРёС‡РµСЃРєРёС… РІРѕР·РґРµР№СЃС‚РІРёР№."
+	desc = "Стандартный противогаз, предназначенный дл&#255; фильтрации из воздуха радиоактивной пыли и отравл&#255;ющих веществ. Широко используетс&#255; членами группировки 'Наемники'. Не оснащён защитой от пуль, осколков и механических воздействий."
 	eng_desc = "A regular plastic and rubber gas mask, used for filtering air for radioactive particles and poisonous substances. Widely used by mercenaries. Does not provide any physical protection."
 	icon_state = "mercenary_gasmask"
 	item_state = "mercenary_gasmask"
@@ -195,5 +195,5 @@
 	armor = list("melee" = 5, "bullet" = 0, "laser" = 30, "energy" = 30, "bomb" = 0, "bio" = 20, "rad" = 100, "fire" = 30, "acid" = 0, "psy" = 0)
 	resistance_flags = UNACIDABLE|FIRE_PROOF
 	durability = 400
-	//РњРћР”РР¤РРљРђР¦РР//
+	//МОДИФИКАЦИИ//
 	modifications = list("padding_head" = 0, "material_head" = 0, "visor_head" = 0)

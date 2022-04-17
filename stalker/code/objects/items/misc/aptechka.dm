@@ -9,7 +9,7 @@
 
 /obj/item/reagent_containers/pill/stalker/aptechka
 	name = "kit"
-	desc = "РЎС‚Р°СЂР°&#255; СЃРѕРІРµС‚СЃРєР°&#255; Р°РїС‚РµС‡РєР°."
+	desc = "Стара&#255; советска&#255; аптечка."
 
 /obj/item/reagent_containers/pill/stalker/canconsume(mob/eater, mob/user)
 	if(!iscarbon(eater))
@@ -22,14 +22,14 @@ obj/item/reagent_containers/pill/stalker/afterattack(obj/target, mob/user , prox
 /obj/item/reagent_containers/pill/stalker/aptechka/civilian
 	name = "medkit"
 	icon_state = "aptechkar"
-	desc = "РЈРЅРёРІРµСЂСЃР°Р»СЊРЅС‹Р№ РјРµРґРёС†РёРЅСЃРєРёР№ РЅР°Р±РѕСЂ. РџРѕР·РІРѕР»&#255;РµС‚ СЃРїСЂР°РІР»&#255;С‚СЊСЃ&#255; СЃ С‚СЂР°РІРјР°РјРё СЂР°Р·Р»РёС‡РЅРѕРіРѕ РІРёРґР° Рё СЃС‚РµРїРµРЅРё СЃР»РѕР¶РЅРѕСЃС‚Рё: СЂР°РЅРµРЅРё&#255;РјРё, РѕР¶РѕРіР°РјРё, РѕС‚СЂР°РІР»РµРЅРё&#255;РјРё Рё РїСЂРѕС‡РёРј. РќРµ РѕСЃС‚Р°РЅР°РІР»РёРІР°РµС‚ РєСЂРѕРІРѕС‚РµС‡РµРЅРёРµ!"
+	desc = "Универсальный медицинский набор. Позвол&#255;ет справл&#255;тьс&#255; с травмами различного вида и степени сложности: ранени&#255;ми, ожогами, отравлени&#255;ми и прочим. Не останавливает кровотечение!"
 	eng_desc = "All-purpose single-use medkit. Allows to handle injuries of different types and degrees of complexity. Doesn't stop bleeding!"
 	item_state = "aptechkar"
 	list_reagents = list("medicadone" = 6)
 
 /obj/item/reagent_containers/pill/stalker/aptechka/army
 	name = "army medkit"
-	desc = "РЎРїРµС†РёР°Р»РёР·РёСЂРѕРІР°РЅРЅС‹Р№ РјРµРґРёС†РёРЅСЃРєРёР№ РЅР°Р±РѕСЂ РґР»&#255; Р±РѕСЂСЊР±С‹ СЃ С„РёР·РёС‡РµСЃРєРёРјРё РїРѕРІСЂРµР¶РґРµРЅРё&#255;РјРё Рё РєСЂРѕРІРѕС‚РµС‡РµРЅРёРµРј. Р’ РЅРµРіРѕ РІС…РѕРґ&#255;С‚ РєРѕРјРїРѕРЅРµРЅС‚С‹ РґР»&#255; СѓСЃРєРѕСЂРµРЅРё&#255; СЃРІРµСЂС‚С‹РІР°РЅРё&#255; РєСЂРѕРІРё, РѕР±РµР·Р±РѕР»РёРІР°СЋС‰РёРµ, Р°РЅС‚РёР±РёРѕС‚РёРєРё Рё РёРјРјСѓРЅРЅС‹Рµ СЃС‚РёРјСѓР»&#255;С‚РѕСЂС‹. РћСЃС‚Р°РЅР°РІР»РёРІР°РµС‚ РєСЂРѕРІРѕС‚РµС‡РµРЅРёРµ!"
+	desc = "Специализированный медицинский набор дл&#255; борьбы с физическими повреждени&#255;ми и кровотечением. В него вход&#255;т компоненты дл&#255; ускорени&#255; свертывани&#255; крови, обезболивающие, антибиотики и иммунные стимул&#255;торы. Останавливает кровотечение!"
 	eng_desc = "Specialized medical kit to provide first-aid in case of in-battle injuries. The kit includes Menadion-based medicine for faster blood coagulation, painkillers, antibiotics, immunity stimulators, so as a kit to remove shrapnel and bullets from your body. Stops the bleeding."
 	icon_state = "aptechkab"
 	item_state = "aptechkab"
@@ -37,7 +37,7 @@ obj/item/reagent_containers/pill/stalker/afterattack(obj/target, mob/user , prox
 
 /obj/item/reagent_containers/pill/stalker/aptechka/scientific
 	name = "scientific medkit"
-	desc = "РњРµРґРёС†РёРЅСЃРєРёР№ РЅР°Р±РѕСЂ, СЂР°Р·СЂР°Р±РѕС‚Р°РЅРЅС‹Р№ СЃРїРµС†РёР°Р»СЊРЅРѕ РґР»&#255; СЂР°Р±РѕС‚С‹ РІ СѓСЃР»РѕРІРё&#255;С… Р—РѕРЅС‹. РЎРѕСЃС‚Р°РІ РЅР°Р±РѕСЂР° РїРѕРґРѕР±СЂР°РЅ РєР°Рє РґР»&#255; Р±РѕСЂСЊР±С‹ СЃ СЂР°РЅРµРЅРё&#255;РјРё, С‚Р°Рє Рё РґР»&#255; РІС‹РІРѕРґР° СЂР°РґРёРѕРЅСѓРєР»РёРґРѕРІ РёР· РѕСЂРіР°РЅРёР·РјР°. РџСЂРµРї&#255;С‚СЃС‚РІСѓРµС‚ СЂР°Р·РІРёС‚РёСЋ Р»СѓС‡РµРІРѕР№ Р±РѕР»РµР·РЅРё, Р° С‚Р°РєР¶Рµ СЃРЅРёР¶Р°РµС‚ РґРѕР·Сѓ РЅР°РєРѕРїР»РµРЅРЅРѕР№ СЂР°РґРёР°С†РёРё."
+	desc = "Медицинский набор, разработанный специально дл&#255; работы в услови&#255;х Зоны. Состав набора подобран как дл&#255; борьбы с ранени&#255;ми, так и дл&#255; вывода радионуклидов из организма. Преп&#255;тствует развитию лучевой болезни, а также снижает дозу накопленной радиации."
 	eng_desc = "Medical set, designed especially for work in the Zone. The set includes means of healing wounds as well as means of eliminating radionuclides from the body. Prevents the development of radiowave sickness and lowers the dose of accumulated radiation. Stops the bleeding."
 	icon_state = "aptechkay"
 	item_state = "aptechkay"
@@ -77,7 +77,7 @@ obj/item/reagent_containers/pill/stalker/afterattack(obj/target, mob/user , prox
 
 /obj/item/reagent_containers/pill/stalker/aptechka/bint
 	name = "bint"
-	desc = "РџРµСЂРµРІ&#255;Р·РѕС‡РЅС‹Р№ РјР°С‚РµСЂРёР°Р». РџРѕРјРѕРіР°РµС‚ РѕСЃС‚Р°РЅРѕРІРёС‚СЊ РєСЂРѕРІРѕС‚РµС‡РµРЅРёРµ."
+	desc = "Перев&#255;зочный материал. Помогает остановить кровотечение."
 	eng_desc = "Bandage. Can stop your bleeding."
 	icon = 'stalker/icons/items.dmi'
 	icon_state = "bint"

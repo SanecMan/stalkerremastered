@@ -1,7 +1,7 @@
 /obj/item/grenade/preprime(mob/user, delayoverride, msg = TRUE, volume = 60)
 	var/area/B = get_area(user.loc)
 	if(B.safezone)
-		to_chat(user, "<span class='warning'>Р’С‹ РїС‹С‚Р°РµС‚РµСЃСЊ СЃРѕСЂРІР°С‚СЊ С‡РµРєСѓ СЃ РіСЂР°РЅР°С‚С‹, РЅРѕ РІСЃС‚Р°РІР»СЏРµС‚Рµ РїР°Р»РµС† РЅРµ С‚СѓРґР° Рё СЃСЂС‹РІР°РµС‚Рµ СЃРІРѕС‘ РѕС‡РєРѕ!</span>")
+		to_chat(user, "<span class='warning'>Вы пытаетесь сорвать чеку с гранаты, но вставляете палец не туда и срываете своё очко!</span>")
 		return 0
 	..()
 

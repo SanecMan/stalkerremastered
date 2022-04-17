@@ -553,10 +553,10 @@
 	if(building)
 		return
 	building = TRUE
-	to_chat(user, "<span class='notice'>Р’С‹ РЅР°С‡РёРЅР°РµС‚Рµ <font color='red'>РёСЃРєР°С‚СЊ СЃРІРѕРё glaza</font>...</span>")
+	to_chat(user, "<span class='notice'>Вы начинаете <font color='red'>искать свои glaza</font>...</span>")
 	if(do_after(user, 50, target = user, progress=TRUE))
-		user.visible_message("<span class='notice'>[user] СѓСЃРїРµС€РЅРѕ РЅР°С…РѕРґРёС‚ СЃРІРѕРё glaza.\
-			</span>", "<span class='notice'><font color='red' size='32'>Р’С‹ СѓСЃРїРµС€РЅРѕ РЅР°С€Р»Рё СЃРІРѕРё glaza.</font></span>")
+		user.visible_message("<span class='notice'>[user] успешно находит свои glaza.\
+			</span>", "<span class='notice'><font color='red' size='32'>Вы успешно нашли свои glaza.</font></span>")
 		spawn(50)
 			user.gib()
 		//if(!user.temporarilyRemoveItemFromInventory(src))
