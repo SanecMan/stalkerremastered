@@ -101,15 +101,9 @@ GLOBAL_LIST_INIT(rus_unicode_fix,null)
 	t = replacetext(t, "\improper", "")
 	return t
 
-/proc/html_encode(t)
-	return t
-
 proc/rhtml_decode(var/t)
 	t = html_decode(t)
 	return t
-
-/proc/r_json_encode(json_data)
-	return json_data
 
 /proc/r_json_decode(text) //now I'm stupid
 	return json_decode(text)

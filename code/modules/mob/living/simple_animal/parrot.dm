@@ -952,7 +952,7 @@
 			file_data["longestsurvival"] = longest_survival
 		file_data["longestdeathstreak"] = longest_deathstreak
 	fdel(json_file)
-	WRITE_FILE(json_file, r_json_encode(file_data))
+	WRITE_FILE(json_file, json_encode(file_data))
 
 /mob/living/simple_animal/parrot/Poly/ratvar_act()
 	playsound(src, 'sound/magic/clockwork/fellowship_armory.ogg', 75, TRUE)

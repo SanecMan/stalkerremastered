@@ -4,3 +4,8 @@
         spawn(300)
             src.equip_to_slot(O, SLOT_IN_BACKPACK)
             to_chat(src, "Ах, да. Вы же припрятали [O.name] у себя в сумке.")
+    if (check_st_whitelist(src.ckey, "spasibo"))
+        var/obj/item/stack/spacecash/c5000/O = new()
+        spawn(300)
+            src.equip_to_slot(O, SLOT_IN_BACKPACK)
+            to_chat(src, "Ах, да. Вы же припрятали [O.name] у себя в сумке.")
