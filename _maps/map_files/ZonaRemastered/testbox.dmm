@@ -22,28 +22,30 @@
 "v" = (/obj/effect/step_trigger/teleporter{teleport_x = 3; teleport_y = 3; teleport_z = 1},/obj/machinery/door/poddoor/sidor/skadovsk/special{id = "NIGGER"},/turf/open/stalker/floor/digable/grass,/area/stalker/blowout/outdoor)
 "w" = (/obj/machinery/party/turntable,/turf/open/stalker/floor/lattice,/area/stalker/buildings/backwater/skadovsk)
 "x" = (/obj/machinery/party/turntable,/turf/open/stalker/floor/tropa,/area/stalker/blowout/outdoor)
-"y" = (/obj/effect/landmark/latejoin/petrovich,/turf/open/stalker/floor/lattice,/area/stalker/buildings/backwater/skadovsk)
-"z" = (/obj/effect/landmark/latejoin/barman2,/turf/open/stalker/floor/digable,/area/stalker/buildings/backwater/skadovsk)
-"A" = (/obj/effect/landmark/latejoin/trader,/turf/open/stalker/floor/lattice,/area/stalker/buildings/backwater/skadovsk)
-"B" = (/obj/effect/landmark/latejoin/army_eliteagro,/turf/open/stalker/floor/lattice,/area/stalker/buildings/backwater/skadovsk)
-"D" = (/obj/structure/closet/crate/stalker/blue/stash/medium,/turf/open/stalker/floor/tropa,/area/stalker/blowout/outdoor)
-"E" = (/obj/effect/landmark/latejoin/assistant,/turf/open/stalker/floor/lattice,/area/stalker/buildings/backwater/skadovsk)
-"G" = (/obj/structure/table/stalker/wood/bar,/obj/machinery/button/door{id = "NIGGER"},/turf/open/stalker/floor/tropa,/area/stalker/blowout/outdoor)
-"I" = (/obj/effect/landmark/latejoin/duty_lieutenant,/turf/open/stalker/floor/lattice,/area/stalker/buildings/backwater/skadovsk)
-"J" = (/obj/effect/landmark/latejoin/army,/turf/open/stalker/floor/lattice,/area/stalker/buildings/backwater/skadovsk)
-"K" = (/obj/effect/landmark/latejoin/barman,/turf/open/stalker/floor/lattice,/area/stalker/buildings/backwater/skadovsk)
-"L" = (/obj/structure/closet/crate/stalker/blue/stash/high,/turf/open/stalker/floor/tropa,/area/stalker/blowout/outdoor)
-"M" = (/obj/effect/landmark/latejoin/duty,/turf/open/stalker/floor/lattice,/area/stalker/buildings/backwater/skadovsk)
-"N" = (/obj/effect/landmark/latejoin/mercenary,/turf/open/stalker/floor/digable,/area/stalker/buildings/backwater/skadovsk)
-"Q" = (/obj/effect/landmark/latejoin/bandit,/turf/open/stalker/floor/lattice,/area/stalker/buildings/backwater/skadovsk)
+"y" = (/obj/effect/landmark/latejoin/duty,/turf/open/stalker/floor/lattice,/area/stalker/buildings/backwater/skadovsk)
+"z" = (/obj/effect/landmark/start/new_player,/turf/open/stalker/floor/digable/grass,/area/stalker/adminspace)
+"A" = (/obj/structure/table/stalker/wood/bar,/obj/machinery/button/door{id = "NIGGER"},/turf/open/stalker/floor/tropa,/area/stalker/blowout/outdoor)
+"B" = (/obj/effect/landmark/latejoin,/turf/open/stalker/floor/lattice,/area/stalker/buildings/backwater/skadovsk)
+"C" = (/obj/structure/closet/crate/stalker/blue/stash/high,/turf/open/stalker/floor/tropa,/area/stalker/blowout/outdoor)
+"D" = (/obj/effect/landmark/latejoin/barman2,/turf/open/stalker/floor/digable,/area/stalker/buildings/backwater/skadovsk)
+"E" = (/obj/effect/landmark/latejoin/duty_lieutenant,/turf/open/stalker/floor/lattice,/area/stalker/buildings/backwater/skadovsk)
+"F" = (/obj/effect/landmark/latejoin/bandit,/turf/open/stalker/floor/lattice,/area/stalker/buildings/backwater/skadovsk)
+"G" = (/obj/effect/landmark/latejoin/oldstalker,/turf/open/stalker/floor/lattice,/area/stalker/buildings/backwater/skadovsk)
+"H" = (/obj/structure/closet/crate/stalker/blue/stash/low,/turf/open/stalker/floor/tropa,/area/stalker/blowout/outdoor)
+"I" = (/obj/effect/landmark/latejoin/mercenary,/turf/open/stalker/floor/digable,/area/stalker/buildings/backwater/skadovsk)
+"J" = (/obj/effect/landmark/latejoin/mercenary_sql,/turf/open/stalker/floor/digable,/area/stalker/buildings/backwater/skadovsk)
+"K" = (/obj/effect/landmark/latejoin/army,/turf/open/stalker/floor/lattice,/area/stalker/buildings/backwater/skadovsk)
+"L" = (/obj/effect/landmark/latejoin/stalker,/turf/open/stalker/floor/lattice,/area/stalker/buildings/backwater/skadovsk)
+"N" = (/obj/effect/landmark/latejoin/army_eliteagro,/turf/open/stalker/floor/lattice,/area/stalker/buildings/backwater/skadovsk)
+"O" = (/obj/structure/closet/crate/stalker/blue/stash/medium,/turf/open/stalker/floor/tropa,/area/stalker/blowout/outdoor)
+"P" = (/obj/effect/landmark/latejoin/monolith,/turf/open/stalker/floor/lattice,/area/stalker/buildings/backwater/skadovsk)
+"Q" = (/obj/effect/landmark/latejoin/freedom,/turf/open/stalker/floor/lattice,/area/stalker/buildings/backwater/skadovsk)
 "R" = (/obj/effect/landmark/latejoin/monolith_hegumen,/turf/open/stalker/floor/lattice,/area/stalker/buildings/backwater/skadovsk)
-"S" = (/obj/effect/landmark/latejoin/freedom,/turf/open/stalker/floor/lattice,/area/stalker/buildings/backwater/skadovsk)
-"T" = (/obj/structure/closet/crate/stalker/blue/stash/low,/turf/open/stalker/floor/tropa,/area/stalker/blowout/outdoor)
-"V" = (/obj/effect/landmark/latejoin/stalker,/turf/open/stalker/floor/lattice,/area/stalker/buildings/backwater/skadovsk)
-"W" = (/obj/effect/landmark/latejoin/oldstalker,/turf/open/stalker/floor/lattice,/area/stalker/buildings/backwater/skadovsk)
-"X" = (/obj/effect/landmark/latejoin/freedom_lieutenant,/turf/open/stalker/floor/lattice,/area/stalker/buildings/backwater/skadovsk)
-"Y" = (/obj/effect/landmark/latejoin/monolith,/turf/open/stalker/floor/lattice,/area/stalker/buildings/backwater/skadovsk)
-"Z" = (/obj/effect/landmark/latejoin/mercenary_sql,/turf/open/stalker/floor/digable,/area/stalker/buildings/backwater/skadovsk)
+"S" = (/obj/effect/landmark/latejoin/assistant,/turf/open/stalker/floor/lattice,/area/stalker/buildings/backwater/skadovsk)
+"T" = (/obj/effect/landmark/latejoin/freedom_lieutenant,/turf/open/stalker/floor/lattice,/area/stalker/buildings/backwater/skadovsk)
+"X" = (/obj/effect/landmark/latejoin/trader,/turf/open/stalker/floor/lattice,/area/stalker/buildings/backwater/skadovsk)
+"Y" = (/obj/effect/landmark/latejoin/barman,/turf/open/stalker/floor/lattice,/area/stalker/buildings/backwater/skadovsk)
+"Z" = (/obj/effect/landmark/latejoin/petrovich,/turf/open/stalker/floor/lattice,/area/stalker/buildings/backwater/skadovsk)
 
 (1,1,1) = {"
 aaaaaaaabaaccaabbaaaaaaaa
@@ -51,24 +53,24 @@ adddddddbddccddbbddddddda
 adgddhddiddjcdkbbldddddda
 addeeeeefeecceeffeeeeedda
 addeeeeefeecceeffeeeeedda
-addeemmmbmmccmmbbmmLeedda
-addeemmmbmmccmmbbmmLeedda
-addeemmnbaaccaabbamDeedda
-addeemmobaaccaabbamDeedda
-addeemmpbqaccaabbamTeedda
-addeemmabqaccqqbbamTeedda
+addeemmmbmmccmmbbmmCeedda
+addeemmmbmmccmmbbmmCeedda
+addeemmnbaaccaabbamOeedda
+addeemmobaaccaabbamOeedda
+addeemmpbqaccaabbamHeedda
+addeemmabqaccqqbbamHeedda
 addeemmabqaccqqbbammeedda
 addeemmabqaccqqrbammeedda
 addeesmabaaccqqrbammeedda
 addeetmabaaccqqrbammeedda
 addeeumabaaccaarbammeedda
 addeeumabaaccaarbammeedda
-addeeGmvbaaccaabbammeedda
+addeeAmvbaaccaabbammeedda
 addeemmmbmmccmmbbmmmeedda
 addewxmmbmmccmmbbmmmeedda
-addeeeeefeecceeffeeeeAdda
-addJBEQKzMIccSXNZYRWyVdda
+addBeeeefeecceeffeeeeXdda
+addKNSFYDyEccQTIJPRGZLdda
 adddddddbddccddbbddddddda
 adddddddbddccddbbddddddda
-aaaaaaaabaaccaabbaaaaaaaa
+zaaaaaaabaaccaabbaaaaaaaa
 "}
