@@ -40,7 +40,7 @@
 /obj/structure/stalker/car/uaz
 	name = "UAZ"
 	icon = 'stalker/icons/cars/uaz-469_south.dmi'
-	desc = "Ржавый, но все еще работает. Только бензин закончился."
+	desc = "Ржавый, но все еще работает. Только бензин закончилс&#255;."
 	eng_desc = "Old UAZ."
 
 /obj/structure/stalker/car/mi24

@@ -113,7 +113,7 @@ obj/machinery/campfire/process()
 				usr.visible_message("[usr] lit a fire.", "<span class='notice'>You lit a fire.</span>")
 				update_icon()
 				soundloop.start()
-				desc = "От костра исходит тёпло и мягкий свет."
+				desc = "От костра исходит тёпло и м&#255;гкий свет."
 				eng_desc = "Campfire emites warm and calmness. You can heal by sitting in it's range."
 				set_light(4, 1, firecolor)
 				spawn(10)
@@ -132,7 +132,7 @@ obj/machinery/campfire/process()
 				usr.visible_message("[usr] lit a fire.", "<span class='notice'>You lit a fire.</span>")
 				update_icon()
 				soundloop.start()
-				desc = "От костра исходит тёпло и мягкий свет."
+				desc = "От костра исходит тёпло и м&#255;гкий свет."
 				eng_desc = "Campfire emites warm and calmness. You can heal by sitting in it's range."
 				set_light(4, 1, firecolor)
 				spawn(10)

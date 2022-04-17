@@ -35,7 +35,7 @@
 
 /obj/structure/barricade/stalker/box
 	name = "wooden box"
-	desc = "Заколоченный деревянный ящик. Кто знает, что может быть внутри."
+	desc = "Заколоченный дерев&#255;нный &#255;щик. Кто знает, что может быть внутри."
 	icon = 'stalker/icons/decor.dmi'
 	icon_state = "yashik"
 	debriss_type = /obj/structure/stalker/doski/doski2
@@ -154,7 +154,7 @@
 
 /obj/structure/stalker/blocks/vanish/pipe
 	name = "Pipe"
-	desc = "Громадная железобетонная труба."
+	desc = "Громадна&#255; железобетонна&#255; труба."
 	eng_desc = "Big pipe."
 	icon = 'stalker/icons/decor2.dmi'
 	icon_state = "truba1"
@@ -176,7 +176,7 @@
 
 /obj/structure/stalker/blocks/vanish/sandbags
 	name = "sandbags"
-	desc = "Обычная насыпь из мешков с песком"
+	desc = "Обычна&#255; насыпь из мешков с песком"
 	eng_desc = "Sangbags."
 	icon = 'stalker/icons/structure/sandbags.dmi'
 	icon_state = "solo"

@@ -2,7 +2,7 @@ GLOBAL_LIST_EMPTY(cps)
 
 /obj/machinery/stalker/sidorpoint
 	name = "SIDORPOINT - null"
-	desc = "Контрольная точка."
+	desc = "Контрольна&#255; точка."
 	eng_desc = "Control point."
 	icon = 'stalker/icons/device_new.dmi'
 	icon_state = "radio_free"
@@ -45,17 +45,17 @@ GLOBAL_LIST_EMPTY(cps)
 /obj/machinery/stalker/sidorpoint/proc/update_desc()
 	if(controlled_by)
 
-		desc = "Точка находится под контролем группировки [get_rus_faction(controlled_by)] на [control_percent]%"
+		desc = "Точка находитс&#255; под контролем группировки [get_rus_faction(controlled_by)] на [control_percent]%"
 		eng_desc = "Point is under [controlled_by] control by [control_percent]%"
 
 	else if(control_percent)
 
-		desc = "Точка находится под контролем группировки [get_rus_faction(capturing_faction)] на [control_percent]%"
+		desc = "Точка находитс&#255; под контролем группировки [get_rus_faction(capturing_faction)] на [control_percent]%"
 		eng_desc = "Point is under [capturing_faction] control by [control_percent]%"
 
 	else
 
-		desc = "Точка свободна для захвата"
+		desc = "Точка свободна дл&#255; захвата"
 		eng_desc = "This point can be captured."
 
 /obj/machinery/stalker/sidorpoint/proc/update_icon_percent()

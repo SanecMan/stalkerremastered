@@ -5,7 +5,7 @@
 
 /turf/open/floor/plating/asteroid/snow/lite
 	name = "snow"
-	desc = "Выглядит холодным."
+	desc = "Выгл&#255;дит холодным."
 	icon = 'icons/turf/snow.dmi'
 	baseturfs = /turf/open/floor/plating/asteroid/snow
 	icon_state = "snow"
@@ -56,7 +56,7 @@
 	return
 
 /obj/structure/grille/stalker/wood
-	desc = "Старый деревянный забор."
+	desc = "Старый дерев&#255;нный забор."
 	icon_state = "zabor_horizontal1"
 	density = 1
 	opacity = 0

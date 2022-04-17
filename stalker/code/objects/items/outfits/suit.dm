@@ -174,7 +174,7 @@
 
 /obj/item/clothing/suit/hooded/kozhanka
 	name = "leather jacket"
-	desc = "Обычная плотная кожаная куртка, каких много. Слегка усиливает противопулевую и осколочную защиту. Неэффективна против аномальных и других воздействий."
+	desc = "Обычна&#255; плотна&#255; кожана&#255; куртка, каких много. Слегка усиливает противопулевую и осколочную защиту. Неэффективна против аномальных и других воздействий."
 	eng_desc = "Common grab of a novice stalker. It won’t save you from bullets or anomalies, but it’s still better than nothing."
 	icon_state = "kozhanka"
 	item_state = "det_suit"
@@ -216,7 +216,7 @@
 
 /obj/item/clothing/suit/hooded/kozhanka/banditka
 	name = "bandit jacket"
-	desc = "Традиционная одежда бандита - кожаная куртка со вшитыми броневыми элементами. Даёт защиту, крайне недостаточную в жёстких условиях Зоны."
+	desc = "Традиционна&#255; одежда бандита - кожана&#255; куртка со вшитыми броневыми элементами. Даёт защиту, крайне недостаточную в жёстких услови&#255;х Зоны."
 	eng_desc = "Traditional bandit clothing - a leather jacket with armor pieces sewed in. The protection it provides is completely inadequate for the harsh conditions of the Zone. Does not hold any artifacts by default, but can be upgraded to hold one artifact."
 	icon_state = "banditka"
 	item_state = "ro_suit"
@@ -231,21 +231,21 @@
 
 /obj/item/clothing/suit/hooded/kozhanka/banditka/unique
 	name = "chain-mail jacket"
-	desc = "Обычный слабенький бандитский бронежилет, но в подкладку вшито кольчужное полотно. Сделать такой под силу почти каждому, но терпения хватит далеко не всем."
+	desc = "Обычный слабенький бандитский бронежилет, но в подкладку вшито кольчужное полотно. Сделать такой под силу почти каждому, но терпени&#255; хватит далеко не всем."
 	//icon_state = "banditka_unique"
 	armor = list("melee" = 15, "bullet" = 28, "laser" = 15, "energy" = 5, "bomb" = 15, "bio" = 5, "rad" = 20, "fire" = 5, "psy" = 0)
 	unique = 1
 
 /obj/item/clothing/suit/hooded/kozhanka/unique
 	name = "anomaly jacket"
-	desc = "Эту куртку сняли с трупа одного из сталкеров, умерших в аномалии 'кисель'. Пролежав долгое время в аномалии, куртка обрела свойство ускорять метаболизм."
+	desc = "Эту куртку сн&#255;ли с трупа одного из сталкеров, умерших в аномалии 'кисель'. Пролежав долгое врем&#255; в аномалии, куртка обрела свойство ускор&#255;ть метаболизм."
 	//icon_state = "kozhanka_unique"
 	armor = list("melee" = 10, "bullet" = 10, "laser" = 10, "energy" = 10, "bomb" = 20, "bio" = 20, "rad" = 30, "fire" = 10, "psy" = 0)
 	unique = 0
 
 /obj/item/clothing/suit/hooded/kombez
 	name = "sunrise"
-	desc = "Производимый 'народными умельцами' комбинезон сталкера представляет собой эффективное сочетание лёгкого армейского бронежилета и комбинезона из прорезиненой ткани. Усилен за счёт встроенных кевларовых пластин. Неплохо защищает от слабого стрелкового оружия. В целом крайне недостаточен для глубоких рейдов и серьёзных операций в узлах Зоны."
+	desc = "Производимый 'народными умельцами' комбинезон сталкера представл&#255;ет собой эффективное сочетание лёгкого армейского бронежилета и комбинезона из прорезиненой ткани. Усилен за счёт встроенных кевларовых пластин. Неплохо защищает от слабого стрелкового оружи&#255;. В целом крайне недостаточен дл&#255; глубоких рейдов и серьёзных операций в узлах Зоны."
 	eng_desc = "This DIY stalker bodysuit is a combination of a bodysuit of twin-layered rubberized cloth with plexiglass lining and built-in body armor. Despite the fact that the body armor is incapable of protecting the wearer from even pistol bullets, the suit enjoys great popularity due to its low cost and modification potential. Comes with built-in artifact containers."
 	icon_state = "kombez"
 	item_state = "syndicate-green"
@@ -272,7 +272,7 @@
 
 /obj/item/clothing/suit/jacket/sidor
 	name = "old vest"
-	desc = "Кошегная жилетка, сделанная из кожи химеры."
+	desc = "Кошегна&#255; жилетка, сделанна&#255; из кожи химеры."
 	icon_state = "sidor_vest"
 	item_state = "det_suit"
 	resistance_flags = FIRE_PROOF
@@ -281,7 +281,7 @@
 
 /obj/item/clothing/suit/hooded/kozhanka/banditka/coat
 	name = "trenchcoat"
-	desc = "Обычный плащ из чёрной кожи. Особенной защиты носителю не обеспечивает, разве что не даст замёрзнуть ночью и смягчит укус слепой собаки. Достаточно неудобен, но, тем не менее, часто используется бандитами - возможно, исключительно из-за внешнего вида."
+	desc = "Обычный плащ из чёрной кожи. Особенной защиты носителю не обеспечивает, разве что не даст замёрзнуть ночью и см&#255;гчит укус слепой собаки. Достаточно неудобен, но, тем не менее, часто используетс&#255; бандитами - возможно, исключительно из-за внешнего вида."
 	eng_desc = "A regular black leather trench coat. Has no special purpose other than to keep the wearer warm at night or protect from a blind dog bite. Although the trench coat is not particularly comfortable, it is often used by Bandits in the Zone - either because it allows them to hide in the dark or simply due to its \"cool\" appearance."
 	icon_state = "banditcoat"
 	blood_overlay_type = "armor"
@@ -298,7 +298,7 @@
 
 /obj/item/clothing/suit/hooded/kozhanka/banditka/coat/brown
 	icon_state = "banditcoatbrown"
-	desc = "Обычный плащ из коричневой кожи. Особенной защиты носителю не обеспечивает, разве что не даст замёрзнуть ночью и смягчит укус слепой собаки. Достаточно неудобен, но, тем не менее, часто используется бандитами - возможно, исключительно из-за внешнего вида."
+	desc = "Обычный плащ из коричневой кожи. Особенной защиты носителю не обеспечивает, разве что не даст замёрзнуть ночью и см&#255;гчит укус слепой собаки. Достаточно неудобен, но, тем не менее, часто используетс&#255; бандитами - возможно, исключительно из-за внешнего вида."
 	eng_desc = "A regular brown leather trench coat. Has no special purpose other than to keep the wearer warm at night or protect from a blind dog bite. Although the trench coat is not particularly comfortable, it is often used by Bandits in the Zone - either because it allows them to hide in the dark or simply due to its \"cool\" appearance."
 	hoodtype = /obj/item/clothing/head/hooded/stalker/banditbrown
 
@@ -309,7 +309,7 @@
 
 /obj/item/clothing/suit/hooded/sealed
 	name = "test"
-	desc = "Костюм с сиемтой замкнутого дыхания."
+	desc = "Костюм с сиемтой замкнутого дыхани&#255;."
 	eng_desc = "Sealed suit."
 	icon_state = "kombez"
 	item_state = "syndicate-green"
@@ -364,7 +364,7 @@
 
 /obj/item/clothing/suit/hooded/sealed/ecolog
 	name = "SSP-99"
-	desc = "Созданный для работы в условиях Зоны костюм защиты ССП-99. Используется экспедициями учёных и сотрудничающих с ними сталкеров-экологов. Встроенная система фильтрации воздуха и кондиционирования. Не рассчитан на ведение боевых действий."
+	desc = "Созданный дл&#255; работы в услови&#255;х Зоны костюм защиты ССП-99. Используетс&#255; экспедици&#255;ми учёных и сотрудничающих с ними сталкеров-экологов. Встроенна&#255; система фильтрации воздуха и кондиционировани&#255;. Не рассчитан на ведение боевых действий."
 	eng_desc = "A SSP-99 chemical protection suit specially designed for the Zone conditions. It is used by scientific expeditions and the eco-stalkers who cooperate with them. It has an integrated air-filtering and air-conditioning system. It is heat and electricity resistant, provides good protection from radiation and biological anomalies. It is resistant to chemically aggressive environments. It is not designed for combat, so it provides neither bullet, nor splinter protection."
 	icon_state = "ecolog"
 	item_state = "syndicate-orange"
@@ -396,7 +396,7 @@
 
 /obj/item/clothing/suit/hooded/sealed/ecologm
 	name = "SSP-99M"
-	desc = "Высококачественный модифицированный комбинезон ССП-99. Добавлена защита торса от пулевого и осколочного повреждения. Предназначен для экипировки охраны научных экспедиций. Эффективная защита от радиации и биологических аномалий. Стойкий к химически-агрессивным средам и другим вредным для организма воздействиям."
+	desc = "Высококачественный модифицированный комбинезон ССП-99. Добавлена защита торса от пулевого и осколочного повреждени&#255;. Предназначен дл&#255; экипировки охраны научных экспедиций. Эффективна&#255; защита от радиации и биологических аномалий. Стойкий к химически-агрессивным средам и другим вредным дл&#255; организма воздействи&#255;м."
 	eng_desc = "High quality modified SSP-99 suit. It provides increased body protection from bullet and splinter damage. It is designed for the guards working with scientific expeditions. It provides good protection from radiation and biological anomalies. It is resistant to chemically aggressive environments and other effects dangerous to the body."
 	icon_state = "ecologg"
 	item_state = "syndicate-green"
@@ -429,7 +429,7 @@
 
 /obj/item/clothing/suit/hooded/sealed/seva
 	name = "SEVA"
-	desc = "Производимый одним из оборонных киевских НИИ данный комбинезон предоставляет отличную альтернативу другим сталкеровским комбинезонам, изготовленным в кустарных условиях. Представляет из себя отличное сочетание бронированного комбинезона, системы дыхания с замкнутым циклом, а также встроенной системой подавления действия аномальных полей. За счёт удачного подбора материалов является хорошим выбором. Единственный недостаток - его цена."
+	desc = "Производимый одним из оборонных киевских НИИ данный комбинезон предоставл&#255;ет отличную альтернативу другим сталкеровским комбинезонам, изготовленным в кустарных услови&#255;х. Представл&#255;ет из себ&#255; отличное сочетание бронированного комбинезона, системы дыхани&#255; с замкнутым циклом, а также встроенной системой подавлени&#255; действи&#255; аномальных полей. За счёт удачного подбора материалов &#255;вл&#255;етс&#255; хорошим выбором. Единственный недостаток - его цена."
 	eng_desc = "This bodysuit, intended for conducting research in the Zone, combines a closed-cycle respiratory module and an external isolation coating, resulting in excellent protection from anomalies. Due to poor protection from physical impact, the suit is not a good defense against bullet and fragmentation damage. It comes with a built-in artifact transportation container."
 	icon_state = "seva"
 	item_state = "syndicate-black"
@@ -469,7 +469,7 @@
 
 /obj/item/clothing/suit/hooded/sealed/psz9md
 	name = "PSZ-9MD"
-	desc = "Отличный защитный костюм для Зоны. Сталкеры ценят его за сочетание отличных противоаномальных качеств и противопулевой защиты. В составе: комбинезон ПСЗ-9д, система дыхания с замкнутым циклом, встроенная система подавления действия аномальных полей. Предоставляет качественную защиту от пулевого и осколочного попадания."
+	desc = "Отличный защитный костюм дл&#255; Зоны. Сталкеры цен&#255;т его за сочетание отличных противоаномальных качеств и противопулевой защиты. В составе: комбинезон ПСЗ-9д, система дыхани&#255; с замкнутым циклом, встроенна&#255; система подавлени&#255; действи&#255; аномальных полей. Предоставл&#255;ет качественную защиту от пулевого и осколочного попадани&#255;."
 	eng_desc = "A wonderful protective suit for the Zone. Stalkers appreciate it because it combines excellent anomaly-proof and bullet-proof qualities. It includes the PSZ-9d suit, a closed cycle breathing system and an integrated system of anomalous field suppression. It provides quality bullet and splinter protection."
 	icon_state = "psz9md"
 	item_state = "syndicate-black-red"
@@ -503,7 +503,7 @@
 
 /obj/item/clothing/suit/hooded/sealed/exoskelet
 	name = "exoskelet"
-	desc = "Экспериментальный образец военного экзоскелета. В серийное производство так и не попал, в виду чрезвычайной дороговизны и некоторых ошибок в проектировании. Не смотря на это, выпускается малыми партиями на подпольных предприятиях за пределами Украины. Данный экзоскелет относится к третьему поколению. В нем устранены конструктивные недостатки, кардинально снижавшие подвижность, а также усилена броня. Предоставляет великолепную защиту от пулевого и осколочного попадания, но не гарантирует стойкости к аномалиям."
+	desc = "Экспериментальный образец военного экзоскелета. В серийное производство так и не попал, в виду чрезвычайной дороговизны и некоторых ошибок в проектировании. Не смотр&#255; на это, выпускаетс&#255; малыми парти&#255;ми на подпольных предпри&#255;ти&#255;х за пределами Украины. Данный экзоскелет относитс&#255; к третьему поколению. В нем устранены конструктивные недостатки, кардинально снижавшие подвижность, а также усилена брон&#255;. Предоставл&#255;ет великолепную защиту от пулевого и осколочного попадани&#255;, но не гарантирует стойкости к аномали&#255;м."
 	eng_desc = "An experimental sample of a military exoskeleton. Was never mass-produced due to extraordinary cost and some design flaws. Despite this, it is in demand due to its ability to take on the weight of all carried equipment, and therefore small batches are made in underground facilities outside Ukraine. Comes with a built-in artifact container."
 	icon_state = "exoskelet"
 	item_state = "syndicate-black"
@@ -531,7 +531,7 @@
 
 /obj/item/clothing/suit/army
 	name = "army armor"
-	desc = "Стандартный армейский бронежилет, выдаваемый всем военнослужащим, охраняющим периметр Зоны. Предоставляет неплохую защиту от пуль и холодного оружия, абсолютно непригоден для вылазок вглубь Зоны, так как не имеет почти никакой защиты от воздействия аномальных полей."
+	desc = "Стандартный армейский бронежилет, выдаваемый всем военнослужащим, охран&#255;ющим периметр Зоны. Предоставл&#255;ет неплохую защиту от пуль и холодного оружи&#255;, абсолютно непригоден дл&#255; вылазок вглубь Зоны, так как не имеет почти никакой защиты от воздействи&#255; аномальных полей."
 	icon_state = "army_armor1"
 	item_state = "armor"
 	blood_overlay_type = "armor"
@@ -557,7 +557,7 @@
 
 /obj/item/clothing/suit/berill
 	name = "berill-5M"
-	desc = "Модифицированная для работы в условиях Зоны, экипировка армейского спецназа."
+	desc = "Модифицированна&#255; дл&#255; работы в услови&#255;х Зоны, экипировка армейского спецназа."
 	eng_desc = "This item comprises military PS5 series body armor with beryllium sputter modified for use in the Zone. Designed for assault operations in highly radioactive areas, it is ineffective in areas of high anomalous activity. The suit makes its way to stalkers through the military, who exchange it for loot. Does not come with an artifact container."
 	icon_state = "berill_5m"
 	item_state = "syndicate-green"
@@ -575,7 +575,7 @@
 
 /obj/item/clothing/suit/hooded/kombez/monolith
 	name = "monolith armor"
-	desc = "Комбинезон сталкера группировки 'Монолит'. Производитель неизвестен. По защитным характеристикам немного уступает армейскому бронежилету серии ПС3-9а. По структуре напоминает широко распространенные среди нейтральных сталкеров комбинезоны, в которых бронежилет соединяется с костюмом противорадиационной защиты. Неплохо защищает от слабого стрелкового оружия. Уровень защиты от аномальной активности оставляет желать лучшего из-за отсутствия системы фильтрации воздуха."
+	desc = "Комбинезон сталкера группировки 'Монолит'. Производитель неизвестен. По защитным характеристикам немного уступает армейскому бронежилету серии ПС3-9а. По структуре напоминает широко распространенные среди нейтральных сталкеров комбинезоны, в которых бронежилет соедин&#255;етс&#255; с костюмом противорадиационной защиты. Неплохо защищает от слабого стрелкового оружи&#255;. Уровень защиты от аномальной активности оставл&#255;ет желать лучшего из-за отсутстви&#255; системы фильтрации воздуха."
 	eng_desc = "Stalker suit from the Monolith faction. The producer is unknown. Its protective properties are slightly worse then those of the PSZ-9a military bulletproof vest. Its structure is similar to the suit popular with neutral stalkers which combines a bulletproof vest and a radiation protection suit. It provides good protection from gunfire. Its level of anomaly protection is low due to the absence of an air filtering system."
 	icon_state = "monolit"
 	item_state = "syndicate-green"
@@ -597,7 +597,7 @@
 
 /obj/item/clothing/suit/hooded/sealed/monolith
 	name = "monolith scientific suit"
-	desc = "Производимый одним из оборонных киевских НИИ данный комбинезон предоставляет отличную альтернативу другим сталкеровским комбинезонам, изготовленным в кустарных условиях. Представляет из себя отличное сочетание бронированного комбинезона, системы дыхания с замкнутым циклом, а также встроенной системой подавления действия аномальных полей. За счёт удачного подбора материалов является хорошим выбором. Единственный недостаток - его цена."
+	desc = "Производимый одним из оборонных киевских НИИ данный комбинезон предоставл&#255;ет отличную альтернативу другим сталкеровским комбинезонам, изготовленным в кустарных услови&#255;х. Представл&#255;ет из себ&#255; отличное сочетание бронированного комбинезона, системы дыхани&#255; с замкнутым циклом, а также встроенной системой подавлени&#255; действи&#255; аномальных полей. За счёт удачного подбора материалов &#255;вл&#255;етс&#255; хорошим выбором. Единственный недостаток - его цена."
 	eng_desc = "This bodysuit, intended for conducting research in the Zone, combines a closed-cycle respiratory module and an external isolation coating, resulting in excellent protection from anomalies. Due to poor protection from physical impact, the suit is not a good defense against bullet and fragmentation damage. It comes with a built-in artifact transportation container."
 	icon_state = "monolith_scientific"
 	item_state = "syndicate-green"
@@ -625,7 +625,7 @@
 
 /obj/item/clothing/suit/skat
 	name = "SKAT-M9"
-	desc = "Армейский бронекостюм СКАТ-9М создан для проведения штурмовых операций в зонах активности аномалий. В составе: тяжёлый армейский бронекостюм серии ПС3-12п, встроенный компенсационный костюм. Предоставляет великолепную защиту от пулевого и осколочного попадания, при этом не снижая подвижности солдата. В наличии сбалансированная система защиты от аномального воздействия."
+	desc = "Армейский бронекостюм СКАТ-9М создан дл&#255; проведени&#255; штурмовых операций в зонах активности аномалий. В составе: т&#255;жёлый армейский бронекостюм серии ПС3-12п, встроенный компенсационный костюм. Предоставл&#255;ет великолепную защиту от пулевого и осколочного попадани&#255;, при этом не снижа&#255; подвижности солдата. В наличии сбалансированна&#255; система защиты от аномального воздействи&#255;."
 	eng_desc = "This Skat-9M bulletproof military suit is designed for assault operations in areas of anomalous activity. It includes a PSZ-12p heavy military bulletproof suit, an integrated compensation suit and a Sphere-12M helmet. It provides perfect protection from bullets and splinters and it doesn't decrease the soldier's mobility. It has a balanced system of anomaly protection."
 	icon_state = "skat"
 	item_state = "syndicate-black"
@@ -644,7 +644,7 @@
 
 /obj/item/clothing/suit/hooded/kombez/ps5m
 	name = "PS5-M"
-	desc = "Современная модель комбинезона Долга. Больше подходит новобранцам из сталкеров, которые привыкли к относительно легким костюмам. В отличие от ПСЗ, обеспечивает хорошую защиту от аномального воздействия и при этом способен остановить пистолетную пулю и некоторые автоматные пули."
+	desc = "Современна&#255; модель комбинезона Долга. Больше подходит новобранцам из сталкеров, которые привыкли к относительно легким костюмам. В отличие от ПСЗ, обеспечивает хорошую защиту от аномального воздействи&#255; и при этом способен остановить пистолетную пулю и некоторые автоматные пули."
 	eng_desc = "This modern version of the Duty bodysuit is better suited for stalker recruits who are used to lightweight suits. Unlike the PSZ series, this suit provides good protection against anomalies while also being capable of stopping a pistol bullet. The suit cannot be modified with an artifact container, but may be upgraded with a combat support system instead."
 	icon_state = "ps5m"
 	item_state = "syndicate-black-red"
@@ -666,7 +666,7 @@
 
 /obj/item/clothing/suit/psz9d
 	name = "PSZ-9D"
-	desc = "Современная модель боевой брони Долга. Отлично подходит для часто вступающих в перестрелки членов группировки. В отличие от ПС5, имеет многочисленные циркониевые защитные пластины в нагруднике, способные остановить автоматную пулю на излете."
+	desc = "Современна&#255; модель боевой брони Долга. Отлично подходит для часто вступающих в перестрелки членов группировки. В отличие от ПС5, имеет многочисленные циркониевые защитные пластины в нагруднике, способные остановить автоматную пулю на излете."
 	eng_desc = "Produced by one of Kiev's defence research institutes and commissioned by the Duty faction. It is as simple and reliable as the standard PSZ-9 model, but due to the new materials, it provides good protection from various harmful impacts, including firearm damage. The vest still needs some work because it has no breathing protection system."
 	icon_state = "psz9d"
 	item_state = "syndicate-black"
@@ -685,7 +685,7 @@
 
 /obj/item/clothing/suit/hooded/kombez/mercenary
 	name = "mercenary armor"
-	desc = "Комбинезон сталкера из группировки 'Наёмники'. За основу взяты образцы экипировки спецназа западных армий. За счёт специальной обработки ткани усилена устойчивость брони при физическом смещении пластин. По защитным характеристикам немного превосходит армейские бронежилеты серии ПС3-7."
+	desc = "Комбинезон сталкера из группировки 'Наёмники'. За основу вз&#255;ты образцы экипировки спецназа западных армий. За счёт специальной обработки ткани усилена устойчивость брони при физическом смещении пластин. По защитным характеристикам немного превосходит армейские бронежилеты серии ПС3-7."
 	eng_desc = "Stalker suit from the Merc faction. Its design is based on the suit used by the special forces of the Western armies. Due to a special treatment of the fabric, the armor has a strengthened stability during the physical movement of its plates. Its protective properties are slightly better then those of the PSZ-7 military bulletproof suits."
 	icon_state = "mercenary"
 	item_state = "syndicate-black"
@@ -729,7 +729,7 @@
 
 /obj/item/clothing/suit/strazh
 	name = "guardian of freedom"
-	desc = "Модифицированная для работы в условиях Зоны, экипировка армейского спецназа. Покрашенная в яркий камуфляж Свободы и облегченная для улучшения подвижности, эта версия Берилла была обработана специальными реагентами, ослабляющими вред от аномальных угроз."
+	desc = "Модифицированна&#255; дл&#255; работы в услови&#255;х Зоны, экипировка армейского спецназа. Покрашенна&#255; в &#255;ркий камуфляж Свободы и облегченна&#255; дл&#255; улучшени&#255; подвижности, эта верси&#255; Берилла была обработана специальными реагентами, ослабл&#255;ющими вред от аномальных угроз."
 	eng_desc = "This stalker bodysuit with reinforced body armor made by Freedom craftsmen represents a good compromise between combat and anomaly protection. The built-in body armor comprises armor plating and ten Kevlar layers, capable of stopping a pistol bullet. The suit uses the relatively expensive Sovereign compound for anomaly protection. Comes with an artifact container."
 	icon_state = "strazh"
 	item_state = "syndicate-green"
@@ -747,7 +747,7 @@
 
 /obj/item/clothing/suit/assaultmerc
 	name = "mercenary heavy armor"
-	desc = "Тяжелая комбинированная броня, включающая в себя многослойный баллистический жилет с воротником и защитой предплечий, а также по паре неопреново-пластиковых наручей и наголенников для защиты от укусов местной живности. Вы не уверены, что такой костюм хорошо защитит от аномалий, но для условий зоны сложно найти боевую броню получше."
+	desc = "Тяжела&#255; комбинированна&#255; брон&#255;, включающа&#255; в себя многослойный баллистический жилет с воротником и защитой предплечий, а также по паре неопреново-пластиковых наручей и наголенников для защиты от укусов местной живности. Вы не уверены, что такой костюм хорошо защитит от аномалий, но дл&#255; условий зоны сложно найти боевую броню получше."
 	icon_state = "assaultmerc"
 	item_state = "syndicate-black"
 	blood_overlay_type = "armor"
@@ -764,7 +764,7 @@
 
 /obj/item/clothing/suit/hooded/kombez/kombez_bandit
 	name = "bandit armor"
-	desc = "Комбинезон сталкера из группировки 'Бандиты'. За основу взяты образцы экипировки спецназа западных армий. За счёт специальной обработки ткани усилена устойчивость брони при физическом смещении пластин. По защитным характеристикам немного превосходит армейские бронежилеты серии ПС3-7."
+	desc = "Комбинезон сталкера из группировки 'Бандиты'. За основу вз&#255;ты образцы экипировки спецназа западных армий. За счёт специальной обработки ткани усилена устойчивость брони при физическом смещении пластин. По защитным характеристикам немного превосходит армейские бронежилеты серии ПС3-7."
 	eng_desc = "Stalker suit from the Bandits faction. Its design is based on the suit used by the special forces of the Western armies. Due to a special treatment of the fabric, the armor has a strengthened stability during the physical movement of its plates. Its protective properties are slightly better then those of the PSZ-7 military bulletproof suits."
 	icon_state = "combez_bandit"
 	item_state = "syndicate-orange"
