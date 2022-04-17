@@ -85,11 +85,12 @@
 </html>"}
 
 /datum/browser/proc/get_content()
-	return up2ph({"
+	return {"
+	<meta charset='utf-8'>
 	[get_header()]
 	[content]
 	[get_footer()]
-	"})
+	"}
 
 /datum/browser/proc/open(use_onclose = TRUE)
 	if(isnull(window_id))	//null check because this can potentially nuke goonchat

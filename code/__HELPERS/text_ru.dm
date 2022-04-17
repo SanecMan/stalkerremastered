@@ -7,12 +7,6 @@
 
 //convesion stuff
 
-/proc/ph_to_pb(text)
-	return replacetext(text,PHC,PBC)
-
-/proc/pb_to_ph(text)
-	return replacetext(text,PBC,PHC)
-
 GLOBAL_LIST_INIT(rus_unicode_conversion,list(
 	"А" = "1040", "а" = "1072",
 	"Б" = "1041", "б" = "1073",
@@ -89,61 +83,16 @@ GLOBAL_LIST_INIT(rus_unicode_conversion_hex,list(
 
 GLOBAL_LIST_INIT(rus_unicode_fix,null)
 
-/proc/up2ph(text)
-	text = strip_macros(text)
-	text = pb_to_ph(text)
-
-	for(var/s in GLOB.rus_unicode_conversion)
-		text = replacetext(text, s, "&#[GLOB.rus_unicode_conversion[s]];")
-
-	return text
-
-/proc/ph2up(text) //dumb as fuck but necessary
-	for(var/s in GLOB.rus_unicode_conversion)
-		text = replacetext(text, "&#[GLOB.rus_unicode_conversion[s]];",s)
-	return text
-
 /proc/pa2pb(t)
-	t = replacetext(t, PHC, UPC)
-	t = replacetext(t, PBC, UPC)
-	var/output = ""
-	var/L = length(t)
-	for(var/i = 1 to L)
-		output += "&#[text2ascii(t,i)];"
-	return output
+	return t
 
 //utility stuff
 
 /proc/r_uppertext(text)
-	var/t = ""
-	for(var/i = 1, i <= length(text), i++)
-		var/a = text2ascii(text, i)
-		if (a > 223)
-			t += ascii2text(a - 32)
-		else if (a == 184)
-			t += ascii2text(168)
-		else t += ascii2text(a)
-	return uppertext(t)
+	return uppertext(text)
 
 /proc/r_lowertext(text)
-	var/t = ""
-	for(var/i = 1, i <= length(text), i++)
-		var/a = text2ascii(text, i)
-		if (a > 191 && a < 224)
-			t += ascii2text(a + 32)
-		else if (a == 168)
-			t += ascii2text(184)
-		else t += ascii2text(a)
-	return lowertext(t)
-
-/proc/ruscapitalize(t)
-	var/s = 1
-	if (copytext(t,1,2) == ";" || copytext(t,1,2) == "#")
-		s += 1
-	else if (copytext(t,1,2) == ":")
-		s += 2
-	s = findtext(t, regex("\[^ \]","g"), s) + 1
-	return r_uppertext(copytext(t, 1, s)) + copytext(t, s)
+	return lowertext(text)
 
 //sanitization shit
 
@@ -152,65 +101,17 @@ GLOBAL_LIST_INIT(rus_unicode_fix,null)
 	t = replacetext(t, "\improper", "")
 	return t
 
-/proc/sanitize_russian(t)
-	t = strip_macros(t)
-	return replacetext(t, UPC, PHC)
-
-/proc/sanitize_russian_list(list) //recursive variant
-	for(var/i in list)
-		if(islist(i))
-			sanitize_russian_list(i)
-
-		if(list[i])
-			if(istext(list[i]))
-				list[i] = sanitize_russian(list[i])
-			else if(islist(list[i]))
-				sanitize_russian_list(list[i])
-
 /proc/rhtml_encode(t)
-	t = strip_macros(t)
-	t = rhtml_decode(t)
-	var/list/c = splittext(t, UPC)
-	if(c.len == 1)
-		return html_encode(t)
-	var/out = ""
-	var/first = 1
-	for(var/text in c)
-		if(!first)
-			out += PHC
-		first = 0
-		out += html_encode(text)
-	return out
+	return t
 
 proc/rhtml_decode(var/t)
-	t = replacetext(t, PHC, UPC)
-	t = replacetext(t, PBC, UPC)
 	t = html_decode(t)
 	return t
 
 /proc/r_json_encode(json_data)
-	if(!GLOB.rus_unicode_fix) // Генерируем табилцу замены
-		GLOB.rus_unicode_fix = list()
-		for(var/s in GLOB.rus_unicode_conversion_hex)
-			if(s == UPC) // UPC breaks json_encode, so here is workaround
-				GLOB.rus_unicode_fix[PHC] = "\\u[GLOB.rus_unicode_conversion_hex[s]]"
-				continue
-
-			GLOB.rus_unicode_fix[copytext(json_encode(s), 2, -1)] = "\\u[GLOB.rus_unicode_conversion_hex[s]]"
-
-	sanitize_russian_list(json_data)
-	var/json = json_encode(json_data)
-
-	for(var/s in GLOB.rus_unicode_fix)
-		json = replacetext(json, s, GLOB.rus_unicode_fix[s])
-
-	return json
+	return json_data
 
 /proc/r_json_decode(text) //now I'm stupid
-	for(var/s in GLOB.rus_unicode_conversion_hex)
-		if (s == "я")
-			text = replacetext(text, "\\u[GLOB.rus_unicode_conversion_hex[s]]", "&#255;")
-		text = replacetext(text, "\\u[GLOB.rus_unicode_conversion_hex[s]]", s)
 	return json_decode(text)
 
 #undef UPC

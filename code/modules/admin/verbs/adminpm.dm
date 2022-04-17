@@ -91,7 +91,6 @@
 			return
 		if(!msg)
 			msg = input(src,"Message:", "Private message to Administrator") as message|null
-			msg = sanitize_russian(msg)
 
 		if(!msg)
 			return
@@ -138,7 +137,6 @@
 		if(!msg)
 			return
 
-	msg = sanitize_russian(msg)
 	var/rawmsg = msg
 
 	if(holder)

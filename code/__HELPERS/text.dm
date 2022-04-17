@@ -269,8 +269,13 @@
 	return trim_left(trim_right(text))
 
 //Returns a string with the first element of the string capitalized.
-/proc/capitalize(t as text)
-	return ruscapitalize(uppertext(copytext(t, 1, 2)) + copytext(t, 2))
+/proc/capitalize(t)
+	. = t
+	if(isatom(t))
+		var/atom/A = t
+		t = A.name
+	. = copytext_char(t, 1, 2)
+	return uppertext(.) + copytext_char(t, 2)
 
 //Centers text by adding spaces to either side of the string.
 /proc/dd_centertext(message, length)
