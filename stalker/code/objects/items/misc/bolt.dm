@@ -1,6 +1,6 @@
 /obj/item/stalker/bolts
 	name = "bolts"
-	desc = "Куча болтов."
+	desc = "РљСѓС‡Р° Р±РѕР»С‚РѕРІ."
 	eng_desc = "A pile of bolts."
 	icon = 'stalker/icons/bolt.dmi'
 	icon_state = "kucha"
@@ -11,11 +11,11 @@
 		if(user.client && (user.client.prefs.chat_toggles & CHAT_LANGUAGE))
 			user << "<span class='notice'>You place a bolt in the pile.</span>"
 		else
-			user << "<span class='notice'>Вы кладёте болт в кучу.</span>"
+			user << "<span class='notice'>Р’С‹ РєР»Р°РґС‘С‚Рµ Р±РѕР»С‚ РІ РєСѓС‡Сѓ.</span>"
 
 /obj/item/stalker/bolt
 	name = "bolt"
-	desc = "Старый советский болт, пораженный коррозией,"
+	desc = "РЎС‚Р°СЂС‹Р№ СЃРѕРІРµС‚СЃРєРёР№ Р±РѕР»С‚, РїРѕСЂР°Р¶РµРЅРЅС‹Р№ РєРѕСЂСЂРѕР·РёРµР№,"
 	eng_desc = "Old sovit bolt affected by corrosion."
 	icon = 'stalker/icons/bolt.dmi'
 	icon_state = "bolt"
@@ -73,7 +73,7 @@
 	if(user.client && (user.client.prefs.chat_toggles & CHAT_LANGUAGE))
 		user << "<span class='notice'>You take a bolt out of the pile.</span>"
 	else
-		user << "<span class='notice'>Вы достаете болт из кучи.</span>"
+		user << "<span class='notice'>Р’С‹ РґРѕСЃС‚Р°РµС‚Рµ Р±РѕР»С‚ РёР· РєСѓС‡Рё.</span>"
 
 	add_fingerprint(user)
 

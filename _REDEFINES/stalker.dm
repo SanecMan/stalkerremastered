@@ -4,14 +4,14 @@
 ///////////////JOB
 #define UNIFORMPICK (pick(/obj/item/clothing/under/color/switer, /obj/item/clothing/under/color/switer/dark, /obj/item/clothing/under/color/switer/lolg, /obj/item/clothing/under/color/switer/tracksuit))
 
-///////////////–≈…“»Õ√
+///////////////–†–ï–ô–¢–ò–ù–ì
 #define ZONE_LEGEND							10000
 #define EXPERT								7000
 #define VETERAN								5000
 #define EXPERIENCED							3000
 #define ROOKIE								0
 
-///////////////–≈œ”“¿÷»ﬂ
+///////////////–†–ï–ü–£–¢–ê–¶–ò–Ø
 #define AMAZING								3000
 #define VERYGOOD							2500
 #define GOOD								1750

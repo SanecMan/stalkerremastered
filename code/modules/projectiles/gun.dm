@@ -73,8 +73,8 @@
 
 	var/can_scope = 0
 	var/draw_sound = 'stalker/sound/weapons/draw/ak74_draw.ogg'
-	var/damagelose = 0		 //1 урона за 1 тайл = 0.33 ед
-	var/distro = 0			 //зазор между дробью для дробовиков
+	var/damagelose = 0		 //1 СѓСЂРѕРЅР° Р·Р° 1 С‚Р°Р№Р» = 0.33 РµРґ
+	var/distro = 0			 //Р·Р°Р·РѕСЂ РјРµР¶РґСѓ РґСЂРѕР±СЊСЋ РґР»СЏ РґСЂРѕР±РѕРІРёРєРѕРІ
 	var/durability = 100     //durability of a gun
 	var/jam = 0              //is weapon jammed or not
 	var/list/obj/item/attachment/addons = list()
@@ -96,7 +96,7 @@
 					explosion(src.loc,-2,-2,2,flame_range = 0)
 					qdel(src)
 					src = null
-					to_chat(user, "<span class='userdanger'>Оружие взорвалось прямо у вас в руках!</span>")
+					to_chat(user, "<span class='userdanger'>РћСЂСѓР¶РёРµ РІР·РѕСЂРІР°Р»РѕСЃСЊ РїСЂСЏРјРѕ Сѓ РІР°СЃ РІ СЂСѓРєР°С…!</span>")
 					return
 				else
 					if(prob(40))
@@ -106,7 +106,7 @@
 				if(prob(10))
 					user.dropItemToGround(src)
 					shake_camera(user, 4, 2)
-					to_chat(user, "<span class='userdanger'Кажется самое время починить этот хлам или выбросить, пока он не выстрелил тебе в лицо.</span>")
+					to_chat(user, "<span class='userdanger'РљР°Р¶РµС‚СЃСЏ СЃР°РјРѕРµ РІСЂРµРјСЏ РїРѕС‡РёРЅРёС‚СЊ СЌС‚РѕС‚ С…Р»Р°Рј РёР»Рё РІС‹Р±СЂРѕСЃРёС‚СЊ, РїРѕРєР° РѕРЅ РЅРµ РІС‹СЃС‚СЂРµР»РёР» С‚РµР±Рµ РІ Р»РёС†Рѕ.</span>")
 					jam = 1
 				else
 					if(prob(20))
@@ -190,9 +190,9 @@
 	if(durability)
 		percentage = (durability / (initial(durability)))*100
 		if(percentage >= 50)
-			to_chat(user, "<span class='notice'>Прочность: [percentage]%</span>")
+			to_chat(user, "<span class='notice'>РџСЂРѕС‡РЅРѕСЃС‚СЊ: [percentage]%</span>")
 		else
-			to_chat(user, "<span class='warning'>Прочность: [percentage]%</span>")
+			to_chat(user, "<span class='warning'>РџСЂРѕС‡РЅРѕСЃС‚СЊ: [percentage]%</span>")
 
 /obj/item/gun/equipped(mob/living/user, slot)
 	. = ..()
@@ -300,7 +300,7 @@
 		if(user.client && (user.client.prefs.chat_toggles & CHAT_LANGUAGE))
 			to_chat(user, "<span class='warning'>You can't shoot in the safezone!</span>")
 		else
-			to_chat(user, "<span class='warning'>Вы не можете стрелять в этой зоне!</span>")
+			to_chat(user, "<span class='warning'>Р’С‹ РЅРµ РјРѕР¶РµС‚Рµ СЃС‚СЂРµР»СЏС‚СЊ РІ СЌС‚РѕР№ Р·РѕРЅРµ!</span>")
 		return 0
 	if(!handle_pins(user))
 		return FALSE
@@ -354,11 +354,11 @@
 				if(!chambered.fire_casing(target, user, params, distro, suppressed, zone_override, sprd, damagelose))
 					shoot_with_empty_chamber(user)
 					playsound(user, fire_sound, 50, 1)
-					to_chat(user, "<span class='warning'>Оружие заклинило. Его необходимо перезарядить.</span>")
+					to_chat(user, "<span class='warning'>РћСЂСѓР¶РёРµ Р·Р°РєР»РёРЅРёР»Рѕ. Р•РіРѕ РЅРµРѕР±С…РѕРґРёРјРѕ РїРµСЂРµР·Р°СЂСЏРґРёС‚СЊ.</span>")
 					firing_burst = 0
 					return
 				else
-					to_chat(user, "<span class='warning'>Оружие заклинило. Его необходимо перезарядить.</span>")
+					to_chat(user, "<span class='warning'>РћСЂСѓР¶РёРµ Р·Р°РєР»РёРЅРёР»Рѕ. Р•РіРѕ РЅРµРѕР±С…РѕРґРёРјРѕ РїРµСЂРµР·Р°СЂСЏРґРёС‚СЊ.</span>")
 	else
 		shoot_with_empty_chamber(user)
 		firing_burst = FALSE
@@ -413,11 +413,11 @@
 					if(!chambered.fire_casing(target, user, params, distro, suppressed, zone_override, sprd, damagelose))
 						shoot_with_empty_chamber(user)
 						playsound(user, fire_sound, 50, 1)
-						to_chat(user, "<span class='warning'>Оружие заклинило. Его необходимо перезарядить.</span>")
+						to_chat(user, "<span class='warning'>РћСЂСѓР¶РёРµ Р·Р°РєР»РёРЅРёР»Рѕ. Р•РіРѕ РЅРµРѕР±С…РѕРґРёРјРѕ РїРµСЂРµР·Р°СЂСЏРґРёС‚СЊ.</span>")
 						firing_burst = 0
 						return
 					else
-						to_chat(user, "<span class='warning'>Оружие заклинило. Его необходимо перезарядить.</span>")
+						to_chat(user, "<span class='warning'>РћСЂСѓР¶РёРµ Р·Р°РєР»РёРЅРёР»Рѕ. Р•РіРѕ РЅРµРѕР±С…РѕРґРёРјРѕ РїРµСЂРµР·Р°СЂСЏРґРёС‚СЊ.</span>")
 		else
 			shoot_with_empty_chamber(user)
 			return

@@ -1,6 +1,6 @@
 /obj/item/reagent_containers/hypospray/medipen/stalker/antirad
 	name = "Anti-rad"
-	desc = "Набор таблеток с активными веществами, способствующими выведению радионуклидов из организма. Не способны защитить организм от наведённой радиации, но снижают уже полученную человеком дозу. Комплект расчитан на 2 применени&#255;."
+	desc = "РќР°Р±РѕСЂ С‚Р°Р±Р»РµС‚РѕРє СЃ Р°РєС‚РёРІРЅС‹РјРё РІРµС‰РµСЃС‚РІР°РјРё, СЃРїРѕСЃРѕР±СЃС‚РІСѓСЋС‰РёРјРё РІС‹РІРµРґРµРЅРёСЋ СЂР°РґРёРѕРЅСѓРєР»РёРґРѕРІ РёР· РѕСЂРіР°РЅРёР·РјР°. РќРµ СЃРїРѕСЃРѕР±РЅС‹ Р·Р°С‰РёС‚РёС‚СЊ РѕСЂРіР°РЅРёР·Рј РѕС‚ РЅР°РІРµРґС‘РЅРЅРѕР№ СЂР°РґРёР°С†РёРё, РЅРѕ СЃРЅРёР¶Р°СЋС‚ СѓР¶Рµ РїРѕР»СѓС‡РµРЅРЅСѓСЋ С‡РµР»РѕРІРµРєРѕРј РґРѕР·Сѓ. РљРѕРјРїР»РµРєС‚ СЂР°СЃС‡РёС‚Р°РЅ РЅР° 2 РїСЂРёРјРµРЅРµРЅРё&#255;."
 	eng_desc = "Mexaminum radiation protection drugs are common in the Zone. When used, this drug induces contraction of peripheral blood vessels and oxygen deprivation, which serves to treat and prevent radiation exposure. The drug does not have severe side effects, although isolated cases of mild nausea, dizziness, cramps and stomach pain have been reported. Can be used twice."
 	icon = 'stalker/icons/items.dmi'
 	icon_state = "antirad"

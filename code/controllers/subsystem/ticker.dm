@@ -193,7 +193,7 @@ SUBSYSTEM_DEF(ticker)
 
 
 /datum/controller/subsystem/ticker/proc/setup()
-	to_chat(world, "<span class='boldannounce'>Запускаем мир...</span>")
+	to_chat(world, "<span class='boldannounce'>Р—Р°РїСѓСЃРєР°РµРј РјРёСЂ...</span>")
 	var/init_start = world.timeofday
 		//Create and announce mode
 	var/list/datum/game_mode/runnable_modes
@@ -238,7 +238,7 @@ SUBSYSTEM_DEF(ticker)
 		if(!can_continue)
 			log_game("[mode.name] failed pre_setup, cause: [mode.setup_error]")
 			QDEL_NULL(mode)
-			to_chat(world, "<B>Что-то сломалось [GLOB.master_mode].</B> Откатываем таймер.")
+			to_chat(world, "<B>Р§С‚Рѕ-С‚Рѕ СЃР»РѕРјР°Р»РѕСЃСЊ [GLOB.master_mode].</B> РћС‚РєР°С‚С‹РІР°РµРј С‚Р°Р№РјРµСЂ.")
 			SSjob.ResetOccupations()
 			return 0
 	else
@@ -583,10 +583,10 @@ SUBSYSTEM_DEF(ticker)
 
 	var/skip_delay = check_rights()
 	if(delay_end && !skip_delay)
-		to_chat(world, "<span class='boldannounce'>Раунд продолжается.</span>")
+		to_chat(world, "<span class='boldannounce'>Р Р°СѓРЅРґ РїСЂРѕРґРѕР»Р¶Р°РµС‚СЃСЏ.</span>")
 		return
 
-	to_chat(world, "<span class='boldannounce'>Перезагружаем мир...</span>")
+	to_chat(world, "<span class='boldannounce'>РџРµСЂРµР·Р°РіСЂСѓР¶Р°РµРј РјРёСЂ...</span>")
 
 	var/start_wait = world.time
 	UNTIL(round_end_sound_sent || (world.time - start_wait) > (delay * 2))	//don't wait forever
@@ -605,7 +605,7 @@ SUBSYSTEM_DEF(ticker)
 	else if(gamelogloc)
 		to_chat(world, "<span class='info'>Round logs can be located <a href=\"[gamelogloc]\">at this website!</a></span>")
 
-	log_game("<span class='boldannounce'>Перезагружаем мир...</span>")
+	log_game("<span class='boldannounce'>РџРµСЂРµР·Р°РіСЂСѓР¶Р°РµРј РјРёСЂ...</span>")
 
 	world.Reboot()
 

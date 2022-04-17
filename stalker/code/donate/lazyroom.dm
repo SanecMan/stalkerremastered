@@ -1,6 +1,6 @@
 /obj/effect/forcefield/lazyvip
 	name = "VIP room"
-	desc = "Достойное место для достойных людей."
+	desc = "Р”РѕСЃС‚РѕР№РЅРѕРµ РјРµСЃС‚Рѕ РґР»СЏ РґРѕСЃС‚РѕР№РЅС‹С… Р»СЋРґРµР№."
 	icon = 'icons/obj/watercloset.dmi'
 	icon_state = "closed"
 	timeleft = 0
@@ -22,12 +22,12 @@
 
 	for(var/obj/item/I in AM.GetAllContents())
 		if(istype(I, /obj/item/vipcard))
-			say("<span class='robot'>О, вы же [AM]! Проходите скорее!</span>")
+			say("<span class='robot'>Рћ, РІС‹ Р¶Рµ [AM]! РџСЂРѕС…РѕРґРёС‚Рµ СЃРєРѕСЂРµРµ!</span>")
 			vip_users += AM
 			qdel(I)
 
 /obj/item/vipcard
 	name = "VIP card"
-	desc = "Достойная вещь достойного человека для доступа в достойное помещение."
+	desc = "Р”РѕСЃС‚РѕР№РЅР°СЏ РІРµС‰СЊ РґРѕСЃС‚РѕР№РЅРѕРіРѕ С‡РµР»РѕРІРµРєР° РґР»СЏ РґРѕСЃС‚СѓРїР° РІ РґРѕСЃС‚РѕР№РЅРѕРµ РїРѕРјРµС‰РµРЅРёРµ."
 	icon = 'icons/obj/card.dmi'
 	icon_state = "data_1"

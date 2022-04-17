@@ -1,13 +1,13 @@
 /obj/machinery/campfire
 	name = "Campfire"
-	desc = "Бочка с парой сухих дровишек внутри. Можно зажечь спичками или зажигалкой."
+	desc = "Р‘РѕС‡РєР° СЃ РїР°СЂРѕР№ СЃСѓС…РёС… РґСЂРѕРІРёС€РµРє РІРЅСѓС‚СЂРё. РњРѕР¶РЅРѕ Р·Р°Р¶РµС‡СЊ СЃРїРёС‡РєР°РјРё РёР»Рё Р·Р°Р¶РёРіР°Р»РєРѕР№."
 	eng_desc = "Barrel with a couple of logs inside it. If you light it you can heal by sitting near it."
 	icon = 'stalker/icons/stalker.dmi'
 	icon_state = "campfire0"
 	anchored = 1
 	var/firecolor = "#FFAA33"
 	var/sound_playing = 0
-	var/cooldown = 5 					//Кулдаун в секундах
+	var/cooldown = 5 					//РљСѓР»РґР°СѓРЅ РІ СЃРµРєСѓРЅРґР°С…
 	var/incooldown = 0
 	var/active = 0
 	var/list/mob/living/carbon/campers = list()
@@ -113,7 +113,7 @@ obj/machinery/campfire/process()
 				usr.visible_message("[usr] lit a fire.", "<span class='notice'>You lit a fire.</span>")
 				update_icon()
 				soundloop.start()
-				desc = "От костра исходит тёпло и м&#255;гкий свет."
+				desc = "РћС‚ РєРѕСЃС‚СЂР° РёСЃС…РѕРґРёС‚ С‚С‘РїР»Рѕ Рё Рј&#255;РіРєРёР№ СЃРІРµС‚."
 				eng_desc = "Campfire emites warm and calmness. You can heal by sitting in it's range."
 				set_light(4, 1, firecolor)
 				spawn(10)
@@ -132,7 +132,7 @@ obj/machinery/campfire/process()
 				usr.visible_message("[usr] lit a fire.", "<span class='notice'>You lit a fire.</span>")
 				update_icon()
 				soundloop.start()
-				desc = "От костра исходит тёпло и м&#255;гкий свет."
+				desc = "РћС‚ РєРѕСЃС‚СЂР° РёСЃС…РѕРґРёС‚ С‚С‘РїР»Рѕ Рё Рј&#255;РіРєРёР№ СЃРІРµС‚."
 				eng_desc = "Campfire emites warm and calmness. You can heal by sitting in it's range."
 				set_light(4, 1, firecolor)
 				spawn(10)

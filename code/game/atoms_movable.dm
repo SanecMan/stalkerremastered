@@ -12,11 +12,11 @@
 	var/mob/pulledby = null
 	var/initial_language_holder = /datum/language_holder
 	var/datum/language_holder/language_holder
-	var/verb_say = "говорит"
-	var/verb_ask = "спрашивает"
-	var/verb_exclaim = "восклицает"
-	var/verb_whisper = "шепчет"
-	var/verb_yell = "вопит"
+	var/verb_say = "РіРѕРІРѕСЂРёС‚"
+	var/verb_ask = "СЃРїСЂР°С€РёРІР°РµС‚"
+	var/verb_exclaim = "РІРѕСЃРєР»РёС†Р°РµС‚"
+	var/verb_whisper = "С€РµРїС‡РµС‚"
+	var/verb_yell = "РІРѕРїРёС‚"
 	var/inertia_dir = 0
 	var/atom/inertia_last_loc
 	var/inertia_moving = 0

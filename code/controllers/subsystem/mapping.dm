@@ -210,7 +210,7 @@ SUBSYSTEM_DEF(mapping)
 		if (!pm.load(1, 1, start_z + parsed_maps[P], no_changeturf = TRUE))
 			errorList |= pm.original_path
 	if(!silent)
-		INIT_ANNOUNCE("Зона загружена за [(REALTIMEOFDAY - start_time)/10] секунд.")
+		INIT_ANNOUNCE("Р—РѕРЅР° Р·Р°РіСЂСѓР¶РµРЅР° Р·Р° [(REALTIMEOFDAY - start_time)/10] СЃРµРєСѓРЅРґ.")
 	return parsed_maps
 
 /datum/controller/subsystem/mapping/proc/loadWorld()
@@ -222,7 +222,7 @@ SUBSYSTEM_DEF(mapping)
 
 	// load the station
 	station_start = world.maxz + 1
-	INIT_ANNOUNCE("Загружаем зону...")
+	INIT_ANNOUNCE("Р—Р°РіСЂСѓР¶Р°РµРј Р·РѕРЅСѓ...")
 	LoadGroup(FailedZs, "Station", config.map_path, config.map_file, config.traits, ZTRAITS_STATION)
 
 	if(SSdbcore.Connect())
