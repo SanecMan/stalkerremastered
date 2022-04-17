@@ -147,11 +147,8 @@
 /obj/structure/chair/brevno/log2
 	icon_state = "log2"
 
-/obj/effect/landmark/latejoin/assistant
-	name = "JoinLateStalker"
-
 /obj/effect/landmark/latejoin/stalker
-	name = "JoinLate Stalker"
+	name = "JoinLateStalker"
 
 /obj/effect/landmark/latejoin/bandit
 	name = "JoinLateBandit"
