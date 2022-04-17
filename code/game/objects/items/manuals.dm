@@ -12,7 +12,7 @@
 	author = "Farmer John" // Whoever wrote the paper or book, can be changed by pen or PC. It is not automatically assigned.
 	title = "The Human Harvest - From seed to market"
 	//book contents below
-	dat = {"<html>
+	dat = {"<html><meta charset='utf-8'>
 				<head>
 				<style>
 				h1 {font-size: 18px; margin: 15px 0px 5px;}
@@ -47,7 +47,7 @@
 	icon_state ="book"
 	author = "Weyland-Yutani Corp"
 	title = "APLU \"Ripley\" Construction and Operation Manual"
-	dat = {"<html>
+	dat = {"<html><meta charset='utf-8'>
 				<head>
 				<style>
 				h1 {font-size: 18px; margin: 15px 0px 5px;}
@@ -120,7 +120,7 @@
 	icon_state = "cooked_book"
 	author = "Lord Frenrir Cageth"
 	title = "Chef Recipes"
-	dat = {"<html>
+	dat = {"<html><meta charset='utf-8'>
 				<head>
 				<style>
 				h1 {font-size: 18px; margin: 15px 0px 5px;}
@@ -201,7 +201,7 @@
 	icon_state ="bookNuclear"
 	author = "Syndicate"
 	title = "Fission Mailed: Nuclear Sabotage 101"
-	dat = {"<html>
+	dat = {"<html><meta charset='utf-8'>
 			Nuclear Explosives 101:<br>
 			Hello and thank you for choosing the Syndicate for your nuclear information needs.<br>
 			Today's crash course will deal with the operation of a Fusion Class Nanotrasen made Nuclear Device.<br>
@@ -248,7 +248,7 @@
 	if(wikiurl)
 		dat = {"
 
-			<html><head>
+			<html><meta charset='utf-8'><head>
 			<style>
 				iframe {
 					display: none;

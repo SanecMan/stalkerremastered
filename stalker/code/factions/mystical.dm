@@ -7,7 +7,7 @@
 	if(mob.job != "Black Stalker")
 		return
 
-	var/dat = "<html><head><title>Black Stalker Karma Panel</title></head><body>"
+	var/dat = "<html><meta charset='utf-8'><head><title>Black Stalker Karma Panel</title></head><body>"
 	dat += {"
 			<style>
 			  tr

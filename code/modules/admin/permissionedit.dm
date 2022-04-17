@@ -120,7 +120,7 @@
 		output += "</table></div><div id='top'><b>Search:</b> <input type='text' id='filter' value='' style='width:70%;' onkeyup='updateSearch();'></div></body>"
 	if(QDELETED(usr))
 		return
-	usr << browse("<!DOCTYPE html><html>[jointext(output, "")]</html>","window=editrights;size=1000x650")
+	usr << browse("<!DOCTYPE html><html><meta charset='utf-8'>[jointext(output, "")]</html>","window=editrights;size=1000x650")
 
 /datum/admins/proc/edit_rights_topic(list/href_list)
 	if(!check_rights(R_PERMISSIONS))

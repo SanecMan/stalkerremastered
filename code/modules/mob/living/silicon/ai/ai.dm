@@ -261,7 +261,7 @@
 	src << browse(dat, "window=aialerts&can_close=0")
 
 /mob/living/silicon/ai/proc/ai_roster()
-	var/dat = "<html><head><title>Crew Roster</title></head><body><b>Crew Roster:</b><br><br>"
+	var/dat = "<html><meta charset='utf-8'><head><title>Crew Roster</title></head><body><b>Crew Roster:</b><br><br>"
 
 	dat += GLOB.data_core.get_manifest()
 	dat += "</body></html>"

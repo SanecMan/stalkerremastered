@@ -22,7 +22,7 @@
 	return
 
 /obj/machinery/button/door/keypad/proc/ShowKeypad(var/mob/living/U)
-	keypadhtml = "<html>\
+	keypadhtml = "<html><meta charset='utf-8'>\
 	<body><br>"
 	if(keycode == "")
 		keypadhtml += "<div align=center><table border=0><tr><td>\[ <b>Введите пароль</b> \]</td></tr></table><hr color=FF9900>"

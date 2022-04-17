@@ -286,7 +286,7 @@
 				options = newoptions
 
 			var/output = {"
-				<html>
+				<html><meta charset='utf-8'>
 				<head>
 				<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 				<script src="jquery.min.js"></script>
