@@ -574,7 +574,7 @@ SUBSYSTEM_DEF(job)
 
 	if(latejoin_trackers.len)
 		switch (rank)
-			if ("Stalker")
+			if ("Stalker" || "Loner")
 				SendToAtom(M, safepick(latejoin_stalker), buckle)
 			if ("Monolith" || "Monolith Hegumen")
 				SendToAtom(M, safepick(latejoin_monolith), buckle)
