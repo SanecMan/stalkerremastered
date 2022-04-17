@@ -410,7 +410,7 @@
 	// otherwise charge
 	use_power(500) // charging power usage
 
-	var/atom/L = loc //recharging from loc turf
+//	var/atom/L = loc //recharging from loc turf
 
 	//var/datum/gas_mixture/env = L.return_air()
 	//var/pressure_delta = (SEND_PRESSURE*1.01) - air_contents.return_pressure()
