@@ -1,9 +1,9 @@
 #define UPC "я"
-#define PHC "&#1103;"
+#define PHC "я"
 #define PHCH "&#x044f;"
-#define PBC "&#255;"
+#define PBC "я"
 
-//html uses "&#1103;" (unicode), byond dialogs use "&#255;" (ascii)
+//html uses "я" (unicode), byond dialogs use "я" (ascii)
 
 //convesion stuff
 
@@ -101,7 +101,7 @@ GLOBAL_LIST_INIT(rus_unicode_fix,null)
 	t = replacetext(t, "\improper", "")
 	return t
 
-/proc/rhtml_encode(t)
+/proc/html_encode(t)
 	return t
 
 proc/rhtml_decode(var/t)

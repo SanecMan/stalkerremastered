@@ -24,7 +24,7 @@
 		if(src.client && (src.client.prefs.chat_toggles & CHAT_LANGUAGE))
 			src << "<span class='warning'>You can't be here!</span>"
 		else
-			src << "<span class='warning'>Вы не можете находитьc&#255; в этой зоне!</span>"
+			src << "<span class='warning'>Вы не можете находитьcя в этой зоне!</span>"
 		return 0
 	return ..()
 */
@@ -56,7 +56,7 @@
 
 /mob/living/simple_animal/hostile/mutant/dog
 	name = "dog mutant"
-	desc = "Мутировавша&#255; слепа&#255; дика&#255; собака."
+	desc = "Мутировавшая слепая дикая собака."
 	eng_desc = "This dog became blind because of the radiation, allowing him to develop a more precise sense of smell. Its skin is of a maroon color, and the lack of food shows the bones of its ribcage.His tail is edible and so taking it would be a good idea to make a soup or sell it."
 	turns_per_move = 15
 	speed = 1
@@ -200,7 +200,7 @@
 
 /mob/living/simple_animal/hostile/mutant/flesh
 	name = "flesh"
-	desc = "Мутировавша&#255; свинь&#255;."
+	desc = "Мутировавшая свинья."
 	eng_desc = "This abomination is a horribly mutated pig affected by radiation.His three eyes have lost all the vigor of life and his eyes are empty.Despite his large, heavy legs, he seems to be able to move at a decent speed, and is apparently able to catch up with a running human."
 	turns_per_move = 15
 	speed = 5

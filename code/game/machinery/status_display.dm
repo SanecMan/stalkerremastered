@@ -116,9 +116,9 @@
 	if (message1 || message2)
 		var/list/msg = list("The display says:")
 		if (message1)
-			msg += "<br>\t<tt>[rhtml_encode(message1)]</tt>"
+			msg += "<br>\t<tt>[html_encode(message1)]</tt>"
 		if (message2)
-			msg += "<br>\t<tt>[rhtml_encode(message2)]</tt>"
+			msg += "<br>\t<tt>[html_encode(message2)]</tt>"
 		to_chat(user, msg.Join())
 
 // Helper procs for child display types.

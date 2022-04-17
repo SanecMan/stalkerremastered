@@ -34,7 +34,7 @@ var/global/global_lentahtml = ""
 	var/password = null
 	var/hacked = 0
 	var/rep_color_s = "#ffe100"
-	var/rep_name_s = "Нейтральна&#x44F;"
+	var/rep_name_s = "Нейтральная"
 	var/eng_rep_name_s = "Neutral"
 	var/rus_rank_name_s = "Новичок"
 	var/eng_rank_name_s = "Rookie"
@@ -141,7 +141,7 @@ var/global/global_lentahtml = ""
 
 	//user.set_machine(src)
 	mainhtml ="<html> \
-	\
+	<meta charset='utf-8'>\
 	<style>\
 	a:link {color: #607D8B;}\
 	a:visited {color: #607D8B;}\
@@ -334,10 +334,10 @@ var/global/global_lentahtml = ""
 				 <b>Reputation:</b> <font color=\"[rep_color_s]\">[eng_rep_name_s]</font>"
 			else
 				mainhtml +="\
-				 <b>Им&#x44F;:</b> [owner.real_name]<br><br>\
+				 <b>Имя:</b> [owner.real_name]<br><br>\
 				 <b>Группировка:</b> [rus_faction_s]<br><br>\
 				 <b>Ранг:</b> [rating]<br><br>\
-				 <b>Репутаци&#x44F;:</b> <font color=\"[rep_color_s]\">[rep_name_s]</font>"
+				 <b>Репутация:</b> <font color=\"[rep_color_s]\">[rep_name_s]</font>"
 
 
 			 mainhtml +="\
@@ -397,10 +397,10 @@ var/global/global_lentahtml = ""
 
 					else
 						mainhtml+="\
-					<b>Им&#x44F;:</b> [owner.real_name]<br>\
+					<b>Имя:</b> [owner.real_name]<br>\
 					<b>Группировка:</b> [rus_faction_s]<br>\
 					<b>Ранг:</b> [rus_rank_name_s] ([rating])<br>\
-					<b>Репутаци&#x44F;:</b> <font color=\"[rep_color_s]\">[rep_name_s] ([reputation])</font><br>\
+					<b>Репутация:</b> <font color=\"[rep_color_s]\">[rep_name_s] ([reputation])</font><br>\
 					<b>Баланс:</b> [num2text(money, 8)] RU<br>"
 
 					mainhtml +="\
@@ -804,13 +804,13 @@ var/global/global_lentahtml = ""
 				if(H.client.prefs.chat_toggles & CHAT_LANGUAGE)
 					to_chat(H, "<span class='notice'>Feed sound turned off.</span>")
 				else
-					to_chat(H, "<span class='notice'>Звук оповещени&#255; о сообщени&#255;х в ленте выключен.</span>")
+					to_chat(H, "<span class='notice'>Звук оповещения о сообщениях в ленте выключен.</span>")
 			else
 				switches |= FEED_SOUND
 				if(H.client.prefs.chat_toggles & CHAT_LANGUAGE)
 					to_chat(H, "<span class='notice'>Feed sound turned on.</span>")
 				else
-					to_chat(H, "<span class='notice'>Звук оповещени&#255; о сообщени&#255;х в ленте активирован.</span>")
+					to_chat(H, "<span class='notice'>Звук оповещения о сообщениях в ленте активирован.</span>")
 
 
 		if("lenta_images")
@@ -819,13 +819,13 @@ var/global/global_lentahtml = ""
 				if(H.client.prefs.chat_toggles & CHAT_LANGUAGE)
 					to_chat(H, "<span class='notice'>Stalker avatars in the feed now will not be downloaded.</span>")
 				else
-					to_chat(H, "<span class='notice'>Аватары сталкеров в ленте теперь не будут скачиватьс&#255;.</span>")
+					to_chat(H, "<span class='notice'>Аватары сталкеров в ленте теперь не будут скачиваться.</span>")
 			else
 				switches |= FEED_IMAGES
 				if(H.client.prefs.chat_toggles & CHAT_LANGUAGE)
 					to_chat(H, "<span class='notice'>Stalker avatars in the feed now will be downloaded.</span>")
 				else
-					to_chat(H, "<span class='notice'>Аватары сталкеров в ленте теперь будут скачиватьс&#255;.</span>")
+					to_chat(H, "<span class='notice'>Аватары сталкеров в ленте теперь будут скачиваться.</span>")
 
 		if("rating_images")
 			if(switches & RATING_IMAGES)
@@ -833,13 +833,13 @@ var/global/global_lentahtml = ""
 				if(H.client.prefs.chat_toggles & CHAT_LANGUAGE)
 					to_chat(H, "<span class='notice'>Stalker avatars in the rating now will not be downloaded.</span>")
 				else
-					to_chat(H, "<span class='notice'>Аватары сталкеров в рейтинге теперь не будут скачиватьс&#255;.</span>")
+					to_chat(H, "<span class='notice'>Аватары сталкеров в рейтинге теперь не будут скачиваться.</span>")
 			else
 				switches |= RATING_IMAGES
 				if(H.client.prefs.chat_toggles & CHAT_LANGUAGE)
 					to_chat(H, "<span class='notice'>Stalker avatars in the rating now will be downloaded.</span>")
 				else
-					to_chat(H, "<span class='notice'>Аватары сталкеров в рейтинге теперь будут скачиватьс&#255;.</span>")
+					to_chat(H, "<span class='notice'>Аватары сталкеров в рейтинге теперь будут скачиваться.</span>")
 
 		if("refresh_rating")
 			ratinghtml = ""
@@ -1464,21 +1464,21 @@ var/global/global_lentahtml = ""
 	return factioncolor
 
 /proc/get_rep_name(var/rep)
-	var/rep_name_s = "Нейтральна&#x44F;"
+	var/rep_name_s = "Нейтральная"
 
 	switch(rep)
 		if(AMAZING to INFINITY)
 			rep_name_s = "Блатной"
 		if(VERYGOOD to AMAZING)
-			rep_name_s = "Очень хороша&#x44F;"
+			rep_name_s = "Очень хорошая"
 		if(GOOD to VERYGOOD)
-			rep_name_s = "Хороша&#x44F;"
+			rep_name_s = "Хорошая"
 		if(BAD to GOOD)
-			rep_name_s = "Нейтральна&#x44F;"
+			rep_name_s = "Нейтральная"
 		if(VERYBAD to BAD)
-			rep_name_s = "Плоха&#x44F;"
+			rep_name_s = "Плохая"
 		if(DISGUSTING to VERYBAD)
-			rep_name_s = "Очень плоха&#x44F;"
+			rep_name_s = "Очень плохая"
 		if(-INFINITY to DISGUSTING)
 			rep_name_s = "Чёрт"
 

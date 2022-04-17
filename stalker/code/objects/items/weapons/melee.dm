@@ -1,6 +1,6 @@
 /obj/item/kitchen/knife/tourist
 	name = "tourist knife"
-	desc = "Дешевый, но достаточно хороший дл&#255; туриста."
+	desc = "Дешевый, но достаточно хороший для туриста."
 	eng_desc = "Cheap knife but good enough for a tourist."
 	icon = 'stalker/icons/weapons.dmi'
 	icon_state = "knife"
