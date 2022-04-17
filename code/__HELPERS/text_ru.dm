@@ -88,12 +88,6 @@ GLOBAL_LIST_INIT(rus_unicode_fix,null)
 
 //utility stuff
 
-/proc/r_uppertext(text)
-	return uppertext(text)
-
-/proc/r_lowertext(text)
-	return lowertext(text)
-
 //sanitization shit
 
 /proc/strip_macros(t)

@@ -88,7 +88,7 @@
 	var/newphrase=""
 	var/newletter=""
 	while(counter>=1)
-		newletter=copytext(phrase,(leng-counter)+1,(leng-counter)+2)
+		newletter=copytext_char(phrase,(leng-counter)+1,(leng-counter)+2)
 		if(rand(1,3)==3)
 			if(lowertext(newletter)=="o")
 				newletter="u"
@@ -101,23 +101,23 @@
 			if(lowertext(newletter)=="c")
 				newletter="k"
 			//russian alkashi
-			if(r_lowertext(newletter)=="о")	newletter="у"
-			if(r_lowertext(newletter)=="ы")	newletter="i"
-			if(r_lowertext(newletter)=="р")	newletter="r"
-			if(r_lowertext(newletter)=="л")	newletter="ль"
-			if(r_lowertext(newletter)=="з")	newletter="с"
-			if(r_lowertext(newletter)=="в")	newletter="ф"
-			if(r_lowertext(newletter)=="б")	newletter="п"
-			if(r_lowertext(newletter)=="г")	newletter="х"
-			if(r_lowertext(newletter)=="д")	newletter="т"
+			if(lowertext(newletter)=="о")	newletter="у"
+			if(lowertext(newletter)=="ы")	newletter="i"
+			if(lowertext(newletter)=="р")	newletter="r"
+			if(lowertext(newletter)=="л")	newletter="ль"
+			if(lowertext(newletter)=="з")	newletter="с"
+			if(lowertext(newletter)=="в")	newletter="ф"
+			if(lowertext(newletter)=="б")	newletter="п"
+			if(lowertext(newletter)=="г")	newletter="х"
+			if(lowertext(newletter)=="д")	newletter="т"
 		if(rand(1,20)==20)
 			if(newletter==" ")
 				newletter="...о-о-ой..."
 			if(newletter==".")
 				newletter=" ИК!"
 		switch(rand(1,16))
-			if(1,3,5,8)		newletter = "[r_lowertext(newletter)]"
-			if(2,4,6,15)	newletter = "[r_uppertext(newletter)]"
+			if(1,3,5,8)		newletter = "[lowertext(newletter)]"
+			if(2,4,6,15)	newletter = "[uppertext(newletter)]"
 			if(7)			newletter += "'"
 			if(9,10)		newletter = "<b>[newletter]</b>"
 			if(11,12)		newletter = "<big>[newletter]</big>"
@@ -149,18 +149,18 @@
 			if(lowertext(newletter)=="s")
 				newletter=" SIE "
 			//russian alkashi
-			if(r_lowertext(newletter)=="о")	newletter="у"
-			if(r_lowertext(newletter)=="ы")	newletter="i"
-			if(r_lowertext(newletter)=="р")	newletter="r"
-			if(r_lowertext(newletter)=="л")	newletter="ль"
-			if(r_lowertext(newletter)=="з")	newletter="с"
-			if(r_lowertext(newletter)=="в")	newletter="ф"
-			if(r_lowertext(newletter)=="б")	newletter="п"
-			if(r_lowertext(newletter)=="г")	newletter="х"
-			if(r_lowertext(newletter)=="д")	newletter="т"
-			if(r_lowertext(newletter)=="с")
+			if(lowertext(newletter)=="о")	newletter="у"
+			if(lowertext(newletter)=="ы")	newletter="i"
+			if(lowertext(newletter)=="р")	newletter="r"
+			if(lowertext(newletter)=="л")	newletter="ль"
+			if(lowertext(newletter)=="з")	newletter="с"
+			if(lowertext(newletter)=="в")	newletter="ф"
+			if(lowertext(newletter)=="б")	newletter="п"
+			if(lowertext(newletter)=="г")	newletter="х"
+			if(lowertext(newletter)=="д")	newletter="т"
+			if(lowertext(newletter)=="с")
 				newletter=" НАР "
-			if(r_lowertext(newletter)=="т")
+			if(lowertext(newletter)=="т")
 				newletter=" СИ "
 		if(rand(1,4)==4)
 			if(newletter==" ")
