@@ -208,3 +208,6 @@ tools/MapAtmosFixer/MapAtmosFixer/bin/*
 config/admins.txt
 config/st_whitelist.txt
 config/whitelist.txt
+config/admins.txt
+config/st_whitelist.txt
+config/whitelist.txt
