@@ -212,3 +212,4 @@ config/admins.txt
 config/st_whitelist.txt
 config/whitelist.txt
 config/config.txt
+config/dbconfig.txt
