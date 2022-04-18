@@ -7,5 +7,5 @@ bash ${d}/STALKER_UPDATE.bash;
 echo "Компилим";
 sudo DreamMaker stalker.dme;
 echo "Поднимаем";
-exec "sudo DreamDaemon stalker.dmb 2013 -trusted -logself &";
+sudo DreamDaemon stalker.dmb 2013 -trusted -logself &;
 echo "Сталкер поднят на 2013 порту, энжой.";
