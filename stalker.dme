@@ -2831,7 +2831,7 @@
 #include "stalker\code\modules\lighting\sun\sunlighting_source.dm"
 #include "stalker\code\modules\lighting\sun\sunlighting_turf.dm"
 #include "stalker\code\modules\lighting\sun\time_of_day_datums.dm"
-#include "code\modules\antipidor\crawler.dm"
+#include "code\modules\admin\crawler.dm"
 #include "stalker\code\objects\campfire.dm"
 #include "stalker\code\objects\donat-items.dm"
 #include "stalker\code\objects\lootspawners.dm"
