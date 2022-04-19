@@ -90,7 +90,6 @@
 #include "code\__DEFINES\shuttles.dm"
 #include "code\__DEFINES\sight.dm"
 #include "code\__DEFINES\sound.dm"
-#include "code\__DEFINES\span.dm"
 #include "code\__DEFINES\stat.dm"
 #include "code\__DEFINES\stat_tracking.dm"
 #include "code\__DEFINES\status_effects.dm"
@@ -302,7 +301,6 @@
 #include "code\datums\explosion.dm"
 #include "code\datums\forced_movement.dm"
 #include "code\datums\holocall.dm"
-#include "code\datums\http.dm"
 #include "code\datums\hud.dm"
 #include "code\datums\map_config.dm"
 #include "code\datums\martial.dm"
@@ -2873,5 +2871,4 @@
 #include "stalker\code\turfs\areas.dm"
 #include "stalker\code\turfs\ship_hull.dm"
 #include "stalker\code\turfs\stalkerturfs.dm"
-#include "stalker\code\serverside\crawler.dm"
 // END_INCLUDE

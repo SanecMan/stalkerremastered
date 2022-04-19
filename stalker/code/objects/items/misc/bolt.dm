@@ -15,7 +15,7 @@
 
 /obj/item/stalker/bolt
 	name = "bolt"
-	desc = "Старый советский болт, пораженный коррозией."
+	desc = "Старый советский болт, пораженный коррозией,"
 	eng_desc = "Old sovit bolt affected by corrosion."
 	icon = 'stalker/icons/bolt.dmi'
 	icon_state = "bolt"
