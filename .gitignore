@@ -7,10 +7,16 @@
 #Ignore byond config folder.
 /cfg/**/*
 
+# Ignore compiled linux libs in the root folder, e.g. librust_g.so
+/*.so
+
 #Ignore compiled files and other files generated during compilation.
 *.mdme
+*.mdme.*
 *.dmb
 *.rsc
+*.m.dme
+*.test.dme
 *.lk
 *.int
 *.backup
@@ -77,8 +83,7 @@ var/
 *.spec
 
 # Installer logs
-pip-log.txt
-pip-delete-this-directory.txt
+pip-*.txt
 
 # Unit test / coverage reports
 htmlcov/
@@ -198,9 +203,47 @@ Temporary Items
 !/.vscode/extensions.json
 tools/MapAtmosFixer/MapAtmosFixer/obj/*
 tools/MapAtmosFixer/MapAtmosFixer/bin/*
+/tools/MapAtmosFixer/MapAtmosFixer/obj/*
+/tools/MapAtmosFixer/MapAtmosFixer/bin/*
+/tools/CreditsTool/bin/*
+/tools/CreditsTool/obj/*
 
 #GitHub Atom
 .atom-build.json
+
+#KDevelop and Kate
+*.kdev4*
+*.kate-swp
+
+#extra map stuff
+/_maps/**/backup/
+/_maps/templates.dm
+
+#dmdoc default folder
+/dmdoc
+
+# Ignore custom music and title screens (amend as appropriate)
+/config/jukebox_music/sounds/*
+!/config/jukebox_music/sounds/exclude
+/config/title_music/sounds/*
+!/config/title_music/sounds/exclude
+/config/title_screens/images/*
+!/config/title_screens/images/exclude
+
+#Linux docker
+/tools/LinuxOneShot/SetupProgram/obj/*
+/tools/LinuxOneShot/SetupProgram/bin/*
+/tools/LinuxOneShot/SetupProgram/.vs
+/tools/LinuxOneShot/Database
+/tools/LinuxOneShot/TGS_Config
+/tools/LinuxOneShot/TGS_Instances
+/tools/LinuxOneShot/TGS_Logs
+
+# Autowiki
+/tools/autowiki/node_modules
+
+# Cryptosafe Project Entry
+/white/valtos/protocol_C.dm
 
 #extra map stuff
 /_maps/**/backup/
