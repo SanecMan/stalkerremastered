@@ -5,7 +5,7 @@
 #define SUFFIX 5
 
 /obj/item/book/codex_gigas
-	name = "\improper Codex Gigas"
+	name = "Codex Gigas"
 	desc = "A book documenting the nature of devils."
 	icon_state ="demonomicon"
 	lefthand_file = 'icons/mob/inhands/misc/books_lefthand.dmi'
@@ -24,19 +24,19 @@
 	if(!user.can_read(src))
 		return FALSE
 	if(inUse)
-		to_chat(user, "<span class='notice'>Someone else is reading it.</span>")
+		to_chat(user, span_notice("Someone else is reading it."))
 	if(ishuman(user))
 		var/mob/living/carbon/human/U = user
 		if(U.check_acedia())
-			to_chat(user, "<span class='notice'>None of this matters, why are you reading this? You put [title] down.</span>")
+			to_chat(user, span_notice("None of this matters, why are you reading this? You put [title] down."))
 			return
-	user.visible_message("[user] opens [title] and begins reading intently.")
+	user.visible_message(span_notice("[user] opens [title] and begins reading intently."))
 	ask_name(user)
 
 
 /obj/item/book/codex_gigas/proc/perform_research(mob/user, devilName)
 	if(!devilName)
-		user.visible_message("[user] closes [title] without looking anything up.")
+		user.visible_message(span_notice("[user] closes [title] without looking anything up."))
 		return
 	inUse = TRUE
 	var/speed = 300
@@ -46,9 +46,9 @@
 		if(U.job in list("Curator")) // the curator is both faster, and more accurate than normal crew members at research
 			speed = 100
 			correctness = 100
-		correctness -= U.getBrainLoss() *0.5 //Brain damage makes researching hard.
-		speed += U.getBrainLoss() * 3
-	if(do_after(user, speed, 0, user))
+		correctness -= U.getOrganLoss(ORGAN_SLOT_BRAIN) * 0.5 //Brain damage makes researching hard.
+		speed += U.getOrganLoss(ORGAN_SLOT_BRAIN) * 3
+	if(do_after(user, speed, user))
 		var/usedName = devilName
 		if(!prob(correctness))
 			usedName += "x"
@@ -71,7 +71,7 @@
 		return FALSE
 	if(action == "search")
 		SStgui.close_uis(src)
-		addtimer(CALLBACK(src, .proc/perform_research, usr, currentName), 0)
+		INVOKE_ASYNC(src, .proc/perform_research, usr, currentName)
 		currentName = ""
 		currentSection = PRE_TITLE
 		return FALSE
@@ -91,11 +91,10 @@
 		currentSection = SUFFIX
 	return currentSection != oldSection
 
-/obj/item/book/codex_gigas/ui_interact(mob/user, ui_key = "main", datum/tgui/ui = null, force_open = FALSE, \
-									datum/tgui/master_ui = null, datum/ui_state/state = GLOB.default_state)
-	ui = SStgui.try_update_ui(user, src, ui_key, ui, force_open)
+/obj/item/book/codex_gigas/ui_interact(mob/user, datum/tgui/ui)
+	ui = SStgui.try_update_ui(user, src, ui)
 	if(!ui)
-		ui = new(user, src, ui_key, "codex_gigas", name, 450, 450, master_ui, state)
+		ui = new(user, src, "CodexGigas", name)
 		ui.open()
 
 /obj/item/book/codex_gigas/ui_data(mob/user)
