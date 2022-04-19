@@ -37,7 +37,7 @@ TOGGLE_CHECKBOX(/datum/verbs/menu/Settings, listen_looc)()
 	set category = "OOC"
 
 	if(GLOB.say_disabled)	//This is here to try to identify lag problems
-		to_chat(usr, "<span class='danger'>Не хочу писать.</span>")
+		to_chat(usr, "<span class='danger'>Speech is currently admin-disabled.</span>")
 		return
 
 	if(!mob)
@@ -70,6 +70,9 @@ TOGGLE_CHECKBOX(/datum/verbs/menu/Settings, listen_looc)()
 	if(!holder)
 		if(handle_spam_prevention(msg, MUTE_LOOC))
 			return
+		if((copytext(msg, 1, 2) in list(".",";",":","#")) || (findtext(lowertext(copytext(msg, 1, 5)), "say")))
+			if(alert("Your message \"[raw_msg]\" looks like it was meant for in game communication, say it in OOC?", "Meant for OOC?", "No", "Yes") != "Yes")
+				return
 		if(findtext(msg, "byond://"))
 			to_chat(src, "<span class='bold'>Пидор.</span>")
 			log_admin("[key_name(src)] has attempted to advertise in LOOC: [msg]")
@@ -77,7 +80,7 @@ TOGGLE_CHECKBOX(/datum/verbs/menu/Settings, listen_looc)()
 			return
 
 	if(!(prefs.chat_toggles & CHAT_LOOC))
-		to_chat(src, "<span class='danger'>Не хочу писать в LOOC.</span>")
+		to_chat(src, "<span class='danger'>You have OOC muted.</span>")
 		return
 
 
@@ -131,4 +134,4 @@ TOGGLE_CHECKBOX(/datum/verbs/menu/Settings, listen_looc)()
 
 /proc/toggle_looc(toggle = null)
 	GLOB.looc_allowed = (toggle || !GLOB.looc_allowed)
-	to_chat(world, "<span class='bold'>LOOC теперь [GLOB.looc_allowed ? "включен" : "отключен"].</span>") 
+	to_chat(world, "<span class='bold'>The LOOC channel has been globally [GLOB.looc_allowed ? "enable" : "disable"].</span>") 
