@@ -205,11 +205,4 @@ tools/MapAtmosFixer/MapAtmosFixer/bin/*
 #extra map stuff
 /_maps/**/backup/
 /_maps/templates.dm
-config/admins.txt
-config/st_whitelist.txt
-config/whitelist.txt
-config/admins.txt
-config/st_whitelist.txt
-config/whitelist.txt
-config/config.txt
-config/dbconfig.txt
+config/*.txt
