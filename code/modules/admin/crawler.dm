@@ -1,3 +1,32 @@
+/*/client/proc/old_ask_crawler_for_support()
+	var/http[] = world.Export("http://nossl.crawler.station13.ru/api/?ckey=[ckey]")
+
+	if(http)
+		return json_decode(file2text(http["CONTENT"]))
+	else
+		return list("Tau Ceti" = "N/A", "Infinity" = "N/A", "SS13.RU" = "N/A", "SS220" = "N/A", "Fluffy" = "N/A", "bypass" = "N/A")
+
+/client/proc/old_crawler_sanity_check()
+	if(!ckey)
+		return
+
+	var/list/cril = old_ask_crawler_for_support()
+
+	if(!cril)
+		return TRUE
+
+	if((text2num(cril["Tau Ceti"]) > 180 || text2num(cril["Infinity"]) > 180 || text2num(cril["SS13.RU"]) > 180 || text2num(cril["SS220"]) > 180) || text2num(cril["Fluffy"]) > 180 && text2num(cril["bypass"]) == 0)
+		message_admins("[key_name(src)] потенциальный педофил. Держать банхаммер на готове.")
+		spawn(10)
+			to_chat(src, "<span class='userdanger'>Тебе здесь не рады. Подробнее: <a href='https://crawler.station13.ru/?ckey=[ckey]'>https://crawler.station13.ru/?ckey=[ckey]</a></span>")
+		return FALSE
+
+	return TRUE
+
+
+
+
+*/
 /client/proc/ask_crawler_for_support()
 	var/datum/http_request/request = new()
 	request.prepare(RUSTG_HTTP_METHOD_GET, "http://nossl.crawler.station13.ru/api/?ckey=[ckey]", "", "", null)
@@ -38,3 +67,4 @@
 				clear_sanity = FALSE
 
 	return clear_sanity
+

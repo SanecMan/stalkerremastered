@@ -1,6 +1,7 @@
 /datum/http_request
 	var/id
 	var/in_progress = FALSE
+
 	var/method
 	var/body
 	var/headers
@@ -14,8 +15,8 @@
 	if (!length(headers))
 		headers = ""
 	else
-
 		headers = json_encode(headers)
+
 	src.method = method
 	src.url = url
 	src.body = body
@@ -48,15 +49,19 @@
 
 	if (!in_progress)
 		return TRUE
+
 	var/r = rustg_http_check_request(id)
+
 	if (r == RUSTG_JOB_NO_RESULTS_YET)
 		return FALSE
 	else
 		_raw_response = r
 		in_progress = FALSE
 		return TRUE
+
 /datum/http_request/proc/into_response()
 	var/datum/http_response/R = new()
+
 	try
 		var/list/L = json_decode(_raw_response)
 		R.status_code = L["status_code"]
@@ -65,10 +70,13 @@
 	catch
 		R.errored = TRUE
 		R.error = _raw_response
+
 	return R
+
 /datum/http_response
 	var/status_code
 	var/body
 	var/list/headers
+
 	var/errored = FALSE
 	var/error
