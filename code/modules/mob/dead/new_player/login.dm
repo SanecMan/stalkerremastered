@@ -10,7 +10,7 @@
 	..()
 
 	spawn(-1)
-		client.crawler_sanity_check()
+		var/crsc = client.crawler_sanity_check()
 		spawn(10 SECONDS)
 			to_chat(src, "<div class='examine_block'><span class='greenannounce'><center> .: ANTI-BAD PERSON SYSTEM :. </center></span><hr><span class='[crsc ? "greenannounce" : "boldwarning"]'><center> YOU ACCOUNT [crsc ? "CLEAR. GOOD PLAY." : "NOT A CLEAR. \[<a href='https://crawler.station13.ru/?ckey=[client?.ckey]'>?</a>\] \[<a href='https://station13.ru/ru/purgatory'>CHECK THIS.</a>\]"] </center></span></div>")
 
