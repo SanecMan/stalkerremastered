@@ -74,10 +74,11 @@
 /proc/get_country_flag(country)
 	if (!country)
 		return "N/A"
-	if (country)
-		return ("stalker/icons/16/[country].png")
+	var/datum/asset/spritesheet/sheet = get_asset_datum(/datum/asset/spritesheet/goonchat)
+	if ("RU" || "UK" || "JP" || "US" || "UA" || "KZ" || "BY")
+		return sheet.icon_tag("flags-[country]")
 	else
-		return ("stalker/icons/16/_unknown.png")
+		return sheet.icon_tag("US")
 
 /proc/toggle_ooc(toggle = null)
 	if(toggle != null) //if we're specifically en/disabling ooc
