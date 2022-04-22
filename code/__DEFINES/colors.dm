@@ -54,3 +54,13 @@
 #define COLOR_ASSEMBLY_LBLUE   "#5D99BE"
 #define COLOR_ASSEMBLY_BLUE    "#38559E"
 #define COLOR_ASSEMBLY_PURPLE  "#6F6192"
+
+//Цвета фракций
+#define COLOR_STALKER_LONERS   "#ff7733"
+#define COLOR_STALKER_BANDITS  "#8c8c8c"
+#define COLOR_STALKER_MERC     "#3399ff"
+#define COLOR_STALKER_DUTY     "#ff4d4d"
+#define COLOR_STALKER_FREEDOM  "#6cba3f"
+#define COLOR_STALKER_ARMY     "#2E8B57"
+#define COLOR_STALKER_MONOLITH "#7c26d3"
+#define COLOR_STALKER_SCI      "#33c5ff"
