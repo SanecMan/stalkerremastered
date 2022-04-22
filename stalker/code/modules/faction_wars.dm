@@ -11,6 +11,7 @@ GLOBAL_LIST_EMPTY(cps)
 
 	var/controlled_by		= null
 	var/capturing_faction	= null
+	var/controlled_by_ru	= null
 	var/capturing_faction_ru	= null
 
 	var/control_percent		= 0
@@ -249,7 +250,7 @@ GLOBAL_LIST_EMPTY(cps)
 		return
 
 	if(!SP.controlled_by || SP.control_percent < 100)
-		say("Нет доступа: Точка захвачена на [control_percent] из 100 процентов.")
+		say("Нет доступа: Точка не захвачена до конца.")
 		return
 
 	if(SP.controlled_by != sk.fields["faction_s"])
@@ -269,7 +270,8 @@ GLOBAL_LIST_EMPTY(cps)
 	color = COLOR_STALKER_LONERS
 
 /obj/effect/forcefield/faction/CanPass(atom/movable/mover, turf/target)
-	if(mover in ["faction_s"] == faction_allowed)
+	var/datum/data/record/sk = find_record("sid", H.sid, GLOB.data_core.stalkers)
+	if(mover in sk.fields["faction_s"] == faction_allowed)
 		return TRUE
 
 	if(!isliving(mover)) //No stowaways
