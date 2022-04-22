@@ -358,9 +358,9 @@ var/global/global_lentahtml = ""
 
 				if(1)
 					if(user.client.prefs.chat_toggles & CHAT_LANGUAGE)
-						navbarhtml ="| <a>Profile</a> | <a href='byond://?src=\ref[src];choice=3'>Rating</a> | <a href='byond://?src=\ref[src];choice=4'>Feed</a> |<br>"
+						navbarhtml ="| <a>Profile</a> | <a href='byond://?src=\ref[src];choice=2'>Энциклопедия</a> | <a href='byond://?src=\ref[src];choice=3'>Rating</a> | <a href='byond://?src=\ref[src];choice=4'>Feed</a> |<br>"
 					else
-						navbarhtml ="| <a>Профиль</a> | <a href='byond://?src=\ref[src];choice=3'>Рейтинг</a> | <a href='byond://?src=\ref[src];choice=4'>Лента</a> |<br>"
+						navbarhtml ="| <a>Профиль</a> | <a href='byond://?src=\ref[src];choice=2'>Энциклопедия</a> | <a href='byond://?src=\ref[src];choice=3'>Рейтинг</a> | <a href='byond://?src=\ref[src];choice=4'>Лента</a> |<br>"
 
 					mainhtml +="\
 					<body>\
@@ -414,9 +414,9 @@ var/global/global_lentahtml = ""
 
 				if(2)
 					if(user.client.prefs.chat_toggles & CHAT_LANGUAGE)
-						navbarhtml ="| <a href='byond://?src=\ref[src];choice=1'>Profile</a> | <a href='byond://?src=\ref[src];choice=3'>Rating</a> | <a href='byond://?src=\ref[src];choice=4'>Feed</a> |<br>"
+						navbarhtml ="| <a href='byond://?src=\ref[src];choice=1'>Profile</a> | <a>Энциклопедия</a> | <a href='byond://?src=\ref[src];choice=3'>Rating</a> | <a href='byond://?src=\ref[src];choice=4'>Feed</a> |<br>"
 					else
-						navbarhtml ="| <a href='byond://?src=\ref[src];choice=1'>Профиль</a> | <a href='byond://?src=\ref[src];choice=3'>Рейтинг</a> | <a href='byond://?src=\ref[src];choice=4'>Лента</a> |<br>"
+						navbarhtml ="| <a href='byond://?src=\ref[src];choice=1'>Профиль</a> | <a>Энциклопедия</a> | <a href='byond://?src=\ref[src];choice=3'>Рейтинг</a> | <a href='byond://?src=\ref[src];choice=4'>Лента</a> |<br>"
 
 					mainhtml +="\
 					<body>\
@@ -466,9 +466,9 @@ var/global/global_lentahtml = ""
 
 				if(3)
 					if(user.client.prefs.chat_toggles & CHAT_LANGUAGE)
-						navbarhtml ="| <a href='byond://?src=\ref[src];choice=1'>Profile</a> | <a>Rating</a> | <a href='byond://?src=\ref[src];choice=4'>Feed</a> |<br>"
+						navbarhtml ="| <a href='byond://?src=\ref[src];choice=1'>Profile</a> | <a href='byond://?src=\ref[src];choice=2'>Энциклопедия</a> | <a>Rating</a> | <a href='byond://?src=\ref[src];choice=4'>Feed</a> |<br>"
 					else
-						navbarhtml ="| <a href='byond://?src=\ref[src];choice=1'>Профиль</a> | <a>Рейтинг</a> | <a href='byond://?src=\ref[src];choice=4'>Лента</a> |<br>"
+						navbarhtml ="| <a href='byond://?src=\ref[src];choice=1'>Профиль</a> | <a href='byond://?src=\ref[src];choice=2'>Энциклопедия</a> | <a>Рейтинг</a> | <a href='byond://?src=\ref[src];choice=4'>Лента</a> |<br>"
 
 					mainhtml +="\
 					<body>\
@@ -498,9 +498,9 @@ var/global/global_lentahtml = ""
 
 				if(4)
 					if(user.client.prefs.chat_toggles & CHAT_LANGUAGE)
-						navbarhtml ="| <a href='byond://?src=\ref[src];choice=1'>Profile</a> | <a href='byond://?src=\ref[src];choice=3'>Rating</a> | <a>Feed</a> |<br>"
+						navbarhtml ="| <a href='byond://?src=\ref[src];choice=1'>Profile</a> | <a href='byond://?src=\ref[src];choice=2'>Энциклопедия</a> | <a href='byond://?src=\ref[src];choice=3'>Rating</a> | <a>Feed</a> |<br>"
 					else
-						navbarhtml ="| <a href='byond://?src=\ref[src];choice=1'>Профиль</a> | <a href='byond://?src=\ref[src];choice=3'>Рейтинг</a> | <a>Лента</a> |<br>"
+						navbarhtml ="| <a href='byond://?src=\ref[src];choice=1'>Профиль</a> | <a href='byond://?src=\ref[src];choice=2'>Энциклопедия</a> | <a href='byond://?src=\ref[src];choice=3'>Рейтинг</a> | <a>Лента</a> |<br>"
 
 					mainhtml +="\
 					<body>\
@@ -530,9 +530,9 @@ var/global/global_lentahtml = ""
 
 				if(5)
 					if(user.client.prefs.chat_toggles & CHAT_LANGUAGE)
-						navbarhtml ="| <a href='byond://?src=\ref[src];choice=1'>Profile</a> | <a href='byond://?src=\ref[src];choice=3'>Rating</a> | <a href='byond://?src=\ref[src];choice=4'>Feed</a> |<br>"
+						navbarhtml ="| <a href='byond://?src=\ref[src];choice=1'>Profile</a> | <a href='byond://?src=\ref[src];choice=2'>Энциклопедия</a> | <a href='byond://?src=\ref[src];choice=3'>Rating</a> | <a href='byond://?src=\ref[src];choice=4'>Feed</a> |<br>"
 					else
-						navbarhtml ="| <a href='byond://?src=\ref[src];choice=1'>Профиль</a> | <a href='byond://?src=\ref[src];choice=3'>Рейтинг</a> | <a href='byond://?src=\ref[src];choice=4'>Лента</a> |<br>"
+						navbarhtml ="| <a href='byond://?src=\ref[src];choice=1'>Профиль</a> | <a href='byond://?src=\ref[src];choice=2'>Энциклопедия</a> | <a href='byond://?src=\ref[src];choice=3'>Рейтинг</a> | <a href='byond://?src=\ref[src];choice=4'>Лента</a> |<br>"
 
 					mainhtml +="\
 					<body>\
