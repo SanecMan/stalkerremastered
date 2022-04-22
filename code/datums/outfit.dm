@@ -29,6 +29,7 @@
 	var/list/chameleon_extras //extra types for chameleon outfit changes, mostly guns
 
 	var/faction_s = null
+	var/faction_s_ru = null
 
 /datum/outfit/proc/pre_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	//to be overridden for customization depending on client prefs,species etc

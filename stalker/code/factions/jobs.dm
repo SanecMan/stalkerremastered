@@ -32,6 +32,7 @@
 /datum/outfit/job/trader
 	name = "Trader"
 	faction_s = "Traders"
+	faction_s_ru = "Торговцы"
 
 /datum/outfit/job/trader/pre_equip(mob/living/carbon/human/H)
 	..()

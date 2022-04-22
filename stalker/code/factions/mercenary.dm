@@ -1,6 +1,7 @@
 /datum/job/mercenary
 	title = "Mercenary"
 	faction_s = "Mercenaries"
+	faction_s_ru = "Наёмники"
 //	flag = ASSISTANT
 //	department_flag = CIVILIAN
 	faction = "Station"
@@ -17,6 +18,7 @@
 /datum/outfit/job/mercenary
 	name = "Mercenary"
 	faction_s = "Mercenaries"
+	faction_s_ru = "Наёмники"
 
 /datum/outfit/job/mercenary/pre_equip(mob/living/carbon/human/H)
 	..()
@@ -54,6 +56,7 @@
 							/obj/item/flashlight/seclite = 1)
 	l_pocket = /obj/item/reagent_containers/food/snacks/stalker/kolbasa
 	faction_s = "Mercenaries"
+	faction_s_ru = "Наёмники"
 
 /datum/outfit/mercenary/pre_equip(mob/living/carbon/human/H)
 	..()
@@ -66,6 +69,7 @@
 /datum/job/mercenary_sql
 	title = "Mercenary Sql"
 	faction_s = "Mercenaries"
+	faction_s_ru = "Наёмники"
 	faction = "Station"
 	total_positions = 2
 	locked = 1
@@ -82,6 +86,7 @@
 /datum/outfit/job/mercenary_sql
 	name = "Mercenary Sql"
 	faction_s = "Mercenaries"
+	faction_s_ru = "Наёмники"
 
 /datum/outfit/job/mercenary_sql/pre_equip(mob/living/carbon/human/H)
 	..()

@@ -851,7 +851,7 @@ GLOBAL_PROTECT(admin_verbs_hideable)
 	set name = "Set Faction"
 	set category = "Stalker"
 
-	var/mob/living/carbon/human/selected = input("Please, select a stalker!", "S.T.A.L.K.E.R.", null) as null|anything in sortRealNames(GLOB.KPK_mobs)
+	var/mob/living/carbon/human/selected = input("Выбери сталкера!", "S.T.A.L.K.E.R.", null) as null|anything in sortRealNames(GLOB.KPK_mobs)
 
 	if(!selected)
 		return
@@ -859,19 +859,26 @@ GLOBAL_PROTECT(admin_verbs_hideable)
 	var/datum/data/record/sk = find_record("sid", selected.sid, GLOB.data_core.stalkers)
 
 	if(!sk)
-		to_chat(usr, "<span class='warning'>Stalker profile not found.</span>")
+		to_chat(usr, "<span class='warning'>КПК не активно.</span>")
 		return
 
-	var/newfaction = input(usr, "Insert new faction with a BIG first letter.", "S.T.A.L.K.E.R.") as text|null
+	var/newfaction = input(usr, "Впиши новую фракцию с БОЛЬШОЙ буквы на английском.", "S.T.A.L.K.E.R.") as text|null
+
+	var/newfaction_ru = input(usr, "Впиши новую фракцию с БОЛЬШОЙ буквы на русском.", "S.T.A.L.K.E.R.") as text|null
+
+	if(!newfaction)
+		return
 
 	if(!newfaction)
 		return
 
 	var/sk_name = sk.fields["name"]
 	var/sk_faction_s = sk.fields["faction_s"]
+	var/sk_faction_s_ru = sk.fields["faction_s_ru"]
 
-	to_chat(usr, "<span class='interface'>[sk_name] was a part of [sk_faction_s].</span>")
+	to_chat(usr, "<span class='interface'>[sk_name] was a part of [sk_faction_s] aka [sk_faction_s_ru].</span>")
 	sk.fields["faction_s"] = newfaction
+	sk.fields["faction_s_ru"] = newfaction_ru
 
 	to_chat(usr, "<span class='interface'>[sk_name] joined [sk_faction_s].</span>")
 

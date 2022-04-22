@@ -1442,6 +1442,8 @@ var/global/global_lentahtml = ""
 			faction_s = "Торговцы"
 		if("Freedom")
 			faction_s = "Свобода"
+		if("Army")
+			faction_s = "Военные"
 		if("Monolith")
 			faction_s = "Монолит"
 	return faction_s
@@ -1459,6 +1461,8 @@ var/global/global_lentahtml = ""
 			factioncolor = "#ff4d4d"
 		if("Freedom")
 			factioncolor = "#6cba3f"
+		if("Army")
+			factioncolor = "#2E8B57"
 		if("Monolith")
 			factioncolor = "#7c26d3"
 	return factioncolor
@@ -1536,9 +1540,9 @@ var/global/global_lentahtml = ""
 			return "Trader"
 		if("Freedom")
 			return "Freedom"
-		if("Monolith")
-			return "Monolith"
 		if("Army")
 			return "Army"
+		if("Monolith")
+			return "Monolith"
 		else
 			return "Loner"

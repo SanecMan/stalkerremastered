@@ -1,6 +1,7 @@
 /datum/job/monolith
 	title = "Monolith"
 	faction_s = "Monolith"
+	faction_s_ru = "Монолит"
 	faction = "Station"
 	total_positions = 8
 	spawn_positions = 4
@@ -8,8 +9,8 @@
 	selection_color = "#601919"
 	access = list()			//See /datum/job/assistant/get_access()
 	minimal_access = list()	//See /datum/job/assistant/get_access()
-	whitelist_only = 0
-	activated = 0
+	whitelist_only = 1
+	activated = 1
 	//limit_per_player = 4
 	outfit = /datum/outfit/job/monolith// /datum/outfit/job/duty
 

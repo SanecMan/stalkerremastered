@@ -11,6 +11,8 @@ GLOBAL_LIST_EMPTY(cps)
 
 	var/controlled_by		= null
 	var/capturing_faction	= null
+	var/capturing_faction_ru	= null
+
 	var/control_percent		= 0
 
 	var/unlocked_weapons	= null
@@ -95,24 +97,24 @@ GLOBAL_LIST_EMPTY(cps)
 		return*/
 
 	if(!istype(user,/mob/living/carbon/human))
-		say("You are not a human.")
+		say("Ты че ебу дал?")
 		return
 
 	var/mob/living/carbon/human/H = user
 
 	if(!istype(H.wear_id, /obj/item/stalker_pda))
-		say("Put on your KPK.")
+		say("Активируй КПК.")
 		return
 
 	var/datum/data/record/sk = find_record("sid", H.sid, GLOB.data_core.stalkers)
 	var/obj/item/stalker_pda/KPK = H.wear_id
 
 	if(!sk || !KPK.owner)
-		say("Activate your KPK profile.")
+		say("Активируй профиль КПК.")
 		return
 
 	if(KPK.owner != H)
-		say("No access.")
+		say("Нет доступа.")
 		return
 
 	//if(sk.fields["faction_s"] == "Loners" || sk.fields["faction_s"] == "Bandits")
@@ -120,19 +122,20 @@ GLOBAL_LIST_EMPTY(cps)
 	//	return
 
 	if(control_percent == 100 && controlled_by == sk.fields["faction_s"])
-		say("[get_area(src).name] is already captured!")
+		say("[get_area(src).name]: уже захвачено!")
 		return
 
 	if(capturing_faction && capturing_faction == sk.fields["faction_s"])
-		say("[get_area(src).name] is already being captured!")
+		say("[get_area(src).name]: захват начат!")
 		return
 
 	if(!do_after(user, 10, 1, src))
 		return
 
 	capturing_faction = sk.fields["faction_s"]
-	add_lenta_message(null, "0", "Sidorovich", "Loners", "[capturing_faction] started capturing [get_area(src).name].")
-	say("[capturing_faction] started capturing [get_area(src).name]!")
+	capturing_faction_ru = sk.fields["faction_s_ru"]
+	add_lenta_message(null, "0", "Sidorovich", "Loners", "[capturing_faction_ru] начинают захват [get_area(src).name].")
+	say("[capturing_faction_ru] начинает захват [get_area(src).name]!")
 
 	return
 

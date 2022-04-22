@@ -311,6 +311,7 @@ var/sid_generator = 0
 				sk.fields["rating"] = 1000
 				sk.fields["degree"] = 1
 			sk.fields["faction_s"]	= J.faction_s
+			sk.fields["faction_s_ru"]	= J.faction_s_ru
 		else
 			sk.fields["faction_s"]	= "Loners"
 
@@ -318,6 +319,7 @@ var/sid_generator = 0
 			sk.fields["money"] = 2000
 		else if(sk.fields["faction_s"] == "Monolith")
 			sk.fields["money"] = 2000
+			sk.fields["reputation"] = DISGUSTING
 		else
 			sk.fields["money"] = 5000
 

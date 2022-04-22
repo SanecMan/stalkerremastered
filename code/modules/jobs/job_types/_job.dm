@@ -68,6 +68,8 @@
 
 	var/faction_s = "Loners"
 
+	var/faction_s_ru = "Одиночки"
+
 	var/real_rank = "Private"
 
 //Only override this proc

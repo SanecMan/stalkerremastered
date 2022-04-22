@@ -1,6 +1,7 @@
 /datum/job/freedom
 	title = "Freedom"
 	faction_s = "Freedom"
+	faction_s_ru = "Свобода"
 	faction = "Station"
 	total_positions = -1
 	spawn_positions = -1
@@ -15,6 +16,7 @@
 /datum/outfit/job/freedom
 	name = "Freedom"
 	faction_s = "Freedom"
+	faction_s_ru = "Одиночки"
 
 /datum/outfit/job/freedom/pre_equip(mob/living/carbon/human/H)
 	..()
@@ -45,6 +47,7 @@
 	backpack_contents = list(/obj/item/ammo_box/stalker/b55645 = 1,
 							/obj/item/ammo_box/magazine/stalker/m556x45 = 2,)
 	faction_s = "Freedom"
+	faction_s_ru = "Одиночки"
 
 /datum/outfit/freedom/pre_equip(mob/living/carbon/human/H)
 	..()
@@ -56,6 +59,7 @@
 /datum/job/freedom_lieutenant
 	title = "Freedom Lieutenant"
 	faction_s = "Freedom"
+	faction_s_ru = "Одиночки"
 	faction = "Station"
 	total_positions = 2
 	locked = 1
@@ -70,6 +74,7 @@
 /datum/outfit/job/freedom_lieutenant
 	name = "Freedom Lieutenant"
 	faction_s = "Freedom"
+	faction_s_ru = "Одиночки"
 
 /datum/outfit/job/freedom_lieutenant/pre_equip(mob/living/carbon/human/H)
 	..()

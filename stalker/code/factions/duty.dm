@@ -4,6 +4,7 @@ Assistant
 /datum/job/duty
 	title = "Duty"
 	faction_s = "Duty"
+	faction_s_ru = "Долг"
 	faction = "Station"
 	total_positions = -1
 	spawn_positions = -1
@@ -18,6 +19,7 @@ Assistant
 /datum/outfit/job/duty
 	name = "Duty"
 	faction_s = "Duty"
+	faction_s_ru = "Долг"
 
 /datum/outfit/job/duty/pre_equip(mob/living/carbon/human/H)
 	..()
@@ -49,6 +51,7 @@ Assistant
 	backpack_contents = list(/obj/item/ammo_box/stalker/b545 = 1,
 							/obj/item/ammo_box/magazine/stalker/m545 = 2,)
 	faction_s = "Duty"
+	faction_s_ru = "Долг"
 
 /datum/outfit/duty/pre_equip(mob/living/carbon/human/H)
 	..()

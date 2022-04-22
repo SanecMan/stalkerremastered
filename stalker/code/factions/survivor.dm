@@ -4,6 +4,7 @@ Assistant
 /datum/job/assistant
 	title = "Stalker"
 	faction_s = "Loners"
+	faction_s_ru = "Одиночки"
 //	flag = ASSISTANT
 //	department_flag = CIVILIAN
 	faction = "Station"
@@ -19,6 +20,7 @@ Assistant
 /datum/job/oldstalker
 	title = "Old Stalker"
 	faction_s = "Loners"
+	faction_s_ru = "Одиночки"
 	faction = "Station"
 	total_positions = -1
 	spawn_positions = -1
@@ -40,6 +42,7 @@ Assistant
 /datum/outfit/job/assistant
 	name = "Loner"
 	faction_s = "Loners"
+	faction_s_ru = "Одиночки"
 
 /datum/outfit/job/assistant/pre_equip(mob/living/carbon/human/H)
 	..()
