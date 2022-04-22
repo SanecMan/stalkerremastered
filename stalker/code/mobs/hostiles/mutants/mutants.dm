@@ -96,8 +96,8 @@
 	attack_type = "bite"
 	move_to_delay = 1.2 //Real speed of a mob
 	rating_add = 15
-	vision_range = 7
-	aggro_vision_range = 7
+	vision_range = 14
+	aggro_vision_range = 21
 
 /mob/living/simple_animal/hostile/mutant/dog/AttackingTarget()
 	..()
@@ -121,15 +121,15 @@
 	attacktext = "claws at"
 	speak_emote = list("growls", "roars")
 	emote_see = list("growls!", "roars!")
-	maxHealth = 70
+	maxHealth = 120
 	healable = 1
-	melee_damage_lower = 20
+	melee_damage_lower = 35
 	attack_sound = 'stalker/sound/mobs/mutants/attack/snork_attack.ogg'
 	idle_sounds = list('stalker/sound/mobs/mutants/idle/snork_idle_1.ogg',
 						'stalker/sound/mobs/mutants/idle/snork_idle_2.ogg',
 						'stalker/sound/mobs/mutants/idle/snork_idle_3.ogg')
 	deathsound = 'stalker/sound/mobs/mutants/death/snork_death.ogg'
-	melee_damage_upper = 50
+	melee_damage_upper = 40
 	fearborder = 10
 	see_invisible = SEE_INVISIBLE_MINIMUM
 	see_in_dark = 4
@@ -152,8 +152,8 @@
 	var/leaping = 0
 	move_to_delay = 2
 	rating_add = 50
-	vision_range = 7
-	aggro_vision_range = 7
+	vision_range = 9
+	aggro_vision_range = 14
 
 /mob/living/simple_animal/hostile/mutant/snork/New()
 	..()
@@ -212,9 +212,9 @@
 	attacktext = "crashes into"
 	speak_emote = list("grunts")
 	emote_see = list("shrieks aggressively!")
-	maxHealth = 40
+	maxHealth = 60
 	healable = 5
-	melee_damage_lower = 10
+	melee_damage_lower = 25
 	attack_sound = 'stalker/sound/mobs/mutants/attack/flesh_attack.ogg'
 	idle_sounds = list('stalker/sound/mobs/mutants/idle/flesh_idle_1.ogg',
 						'stalker/sound/mobs/mutants/idle/flesh_idle_2.ogg')
@@ -237,8 +237,8 @@
 	attack_type = "smash"
 	move_to_delay = 3
 	rating_add = 10
-	vision_range = 7
-	aggro_vision_range = 7
+	vision_range = 9
+	aggro_vision_range = 14
 
 /mob/living/simple_animal/hostile/mutant/kaban
 	name = "boar"
@@ -254,7 +254,7 @@
 	attacktext = "crashes into"
 	speak_emote = list("grunts")
 	emote_see = list("grunts aggressively!")
-	maxHealth = 150
+	maxHealth = 200
 	healable = 1
 	melee_damage_lower = 25
 	attack_sound = 'stalker/sound/mobs/mutants/attack/boar_attack.ogg'
@@ -262,7 +262,7 @@
 						'stalker/sound/mobs/mutants/idle/boar_idle_2.ogg',
 						'stalker/sound/mobs/mutants/idle/boar_idle_3.ogg')
 	deathsound = 'stalker/sound/mobs/mutants/death/boar_death.ogg'
-	melee_damage_upper = 40
+	melee_damage_upper = 65
 	fearborder = 18
 	see_invisible = SEE_INVISIBLE_MINIMUM
 	see_in_dark = 4
@@ -280,8 +280,8 @@
 	attack_type = "smash"
 	move_to_delay = 3
 	rating_add = 50
-	vision_range = 7
-	aggro_vision_range = 7
+	vision_range = 9
+	aggro_vision_range = 14
 
 	/*Код крашера с колониал маринов
 	Раскидывает мобов с дороги в стороны
@@ -304,14 +304,14 @@
 	attacktext = "slashes"
 	speak_emote = list("growls", "roars")
 	emote_see = list("growls!", "roars!")
-	maxHealth = 300
+	maxHealth = 500
 	healable = 1
-	melee_damage_lower = 30
+	melee_damage_lower = 60
 	attack_sound = 'stalker/sound/mobs/mutants/attack/bloodsucker_attack.ogg'
 	idle_sounds =	list('stalker/sound/mobs/mutants/idle/bloodsucker_idle_1.ogg'
 						)
 	deathsound = 'stalker/sound/mobs/mutants/death/bloodsucker_death.ogg'
-	melee_damage_upper = 35
+	melee_damage_upper = 80
 	fearborder = 0
 	see_invisible = SEE_INVISIBLE_MINIMUM
 	see_in_dark = 4
@@ -329,8 +329,8 @@
 	move_to_delay = 1.8
 	speak_chance = 0.5
 	rating_add = 150
-	vision_range = 7
-	aggro_vision_range = 7
+	vision_range = 9
+	aggro_vision_range = 14
 
 /mob/living/simple_animal/hostile/mutant/bloodsucker/Life()
 	if(..())
@@ -382,9 +382,9 @@
 	attacktext = "bites"
 	speak_emote = list("growls", "roars")
 	emote_see = list("growls!", "roars!")
-	maxHealth = 80
+	maxHealth = 125
 	healable = 1
-	melee_damage_lower = 15
+	melee_damage_lower = 25
 	attack_sound = 'stalker/sound/mobs/mutants/attack/pdog_attack.ogg'
 	idle_sounds =	list('stalker/sound/mobs/mutants/idle/pdog_idle_1.ogg',
 						'stalker/sound/mobs/mutants/idle/pdog_idle_2.ogg',
@@ -392,7 +392,7 @@
 						'stalker/sound/mobs/mutants/idle/pdog_idle_4.ogg'
 						)
 	deathsound = 'stalker/sound/mobs/mutants/death/pdog_death.ogg'
-	melee_damage_upper = 20
+	melee_damage_upper = 50
 	fearborder = 0
 	see_invisible = SEE_INVISIBLE_MINIMUM
 	see_in_dark = 4
@@ -425,15 +425,15 @@
 	attacktext = "slashes"
 	speak_emote = list("growls", "roars")
 	emote_see = list("growls!", "roars!")
-	maxHealth = 200
+	maxHealth = 450
 	healable = 1
-	melee_damage_lower = 25
+	melee_damage_lower = 45
 	attack_sound = 'stalker/sound/mobs/mutants/attack/controller_attack.ogg'
 	idle_sounds =	list('stalker/sound/mobs/mutants/idle/controller_idle_1.ogg',
 						'stalker/sound/mobs/mutants/idle/controller_idle_2.ogg'
 						)
 	deathsound = 'stalker/sound/mobs/mutants/death/controller_death.ogg'
-	melee_damage_upper = 30
+	melee_damage_upper = 50
 	fearborder = 0
 	see_invisible = SEE_INVISIBLE_MINIMUM
 	see_in_dark = 4
@@ -450,8 +450,8 @@
 	attack_type = "claw"
 	move_to_delay = 10
 	speak_chance = 5
-	vision_range = 15
-	aggro_vision_range = 15
+	vision_range = 14
+	aggro_vision_range = 14
 	ranged_cooldown_time = 1
 	//min_range_distance = 2
 	ranged = 1
