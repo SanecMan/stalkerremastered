@@ -2,8 +2,8 @@
 	title = "Freedom"
 	faction_s = "Freedom"
 	faction = "Station"
-	total_positions = 4
-	spawn_positions = 4
+	total_positions = -1
+	spawn_positions = -1
 	supervisors = "Major"
 	selection_color = "#601919"
 	access = list()			//See /datum/job/assistant/get_access()
