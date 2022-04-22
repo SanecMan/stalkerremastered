@@ -15,6 +15,8 @@ GLOBAL_LIST_EMPTY(cps)
 
 	var/control_percent		= 0
 
+	var/all_capture = 1
+
 	var/unlocked_weapons	= null
 //	var/respawn_income		= 0 //каждые 30 минут
 //	var/last_respawn_income	= 0
@@ -117,9 +119,13 @@ GLOBAL_LIST_EMPTY(cps)
 		say("Нет доступа.")
 		return
 
-	//if(sk.fields["faction_s"] == "Loners" || sk.fields["faction_s"] == "Bandits")
-	//	say("No access.")
-	//	return
+	if(sk.fields["faction_s"] == "Loners" || sk.fields["faction_s"] == "Bandits" && all_capture == 1)
+		say("Нет доступа: ты не во фракции")
+		return
+
+	if(sk.fields["faction_s"] == "Army" || sk.fields["faction_s"] == "Scientist" && all_capture == 1)
+		say("Нет доступа: твоя фракция не позволяет.")
+		return
 
 	if(control_percent == 100 && controlled_by == sk.fields["faction_s"])
 		say("[get_area(src).name]: уже захвачено!")
@@ -170,6 +176,7 @@ GLOBAL_LIST_EMPTY(cps)
 
 	if(capturing_faction && !controlled_by)
 		controlled_by = capturing_faction
+		controlled_by_ru = capturing_faction_ru
 
 	if((controlled_by == capturing_faction) && capturing_faction != null)
 
@@ -178,8 +185,8 @@ GLOBAL_LIST_EMPTY(cps)
 		if(control_percent >= 100)
 
 			control_percent = 100
-			add_lenta_message(null, "0", "Sidorovich", "Loners", "[controlled_by] captured [get_area(src).name].")
-			say("[get_area(src).name] is captured  by [controlled_by]!")
+			add_lenta_message(null, "0", "Sidorovich", "Loners", "[controlled_by_ru] захватила [get_area(src).name].")
+			say("[controlled_by_ru] захватила [get_area(src).name]!")
 			capturing_faction = null
 
 		return
@@ -234,19 +241,41 @@ GLOBAL_LIST_EMPTY(cps)
 	var/obj/item/stalker_pda/KPK = H.wear_id
 
 	if(!sk || !KPK.owner)
-		say("Activate your KPK profile.")
+		say("Активируй КПК.")
 		return
 
 	if(KPK.owner != H)
-		say("No access.")
+		say("Нет доступа: не твой КПК.")
 		return
 
 	if(!SP.controlled_by || SP.control_percent < 100)
-		say("No access.")
+		say("Нет доступа: Точка захвачена на [control_percent] из 100 процентов.")
 		return
 
 	if(SP.controlled_by != sk.fields["faction_s"])
-		say("No access.")
+		say("Нет доступа: не твоя фракция.")
 		return
 
 	..()
+
+/obj/effect/forcefield/lazyvip
+	name = "VIP room"
+	desc = "Достойное место для достойных людей."
+	icon = 'icons/obj/watercloset.dmi'
+	icon_state = "closed"
+	timeleft = 0
+	density = 1
+	var/static/list/vip_users = list()
+
+/obj/effect/forcefield/lazyvip/CanPass(atom/movable/mover, turf/target)
+	if(mover in vip_users)
+		return TRUE
+
+	if(!isliving(mover)) //No stowaways
+		return FALSE
+
+	return FALSE
+
+/obj/effect/forcefield/lazyvip/Bumped(atom/movable/AM)
+	if(!isliving(AM))
+		return ..()
