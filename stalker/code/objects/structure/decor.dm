@@ -716,16 +716,16 @@
 	var/max_cost = 0
 	switch(C.cache_quality)
 		if(0)
-			lootspawn = GLOB.trash_tier_sidormatitems
+			lootspawn = trash_tier_sidormatitems
 			max_cost = TRASH_TIER_COST
 		if(1)
-			lootspawn = GLOB.low_tier_sidormatitems
+			lootspawn = low_tier_sidormatitems
 			max_cost = LOW_TIER_COST
 		if(2)
-			lootspawn = GLOB.medium_tier_sidormatitems
+			lootspawn = medium_tier_sidormatitems
 			max_cost = MEDIUM_TIER_COST
 		if(3)
-			lootspawn = GLOB.high_tier_sidormatitems
+			lootspawn = high_tier_sidormatitems
 			max_cost = HIGH_TIER_COST
 
 	var/combined_w_class = 0

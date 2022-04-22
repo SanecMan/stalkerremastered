@@ -85,31 +85,31 @@
 	//NINJACODE
 	if(istype(wear_suit, /obj/item/clothing/suit/space/space_ninja)) //Only display if actually a ninja.
 		var/obj/item/clothing/suit/space/space_ninja/SN = wear_suit
-		if(statpanel("SpiderOS"))
-			stat("SpiderOS Status:","[SN.s_initialized ? "Initialized" : "Disabled"]")
-			stat("Current Time:", "[station_time_timestamp()]")
+		if(statpanel("ЭкоПлюс"))
+			stat("Статус:","[SN.s_initialized ? "Актив" : "Неактив"]")
+			stat("Время:", "[station_time_timestamp()]")
 			if(SN.s_initialized)
 				//Suit gear
-				stat("Energy Charge:", "[round(SN.cell.charge/100)]%")
-				stat("Smoke Bombs:", "\Roman [SN.s_bombs]")
+				stat("Заряд:", "[round(SN.cell.charge/100)]%")
+				stat("Дымовые шашки:", "\Roman [SN.s_bombs]")
 				//Ninja status
-				stat("Fingerprints:", "[md5(dna.uni_identity)]")
-				stat("Unique Identity:", "[dna.unique_enzymes]")
+				stat("Отпечаток:", "[md5(dna.uni_identity)]")
+				stat("Энзимы:", "[dna.unique_enzymes]")
 				stat("Overall Status:", "[stat > 1 ? "dead" : "[health]% healthy"]")
-				stat("Nutrition Status:", "[nutrition]")
-				stat("Oxygen Loss:", "[getOxyLoss()]")
-				stat("Toxin Levels:", "[getToxLoss()]")
-				stat("Burn Severity:", "[getFireLoss()]")
-				stat("Brute Trauma:", "[getBruteLoss()]")
-				stat("Radiation Levels:","[radiation] rad")
-				stat("Body Temperature:","[bodytemperature-T0C] degrees C ([bodytemperature*1.8-459.67] degrees F)")
+				stat("Содержание нутриментов:", "[nutrition]")
+				stat("Недостаток кислорода:", "[getOxyLoss()]")
+				stat("Отравление:", "[getToxLoss()]")
+				stat("Ожоги:", "[getFireLoss()]")
+				stat("Травмы:", "[getBruteLoss()]")
+				stat("Облучение:","[radiation] rad")
+				stat("Температура:","[bodytemperature-T0C] градусов по Цельсию|([bodytemperature*1.8-459.67] по Фаренгейту)")
 
 				//Diseases
 				if(diseases.len)
-					stat("Viruses:", null)
+					stat("Вирус:", null)
 					for(var/thing in diseases)
 						var/datum/disease/D = thing
-						stat("*", "[D.name], Type: [D.spread_text], Stage: [D.stage]/[D.max_stages], Possible Cure: [D.cure_text]")
+						stat("*", "[D.name], Тип: [D.spread_text], Стадия: [D.stage]/[D.max_stages], Антидот: [D.cure_text]")
 
 
 /mob/living/carbon/human/show_inv(mob/user)

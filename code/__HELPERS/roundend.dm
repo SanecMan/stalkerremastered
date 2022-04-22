@@ -162,7 +162,7 @@
 /datum/controller/subsystem/ticker/proc/declare_completion()
 	set waitfor = FALSE
 
-	to_chat(world, "<BR><BR><BR><span class='big bold'>The round has ended.</span>")
+	to_chat(world, "<BR><BR><BR><span class='big bold'>Раунд завершён..</span>")
 	if(LAZYLEN(GLOB.round_end_notifiees))
 		send2irc("Notice", "[GLOB.round_end_notifiees.Join(", ")] the round has ended.")
 
@@ -234,9 +234,9 @@
 /datum/controller/subsystem/ticker/proc/standard_reboot()
 	if(ready_for_reboot)
 		if(mode.station_was_nuked)
-			Reboot("Station destroyed by Nuclear Device.", "nuke")
+			Reboot("Данная местность была уничтожена.", "nuke")
 		else
-			Reboot("Round ended.", "proper completion")
+			Reboot("Раунд окончен.", "proper completion")
 	else
 		CRASH("Attempted standard reboot without ticker roundend completion")
 
@@ -274,23 +274,24 @@
 	if(GLOB.round_id)
 		var/statspage = CONFIG_GET(string/roundstatsurl)
 		var/info = statspage ? "<a href='?action=openLink&link=[url_encode(statspage)][GLOB.round_id]'>[GLOB.round_id]</a>" : GLOB.round_id
-		parts += "[GLOB.TAB]Round ID: <b>[info]</b>"
-	parts += "[GLOB.TAB]Shift Duration: <B>[DisplayTimeText(world.time - SSticker.round_start_time)]</B>"
-	parts += "[GLOB.TAB]Station Integrity: <B>[mode.station_was_nuked ? "<span class='redtext'>Destroyed</span>" : "[popcount["station_integrity"]]%"]</B>"
+		parts += "<meta charset 'utf-8'>"
+		parts += "[GLOB.TAB]АйДи раунда: <b>[info]</b>"
+	parts += "[GLOB.TAB]Длительность раунда: <B>[DisplayTimeText(world.time - SSticker.round_start_time)]</B>"
+	parts += "[GLOB.TAB]Целостность местности: <B>[mode.station_was_nuked ? "<span class='redtext'>всё разхуярено</span>" : "[popcount["station_integrity"]]%"]</B>"
 	var/total_players = GLOB.joined_player_list.len
 	if(total_players)
-		parts+= "[GLOB.TAB]Total Population: <B>[total_players]</B>"
+		parts+= "[GLOB.TAB]Всего сталкеров: <B>[total_players]</B>"
 		if(station_evacuated)
-			parts += "<BR>[GLOB.TAB]Evacuation Rate: <B>[popcount[POPCOUNT_ESCAPEES]] ([PERCENT(popcount[POPCOUNT_ESCAPEES]/total_players)]%)</B>"
-			parts += "[GLOB.TAB](on emergency shuttle): <B>[popcount[POPCOUNT_SHUTTLE_ESCAPEES]] ([PERCENT(popcount[POPCOUNT_SHUTTLE_ESCAPEES]/total_players)]%)</B>"
-		parts += "[GLOB.TAB]Survival Rate: <B>[popcount[POPCOUNT_SURVIVORS]] ([PERCENT(popcount[POPCOUNT_SURVIVORS]/total_players)]%)</B>"
+			parts += "<BR>[GLOB.TAB]Покинуло Зону: <B>[popcount[POPCOUNT_ESCAPEES]] ([PERCENT(popcount[POPCOUNT_ESCAPEES]/total_players)]%)</B>"
+			parts += "[GLOB.TAB](на вертолёте): <B>[popcount[POPCOUNT_SHUTTLE_ESCAPEES]] ([PERCENT(popcount[POPCOUNT_SHUTTLE_ESCAPEES]/total_players)]%)</B>"
+		parts += "[GLOB.TAB]Выжило: <B>[popcount[POPCOUNT_SURVIVORS]] ([PERCENT(popcount[POPCOUNT_SURVIVORS]/total_players)]%)</B>"
 		if(SSblackbox.first_death)
 			var/list/ded = SSblackbox.first_death
 			if(ded.len)
-				parts += "[GLOB.TAB]First Death: <b>[ded["name"]], [ded["role"]], at [ded["area"]]. Damage taken: [ded["damage"]].[ded["last_words"] ? " Their last words were: \"[ded["last_words"]]\"" : ""]</b>"
+				parts += "[GLOB.TAB]Первая смерть: <b>[ded["name"]], [ded["role"]], в [ded["area"]]. Урон: [ded["damage"]].[ded["last_words"] ? " Его последие слова: \"[ded["last_words"]]\"" : ""]</b>"
 			//ignore this comment, it fixes the broken sytax parsing caused by the " above
 			else
-				parts += "[GLOB.TAB]<i>Nobody died this shift!</i>"
+				parts += "[GLOB.TAB]<i>Никто не умер!</i>"
 	return parts.Join("<br>")
 
 /client/proc/roundend_report_file()
@@ -323,17 +324,17 @@
 			if(EMERGENCY_ESCAPED_OR_ENDGAMED)
 				if(!M.onCentCom() && !M.onSyndieBase())
 					parts += "<div class='panel stationborder'>"
-					parts += "<span class='marooned'>You managed to survive, but were marooned on [station_name()]...</span>"
+					parts += "<span class='marooned'>Ты выжил в [station_name()].</span>"
 				else
 					parts += "<div class='panel greenborder'>"
-					parts += "<span class='greentext'>You managed to survive the events on [station_name()] as [M.real_name].</span>"
+					parts += "<span class='greentext'>Ты выжил в [station_name()] за [M.real_name].</span>"
 			else
 				parts += "<div class='panel greenborder'>"
-				parts += "<span class='greentext'>You managed to survive the events on [station_name()] as [M.real_name].</span>"
+				parts += "<span class='greentext'>Ты выжил в [station_name()] за [M.real_name].</span>"
 
 		else
 			parts += "<div class='panel redborder'>"
-			parts += "<span class='redtext'>You did not survive the events on [station_name()]...</span>"
+			parts += "<span class='redtext'>Ты погиб в [station_name()]...</span>"
 	else
 		parts += "<div class='panel stationborder'>"
 	parts += "<br>"
@@ -399,7 +400,7 @@
 /datum/controller/subsystem/ticker/proc/medal_report()
 	if(GLOB.commendations.len)
 		var/list/parts = list()
-		parts += "<span class='header'>Medal Commendations:</span>"
+		parts += "<span class='header'>Полученые Награды:</span>"
 		for (var/com in GLOB.commendations)
 			parts += com
 		return "<div class='panel stationborder'>[parts.Join("<br>")]</div>"
@@ -463,7 +464,7 @@
 	var/datum/action/report/R = new
 	C.player_details.player_actions += R
 	R.Grant(C.mob)
-	to_chat(C,"<a href='?src=[REF(R)];report=1'>Show roundend report again</a>")
+	to_chat(C,"<a href='?src=[REF(R)];report=1'>Показать конец раунда</a>")
 
 /datum/action/report
 	name = "Show roundend report"
@@ -488,20 +489,20 @@
 	var/jobtext = ""
 	if(ply.assigned_role)
 		jobtext = " the <b>[ply.assigned_role]</b>"
-	var/text = "<b>[ply.key]</b> was <b>[ply.name]</b>[jobtext] and"
+	var/text = "<b>[ply.key]</b> под именем <b>[ply.name]</b>[jobtext] и"
 	if(ply.current)
 		if(ply.current.stat == DEAD)
-			text += " <span class='redtext'>died</span>"
+			text += " <span class='redtext'>умер</span>"
 		else
-			text += " <span class='greentext'>survived</span>"
+			text += " <span class='greentext'>выжил</span>"
 		if(fleecheck)
 			var/turf/T = get_turf(ply.current)
 			if(!T || !is_station_level(T.z))
-				text += " while <span class='redtext'>fleeing the station</span>"
+				text += " while <span class='redtext'>покинул Зону</span>"
 		if(ply.current.real_name != ply.name)
 			text += " as <b>[ply.current.real_name]</b>"
 	else
-		text += " <span class='redtext'>had their body destroyed</span>"
+		text += " <span class='redtext'>умер</span>"
 	return text
 
 /proc/printplayerlist(list/players,fleecheck)
@@ -521,9 +522,9 @@
 	var/count = 1
 	for(var/datum/objective/objective in objectives)
 		if(objective.check_completion())
-			objective_parts += "<b>Objective #[count]</b>: [objective.explanation_text] <span class='greentext'>Success!</span>"
+			objective_parts += "<b>Задача #[count]</b>: [objective.explanation_text] <span class='greentext'>Выполнено.</span>"
 		else
-			objective_parts += "<b>Objective #[count]</b>: [objective.explanation_text] <span class='redtext'>Fail.</span>"
+			objective_parts += "<b>Задача #[count]</b>: [objective.explanation_text] <span class='redtext'>Провалено.</span>"
 		count++
 	return objective_parts.Join("<br>")
 

@@ -42,11 +42,11 @@
 	..()
 	switch(rating_add)
 		if(0 to 200)
-			loot = GLOB.low_tier_sidormatitems
+			loot = low_tier_sidormatitems
 		if(201 to 400)
-			loot = GLOB.medium_tier_sidormatitems
+			loot = medium_tier_sidormatitems
 		if(401 to INFINITY)
-			loot = GLOB.high_tier_sidormatitems
+			loot = high_tier_sidormatitems
 
 	if(!loot || !loot.len)
 		return

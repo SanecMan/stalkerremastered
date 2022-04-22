@@ -36,6 +36,7 @@
 	var/active = 0
 
 	var/memory
+	var/quest
 
 	var/assigned_role
 	var/special_role
@@ -129,6 +130,12 @@
 
 /datum/mind/proc/store_memory(new_text)
 	memory += "[new_text]<BR>"
+
+/datum/mind/proc/store_quest(new_text)
+	quest += "[new_text]"
+
+/datum/mind/proc/remove_quest()
+	quest = null
 
 /datum/mind/proc/wipe_memory()
 	memory = null
@@ -348,7 +355,7 @@
 /datum/mind/proc/show_memory(mob/recipient, window=1)
 	if(!recipient)
 		recipient = current
-	var/output = "<B>[current.real_name]'s Memories:</B><br>"
+	var/output = "<B>Воспоминания [current.real_name]:</B><br>"
 	output += memory
 
 
@@ -358,16 +365,20 @@
 		all_objectives |= A.objectives
 
 	if(all_objectives.len)
-		output += "<B>Objectives:</B>"
+		output += "<B>Задачи:</B>"
 		var/obj_count = 1
 		for(var/datum/objective/objective in all_objectives)
-			output += "<br><B>Objective #[obj_count++]</B>: [objective.explanation_text]"
+			output += "<br><B>Задача #[obj_count++]</B>: [objective.explanation_text]"
 			var/list/datum/mind/other_owners = objective.get_owners() - src
 			if(other_owners.len)
 				output += "<ul>"
 				for(var/datum/mind/M in other_owners)
-					output += "<li>Conspirator: [M.name]</li>"
+					output += "<li>Конспиратор: [M.name]</li>"
 				output += "</ul>"
+
+	if(quest)
+		output += "<b>Выданые задания:</b><BR>"
+		output += quest
 
 	if(window)
 		recipient << browse(output,"window=memory")

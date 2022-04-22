@@ -967,3 +967,9 @@ GLOBAL_PROTECT(admin_verbs_hideable)
 	message_admins("[key_name_admin(usr)] changed respawn rate from [round(CONFIG_GET(number/respawn_timer)/600)] to [newrespawnrate].")
 
 	CONFIG_SET(number/respawn_timer, round(newrespawnrate * 600))
+
+/client/proc/edit_sidormat_datums()
+	set category = "Stalker"
+	set name = "Edit Sidormat Datums"
+
+	debug_variables(real_sidormat_items)
