@@ -61,7 +61,7 @@
 	turns_per_move = 15
 	speed = 1
 	a_intent = "harm"
-	harm_intent_damage = 5
+	harm_intent_damage = 10
 	icon_state = "stalker_dog"
 	icon_living = "stalker_dog"
 	icon_dead = "stalker_dog_dead"
@@ -76,9 +76,9 @@
 						'stalker/sound/mobs/mutants/idle/bdog_idle_3.ogg',
 						'stalker/sound/mobs/mutants/idle/bdog_idle_4.ogg')
 	deathsound = 'stalker/sound/mobs/mutants/death/dog_death.ogg'
-	melee_damage_lower = 10
-	melee_damage_upper = 15
-	maxHealth = 25
+	melee_damage_lower = 20
+	melee_damage_upper = 25
+	maxHealth = 50
 	fearborder = 10
 	atmos_requirements = list("min_oxy" = 0, "max_oxy" = 0, "min_tox" = 0, "max_tox" = 0, "min_co2" = 0, "max_co2" = 0, "min_n2" = 0, "max_n2" = 0)
 	healable = 1
@@ -129,7 +129,7 @@
 						'stalker/sound/mobs/mutants/idle/snork_idle_2.ogg',
 						'stalker/sound/mobs/mutants/idle/snork_idle_3.ogg')
 	deathsound = 'stalker/sound/mobs/mutants/death/snork_death.ogg'
-	melee_damage_upper = 30
+	melee_damage_upper = 50
 	fearborder = 10
 	see_invisible = SEE_INVISIBLE_MINIMUM
 	see_in_dark = 4
@@ -146,7 +146,7 @@
 	atmos_requirements = list("min_oxy" = 0, "max_oxy" = 0, "min_tox" = 0, "max_tox" = 0, "min_co2" = 0, "max_co2" = 0, "min_n2" = 0, "max_n2" = 0)
 	ranged = 1
 	ranged_cooldown = 1 //By default, start the Goliath with his cooldown off so that people can run away quickly on first sight
-	ranged_cooldown_time = 4
+	ranged_cooldown_time = 2
 
 	attack_type = "claw"
 	var/leaping = 0
@@ -532,3 +532,55 @@
 			ranged_cooldown = max(0, ranged_cooldown_time - attack_stage)
 			attack_stage = 0
 	return
+
+/mob/living/simple_animal/hostile/mutant/tushkan
+	name = "tushkan"
+	desc = "Что-то похожее на мышь, худший кошмар сталкера."
+	eng_desc = "Mouse mutant."
+	turns_per_move = 15
+	speed = 0.5
+	a_intent = "harm"
+	harm_intent_damage = 10
+	icon_state = "tushkan"
+	icon_living = "tushkan"
+	icon_dead = "tushkan_dead"
+	attacktext = "bites"
+	search_objects = 1
+	speak_emote = list("whines")
+	faction = list("stalker_mutants1")
+	attack_sound = 'stalker/sound/mobs/mutants/attack/dog_attack.ogg'
+	idle_sounds = list('stalker/sound/mobs/mutants/idle/bdog_idle_1.ogg',
+						'stalker/sound/mobs/mutants/idle/bdog_idle_2.ogg',
+						'stalker/sound/mobs/mutants/idle/bdog_idle_3.ogg',
+						'stalker/sound/mobs/mutants/idle/bdog_idle_4.ogg')
+	deathsound = 'stalker/sound/mobs/mutants/death/dog_death.ogg'
+	melee_damage_lower = 10
+	melee_damage_upper = 15
+	maxHealth = 25
+	fearborder = 10
+	atmos_requirements = list("min_oxy" = 0, "max_oxy" = 0, "min_tox" = 0, "max_tox" = 0, "min_co2" = 0, "max_co2" = 0, "min_n2" = 0, "max_n2" = 0)
+	healable = 1
+	robust_searching = 1
+	see_invisible = SEE_INVISIBLE_MINIMUM
+	see_in_dark = 4
+	deathmessage = "The tushkan makes a sinister howl!"
+	del_on_death = 0
+	minbodytemp = 0
+	maxbodytemp = 1500
+	environment_smash = 0
+	layer = MOB_LAYER - 0.1
+	butcher_results = list(/obj/nothing = 1)
+	//random_butcher_results = 1
+	attack_type = "bite"
+	move_to_delay = 1.2 //Real speed of a mob
+	rating_add = 15
+	vision_range = 7
+	aggro_vision_range = 9
+
+/mob/living/simple_animal/hostile/mutant/tushkan/AttackingTarget()
+	..()
+	if(istype(target, /mob/living/carbon))
+		var/mob/living/carbon/C = target
+		if(C.health > 25)
+			var/anydir = pick(GLOB.alldirs)
+			walk_away(src, get_step(src, anydir), 7, move_to_delay)
