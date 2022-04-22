@@ -270,49 +270,49 @@ GLOBAL_LIST_EMPTY(cps)
 	color = COLOR_STALKER_LONERS
 
 /obj/effect/forcefield/faction/CanPass(atom/movable/mover, turf/target)
-	var/datum/data/record/sk = find_record("sid", H.sid, GLOB.data_core.stalkers)
-	if(mover in sk.fields["faction_s"] == faction_allowed)
+	var/datum/data/record/razreshen = find_record("sid", src.sid, GLOB.data_core.stalkers)
+	if(mover in razreshen.fields["faction_s"] == faction_allowed)
 		return TRUE
 
 	if(!isliving(mover)) //No stowaways
-		to_chat(H, "<span class='danger'>Тебя нету во фракции [faction_allowed].</span>")
+		to_chat("<span class='danger'>Тебя нету во фракции [faction_allowed].</span>")
 		return FALSE
 
 	return FALSE
 
 /obj/effect/forcefield/faction/Bumped(atom/movable/AM)
 	if(!isliving(AM))
-		to_chat(H, "<span class='danger'>Тебя нету во фракции [faction_allowed].</span>")
+		to_chat("<span class='danger'>Тебя нету во фракции [faction_allowed].</span>")
 		return ..()
 
 /obj/effect/forcefield/faction/bandits
-	var/faction_allowed = "Bandits"
+	faction_allowed = "Bandits"
 	color = COLOR_STALKER_BANDITS
 
 /obj/effect/forcefield/faction/mercenary
-	var/faction_allowed = "Mercenary"
+	faction_allowed = "Mercenary"
 	color = COLOR_STALKER_MERC
 
 /obj/effect/forcefield/faction/duty
-	var/faction_allowed = "Duty"
+	faction_allowed = "Duty"
 	color = COLOR_STALKER_DUTY
 
 /obj/effect/forcefield/faction/freedom
-	var/faction_allowed = "Freedom"
+	faction_allowed = "Freedom"
 	color = COLOR_STALKER_FREEDOM
 
 /obj/effect/forcefield/faction/monolith
-	var/faction_allowed = "Monolith"
+	faction_allowed = "Monolith"
 	color = COLOR_STALKER_MONOLITH
 
 /obj/effect/forcefield/faction/army
-	var/faction_allowed = "Army"
+	faction_allowed = "Army"
 	color = COLOR_STALKER_ARMY
 
 /obj/effect/forcefield/faction/trader
-	var/faction_allowed = "Trader"
+	faction_allowed = "Trader"
 	color = COLOR_STALKER_LONERS
 
 /obj/effect/forcefield/faction/sciences
-	var/faction_allowed = "Sciences"
+	faction_allowed = "Sciences"
 	color = COLOR_STALKER_SCI
