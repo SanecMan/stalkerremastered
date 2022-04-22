@@ -270,8 +270,9 @@ GLOBAL_LIST_EMPTY(cps)
 	color = COLOR_STALKER_LONERS
 
 /obj/effect/forcefield/faction/CanPass(atom/movable/mover, turf/target)
-	var/datum/data/record/razreshen = find_record("sid", src.sid, GLOB.data_core.stalkers)
-	if(mover in razreshen.fields["faction_s"] == faction_allowed)
+	var/mob/living/carbon/human/H = user
+	var/datum/data/record/sk = find_record("sid", H.sid, GLOB.data_core.stalkers)
+	if(mover in sk.fields["faction_s"] == faction_allowed)
 		return TRUE
 
 	if(!isliving(mover)) //No stowaways
