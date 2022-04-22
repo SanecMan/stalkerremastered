@@ -2,7 +2,6 @@
 	name = "Сидорович"
 	desc = "Местный торговец."
 	icon = 'stalker/icons/images/sidor.png'
-	icon_state = "jaba"
 	density = 1
 	anchored = 1
 	var/itemloc = null
