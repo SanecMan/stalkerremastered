@@ -1,0 +1,4 @@
+environment = "stalker.dme"
+
+[debugger]
+engine = "auxtools"
