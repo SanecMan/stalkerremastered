@@ -259,7 +259,6 @@ GLOBAL_LIST_EMPTY(cps)
 
 	..()
 
-#warn саня доделай
 /obj/effect/forcefield/faction
 	name = "шторы"
 	desc = "Пройдёт лишь тот, кто есть во фракции."
@@ -269,24 +268,28 @@ GLOBAL_LIST_EMPTY(cps)
 	density = 1
 	var/faction_allowed = "Loners"
 	color = COLOR_STALKER_LONERS
-	var/temp_users = list()
 
-/obj/effect/forcefield/faction/CanPass(atom/movable/mover, turf/target)
-	if(mover in temp_users)
+/obj/effect/forcefield/faction/CanPass(mob/living/carbon/mover, turf/target)
+	testing("Начало КэнПасса")
+	var/datum/data/record/sk = find_record("sid", mover.sid, GLOB.data_core.stalkers)
+	if(istype(mover, sk.fields["faction_s"] == faction_allowed))
+		testing("КэнПасс: Выполнено")
 		return TRUE
+	testing("КэнПасс: Скипаю тру")
 	if(!isliving(mover)) //No stowaways
+		testing("КэнПасс: Не выполнено")
 		return FALSE
+	testing("КэнПасс: Не выполнено ибо нету во фракции")
 	to_chat("<span class='danger'>Тебя нету во фракции [faction_allowed].</span>")
 	return FALSE
+	testing("КэнПасс: Конец кода")
 
 /obj/effect/forcefield/faction/Bumped(atom/movable/AM)
+	testing("Начало Бампа")
 	if(!isliving(AM))
+		testing("Бамп: ..()")
 		return ..()
-/*	for(var/datum/data/record/sk = find_record("sid", AM.sid, GLOB.data_core.stalkers))
-		if(sk.fields["faction_s"] == faction_allowed)
-			temp_users += AM
-			sleep(10)
-			temp_users -= AM*/
+	testing("Бамп: Конец Кода")
 
 /obj/effect/forcefield/faction/bandits
 	faction_allowed = "Bandits"
