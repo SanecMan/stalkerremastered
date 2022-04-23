@@ -271,7 +271,8 @@ GLOBAL_LIST_EMPTY(cps)
 
 /obj/effect/forcefield/faction/CanPass(mob/living/carbon/mover, turf/target)
 	testing("Начало КэнПасса")
-	var/datum/data/record/sk = find_record("sid", mover.sid, GLOB.data_core.stalkers)
+	var/mob/living/carbon/human/H = mover
+	var/datum/data/record/sk = find_record("sid", H.sid, GLOB.data_core.stalkers)
 	if(istype(mover, sk.fields["faction_s"] == faction_allowed))
 		testing("КэнПасс: Выполнено")
 		return TRUE
