@@ -266,24 +266,24 @@ GLOBAL_LIST_EMPTY(cps)
 	icon_state = "closed"
 	timeleft = 0
 	density = 1
+	opacity = 1
 	var/faction_allowed = "Loners"
+	var/faction_pass = null
 	color = COLOR_STALKER_LONERS
 
 /obj/effect/forcefield/faction/CanPass(mob/living/carbon/mover, turf/target)
-	testing("Начало КэнПасса")
 	var/mob/living/carbon/human/H = mover
 	var/datum/data/record/sk = find_record("sid", H.sid, GLOB.data_core.stalkers)
-	if(istype(mover, sk.fields["faction_s"] == faction_allowed))
-		testing("КэнПасс: Выполнено")
-		return TRUE
-	testing("КэнПасс: Скипаю тру")
-	if(!isliving(mover)) //No stowaways
-		testing("КэнПасс: Не выполнено")
+	if(H.sid == null)
+		to_chat(H, "<span class='danger'>Ты не включил КПК.</span>")
 		return FALSE
-	testing("КэнПасс: Не выполнено ибо нету во фракции")
-	to_chat("<span class='danger'>Тебя нету во фракции [faction_allowed].</span>")
+	faction_pass = sk.fields["faction_s"]
+	if(faction_pass == faction_allowed)
+		return TRUE
+	if(!isliving(mover)) //No stowaways
+		return FALSE
+	to_chat(H, "<span class='danger'>Тебя нету во фракции [faction_allowed].</span>")
 	return FALSE
-	testing("КэнПасс: Конец кода")
 
 /obj/effect/forcefield/faction/Bumped(atom/movable/AM)
 	testing("Начало Бампа")
@@ -323,3 +323,5 @@ GLOBAL_LIST_EMPTY(cps)
 /obj/effect/forcefield/faction/sciences
 	faction_allowed = "Sciences"
 	color = COLOR_STALKER_SCI
+
+
