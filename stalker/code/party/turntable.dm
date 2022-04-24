@@ -150,7 +150,10 @@
 		new /datum/data/turntable_soundtrack ("Blonde Redhead",		"For The Damaged Soda",				'stalker/sound/turntable/blonde.ogg',								2488),
 		new /datum/data/turntable_soundtrack ("Yakui The Maid",		"Chloramine",						'stalker/sound/turntable/ytm_chloramine.ogg',						2337),
 		new /datum/data/turntable_soundtrack ("Yakui The Maid",		"Calamity",							'stalker/sound/turntable/ytm_calamity.ogg',							2481),
-		new /datum/data/turntable_soundtrack ("Yakui The Maid x Ozoi The Maid",		"Unreleased",		'stalker/sound/turntable/ytmxotm_unr.ogg',							2444)
+		new /datum/data/turntable_soundtrack ("Yakui The Maid x Ozoi The Maid",		"Unreleased",		'stalker/sound/turntable/ytmxotm_unr.ogg',							2444),
+		new /datum/data/turntable_soundtrack ("Egor Letov",			"Otryad ne zametil poteri bojjca",	'stalker/sound/turntable/otryad_ne_zametil_poteri_bojjca.ogg',		1400),
+		new /datum/data/turntable_soundtrack ("BombCat",			"Svinets",							'stalker/sound/turntable/BombCat.ogg',								1310),
+		new /datum/data/turntable_soundtrack ("Bandit Radio",		"retroelectro remix",				'stalker/sound/turntable/Bandit_Radio_retroelectro.ogg',			970)
 	)
 	anchored = 1
 	density = 1
