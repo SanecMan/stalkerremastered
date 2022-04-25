@@ -165,6 +165,9 @@
 /obj/effect/landmark/latejoin/army_eliteagro
 	name = "JoinLateEliteAgro"
 
+/obj/effect/landmark/latejoin/scientist
+	name = "JoinLateScientists"
+
 /obj/effect/landmark/latejoin/petrovich
 	name = "JoinLatePetrovich"
 

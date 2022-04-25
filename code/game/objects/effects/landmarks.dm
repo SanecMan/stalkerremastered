@@ -301,6 +301,8 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark/start/new_player)
 			SSjob.latejoin_duty_lt += loc
 		if ("JoinLateFreedom" || "JoinLateFreedom Lieutenant")
 			SSjob.latejoin_freedom += loc
+		if ("JoinLateScientists")
+			SSjob.latejoin_science += loc
 		if ("JoinLateMercenary")
 			SSjob.latejoin_mercenary += loc
 		if ("JoinLateMercenary Sql")
