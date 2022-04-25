@@ -39,3 +39,6 @@
 
 /obj/effect/landmark/mobspawner/monolith/controller_spawner
 	name = "controller_m"
+
+/obj/effect/landmark/mobspawner/tushkan_spawner
+	name = "tushkan"
