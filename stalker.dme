@@ -2819,6 +2819,7 @@
 #include "stalker\code\factions\mercenary.dm"
 #include "stalker\code\factions\monolith.dm"
 #include "stalker\code\factions\phantoms.dm"
+#include "stalker\code\factions\science.dm"
 #include "stalker\code\factions\survivor.dm"
 #include "stalker\code\machinery\door.dm"
 #include "stalker\code\machinery\sidormat.dm"

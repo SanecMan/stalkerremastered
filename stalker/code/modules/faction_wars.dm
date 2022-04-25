@@ -124,7 +124,7 @@ GLOBAL_LIST_EMPTY(cps)
 		say("Нет доступа: ты не во фракции")
 		return
 
-	if(sk.fields["faction_s"] == "Army" || sk.fields["faction_s"] == "Scientist" && all_capture == 1)
+	if(sk.fields["faction_s"] == "Army" || sk.fields["faction_s"] == "Scientists" && all_capture == 1)
 		say("Нет доступа: твоя фракция не позволяет.")
 		return
 
@@ -320,8 +320,8 @@ GLOBAL_LIST_EMPTY(cps)
 	faction_allowed = "Trader"
 	color = COLOR_STALKER_LONERS
 
-/obj/effect/forcefield/faction/sciences
-	faction_allowed = "Sciences"
+/obj/effect/forcefield/faction/scientists
+	faction_allowed = "Scientists"
 	color = COLOR_STALKER_SCI
 
 

@@ -1444,15 +1444,17 @@ var/global/global_lentahtml = ""
 			faction_s = "Свобода"
 		if("Army")
 			faction_s = "Военные"
+		if("Scientists")
+			faction_s = "Учёные"
 		if("Monolith")
 			faction_s = "Монолит"
 	return faction_s
 
 /proc/get_faction_color(var/eng_faction_s)
-	var/factioncolor = "#ff7733"
+	var/factioncolor = COLOR_STALKER_LONERS
 	switch(eng_faction_s)
 		if("Bandits")
-			factioncolor = "#8c8c8c"
+			factioncolor = COLOR_STALKER_BANDITS
 		if("Loners")
 			factioncolor = COLOR_STALKER_LONERS
 		if("Mercenaries")
@@ -1463,10 +1465,10 @@ var/global/global_lentahtml = ""
 			factioncolor = COLOR_STALKER_FREEDOM
 		if("Army")
 			factioncolor = COLOR_STALKER_ARMY
+		if("Scientists")
+			factioncolor = COLOR_STALKER_SCI
 		if("Monolith")
 			factioncolor = COLOR_STALKER_MONOLITH
-		if("Science")
-			factioncolor = COLOR_STALKER_SCI
 	return factioncolor
 
 /proc/get_rep_name(var/rep)
@@ -1544,6 +1546,8 @@ var/global/global_lentahtml = ""
 			return "Freedom"
 		if("Army")
 			return "Army"
+		if("Scientists")
+			return "Scientists"
 		if("Monolith")
 			return "Monolith"
 		else
