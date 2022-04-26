@@ -291,6 +291,144 @@ var/list/global_sidormat_list = list(
 		new /datum/data/stalker_equipment("5000 RU",			"5000 RU",							/obj/item/stack/spacecash/c5000,			5000,	ROOKIE,	sale_price = 5000)
 		)
 	)
+
+var/list/sci_sidormat_list = list(
+		///////////////////////////////  Оружие  /////////////////////////////////////////
+	"Handguns" = list(
+		///////////////////////////// **Пистолеты** /////////////////////////////////////
+		),
+
+	"Automatic Weapons" = list(
+		///////////////////////////// **Автоматы, ПП** /////////////////////////////////////
+		),
+
+	"Shotguns" = list(
+		/////////////////////////////// **Дробовики** /////////////////////////////////////
+		),
+
+	"Rifles" = list(
+		/////////////////////////////// **Винтовки** /////////////////////////////////////
+		new /datum/data/stalker_equipment("Gauss Rifle",	"Гаусс-винтовка",		/obj/item/gun/ballistic/automatic/gauss,			100000,	ROOKIE),
+		),
+
+	"Melee Weapons" = list(
+		/////////////////////////////// **Другое** /////////////////////////////////////
+		new /datum/data/stalker_equipment("Frag Grenade",		"Осколочная Граната",		/obj/item/grenade/syndieminibomb/concussion/stalker/frag,				2500,	ROOKIE),
+		new /datum/data/stalker_equipment("Flash Grenade",		"Светошумовая Граната",		/obj/item/grenade/flashbang,											2000,	ROOKIE),
+		new /datum/data/stalker_equipment("Anti-Grav Grenade","Анти-Грав Граната",			/obj/item/grenade/antigravity,											5000,	ROOKIE),
+		new /datum/data/stalker_equipment("Gluon Grenade",		"Глюонная Граната",			/obj/item/grenade/gluon,												10000,	ROOKIE)
+		),
+
+	"Ammo Boxes" = list(
+		////////////////////////////////  Патроны  /////////////////////////////////////////
+		),
+
+	"Ammo Magazines and Clips" = list(
+		new /datum/data/stalker_equipment("Gauss Rifle magazine",							"Магазин к Гаусс Винтовке",				/obj/item/ammo_box/magazine/stalker/gauss,					5000,	ROOKIE,		sale_price =2500)
+		),
+
+	"Suits" = list(
+		///////////////////////////////  Броня  /////////////////////////////////////////
+		new	/datum/data/stalker_equipment("SSP-99 Ecologist",			"ССП-99 Эколог",					/obj/item/clothing/suit/hooded/sealed/ecolog,				8500,	EXPERT),
+		new	/datum/data/stalker_equipment("SSP-99M Ecologist",			"ССП-99М Эколог",					/obj/item/clothing/suit/hooded/sealed/ecologm,				15000,	EXPERT),
+		new	/datum/data/stalker_equipment("SEVA",						"СЕВА",								/obj/item/clothing/suit/hooded/sealed/seva,					22500,	EXPERT),
+		new	/datum/data/stalker_equipment("Exoskeleton",				"Экзоскелет",						/obj/item/clothing/suit/hooded/sealed/exoskelet,			250000,	EXPERT)
+		),
+
+	"Masks and Helmets" = list(
+		////////////////////////////	Маски, Шлемы	/////////////////////////////////////
+		new /datum/data/stalker_equipment("Gasmask",					"Противогаз",					/obj/item/clothing/mask/gas/stalker,							7500,	ROOKIE),
+		new /datum/data/stalker_equipment("Merc gasmask",				"Противогаз наемников",			/obj/item/clothing/mask/gas/stalker/mercenary,					9500,	ROOKIE)
+		),
+
+	"Medicine" = list(
+		///////////////////////////////	Медикаменты	/////////////////////////////////////////
+		new /datum/data/stalker_equipment("Medkit",						"Аптечка",							/obj/item/reagent_containers/pill/stalker/aptechka/civilian,		1000,	ROOKIE),
+		new /datum/data/stalker_equipment("Army medkit",				"Армейская; аптечка",				/obj/item/reagent_containers/pill/stalker/aptechka/army,			1500,	EXPERIENCED),
+		new /datum/data/stalker_equipment("Scientific medkit",			"Научная; аптечка",					/obj/item/reagent_containers/pill/stalker/aptechka/scientific,		2000,	VETERAN),
+		new /datum/data/stalker_equipment("Bandage",					"Бинт",								/obj/item/reagent_containers/pill/stalker/aptechka/bint,			250,	ROOKIE),
+		new /datum/data/stalker_equipment("Anti-rad",					"Анти-рад препараты",				/obj/item/reagent_containers/hypospray/medipen/stalker/antirad,		1500,	ROOKIE),
+		new /datum/data/stalker_equipment("Psicodine Bottle Pills",		"Банка с псикодином",				/obj/item/storage/pill_bottle/psicodine,							2000,	ROOKIE),
+		new /datum/data/stalker_equipment("Neurine Bottle Pills",		"Банка с нейрином",					/obj/item/storage/pill_bottle/neurine,								1500,	ROOKIE),
+		new /datum/data/stalker_equipment("Pentetic Acid Bottle Pills",	"Банка с пентетиновой кислотой", 	/obj/item/storage/pill_bottle/penacid,								2000,	ROOKIE)
+		),
+
+	"Food" = list(
+		/////////////////////////////////	Еда	///////////////////////////////////////////
+		new /datum/data/stalker_equipment("MRE",						"ИРП",					/obj/item/storage/box/MRE,					4000,	ROOKIE)
+		),
+
+	"Bacpacks" = list(
+		),
+
+	"Misc" = list(
+		/////////////////////////////////	Другое	/////////////////////////////////////////////
+		new /datum/data/stalker_equipment("Radio",								"Рация",											/obj/item/radio,									7000,	ROOKIE),
+		new /datum/data/stalker_equipment("Repair-kit for suits and helmets",	"Рем. комплект для бронекостюмов и шлемов",		/obj/item/repair_kit/clothing,						10000,	ROOKIE),
+		new /datum/data/stalker_equipment("Repair-kit for guns",				"Рем. комплект для огнестрельного оружия",	/obj/item/repair_kit/gun,							4000,	ROOKIE),
+		new /datum/data/stalker_equipment("Geiger counter",						"Дозиметр",												/obj/item/geiger_counter,							3000,	ROOKIE),
+		new /datum/data/stalker_equipment("Flashlight",							"Фонарик",												/obj/item/flashlight/seclite,						1000,	ROOKIE),
+		new /datum/data/stalker_equipment("Big Artifact belt",					"Большой пояс для артефактов",				/obj/item/storage/belt/stalker/artifact_belt,		60000,	EXPERIENCED),
+		new /datum/data/stalker_equipment("Small Artifact belt",				"Маленький пояс для артефактов",			/obj/item/storage/belt/stalker/artifact_belt/small,	25000,	ROOKIE),
+		new /datum/data/stalker_equipment("100RUB",								"100Rub",												/obj/item/stack/spacecash/c100,						100,	ROOKIE, sale_price =100),
+		new /datum/data/stalker_equipment("500RUB",								"500Rub",												/obj/item/stack/spacecash/c500,						500,	ROOKIE, sale_price =500),
+		new /datum/data/stalker_equipment("1000RUB",							"1000Rub",												/obj/item/stack/spacecash/c1000,					1000,	ROOKIE, sale_price =1000),
+		new /datum/data/stalker_equipment("5000RUB",							"5000Rub",												/obj/item/stack/spacecash/c5000,					5000,	ROOKIE, sale_price =5000),
+		),
+
+	"Clothing" = list(
+		),
+
+	"Detectors" = list(
+		/////////////////////////////////	Детекторы	///////////////////////////////////////////
+		new /datum/data/stalker_equipment("Blink", 		"Отклик",					/obj/item/detector/blink,				8000,	ROOKIE,	sale_price =1000),
+		new /datum/data/stalker_equipment("Bear",		"Медведь",					/obj/item/detector/bear,				17000,	EXPERIENCED,	sale_price =4000),
+		new /datum/data/stalker_equipment("Veles",		"Велес",					/obj/item/detector/veles,				66000,	VETERAN,	sale_price =10000)
+		),
+
+	"Attachments" = list(
+		/////////////////////////////////	Аттачменты	///////////////////////////////////////////
+		///////////////////////////////////////////////////////////////////////////////////////////
+		),
+
+	"Unbuyable" = list(
+		/////////////////////////////////	Лут с мутантов	///////////////////////////////////////////
+		new /datum/data/stalker_equipment("Песий хвост",					"Песий хвост",			/obj/item/stalker/loot/dog_tail,			3000,		ROOKIE, sale_price = 500),
+		new /datum/data/stalker_equipment("Плотий глаз",					"Плотий глаз",			/obj/item/stalker/loot/flesh_eye,			2600,		ROOKIE, sale_price = 650),
+		new /datum/data/stalker_equipment("Кабаний ног",					"Кабаний ног",			/obj/item/stalker/loot/boar_leg,			12000,		ROOKIE, sale_price = 800),
+		new /datum/data/stalker_equipment("Cноркий рук",					"Снорукий рук",			/obj/item/stalker/loot/snork_leg,			14000,		ROOKIE, sale_price = 1000),
+		new /datum/data/stalker_equipment("Кровососий щупалец",				"Кровососий щупалец",	/obj/item/stalker/loot/bloodsucker,			32000,		ROOKIE, sale_price = 2500),
+		new /datum/data/stalker_equipment("Псевдопесий хвост",				"Псевдопесий хвост",	/obj/item/stalker/loot/pseudo_tail,			16000,		ROOKIE, sale_price = 1500),
+		new /datum/data/stalker_equipment("Контроллерий мозг",				"Контроллерий мозг",	/obj/item/stalker/loot/controller_brain,	80000,		ROOKIE, sale_price = 10000),
+		/////////////////////////////////	Артефакты	///////////////////////////////////////////
+		new /datum/data/stalker_equipment("Медуза",				"Медуза",							/obj/item/artifact/meduza,					5000,	ROOKIE,	sale_price = 3000),
+		new /datum/data/stalker_equipment("Каменный цветок",	"Каменный цветок",					/obj/item/artifact/stoneflower,				10000,	ROOKIE,	sale_price = 5000),
+		new /datum/data/stalker_equipment("Ночная звезда",		"Ночная звезда",					/obj/item/artifact/nightstar,				30000,	ROOKIE,	sale_price = 26000),
+		new /datum/data/stalker_equipment("Душа",				"Душа",								/obj/item/artifact/soul,					80000,	ROOKIE,	sale_price = 50000),
+		///////////////////////////////////////////////////////////////////////////////////////////
+		new /datum/data/stalker_equipment("Вспышка",			"Вспышка",							/obj/item/artifact/flash,					6000,	ROOKIE,	sale_price = 2600),
+		new /datum/data/stalker_equipment("Лунный свет",		"Лунный свет",						/obj/item/artifact/moonlight,				12000,	ROOKIE,	sale_price = 5400),
+		new /datum/data/stalker_equipment("Пустышка",			"Пустышка",							/obj/item/artifact/pustishka,				40000,	ROOKIE,	sale_price = 16000),
+		new /datum/data/stalker_equipment("Батарейка",			"Батарейка",						/obj/item/artifact/battery,					70000,	ROOKIE,	sale_price = 48000),
+		///////////////////////////////////////////////////////////////////////////////////////////
+		new /datum/data/stalker_equipment("Капля",		"Капля",									/obj/item/artifact/droplet,					7000,	ROOKIE,	sale_price = 800),
+		new /datum/data/stalker_equipment("Огненный шар",		"Огненный шар",						/obj/item/artifact/fireball,				15000,	ROOKIE,	sale_price = 7000),
+		new /datum/data/stalker_equipment("Кристалл",			"Кристалл",							/obj/item/artifact/crystal,					60000,	ROOKIE,	sale_price = 30000),
+		new /datum/data/stalker_equipment("Мамины бусы",		"Мамины бусы",						/obj/item/artifact/maminibusi,				80000,	ROOKIE,	sale_price = 70000),
+		///////////////////////////////////////////////////////////////////////////////////////////
+		new /datum/data/stalker_equipment("Кровь Камня",	"Кровь Камня",							/obj/item/artifact/stone_blood,				4000,	ROOKIE,	sale_price = 5000),
+		new /datum/data/stalker_equipment("Пузырь",				"Пузырь",							/obj/item/artifact/bubble,					12000,	ROOKIE,	sale_price = 7200),
+		new /datum/data/stalker_equipment("Слюда",				"Слюда",							/obj/item/artifact/mica,					30000,	ROOKIE,	sale_price = 19000),
+		new /datum/data/stalker_equipment("Светляк",		"Светляк",								/obj/item/artifact/firefly,					60000,	ROOKIE,	sale_price = 50000),
+		/////////////////////////////////	Мусор	//////////////////////////////////////////////
+		new /datum/data/stalker_equipment("50 RU",				"50 RU",							/obj/item/stack/spacecash/c50,				50,		ROOKIE,	sale_price = 50),
+		new /datum/data/stalker_equipment("100 RU",				"100 RU",							/obj/item/stack/spacecash/c100,				100,	ROOKIE,	sale_price = 100),
+		new /datum/data/stalker_equipment("500 RU",				"500 RU",							/obj/item/stack/spacecash/c500,				500,	ROOKIE,	sale_price = 500),
+		new /datum/data/stalker_equipment("1000 RU",			"1000 RU",							/obj/item/stack/spacecash/c1000,			1000,	ROOKIE,	sale_price = 1000),
+		new /datum/data/stalker_equipment("5000 RU",			"5000 RU",							/obj/item/stack/spacecash/c5000,			5000,	ROOKIE,	sale_price = 5000)
+		)
+	)
+
 //Квесты
 var/list/quest_list_available = list()
 var/list/quest_list_all = list()

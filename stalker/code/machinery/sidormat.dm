@@ -16,6 +16,7 @@
 	var/real_assorment = list()
 	var/list/special_factions = list("Loners", "Bandits")
 	var/path_ending = null
+	var/temp_sidormat_list = null
 	//Faction Locker
 	var/obj/item/assembly/control/door_device = null
 
@@ -110,6 +111,8 @@
 	if(path_ending && !door_device)
 		door_device = new /obj/item/assembly/control(src)
 		door_device.id = path_ending
+	
+	temp_sidormat_list = global_sidormat_list
 
 /obj/machinery/stalker/sidormat/attack_hand(mob/user)
 	balance = 0
@@ -162,11 +165,11 @@
 		dat += "</div>"
 		dat += "<div class='lenta_scroll'>"
 		dat += "<BR><table border='0' width='400'>" //<b>Item list:</b>
-		for(var/L in global_sidormat_list)
+		for(var/L in temp_sidormat_list)
 			if(L == "Unbuyable" && !(switches & SELL_UNBUYABLE))
 				continue
 			dat += "<tr><td><center><big><b>[L]</b></big></center></td><td></td><td></td></tr>"
-			for(var/datum/data/stalker_equipment/prize in global_sidormat_list[L])
+			for(var/datum/data/stalker_equipment/prize in temp_sidormat_list[L])
 				if((sk.fields["faction_s"] == prize.faction && ((sk.fields["faction_s"] in special_factions) || (switches & SHOW_FACTION_EQUIPMENT))) || prize.faction == "Everyone")
 					//if(rating >= prize.rating)
 					if(get_assortment_level(H) >= prize.assortment_level)
@@ -189,11 +192,11 @@
 		dat += "</div>"
 		dat += "<div class='lenta_scroll'>"
 		dat += "<BR><table border='0' width='400'>" //<b>Список предметов:</b>
-		for(var/L in global_sidormat_list)
+		for(var/L in temp_sidormat_list)
 			if(L == "Unbuyable" && !(switches & SELL_UNBUYABLE))
 				continue
 			dat += "<tr><td></td><td><center><b>[L]</b></center></td><td></td><td></td></tr>"
-			for(var/datum/data/stalker_equipment/prize in global_sidormat_list[L])
+			for(var/datum/data/stalker_equipment/prize in temp_sidormat_list[L])
 				if((sk.fields["faction_s"] == prize.faction && ((sk.fields["faction_s"] in special_factions) || (switches & SHOW_FACTION_EQUIPMENT))) || prize.faction == "Everyone")
 					//if(rating >= prize.rating)
 					if(get_assortment_level(H) >= prize.assortment_level)
@@ -321,17 +324,17 @@
 		if(istype(AM, /obj/item/clothing))
 			var/obj/item/clothing/C = AM
 			if((C.durability / initial(C.durability)) * 100 < 80)
-				say("[AM] is too broken for sale.")
+				say("[AM] слишком поломан.")
 				continue
 
 		if(istype(AM, /obj/item/storage/backpack) && AM.contents.len)
-			say("Empty [AM] before selling.")
+			say("Опустоши [AM] перед продажей.")
 			continue
 
 		if(istype(AM, /obj/item/ammo_box))
 			var/obj/item/ammo_box/AB = AM
 			if(AB.stored_ammo.len < AB.max_ammo)
-				say("Fill [AB] before selling.")
+				say("В [AB] нехватает патронов.")
 				continue
 
 		//if(istype(AM, /obj/item/reagent_containers))
@@ -369,3 +372,16 @@
 	GLOB.sidor_cache[P.equipment_path] = icon2base64(getFlatIcon(product, no_anim = TRUE))
 	qdel(product)
 	return GLOB.sidor_cache[P.equipment_path]
+
+/obj/machinery/stalker/sidormat/plus
+	name = "SYCHEMAT PLUS"
+	desc = "An equipment vendor for army and science."
+	icon_state = "radio"
+	density = 1
+	anchored = 1
+	mouse_opacity = 1
+	special_factions = list("Sciences", "Army")
+
+/obj/machinery/stalker/sidormat/plus/New()
+	..()
+	temp_sidormat_list = sci_sidormat_list
