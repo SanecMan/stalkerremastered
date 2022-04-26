@@ -16,7 +16,7 @@ GLOBAL_LIST_EMPTY(cps)
 
 	var/control_percent		= 0
 
-	var/all_capture = 1
+	var/all_capture = 0
 
 	var/unlocked_weapons	= null
 //	var/respawn_income		= 0 //каждые 30 минут
@@ -120,11 +120,15 @@ GLOBAL_LIST_EMPTY(cps)
 		say("Нет доступа.")
 		return
 
-	if(sk.fields["faction_s"] == "Loners" || sk.fields["faction_s"] == "Bandits" && all_capture == 1)
+	if(sk.fields["faction_s"] == "Loners" && all_capture == 1)
 		say("Нет доступа: ты не во фракции")
 		return
 
-	if(sk.fields["faction_s"] == "Army" || sk.fields["faction_s"] == "Scientists" && all_capture == 1)
+	if(sk.fields["faction_s"] == "Bandits" && all_capture == 1)
+		say("Нет доступа: твоя фракция не позволяет.")
+		return
+
+	if(sk.fields["faction_s"] == "Scientists" && all_capture == 1)
 		say("Нет доступа: твоя фракция не позволяет.")
 		return
 
