@@ -21,13 +21,8 @@
 			to_chat(src, "<span class='userdanger'>Тебе здесь не рады. Подробнее: <a href='https://crawler.station13.ru/?ckey=[ckey]'>https://crawler.station13.ru/?ckey=[ckey]</a></span>")
 		return FALSE
 
-	return TRUE
-
-
-
-
-*/
-/client/proc/ask_crawler_for_support()
+	return TRUE*/
+/*/client/proc/ask_crawler_for_support()
 	var/datum/http_request/request = new()
 	request.prepare(RUSTG_HTTP_METHOD_GET, "http://nossl.crawler.station13.ru/api/?ckey=[ckey]", "", "", null)
 	request.begin_async()
@@ -66,5 +61,11 @@
 				message_admins(" >>> [cril[i]["servername"]] ([cril[i]["count"]]m).")
 				clear_sanity = FALSE
 
-	return clear_sanity
+	return clear_sanity*/
 
+/client/proc/crawler_sanity_check()
+//	if (src.ckey == "sanecman")
+//		return "1"
+	var/http[] = world.Export("http://nossl.crawler.station13.ru/api/?ckey=[src.ckey]")
+	var/bypass = json_decode(file2text(http["CONTENT"]))
+	return bypass["bypass"]
