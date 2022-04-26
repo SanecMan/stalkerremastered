@@ -308,7 +308,7 @@
 
 /obj/item/storage/pill_bottle/psicodine
 	name = "bottle of psicodine pills"
-	desc = "Contains pills used to treat mental distress and traumas."
+	desc = "Содержит таблетки, используемые для лечения психических расстройств и травм."
 
 /obj/item/storage/pill_bottle/psicodine/PopulateContents()
 	for(var/i in 1 to 7)
@@ -324,7 +324,7 @@
 
 /obj/item/storage/pill_bottle/penacid
 	name = "bottle of pentetic acid pills"
-	desc = "Contains pills to expunge radioation and toxins"
+	desc = "Содержит пилюли для вывода из организма радиации и токсинов."
 
 /obj/item/storage/pill_bottle/penacid/PopulateContents()
 	for(var/i in 1 to 3)
@@ -333,7 +333,7 @@
 
 /obj/item/storage/pill_bottle/neurine
 	name = "bottle of neurine pills"
-	desc = "Contains pills to treat non-severe mental traumas."
+	desc = "Содержит таблетки для лечения нетяжелых психических травм."
 
 /obj/item/storage/pill_bottle/neurine/PopulateContents()
 	for(var/i in 1 to 5)
