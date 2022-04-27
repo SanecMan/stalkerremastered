@@ -380,7 +380,7 @@
 	density = 1
 	anchored = 1
 	mouse_opacity = 1
-	special_factions = list("Sciences", "Army")
+	special_factions = list("Scientists", "Army")
 
 /obj/machinery/stalker/sidormat/plus/New()
 	..()
