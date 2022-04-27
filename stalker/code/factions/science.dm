@@ -15,7 +15,7 @@ Assistant
 	access = list()			//See /datum/job/assistant/get_access()
 	minimal_access = list()	//See /datum/job/assistant/get_access()
 	whitelist_only = 0
-	activated = 1
+	activated = 0
 	outfit = /datum/outfit/job/sciassistant
 
 /datum/outfit/job/sciassistant
@@ -55,7 +55,7 @@ Assistant
 	access = list()			//See /datum/job/assistant/get_access()
 	minimal_access = list()	//See /datum/job/assistant/get_access()
 	whitelist_only = 1
-	activated = 1
+	activated = 0
 	outfit = /datum/outfit/job/scientists
 
 /datum/outfit/job/scientists
@@ -95,7 +95,7 @@ Assistant
 	access = list()			//See /datum/job/assistant/get_access()
 	minimal_access = list()	//See /datum/job/assistant/get_access()
 	whitelist_only = 1
-	activated = 1
+	activated = 0
 	outfit = /datum/outfit/job/professor
 
 /datum/outfit/job/professor
