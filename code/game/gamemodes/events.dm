@@ -70,7 +70,7 @@
 
 /proc/power_restore_quick()
 
-	priority_announce("All SMESs on [station_name()] have been recharged. We apologize for the inconvenience.", "Power Systems Nominal", 'sound/ai/poweron.ogg')
+	add_lenta_message(null, "0", "Power Systems Nominal", "NanoTrasen", "All SMESs on [station_name()] have been recharged. We apologize for the inconvenience.")
 	for(var/obj/machinery/power/smes/S in GLOB.machines)
 		if(!is_station_level(S.z))
 			continue

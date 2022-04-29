@@ -70,9 +70,9 @@
 
 /obj/singularity/narsie/large/cult/proc/begin_the_end()
 	sleep(50)
-	priority_announce("An acausal dimensional event has been detected in your sector. Event has been flagged EXTINCTION-CLASS. Directing all available assets toward simulating solutions. SOLUTION ETA: 60 SECONDS.","Central Command Higher Dimensional Affairs", 'sound/misc/airraid.ogg')
+	add_lenta_message(null, "0", "Central Command Higher Dimensional Affairs", "NanoTrasen", "An acausal dimensional event has been detected in your sector. Event has been flagged EXTINCTION-CLASS. Directing all available assets toward simulating solutions. SOLUTION ETA: 60 SECONDS.")
 	sleep(500)
-	priority_announce("Simulations on acausal dimensional event complete. Deploying solution package now. Deployment ETA: ONE MINUTE. ","Central Command Higher Dimensional Affairs")
+	add_lenta_message(null, "0", "Central Command Higher Dimensional Affairs", "NanoTrasen", "Simulations on acausal dimensional event complete. Deploying solution package now. Deployment ETA: ONE MINUTE.")
 	sleep(50)
 	set_security_level("delta")
 	SSshuttle.registerHostileEnvironment(src)
