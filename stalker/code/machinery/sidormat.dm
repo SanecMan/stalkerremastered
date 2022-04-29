@@ -373,6 +373,37 @@
 	qdel(product)
 	return GLOB.sidor_cache[P.equipment_path]
 
+/obj/machinery/stalker/sidormat/proc/RedeemVoucher(/obj/item/vipcard/voucher, mob/redeemer)
+	var/items = list("Doomguy", "Speedrunner", "Nedomonolith", "Renegate", "Tourist")
+
+	var/selection = input(redeemer, "Выбери стартовое снаряжение", "Донатные плюшки") as null|anything in items
+	if(!selection || !Adjacent(redeemer) || QDELETED(voucher) || voucher.loc != redeemer)
+		return
+	var/drop_location = drop_location()
+	switch(selection)
+		if("Doomguy")
+			new /obj/item/gun/ballistic/shotgun/bm16/sawnoff(drop_location)
+			new /obj/item/ammo_box/stalker/b12x70P(drop_location)
+		if("Speedrunner")
+			new /obj/item/reagent_containers/pill/stalker/aptechka/scientific(drop_location)
+			new /obj/item/reagent_containers/pill/stalker/aptechka/scientific(drop_location)
+		if("Nedomonolith")
+			new /obj/item/clothing/suit/hooded/kozhanka/white/monolith(drop_location)
+			new /obj/effect/spawner/lootdrop/khabar_low(drop_location)
+			new /obj/effect/spawner/lootdrop/khabar_low(drop_location)
+			new /obj/effect/spawner/lootdrop/khabar_low(drop_location)
+		if("Renegate")
+			new /obj/item/clothing/suit/hooded/kozhanka/banditka/coat/brown(drop_location)
+			new /obj/effect/spawner/lootdrop/khabar_low(drop_location)
+		if("Tourist")
+			new /obj/item/kitchen/knife/tourist(drop_location)
+			new /obj/item/storage/backpack/stalker/tourist(drop_location)
+			new /obj/item/reagent_containers/food/snacks/stalker/konserva/kasha(drop_location)
+			new /obj/item/reagent_containers/food/snacks/stalker/konserva/kasha(drop_location)
+			new /obj/item/reagent_containers/food/snacks/stalker/konserva/kasha(drop_location)
+			new /obj/item/gun/ballistic/automatic/pistol/pm(drop_location)
+	qdel(voucher)
+
 /obj/machinery/stalker/sidormat/plus
 	name = "SYCHEMAT PLUS"
 	desc = "An equipment vendor for army and science."
