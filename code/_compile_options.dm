@@ -23,7 +23,9 @@
 //#define UNIT_TESTS			//Enables unit tests via TEST_RUN_PARAMETER
 
 #ifndef PRELOAD_RSC				//set to:
-#define PRELOAD_RSC	1			//	0 to allow using external resources or on-demand behaviour;
+#define PRELOAD_RSC	0			//	0 to allow using external resources or on-demand behaviour;
+#if PRELOAD_RSC	= 0
+#warn Vnimanie! Vse faili zagrushautsya is drugogo istochnika. Postavte znachenige v poloshenie 1 esli vam nado zagrushat s localnoy papki.
 #endif							//	1 to use the default behaviour;
 								//	2 for preloading absolutely everything;
 
