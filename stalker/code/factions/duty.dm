@@ -63,7 +63,7 @@ Assistant
 
 /datum/job/barman2
 	title = "Barman2"
-	faction_s = "Loners"
+	faction_s = "Traders"
 	locked = 1
 //	flag = ASSISTANT
 //	department_flag = CIVILIAN
