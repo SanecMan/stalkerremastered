@@ -599,7 +599,7 @@ GLOBAL_LIST_EMPTY(spawned_artifacts)
 	var/damage_amount = 0 				//Сколько дамажит
 	var/damage_type = DMG_TYPE_RADIATION	//Тип дамага
 	var/activated_icon_state = null 	//Спрайт при активации
-	var/cooldown = 2.5					//Кулдаун
+	var/cooldown = 0.5					//Кулдаун
 	var/lasttime = 0
 	var/list/mob/living/carbon/human/trapped = new/list()
 	var/idle_luminosity = 0
