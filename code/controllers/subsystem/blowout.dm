@@ -120,8 +120,6 @@ SUBSYSTEM_DEF(blowout)
 
 	add_lenta_message(null, "0", "Sidorovich", "Loners", "ВНИМАНИЕ, СТАЛКЕРЫ! Приближается выброс! Ищите ближайшее укрытие!")
 	world << sound('stalker/sound/blowout/blowout_begin_02.ogg', wait = 0, channel = 201, volume = 50)
-	world << sound('stalker/sound/blowout/blowout_siren.ogg', wait = 0, channel = 202, volume = 60)
-
 	for(var/mob/living/carbon/C in GLOB.player_list)
 		if(!C.inshelter)
 			to_chat(C, "<big><span class='warning'>Вам нужно срочно искать укрытие, скоро начнётся выброс!</span></big>")
