@@ -53,6 +53,7 @@
 /area/stalker/buildings/trilogy/kordon/safezone
 	name = "Кордон - Безопасная Зона"
 	icon_state = "buildings"
+	safezone = 1
 
 /area/stalker/buildings/trilogy/kordon/podval
 	name = "Кордон - Подвал"
@@ -110,6 +111,7 @@
 /area/stalker/buildings/trilogy/svalka/dom/spawnzone
 	name = "Свалка - Безопасная Зона"
 	icon_state = "buildings"
+	safezone = 1
 
 /area/stalker/buildings/trilogy/svalka/podval
 	name = "Свалка - Подвал"
@@ -155,6 +157,11 @@
 /area/stalker/buildings/trilogy/zavod/rentgen/vhod
 	name = "Бар - Вход"
 	icon_state = "buildings"
+
+/area/stalker/buildings/trilogy/zavod/rentgen/vnutri
+	name = "Бар - Безопасная Зона"
+	icon_state = "buildings"
+	safezone = 1
 
 /area/stalker/buildings/trilogy/zavod/rentgen/arena
 	name = "Бар - Арена"
