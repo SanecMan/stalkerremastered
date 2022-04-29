@@ -317,6 +317,9 @@ var/sid_generator = 0
 
 		if(sk.fields["faction_s"] == "Bandits")
 			sk.fields["money"] = 2000
+		if(sk.fields["faction_s"] == "Traders")
+			sk.fields["rating"] = 1000
+			sk.fields["money"] = 500000
 		else if(sk.fields["faction_s"] == "Monolith")
 			sk.fields["money"] = 2000
 			sk.fields["reputation"] = DISGUSTING
