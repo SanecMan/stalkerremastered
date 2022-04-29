@@ -27,9 +27,6 @@
 #endif							//	1 to use the default behaviour;
 								//	2 for preloading absolutely everything;
 
-#if PRELOAD_RSC < 1
-#warn Vnimanie! Vse faili zagrushautsya is drugogo istochnika. Postavte znachenige v poloshenie 1 esli vam nado zagrushat s localnoy papki.
-
 #ifdef LOWMEMORYMODE
 #define FORCE_MAP "_maps/kordonfull.json"
 #endif
@@ -58,3 +55,6 @@
 #ifdef TRAVISTESTING
 #define TESTING
 #endif
+
+#if PRELOAD_RSC < 1
+#warn Vnimanie! Vse faili zagrushautsya is drugogo istochnika. Postavte znachenige v poloshenie 1 esli vam nado zagrushat s localnoy papki.
