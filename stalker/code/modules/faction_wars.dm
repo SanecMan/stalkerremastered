@@ -301,7 +301,7 @@ GLOBAL_LIST_EMPTY(cps)
 	color = COLOR_STALKER_BANDITS
 
 /obj/effect/forcefield/faction/mercenary
-	faction_allowed = "Mercenary"
+	faction_allowed = "Mercenaries"
 	color = COLOR_STALKER_MERC
 
 /obj/effect/forcefield/faction/duty
@@ -321,7 +321,7 @@ GLOBAL_LIST_EMPTY(cps)
 	color = COLOR_STALKER_ARMY
 
 /obj/effect/forcefield/faction/trader
-	faction_allowed = "Trader"
+	faction_allowed = "Traders"
 	color = COLOR_STALKER_LONERS
 
 /obj/effect/forcefield/faction/scientists
