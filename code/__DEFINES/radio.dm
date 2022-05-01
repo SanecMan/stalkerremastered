@@ -48,9 +48,9 @@
 
 #define RADIO_CHANNEL_CTF_RED "Red Team"
 #define RADIO_CHANNEL_CTF_BLUE "Blue Team"
+#define RADIO_CHANNEL_STALKER "Domofon"
 
-
-#define MIN_FREE_FREQ 1201 // -------------------------------------------------
+#define MIN_FREE_FREQ 300 // -------------------------------------------------
 // Frequencies are always odd numbers and range from 1201 to 1599.
 
 #define FREQ_SYNDICATE 1213  // Nuke op comms frequency, dark brown
@@ -84,9 +84,11 @@
 #define FREQ_SIGNALER 1457  // the default for new signalers
 #define FREQ_COMMON 1459  // Common comms frequency, dark green
 
+#define FREQ_STALKER 100  // Частота учёных
+
 #define MAX_FREQ 1489 // ------------------------------------------------------
 
-#define MAX_FREE_FREQ 1599 // -------------------------------------------------
+#define MAX_FREE_FREQ 3000 // -------------------------------------------------
 
 // Transmission types.
 #define TRANSMISSION_WIRE 0  // some sort of wired connection, not used

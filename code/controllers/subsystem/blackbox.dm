@@ -141,6 +141,8 @@ SUBSYSTEM_DEF(blackbox)
 			record_feedback("tally", "radio_usage", 1, "CTF red team")
 		if(FREQ_CTF_BLUE)
 			record_feedback("tally", "radio_usage", 1, "CTF blue team")
+		if(FREQ_STALKER)
+			record_feedback("tally", "radio_usage", 1, "Domofon")
 		else
 			record_feedback("tally", "radio_usage", 1, "other")
 

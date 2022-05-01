@@ -2841,6 +2841,7 @@
 #include "stalker\code\objects\lootspawners.dm"
 #include "stalker\code\objects\items\artifacts\artifacts.dm"
 #include "stalker\code\objects\items\device\detector.dm"
+#include "stalker\code\objects\items\device\device.dm"
 #include "stalker\code\objects\items\device\pda.dm"
 #include "stalker\code\objects\items\food\drinks.dm"
 #include "stalker\code\objects\items\food\food.dm"

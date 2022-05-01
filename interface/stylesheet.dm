@@ -52,6 +52,7 @@ em						{font-style: normal;	font-weight: bold;}
 .aiprivradio			{color: #ff00ff;}
 .redteamradio           {color: #ff0000;}
 .blueteamradio          {color: #0000ff;}
+.stalkerradio          {color: #26263a;}
 
 .yell					{					font-weight: bold;}
 
