@@ -16,7 +16,7 @@
 	tastes = list("meat" = 1)
 	foodtype = MEAT | RAW
 
-/obj/item/reagent_containers/food/snacks/meat/slab/New()
+/obj/item/reagent_containers/food/snacks/meat/slab/Initialize()
 	spawn(1000)
 	name = "rotten [name]"
 	color = "#89ff9d"
