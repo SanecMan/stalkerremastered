@@ -12,6 +12,7 @@
 "qI" = (/obj/structure/lattice/catwalk,/obj/structure/stairs,/turf/open/openspace,/area/stalker/buildings/backwater/substation)
 "ru" = (/obj/effect/landmark/latejoin,/turf/open/stalker/floor/lattice,/area/stalker/buildings/backwater/skadovsk)
 "tb" = (/obj/rad/rad_high,/obj/effect/turf_decal/stripes/red/box,/turf/open/stalker/floor/digable/grass,/area/stalker/blowout/outdoor)
+"uN" = (/obj/structure/table/stalker/wood/bar,/obj/machinery/stalker/sidormat/plus,/turf/open/stalker/floor/tropa,/area/stalker/blowout/outdoor)
 "wy" = (/turf/open/stalker/floor/lattice,/area/stalker/buildings/backwater/substation)
 "xE" = (/turf/open/stalker/floor/asphalt,/area/stalker/blowout/outdoor)
 "xJ" = (/obj/anomaly/karusel,/obj/effect/turf_decal/stripes/box,/turf/open/stalker/floor/water,/area/stalker/blowout/outdoor)
@@ -57,7 +58,7 @@ UZxExECqCqcgqiUZpZAjDpDpDpDpAjwywywyqiqiCqCqxExEUZ
 UZxExECqCqKJqiUZpZUZGUDpDpDpAjwywywywyqiCqCqxExEUZ
 UZxExECqCqJLqiUZpZUZDpDpDpDpAjwyjJdJwyqiCqCqxExEUZ
 UZxExECqCqJtqiUZpZUZDpDpDpDpUZZlqIZlZlqiCqCqxExEUZ
-UZxExECqCqJtqiUZpZUZUZGsGsUZUZZlFqFqZlqiCqCqxExEUZ
+UZxExECqCquNqiUZpZUZUZGsGsUZUZZlFqFqZlqiCqCqxExEUZ
 UZxExECqCqXFqiEgpZUZUZGsGsUZUZqrMMMMqrqiCqCqxExEUZ
 UZxExECqCqqiqiqipZqiqiGsGsqiqiqrqrqrqrqiCqCqxExEUZ
 UZxExECqCqqiqiqipZqiqiGsGsqiqipZqiqiqiqiCqCqxExEUZ
