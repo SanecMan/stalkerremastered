@@ -182,27 +182,27 @@
 
 /obj/item/artifact/crystal
 	name = "crystal"
-	desc = "Получается при попадании тяжелого металла в аномалию «Жарка». Этот артефакт замечательно выводит радиацию. Такой артефакт высоко ценится сталкерами, и мало где его можно добыть."
-	eng_desc = "Is created when heavy metals fall into the fireer anomaly. This artifact eliminates radiation wonderfully. It is highly valued by stalkers and hard to find."
+	desc = "Друза кристаллов неизвестного происхождения оранжево-красного цвета. Имеет свечение огненного цвета."
+	eng_desc = "Druse crystals of unknown origin orange-red. It has a fiery glow."
 	icon_state = "crystal"
-	art_armor = list()
-	radiation = -5
+	art_armor = list(fire = 30)
+	radiation = 1
 	level_s = 4
 
 /obj/item/artifact/maminibusi
 	name = "mama's beads"
-	desc = "Артефакт кристаллизуется в аномальных зонах с высокой термальной активностью. Активно поглощает избыточное тепло, при этом оставаясь прохладным на ощупь. Многое в этом артефакте остаётся полной загадкой для учёных. Впрочем, точно установлено, что излучение, возникающее при пульсации утолщений «Маминых бус», ускоряет протекание метаболических процессов в организме. Радиоактивен."
-	eng_desc = "Much about this artifact remains a complete mystery to scientists. At the same time, it is known for certain that emissions produced by pulses in its thicker sections force blood in open wounds to clot quicker, forming a protective scab. One of the most noticeable effects of this artifact is the increased speed of wound healing. Emits radiation."
+	desc = "Образование, состоящие из 2-х линий из скреплённых друг с другом шариков и соединённых тонкими палочками, исходящими из осевого стержня. Имеет оранжевый цвет и такого же цвета свечение."
+	eng_desc = "Education, consisting of 2 lines of balls fastened to each other and connected by thin sticks emanating from the axial rod. It has an orange color and a glow of the same color."
 	icon_state = "mamini_busi"
 	art_armor = list()
-	radiation = 5
+	radiation = 4
 	level_s = 4
 
 /obj/item/artifact/maminibusi/Think(mob/user)
 	if(!..()) return 0
 	if(istype(user, /mob/living/carbon))
 		var/mob/living/carbon/mob = user
-		mob.adjustFireLoss(-1)
+		mob.adjustFireLoss(-2)
 	return 1
 
 
@@ -210,10 +210,10 @@
 
 /obj/item/artifact/stone_blood
 	name = "stone blood"
-	desc = "Представляет собой красноватое образование из спрессованных и окаменевших остатков растений, почвы и останков животных. Обладает способностью частично нейтрализовать вредные для человека химические вещества. Радиоактивен."
-	eng_desc = "A reddish formation of compressed and fossilized plants, soil and animal debris. Can partially neutralize chemical poisons. Emits radiation."
+	desc = "Образование беспорядочной формы. Имеющий неравномерный цвет — светло-зелёный на одном конце и оранжево-красный на другой, причём ближе к середине оба цвета меняют оттенки, что объясняется вкраплениями фрагментов различных частиц. Испускает бледно-зелёное свечение, иногда переходящее в бирюзовый оттенок."
+	eng_desc = "The formation of a disordered form. Having an uneven color - light green at one end and orange-red at the other, and closer to the middle, both colors change shades, which is explained by interspersed with fragments of various particles. It emits a pale green glow, sometimes turning into a turquoise hue."
 	icon_state = "stone_blood"
-	art_armor = list(bio = 10)
+	art_armor = list(bio = 30)
 	radiation = 1
 	level_s = 1
 
@@ -223,7 +223,7 @@
 	eng_desc = "A compound of several hollow organic formations, this artifact emits a gaseous substance that can neutralize radioactive particles inside the body without harming it. Because of its effectiveness, this artifact is in great demand."
 	icon_state = "bubble"
 	art_armor = list()
-	radiation = -3
+	radiation = -4
 	level_s = 2
 
 /obj/item/artifact/mica
@@ -264,15 +264,15 @@
 	eng_desc = "Firefly interacts with fields unknown to science, considerably speeding up regeneration of tissue and organs in living beings, as well as normalizing metabolic processes. This artifact can literally get a badly wounded stalker back on his feet in seconds. Unfortunately, Firefly is extremely rare. Emits radiation."
 	icon_state = "firefly"
 	art_armor = list()
-	radiation = 5
+	radiation = 3
 	level_s = 4
 
 /obj/item/artifact/firefly/Think(mob/user)
 	if(!..()) return 0
 	if(istype(user, /mob/living/carbon))
 		var/mob/living/carbon/mob = user
-		mob.adjustFireLoss(-0.5)
-		mob.adjustBruteLoss(-0.5)
+		mob.adjustFireLoss(-1)
+		mob.adjustBruteLoss(-1)
 	return 1
 
 	//ПОЯС
