@@ -73,8 +73,8 @@
 	desc = "Рождается в аномалиях гравитационного типа. Такой артефакт можно найти в немногих участках Зоны. Вкрапления металлических соединений дают красивую игру света."
 	eng_desc = "Born in gravitional anomalies. This artifact is found in only a few areas of the Zone. The bits of metallic compounds create a beautiful light play."
 	icon_state = "stoneflower"
-	art_armor = list(bullet = 10)
-	radiation = 2
+	art_armor = list(psi = 30)
+	radiation = 1
 	level_s = 2
 
 /obj/item/artifact/nightstar
@@ -82,7 +82,7 @@
 	desc = "Этот замечательный артефакт формируется гравитационным типом аномалий. Использование артефакта требует нейтрализации смертельного радиоактивного излучения."
 	eng_desc = "This wonderful artifact is formed by gravitional anomalies anomaly. The use of the artifact demands the neutralization of deadly radiation. Expensive and rare."
 	icon_state = "nightstar"
-	art_armor = list(bullet = 20)
+	art_armor = list(bullet = 10)
 	radiation = 3
 	level_s = 3
 
@@ -92,14 +92,14 @@
 	eng_desc = "A unique organic artifact with properties just as unique. Somehow it increases the body's overall recovery rate from damage of any kind, without accelerating the accumulation of toxins. Thanks to its effects and attractive appearance, this artifact is a valuable collector's item. Emits radiation."
 	icon_state = "soul"
 	art_armor = list()
-	radiation = 2
+	radiation = 3
 	level_s = 4
 
 /obj/item/artifact/soul/Think(mob/user)
 	if(!..()) return 0
 	if(istype(user, /mob/living/carbon))
 		var/mob/living/carbon/mob = user
-		mob.adjustBruteLoss(-1)
+		mob.adjustBruteLoss(-2)
 	return 1
 
 	/////////////////////////////////////////Электро артефакты/////////////////////////////////////////
@@ -109,8 +109,8 @@
 	desc = "Артефакт электростатической природы. Демонстрирует удивительную способность к поглощению электрических зарядов и последующему их рассеиванию. Способен защитить организм человека от воздействия электротоков большой силы и высокого напряжения. Радиоактивен."
 	eng_desc = "This electrostatic artifact is a powerful absorbent of electricity, which it later discharges. Flash is capable of protecting its bearer from electric shocks of up to 5,000 volts. Emits radiation."
 	icon_state = "flash"
-	art_armor = list(energy = 10)
-	radiation = 1
+	art_armor = list(energy = 20)
+	radiation = 2
 	level_s = 1
 
 /obj/item/artifact/moonlight
@@ -118,25 +118,40 @@
 	desc = "Вырожденный случай активности аномалии Электра. Видимо, такую замечательную округлую форму можно получить, если подвергнуть аномалию термовоздействию. Дорогой артефакт."
 	eng_desc = "Degenerate case of the activity of the Electro anomaly. It seems that such a wonderful round form is created when the anomaly is subjected to thermal influences. Expensive artifact."
 	icon_state = "moonlight"
-	art_armor = list(energy = 20)
-	radiation = 2
+	art_armor = list(energy = 40)
+	radiation = 4
 	level_s = 2
 
 /obj/item/artifact/pustishka
 	name = "pustishka"
 	desc = "Ранее этот артефакт считался хламом, лишённым каких-либо полезных свойств. Однако некоторое время назад выяснилось, что при постоянном контакте с телом человека данный артефакт оказывает защиту от электростатических аномалий. Радиоактивен."
 	icon_state = "pustishka"
-	art_armor = list(energy = 30)
-	radiation = 2
+	art_armor = list(energy = 20)
+	radiation = 3
 	level_s = 3
+
+/obj/item/artifact/pustishka/Think(user)
+	if(!..()) return 0
+	if(istype(user, /mob/living/carbon))
+		var/mob/living/carbon/mob = user
+		mob.adjustStaminaLoss(-4)
+	return 1
 
 /obj/item/artifact/battery
 	name = "battery"
 	desc = "Происхождение этой вещи окутано завесой научной тайны. Понятно, что в его состав входят диэлектрические элементы, но при каких физических условиях он формируется - науке не известно. Не облучает носителя."
 	eng_desc = "The composition of this artifact includes electrostatic elements, but scientists have yet to identify the exact physical conditions required for its formation. The artifact is popular in the Zone and valued by its residents and visitors for its energizing properties, although it can tire the body out through prolonged use. Doesn't emit radiation."
 	icon_state = "battery"
-	art_armor = list(energy = 30)
+	art_armor = list(energy = 20)
+	radiation = 1
 	level_s = 4
+
+/obj/item/artifact/battery/Think(user)
+	if(!..()) return 0
+	if(istype(user, /mob/living/carbon))
+		var/mob/living/carbon/mob = user
+		mob.adjustStaminaLoss(-2)
+	return 1
 
 	/////////////////////////////////////////Огненные артефакты/////////////////////////////////////////
 
@@ -148,21 +163,21 @@
 	art_armor = list(rad = 10)
 	radiation = -1
 	level_s = 1
-/*
+
 /obj/item/artifact/droplet/Think(user)
 	if(!..()) return 0
 	if(istype(user, /mob/living/carbon))
 		var/mob/living/carbon/mob = user
-		mob.adjustStaminaLoss(1.8)
+		mob.adjustStaminaLoss(1)
 	return 1
-*/
+
 /obj/item/artifact/fireball
 	name = "fireball"
-	desc = "Кристаллизируется в аномалии «Жарка». Хорошо борется с радиоактивностью, хотя ускоренный энергообмен изнашивает мышцы двигательного аппарата. Долго бежать не получится. Артефакт излучает тепло."
-	eng_desc = "Crystallizes in the anomaly fireer. Fights well with radioactivity, though the heightened rate of energy exchange wears out the muscles of the moving apparatus. Won't be able to run for long. Artifact emits heat."
+	desc = "Сферическое образование, похожее на застывшую лаву и имеющее красноватое свечение. Имеет неоднородную поверхность — есть светящиеся разломы, сам артефакт в основном розово-красного цвета и местами красно-чёрного."
+	eng_desc = "A spherical formation that looks like solidified lava and has a reddish glow. It has a non-uniform surface - there are luminous fractures, the artifact itself is mostly pink-red and red-black in places."
 	icon_state = "fireball"
-	art_armor = list(rad = 15)
-	radiation = -2
+	art_armor = list(fire = 20)
+	radiation = 3
 	level_s = 2
 
 /obj/item/artifact/crystal
