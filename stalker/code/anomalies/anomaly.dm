@@ -301,11 +301,11 @@ GLOBAL_LIST_EMPTY(spawned_artifacts)
 	damage_type = DMG_TYPE_GIB
 	active_invisibility = 0
 	inactive_invisibility = 101
-	loot = list(/obj/nothing = 80,
-				/obj/item/artifact/meduza = 12,
-				/obj/item/artifact/stoneflower = 5,
-				/obj/item/artifact/nightstar = 2,
-				/obj/item/artifact/soul = 1
+	loot = list(/obj/nothing = 95,
+				/obj/item/artifact/meduza = 3,
+				/obj/item/artifact/stoneflower = 0.5,
+				/obj/item/artifact/nightstar = 1,
+				/obj/item/artifact/soul = 0.5
 				)
 
 /obj/anomaly/karusel/Initialize()
@@ -336,10 +336,10 @@ GLOBAL_LIST_EMPTY(spawned_artifacts)
 	damage_type = DMG_TYPE_GIB
 	active_invisibility = 0
 	inactive_invisibility = 101
-	loot = list(/obj/nothing = 80,
-				/obj/item/artifact/meduza = 12,
-				/obj/item/artifact/stoneflower = 6,
-				/obj/item/artifact/nightstar = 2
+	loot = list(/obj/nothing = 95,
+				/obj/item/artifact/meduza = 3,
+				/obj/item/artifact/stoneflower = 1,
+				/obj/item/artifact/nightstar = 1
 				)
 
 /obj/anomaly/jarka
@@ -356,10 +356,10 @@ GLOBAL_LIST_EMPTY(spawned_artifacts)
 	active_icon_state = "jarka1"
 	active_invisibility = 0
 	inactive_invisibility = 0
-	loot = list(/obj/nothing = 90,
-				/obj/item/artifact/droplet = 5,
-				/obj/item/artifact/fireball = 3,
-				/obj/item/artifact/crystal = 1.5,
+	loot = list(/obj/nothing = 95,
+				/obj/item/artifact/droplet = 2,
+				/obj/item/artifact/fireball = 2,
+				/obj/item/artifact/crystal = 0.5,
 				/obj/item/artifact/maminibusi = 0.5
 				)
 
@@ -444,11 +444,11 @@ GLOBAL_LIST_EMPTY(spawned_artifacts)
 	active_icon_state = "holodec" //needs activation icon
 	active_invisibility = 0
 	inactive_invisibility = 0
-	loot = list(/obj/nothing = 80,
-				/obj/item/artifact/stone_blood = 10,
-				/obj/item/artifact/bubble = 5.5,
-				/obj/item/artifact/mica = 3,
-				/obj/item/artifact/firefly = 1.5
+	loot = list(/obj/nothing = 95,
+				/obj/item/artifact/stone_blood = 3,
+				/obj/item/artifact/bubble = 1,
+				/obj/item/artifact/mica = 0.5,
+				/obj/item/artifact/firefly = 0.5
 				)
 	var/obj/anomaly/holodec/splash/son = null
 
